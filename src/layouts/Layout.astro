@@ -15,7 +15,8 @@ const {
 
 const pageTitle = title === 'Agalmic Research' ? title : `${title} · Agalmic Research`;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
-const favicon = `${import.meta.env.BASE_URL}favicon.svg`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const favicon = `${base}/favicon.svg`;
 ---
 <!doctype html>
 <html lang="en">
