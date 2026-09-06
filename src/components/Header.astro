@@ -1,17 +1,16 @@
 ---
 const path = Astro.url.pathname.replace(/\/$/, '');
-const base = import.meta.env.BASE_URL;
-const route = (segment = '') => `${base}${segment}`.replace(/\/$/, '') || '/';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const route = (segment = '') => segment ? `${base}/${segment.replace(/^\//, '')}` : `${base}/`;
 const links = [
   { href: route('research'), label: 'Research' },
   { href: route('publications'), label: 'Publications' },
   { href: route('principles'), label: 'Principles' },
 ];
-const home = base;
 ---
 <header class="site-header">
   <nav class="shell nav" aria-label="Primary navigation">
-    <a class="wordmark" href={home} aria-label="Agalmic Research home">
+    <a class="wordmark" href={route()} aria-label="Agalmic Research home">
       <span class="wordmark-mark" aria-hidden="true"></span>
       <span>Agalmic Research</span>
     </a>
