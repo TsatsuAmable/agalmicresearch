@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sequence = [
+  ['01', 'Agalmic Economics: The Law of Displaced Scarcity', 'Foundational paper', 'First sequence'],
+  ['02', 'Innovation as Search', 'Exploratory paper', 'First sequence'],
+  ['03', 'Attention After Abundance', 'Working paper', 'Research track'],
+  ['04', 'Markets for Possibility', 'Working paper', 'Research track'],
+  ['05', 'Representation as Discovery', 'Research paper + software', 'Nemosyne track'],
+  ['06', 'Intellectual Property After Epistemic Abundance', 'Policy / economics paper', 'Research track'],
+];
+---
+<Layout title="Publications" description="The publication strategy and paper sequence for Agalmic Research.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Publications</p>
+      <h1>One research object. Many useful forms.</h1>
+      <p class="lede">The paper is important, but it is not sacred. A durable research object can be projected into the format that best reaches the people who need to test, criticise, cite or build on it.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Publication architecture</p>
+        <h2>Record first. Refine continuously.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Working paper → peer-reviewed article → public essay → policy brief → talk → model → code.</p>
+        <p class="muted">These are views of the same evolving work, not seven disconnected content products. Stable versions should be archived with persistent identifiers where appropriate, while the living source remains openly inspectable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Initial sequence</span>
+        <div class="section-copy">
+          <h2>The first paper family.</h2>
+          <p>Titles are working titles. The sequence is designed to establish the field, then attack its hardest consequences.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {sequence.map(([n, title, type, status]) => (
+          <article class="index-item">
+            <span class="index-meta">{n}</span>
+            <div>
+              <h3>{title}</h3>
+              <p class="muted">{type}</p>
+            </div>
+            <span class="index-status">{status}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Distribution</p>
+        <h2>Make the work easy to find, cite and contest.</h2>
+      </div>
+      <div class="prose">
+        <ul>
+          <li><strong>Website:</strong> canonical index, summaries, revisions and links between research threads.</li>
+          <li><strong>GitHub:</strong> source, models, data, code, version history and public critique.</li>
+          <li><strong>Research archives:</strong> stable snapshots through services such as Zenodo, OSF or SSRN where suitable.</li>
+          <li><strong>Peer review:</strong> journal submission selected paper by paper, not as the only route to legitimacy.</li>
+          <li><strong>Public writing:</strong> essays that expose the ideas to a wider intellectual market without diluting the underlying work.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>

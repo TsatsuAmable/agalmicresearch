@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const tracks = [
+  ['Agalmic Economics', 'A general theory of economic organisation when important goods become non-rival or extremely cheap to reproduce.', 'Where does scarcity migrate? How should value be measured? Which classical assumptions survive?'],
+  ['Epistemic Economics', 'The allocation of scarce attention, validation, trust, institutional bandwidth and physical capability in a world of cheap candidate knowledge.', 'What is the price of verification? How do we rank claims? What replaces generation as the bottleneck?'],
+  ['Innovation as Search', 'A formal account of innovation as exploration and exploitation of adjacent possibles, increasingly performed by human-model systems.', 'How should search be directed? How is novelty distinguished from noise? Who chooses which branch receives resources?'],
+  ['Attention & Selection', 'The economics and information theory of choosing among an expanding set of plausible ideas, models, artefacts and interventions.', 'How do filters avoid becoming the new monopolies? Who curates the curators? How should uncertainty and stability affect ranking?'],
+  ['Representation as Discovery', 'Methods for finding representations that preserve meaningful information while reducing cognitive, computational or physical cost.', 'What does “meaning-preserving” mean formally? Can representation choice be treated as a constraint-solving problem?'],
+  ['Institutions, IP & Rents', 'Property, incentives and institutional design when invention and disclosure can happen at machine speed.', 'When does defensive publication dominate patenting? When is temporary exclusivity genuinely needed to finance realisation?'],
+];
+---
+<Layout title="Research" description="The Agalmic Research programme: economics, epistemics, innovation, attention, representation, governance and intellectual property under abundance.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Research</p>
+      <h1>A map of the questions.</h1>
+      <p class="lede">The programme starts from a simple disturbance: if producing possible answers becomes cheap, the economic problem does not end. It changes address.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell">
+      <div class="index-list">
+        {tracks.map(([title, copy, questions], i) => (
+          <article class="index-item">
+            <span class="index-meta">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{title}</h3>
+              <p class="muted">{copy}</p>
+              <p><strong>Questions:</strong> {questions}</p>
+            </div>
+            <span class="index-status">active programme</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Method</p>
+        <h2>Ideas earn their keep by becoming testable.</h2>
+      </div>
+      <div class="prose">
+        <p>Each track should move through three layers: a clear conceptual claim, a formal model where one is useful, and an empirical or software demonstration where one is possible.</p>
+        <p class="muted">The purpose is not to decorate speculation with mathematics. Formalism is used to expose assumptions, derive consequences and make disagreement precise.</p>
+      </div>
+    </div>
+  </section>
+</Layout>

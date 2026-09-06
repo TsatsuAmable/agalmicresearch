@@ -1,46 +1,52 @@
-# Astro Starter Kit: Basics
+# Agalmic Research
+
+Minimal static website for **Agalmic Research**, an open research programme studying abundance, epistemic scarcity, innovation as search, representation, coordination, and institutions after the cost of generating candidate knowledge falls.
+
+## Design goals
+
+- **Minimal:** no framework islands, no client JavaScript, no external font or UI dependency.
+- **Open:** the website source is part of the publication record.
+- **Durable:** plain Astro components and CSS, suitable for long-lived research pages.
+- **Cheap to host:** static build with a GitHub Pages workflow included.
+- **Expandable:** the current pages establish the research programme without committing to a CMS or complex publishing stack.
+
+## Pages
+
+- `/`: thesis, programme, Nemosyne relationship, operating model
+- `/research`: six research tracks and research method
+- `/publications`: publication architecture and initial paper sequence
+- `/principles`: open-research, provenance, versioning and IP principles
+
+## Local development
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Build the production site:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npm run build
+npm run preview
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## GitHub Pages
 
-## 🧞 Commands
+The included `.github/workflows/deploy.yml` uses Astro's official GitHub Pages action. In the repository settings, set **Pages → Source** to **GitHub Actions**.
 
-All commands are run from the root of the project, from a terminal:
+The site is configured for `https://agalmicresearch.org` and includes `public/CNAME`. Point the domain's DNS to GitHub Pages before enabling the custom domain. Remove `public/CNAME` and adjust `astro.config.mjs` if a different host is preferred.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Content strategy
 
-## 👀 Want to learn more?
+The website is the canonical index, not the only publication surface. Each research object can be projected into a working paper, journal article, public essay, policy brief, talk, model, dataset, or software artefact. Stable versions can be archived with persistent identifiers while the living source remains public and versioned here.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Next sensible additions
+
+Only add these when there is real content for them:
+
+1. Markdown/content collections for papers and essays.
+2. RSS when publication cadence begins.
+3. DOI / archive metadata for stable research releases.
+4. A small `people` or `about` page if collaborators join.
+5. Search only after the corpus is large enough to need it.

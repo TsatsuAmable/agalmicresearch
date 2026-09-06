@@ -1,11 +1,136 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const programmes = [
+  {
+    n: '01',
+    title: 'Agalmic economics',
+    copy: 'What happens to value and allocation when useful knowledge, computation and other non-rival goods become dramatically cheaper to create?',
+  },
+  {
+    n: '02',
+    title: 'Epistemic economics',
+    copy: 'When candidate knowledge is abundant, attention, validation, trust, interpretation and institutional capacity become the binding constraints.',
+  },
+  {
+    n: '03',
+    title: 'Innovation as search',
+    copy: 'Innovation can be modelled as search across adjacent possibles, with machine cognition expanding exploration and humans choosing what to test, build and adopt.',
+  },
+  {
+    n: '04',
+    title: 'Coordination after abundance',
+    copy: 'More possibilities do not remove choice. They intensify the problem of deciding what deserves scarce time, capital, legitimacy and physical resources.',
+  },
+  {
+    n: '05',
+    title: 'Representation as discovery',
+    copy: 'How can systems compress, transform and embody information more cheaply while preserving the structure humans need to perceive what matters?',
+  },
+  {
+    n: '06',
+    title: 'Knowledge, property and rents',
+    copy: 'How should publication, defensive disclosure, patents and incentives change when the cost of generating potentially valuable ideas collapses?',
+  },
+];
 ---
-
 <Layout>
-	<Welcome />
+  <section class="hero">
+    <div class="shell">
+      <p class="eyebrow">Economics after scarcity moves</p>
+      <h1>When ideas become cheap, what becomes scarce?</h1>
+      <p class="lede">
+        Agalmic Research studies economies in which machine cognition makes the generation of candidate knowledge abundant. The bottleneck moves toward attention, validation, coordination, trust, embodiment and the capacity to turn possibilities into reality.
+      </p>
+      <div class="actions">
+        <a class="button" href="/research">Explore the programme</a>
+        <a class="button secondary" href="/publications">Publication track</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Working thesis · The law of displaced scarcity</p>
+      <blockquote>
+        As one constraint becomes abundant, value migrates toward the complementary constraints required to select, verify, coordinate and realise it.
+      </blockquote>
+      <p>
+        This is not a claim that scarcity disappears. It is a programme for tracing where scarcity goes next, and how institutions should change when the old bottleneck no longer explains the system.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Research programme</span>
+        <div class="section-copy">
+          <h2>A field, not a single paper.</h2>
+          <p>Agalmic Economics is the umbrella. Epistemic Economics studies the new allocation problem created when producing possibilities is cheap but deciding among them is not.</p>
+        </div>
+      </div>
+      <div class="grid">
+        {programmes.map((item) => (
+          <article class="card">
+            <span class="card-kicker">{item.n}</span>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">No AGI threshold required</p>
+        <h2>The transition can be studied now.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Agalmic abundance is not a wager on a single future intelligence event.</p>
+        <p class="muted">
+          Cheap machine cognition already changes the economics of search, drafting, modelling and software creation. The research question is what happens when generation accelerates faster than our ability to evaluate, coordinate and realise the resulting possibilities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Applied research</p>
+        <h2>Nemosyne as a testbed.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The arguments should survive contact with software.</p>
+        <p class="muted">
+          <a href="https://nemosyne.world">nemosyne.world</a> explores a practical version of the same problem: how to choose representations that make meaningful structure perceptible without spending more computation, complexity or human attention than necessary. Its Moneta research direction treats representation as a constrained discovery problem rather than decoration.
+        </p>
+        <p><a href="https://github.com/TsatsuAmable/nemosyne">Explore Nemosyne on GitHub ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Operating model</p>
+        <h2>Publish early. Version openly. Argue in public.</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Research begins as a canonical, versioned object. From that source it can become a working paper, journal article, public essay, policy brief, talk, model or piece of software without pretending that one format is the research itself.
+        </p>
+        <div class="callout">
+          <p>Publication is part of the research method: establish provenance, expose ideas to criticism, make reuse cheap and let better arguments compound.</p>
+        </div>
+        <div class="actions">
+          <a class="button" href="/principles">Read the principles</a>
+          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch">View source ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
