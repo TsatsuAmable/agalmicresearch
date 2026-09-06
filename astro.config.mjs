@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://agalmicresearch.org',
+  site: 'https://tsatsuamable.github.io',
+  base: '/agalmicresearch',
 });
