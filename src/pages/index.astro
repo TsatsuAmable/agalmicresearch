@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const internal = (segment) => `${import.meta.env.BASE_URL}${segment}`;
 const programmes = [
   {
     n: '01',
@@ -43,8 +44,8 @@ const programmes = [
         Agalmic Research studies economies in which machine cognition makes the generation of candidate knowledge abundant. The bottleneck moves toward attention, validation, coordination, trust, embodiment and the capacity to turn possibilities into reality.
       </p>
       <div class="actions">
-        <a class="button" href="/research">Explore the programme</a>
-        <a class="button secondary" href="/publications">Publication track</a>
+        <a class="button" href={internal('research')}>Explore the programme</a>
+        <a class="button secondary" href={internal('publications')}>Publication track</a>
       </div>
     </div>
   </section>
@@ -127,7 +128,7 @@ const programmes = [
           <p>Publication is part of the research method: establish provenance, expose ideas to criticism, make reuse cheap and let better arguments compound.</p>
         </div>
         <div class="actions">
-          <a class="button" href="/principles">Read the principles</a>
+          <a class="button" href={internal('principles')}>Read the principles</a>
           <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch">View source ↗</a>
         </div>
       </div>
