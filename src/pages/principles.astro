@@ -1,42 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+
 const principles = [
-  ['Keep epistemic authority within defensibility', 'Machine cognition may expand what can be produced faster than it expands what the human curator can understand. Publish the work, but do not imply more mastery, certainty or authority than can be defended.'],
-  ['Separate contribution from authority', 'Originating, framing or developing an idea is a real contribution, but it does not automatically confer authority over whether the idea is true, important or correctly interpreted. Validation adds warrant without erasing provenance.'],
-  ['Design for epistemic handoff', 'When an initiator cannot evaluate a promising idea, the system should preserve origin and route the work toward capable framers, domain stewards, verifiers and realizers rather than forcing a choice between false authority and dismissal.'],
-  ['Open by default', 'Knowledge compounds when others can inspect, reuse and challenge it. Closed work should require a reason, not openness.'],
-  ['Publish to establish provenance', 'Early public disclosure creates a timestamped intellectual record and makes ideas available for criticism and reuse. Publication records a claim; it does not certify it.'],
-  ['Version instead of waiting for finality', 'Research is allowed to improve in public. Every release should state what is claim, evidence, conjecture, epistemic status and revision.'],
-  ['Treat attention as a scarce resource', 'Abundant output can still impoverish a system if it consumes more human attention than the value it creates.'],
-  ['Prefer selection quality over generation volume', 'The objective is not to maximise the number of ideas. It is to improve the rate at which valuable possibilities are recognised, routed, validated and realised.'],
-  ['Build demonstrations, not only arguments', 'Software, models and reproducible analyses are part of the research programme because they force conceptual claims into contact with constraints.'],
-  ['Use exclusivity only when it enables realisation', 'Patenting is an instrument, not a default. It is justified only when temporary exclusivity is plausibly necessary to finance, coordinate or protect the difficult work of turning an idea into a socially useful reality.'],
-  ['Keep institutions provisional', 'Agalmic Research should be judged by the quality, openness and durability of its work, not by whether it prematurely imitates the bureaucracy of an established institute.'],
+  ['Search lineage before claiming novelty', 'Treat existing theory, standards and prior art as inputs. Classify a result as antecedent, rediscovery, synthesis, extension, application, operationalization or novelty-unassessed before using stronger language.'],
+  ['Prefer established vocabulary', 'Do not coin a local term where a mature field or standard already has a suitable one. New terminology should purchase real precision rather than merely make familiar machinery sound proprietary.'],
+  ['Keep epistemic authority within defensibility', 'Machine cognition may expand what can be produced faster than it expands what a human curator can understand. This maxim builds on existing claim-accountability and guarantorship traditions; it is an operating rule, not a claim of first discovery.'],
+  ['Separate contribution from authority', 'Use mature contributorship machinery such as CRediT where it fits. Contribution does not automatically confer authority over truth or interpretation, and later validation should not erase provenance.'],
+  ['Design for epistemic handoff', 'When an initiator cannot evaluate a promising idea, preserve its origin and route it toward missing expertise, evidence or verification rather than forcing a choice between false authority and dismissal.'],
+  ['Distinguish generation from discovery', 'Record candidate generation, significance recognition, validation, integration and realization separately. Do not decide by vocabulary alone whether a machine or human “discovered” the result.'],
+  ['Use standardized provenance first', 'Use W3C PROV for ordinary provenance, RO-Crate for research-object packaging and CRediT for contribution roles. Extend locally only where the research problem is not adequately represented.'],
+  ['Open by default, but not recklessly', 'Knowledge compounds when others can inspect, reuse and challenge it. Technical mechanisms with plausible IP sensitivity should receive an explicit publication/protection review before disclosure.'],
+  ['Publish to establish provenance, not priority mythology', 'Early public disclosure creates a timestamped record and invites criticism. It does not prove novelty, correctness, mastery or legal priority over unknown prior art.'],
+  ['Version corrections visibly', 'When prior art or criticism changes a claim, revise the public object and preserve the reason. Do not silently smooth the history into a story in which the project was always right.'],
+  ['Treat attention as a scarce resource', 'This principle has deep antecedents, especially Herbert Simon. The research task is to identify how machine-generated candidate abundance changes the allocation problem.'],
+  ['Prefer selection quality over generation volume', 'The objective is not to maximise the number of ideas. It is to improve the rate at which valuable possibilities are recognized, validated, routed and realized.'],
+  ['Build demonstrations, not only arguments', 'Software, models and reproducible analyses force conceptual claims into contact with constraints, but a working implementation is not itself proof of theoretical novelty.'],
+  ['Use exclusivity only when it enables realization', 'Patenting is an instrument, not a default. It is justified only when temporary exclusivity is plausibly necessary for difficult real-world implementation and after prior art is properly considered.'],
+  ['Keep institutions provisional', 'Agalmic Research should be judged by the quality, lineage-awareness, openness and durability of its work rather than by prematurely imitating an established institute.'],
 ];
 ---
-<Layout title="Principles" description="Operating principles for Agalmic Research: defensible stewardship, separable epistemic roles, handoff, open publication, provenance and attention discipline.">
+<Layout title="Principles" description="Operating principles for Agalmic Research: intellectual lineage, defensible stewardship, standards-first provenance, handoff, open publication and attention discipline.">
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Principles</p>
-      <h1>The institution should embody the thesis.</h1>
-      <p class="lede">If cognition and knowledge production can become abundant, the research practice itself must make contribution, authority and the limits of understanding visible.</p>
+      <h1>The institution should be harder to fool than its prose is easy to polish.</h1>
+      <p class="lede">Machine assistance makes fluent reinvention cheap. The research practice must therefore reward prior-art discovery, correction, precise attribution and reuse of mature intellectual machinery.</p>
     </div>
   </header>
 
   <section class="section">
     <div class="shell thesis">
-      <p class="eyebrow">Principle of Defensible Stewardship</p>
-      <blockquote>Epistemic authority should not exceed defensibility.</blockquote>
-      <p>Cognition may be delegated. Responsibility cannot be. Where human comprehension is limited, claims should carry proportionately stronger provenance, verification, reproducibility, adversarial scrutiny and disclosure.</p>
+      <p class="eyebrow">Novelty discipline</p>
+      <blockquote>Novelty is a conclusion of search, not a tone of voice.</blockquote>
+      <p>Independent rediscovery can be intellectually valuable, but it should be named honestly. Finding that an idea already exists is a successful research outcome because it lets the project begin from a higher floor.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="shell thesis">
-      <p class="eyebrow">Principle of Separable Epistemic Roles</p>
+      <p class="eyebrow">Defensible stewardship · local operating maxim</p>
+      <blockquote>Epistemic authority should not exceed defensibility.</blockquote>
+      <p>This formulation is retained as an Agalmic Research operating rule while explicitly acknowledging close antecedents in claim accountability, guarantorship, epistemic dependence and AI-assisted metacognition.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Contribution & authority</p>
       <blockquote>Origin deserves credit. Authority requires warrant.</blockquote>
-      <p>The ability to originate a valuable idea does not imply the authority to validate it, and the authority to validate it does not erase the contribution of its originator. Low authority should trigger handoff, not erasure.</p>
+      <p>Use standard contributorship roles where possible. The experimental addition is a separate, claim-sensitive authority record describing who can defend a claim and the evidence on which that authority rests.</p>
     </div>
   </section>
 
@@ -57,12 +72,27 @@ const principles = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">A useful default</p>
-        <h2>Publish early. Claim carefully. Hand off intelligently.</h2>
+        <p class="eyebrow">Standards stack</p>
+        <h2>Do not build another provenance island.</h2>
       </div>
       <div class="prose">
-        <p class="large">Open publication is a research method, not a declaration of authority.</p>
-        <p class="muted">The default is to expose ideas to criticism and establish provenance while stating their epistemic status honestly. When a contribution outruns its initiator's competence, the next step is to recruit missing expertise rather than suppress the idea or inflate the initiator's authority. Technical machinery still receives a separate publication review where disclosure could destroy a legitimate path to difficult real-world implementation or intellectual-property protection.</p>
+        <p class="large"><a href="https://www.w3.org/TR/prov-dm/">W3C PROV</a> → <a href="https://www.researchobject.org/ro-crate/specification/1.3/">RO-Crate</a> → <a href="https://credit.niso.org/">CRediT</a> → narrow Agalmic extensions.</p>
+        <p>The local extension layer is reserved for epistemic authority, handoff, branch state, search boundaries and reversal conditions where mature standards do not adequately express the research question.</p>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/STANDARDS_PROVENANCE_PROFILE.md">Read the standards-first profile ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">A useful default</p>
+        <h2>Search first. Attribute generously. Claim narrowly. Correct visibly.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Open publication is a research method, not a declaration of authority or novelty.</p>
+        <p class="muted">Before a paper enters the numbered sequence, it should have an explicit lineage statement and novelty classification. Where a contribution outruns the initiator’s competence, recruit the missing expertise. Where prior art outruns our formulation, use the prior art.</p>
+        <p><a href={internal('lineage')}>Inspect the lineage register →</a></p>
       </div>
     </div>
   </section>
