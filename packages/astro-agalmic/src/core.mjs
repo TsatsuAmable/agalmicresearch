@@ -12,6 +12,7 @@ export function validateKnowledge({
   history,
   requiredFields = ['id', 'title', 'kind', 'layer', 'commitment', 'status', 'summary', 'direction', 'href'],
   researchKinds = ['research-note', 'working-paper', 'draft'],
+  knownOrigins = null,
 } = {}) {
   const objects = normalizeRegistry(registry);
   const handoffItems = normalizeHandoffs(handoffs);
@@ -53,11 +54,14 @@ export function validateKnowledge({
     .map((item) => normalizePathname(item.href));
   unique(canonicalResearchHrefs, 'research object canonical href');
 
+  const originIds = Array.isArray(knownOrigins) ? new Set([...objectIds, ...knownOrigins]) : null;
   for (const handoff of handoffItems) {
     if (!handoff?.id) fail('handoff: missing id');
     if (!handoff?.title) fail(`${handoff?.id ?? 'handoff'}: missing title`);
     if (!handoff?.origin) fail(`${handoff?.id ?? 'handoff'}: missing origin`);
-    if (handoff?.origin && !objectIds.has(handoff.origin)) warn(`${handoff.id}: origin ${handoff.origin} is not a current knowledge object id`);
+    if (originIds && handoff?.origin && !originIds.has(handoff.origin)) {
+      warn(`${handoff.id}: origin ${handoff.origin} is not in the configured known origin set`);
+    }
   }
 
   unique(historyEvents.map((event) => event.id), 'history event id');
