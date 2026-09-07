@@ -6,18 +6,18 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 ---
 <Layout
   title="Epistemic Handoff"
-  description="Exploratory draft on contribution, authority and uptake under cognitive abundance."
+  description="Exploratory draft v0.2 on contribution, authority and uptake under cognitive abundance, grounded in contributorship, epistemic dependence and absorptive-capacity traditions."
 >
   <header class="page-head paper-head">
     <div class="shell">
-      <p class="eyebrow">Draft paper · v0.1 · 7 September 2026</p>
+      <p class="eyebrow">Draft paper · v0.2 · 7 September 2026</p>
       <h1>Epistemic Handoff</h1>
       <p class="lede">Contribution, authority and uptake under cognitive abundance.</p>
       <div class="paper-meta" aria-label="Draft status">
         <span>Exploratory</span>
         <span>Machine-assisted</span>
-        <span>Unreviewed</span>
-        <span>Not in numbered paper sequence</span>
+        <span>Lineage reviewed</span>
+        <span>Not peer reviewed</span>
       </div>
     </div>
   </header>
@@ -25,15 +25,14 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Starting problem</p>
-        <h2>“It may be a good idea. I cannot tell.”</h2>
+        <p class="eyebrow">v0.2 correction</p>
+        <h2>The component ideas already have mature intellectual homes.</h2>
       </div>
       <div class="prose">
-        <p class="large">Cognitive machines can help people originate and articulate ideas whose value exceeds their own ability to evaluate them.</p>
-        <p>A healthy knowledge system should not respond by pretending the initiator is an expert, nor by discarding the contribution because the initiator is not one. It should preserve provenance and route the candidate idea toward people and systems capable of evaluating, developing and realizing it.</p>
-        <div class="callout">
-          <p><strong>Origin deserves credit. Authority requires warrant.</strong></p>
-        </div>
+        <p class="large">This draft is now framed as a synthesis and AI-era extension, not as the invention of contributorship, knowledge transfer or uptake.</p>
+        <p>Scientific contributorship systems already separate kinds of contribution from a simple author byline. Epistemic-dependence literature explains why knowers rely on other experts. Knowledge-brokering traditions study movement between communities. Cohen and Levinthal's <strong>absorptive capacity</strong> describes the ability to recognize the value of external information, assimilate it and apply it.</p>
+        <div class="callout"><p><strong>The question here is narrower: what happens when machine cognition makes it much easier for a low-authority initiator to generate or recognize a promising candidate that they cannot themselves validate?</strong></p></div>
+        <p><a href={internal('lineage')}>Read the intellectual-lineage register →</a></p>
       </div>
     </div>
   </section>
@@ -42,136 +41,190 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
     <section class="section">
       <div class="shell paper-section">
         <p class="eyebrow">Abstract</p>
-        <p class="paper-abstract">Machine-assisted cognition lowers the expertise required to generate, articulate and explore sophisticated candidate ideas. This creates a productive asymmetry: a person may make a genuine epistemic contribution without possessing the domain competence required to assess its novelty, truth, importance or limitations. Existing authorship conventions often collapse these functions into a single status, creating two symmetrical failures. Low-authority initiators may receive unwarranted epistemic authority, while experts who later validate or develop an idea may absorb credit that properly belongs to the originator. This draft proposes the <strong>Principle of Separable Epistemic Roles</strong>: contribution provenance and epistemic authority should be recorded independently. It introduces <strong>epistemic handoff</strong> as the structured transfer of a candidate knowledge object from an initiator toward appropriate framers, domain stewards, verifiers and realizers while preserving originator credit. It further proposes an <strong>Epistemic Uptake Constraint</strong>: as idea generation becomes abundant, society's scarce capacity to notice, route, evaluate, validate and develop candidate knowledge becomes increasingly important. The paper outlines an institutional research programme for turning “I have an idea but I do not know if it is good” into a productive entry point rather than an epistemic dead end.</p>
+        <p class="paper-abstract">Machine-assisted cognition can lower the expertise required to generate, articulate or encounter sophisticated candidate ideas without equivalently lowering the expertise required to validate them. This draft asks how such candidates can move toward missing expertise without either inflating the initiator's authority or erasing their contribution. It uses <strong>epistemic handoff</strong> as local terminology for that routing problem, while grounding the proposal in established work on contributorship, epistemic dependence, knowledge transfer and absorptive capacity. The draft proposes a claim-sensitive architecture in which standardized contribution roles such as CRediT are recorded separately from the evidence supporting epistemic authority. It then reframes the earlier “Epistemic Uptake Constraint” as an AI-era extension of absorptive-capacity and idea-processing problems: if plausible candidate knowledge becomes dramatically cheaper to produce, the scarce capacity may increasingly be competent recognition, evaluation, validation, integration and realization. The contribution sought here is therefore institutional synthesis and operationalization, not the discovery that knowledge moves between people or that organizations have limited capacity to absorb it.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">1 · Contribution without authority</p>
-        <h2>Discovery and expertise are not the same achievement.</h2>
-        <p>An originator can notice an anomaly, ask an unusually productive question, combine distant concepts or direct a machine search toward a valuable result without having the background needed to validate what emerges. The contribution may nevertheless be real. Requiring the initiator to possess expert command before the idea receives attention would discard some of the very gains that cognitive abundance makes possible.</p>
-        <p>The reverse error is equally serious. If a person originates a potentially valuable idea, later validation by an expert should not retroactively make the expert its originator. Expertise supplies warrant. It does not rewrite provenance.</p>
-        <div class="thesis paper-thesis">
-          <p class="eyebrow">Principle of Separable Epistemic Roles</p>
-          <blockquote>Epistemic contribution and epistemic authority should be separable.</blockquote>
-          <p>The ability to originate a valuable idea does not imply authority to validate it, and the authority to validate an idea does not erase the contribution of its originator.</p>
-        </div>
+        <p class="eyebrow">1 · Intellectual lineage</p>
+        <h2>Contribution, dependence and uptake all predate this draft.</h2>
+        <p>Three antecedent traditions are especially important.</p>
+        <p><strong>Contributorship.</strong> BMJ's 1990s reforms argued that the author byline poorly represents who actually did what and introduced contributorship and guarantorship. The later ANSI/NISO CRediT taxonomy now supplies fourteen standardized contributor roles. Any system proposed here should use those roles where possible rather than inventing another taxonomy.</p>
+        <p><strong>Epistemic dependence.</strong> Hardwig argued that modern knowledge routinely depends on testimony and expertise that an individual knower cannot independently reproduce. Limited personal mastery is therefore not itself a new AI-era condition. What machine systems may change is the scale, speed and opacity with which a person can participate in producing sophisticated objects outside their expertise.</p>
+        <p><strong>Absorptive capacity.</strong> Cohen and Levinthal define organizational capacity to recognize valuable external information, assimilate it and apply it. That is strikingly close to the “uptake” problem. The question here is how the relevant capacity behaves when the external supply includes vast amounts of machine-generated candidate knowledge whose surface quality may be difficult to distinguish from its warrant.</p>
+        <p>Knowledge brokerage and boundary-spanning literatures supply further antecedents for moving ideas between communities and expertise domains.</p>
+        <div class="callout"><p><strong>Epistemic handoff is therefore a proposed arrangement of existing pieces around a new technological pressure, not a claim to have discovered those pieces.</strong></p></div>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">2 · The epistemic handoff</p>
-        <h2>Candidate knowledge needs somewhere to go.</h2>
-        <p>The phrase “I have an idea, but I do not know whether it is worth anything” should describe the beginning of a process rather than the end of one.</p>
-        <p>An <strong>epistemic handoff</strong> is a structured transfer in which the initiator's contribution is preserved while the object moves toward actors with the competence or tools required for the next epistemic task. A handoff might move from an initiator to a domain framer, from a framer to a verifier, from a verifier to an empirical investigator, and from validated knowledge to a realizer capable of turning it into practice.</p>
-        <p>The central institutional challenge is to make those transitions cheap enough to use, difficult enough to game, and transparent enough that neither authority nor credit is silently transferred along with the object.</p>
+        <p class="eyebrow">2 · Starting problem</p>
+        <h2>“It may be a good idea. I cannot tell.”</h2>
+        <p>Cognitive machines can help a person formulate a conjecture, mechanism, proof sketch, design or synthesis that appears promising while the person lacks the domain competence to determine whether it is correct, novel or important.</p>
+        <p>Two bad responses are available. One is <strong>authority inflation</strong>: because the initiator possesses a polished artefact, the system treats them as though they possess its expertise. The other is <strong>contribution erasure</strong>: because the initiator lacks credentials or validation capacity, the system discards their role when later experts improve or certify the idea.</p>
+        <p>The desired response is more granular: preserve what the initiator actually contributed, identify what remains epistemically missing, and route the candidate toward the functions required to assess it.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">3 · Two ledgers</p>
-        <h2>Who contributed and who can defend are different records.</h2>
-        <p>A machine-amplified research object could carry two linked but independent ledgers.</p>
+        <p class="eyebrow">3 · Contribution and authority</p>
+        <h2>Use one record for work done and another for warrant.</h2>
+        <p>The earlier draft called this the “Principle of Separable Epistemic Roles.” Version 0.2 narrows that claim because contributorship systems already establish that scholarly work comprises different roles.</p>
+        <p>The proposed extension is instead <strong>claim-sensitive authority metadata</strong>. CRediT can record Conceptualization, Investigation, Methodology, Formal analysis, Validation, Writing, Software and other contributions. It does not by itself answer who can defend a particular claim or why an audience should rely on that person.</p>
         <div class="status-grid">
-          <div><strong>Contribution provenance</strong><span>Who initiated, framed, searched, generated, selected, developed, interpreted or realized the work, including material machine contributions.</span></div>
-          <div><strong>Epistemic authority</strong><span>Who can defend which claims, with what expertise, verification, replication, evidence or formal support.</span></div>
+          <div><strong>Contribution record</strong><span>Use standardized CRediT roles wherever possible, plus narrow fine-grained descriptors only when needed to preserve initiation, selection or another material event.</span></div>
+          <div><strong>Authority record</strong><span>For a claim or claim cluster, record the warrant: demonstrated expertise, expert review, empirical evidence, formal verification, reproduction, or another explicit basis.</span></div>
         </div>
-        <p>These records should be claim-sensitive rather than globally assigning one person the status of “expert author.” A contributor might have deep authority over the problem framing but little authority over a statistical derivation. A verifier might possess authority over the derivation without having contributed to the original insight.</p>
-        <p>This architecture also makes credit more robust. Later expertise can improve an idea without laundering away its origin.</p>
+        <div class="callout"><p><strong>Origin deserves credit. Authority requires warrant.</strong></p></div>
+        <p>This phrase remains a local operating maxim, not a claim that the general distinction between contribution and responsibility is new.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">4 · Epistemic uptake</p>
-        <h2>The next scarcity may be the capacity to receive ideas.</h2>
-        <p>If machine cognition dramatically increases the number of plausible candidate insights, the bottleneck does not disappear. It moves into the institutions required to absorb them.</p>
-        <div class="callout">
-          <p><strong>Epistemic Uptake Constraint:</strong> as candidate knowledge becomes abundant, the capacity to notice, route, evaluate, validate, integrate and realize valuable contributions becomes increasingly scarce.</p>
-        </div>
-        <p>This is a direct application of displaced scarcity. The marginal cost of producing a candidate hypothesis can fall while the cost of competent attention remains high. The system can therefore become richer in possibilities while simultaneously becoming worse at recognizing which possibilities deserve action.</p>
-        <p>Expert attention becomes an allocative resource. That creates familiar economic and political questions: who receives it, who pays for it, which signals determine priority, and which actors control the filters?</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="shell paper-section">
-        <p class="eyebrow">5 · Institutional failure modes</p>
-        <h2>Opening the gates can create new gatekeepers.</h2>
+        <p class="eyebrow">4 · The handoff</p>
+        <h2>Candidate knowledge needs somewhere to go.</h2>
+        <p>An <strong>epistemic handoff</strong> is defined here as a structured transition in which a candidate research object moves toward an actor capable of supplying a missing epistemic function while the earlier contribution record remains intact.</p>
+        <p>Examples include:</p>
         <ul>
-          <li><strong>Credential capture:</strong> only already-legible people receive expert attention, defeating the purpose of widening origination.</li>
-          <li><strong>Idea appropriation:</strong> experts or institutions validate a contribution and absorb credit because the initiator lacked status.</li>
-          <li><strong>Flooding:</strong> cheap generation overwhelms scarce evaluation and makes serious review uneconomic.</li>
-          <li><strong>Pay-to-be-heard markets:</strong> access to epistemic attention becomes primarily a function of wealth rather than expected social value.</li>
-          <li><strong>Authority laundering:</strong> a weakly understood idea acquires apparent credibility merely because it passes through prestigious actors.</li>
-          <li><strong>Filter monopoly:</strong> a small number of ranking systems become de facto governors of which possibilities society can see.</li>
+          <li>a conceptual conjecture handed to a domain expert for novelty and plausibility review;</li>
+          <li>a statistical argument handed to a methodologist for model and inference review;</li>
+          <li>a proof sketch handed to a mathematician or formal verifier;</li>
+          <li>a mechanism handed to an experimental group for empirical testing;</li>
+          <li>a validated technical result handed to an engineer or institution capable of realization.</li>
         </ul>
-        <p>The institutional goal is therefore not unlimited submission. It is high-quality routing with preserved provenance, contestable filters and clear separation between contribution, validation and adoption.</p>
+        <p>The handoff should specify what capability is missing, what question the receiving steward is being asked to answer, what evidence they add, and which earlier contributions they do not thereby inherit.</p>
+        <p>This resembles knowledge brokerage, but the emphasis is deliberately epistemic and claim-sensitive: the handoff is triggered by a known deficit in warrant or competence, not merely by a desire to disseminate information.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">6 · Toward an epistemic supply chain</p>
-        <h2>Knowledge may need explicit handoff roles.</h2>
-        <p>A future research object could represent a sequence such as:</p>
-        <p class="paper-abstract"><strong>Initiator → Framer → Search director → Developer → Domain steward → Verifier → Interpreter → Realizer</strong></p>
-        <p>The sequence is not mandatory and the roles can overlap. Its purpose is descriptive transparency. It allows a person to say, for example, “I initiated this idea and directed its early exploration; these researchers supplied the mathematical authority; this team reproduced the result; this organization implemented it.”</p>
-        <p>That statement contains more information than a single author list and is better suited to machine-amplified, distributed cognition.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="shell paper-section">
-        <p class="eyebrow">7 · Research questions</p>
-        <h2>From principle to institution.</h2>
+        <p class="eyebrow">5 · Machine cognition complicates discovery credit</p>
+        <h2>The candidate may not have been “the human's idea” in a simple sense.</h2>
+        <p>A machine-assisted handoff can involve a more complicated provenance chain. The human may formulate the initial problem and direct a search; the model may generate a candidate; the human may recognize that one output is unusually significant; another model may criticize it; an expert may validate it; and a later team may realize it.</p>
+        <p>The draft therefore adopts the Discovery Attribution distinction developed in Working Paper 001:</p>
         <ol>
-          <li>How can candidate ideas be ranked for expert attention without privileging credentials or rewarding superficial machine polish?</li>
-          <li>What provenance mechanisms reliably preserve originator credit through multiple rounds of expert development?</li>
-          <li>How should expert validators be rewarded for evaluating ideas that mostly fail?</li>
-          <li>Can prediction markets, peer routing, model ensembles or structured review improve the allocation of scarce epistemic attention?</li>
-          <li>How should disputes over initiation, development and validation credit be adjudicated?</li>
-          <li>Which forms of contribution should create economic claims, citation rights, governance rights or none of these?</li>
-          <li>Who curates the curators, and how can routing systems remain contestable?</li>
+          <li>candidate generation;</li>
+          <li>significance recognition;</li>
+          <li>validation;</li>
+          <li>integration with prior knowledge;</li>
+          <li>realization.</li>
+        </ol>
+        <p>The provenance system should record those events before deciding whether the word “discoverer” belongs to one participant, several, or none.</p>
+        <div class="callout"><p><strong>If a machine surfaces an old idea unknown to the participants, the event is rediscovery, not novelty.</strong></p></div>
+        <p>This matters to handoff because domain review may reveal not merely that a candidate is wrong but that it is already known. A successful handoff can therefore terminate a novelty claim while still preserving the contribution of independently reaching or usefully reframing the idea.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">6 · Uptake as absorptive capacity under a new load</p>
+        <h2>The bottleneck may be receiving candidates, not producing them.</h2>
+        <p>Cohen and Levinthal's absorptive capacity already tells us that access to external knowledge does not guarantee the ability to recognize, assimilate or use it. Weitzman's recombinant-growth model similarly highlights the difficulty of processing an enormous space of possible ideas into usable innovations. Simon's attention framework reminds us that abundance of information consumes scarce attention.</p>
+        <p>The AI-era extension is a change in load and signal structure. If systems can cheaply generate articulate candidate hypotheses, analyses and designs, institutions may face:</p>
+        <ul>
+          <li>far more candidates per unit of expert attention;</li>
+          <li>weaker correlation between presentation quality and underlying competence;</li>
+          <li>more contributions arriving from people outside conventional credential pathways;</li>
+          <li>higher value in routing, verification and triage infrastructure;</li>
+          <li>greater risk that ranking systems become new bottlenecks or gatekeepers.</li>
+        </ul>
+        <p>The earlier term <strong>Epistemic Uptake Constraint</strong> is therefore retained only as a local shorthand for a research hypothesis about absorptive/evaluative capacity under machine-generated candidate abundance.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">7 · Institutional failure modes</p>
+        <h2>Better routing can still build worse gates.</h2>
+        <ul>
+          <li><strong>Credential capture:</strong> already-legible people receive nearly all scarce expert attention.</li>
+          <li><strong>Idea appropriation:</strong> validators absorb originator credit when they add authority.</li>
+          <li><strong>Flooding:</strong> candidate generation grows faster than evaluation capacity.</li>
+          <li><strong>Pay-to-be-heard:</strong> access to verification becomes primarily a function of wealth.</li>
+          <li><strong>Authority laundering:</strong> prestige is mistaken for validation of claims never actually examined.</li>
+          <li><strong>Filter monopoly:</strong> ranking systems control the visible possibility space.</li>
+          <li><strong>False novelty:</strong> machine-assisted rediscovery is routed into publication before prior art is adequately searched.</li>
+        </ul>
+        <p>The desired institution is not unlimited submission. It is accountable routing with interoperable provenance, explicit lineage search, preserved contribution, claim-sensitive warrant and contestable filters.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">8 · Standards-first implementation</p>
+        <h2>Do not encode handoff inside a private ontology if established standards can carry it.</h2>
+        <p>The current implementation direction is to use <strong>W3C PROV</strong> for entities, activities, agents, derivations and associations; <strong>CRediT</strong> for standardized scholarly contribution roles; and <strong>RO-Crate</strong> for packaging the research object.</p>
+        <p>The local extension should be limited to information needed by the handoff problem, such as:</p>
+        <ul>
+          <li>which claim lacks authority;</li>
+          <li>what authority basis currently exists;</li>
+          <li>which capability is missing;</li>
+          <li>which handoff is requested;</li>
+          <li>what validation or correction the handoff returned;</li>
+          <li>what novelty classification changed;</li>
+          <li>which contribution records must survive the transfer.</li>
+        </ul>
+        <p>This makes the proposed system an application profile over mature provenance infrastructure rather than another isolated research metadata standard.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">9 · Research questions</p>
+        <h2>What remains after the antecedents are taken seriously?</h2>
+        <ol>
+          <li>Does machine-generated candidate abundance measurably reduce the effective absorptive capacity of existing research institutions?</li>
+          <li>Can claim-sensitive handoffs improve validation of useful outsider contributions without overwhelming scarce experts?</li>
+          <li>How should triage rank a candidate before domain validation without simply rewarding machine polish or credentials?</li>
+          <li>Can CRediT + W3C PROV + a small authority extension represent the process adequately?</li>
+          <li>What mechanisms preserve originator contribution when validators substantially reformulate a candidate?</li>
+          <li>How should validators be rewarded for the many handoffs that correctly terminate as wrong, trivial or already known?</li>
+          <li>How should generation, recognition and validation credit interact in machine-assisted discovery?</li>
+          <li>What institutional designs keep routing filters contestable?</li>
         </ol>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">8 · Relationship to the Authorial Capacity Constraint</p>
-        <h2>The constraint identifies the gap. Handoff makes the gap productive.</h2>
-        <p>The Authorial Capacity Constraint warns that the sophistication of an artefact may exceed its human curator's ability to defend it. Epistemic handoff supplies a constructive response: do not inflate the initiator's authority, but do not throw away the candidate knowledge either.</p>
-        <p>Instead, preserve origin, expose the authority gap, and recruit the missing epistemic functions.</p>
-        <div class="thesis paper-thesis">
-          <p class="eyebrow">Corollary</p>
-          <blockquote>Low authority should trigger handoff, not erasure.</blockquote>
-          <p>A knowledge system capable of abundant generation must also become capable of abundant, well-routed stewardship.</p>
-        </div>
+        <p class="eyebrow">10 · Limitations</p>
+        <h2>This remains an institutional hypothesis.</h2>
+        <p>No evidence yet shows that the proposed handoff architecture improves scientific output, fairness or expert-attention allocation. The relevant literature review remains broad rather than systematic. Knowledge-brokering, technology-transfer, open-innovation and sociology-of-science literatures require deeper review before any stronger contribution claim.</p>
+        <p>The terms “epistemic handoff” and “epistemic uptake” may themselves have closer antecedents than the current search has found. Their usefulness should be judged by whether they support a distinct operational model, not by whether the phrases are locally memorable.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">9 · Limitations</p>
-        <h2>This is an institutional hypothesis.</h2>
-        <p>No mechanism proposed here has yet been demonstrated to allocate expert attention efficiently at scale. Provenance systems can be manipulated; expert review can reproduce status hierarchies; incentives for validators can distort judgement; and contribution disputes can become more expensive than the knowledge they concern.</p>
-        <p>The concept of epistemic handoff therefore names a design problem rather than claiming to have solved it.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="shell paper-section">
-        <p class="eyebrow">AI-assistance declaration</p>
+        <p class="eyebrow">AI-assistance & contribution declaration</p>
         <h2>How this draft was produced.</h2>
-        <p>This exploratory draft was developed through substantive interaction with OpenAI's ChatGPT. The human curator introduced the central distinction between the initiator of an idea and those who possess epistemic authority over it, including the practical intuition that “I have an idea but do not know whether it is worth anything” should lead to expert uptake rather than dismissal. The system contributed terminology, structure, elaboration, counterexamples and drafting.</p>
-        <p>The draft has not undergone domain-expert review. Its role is to preserve and expose the research direction for criticism and further development.</p>
+        <p><strong>Human contribution:</strong> the human curator initiated the practical problem that “I have an idea but do not know whether it is worth anything” should trigger competent uptake rather than dismissal; explicitly separated the initiator from those with epistemic authority; directed the subsequent research and required extensive prior-art correction.</p>
+        <p><strong>Machine contribution:</strong> OpenAI ChatGPT materially contributed literature search, synthesis, terminology, structuring, criticism and drafting, including the local terms “epistemic handoff” and “epistemic uptake.”</p>
+        <p><strong>Novelty and authority:</strong> these contributions do not establish novelty or domain authority. The draft now explicitly relies on and cites antecedent contributorship, epistemic-dependence and absorptive-capacity work.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section references">
+        <p class="eyebrow">References & antecedents</p>
+        <ol>
+          <li>Hardwig, J. (1985). <em>Epistemic Dependence.</em> The Journal of Philosophy, 82(7), 335–349. <a href="https://doi.org/10.2307/2026523">doi:10.2307/2026523</a></li>
+          <li>Cohen, W. M. & Levinthal, D. A. (1990). <em>Absorptive Capacity: A New Perspective on Learning and Innovation.</em> Administrative Science Quarterly, 35(1), 128–152. <a href="https://doi.org/10.2307/2393553">doi:10.2307/2393553</a></li>
+          <li>Smith, R. (1997). <em>Authorship is dying: long live contributorship.</em> BMJ, 315, 696. <a href="https://doi.org/10.1136/bmj.315.7110.696">doi:10.1136/bmj.315.7110.696</a></li>
+          <li>Weitzman, M. L. (1998). <em>Recombinant Growth.</em> Quarterly Journal of Economics, 113(2), 331–360. <a href="https://doi.org/10.1162/003355398555595">doi:10.1162/003355398555595</a></li>
+          <li>ANSI/NISO (2022). <em>CRediT, Contributor Roles Taxonomy, Z39.104-2022.</em> <a href="https://www.niso.org/publications/z39104-2022-credit">Standard</a>.</li>
+          <li>W3C (2013). <em>PROV-DM: The PROV Data Model.</em> <a href="https://www.w3.org/TR/prov-dm/">Recommendation</a>.</li>
+          <li>RO-Crate Community (2026). <em>RO-Crate Metadata Specification 1.3.</em> <a href="https://www.researchobject.org/ro-crate/specification/1.3/">Specification</a>.</li>
+          <li>van Zoonen, W., Morgan-Thomas, A. & Tursunbayeva, A. (2026). <em>Beyond AI disclosure: Claim accountability and responsible research in scholarly publishing.</em> European Management Journal, 44(4), 550–556. <a href="https://doi.org/10.1016/j.emj.2026.06.001">doi:10.1016/j.emj.2026.06.001</a></li>
+        </ol>
         <div class="actions">
           <a class="button" href={internal('drafts')}>Back to drafts</a>
-          <a class="button secondary" href={internal('publications/authorial-capacity-constraint')}>Read Working Paper 001</a>
+          <a class="button secondary" href={internal('publications/authorial-capacity-constraint')}>Working Paper 001 v0.3</a>
         </div>
       </div>
     </section>
