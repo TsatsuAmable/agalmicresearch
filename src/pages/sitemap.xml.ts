@@ -7,7 +7,7 @@ const site = 'https://agalmicresearch.org';
 const staticRoutes = [
   '/', '/explore/', '/search/', '/publications/', '/frontier/', '/handoff/', '/about/',
   '/research/', '/notes/', '/drafts/', '/lineage/', '/provenance/', '/principles/',
-  '/memory-palace-protocol/', '/history/'
+  '/manifesto/', '/memory-palace-protocol/', '/history/'
 ];
 const escapeXml = (value: string) => value.replace(/[<>&'\"]/g, (char) => ({
   '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;'
