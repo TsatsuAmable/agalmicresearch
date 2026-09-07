@@ -1,83 +1,28 @@
 ---
+import KnowledgeContext from '../../packages/astro-agalmic/components/KnowledgeContext.astro';
 import index from '../data/knowledgeIndex.json';
 import handoffData from '../data/handoffs.json';
 import history from '../data/knowledgeHistory.json';
 
 const { item } = Astro.props;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const internalHref = (href) => href.startsWith('http://') || href.startsWith('https://') ? href : `${base}/${href.replace(/^\/+/, '')}`;
-const byId = new Map(index.objects.map((candidate) => [candidate.id, candidate]));
-const handoffById = new Map(handoffData.handoffs.map((handoff) => [handoff.id, handoff]));
-const handoffHref = (id) => `/handoff/#${id.replace(':', '-')}`;
-
-const related = (item.related ?? []).map((id) => {
-  const relatedItem = byId.get(id);
-  if (relatedItem) return { id, title: relatedItem.title, href: relatedItem.href, kind: relatedItem.kind };
-  const handoff = handoffById.get(id);
-  if (handoff) return { id, title: handoff.title, href: handoffHref(id), kind: 'handoff' };
-  return null;
-}).filter(Boolean);
-
-const relevantHandoffs = handoffData.handoffs.filter((handoff) =>
-  handoff.origin === item.id || (handoff.links ?? []).some((href) => href === item.href)
-);
-const historyEvents = history.events.filter((event) =>
-  (event.object_ids ?? []).includes(item.id) || event.current_href === item.href
-);
 ---
-<section class="section research-object-context" data-search-ignore>
-  <div class="shell">
-    <div class="section-head">
-      <span class="section-number">Knowledge context</span>
-      <div class="section-copy">
-        <h2>Place this object in the research memory.</h2>
-        <p>The page is one projection of a larger knowledge graph. These links are generated from the semantic registry rather than hand-maintained inside the article.</p>
-      </div>
-    </div>
-
-    <div class="research-context-grid">
-      <article>
-        <p class="eyebrow">Where did this come from?</p>
-        <h3>Origins</h3>
-        {historyEvents.length > 0 ? (
-          <ul>
-            {historyEvents.map((event) => (
-              <li><a href={internalHref(`/history/${event.slug}/`)}>{event.previous_title} → {event.current_title}</a></li>
-            ))}
-          </ul>
-        ) : (
-          <p class="muted">No supersession event is registered for this object.</p>
-        )}
-        <p><a href={internalHref('/lineage/')}>Intellectual lineage</a> · <a href={internalHref('/provenance/')}>Research provenance</a></p>
-      </article>
-
-      <article>
-        <p class="eyebrow">What is related?</p>
-        <h3>Neighbours</h3>
-        {related.length > 0 ? (
-          <ul>
-            {related.map((candidate) => (
-              <li><a href={internalHref(candidate.href)}>{candidate.title}</a> <span class="muted">· {candidate.kind.replaceAll('-', ' ')}</span></li>
-            ))}
-          </ul>
-        ) : (
-          <p class="muted">No explicit neighbours are registered yet.</p>
-        )}
-      </article>
-
-      <article>
-        <p class="eyebrow">Where can I go next?</p>
-        <h3>Meaningful direction</h3>
-        <p>{item.direction}</p>
-        {relevantHandoffs.length > 0 && (
-          <ul>
-            {relevantHandoffs.map((handoff) => (
-              <li><a href={internalHref(handoffHref(handoff.id))}>{handoff.title}</a></li>
-            ))}
-          </ul>
-        )}
-        <p><a href={internalHref('/frontier/')}>Compare with the Active Frontier →</a></p>
-      </article>
-    </div>
-  </div>
-</section>
+<KnowledgeContext
+  item={item}
+  registry={index}
+  handoffs={handoffData}
+  history={history}
+  routes={{
+    lineage: '/lineage/',
+    provenance: '/provenance/',
+    frontier: '/frontier/',
+    handoff: '/handoff/',
+    history: '/history/',
+  }}
+  labels={{
+    heading: 'Place this object in the research memory.',
+    description: 'The page is one projection of a larger knowledge graph. These links are generated from the semantic registry rather than hand-maintained inside the article.',
+    origins: 'Origins',
+    related: 'Neighbours',
+    next: 'Meaningful direction',
+  }}
+/>
