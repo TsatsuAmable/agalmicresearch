@@ -51,6 +51,18 @@ test('validates relationships and canonical identities', () => {
   assert.match(result.errors.join('\n'), /missing:id/);
 });
 
+test('allows handoff origins outside the knowledge registry unless a known-origin set is supplied', () => {
+  const handoffs = [{ id: 'handoff:one', title: 'External handoff', origin: 'portfolio:one' }];
+  const openWorld = validateKnowledge({ registry, handoffs });
+  assert.deepEqual(openWorld.warnings, []);
+
+  const known = validateKnowledge({ registry, handoffs, knownOrigins: ['portfolio:one'] });
+  assert.deepEqual(known.warnings, []);
+
+  const missing = validateKnowledge({ registry, handoffs, knownOrigins: ['portfolio:other'] });
+  assert.match(missing.warnings.join('\n'), /portfolio:one/);
+});
+
 test('builds full-text search and detects substantive title drift', () => {
   const dist = fs.mkdtempSync(path.join(os.tmpdir(), 'astro-agalmic-'));
   fs.mkdirSync(path.join(dist, 'notes/useful'), { recursive: true });
