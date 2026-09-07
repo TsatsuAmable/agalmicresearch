@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import prompt from '../../docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md?raw';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+---
+<Layout title="Memory Palace Protocol" description="The Agalmic Research Memory Palace Protocol v0.2 for provenance, epistemic authority, search-space mapping and decision replay across research sessions.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Research operating protocol · v0.2</p>
+      <h1>A memory palace for the research process.</h1>
+      <p class="lede">A platform-agnostic session prompt for preserving how knowledge emerged: contribution, authority, evidence, alternatives, roads not taken, decisions, gaps and the graph transitions that connect them.</p>
+      <div class="actions">
+        <a class="button" href={internal('downloads/Agalmic_Research_Memory_Palace_Protocol_v0.2.md')} download>Download Markdown</a>
+        <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md">View canonical source ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Governing distinction</p>
+        <h2>Do not confuse contribution with authority.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The protocol treats each research session as a directed, versioned graph of discovery rather than a flat transcript.</p>
+        <div class="callout"><p><strong>Origin deserves credit. Authority requires warrant.</strong></p></div>
+        <p>It records what was explored, selected, rejected, deferred, surfaced but unexamined and excluded by scope, while explicitly refusing to pretend that unknown alternatives were considered.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Short activation</p>
+        <h2>Use this when the full protocol is already available to the researcher or agent.</h2>
+      </div>
+      <div class="prose">
+        <blockquote class="activation">Activate the Agalmic Research Memory Palace Protocol v0.2. Treat this session as a versioned graph of discovery. Track contribution provenance separately from epistemic authority; capture material questions, concepts, claims, evidence, objections, decisions and artefacts; preserve explored, rejected, deferred, surfaced-but-unexamined and scope-excluded branches; record reversal conditions and search boundaries; flag epistemic handoffs and publication/IP boundaries; and at closeout produce the complete Research Memory Palace Packet plus machine-readable graph patch. Do not infer expertise or attribution without evidence, do not treat absent alternatives as rejected, and do not request or fabricate hidden chain-of-thought.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Canonical prompt</span>
+        <div class="section-copy">
+          <h2>The complete operating protocol.</h2>
+          <p>This page renders the repository source directly. The displayed protocol and canonical Markdown therefore share the same source object.</p>
+        </div>
+      </div>
+      <pre class="protocol-text">{prompt}</pre>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Related infrastructure</p>
+        <h2>The prompt feeds the research graph.</h2>
+      </div>
+      <div class="prose">
+        <p>Each provenance-complete session should end with a Research Memory Palace Packet and a machine-readable graph patch that can extend the project-wide discovery graph.</p>
+        <div class="actions">
+          <a class="button" href={internal('provenance')}>Explore provenance</a>
+          <a class="button secondary" href={internal('research-graph.json')}>Research graph JSON</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .protocol-text {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      border: 1px solid var(--rule, #c9c4b8);
+      padding: clamp(1rem, 2vw, 2rem);
+      font: 0.9rem/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      background: rgba(255,255,255,0.28);
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    .activation {
+      margin: 0;
+      padding-left: 1rem;
+      border-left: 3px solid currentColor;
+    }
+  </style>
+</Layout>
