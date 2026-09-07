@@ -11,31 +11,36 @@ const programmes = [
   },
   {
     n: '02',
+    title: 'Epistemic handoff & uptake',
+    copy: 'How can valuable ideas from low-authority initiators be preserved, routed toward capable stewards and developed without confusing originator credit with epistemic authority?',
+  },
+  {
+    n: '03',
     title: 'Agalmic economics',
     copy: 'What happens to value and allocation when useful knowledge, computation and other non-rival goods become dramatically cheaper to create?',
   },
   {
-    n: '03',
+    n: '04',
     title: 'Epistemic economics',
     copy: 'When candidate knowledge is abundant, attention, validation, trust, interpretation and institutional capacity become the binding constraints.',
   },
   {
-    n: '04',
+    n: '05',
     title: 'Innovation as search',
     copy: 'Innovation can be modelled as search across adjacent possibles, with machine cognition expanding exploration and humans choosing what to test, build and adopt.',
   },
   {
-    n: '05',
+    n: '06',
     title: 'Coordination after abundance',
     copy: 'More possibilities do not remove choice. They intensify the problem of deciding what deserves scarce time, capital, legitimacy and physical resources.',
   },
   {
-    n: '06',
+    n: '07',
     title: 'Representation as discovery',
     copy: 'How can systems compress, transform and embody information more cheaply while preserving the structure humans need to perceive what matters?',
   },
   {
-    n: '07',
+    n: '08',
     title: 'Knowledge, property and rents',
     copy: 'How should publication, defensive disclosure, patents and incentives change when the cost of generating potentially valuable ideas collapses?',
   },
@@ -74,6 +79,23 @@ const programmes = [
   </section>
 
   <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Epistemic handoff</p>
+        <h2>A good idea can outrun the expertise of the person who found it.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The right response is neither false authority nor dismissal.</p>
+        <p>An initiator may make a genuine contribution while lacking the domain authority needed to judge it. Agalmic Research therefore separates contribution provenance from epistemic authority and asks how candidate knowledge can be handed to capable framers, domain stewards, verifiers and realizers while preserving its origin.</p>
+        <div class="callout">
+          <p><strong>Origin deserves credit. Authority requires warrant.</strong></p>
+        </div>
+        <p><a href={internal('drafts/epistemic-handoff')}>Read the Epistemic Handoff draft →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="shell thesis">
       <p class="eyebrow">Working thesis · The law of displaced scarcity</p>
       <blockquote>
@@ -91,7 +113,7 @@ const programmes = [
         <span class="section-number">Research programme</span>
         <div class="section-copy">
           <h2>A field, not a single paper.</h2>
-          <p>The programme begins with the epistemic conditions of machine-amplified research itself, then asks where scarcity, value and institutional pressure move as cognitive production becomes abundant.</p>
+          <p>The programme begins with the epistemic conditions of machine-amplified research itself, then asks how promising knowledge is absorbed and where scarcity, value and institutional pressure move as cognitive production becomes abundant.</p>
         </div>
       </div>
       <div class="grid">
@@ -115,7 +137,7 @@ const programmes = [
       <div class="prose">
         <p class="large">Agalmic abundance is not a wager on a single future intelligence event.</p>
         <p class="muted">
-          Cheap machine cognition already changes the economics of search, drafting, modelling and software creation. The research question is what happens when generation accelerates faster than our ability to evaluate, understand, coordinate and realise the resulting possibilities.
+          Cheap machine cognition already changes the economics of search, drafting, modelling and software creation. The research question is what happens when generation accelerates faster than our ability to evaluate, understand, route, coordinate and realise the resulting possibilities.
         </p>
       </div>
     </div>
@@ -141,18 +163,18 @@ const programmes = [
     <div class="shell split">
       <div>
         <p class="eyebrow">Operating model</p>
-        <h2>Publish early. State epistemic status. Argue in public.</h2>
+        <h2>Publish early. State epistemic status. Preserve provenance. Hand off intelligently.</h2>
       </div>
       <div class="prose">
         <p>
           Research begins as a canonical, versioned object. From that source it can become a working paper, journal article, public essay, policy brief, talk, model or piece of software without pretending that one format is the research itself.
         </p>
         <div class="callout">
-          <p>Publication is part of the research method: establish provenance, expose ideas to criticism, make reuse cheap and let better arguments compound. Openness does not remove the obligation to state what is understood, what is verified and what remains conjectural.</p>
+          <p>Publication is part of the research method: establish provenance, expose ideas to criticism, make reuse cheap and let better arguments compound. Openness does not remove the obligation to state what is understood, what is verified, who contributed what and where further expertise is needed.</p>
         </div>
         <div class="actions">
           <a class="button" href={internal('principles')}>Read the principles</a>
-          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch">View source ↗</a>
+          <a class="button secondary" href={internal('drafts')}>Browse drafts</a>
         </div>
       </div>
     </div>
