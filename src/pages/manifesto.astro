@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+
+const principles = [
+  {
+    n: '01',
+    title: 'Scarcity is a condition, not a destiny.',
+    copy: 'Agalmics asks not only how scarce things should be allocated, but how important scarcities can be reduced, displaced or made irrelevant. Abundance does not mean infinity. It means making a constraint sufficiently cheap, reliable and accessible that it ceases to dominate human possibility.',
+  },
+  {
+    n: '02',
+    title: 'Knowledge and energy are enabling substrates.',
+    copy: 'Knowledge expands what can be done. Energy expands what can be physically transformed. Neither is sufficient alone, but both can enlarge the feasible space available to people, institutions and technologies.',
+  },
+  {
+    n: '03',
+    title: 'Technology has direction.',
+    copy: 'Capability is not destiny. Institutions, ownership, incentives, norms and political choices influence which technical possibilities are pursued, who gains access to them and which costs are pushed elsewhere.',
+  },
+  {
+    n: '04',
+    title: 'Abundance moves the bottleneck.',
+    copy: 'When one constraint becomes cheap, complementary constraints can become decisive. Information abundance can intensify scarcity of attention. Cheap idea generation can intensify scarcity of validation, judgment, coordination and implementation. The remaining bottleneck matters more, not less.',
+  },
+  {
+    n: '05',
+    title: 'Ideas can become abundant before judgment does.',
+    copy: 'Machine cognition can expand search and recombination dramatically. The goal is therefore not maximal idea production. It is greater capacity to recognize, test, select and realize worthwhile possibilities without drowning in their number.',
+  },
+  {
+    n: '06',
+    title: 'AGI is neither prerequisite nor guarantee.',
+    copy: 'More capable intelligence may accelerate abundance, but intelligence does not choose institutions, distribution or purpose by itself. Work toward abundance can begin with present tools, and powerful future tools can still be directed toward scarcity, rent or concentration.',
+  },
+  {
+    n: '07',
+    title: 'Institutions are part of the technology.',
+    copy: 'Markets, commons, public infrastructure, standards, prizes, property rights, research organisations and governance mechanisms determine how capabilities circulate. Institutional design is therefore part of abundance engineering, not an administrative afterthought.',
+  },
+  {
+    n: '08',
+    title: 'Open knowledge is the presumption, not a ritual.',
+    copy: 'Agalmic Research favours publication, inspectability, reproducibility and reuse. Protection can still be justified where it helps an invention survive long enough to become useful, but exclusion should be instrumental and consciously chosen rather than the default destination of knowledge.',
+  },
+];
+---
+<Layout
+  title="Manifesto"
+  description="The Agalmic Manifesto: abundance is not a prediction but a direction, and research should investigate how knowledge, energy, institutions and cognitive tools can expand worthwhile human possibility."
+>
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">The Agalmic Manifesto · Founding orientation</p>
+      <h1>Abundance is not a prediction. It is a direction.</h1>
+      <p class="lede">
+        Agalmic Research exists to study how knowledge, energy, computation, institutions and human judgment can expand the set of worthwhile futures people can actually reach.
+      </p>
+      <div class="actions">
+        <a class="button" href={internal('research')}>See the research programme</a>
+        <a class="button secondary" href={internal('publications')}>Read the publications</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Founding proposition</p>
+      <blockquote>Scarcity should be studied not only as something to allocate around, but as something human knowledge and institutions can sometimes transform.</blockquote>
+      <p>Abundance here does not mean a world without limits. Time, attention, ecology, unique places and other constraints remain real. The question is which constraints can be made less binding, what new bottlenecks appear when they are, and how the resulting capability should be governed.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Epistemic status</p>
+        <h2>This manifesto is not a research result.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">It states a direction, not a conclusion.</p>
+        <p>A manifesto is allowed to say what seems worth pursuing. Research has a different job: identify what is already known, turn intuitions into questions, state claims clearly enough to be challenged, choose methods that can constrain those claims, and report what survives.</p>
+        <div class="callout"><p><strong>The manifesto answers why. The research agenda asks what. Methods determine how. Publications report what the inquiry can presently defend.</strong></p></div>
+        <p><a href={internal('research')}>Research programme →</a></p>
+        <p><a href={internal('lineage')}>Intellectual lineage & novelty register →</a></p>
+        <p><a href={internal('provenance')}>Research provenance →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Principles</span>
+        <div class="section-copy">
+          <h2>Eight commitments that orient the programme.</h2>
+          <p>These are starting propositions and institutional preferences. Where they make empirical or theoretical claims, the research programme is responsible for testing, narrowing or abandoning them.</p>
+        </div>
+      </div>
+      <div class="grid">
+        {principles.map((item) => (
+          <article class="card">
+            <span class="card-kicker">{item.n}</span>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Where research begins</p>
+        <h2>Search is not discovery, and an idea is not yet a finding.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Research begins when a possibility is made answerable to something outside itself.</p>
+        <p>A useful path is: <strong>idea → question → lineage → explicit claim → method → evidence or argument → criticism → epistemic status</strong>.</p>
+        <p>Exploratory conversations, conjectures and model-generated possibilities are valuable research formation. Engineering, design, publication and advocacy can all support research. None should borrow the authority of research unless they have crossed the relevant evidential boundary.</p>
+        <div class="callout"><p><strong>The discipline is to preserve abundant possibilities without allowing search to impersonate knowledge.</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">The information problem</p>
+        <h2>Abundant knowledge can create a new scarcity of comprehension.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">More candidate knowledge is useful only when people and institutions can discover, evaluate and act on what matters.</p>
+        <p>As generation becomes cheaper, the programme expects pressure to move toward representation, attention, trust, validation, expertise, coordination and realization. That expectation is not treated as a law. It is a family of questions to formalize and test.</p>
+        <p><a href={internal('frontier')}>Inspect the Active Frontier →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Applied research</p>
+        <h2>Nemosyne is a testbed, not proof by software.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The arguments should survive contact with implementation and experiment.</p>
+        <p><a href="https://nemosyne.world">Nemosyne</a> explores whether representation, provenance and human-machine interaction can increase the capacity to notice and investigate meaningful structure. Moneta investigates representation selection under statistical, semantic, perceptual and computational constraints.</p>
+        <p>Building a feature is engineering. Using that feature in a reproducible test of a research claim is research. The distinction is intentional.</p>
+        <div class="actions">
+          <a class="button" href="https://nemosyne.world">Visit nemosyne.world ↗</a>
+          <a class="button secondary" href="https://github.com/TsatsuAmable/nemosyne">Source ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Institutional experiment</p>
+        <h2>Try to make the institution behave like the argument.</h2>
+      </div>
+      <div class="prose">
+        <p>Agalmic Research is being developed as an open, low-overhead research initiative. Its public source, research objects, revisions, provenance and roads not taken are intended to be inspectable where doing so does not compromise security, privacy or a consciously chosen period of intellectual-property protection.</p>
+        <p>The institution should accumulate <strong>knowledge, reputation, trust and useful capability</strong> before it accumulates bureaucracy. Legal forms, funding mechanisms and intellectual-property tools are means, not identities.</p>
+        <div class="callout"><p><strong>Use scarce-world machinery where it helps create commons. Do not confuse the machinery with the purpose.</strong></p></div>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch">Inspect the site and research source on GitHub ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Meta aim</p>
+      <blockquote>The goal is not more ideas. It is greater capacity to reach worthwhile futures.</blockquote>
+      <p>Let possibility be abundant. Keep commitment scarce. Search lineage before claiming novelty. Make evidence visible. Hand work off when authority is missing. Build things that can be tested. Preserve the roads not taken. Prefer knowledge that increases the capacity of others to continue the search.</p>
+    </div>
+  </section>
+</Layout>
