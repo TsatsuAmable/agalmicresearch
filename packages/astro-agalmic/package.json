@@ -30,7 +30,10 @@
       "types": "./src/index.d.ts",
       "import": "./src/index.mjs"
     },
-    "./schema": "./src/schema.mjs",
+    "./schema": {
+      "types": "./src/schema.d.ts",
+      "import": "./src/schema.mjs"
+    },
     "./components/Search.astro": "./components/Search.astro",
     "./components/KnowledgeContext.astro": "./components/KnowledgeContext.astro"
   },
