@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="astro-agalmic"
+  description="A freely reusable Astro integration for semantic knowledge registries, generated full-text search, knowledge history, handoffs and research-object context."
+>
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Open tool · astro-agalmic · v0.1</p>
+      <h1>Take the knowledge architecture.</h1>
+      <p class="lede">The discovery system built for Agalmic Research is now a reusable Astro integration: semantic identity, relationship validation, full-text search, visible knowledge history and generated context without a backend.</p>
+      <div class="actions">
+        <a class="button" href="https://github.com/TsatsuAmable/agalmicresearch/tree/main/packages/astro-agalmic">Source & documentation ↗</a>
+        <a class="button secondary" href="/explore/">See it working</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Agalmic by construction</p>
+      <blockquote>Useful machinery should become cheaper for the next person to possess.</blockquote>
+      <p><code>astro-agalmic</code> is licensed under 0BSD. Anyone may use, copy, modify and distribute it for any purpose, with or without attribution or fee.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">What it gives away</p>
+        <h2>The pattern, not our vocabulary.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">A site can preserve a large, changing knowledge space while keeping scarce attention focused on meaningful directions.</p>
+        <ul>
+          <li><strong>Semantic registry:</strong> stable IDs, object kinds, topics, commitment states, relationships and canonical URLs.</li>
+          <li><strong>Build validation:</strong> broken relationships, duplicate canonical identities and rendered-title drift become build failures.</li>
+          <li><strong>Full-text search:</strong> a static search index is generated from the rendered site after Astro builds.</li>
+          <li><strong>Knowledge context:</strong> reusable Astro UI for origins, neighbours, handoffs and meaningful next directions.</li>
+          <li><strong>History:</strong> schemas and conventions for renamed, narrowed, merged and superseded objects.</li>
+          <li><strong>Content collections:</strong> optional schema factories support migration toward Astro's typed content layer.</li>
+        </ul>
+        <p>The package deliberately does not require concepts such as “Memory Palace”, “Active Frontier” or “Agalmic Research”. Host sites choose their own language and visual design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Minimal use</p>
+        <h2>A few lines in Astro config.</h2>
+      </div>
+      <div class="prose">
+        <pre><code>{`import { defineConfig } from 'astro/config';
+import agalmic from 'astro-agalmic';
+
+export default defineConfig({
+  integrations: [
+    agalmic({
+      registry: 'src/data/knowledgeIndex.json',
+      history: 'src/data/knowledgeHistory.json',
+      handoffs: 'src/data/handoffs.json',
+    }),
+  ],
+});`}</code></pre>
+        <p>At build time the integration validates the semantic graph and generates <code>search-index.json</code>. Reusable Search and KnowledgeContext components can then project the same knowledge model into the reader interface.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Standards boundary</p>
+        <h2>Glue, not another private ontology.</h2>
+      </div>
+      <div class="prose">
+        <p>The integration does not replace W3C PROV, CRediT, RO-Crate, Astro content collections or specialist static search tools. It supplies the smaller missing layer between a pile of pages and a navigable research system.</p>
+        <p>If a mature standard already solves a deeper problem, reuse it. If a corpus eventually needs Pagefind or another dedicated search engine, replace the lexical index without changing the semantic architecture.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Release status</p>
+        <h2>Source first.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Version 0.1 is an extracted release candidate and is already used by this site.</p>
+        <p>The source package is public now. The package manifest is prepared for npm publication, but the npm name and release should be treated as unclaimed until publication actually succeeds.</p>
+        <div class="actions">
+          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/tree/main/packages/astro-agalmic">Fork the package ↗</a>
+          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/issues">Improve it ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
