@@ -40,7 +40,7 @@
       "title": "Measure defensibility without creating examination theatre",
       "state": "open",
       "priority": "supporting",
-      "origin": "paper:authorial-capacity-constraint",
+      "origin": "object:authorial-capacity",
       "question": "How can human comprehension and defensibility of AI-assisted claims be assessed without collapsing into confidence ratings, rhetorical fluency or a generic viva score?",
       "expertise_needed": ["psychometrics", "metacognition", "science of learning", "research evaluation"],
       "what_exists": "Working Paper 001 v0.4, prior work on verification gaps and metacognition, and a proposed separation of artefact validity, human comprehension and provenance.",
