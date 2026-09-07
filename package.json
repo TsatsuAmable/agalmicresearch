@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "check:knowledge": "node scripts/validate-knowledge-index.mjs",
-    "build": "npm run check:knowledge && astro build",
+    "build": "npm run check:knowledge && astro build && node scripts/build-search-index.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
