@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+import KnowledgeExplorer from '../components/KnowledgeExplorer.astro';
+import index from '../data/knowledgeIndex.json';
+
+const activeDirections = index.objects.filter((item) => item.layer === 'direction' && item.commitment === 'active');
+---
+<Layout title="Explore" description="Explore Agalmic Research by abstraction level, topic, research-object type and commitment state without treating the whole corpus as an active to-do list.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Explore the knowledge space</p>
+      <h1>One corpus. Several resolutions.</h1>
+      <p class="lede">The site contains more information than any reader should carry at once. Start with the meaningful directions, then increase resolution only when you need the supporting objects, evidence or research machinery.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Abstraction</span>
+        <div class="section-copy">
+          <h2>Zoom without losing the underlying information.</h2>
+          <p>Abstraction is a view over the corpus, not deletion. The same research object can remain fully preserved while the default interface shows only what is directionally useful.</p>
+        </div>
+      </div>
+      <div class="abstraction-stack">
+        <article class="abstraction-step">
+          <span class="step-number">30 seconds</span>
+          <h3>Orientation</h3>
+          <p>What is the programme trying to make possible, and why does it exist?</p>
+        </article>
+        <article class="abstraction-step">
+          <span class="step-number">5 minutes</span>
+          <h3>Meaningful directions</h3>
+          <p>Which few questions are receiving scarce attention now, and what next action could change our mind?</p>
+        </article>
+        <article class="abstraction-step">
+          <span class="step-number">As needed</span>
+          <h3>Full research memory</h3>
+          <p>Papers, drafts, notes, literature reviews, protocols, provenance, parked options and roads not taken remain discoverable underneath.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Active directions</span>
+        <div class="section-copy">
+          <h2>The current commitment frontier.</h2>
+          <p>These are not necessarily the most exciting ideas in the corpus. They are the directions currently judged most useful to test, formalize or realize.</p>
+        </div>
+      </div>
+      <div class="direction-strip">
+        {activeDirections.map((item) => (
+          <article class="direction-card">
+            <p class="eyebrow">Active</p>
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+            <p class="direction-next"><strong>Next:</strong> {item.direction}</p>
+          </article>
+        ))}
+      </div>
+      <div class="actions">
+        <a class="button" href="/frontier/">Open the Active Frontier</a>
+        <a class="button secondary" href="/handoff/">See where expertise is missing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="knowledge-explorer">
+    <div class="shell">
+      <KnowledgeExplorer items={index.objects} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Memory Palace paths</p>
+        <h2>Enter by a question, not by the repository tree.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The same knowledge can be traversed along different useful paths.</p>
+        <p><strong>From abundance to action:</strong> <a href="/notes/the-goal-is-not-more-ideas/">meta aim</a> → <a href="/frontier/">selection frontier</a> → <a href="/handoff/">missing expertise</a> → realization.</p>
+        <p><strong>From a claim to its warrant:</strong> <a href="/publications/authorial-capacity-constraint/">working paper</a> → <a href="/lineage/">intellectual lineage</a> → <a href="/provenance/">contribution/provenance</a> → open handoff.</p>
+        <p><strong>From an idea to a commitment:</strong> <a href="/notes/ideas-are-options-not-obligations/">preserve as option</a> → map lineage/evidence → compare with the current frontier → activate, hand off, park or retire.</p>
+        <div class="callout"><p><strong>The website should preserve the whole search space while making the meaningful next directions unusually easy to see.</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Machine-readable view</p>
+        <h2>The explorer is a projection over structured metadata.</h2>
+      </div>
+      <div class="prose">
+        <p>The public semantic index is available as JSON so future graph, search, agent and Nemosyne-style interfaces can reuse the same object model rather than scraping page navigation.</p>
+        <div class="actions">
+          <a class="button secondary" href="/knowledge-index.json">Knowledge index JSON</a>
+          <a class="button secondary" href="/research-graph.json">Historical discovery graph</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  {
+    title: 'Research map',
+    copy: 'The programme-level questions and their current lineage-aware framing.',
+    href: '/research/',
+    label: 'Research',
+  },
+  {
+    title: 'Principles',
+    copy: 'Operating commitments for defensibility, openness, contribution, publication and correction.',
+    href: '/principles/',
+    label: 'Principles',
+  },
+  {
+    title: 'Intellectual lineage',
+    copy: 'The living prior-art and novelty register, including ideas that were narrowed or renamed after review.',
+    href: '/lineage/',
+    label: 'Lineage',
+  },
+  {
+    title: 'Research provenance',
+    copy: 'Standards-first contribution and process records using W3C PROV, CRediT and RO-Crate where possible.',
+    href: '/provenance/',
+    label: 'Provenance',
+  },
+  {
+    title: 'Memory Palace Protocol',
+    copy: 'The session protocol for preserving questions, branches, decisions, roads not taken, evidence and contribution history.',
+    href: '/memory-palace-protocol/',
+    label: 'Memory Palace',
+  },
+  {
+    title: 'Notes & drafts',
+    copy: 'Lower-commitment research objects that can clarify questions and expose ideas without pretending every branch is a paper.',
+    href: '/notes/',
+    label: 'Notes',
+  },
+];
+---
+<Layout title="About" description="About Agalmic Research: the programme, principles, intellectual lineage, provenance machinery, Memory Palace protocol and open research process.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">About the research system</p>
+      <h1>The machinery belongs behind the map, not inside the menu.</h1>
+      <p class="lede">Agalmic Research is changing quickly. This page collects the deeper operating machinery so the primary navigation can remain stable while the knowledge base continues to branch.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Meta aim</p>
+        <h2>Greater capacity to reach worthwhile futures.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The project studies and experiments with cognitive tools, institutions and representations that may improve the distributed process by which worthwhile possibilities become reachable, recognizable, testable and realizable.</p>
+        <p>It does not treat idea count, publication count or local novelty as ends in themselves. Existing knowledge is infrastructure. New work should ideally create reusable capacity, discriminating evidence, clearer handoffs or realized capability.</p>
+        <div class="actions">
+          <a class="button" href="/notes/the-goal-is-not-more-ideas/">Read the meta-aim note</a>
+          <a class="button secondary" href="/explore/">Explore the knowledge space</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Under the hood</span>
+        <div class="section-copy">
+          <h2>Research machinery and history.</h2>
+          <p>These pages remain important, but they are supporting layers rather than peer-level destinations in the top navigation.</p>
+        </div>
+      </div>
+      <div class="about-grid">
+        {sections.map((item) => (
+          <article class="about-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+            <a href={item.href}>{item.label} →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Open source</p>
+        <h2>The website is part of the research object.</h2>
+      </div>
+      <div class="prose">
+        <p>The site source, provenance records, literature reviews, portfolio data and machine-readable indexes live in the public repository. Public source does not mean every future research object must be public: patent-sensitive, confidential or personally sensitive material remains outside the public projection.</p>
+        <div class="actions">
+          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch">GitHub source ↗</a>
+          <a class="button secondary" href="/knowledge-index.json">Knowledge index JSON</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

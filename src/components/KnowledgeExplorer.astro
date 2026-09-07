@@ -1,0 +1,174 @@
+---
+const { items = [] } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internalHref = (href) => href.startsWith('http://') || href.startsWith('https://') ? href : `${base}/${href.replace(/^\/+/, '')}`;
+const kinds = [...new Set(items.map((item) => item.kind))].sort();
+const topics = [...new Set(items.flatMap((item) => item.topics ?? []))].sort();
+const commitments = [...new Set(items.map((item) => item.commitment))].sort();
+const layerFilters = [
+  ['meaningful', 'Meaningful directions'],
+  ['orientation', 'Orientation'],
+  ['direction', 'Directions'],
+  ['research-object', 'Research objects'],
+  ['evidence', 'Evidence'],
+  ['method', 'Methods'],
+  ['all', 'Everything'],
+];
+---
+<div class="knowledge-explorer" data-knowledge-explorer>
+  <div class="knowledge-explorer__head">
+    <div>
+      <p class="eyebrow">Abstraction lens</p>
+      <h2>See the whole corpus without carrying all of it at once.</h2>
+    </div>
+    <p class="muted knowledge-explorer__intro">Start with meaningful directions, then widen the lens when you need context, evidence or machinery. Visibility does not imply commitment.</p>
+  </div>
+
+  <div class="lens-bar" role="group" aria-label="Knowledge abstraction level">
+    {layerFilters.map(([value, label], index) => (
+      <button
+        type="button"
+        class="lens-button"
+        data-layer-filter={value}
+        aria-pressed={index === 0 ? 'true' : 'false'}
+      >{label}</button>
+    ))}
+  </div>
+
+  <div class="knowledge-controls">
+    <label class="search-field">
+      <span>Search</span>
+      <input type="search" placeholder="Search ideas, topics, papers, methods…" data-knowledge-search autocomplete="off" />
+    </label>
+    <label>
+      <span>Type</span>
+      <select data-kind-filter>
+        <option value="all">All types</option>
+        {kinds.map((kind) => <option value={kind}>{kind.replaceAll('-', ' ')}</option>)}
+      </select>
+    </label>
+    <label>
+      <span>Topic</span>
+      <select data-topic-filter>
+        <option value="all">All topics</option>
+        {topics.map((topic) => <option value={topic}>{topic.replaceAll('-', ' ')}</option>)}
+      </select>
+    </label>
+    <label>
+      <span>Commitment</span>
+      <select data-commitment-filter>
+        <option value="all">All states</option>
+        {commitments.map((commitment) => <option value={commitment}>{commitment.replaceAll('-', ' ')}</option>)}
+      </select>
+    </label>
+    <button type="button" class="clear-filter" data-clear-filters>Reset</button>
+  </div>
+
+  <div class="knowledge-result-meta" aria-live="polite">
+    <strong data-result-count>{items.filter((item) => item.meaningful).length}</strong>
+    <span>objects visible</span>
+  </div>
+
+  <div class="knowledge-results" data-knowledge-results>
+    {items.map((item) => {
+      const search = [item.title, item.summary, item.direction, item.kind, item.status, ...(item.topics ?? [])].join(' ').toLowerCase();
+      const external = item.href.startsWith('http://') || item.href.startsWith('https://');
+      return (
+        <article
+          class="knowledge-card"
+          data-knowledge-card
+          data-layer={item.layer}
+          data-kind={item.kind}
+          data-commitment={item.commitment}
+          data-topics={(item.topics ?? []).join('|')}
+          data-meaningful={item.meaningful ? 'true' : 'false'}
+          data-search={search}
+          hidden={!item.meaningful}
+        >
+          <div class="knowledge-card__meta">
+            <span>{item.layer.replaceAll('-', ' ')}</span>
+            <span>{item.kind.replaceAll('-', ' ')}</span>
+            <span class={`commitment commitment--${item.commitment}`}>{item.commitment}</span>
+          </div>
+          <h3><a href={internalHref(item.href)}>{item.title}{external ? ' ↗' : ''}</a></h3>
+          <p>{item.summary}</p>
+          <p class="knowledge-card__direction"><strong>Meaningful direction:</strong> {item.direction}</p>
+          <div class="topic-row" aria-label="Topics">
+            {(item.topics ?? []).map((topic) => <span>{topic.replaceAll('-', ' ')}</span>)}
+          </div>
+          <p class="knowledge-card__status">{item.status}</p>
+        </article>
+      );
+    })}
+  </div>
+
+  <div class="empty-state" data-empty-state hidden>
+    <strong>No objects match this view.</strong>
+    <span>Widen the abstraction lens or clear a filter. Absence from a filtered view is not rejection.</span>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-knowledge-explorer]').forEach((root) => {
+    const cards = [...root.querySelectorAll('[data-knowledge-card]')];
+    const searchInput = root.querySelector('[data-knowledge-search]');
+    const kindSelect = root.querySelector('[data-kind-filter]');
+    const topicSelect = root.querySelector('[data-topic-filter]');
+    const commitmentSelect = root.querySelector('[data-commitment-filter]');
+    const count = root.querySelector('[data-result-count]');
+    const empty = root.querySelector('[data-empty-state]');
+    const layerButtons = [...root.querySelectorAll('[data-layer-filter]')];
+    const clearButton = root.querySelector('[data-clear-filters]');
+    let layer = 'meaningful';
+
+    const apply = () => {
+      const query = (searchInput?.value ?? '').trim().toLowerCase();
+      const kind = kindSelect?.value ?? 'all';
+      const topic = topicSelect?.value ?? 'all';
+      const commitment = commitmentSelect?.value ?? 'all';
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const layerMatch = layer === 'all'
+          || (layer === 'meaningful' && card.dataset.meaningful === 'true')
+          || card.dataset.layer === layer;
+        const kindMatch = kind === 'all' || card.dataset.kind === kind;
+        const topicList = (card.dataset.topics ?? '').split('|');
+        const topicMatch = topic === 'all' || topicList.includes(topic);
+        const commitmentMatch = commitment === 'all' || card.dataset.commitment === commitment;
+        const queryMatch = !query || (card.dataset.search ?? '').includes(query);
+        const show = layerMatch && kindMatch && topicMatch && commitmentMatch && queryMatch;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+
+      if (count) count.textContent = String(visible);
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    layerButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        layer = button.dataset.layerFilter ?? 'meaningful';
+        layerButtons.forEach((candidate) => candidate.setAttribute('aria-pressed', candidate === button ? 'true' : 'false'));
+        apply();
+      });
+    });
+
+    searchInput?.addEventListener('input', apply);
+    kindSelect?.addEventListener('change', apply);
+    topicSelect?.addEventListener('change', apply);
+    commitmentSelect?.addEventListener('change', apply);
+    clearButton?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      if (kindSelect) kindSelect.value = 'all';
+      if (topicSelect) topicSelect.value = 'all';
+      if (commitmentSelect) commitmentSelect.value = 'all';
+      layer = 'meaningful';
+      layerButtons.forEach((candidate) => candidate.setAttribute('aria-pressed', candidate.dataset.layerFilter === 'meaningful' ? 'true' : 'false'));
+      apply();
+      searchInput?.focus();
+    });
+
+    apply();
+  });
+</script>

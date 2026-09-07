@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1",
+  "updated": "2026-09-07",
+  "purpose": "Public-safe epistemic handoffs: places where Agalmic Research should seek missing expertise, validation or standards review instead of deepening local confidence.",
+  "handoffs": [
+    {
+      "id": "handoff:displaced-scarcity-formalization",
+      "title": "Formal economics of abundance shocks",
+      "state": "open",
+      "priority": "active-frontier",
+      "origin": "possibility:economics-epistemic-abundance-formalization",
+      "question": "Can the Displaced Scarcity Hypothesis be stated as a non-trivial comparative-statics result that is not merely standard bottleneck, complementarity or induced-demand economics in new language?",
+      "expertise_needed": ["microeconomic theory", "production theory", "innovation/growth economics"],
+      "what_exists": "A deep prior-art review and a deliberately narrowed verbal hypothesis; no defensible formal result yet.",
+      "requested_contribution": "Construct or adversarially review the smallest model; identify equivalent known results; specify the conditions under which scarcity, shadow values, rents or market power actually shift; recommend retirement if nothing distinct remains.",
+      "completion_condition": "Either a clearly lineage-positioned formal proposition with testable implications, or an explicit conclusion that the proposed contribution collapses into established theory.",
+      "links": [
+        "/frontier/",
+        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/LITERATURE_REVIEW_DISPLACED_SCARCITY.md"
+      ]
+    },
+    {
+      "id": "handoff:distributed-discovery-provenance",
+      "title": "Standards review of distributed discovery provenance",
+      "state": "open",
+      "priority": "active-frontier",
+      "origin": "possibility:distributed-discovery-provenance",
+      "question": "Which parts of a human-AI discovery episode can already be represented cleanly with W3C PROV, CRediT and RO-Crate, and which proposed Agalmic fields are genuinely missing rather than locally preferred wording?",
+      "expertise_needed": ["W3C PROV / PROV-O", "RO-Crate", "research provenance", "metascience"],
+      "what_exists": "An experimental standards-first profile, PROV-O-aligned JSON-LD, CRediT mappings and a historical local graph.",
+      "requested_contribution": "Review one end-to-end discovery episode representation; challenge every local extension; identify established vocabularies or profiles we should reuse; mark any actual interoperability gap.",
+      "completion_condition": "A reviewed example that can distinguish standard provenance from any narrowly justified authority/search-state extension.",
+      "links": [
+        "/provenance/",
+        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/STANDARDS_PROVENANCE_PROFILE.md"
+      ]
+    },
+    {
+      "id": "handoff:authorial-capacity-measurement",
+      "title": "Measure defensibility without creating examination theatre",
+      "state": "open",
+      "priority": "supporting",
+      "origin": "paper:authorial-capacity-constraint",
+      "question": "How can human comprehension and defensibility of AI-assisted claims be assessed without collapsing into confidence ratings, rhetorical fluency or a generic viva score?",
+      "expertise_needed": ["psychometrics", "metacognition", "science of learning", "research evaluation"],
+      "what_exists": "Working Paper 001 v0.4, prior work on verification gaps and metacognition, and a proposed separation of artefact validity, human comprehension and provenance.",
+      "requested_contribution": "Identify validated measurement approaches for transfer, error diagnosis, prediction under perturbation, calibration and reconstruction; recommend a feasible empirical protocol and its failure modes.",
+      "completion_condition": "A defensibility measurement plan grounded in existing measurement science, with explicit construct validity and anti-gaming considerations.",
+      "links": [
+        "/publications/authorial-capacity-constraint/",
+        "/lineage/"
+      ]
+    },
+    {
+      "id": "handoff:epistemic-handoff-pilot",
+      "title": "Design a minimal epistemic-handoff pilot",
+      "state": "open",
+      "priority": "option",
+      "origin": "possibility:epistemic-handoff-pilot",
+      "question": "Can a provenance-preserving, claim-sensitive handoff improve evaluation of useful low-authority contributions without overwhelming experts or laundering authority?",
+      "expertise_needed": ["knowledge brokering", "metascience", "peer review / research evaluation", "innovation intermediaries"],
+      "what_exists": "A lineage-reviewed draft, handoff definition and extensive prior art in absorptive capacity, brokerage, intermediaries and expert-evaluation bottlenecks.",
+      "requested_contribution": "Help define a tiny pilot with a tractable number of public claims, explicit expert tasks, preserved contribution records and measurable outcomes before any platform is built.",
+      "completion_condition": "A pilot protocol small enough to run, with comparison conditions, burden measures, false-positive/false-negative considerations and stopping criteria.",
+      "links": [
+        "/drafts/epistemic-handoff/",
+        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/LITERATURE_REVIEW_EPISTEMIC_HANDOFF.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '../data/handoffs.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const linkFor = (href) => href.startsWith('http://') || href.startsWith('https://') ? href : `${base}/${href.replace(/^\/+/, '')}`;
+---
+<Layout title="Knowledge Handoff" description="Open Agalmic Research handoffs: questions and artefacts that should move toward missing expertise, validation or standards review rather than accumulate more local confidence.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Knowledge handoff terminus</p>
+      <h1>Where our knowledge should stop pretending to be enough.</h1>
+      <p class="lede">A handoff is not failure and it is not surrender of origin. It is the point at which a research object becomes more valuable by moving toward a missing epistemic capability than by receiving another round of local elaboration.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Terminus rule</p>
+      <blockquote>Low authority should trigger handoff, not erasure.</blockquote>
+      <p>The terminus records what exists, what is missing, what contribution is being requested and what would count as a completed transfer. Contribution provenance survives the handoff; authority must still be earned by the evidence added.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Why a terminus?</p>
+        <h2>Every branch should know when it needs another kind of mind.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The Memory Palace preserves how an idea arrived here. The terminus says what capability is required for it to go further.</p>
+        <p>This makes epistemic incompleteness visible instead of burying it inside caveats. A research object can arrive here because it needs formalization, replication, domain expertise, standards review, measurement design, empirical testing or practical realization.</p>
+        <p>Handoffs are deliberately <strong>claim-sensitive</strong>. “Please review this” is too vague. A useful handoff specifies the missing function and what new warrant the receiving person or system is being asked to supply.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Open handoffs</span>
+        <div class="section-copy">
+          <h2>Research boundaries currently worth crossing.</h2>
+          <p>These are public-safe requests for missing capability. Their existence does not imply that the listed expertise is the only relevant expertise.</p>
+        </div>
+      </div>
+      <div class="handoff-list">
+        {data.handoffs.map((handoff) => (
+          <article class="handoff-card" id={handoff.id.replace(':', '-')}>
+            <div class="handoff-card__state">
+              <span>{handoff.state}</span><br />
+              <span>{handoff.priority.replaceAll('-', ' ')}</span>
+            </div>
+            <div>
+              <h3>{handoff.title}</h3>
+              <p>{handoff.question}</p>
+              <div class="handoff-expertise" aria-label="Expertise requested">
+                {handoff.expertise_needed.map((item) => <span>{item}</span>)}
+              </div>
+              <p><strong>What exists:</strong> {handoff.what_exists}</p>
+              <p><strong>Requested contribution:</strong> {handoff.requested_contribution}</p>
+              <div class="actions">
+                {handoff.links.map((href, index) => (
+                  <a class={index === 0 ? 'button secondary' : 'button secondary'} href={linkFor(href)}>{index === 0 ? 'Context' : 'Evidence / source'}{href.startsWith('http') ? ' ↗' : ''}</a>
+                ))}
+              </div>
+            </div>
+            <div class="handoff-card__need">
+              <strong>Done when</strong>
+              <p>{handoff.completion_condition}</p>
+              <p class="muted"><code>{handoff.id}</code></p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Contribution boundary</p>
+        <h2>Receiving expertise does not absorb prior contribution.</h2>
+      </div>
+      <div class="prose">
+        <p>A validator can add warrant without becoming the originator. An originator can retain contribution credit without gaining authority over the validated result. A machine can have materially generated or transformed an artefact without thereby becoming a legal author or the sole discoverer.</p>
+        <div class="callout"><p><strong>Origin deserves credit. Authority requires warrant. Handoff should preserve both facts.</strong></p></div>
+        <p><a href="/provenance/">Inspect the provenance architecture →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Machine-readable handoffs</p>
+        <h2>Let future tools route the boundaries.</h2>
+      </div>
+      <div class="prose">
+        <p>The handoff register is available as JSON so future agents, expert-routing tools and Memory Palace interfaces can discover unresolved authority gaps directly.</p>
+        <div class="actions">
+          <a class="button secondary" href="/handoffs.json">Handoff register JSON</a>
+          <a class="button secondary" href="/explore/">Explore the full corpus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

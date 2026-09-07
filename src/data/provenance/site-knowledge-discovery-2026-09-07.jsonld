@@ -1,0 +1,96 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "ar": "https://agalmicresearch.org/ns/"
+  },
+  "@graph": [
+    {
+      "@id": "https://agalmicresearch.org/prov/activity/site-knowledge-discovery-2026-09-07",
+      "@type": "prov:Activity",
+      "schema:name": "Agalmic Research site knowledge-discovery architecture implementation",
+      "schema:dateCreated": "2026-09-07",
+      "prov:wasAssociatedWith": [
+        { "@id": "https://agalmicresearch.org/prov/agent/human-curator" },
+        { "@id": "https://agalmicresearch.org/prov/agent/chatgpt" }
+      ],
+      "prov:used": [
+        { "@id": "https://agalmicresearch.org/prov/entity/memory-palace-protocol" },
+        { "@id": "https://agalmicresearch.org/prov/entity/possibility-portfolio" },
+        { "@id": "https://agalmicresearch.org/prov/entity/epistemic-handoff-draft" }
+      ],
+      "prov:generated": [
+        { "@id": "https://agalmicresearch.org/prov/entity/knowledge-index" },
+        { "@id": "https://agalmicresearch.org/prov/entity/explore-interface" },
+        { "@id": "https://agalmicresearch.org/prov/entity/handoff-terminus" },
+        { "@id": "https://agalmicresearch.org/prov/entity/stable-navigation" },
+        { "@id": "https://agalmicresearch.org/prov/entity/site-knowledge-architecture-note" }
+      ],
+      "ar:decisionSummary": "Preserve the full public research corpus while moving primary navigation toward stable reader goals: Explore, Publications, Frontier, Handoff and About. Treat abstraction as a projection, not deletion, and make missing epistemic capability a first-class terminus state."
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/agent/human-curator",
+      "@type": ["prov:Agent", "prov:Person"],
+      "schema:name": "Tsatsu Amable",
+      "ar:contribution": "Initiated and framed the need to combine abstraction, knowledge-discovery management, whole-corpus visibility, selective commitment to meaningful directions, the Memory Palace and a knowledge-handoff terminus; authorized implementation in the website."
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/agent/chatgpt",
+      "@type": ["prov:Agent", "prov:SoftwareAgent"],
+      "schema:name": "OpenAI ChatGPT",
+      "ar:contribution": "Materially contributed information-architecture synthesis, semantic-index design, filtering model, handoff-register structure, Astro component/page implementation, drafting, coding and deployment-oriented integration."
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/entity/memory-palace-protocol",
+      "@type": "prov:Entity",
+      "schema:name": "Agalmic Research Memory Palace Protocol",
+      "schema:url": "https://agalmicresearch.org/memory-palace-protocol/"
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/entity/possibility-portfolio",
+      "@type": "prov:Entity",
+      "schema:name": "Possibility Portfolio and Active Frontier",
+      "schema:url": "https://agalmicresearch.org/frontier/"
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/entity/epistemic-handoff-draft",
+      "@type": "prov:Entity",
+      "schema:name": "Epistemic Handoff draft",
+      "schema:url": "https://agalmicresearch.org/drafts/epistemic-handoff/"
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/entity/knowledge-index",
+      "@type": "prov:Entity",
+      "schema:name": "Public semantic knowledge index",
+      "schema:url": "https://agalmicresearch.org/knowledge-index.json",
+      "prov:wasGeneratedBy": { "@id": "https://agalmicresearch.org/prov/activity/site-knowledge-discovery-2026-09-07" }
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/entity/explore-interface",
+      "@type": "prov:Entity",
+      "schema:name": "Explore / abstraction-lens interface",
+      "schema:url": "https://agalmicresearch.org/explore/",
+      "prov:wasGeneratedBy": { "@id": "https://agalmicresearch.org/prov/activity/site-knowledge-discovery-2026-09-07" }
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/entity/handoff-terminus",
+      "@type": "prov:Entity",
+      "schema:name": "Knowledge Handoff Terminus",
+      "schema:url": "https://agalmicresearch.org/handoff/",
+      "prov:wasGeneratedBy": { "@id": "https://agalmicresearch.org/prov/activity/site-knowledge-discovery-2026-09-07" }
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/entity/stable-navigation",
+      "@type": "prov:Entity",
+      "schema:name": "Stable reader-goal navigation",
+      "prov:wasGeneratedBy": { "@id": "https://agalmicresearch.org/prov/activity/site-knowledge-discovery-2026-09-07" }
+    },
+    {
+      "@id": "https://agalmicresearch.org/prov/entity/site-knowledge-architecture-note",
+      "@type": "prov:Entity",
+      "schema:name": "Site Knowledge Discovery Architecture v0.1",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/SITE_KNOWLEDGE_DISCOVERY_ARCHITECTURE.md",
+      "prov:wasGeneratedBy": { "@id": "https://agalmicresearch.org/prov/activity/site-knowledge-discovery-2026-09-07" }
+    }
+  ]
+}
