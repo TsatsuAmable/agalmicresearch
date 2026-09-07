@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import history from '../data/knowledgeHistory.json';
+---
+<Layout title="Knowledge History" description="Visible history of renamed, narrowed, merged and superseded Agalmic Research concepts.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Knowledge history</p>
+      <h1>Correction should leave a trail.</h1>
+      <p class="lede">Ideas can be renamed, narrowed, merged or superseded without being erased. Historical objects preserve what changed, why it changed and where the current research boundary moved.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell">
+      <div class="history-list">
+        {history.events.map((event) => (
+          <article class="history-card">
+            <div class="history-card__state">
+              <strong>{event.state}</strong><br />
+              <span>{event.date}</span>
+            </div>
+            <div>
+              <p class="eyebrow">{event.previous_title}</p>
+              <h2><a href={`/history/${event.slug}/`}>{event.current_title}</a></h2>
+              <p>{event.reason}</p>
+            </div>
+            <div>
+              <p><strong>Current object</strong></p>
+              <p><a href={event.current_href}>Continue to the current programme position →</a></p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
