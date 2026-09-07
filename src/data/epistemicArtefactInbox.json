@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1",
+  "updated": "2026-09-07",
+  "status": "experimental-public-projection",
+  "purpose": "Capture potentially valuable epistemic artefacts immediately, before warrant, understanding, novelty or commitment has been resolved.",
+  "principles": [
+    "Capture latency should be low; judgment may take longer.",
+    "An intake record is not knowledge, validation, novelty, publication, priority or an Active Frontier commitment.",
+    "Unknown warrant and incomplete understanding are valid states, not missing-data errors.",
+    "Every artefact should retain a provenance pointer and an explicit next route.",
+    "Promotion consumes attention; capture should consume very little."
+  ],
+  "records": [
+    {
+      "id": "artefact:epistemic-artefact-state-model-2026-09-07",
+      "captured": "2026-09-07",
+      "title": "Epistemic artefact to frontier state model",
+      "kind": "conceptual-model",
+      "origin_session": "ar-session-2026-09-07-epistemic-artefacts-constitutional-attention",
+      "summary": "Provisional chain separating possibility, directed search, epistemic artefact, warrant, assimilation, capability and reachable frontier.",
+      "provenance_pointer": "/docs/sessions/2026-09-07_EPISTEMIC_ARTEFACTS_AND_CONSTITUTIONAL_ATTENTION.prov.jsonld",
+      "warrant_status": "exploratory",
+      "understanding_status": "partially-assimilated",
+      "novelty_status": "established terminology plus synthesis/application; novelty unassessed",
+      "publication_sensitivity": "public",
+      "commitment": "option",
+      "next_route": "lineage-review-and-multi-episode-test",
+      "related_possibility": "possibility:epistemic-artefacts-assimilation"
+    },
+    {
+      "id": "artefact:constitutional-attention-adversarial-search-2026-09-07",
+      "captured": "2026-09-07",
+      "title": "Constitutional attention as adversarial evolutionary search",
+      "kind": "mechanism-conjecture",
+      "origin_session": "ar-session-2026-09-07-epistemic-artefacts-constitutional-attention",
+      "summary": "A provisional architecture in which strategy-generating and adversarial populations co-evolve under a human-governed constitution of plural worthwhile-future objectives, hard constraints, escalation rules and retained historical failures.",
+      "provenance_pointer": "/docs/sessions/2026-09-07_EPISTEMIC_ARTEFACTS_AND_CONSTITUTIONAL_ATTENTION.prov.jsonld",
+      "warrant_status": "exploratory",
+      "understanding_status": "conceptually-understood-not-formalized",
+      "novelty_status": "competitive coevolution, constitutional oversight and selective-human-review antecedents; synthesis novelty unassessed",
+      "publication_sensitivity": "public",
+      "commitment": "option",
+      "next_route": "formalize-and-adversarially-compare",
+      "related_possibility": "possibility:constitutional-attention-search"
+    }
+  ]
+}
