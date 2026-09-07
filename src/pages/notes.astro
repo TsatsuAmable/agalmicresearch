@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+
+const notes = [
+  {
+    n: 'N01',
+    title: 'The Goal Is Not More Ideas',
+    subtitle: 'Cognitive tools and the expansion of the effective adjacent possible',
+    status: 'Synthesis note · lineage grounded',
+    href: internal('notes/the-goal-is-not-more-ideas'),
+  },
+  {
+    n: 'N02',
+    title: 'Ideas Are Options, Not Obligations',
+    subtitle: 'A personal operating rule for cognitive abundance',
+    status: 'Operating note · synthesis',
+    href: internal('notes/ideas-are-options-not-obligations'),
+  },
+];
+---
+<Layout title="Research Notes" description="Short, lineage-aware Agalmic Research notes that create useful research capacity without pretending every idea needs to become a paper.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Research notes</p>
+      <h1>Smaller objects. Clearer jobs.</h1>
+      <p class="lede">Not every useful contribution needs to become a paper. Notes are versioned, lineage-aware research objects intended to clarify a question, expose a useful synthesis, create a decision tool or make a next step possible.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Publication gate</p>
+        <h2>What capacity does publishing this create?</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Another public idea is not automatically another public good.</p>
+        <p>A note earns publication when it reduces future search cost, improves selection, recruits scrutiny or expertise, preserves a reusable model, creates a test, enables a handoff, or otherwise makes a worthwhile future more reachable.</p>
+        <div class="callout"><p><strong>The Memory Palace may be abundant. The publication stream should be selective.</strong></p></div>
+        <p><a href={internal('frontier')}>Inspect the Active Frontier →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="index-list">
+        {notes.map((note) => (
+          <article class="index-item">
+            <span class="index-meta">{note.n}</span>
+            <div>
+              <h3><a href={note.href}>{note.title}</a></h3>
+              <p>{note.subtitle}</p>
+            </div>
+            <span class="index-status">{note.status}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
