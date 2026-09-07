@@ -1,6 +1,6 @@
 # Intellectual Lineage and Novelty Register
 
-Version: 0.2  
+Version: 0.3  
 Status: living prior-art register  
 Date: 7 September 2026
 
@@ -31,13 +31,14 @@ Nothing in this register should be represented as novel unless it is explicitly 
 
 ## Deep reviews
 
-Three questions have now received dedicated deeper reviews:
+Four questions have now received dedicated deeper reviews:
 
 - [Discovery Attribution in Human–AI Science](LITERATURE_REVIEW_DISCOVERY_ATTRIBUTION.md)
 - [Epistemic Handoff, Knowledge Brokering and Uptake](LITERATURE_REVIEW_EPISTEMIC_HANDOFF.md)
 - [Displaced Scarcity and Shifting Bottlenecks](LITERATURE_REVIEW_DISPLACED_SCARCITY.md)
+- [Idea Portfolios, Selection and the Active Frontier](LITERATURE_REVIEW_IDEA_PORTFOLIOS_AND_SELECTION.md)
 
-These reviews supersede the shallower novelty implications in v0.1 where they conflict.
+These reviews supersede shallower novelty implications where they conflict.
 
 ## Register
 
@@ -83,7 +84,18 @@ Sources:
 - Grandori (2013), *Epistemic Economics and Organization*.
 - Arrow (1962), *Economic Welfare and the Allocation of Resources for Invention*.
 
-### 4. Innovation Search Under AI
+### 4. Adjacent possible / effective adjacent possible
+
+Stuart Kauffman's adjacent possible is an established concept in complexity and innovation. More importantly for the current programme, Josef Taalbi explicitly distinguishes the universe of possible innovations from an **effective adjacent possible** constrained by search complexity, absorptive/search capacity and available resources.
+
+Source:
+- Taalbi (2025/2026), https://doi.org/10.1093/icc/dtaf028
+
+**Current position.** Agalmic Research does not claim to originate the theoretical/effective adjacent-possible distinction. The meta aim is an application and synthesis question: how do cognitive tools, representation, provenance, validation, handoff and realization infrastructure change the effective adjacent possible for particular humans, teams or institutions?
+
+**Status:** established antecedent + machine-cognition application/synthesis.
+
+### 5. Innovation Search Under AI
 
 Innovation as search is established in evolutionary economics. Recombinant growth and adjacent-possible frameworks are likewise established.
 
@@ -97,7 +109,7 @@ Sources:
 - Taalbi, https://doi.org/10.1093/icc/dtaf028
 - Hao et al. (2026), https://doi.org/10.1038/s41586-025-09922-y
 
-### 5. Attention after abundance
+### 6. Attention after abundance
 
 Simon is a direct foundational antecedent, and attention economics is mature. Falkinger supplies a formal equilibrium treatment of limited attention in information-rich economies.
 
@@ -105,7 +117,23 @@ Simon is a direct foundational antecedent, and attention economics is mature. Fa
 
 **Status:** established antecedent + application/extension.
 
-### 6. Authorial Capacity Constraint
+### 7. Idea preservation, selection and the Active Frontier
+
+The deeper review found mature antecedents for essentially every generic component of the local operating method. March models exploration versus exploitation. Innovation portfolio management studies project selection, balance, strategic alignment and resource constraints. Real-options work on R&D values staged commitment, deferral and abandonment under uncertainty. Idea-management research covers generation, capture, evaluation and implementation. Creativity research shows that idea recognition and selection are difficult and biased, particularly when originality appears to conflict with feasibility.
+
+Key sources:
+- March (1991), https://doi.org/10.1287/orsc.2.1.71
+- Cooper, Edgett & Kleinschmidt (2001), https://doi.org/10.1111/1467-9310.00225
+- Lint & Pennings (2001), https://doi.org/10.1111/1467-9310.00206
+- Schwartz (2003), https://doi.org/10.3386/w10114
+- Rietzschel, Nijstad & Stroebe (2019), https://doi.org/10.1093/oxfordhb/9780190648077.013.11
+- Baraboshkin et al. (2026), https://doi.org/10.1016/j.technovation.2026.103563
+
+**Current position.** **Possibility Portfolio**, **Possibility Garden** and **Active Frontier** are local operating metaphors, not claims of new management theory. The practical adaptation is to preserve a large option set under machine-amplified cognitive abundance while keeping active human commitments very small, lineage-aware and oriented toward information gain, handoff and reusable capacity.
+
+**Status:** established mechanisms + pragmatic synthesis/application.
+
+### 8. Authorial Capacity Constraint
 
 Close 2025–2026 prior work already describes the central performance/comprehension or verification gap. Fernandes et al. find AI-assisted performance can improve without comparable metacognitive accuracy; Maier separates assisted performance from self-evaluation and understanding; O'Keefe explicitly describes a “Verification Gap”; van Zoonen et al. propose claim accountability; Nascimento and da Silva separate correctness from epistemic responsibility. Hardwig and Humphreys provide older foundations in epistemic dependence and computational opacity.
 
@@ -113,7 +141,7 @@ Close 2025–2026 prior work already describes the central performance/comprehen
 
 **Status:** close prior art; synthesis/terminology only.
 
-### 7. Defensible stewardship / claim accountability
+### 9. Defensible stewardship / claim accountability
 
 Van Zoonen et al.'s claim-accountability framework is exceptionally close to the proposition that scholarly claims require a human positioned to reconstruct and defend them. BMJ contributorship/guarantorship predates the AI debate.
 
@@ -121,7 +149,7 @@ Van Zoonen et al.'s claim-accountability framework is exceptionally close to the
 
 **Status:** close antecedent + local synthesis/operationalization.
 
-### 8. Contribution roles and epistemic authority
+### 10. Contribution roles and epistemic authority
 
 Scientific contributorship has been separated from the author byline for decades and CRediT now standardizes fourteen contributor roles.
 
@@ -133,7 +161,7 @@ Sources:
 - CRediT, https://credit.niso.org/
 - Smith (1997), https://doi.org/10.1136/bmj.315.7110.696
 
-### 9. Epistemic handoff and uptake
+### 11. Epistemic handoff and uptake
 
 The deeper review found extensive antecedents. Cohen and Levinthal's absorptive capacity concerns recognition, assimilation and application of external knowledge; Zahra and George separate potential and realized absorptive capacity; Szulanski studies transfer “stickiness”; Ward, Meyer and others study knowledge brokers; Howells and later reviews analyze innovation intermediaries and boundary spanners; recent work describes intermediaries orchestrating curated solver networks and absorptive capacity. Transactive-memory systems model group meta-knowledge of “who knows what.” Gimpel et al. explicitly identify scarce expert juries as a bottleneck in evaluating specialist ideas and test crowds/LLMs as alternatives.
 
@@ -151,7 +179,7 @@ Key sources:
 - Gimpel et al. (2025), https://doi.org/10.1007/s10726-025-09935-y
 - Pinarello et al. (2026), https://doi.org/10.1016/j.techsoc.2026.103339
 
-### 10. Human-Scale Epistemic Horizon
+### 12. Human-Scale Epistemic Horizon
 
 Computational opacity and computer-assisted mathematics already study reliable results supported by processes no individual human can survey end to end.
 
@@ -159,7 +187,7 @@ Computational opacity and computer-assisted mathematics already study reliable r
 
 **Status:** underlying problem established; terminology/synthesis candidate.
 
-### 11. Research provenance / Memory Palace
+### 13. Research provenance / Memory Palace
 
 W3C PROV, RO-Crate, CRediT, MIRA and decision-provenance work cover substantial parts of provenance, research-object packaging, contribution, claim/evidence graphs and decision history.
 
@@ -167,7 +195,7 @@ W3C PROV, RO-Crate, CRediT, MIRA and decision-provenance work cover substantial 
 
 **Status:** integration/extension.
 
-### 12. Representation as Discovery
+### 14. Representation as Discovery
 
 Exploratory data analysis, scientific visualization, visual analytics, information bottleneck/rate-distortion and representation learning all establish that representation can reveal useful structure.
 
@@ -175,7 +203,7 @@ Exploratory data analysis, scientific visualization, visual analytics, informati
 
 **Status:** established broad antecedent; technical novelty unassessed.
 
-### 13. IP, defensive publication and knowledge rents
+### 15. IP, defensive publication and knowledge rents
 
 The economics of invention, non-rivalry, appropriability, complementary assets, open innovation and defensive publication are established.
 
@@ -225,9 +253,9 @@ Key sources:
 - Rubin & Schneider (2021), https://doi.org/10.1016/j.shpsa.2021.08.005
 - Mankowitz et al. / AlphaDev (2023), https://doi.org/10.1038/s41586-023-06004-9
 
-## Operating rule for future papers
+## Operating rule for future papers and notes
 
-Before promoting a concept into the numbered publication sequence:
+Before promoting a concept into the numbered publication sequence or presenting a research note as a contribution:
 
 1. state the strongest proposed contribution in one sentence;
 2. search exact terms and conceptual synonyms;
@@ -239,10 +267,11 @@ Before promoting a concept into the numbered publication sequence:
 8. preserve databases, tools, search terms and known gaps;
 9. downgrade novelty immediately when a close antecedent is found;
 10. prefer standardised machinery over a local reinvention;
-11. never use “law”, “principle”, “new field” or “first” as a substitute for demonstrating difference.
+11. ask what capacity publication creates beyond another public idea;
+12. never use “law”, “principle”, “new field” or “first” as a substitute for demonstrating difference.
 
 ## Search boundary
 
-Version 0.2 incorporates deeper web-based reviews of discovery attribution, epistemic handoff/uptake and displaced scarcity. It remains non-exhaustive. Scopus, Web of Science, EconLit, PhilPapers, ProQuest, patent databases, archival books and non-English scholarship have not been systematically exhausted. Technical Moneta/Nemosyne algorithms remain outside this register.
+Version 0.3 incorporates deeper web-based reviews of discovery attribution, epistemic handoff/uptake, displaced scarcity, and idea portfolio/selection practice, including the explicit prior use of **effective adjacent possible** in innovation research. It remains non-exhaustive. Scopus, Web of Science, EconLit, PhilPapers, ProQuest, patent databases, archival books and non-English scholarship have not been systematically exhausted. Technical Moneta/Nemosyne algorithms remain outside this register.
 
 Accordingly, “not found” means **novelty remains unassessed**, never “proven novel.”
