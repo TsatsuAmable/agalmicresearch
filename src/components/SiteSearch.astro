@@ -1,0 +1,134 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const indexUrl = `${base}/search-index.json`;
+const initialQuery = Astro.url.searchParams.get('q') ?? '';
+---
+<div class="site-search" data-site-search data-index-url={indexUrl}>
+  <label class="site-search__field">
+    <span>Search the public corpus</span>
+    <input
+      type="search"
+      name="q"
+      value={initialQuery}
+      placeholder="Search papers, notes, methods, claims and evidence…"
+      autocomplete="off"
+      data-site-search-input
+    />
+  </label>
+  <p class="site-search__meta" aria-live="polite" data-site-search-meta>Loading search index…</p>
+  <div class="site-search__results" data-site-search-results></div>
+</div>
+
+<script>
+  const normalize = (value) => String(value ?? '').toLowerCase().normalize('NFKD');
+
+  document.querySelectorAll('[data-site-search]').forEach(async (root) => {
+    const input = root.querySelector('[data-site-search-input]');
+    const meta = root.querySelector('[data-site-search-meta]');
+    const results = root.querySelector('[data-site-search-results]');
+    const indexUrl = root.dataset.indexUrl;
+    let entries = [];
+
+    const setMeta = (message) => {
+      if (meta) meta.textContent = message;
+    };
+
+    const snippetFor = (entry, terms) => {
+      const body = String(entry.body ?? '');
+      const lower = normalize(body);
+      const positions = terms.map((term) => lower.indexOf(term)).filter((position) => position >= 0);
+      const first = positions.length ? Math.min(...positions) : 0;
+      const start = Math.max(0, first - 80);
+      const end = Math.min(body.length, start + 240);
+      return `${start > 0 ? '…' : ''}${body.slice(start, end).trim()}${end < body.length ? '…' : ''}`;
+    };
+
+    const scoreFor = (entry, query, terms) => {
+      const title = normalize(entry.title);
+      const description = normalize(entry.description);
+      const body = normalize(entry.body);
+      let score = 0;
+      if (title.includes(query)) score += 24;
+      if (description.includes(query)) score += 12;
+      if (body.includes(query)) score += 5;
+      for (const term of terms) {
+        if (title.includes(term)) score += 8;
+        if (description.includes(term)) score += 4;
+        if (body.includes(term)) score += 1;
+      }
+      return score;
+    };
+
+    const render = () => {
+      if (!input || !results) return;
+      const query = normalize(input.value).trim();
+      results.replaceChildren();
+
+      const url = new URL(window.location.href);
+      if (query) url.searchParams.set('q', input.value.trim());
+      else url.searchParams.delete('q');
+      history.replaceState(null, '', url);
+
+      if (!query) {
+        setMeta(`${entries.length} pages indexed. Search reaches the rendered text, not only metadata.`);
+        return;
+      }
+
+      const terms = [...new Set(query.split(/\s+/).filter((term) => term.length > 1))];
+      const ranked = entries
+        .map((entry) => ({ entry, score: scoreFor(entry, query, terms) }))
+        .filter(({ score }) => score > 0)
+        .sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title))
+        .slice(0, 40);
+
+      setMeta(`${ranked.length} result${ranked.length === 1 ? '' : 's'} for “${input.value.trim()}”.`);
+
+      for (const { entry } of ranked) {
+        const article = document.createElement('article');
+        article.className = 'site-search-result';
+
+        const title = document.createElement('h2');
+        const link = document.createElement('a');
+        link.href = entry.path;
+        link.textContent = entry.title;
+        title.append(link);
+
+        const path = document.createElement('p');
+        path.className = 'site-search-result__path';
+        path.textContent = entry.path;
+
+        const summary = document.createElement('p');
+        summary.textContent = entry.description || snippetFor(entry, terms);
+
+        if (entry.description) {
+          const excerpt = document.createElement('p');
+          excerpt.className = 'site-search-result__excerpt';
+          excerpt.textContent = snippetFor(entry, terms);
+          article.append(title, path, summary, excerpt);
+        } else {
+          article.append(title, path, summary);
+        }
+        results.append(article);
+      }
+
+      if (ranked.length === 0) {
+        const empty = document.createElement('p');
+        empty.className = 'empty-state';
+        empty.textContent = 'No rendered page contains those terms. Try a broader concept or open Explore to navigate by semantic metadata.';
+        results.append(empty);
+      }
+    };
+
+    try {
+      const response = await fetch(indexUrl);
+      if (!response.ok) throw new Error(`Search index returned ${response.status}`);
+      const payload = await response.json();
+      entries = Array.isArray(payload.entries) ? payload.entries : [];
+      render();
+      input?.addEventListener('input', render);
+    } catch (error) {
+      console.error(error);
+      setMeta('Full-text search is unavailable in this build. Explore remains available for metadata navigation.');
+    }
+  });
+</script>

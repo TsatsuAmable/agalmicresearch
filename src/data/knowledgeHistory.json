@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "updated": "2026-09-07",
+  "purpose": "Visible semantic history for renamed, narrowed, merged or superseded research concepts. Historical objects remain inspectable rather than disappearing when the current programme vocabulary changes.",
+  "events": [
+    {
+      "id": "history:epistemic-economics-rename",
+      "slug": "epistemic-economics",
+      "date": "2026-09-07",
+      "state": "renamed",
+      "previous_title": "Epistemic Economics",
+      "current_title": "Economics of Epistemic Abundance",
+      "reason": "Anna Grandori already used Epistemic Economics and Organization for an established body of work. The programme therefore moved to a narrower label that better describes its machine-abundance application without implying ownership of the prior field.",
+      "current_href": "/research/",
+      "object_ids": ["direction:economics-epistemic-abundance"],
+      "legacy_paths": []
+    },
+    {
+      "id": "history:law-of-displaced-scarcity-narrowing",
+      "slug": "law-of-displaced-scarcity",
+      "date": "2026-09-07",
+      "state": "narrowed",
+      "previous_title": "Law of Displaced Scarcity",
+      "current_title": "Displaced Scarcity Hypothesis",
+      "reason": "Prior-art review found strong antecedents in bottleneck, complementarity, attention, limiting-factor and induced-demand economics. The law formulation was therefore withdrawn and retained only as a narrower, falsifiable organizing hypothesis pending formalization.",
+      "current_href": "/frontier/",
+      "object_ids": ["direction:economics-epistemic-abundance"],
+      "legacy_paths": []
+    }
+  ]
+}

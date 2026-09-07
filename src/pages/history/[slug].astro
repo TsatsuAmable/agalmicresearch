@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import history from '../../data/knowledgeHistory.json';
+
+export function getStaticPaths() {
+  return history.events.map((event) => ({
+    params: { slug: event.slug },
+    props: { event },
+  }));
+}
+
+const { event } = Astro.props;
+---
+<Layout title={`${event.previous_title} · Knowledge History`} description={`Historical Agalmic Research object: ${event.previous_title} was ${event.state} as ${event.current_title}.`}>
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Historical object · {event.state} · {event.date}</p>
+      <h1>{event.previous_title}</h1>
+      <p class="lede">This object has not disappeared. Its current programme form is <strong>{event.current_title}</strong>.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">What changed?</p>
+        <h2>{event.previous_title} → {event.current_title}</h2>
+      </div>
+      <div class="prose">
+        <p class="large">{event.reason}</p>
+        <div class="actions">
+          <a class="button" href={event.current_href}>Open the current object</a>
+          <a class="button secondary" href="/history/">Knowledge history</a>
+          <a class="button secondary" href="/lineage/">Intellectual lineage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
