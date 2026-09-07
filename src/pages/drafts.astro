@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+
+const ideas = [
+  {
+    status: 'Draft paper',
+    title: 'Epistemic Handoff: Contribution, Authority and Uptake Under Cognitive Abundance',
+    summary: 'How valuable ideas can move from initiators who lack domain authority to experts, verifiers and realizers without erasing originator credit or confusing contribution with authority.',
+    href: internal('drafts/epistemic-handoff'),
+  },
+  {
+    status: 'Paper idea',
+    title: 'Credit Without Authority',
+    summary: 'A theory of contribution provenance for machine-amplified knowledge: why originating, framing or discovering an idea should earn credit without automatically conferring authority over its truth or interpretation.',
+    href: null,
+  },
+  {
+    status: 'Paper idea',
+    title: 'Epistemic Uptake: The New Bottleneck in an Economy of Abundant Ideas',
+    summary: 'As candidate ideas become cheap, the scarce capacity may be society’s ability to notice, route, evaluate, validate and develop them. This paper would model epistemic uptake as a displaced scarcity.',
+    href: null,
+  },
+  {
+    status: 'Paper idea',
+    title: 'Markets for Expert Attention',
+    summary: 'If expert evaluation becomes a binding constraint, how should scarce specialist attention be allocated without recreating credential monopolies, status capture or pay-to-be-heard knowledge markets?',
+    href: null,
+  },
+  {
+    status: 'Deep-future paper',
+    title: 'The Human-Scale Epistemic Horizon',
+    summary: 'A speculative inquiry into knowledge whose best available justification exceeds the capacity of any individual human to comprehend directly, and the migration of authority toward verification architectures.',
+    href: null,
+  },
+  {
+    status: 'Institutional design paper',
+    title: 'Epistemic Supply Chains',
+    summary: 'A model of knowledge production in which initiators, framers, developers, domain stewards, verifiers and realizers are distinct roles connected by explicit handoffs, incentives and provenance.',
+    href: null,
+  },
+];
+---
+<Layout title="Drafts & Paper Ideas" description="Exploratory drafts and paper ideas in the Agalmic Research programme.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Drafts & paper ideas</p>
+      <h1>Ideas before they harden into claims.</h1>
+      <p class="lede">This page exposes promising research directions early while keeping their epistemic status explicit. A draft is an invitation to improve a question, not evidence that the question has been settled.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Working rule</p>
+        <h2>Preserve contribution. Separate authority.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">A person may originate a valuable idea without being qualified to determine whether it is true, important or well-formed.</p>
+        <div class="callout">
+          <p><strong>Origin deserves credit. Authority requires warrant.</strong></p>
+        </div>
+        <p class="muted">The research programme therefore distinguishes contribution provenance from epistemic authority and asks how knowledge systems can route promising low-authority ideas toward capable stewards without erasing their initiators.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Current notebook</span>
+        <div class="section-copy">
+          <h2>Drafts and adjacent papers.</h2>
+          <p>These items vary deliberately in maturity. Only linked drafts currently have substantial text; the others are research directions awaiting literature review, adversarial criticism and formal development.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {ideas.map((idea, i) => (
+          <article class="index-item">
+            <span class="index-meta">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{idea.href ? <a href={idea.href}>{idea.title}</a> : idea.title}</h3>
+              <p class="muted">{idea.summary}</p>
+            </div>
+            <span class="index-status">{idea.status}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Publication boundary</p>
+        <h2>Concepts can be open before machinery is.</h2>
+      </div>
+      <div class="prose">
+        <p>These drafts focus on conceptual claims, institutional questions and research hypotheses. Detailed technical mechanisms that might warrant intellectual-property review should pass a separate publish / protect / continue-developing decision before public disclosure.</p>
+        <p><a href={internal('principles')}>Read the operating principles →</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>
