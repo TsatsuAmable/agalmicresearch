@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteSearch from '../components/SiteSearch.astro';
+---
+<Layout title="Search" description="Full-text search across the rendered Agalmic Research corpus, complementing Explore's semantic filters and abstraction lenses.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Search</p>
+      <h1>Search the words. Explore the structure.</h1>
+      <p class="lede">Search reaches the rendered text of papers, notes, methods and supporting pages. Explore remains the better entrance when you want to navigate by topic, object type, abstraction level or commitment state.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell">
+      <SiteSearch />
+    </div>
+  </section>
+
+  <section class="section" data-search-ignore>
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Two discovery modes</p>
+        <h2>Retrieval and orientation are different jobs.</h2>
+      </div>
+      <div class="prose">
+        <p><strong>Search</strong> is lexical: find where something was actually discussed in the rendered corpus.</p>
+        <p><strong>Explore</strong> is semantic: see meaningful directions, preserved options, evidence and methods without needing to know the site's vocabulary in advance.</p>
+        <div class="actions"><a class="button secondary" href="/explore/">Open Explore</a></div>
+      </div>
+    </div>
+  </section>
+</Layout>
