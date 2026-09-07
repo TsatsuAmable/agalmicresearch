@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+import portfolio from '../data/possibilityPortfolio.json';
+
+const active = portfolio.possibilities.filter((item) => item.state === 'active');
+const options = portfolio.possibilities.filter((item) => item.state === 'option');
+const parked = portfolio.possibilities.filter((item) => item.state === 'parked');
+---
+<Layout title="Active Frontier" description="The public Agalmic Research possibility portfolio: preserve abundant ideas as options while allocating scarce attention to a deliberately small active frontier.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Possibility portfolio · experimental operating system</p>
+      <h1>Preserve the abundance. Spend the scarcity carefully.</h1>
+      <p class="lede">Ideas can be captured cheaply without becoming obligations. The Active Frontier is the deliberately small subset currently receiving scarce attention, testing, handoff or realization effort.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Operating rule</p>
+      <blockquote>Capture promiscuously. Commit selectively. Realize deliberately.</blockquote>
+      <p>The method is a pragmatic synthesis of exploration/exploitation, innovation portfolio management, real-options thinking, idea-management research and adjacent-possible work. It is not presented as a new theory of innovation.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Work-in-progress limit</p>
+        <h2>Three substantial bets.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">A fourth exciting idea does not silently become a fourth project.</p>
+        <p>The default Active Frontier limit is <strong>{portfolio.wip_limit}</strong>. New candidates enter when a slot is free, an incumbent leaves, capacity demonstrably increases, or a time-sensitive candidate clearly deserves an explicit exception.</p>
+        <div class="callout"><p><strong>An idea in the portfolio is an option, not a task.</strong></p></div>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/POSSIBILITY_PORTFOLIO_AND_ACTIVE_FRONTIER.md">Read the operating method ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Active frontier</span>
+        <div class="section-copy">
+          <h2>Where scarce attention is going now.</h2>
+          <p>Each active item must have a concrete next action designed to change the decision, not merely generate more prose.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {active.map((item, i) => (
+          <article class="index-item">
+            <span class="index-meta">A{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+              <p><strong>Worthwhile future:</strong> {item.worthwhile_future}</p>
+              <p><strong>Capacity created:</strong> {item.capacity_created.join(' · ')}</p>
+              <p><strong>Next discriminating action:</strong> {item.next_discriminating_action}</p>
+              <p class="muted"><strong>Lineage:</strong> {item.lineage_status}</p>
+            </div>
+            <span class="index-status">active</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Frontier filter</p>
+        <h2>Direction before excitement.</h2>
+      </div>
+      <div class="prose">
+        <p>A candidate is assessed across separate dimensions rather than collapsed into one pseudo-precise score: worthwhile-future relevance, frontier leverage, information gain, realization/handoff path, attention burden, lineage confidence, urgency and uncertainty.</p>
+        <p class="large">The promotion question is: if scarce capacity is spent here, what valuable future becomes more reachable?</p>
+        <p>High uncertainty is not an automatic rejection. It is often a reason to buy information cheaply. High polish is not evidence of feasibility, and apparent infeasibility can unfairly penalize genuinely original ideas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Preserved options</span>
+        <div class="section-copy">
+          <h2>Worth keeping. Not active obligations.</h2>
+          <p>These ideas retain option value without consuming an Active Frontier slot.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {options.map((item, i) => (
+          <article class="index-item">
+            <span class="index-meta">O{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+              <p><strong>Next discriminating action:</strong> {item.next_discriminating_action}</p>
+              <p class="muted"><strong>Lineage:</strong> {item.lineage_status}</p>
+            </div>
+            <span class="index-status">option</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {parked.length > 0 && (
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <span class="section-number">Parked</span>
+          <div class="section-copy">
+            <h2>Preserved, but not presently directionally competitive.</h2>
+            <p>Parking retains provenance and reversal conditions without pretending every interesting branch deserves current attention.</p>
+          </div>
+        </div>
+        <div class="index-list">
+          {parked.map((item, i) => (
+            <article class="index-item">
+              <span class="index-meta">P{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.summary}</p>
+                <p><strong>Revisit:</strong> {item.next_discriminating_action}</p>
+              </div>
+              <span class="index-status">parked</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Public boundary</p>
+        <h2>This is only the public-safe portfolio.</h2>
+      </div>
+      <div class="prose">
+        <p>Potentially patentable, confidential, personally sensitive or otherwise non-public ideas should use the same schema in a private store. Their absence from this page does not mean they do not exist or were rejected.</p>
+        <p>The public JSON projection is versioned in the repository at <a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/src/data/possibilityPortfolio.json">src/data/possibilityPortfolio.json ↗</a>.</p>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/POSSIBILITY_CAPTURE_AND_FRONTIER_PROMPT.md">Use the capture and frontier-review prompt ↗</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>
