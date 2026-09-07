@@ -1,3 +1,5 @@
+# Sole GitHub Pages deployment path for this Astro site.
+# Repository Settings > Pages > Source must be set to "GitHub Actions".
 name: Deploy to GitHub Pages
 
 on:
