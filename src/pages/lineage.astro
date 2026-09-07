@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+
+const lineage = [
+  {
+    title: 'Agalmics / Agalmic Economics',
+    status: 'Established antecedent + contemporary extension',
+    prior: 'Robert Levin’s late-1990s “Agalmics: The Marginalization of Scarcity” already develops agalmics around non-scarce goods and their relation to scarce inputs.',
+    position: 'Agalmic Research uses the existing term for a contemporary programme centred on machine cognition, knowledge production and shifting bottlenecks. It does not claim to originate agalmics.',
+    sources: [['Robert Levin · Agalmics', 'https://rednsx.org/~dtinker/agalmics.html']],
+  },
+  {
+    title: 'Displaced Scarcity Hypothesis',
+    status: 'Synthesis / generalization hypothesis',
+    prior: 'Simon’s scarcity of attention, Teece’s complementary assets, bottleneck theory and Weitzman’s idea-processing constraint all anticipate important parts of the mechanism.',
+    position: '“Law” is withdrawn for now. The research task is to establish when the proposed generalization is non-trivial, what it predicts beyond existing constraint/complementarity theory, and how it can be falsified.',
+    sources: [
+      ['Teece 1986', 'https://doi.org/10.1016/0048-7333(86)90027-2'],
+      ['Weitzman 1998', 'https://doi.org/10.1162/003355398555595'],
+    ],
+  },
+  {
+    title: 'Economics of Epistemic Abundance',
+    status: 'Renamed synthesis / application',
+    prior: 'Anna Grandori already published “Epistemic Economics and Organization”; Arrow and later knowledge-economics traditions address the economics of invention and information.',
+    position: 'The programme now prefers “Economics of Epistemic Abundance” for its narrower question: allocation when candidate knowledge becomes cheap while verification, attention, trust and realization remain scarce.',
+    sources: [
+      ['Grandori 2013', 'https://www.routledge.com/Epistemic-Economics-and-Organization-Forms-of-Rationality-and-Governance/Grandori/p/book/9781138906112'],
+      ['Arrow 1962', 'https://www.nber.org/books-and-chapters/rate-and-direction-inventive-activity-economic-and-social-factors/economic-welfare-and-allocation-resources-invention'],
+    ],
+  },
+  {
+    title: 'Innovation as Search',
+    status: 'Established antecedent + AI-era extension',
+    prior: 'Search is central to evolutionary economics; recombinant growth and the adjacent possible are established innovation frameworks.',
+    position: 'The prospective contribution is not “innovation is search.” It is the effect of machine cognition on search cost, branching, recombination, selection pressure and realization.',
+    sources: [
+      ['Nelson & Winter 1982', 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1496211'],
+      ['Taalbi · adjacent possible', 'https://doi.org/10.1093/icc/dtaf028'],
+    ],
+  },
+  {
+    title: 'Authorial Capacity Constraint',
+    status: 'Close prior art · synthesis/terminology only',
+    prior: 'Fernandes et al., Maier, O’Keefe and van Zoonen et al. directly address gaps between AI-assisted artefact performance, human understanding, metacognitive calibration and claim defensibility.',
+    position: 'The project retains the label as a useful organizing construct, while explicitly withdrawing any implication that it first discovered the underlying phenomenon.',
+    sources: [
+      ['Fernandes et al. 2026', 'https://doi.org/10.1016/j.chb.2025.108779'],
+      ['Maier 2026', 'https://doi.org/10.3390/jintelligence14070112'],
+      ['O’Keefe 2026', 'https://doi.org/10.2139/ssrn.7155879'],
+      ['van Zoonen et al. 2026', 'https://doi.org/10.1016/j.emj.2026.06.001'],
+    ],
+  },
+  {
+    title: 'Defensible stewardship',
+    status: 'Close antecedent · local operating synthesis',
+    prior: 'Claim accountability already argues that a named human should be able to reconstruct and defend scholarly claims. BMJ contributorship/guarantorship predates the current AI debate.',
+    position: '“Epistemic authority should not exceed defensibility” remains an Agalmic Research operating maxim, not a claim of first discovery. The research problem is operationalizing defensibility without turning it into theatre.',
+    sources: [
+      ['Beyond AI disclosure', 'https://doi.org/10.1016/j.emj.2026.06.001'],
+      ['BMJ contributorship', 'https://doi.org/10.1136/bmj.315.7110.696'],
+    ],
+  },
+  {
+    title: 'Contribution roles and epistemic authority',
+    status: 'Established contributorship + proposed authority extension',
+    prior: 'CRediT standardizes 14 contributor roles, and contributorship models have separated “who did what” from the author byline for decades.',
+    position: 'Use CRediT instead of inventing another contribution taxonomy. The narrower experimental extension is a claim-sensitive record of who can defend which claims and on what warrant.',
+    sources: [
+      ['CRediT', 'https://credit.niso.org/'],
+      ['ANSI/NISO Z39.104-2022', 'https://www.niso.org/publications/z39104-2022-credit'],
+    ],
+  },
+  {
+    title: 'Epistemic handoff and uptake',
+    status: 'Extension / synthesis',
+    prior: 'Knowledge brokering, distributed expertise and especially Cohen & Levinthal’s absorptive capacity already study recognition, assimilation and use of external knowledge.',
+    position: 'The local “handoff” framing focuses on preserving initiator credit while routing a candidate toward missing epistemic capabilities. Uptake is explicitly treated as an AI-era extension of absorptive capacity and processing constraints.',
+    sources: [['Cohen & Levinthal 1990', 'https://doi.org/10.2307/2393553']],
+  },
+  {
+    title: 'Human-Scale Epistemic Horizon',
+    status: 'Underlying problem established · terminology candidate',
+    prior: 'Computational opacity and the epistemology of computer-assisted mathematics already examine results that may be reliable without being surveyable or intuitively possessed by a human.',
+    position: 'The useful question is the institutional and economic consequence of increasing opacity, not a claim that Agalmic Research discovered epistemic opacity.',
+    sources: [
+      ['Humphreys 2004', 'https://doi.org/10.1093/0195158709.001.0001'],
+      ['AI and a priori mathematical knowledge', 'https://doi.org/10.1017/psa.2025.10160'],
+    ],
+  },
+  {
+    title: 'Memory Palace research graph',
+    status: 'Standards integration / extension',
+    prior: 'W3C PROV, RO-Crate, CRediT, MIRA and decision-provenance work already cover substantial parts of provenance, research-object packaging, contribution roles, claim/evidence graphs and contemporaneous decision records.',
+    position: 'The Memory Palace is now treated as an application profile over those systems. Local extensions are reserved for authority state, search boundaries, branch state, reversal conditions and epistemic handoff.',
+    sources: [
+      ['W3C PROV', 'https://www.w3.org/TR/prov-dm/'],
+      ['RO-Crate 1.3', 'https://www.researchobject.org/ro-crate/specification/1.3/'],
+      ['MIRA', 'https://www.mira.science/'],
+    ],
+  },
+];
+---
+<Layout title="Intellectual Lineage" description="A living novelty and prior-art register for Agalmic Research, separating established antecedents from synthesis, extension, operationalization and genuinely unassessed novelty.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Intellectual lineage & novelty</p>
+      <h1>Do not reinvent the wheel and call the spokes a revolution.</h1>
+      <p class="lede">Agalmic Research now treats prior art as infrastructure. The point is not to sound unprecedented. It is to discover what is already known, reuse it aggressively, and identify the narrower remainder that actually deserves investigation.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Novelty discipline</p>
+      <blockquote>Novelty is a conclusion of search, not a tone of voice.</blockquote>
+      <p>An idea can be new to the curator, new to a model and even independently rediscovered without being new to the world. “I had not seen this before” is provenance. It is not prior-art clearance.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Correction</p>
+        <h2>The project is changing its claims in response to prior art.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Several ideas initially developed here have close or foundational antecedents.</p>
+        <p>That discovery changes the research programme. “Epistemic Economics” is now <strong>Economics of Epistemic Abundance</strong>. The “Law of Displaced Scarcity” is now the <strong>Displaced Scarcity Hypothesis</strong>. Working Paper 001 is being revised to position the Authorial Capacity Constraint against prior work on metacognition, verification gaps, claim accountability, contributorship, epistemic dependence and computational opacity.</p>
+        <p>The default contribution categories are now <strong>antecedent, independent rediscovery, synthesis, extension, application, operationalization, terminology candidate, novelty unassessed</strong> and only then, with evidence, candidate novelty.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Living register</span>
+        <div class="section-copy">
+          <h2>What we currently think we are adding.</h2>
+          <p>This is intentionally conservative and corrigible. New prior art should downgrade a claim rather than be squeezed into a footnote.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {lineage.map((item, i) => (
+          <article class="index-item">
+            <span class="index-meta">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p><strong>Antecedents:</strong> {item.prior}</p>
+              <p><strong>Current position:</strong> {item.position}</p>
+              <p class="muted">
+                {item.sources.map(([label, href], j) => (
+                  <><a href={href}>{label} ↗</a>{j < item.sources.length - 1 ? ' · ' : ''}</>
+                ))}
+              </p>
+            </div>
+            <span class="index-status">{item.status}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">New research question</p>
+        <h2>Does machine cognition discover knowledge, or facilitate its discovery?</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The word “discovery” may be hiding several different intellectual events.</p>
+        <p>A machine can generate a candidate. A human can direct the search and recognize that the candidate matters. A proof checker, experiment or expert can validate it. A later researcher can situate it against prior art. Those acts can belong to different actors.</p>
+        <div class="status-grid">
+          <div><strong>Generation</strong><span>Produce or surface a candidate proposition, proof, mechanism, design or connection.</span></div>
+          <div><strong>Recognition</strong><span>Notice that the candidate is meaningful, surprising or worth pursuing.</span></div>
+          <div><strong>Validation</strong><span>Supply proof, evidence, replication or expert scrutiny.</span></div>
+          <div><strong>Integration</strong><span>Locate the result in existing knowledge and prior art.</span></div>
+          <div><strong>Realization</strong><span>Turn the warranted result into a usable scientific, technical or institutional object.</span></div>
+        </div>
+        <p>Whether a current AI system should itself count as a knower or discoverer is left open. Provenance can record what happened without settling that philosophical question prematurely.</p>
+        <div class="callout"><p><strong>Novelty belongs to the result relative to prior knowledge, not to the subjective surprise of whoever encountered it.</strong></p></div>
+        <p>If a model resurfaces an old idea unknown to us, we have rediscovered it. If a genuinely unprecedented result emerges from a machine-assisted search, the novelty of the result and the attribution of discovery are still separate questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Standards-first provenance</p>
+        <h2>Reuse the machinery that already exists.</h2>
+      </div>
+      <div class="prose">
+        <p>Agalmic Research is migrating ordinary provenance to <a href="https://www.w3.org/TR/prov-dm/">W3C PROV</a>, research-object packaging to <a href="https://www.researchobject.org/ro-crate/specification/1.3/">RO-Crate</a>, and scholarly contribution roles to <a href="https://credit.niso.org/">CRediT</a>. The local graph becomes an extension layer rather than a rival standard.</p>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/STANDARDS_PROVENANCE_PROFILE.md">Read the standards-first provenance profile ↗</a></p>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md">Read the full novelty register ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Search boundary</p>
+        <h2>This register does not certify novelty.</h2>
+      </div>
+      <div class="prose">
+        <p>The current review is a broad web-based literature and prior-art screen. It is not an exhaustive systematic search of Scopus, Web of Science, EconLit, PhilPapers, ProQuest, patent databases or non-English literature. Technical Nemosyne/Moneta mechanisms are outside its scope.</p>
+        <p class="muted">“Not found” therefore means novelty remains unassessed, not that the project owns an intellectual island no one has visited.</p>
+        <div class="actions">
+          <a class="button" href={internal('provenance')}>Research provenance</a>
+          <a class="button secondary" href={internal('publications/authorial-capacity-constraint')}>Working Paper 001</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
