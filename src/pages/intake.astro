@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import inbox from '../data/epistemicArtefactInbox.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+---
+<Layout title="Epistemic Intake" description="A low-friction intake room for preserving potentially valuable epistemic artefacts before warrant, understanding, novelty or commitment has been resolved.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Memory Palace · intake room</p>
+      <h1>Capture first. Judge deliberately.</h1>
+      <p class="lede">Potentially valuable outputs of human-machine search should not disappear merely because nobody has yet decided whether they are ideas, knowledge, validated results or worth pursuing. Intake preserves them cheaply without silently promoting them.</p>
+      <div class="actions">
+        <a class="button" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/EPISTEMIC_ARTEFACT_INTAKE.md">Read the intake protocol ↗</a>
+        <a class="button secondary" href={internal('memory-palace-protocol')}>Memory Palace</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Why this room exists</p>
+        <h2>Preservation should be cheaper than attention.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Capture latency should approach zero. Judgment can take longer.</p>
+        <p>An intake record may explicitly say that warrant is unknown, understanding is incomplete and novelty is unassessed. Those are legitimate epistemic states, not embarrassing blanks to be papered over.</p>
+        <div class="callout"><p><strong>Intake is not knowledge. Intake is not commitment. Intake is the refusal to lose a potentially important object before we know what it is.</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Current intake</span>
+        <div class="section-copy">
+          <h2>{inbox.records.length} preserved artefact{inbox.records.length === 1 ? '' : 's'}.</h2>
+          <p>The public projection contains only public-safe artefacts. Sensitive or potential-IP material belongs in an appropriate private store.</p>
+        </div>
+      </div>
+
+      <div class="intake-grid">
+        {inbox.records.map((item) => (
+          <article class="intake-card">
+            <p class="eyebrow">{item.kind} · {item.commitment}</p>
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+            <dl>
+              <div><dt>Warrant</dt><dd>{item.warrant_status}</dd></div>
+              <div><dt>Understanding</dt><dd>{item.understanding_status}</dd></div>
+              <div><dt>Novelty</dt><dd>{item.novelty_status}</dd></div>
+              <div><dt>Next route</dt><dd>{item.next_route}</dd></div>
+            </dl>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Routing rule</p>
+        <h2>Nothing gets promoted merely because it was captured.</h2>
+      </div>
+      <div class="prose">
+        <p>Artefacts can route to lineage review, validation, assimilation, formalization, experiment, handoff, the Possibility Portfolio, publication review, realization, parking or retirement.</p>
+        <p>That lets the research system preserve abundance while keeping scarce attention pointed at the few transitions that could actually change what becomes possible.</p>
+        <div class="actions">
+          <a class="button" href={internal('frontier')}>Active Frontier</a>
+          <a class="button secondary" href={internal('handoff')}>Handoff</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .intake-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+      gap: 1rem;
+    }
+    .intake-card {
+      border: 1px solid var(--rule, #c9c4b8);
+      padding: clamp(1rem, 2vw, 1.5rem);
+      background: rgba(255,255,255,0.24);
+    }
+    .intake-card h3 { margin-top: 0.35rem; }
+    .intake-card dl { margin: 1.25rem 0 0; }
+    .intake-card dl div {
+      display: grid;
+      grid-template-columns: minmax(7rem, 0.35fr) 1fr;
+      gap: 0.75rem;
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--rule, #c9c4b8);
+    }
+    .intake-card dt { font-weight: 700; }
+    .intake-card dd { margin: 0; }
+  </style>
+</Layout>
