@@ -28,6 +28,23 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
   <section class="section">
     <div class="shell split">
       <div>
+        <p class="eyebrow">Session protocol</p>
+        <h2>Capture the discovery process while it is happening.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The Agalmic Research Memory Palace Protocol initializes provenance, epistemic-authority, evidence, search-space and decision-replay tracking at the start of a research session.</p>
+        <p>It requires each provenance-complete session to preserve not only selected conclusions but rejected, deferred, surfaced-but-unexamined and scope-excluded branches, together with reversal conditions and a search-boundary statement.</p>
+        <div class="actions">
+          <a class="button" href={internal('memory-palace-protocol')}>Read the protocol</a>
+          <a class="button secondary" href={internal('downloads/Agalmic_Research_Memory_Palace_Protocol_v0.2.md')} download>Download v0.2 Markdown</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
         <p class="eyebrow">Two ledgers</p>
         <h2>Contribution is not authority.</h2>
       </div>
@@ -117,7 +134,7 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
         <p>The human-readable page is a projection of a machine-readable graph containing actors, nodes, typed edges, contribution roles and epistemic status. Future tooling can render it as a navigable discovery map, attach conversations and evidence, and trace any published claim back toward its intellectual ancestors.</p>
         <div class="actions">
           <a class="button" href={internal('research-graph.json')}>View research graph JSON</a>
-          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/RESEARCH_PROVENANCE_PROTOCOL.md">Read the protocol ↗</a>
+          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/RESEARCH_PROVENANCE_PROTOCOL.md">Read provenance protocol ↗</a>
         </div>
       </div>
     </div>
