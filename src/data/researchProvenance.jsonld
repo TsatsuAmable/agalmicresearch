@@ -1,0 +1,224 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "credit": "https://credit.niso.org/contributor-roles/",
+    "ar": "https://agalmicresearch.org/ns/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "ar:tsatsu-amable",
+      "@type": ["prov:Agent", "prov:Person"],
+      "schema:name": "Tsatsu Amable"
+    },
+    {
+      "@id": "ar:chatgpt",
+      "@type": ["prov:Agent", "prov:SoftwareAgent"],
+      "schema:name": "OpenAI ChatGPT",
+      "schema:softwareVersion": "GPT-5.6 Sol for the 7 September 2026 novelty-review session; earlier model versions only where separately evidenced"
+    },
+    {
+      "@id": "credit:conceptualization",
+      "@type": "prov:Role",
+      "schema:name": "CRediT: Conceptualization",
+      "schema:url": "https://credit.niso.org/contributor-roles/conceptualization/"
+    },
+    {
+      "@id": "credit:methodology",
+      "@type": "prov:Role",
+      "schema:name": "CRediT: Methodology",
+      "schema:url": "https://credit.niso.org/contributor-roles/methodology/"
+    },
+    {
+      "@id": "credit:investigation",
+      "@type": "prov:Role",
+      "schema:name": "CRediT: Investigation",
+      "schema:url": "https://credit.niso.org/contributor-roles/investigation/"
+    },
+    {
+      "@id": "credit:validation",
+      "@type": "prov:Role",
+      "schema:name": "CRediT: Validation",
+      "schema:url": "https://credit.niso.org/contributor-roles/validation/"
+    },
+    {
+      "@id": "credit:writing-original-draft",
+      "@type": "prov:Role",
+      "schema:name": "CRediT: Writing – original draft",
+      "schema:url": "https://credit.niso.org/contributor-roles/writing-original-draft/"
+    },
+    {
+      "@id": "credit:writing-review-editing",
+      "@type": "prov:Role",
+      "schema:name": "CRediT: Writing – review & editing",
+      "schema:url": "https://credit.niso.org/contributor-roles/writing-review-editing/"
+    },
+    {
+      "@id": "credit:project-administration",
+      "@type": "prov:Role",
+      "schema:name": "CRediT: Project administration",
+      "schema:url": "https://credit.niso.org/contributor-roles/project-administration/"
+    },
+    {
+      "@id": "ar:session/2026-09-07-novelty-review",
+      "@type": "prov:Activity",
+      "schema:name": "Agalmic Research intellectual-lineage and novelty review",
+      "ar:publicationSensitivity": "open",
+      "ar:epistemicStatus": "exploratory",
+      "ar:searchBoundary": "Broad web-based prior-art and literature review; not exhaustive across Scopus, Web of Science, EconLit, PhilPapers, ProQuest, patent databases or non-English literature.",
+      "prov:wasAssociatedWith": [
+        { "@id": "ar:tsatsu-amable" },
+        { "@id": "ar:chatgpt" }
+      ],
+      "prov:qualifiedAssociation": [
+        {
+          "@type": "prov:Association",
+          "prov:agent": { "@id": "ar:tsatsu-amable" },
+          "prov:hadRole": [
+            { "@id": "credit:conceptualization" },
+            { "@id": "credit:project-administration" }
+          ],
+          "ar:fineRole": ["initiator", "search_director", "selector", "decision_maker"]
+        },
+        {
+          "@type": "prov:Association",
+          "prov:agent": { "@id": "ar:chatgpt" },
+          "prov:hadRole": [
+            { "@id": "credit:investigation" },
+            { "@id": "credit:writing-original-draft" },
+            { "@id": "credit:writing-review-editing" }
+          ],
+          "ar:fineRole": ["literature_search", "synthesizer", "critic", "developer"]
+        }
+      ]
+    },
+    {
+      "@id": "ar:entity/intellectual-lineage-register-v0.1",
+      "@type": ["prov:Entity", "schema:DigitalDocument"],
+      "schema:name": "Intellectual Lineage and Novelty Register v0.1",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md",
+      "prov:wasGeneratedBy": { "@id": "ar:session/2026-09-07-novelty-review" },
+      "prov:wasAttributedTo": { "@id": "ar:tsatsu-amable" },
+      "ar:epistemicStatus": "living-prior-art-register"
+    },
+    {
+      "@id": "ar:entity/standards-provenance-profile-v0.1",
+      "@type": ["prov:Entity", "schema:DigitalDocument"],
+      "schema:name": "Agalmic Research Standards-First Provenance Profile v0.1",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/STANDARDS_PROVENANCE_PROFILE.md",
+      "prov:wasGeneratedBy": { "@id": "ar:session/2026-09-07-novelty-review" },
+      "prov:wasDerivedFrom": [
+        { "@id": "ar:source/w3c-prov" },
+        { "@id": "ar:source/ro-crate" },
+        { "@id": "ar:source/credit" },
+        { "@id": "ar:source/mira" }
+      ]
+    },
+    {
+      "@id": "ar:entity/paper-001-v0.2",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "The Authorial Capacity Constraint v0.2",
+      "ar:epistemicStatus": "exploratory-machine-assisted",
+      "schema:url": "https://agalmicresearch.org/publications/authorial-capacity-constraint/"
+    },
+    {
+      "@id": "ar:activity/paper-001-lineage-revision",
+      "@type": "prov:Activity",
+      "schema:name": "Paper 001 prior-art correction and v0.3 revision",
+      "prov:used": [
+        { "@id": "ar:entity/paper-001-v0.2" },
+        { "@id": "ar:entity/intellectual-lineage-register-v0.1" },
+        { "@id": "ar:source/van-zoonen-2026" },
+        { "@id": "ar:source/okeefe-2026" },
+        { "@id": "ar:source/fernandes-2026" },
+        { "@id": "ar:source/maier-2026" },
+        { "@id": "ar:source/hardwig-1985" },
+        { "@id": "ar:source/humphreys-2004" }
+      ],
+      "prov:wasAssociatedWith": [
+        { "@id": "ar:tsatsu-amable" },
+        { "@id": "ar:chatgpt" }
+      ]
+    },
+    {
+      "@id": "ar:entity/paper-001-v0.3",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "The Authorial Capacity Constraint v0.3",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/paper-001-lineage-revision" },
+      "prov:wasDerivedFrom": { "@id": "ar:entity/paper-001-v0.2" },
+      "ar:epistemicStatus": "exploratory-machine-assisted-lineage-reviewed",
+      "ar:noveltyPosition": "The label and synthesis may be useful; the underlying performance/comprehension and claim-defensibility problems have close prior art and are not claimed as first discoveries."
+    },
+    {
+      "@id": "ar:question/discovery-attribution",
+      "@type": ["prov:Entity", "schema:Question"],
+      "schema:name": "Discovery Attribution Problem",
+      "schema:text": "When machine cognition generates or surfaces a candidate and a human directs the search, recognizes significance, validates or integrates it, what exactly has been discovered, by whom or what, and how should novelty and contribution be represented?",
+      "ar:epistemicStatus": "open-research-question",
+      "prov:wasGeneratedBy": { "@id": "ar:session/2026-09-07-novelty-review" },
+      "prov:wasAttributedTo": { "@id": "ar:tsatsu-amable" },
+      "ar:handoffNeeded": ["philosophy of science", "epistemology", "AI scientific discovery", "innovation studies"]
+    },
+    {
+      "@id": "ar:source/w3c-prov",
+      "@type": ["prov:Entity", "schema:CreativeWork"],
+      "schema:name": "PROV-DM: The PROV Data Model",
+      "schema:url": "https://www.w3.org/TR/prov-dm/"
+    },
+    {
+      "@id": "ar:source/ro-crate",
+      "@type": ["prov:Entity", "schema:CreativeWork"],
+      "schema:name": "RO-Crate Metadata Specification 1.3",
+      "schema:url": "https://www.researchobject.org/ro-crate/specification/1.3/"
+    },
+    {
+      "@id": "ar:source/credit",
+      "@type": ["prov:Entity", "schema:CreativeWork"],
+      "schema:name": "ANSI/NISO CRediT Contributor Role Taxonomy",
+      "schema:url": "https://credit.niso.org/"
+    },
+    {
+      "@id": "ar:source/mira",
+      "@type": ["prov:Entity", "schema:CreativeWork"],
+      "schema:name": "MIRA: Modular Interoperable Research Attribution",
+      "schema:url": "https://www.mira.science/"
+    },
+    {
+      "@id": "ar:source/van-zoonen-2026",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "Beyond AI disclosure: Claim accountability and responsible research in scholarly publishing",
+      "schema:identifier": "https://doi.org/10.1016/j.emj.2026.06.001"
+    },
+    {
+      "@id": "ar:source/okeefe-2026",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "The Verification Gap",
+      "schema:identifier": "https://doi.org/10.2139/ssrn.7155879"
+    },
+    {
+      "@id": "ar:source/fernandes-2026",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "AI makes you smarter but none the wiser: The disconnect between performance and metacognition",
+      "schema:identifier": "https://doi.org/10.1016/j.chb.2025.108779"
+    },
+    {
+      "@id": "ar:source/maier-2026",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "Self-Evaluation in AI-Assisted Cognition: An Explanatory Framework for Calibration and Miscalibration Effects",
+      "schema:identifier": "https://doi.org/10.3390/jintelligence14070112"
+    },
+    {
+      "@id": "ar:source/hardwig-1985",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "Epistemic Dependence",
+      "schema:identifier": "https://doi.org/10.2307/2026523"
+    },
+    {
+      "@id": "ar:source/humphreys-2004",
+      "@type": ["prov:Entity", "schema:Book"],
+      "schema:name": "Extending Ourselves: Computational Science, Empiricism, and Scientific Method",
+      "schema:identifier": "https://doi.org/10.1093/0195158709.001.0001"
+    }
+  ]
+}
