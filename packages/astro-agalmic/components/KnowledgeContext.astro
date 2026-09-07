@@ -1,0 +1,118 @@
+---
+interface Props {
+  item: any;
+  registry: any[] | { objects?: any[] };
+  handoffs?: any[] | { handoffs?: any[] };
+  history?: any[] | { events?: any[] };
+  routes?: {
+    lineage?: string;
+    provenance?: string;
+    frontier?: string;
+    handoff?: string;
+    history?: string;
+  };
+  labels?: {
+    heading?: string;
+    description?: string;
+    origins?: string;
+    related?: string;
+    next?: string;
+  };
+}
+
+const {
+  item,
+  registry,
+  handoffs = [],
+  history = [],
+  routes = {},
+  labels = {},
+} = Astro.props;
+const objects = Array.isArray(registry) ? registry : registry?.objects ?? [];
+const handoffItems = Array.isArray(handoffs) ? handoffs : handoffs?.handoffs ?? [];
+const historyEventsAll = Array.isArray(history) ? history : history?.events ?? [];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internalHref = (href) => href?.startsWith('http://') || href?.startsWith('https://') ? href : `${base}/${String(href ?? '').replace(/^\/+/, '')}`;
+const byId = new Map(objects.map((candidate) => [candidate.id, candidate]));
+const handoffById = new Map(handoffItems.map((handoff) => [handoff.id, handoff]));
+const handoffBase = routes.handoff ?? '/handoff/';
+const handoffHref = (id) => `${handoffBase.replace(/\/$/, '')}/#${String(id).replace(':', '-')}`;
+
+const related = (item.related ?? []).map((id) => {
+  const relatedItem = byId.get(id);
+  if (relatedItem) return { id, title: relatedItem.title, href: relatedItem.href, kind: relatedItem.kind };
+  const handoff = handoffById.get(id);
+  if (handoff) return { id, title: handoff.title, href: handoffHref(id), kind: 'handoff' };
+  return null;
+}).filter(Boolean);
+
+const relevantHandoffs = handoffItems.filter((handoff) =>
+  handoff.origin === item.id || (handoff.links ?? []).some((href) => href === item.href)
+);
+const historyEvents = historyEventsAll.filter((event) =>
+  (event.object_ids ?? []).includes(item.id) || event.current_href === item.href
+);
+const historyBase = routes.history ?? '/history/';
+---
+<section class="section research-object-context" data-search-ignore>
+  <div class="shell">
+    <div class="section-head">
+      <span class="section-number">Knowledge context</span>
+      <div class="section-copy">
+        <h2>{labels.heading ?? 'Place this object in the larger knowledge space.'}</h2>
+        <p>{labels.description ?? 'These links are generated from semantic relationships rather than hand-maintained inside the article.'}</p>
+      </div>
+    </div>
+
+    <div class="research-context-grid">
+      <article>
+        <p class="eyebrow">Where did this come from?</p>
+        <h3>{labels.origins ?? 'Origins'}</h3>
+        {historyEvents.length > 0 ? (
+          <ul>
+            {historyEvents.map((event) => (
+              <li><a href={internalHref(`${historyBase}${event.slug}/`)}>{event.previous_title} → {event.current_title}</a></li>
+            ))}
+          </ul>
+        ) : (
+          <p class="muted">No supersession event is registered for this object.</p>
+        )}
+        {(routes.lineage || routes.provenance) && (
+          <p>
+            {routes.lineage && <a href={internalHref(routes.lineage)}>Lineage</a>}
+            {routes.lineage && routes.provenance && ' · '}
+            {routes.provenance && <a href={internalHref(routes.provenance)}>Provenance</a>}
+          </p>
+        )}
+      </article>
+
+      <article>
+        <p class="eyebrow">What is related?</p>
+        <h3>{labels.related ?? 'Neighbours'}</h3>
+        {related.length > 0 ? (
+          <ul>
+            {related.map((candidate) => (
+              <li><a href={internalHref(candidate.href)}>{candidate.title}</a> <span class="muted">· {String(candidate.kind).replaceAll('-', ' ')}</span></li>
+            ))}
+          </ul>
+        ) : (
+          <p class="muted">No explicit neighbours are registered yet.</p>
+        )}
+      </article>
+
+      <article>
+        <p class="eyebrow">Where can I go next?</p>
+        <h3>{labels.next ?? 'Meaningful direction'}</h3>
+        <p>{item.direction}</p>
+        {relevantHandoffs.length > 0 && (
+          <ul>
+            {relevantHandoffs.map((handoff) => (
+              <li><a href={internalHref(handoffHref(handoff.id))}>{handoff.title}</a></li>
+            ))}
+          </ul>
+        )}
+        {routes.frontier && <p><a href={internalHref(routes.frontier)}>Compare with the active frontier →</a></p>}
+      </article>
+    </div>
+  </div>
+</section>
