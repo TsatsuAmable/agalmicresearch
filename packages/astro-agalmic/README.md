@@ -70,6 +70,8 @@ The integration watches the declared data files, validates the semantic graph wh
 
 `related` IDs are checked during validation. Canonical research URLs must be unique.
 
+Handoff `origin` IDs are intentionally open-world by default. A handoff may originate in a private portfolio, external repository or another namespace that is not part of the public registry. If you want closed-world checking, pass the permitted external IDs through `knownOrigins`.
+
 ## Search
 
 Use the supplied Astro component:
@@ -146,6 +148,7 @@ agalmic({
   history: null,
   handoffs: null,
   researchKinds: ['research-note', 'working-paper', 'draft'],
+  knownOrigins: null,
   validate: true,
   search: {
     output: 'search-index.json',
