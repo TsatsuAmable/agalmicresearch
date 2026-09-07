@@ -2,23 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 
 const tracks = [
-  ['Epistemic Stewardship & Handoff', 'The governance of claims and contributions when machine-assisted artefacts can outrun the initiator’s present capacity to defend them.', 'Builds on epistemic dependence, contributorship/guarantorship, metacognition and recent claim-accountability work. The open question is how to operationalize claim-sensitive authority and handoff without creating new gatekeeping rituals.'],
-  ['Epistemic Uptake', 'The capacity of institutions to notice, route, evaluate, validate, integrate and realise candidate knowledge when idea generation becomes cheap.', 'Extends absorptive-capacity and knowledge-brokering traditions into a regime of machine-generated candidate abundance. How should scarce expert attention be allocated?'],
+  ['Epistemic Stewardship & Handoff', 'The governance of claims and contributions when machine-assisted artefacts can outrun the initiator’s present capacity to defend them.', 'Builds on epistemic dependence, contributorship/guarantorship, metacognition, claim-accountability, knowledge-brokerage and absorptive-capacity traditions. The open question is how to operationalize claim-sensitive authority and handoff without creating new gatekeeping rituals.'],
+  ['Epistemic Uptake', 'The capacity of institutions to notice, route, evaluate, validate, integrate and realise candidate knowledge when idea generation becomes cheap.', 'Extends absorptive-capacity, transfer, brokerage, intermediary and expert-evaluation literatures into a regime of machine-generated candidate abundance. How should scarce expert attention be allocated?'],
   ['Agalmic Economics', 'A contemporary programme about allocation and value around non-scarce or very low-marginal-cost goods and the scarce complements on which they still depend.', 'Robert Levin’s earlier agalmics is a direct antecedent. What does machine cognition change relative to that prior framing?'],
-  ['Economics of Epistemic Abundance', 'The allocation of scarce attention, validation, trust, institutional bandwidth and physical capability when candidate knowledge is unusually cheap to generate.', 'The name deliberately avoids claiming Grandori’s established “epistemic economics” territory. How do Simon’s attention scarcity, Weitzman’s processing constraint and absorptive capacity change under machine cognition?'],
-  ['Machine Cognition & Discovery Attribution', 'The division of intellectual labour when machines generate candidates while humans or other systems direct, recognise, validate, integrate and realise them.', 'Does current machine cognition discover knowledge or facilitate discovery? How should novelty and contribution be represented when those functions split across actors?'],
-  ['Innovation Search Under AI', 'An AI-era extension of established evolutionary-economics, recombinant-search and adjacent-possible literatures.', 'How do lower search costs and larger branching factors change exploration, selection, testing and realization? Which human capabilities remain complementary?'],
-  ['Attention & Selection', 'The economics and information theory of choosing among an expanding set of plausible ideas, models, artefacts and interventions.', 'Simon’s attention scarcity is foundational. The new task is to model allocation when candidate production itself becomes machine-amplified.'],
+  ['Economics of Epistemic Abundance', 'The allocation of scarce attention, validation, trust, institutional bandwidth and physical capability when candidate knowledge is unusually cheap to generate.', 'The name deliberately avoids claiming Grandori’s established “epistemic economics” territory. How do Simon’s attention scarcity, Weitzman’s processing constraint, absorptive capacity and modern AI-abundance economics interact?'],
+  ['Distributed Discovery & Provenance', 'The division of intellectual labour when humans and machines split problem framing, generation, significance recognition, validation, integration and realization.', 'Computational discovery and collective-centred AI discovery are established literatures. The remaining task is operational: represent novelty, priority, contribution and epistemic authority separately, then test whether the representation is useful.'],
+  ['Innovation Search Under AI', 'An AI-era extension of established evolutionary-economics, recombinant-search and adjacent-possible literatures.', 'How do lower search costs and larger branching factors change exploration, selection, testing, realization and the diversity of the search frontier? Which human capabilities remain complementary?'],
+  ['Attention & Selection', 'The economics and information theory of choosing among an expanding set of plausible ideas, models, artefacts and interventions.', 'Simon’s attention scarcity is foundational, and recent idea-evaluation work already identifies expert-review bottlenecks. The new task is to model allocation under machine-amplified candidate production.'],
   ['Representation as Discovery', 'Methods for finding representations that preserve useful structure while reducing cognitive, computational or physical cost.', 'EDA, visual analytics, information bottleneck and representation learning are antecedents. Novelty must be established at the level of concrete formalisms and evidence, including Moneta/Nemosyne.'],
   ['Institutions, IP & Rents', 'Property, incentives and institutional design when invention, search and disclosure can happen at machine speed.', 'Builds on Arrow, appropriability/complementary-assets theory, open innovation and defensive-publication practice. What changes when search and candidate generation become dramatically cheaper?'],
 ];
 ---
-<Layout title="Research" description="The Agalmic Research programme: economics of epistemic abundance, stewardship, handoff, uptake, machine-assisted discovery, innovation search, representation and governance.">
+<Layout title="Research" description="The Agalmic Research programme: economics of epistemic abundance, stewardship, handoff, uptake, distributed discovery, innovation search, representation and governance.">
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Research</p>
       <h1>A map of questions, with the ancestors left visible.</h1>
-      <p class="lede">The programme starts from a technological change, not from the assumption that prior disciplines failed to notice scarcity, search, attention, knowledge uptake or epistemic dependence. Existing theory is part of the machinery.</p>
+      <p class="lede">The programme starts from a technological change, not from the assumption that prior disciplines failed to notice scarcity, search, attention, knowledge uptake, distributed discovery or epistemic dependence. Existing theory is part of the machinery.</p>
     </div>
   </header>
 
@@ -29,8 +29,8 @@ const tracks = [
         <h2>Search before naming a field.</h2>
       </div>
       <div class="prose">
-        <p class="large">Agalmic Research now distinguishes established antecedents, independent rediscovery, synthesis, extension, application, operationalization and genuinely unassessed novelty.</p>
-        <p>The current review has already changed terminology and claims. “Epistemic Economics” has become <strong>Economics of Epistemic Abundance</strong>; the “Law of Displaced Scarcity” has become the <strong>Displaced Scarcity Hypothesis</strong>; and Working Paper 001 is explicitly positioned against close prior work.</p>
+        <p class="large">Agalmic Research distinguishes established antecedents, independent rediscovery, synthesis, extension, application, operationalization and genuinely unassessed novelty.</p>
+        <p>The reviews have already changed terminology and claims. “Epistemic Economics” became <strong>Economics of Epistemic Abundance</strong>; the “Law of Displaced Scarcity” became the <strong>Displaced Scarcity Hypothesis</strong>; and the machine-discovery question is now explicitly grounded in decades of computational and philosophical work.</p>
         <p><a href="/lineage">Inspect the living intellectual lineage →</a></p>
       </div>
     </div>
@@ -58,7 +58,7 @@ const tracks = [
     <div class="shell thesis">
       <p class="eyebrow">Displaced Scarcity Hypothesis</p>
       <blockquote>When a previously binding constraint becomes sufficiently abundant, system performance and value become increasingly determined by complementary constraints that remain scarce.</blockquote>
-      <p>This is a proposed generalization over familiar bottleneck, attention and complementary-asset mechanisms. It must earn any stronger status by formalization, distinctive predictions and evidence.</p>
+      <p>The general intuition has strong antecedents in fixed-proportions bottlenecks, attention scarcity, complementary assets, weak-link/complementarity models and current AI-abundance economics. The hypothesis must earn usefulness through formal conditions, distinctive predictions and evidence.</p>
     </div>
   </section>
 
