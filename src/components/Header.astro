@@ -5,6 +5,7 @@ const route = (segment = '') => segment ? `${base}/${segment.replace(/^\//, '')}
 const links = [
   { href: route('research'), label: 'Research' },
   { href: route('publications'), label: 'Publications' },
+  { href: route('drafts'), label: 'Drafts' },
   { href: route('principles'), label: 'Principles' },
 ];
 ---
