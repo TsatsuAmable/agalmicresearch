@@ -1,0 +1,36 @@
+{
+  "name": "astro-agalmic",
+  "version": "0.1.0",
+  "description": "Knowledge discovery architecture for Astro: semantic registries, full-text search, history, handoffs and generated research context.",
+  "type": "module",
+  "license": "0BSD",
+  "keywords": [
+    "astro",
+    "knowledge-management",
+    "research",
+    "search",
+    "provenance",
+    "digital-garden"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.mjs"
+    },
+    "./schema": "./src/schema.mjs",
+    "./components/Search.astro": "./components/Search.astro",
+    "./components/KnowledgeContext.astro": "./components/KnowledgeContext.astro"
+  },
+  "files": [
+    "src",
+    "components",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "astro": ">=5.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
