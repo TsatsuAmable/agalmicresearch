@@ -1,0 +1,265 @@
+{
+  "schema_version": "0.1",
+  "graph_id": "AR-GRAPH-2026-09-07-A",
+  "title": "Epistemic stewardship discovery chain",
+  "status": "retrospective reconstruction from conversation and repository history",
+  "created": "2026-09-07",
+  "principles": [
+    "Contribution provenance is separate from epistemic authority.",
+    "Epistemic authority should not exceed defensibility.",
+    "Origin deserves credit. Authority requires warrant.",
+    "Low authority should trigger handoff, not erasure."
+  ],
+  "actors": [
+    {
+      "id": "actor:human-curator",
+      "type": "human",
+      "label": "Human curator"
+    },
+    {
+      "id": "actor:chatgpt",
+      "type": "ai_system",
+      "label": "OpenAI ChatGPT",
+      "model_note": "GPT-5.6 Sol for the session in which this graph was recorded; earlier contributions should be understood as ChatGPT contributions unless model-specific evidence is preserved."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "concept:cognitive-abundance",
+      "type": "concept",
+      "label": "Cognitive abundance",
+      "epistemic_status": "exploratory",
+      "summary": "Machine cognition sharply lowers the cost of producing candidate arguments, code, hypotheses and other intellectual artefacts.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "search_director"],
+          "note": "Developed the broader Agalmic Research programme around abundance of machine cognition and knowledge production."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["synthesizer", "developer", "editor"],
+          "note": "Helped organize the abundance framing into research tracks and draft language."
+        }
+      ]
+    },
+    {
+      "id": "concept:authorial-capacity-gap",
+      "type": "concept",
+      "label": "Authorial Capacity Gap",
+      "epistemic_status": "exploratory",
+      "summary": "Artefact sophistication can increase faster than the human curator's ability to understand and defend it.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "framer"],
+          "note": "Raised the problem through concern about Dunning–Kruger, human author/curator capacity and personal inability to defend machine-assisted work commensurate with its apparent quality."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["terminology", "synthesizer", "developer"],
+          "note": "Named and developed the Authorial Capacity Constraint and distinguished artefact quality from curator comprehension and defensibility."
+        }
+      ]
+    },
+    {
+      "id": "principle:defensible-stewardship",
+      "type": "principle",
+      "label": "Principle of Defensible Stewardship",
+      "epistemic_status": "proposed",
+      "summary": "Epistemic authority should not exceed defensibility.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "selector", "decision_maker"],
+          "note": "Motivated the principle through the authorial-capacity concern and chose to make it the governing principle and first-paper focus."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["terminology", "framer", "synthesizer"],
+          "note": "Proposed the compact formulation 'Epistemic authority should not exceed defensibility' and the label Principle of Defensible Stewardship."
+        }
+      ]
+    },
+    {
+      "id": "paper:authorial-capacity-constraint",
+      "type": "paper",
+      "label": "The Authorial Capacity Constraint",
+      "epistemic_status": "exploratory-machine-assisted",
+      "repository_path": "src/pages/publications/authorial-capacity-constraint.astro",
+      "summary": "Working Paper 001 on authorship, defensibility and epistemic stewardship under cognitive abundance.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "search_director", "selector", "decision_maker"],
+          "note": "Introduced the central concern, supplied key future directions, chose transparency as the first-paper strategy and authorised publication."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["framer", "terminology", "synthesizer", "developer", "critic", "editor", "generator"],
+          "note": "Developed terminology and structure, drafted substantial prose, introduced distinctions, generated counterarguments and helped shape the research programme."
+        }
+      ]
+    },
+    {
+      "id": "conjecture:human-scale-epistemic-horizon",
+      "type": "conjecture",
+      "label": "Human-Scale Epistemic Horizon",
+      "epistemic_status": "speculative",
+      "summary": "Frontier knowledge may eventually exceed the point at which any unaided human can personally comprehend and defend the best available results.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "framer"],
+          "note": "Raised the possibility that increasing machine capability could diminish epistemic authority on the human scale, connecting it to singularity thinking and suggesting mathematics as an early domain."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["terminology", "developer", "editor"],
+          "note": "Named the Human-Scale Epistemic Horizon and framed it as a clearly marked deep-future conjecture rather than a prediction."
+        }
+      ]
+    },
+    {
+      "id": "principle:separable-epistemic-roles",
+      "type": "principle",
+      "label": "Principle of Separable Epistemic Roles",
+      "epistemic_status": "proposed",
+      "summary": "Epistemic contribution and epistemic authority should be separable.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "framer"],
+          "note": "Introduced the larger problem of harnessing ideas from non-experts and explicitly proposed separating initiator credentials from those with epistemic authority over a work."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["terminology", "synthesizer", "developer"],
+          "note": "Formulated the separable-roles principle and the compact phrase 'Origin deserves credit. Authority requires warrant.'"
+        }
+      ]
+    },
+    {
+      "id": "concept:epistemic-handoff",
+      "type": "concept",
+      "label": "Epistemic handoff",
+      "epistemic_status": "exploratory",
+      "summary": "A structured transfer of candidate knowledge from an initiator toward actors who can frame, validate, verify, develop or realize it while preserving originator credit.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "framer"],
+          "note": "Supplied the practical pattern: 'It's my idea but I don't know if it's worth anything' should be followed by someone capable taking a look and helping make use of it."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["terminology", "synthesizer", "developer"],
+          "note": "Named the process epistemic handoff and developed the two-ledger and routing interpretation."
+        }
+      ]
+    },
+    {
+      "id": "constraint:epistemic-uptake",
+      "type": "constraint",
+      "label": "Epistemic Uptake Constraint",
+      "epistemic_status": "exploratory",
+      "summary": "As candidate knowledge becomes abundant, the capacity to notice, route, evaluate, validate, integrate and realize valuable contributions becomes scarce.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "framer"],
+          "note": "Motivated the need for society to harness valuable ideas from initiators who cannot themselves judge them."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["terminology", "formalizer", "synthesizer"],
+          "note": "Named and formulated the Epistemic Uptake Constraint as an instance of displaced scarcity."
+        }
+      ]
+    },
+    {
+      "id": "institution:epistemic-routing",
+      "type": "institutional_problem",
+      "label": "Institutions for routing knowledge",
+      "epistemic_status": "research-programme",
+      "summary": "Knowledge systems need mechanisms for routing low-authority candidate ideas toward scarce expert attention, verification and realization while preventing appropriation, credential capture, flooding and filter monopoly.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "search_director", "selector"],
+          "note": "Pushed the discussion from attribution toward the larger question of how useful knowledge can still be harnessed."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["synthesizer", "developer", "critic"],
+          "note": "Expanded the institutional consequences, failure modes and possible epistemic supply-chain roles."
+        }
+      ]
+    },
+    {
+      "id": "paper:epistemic-handoff",
+      "type": "draft",
+      "label": "Epistemic Handoff: Contribution, Authority and Uptake Under Cognitive Abundance",
+      "epistemic_status": "exploratory-machine-assisted",
+      "repository_path": "src/pages/drafts/epistemic-handoff.astro",
+      "summary": "Draft paper developing separable contribution and authority, handoff, uptake scarcity and institutional routing.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["initiator", "framer", "search_director", "decision_maker"],
+          "note": "Introduced the central separation between the idea initiator and those with epistemic authority and requested the website and paper programme be updated accordingly."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["terminology", "synthesizer", "developer", "critic", "generator", "editor"],
+          "note": "Named epistemic handoff and uptake, drafted the exploratory paper and developed failure modes and research questions."
+        }
+      ]
+    },
+    {
+      "id": "project:defensibility-layer",
+      "type": "institutional_proposal",
+      "label": "The Defensibility Layer",
+      "epistemic_status": "proposal",
+      "summary": "A proposed open infrastructure layer for recording human/machine contribution, verification and demonstrated defensibility in AI-assisted research.",
+      "contributions": [
+        {
+          "actor": "actor:human-curator",
+          "roles": ["selector", "decision_maker", "search_director"],
+          "note": "Identified the IFP Launch Sequence opportunity and chose to pursue review of a practical proposal."
+        },
+        {
+          "actor": "actor:chatgpt",
+          "roles": ["framer", "synthesizer", "developer", "critic", "generator"],
+          "note": "Proposed the Defensibility Layer as a concrete implementation direction and drafted/adversarially reviewed the pitch."
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {"from": "concept:cognitive-abundance", "to": "concept:authorial-capacity-gap", "type": "creates_pressure_for"},
+    {"from": "concept:authorial-capacity-gap", "to": "principle:defensible-stewardship", "type": "motivates"},
+    {"from": "principle:defensible-stewardship", "to": "paper:authorial-capacity-constraint", "type": "published_as"},
+    {"from": "concept:authorial-capacity-gap", "to": "conjecture:human-scale-epistemic-horizon", "type": "extends"},
+    {"from": "concept:authorial-capacity-gap", "to": "principle:separable-epistemic-roles", "type": "creates_need_for"},
+    {"from": "principle:separable-epistemic-roles", "to": "concept:epistemic-handoff", "type": "implemented_conceptually_as"},
+    {"from": "concept:epistemic-handoff", "to": "constraint:epistemic-uptake", "type": "reveals"},
+    {"from": "constraint:epistemic-uptake", "to": "institution:epistemic-routing", "type": "creates_need_for"},
+    {"from": "principle:separable-epistemic-roles", "to": "paper:epistemic-handoff", "type": "developed_in"},
+    {"from": "concept:epistemic-handoff", "to": "paper:epistemic-handoff", "type": "developed_in"},
+    {"from": "constraint:epistemic-uptake", "to": "paper:epistemic-handoff", "type": "developed_in"},
+    {"from": "principle:defensible-stewardship", "to": "project:defensibility-layer", "type": "implemented_as"},
+    {"from": "principle:separable-epistemic-roles", "to": "project:defensibility-layer", "type": "extends_requirements_of"},
+    {"from": "institution:epistemic-routing", "to": "project:defensibility-layer", "type": "potentially_supported_by"}
+  ],
+  "canonical_chain": [
+    "concept:cognitive-abundance",
+    "concept:authorial-capacity-gap",
+    "principle:defensible-stewardship",
+    "principle:separable-epistemic-roles",
+    "concept:epistemic-handoff",
+    "constraint:epistemic-uptake",
+    "institution:epistemic-routing"
+  ],
+  "correction_policy": "Attributions and edges may be corrected when better evidence appears. Corrections should be committed with an explanation rather than silently rewritten."
+}
