@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "check:knowledge": "node scripts/validate-knowledge-index.mjs",
-    "build": "npm run check:knowledge && astro build && node scripts/build-search-index.mjs",
+    "test:astro-agalmic": "node --test packages/astro-agalmic/test/*.test.mjs",
+    "build": "npm run check:knowledge && npm run test:astro-agalmic && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
