@@ -125,7 +125,9 @@ for (const event of history.events) {
 unique(legacyPaths, 'knowledge history legacy path');
 
 if (!fs.existsSync(path.join(root, 'src/pages/search.astro'))) fail('full-text search route is missing');
-if (!fs.existsSync(path.join(root, 'scripts/build-search-index.mjs'))) fail('full-text search index builder is missing');
+if (!fs.existsSync(path.join(root, 'packages/astro-agalmic/src/index.mjs'))) fail('astro-agalmic integration is missing');
+if (!fs.existsSync(path.join(root, 'packages/astro-agalmic/components/Search.astro'))) fail('astro-agalmic Search component is missing');
+if (!fs.existsSync(path.join(root, 'packages/astro-agalmic/components/KnowledgeContext.astro'))) fail('astro-agalmic KnowledgeContext component is missing');
 if (!fs.existsSync(path.join(root, 'src/pages/sitemap.xml.ts'))) fail('sitemap endpoint is missing');
 if (!fs.existsSync(path.join(root, 'src/pages/rss.xml.ts'))) fail('RSS endpoint is missing');
 if (historyIds.size > 0 && !fs.existsSync(path.join(root, 'src/pages/history/[slug].astro'))) fail('historical object route is missing');
