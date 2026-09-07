@@ -4,7 +4,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const route = (segment = '') => segment ? `${base}/${segment.replace(/^\//, '')}` : `${base}/`;
 const links = [
   { href: route('research'), label: 'Research' },
+  { href: route('notes'), label: 'Notes' },
   { href: route('publications'), label: 'Publications' },
+  { href: route('frontier'), label: 'Frontier' },
   { href: route('drafts'), label: 'Drafts' },
   { href: route('lineage'), label: 'Lineage' },
   { href: route('provenance'), label: 'Provenance' },
