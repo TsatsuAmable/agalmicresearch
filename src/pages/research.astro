@@ -2,35 +2,50 @@
 import Layout from '../layouts/Layout.astro';
 
 const tracks = [
-  ['Epistemic Stewardship & Handoff', 'The governance of claims and contributions when machine cognition can produce artefacts whose sophistication exceeds the human initiator’s present capacity to defend them.', 'How should defensibility be demonstrated? How should contribution and authority be separated? How can low-authority ideas be routed toward capable stewards without erasing their originators?'],
-  ['Epistemic Uptake', 'The capacity of institutions to notice, route, evaluate, validate, integrate and realise candidate knowledge when idea generation becomes cheap.', 'What becomes scarce when ideas are abundant? How should expert attention be allocated? How do we prevent credential capture, idea appropriation and filter monopoly?'],
-  ['Agalmic Economics', 'A general theory of economic organisation when important goods become non-rival or extremely cheap to reproduce.', 'Where does scarcity migrate? How should value be measured? Which classical assumptions survive?'],
-  ['Epistemic Economics', 'The allocation of scarce attention, validation, trust, institutional bandwidth and physical capability in a world of cheap candidate knowledge.', 'What is the price of verification? How do we rank claims? What replaces generation as the bottleneck?'],
-  ['Innovation as Search', 'A formal account of innovation as exploration and exploitation of adjacent possibles, increasingly performed by human-model systems.', 'How should search be directed? How is novelty distinguished from noise? Who chooses which branch receives resources?'],
-  ['Attention & Selection', 'The economics and information theory of choosing among an expanding set of plausible ideas, models, artefacts and interventions.', 'How do filters avoid becoming the new monopolies? Who curates the curators? How should uncertainty and stability affect ranking?'],
-  ['Representation as Discovery', 'Methods for finding representations that preserve meaningful information while reducing cognitive, computational or physical cost.', 'What does “meaning-preserving” mean formally? Can representation choice be treated as a constraint-solving problem?'],
-  ['Institutions, IP & Rents', 'Property, incentives and institutional design when invention and disclosure can happen at machine speed.', 'When does defensive publication dominate patenting? When is temporary exclusivity genuinely needed to finance realisation?'],
+  ['Epistemic Stewardship & Handoff', 'The governance of claims and contributions when machine-assisted artefacts can outrun the initiator’s present capacity to defend them.', 'Builds on epistemic dependence, contributorship/guarantorship, metacognition and recent claim-accountability work. The open question is how to operationalize claim-sensitive authority and handoff without creating new gatekeeping rituals.'],
+  ['Epistemic Uptake', 'The capacity of institutions to notice, route, evaluate, validate, integrate and realise candidate knowledge when idea generation becomes cheap.', 'Extends absorptive-capacity and knowledge-brokering traditions into a regime of machine-generated candidate abundance. How should scarce expert attention be allocated?'],
+  ['Agalmic Economics', 'A contemporary programme about allocation and value around non-scarce or very low-marginal-cost goods and the scarce complements on which they still depend.', 'Robert Levin’s earlier agalmics is a direct antecedent. What does machine cognition change relative to that prior framing?'],
+  ['Economics of Epistemic Abundance', 'The allocation of scarce attention, validation, trust, institutional bandwidth and physical capability when candidate knowledge is unusually cheap to generate.', 'The name deliberately avoids claiming Grandori’s established “epistemic economics” territory. How do Simon’s attention scarcity, Weitzman’s processing constraint and absorptive capacity change under machine cognition?'],
+  ['Machine Cognition & Discovery Attribution', 'The division of intellectual labour when machines generate candidates while humans or other systems direct, recognise, validate, integrate and realise them.', 'Does current machine cognition discover knowledge or facilitate discovery? How should novelty and contribution be represented when those functions split across actors?'],
+  ['Innovation Search Under AI', 'An AI-era extension of established evolutionary-economics, recombinant-search and adjacent-possible literatures.', 'How do lower search costs and larger branching factors change exploration, selection, testing and realization? Which human capabilities remain complementary?'],
+  ['Attention & Selection', 'The economics and information theory of choosing among an expanding set of plausible ideas, models, artefacts and interventions.', 'Simon’s attention scarcity is foundational. The new task is to model allocation when candidate production itself becomes machine-amplified.'],
+  ['Representation as Discovery', 'Methods for finding representations that preserve useful structure while reducing cognitive, computational or physical cost.', 'EDA, visual analytics, information bottleneck and representation learning are antecedents. Novelty must be established at the level of concrete formalisms and evidence, including Moneta/Nemosyne.'],
+  ['Institutions, IP & Rents', 'Property, incentives and institutional design when invention, search and disclosure can happen at machine speed.', 'Builds on Arrow, appropriability/complementary-assets theory, open innovation and defensive-publication practice. What changes when search and candidate generation become dramatically cheaper?'],
 ];
 ---
-<Layout title="Research" description="The Agalmic Research programme: epistemic stewardship, handoff, uptake, economics, innovation, attention, representation and governance under abundance.">
+<Layout title="Research" description="The Agalmic Research programme: economics of epistemic abundance, stewardship, handoff, uptake, machine-assisted discovery, innovation search, representation and governance.">
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Research</p>
-      <h1>A map of the questions.</h1>
-      <p class="lede">The programme starts from linked disturbances: possible answers are becoming cheap to produce, human understanding does not automatically scale with their sophistication, and society still needs institutions capable of finding and stewarding what is worth keeping.</p>
+      <h1>A map of questions, with the ancestors left visible.</h1>
+      <p class="lede">The programme starts from a technological change, not from the assumption that prior disciplines failed to notice scarcity, search, attention, knowledge uptake or epistemic dependence. Existing theory is part of the machinery.</p>
     </div>
   </header>
 
   <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Novelty posture</p>
+        <h2>Search before naming a field.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Agalmic Research now distinguishes established antecedents, independent rediscovery, synthesis, extension, application, operationalization and genuinely unassessed novelty.</p>
+        <p>The current review has already changed terminology and claims. “Epistemic Economics” has become <strong>Economics of Epistemic Abundance</strong>; the “Law of Displaced Scarcity” has become the <strong>Displaced Scarcity Hypothesis</strong>; and Working Paper 001 is explicitly positioned against close prior work.</p>
+        <p><a href="/lineage">Inspect the living intellectual lineage →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="shell">
       <div class="index-list">
-        {tracks.map(([title, copy, questions], i) => (
+        {tracks.map(([title, copy, lineage], i) => (
           <article class="index-item">
             <span class="index-meta">{String(i + 1).padStart(2, '0')}</span>
             <div>
               <h3>{title}</h3>
-              <p class="muted">{copy}</p>
-              <p><strong>Questions:</strong> {questions}</p>
+              <p>{copy}</p>
+              <p class="muted"><strong>Lineage / remaining question:</strong> {lineage}</p>
             </div>
             <span class="index-status">active programme</span>
           </article>
@@ -40,14 +55,22 @@ const tracks = [
   </section>
 
   <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Displaced Scarcity Hypothesis</p>
+      <blockquote>When a previously binding constraint becomes sufficiently abundant, system performance and value become increasingly determined by complementary constraints that remain scarce.</blockquote>
+      <p>This is a proposed generalization over familiar bottleneck, attention and complementary-asset mechanisms. It must earn any stronger status by formalization, distinctive predictions and evidence.</p>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="shell split">
       <div>
         <p class="eyebrow">Method</p>
-        <h2>Ideas earn their keep by becoming testable, defensible and transferable.</h2>
+        <h2>Reuse first. Differentiate second. Test third.</h2>
       </div>
       <div class="prose">
-        <p>Each track should move through a clear conceptual claim, formalisation where useful, empirical or software demonstration where possible, and an explicit account of epistemic status and contribution provenance.</p>
-        <p class="muted">Formalism is not decoration, and machine-assisted polish is not evidence of mastery. The aim is to expose assumptions, derive consequences, invite adversarial criticism, distinguish what is understood from what is merely generated, and route promising work toward the expertise it still lacks.</p>
+        <p>Each track should begin with an intellectual-lineage review, then state exactly what changes under the proposed machine-cognition regime. Formalism, experiments or software demonstrations follow only after the surviving contribution has been identified.</p>
+        <p class="muted">A literature result that collapses a supposed novelty claim is progress. The project should modify or abandon the claim rather than defend it for brand continuity.</p>
       </div>
     </div>
   </section>
