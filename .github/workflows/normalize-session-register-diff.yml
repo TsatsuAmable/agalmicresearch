@@ -1,0 +1,70 @@
+name: Normalize session register diff
+
+on:
+  push:
+    branches:
+      - research/epistemic-artefacts-constitutional-attention
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/epistemic-artefacts-constitutional-attention
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Restore compact register formatting
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+
+          const compactStringArrays = (text) => text.replace(
+            /\[\n((?:\s+"(?:[^"\\]|\\.)*"(?:,\n|\n))+?)\s*\]/g,
+            (match, body) => {
+              const values = body
+                .split('\n')
+                .map((line) => line.trim().replace(/,$/, ''))
+                .filter(Boolean);
+              return `[${values.join(', ')}]`;
+            }
+          );
+
+          const knowledgePath = 'src/data/knowledgeIndex.json';
+          let knowledge = fs.readFileSync(knowledgePath, 'utf8');
+          knowledge = compactStringArrays(knowledge);
+          JSON.parse(knowledge);
+          fs.writeFileSync(knowledgePath, knowledge);
+
+          const portfolioPath = 'src/data/possibilityPortfolio.json';
+          let portfolio = fs.readFileSync(portfolioPath, 'utf8');
+          portfolio = portfolio.replace(
+            /"capacity_created": \[\n((?:\s+"(?:[^"\\]|\\.)*"(?:,\n|\n))+?)\s*\]/g,
+            (match, body) => {
+              const values = body
+                .split('\n')
+                .map((line) => line.trim().replace(/,$/, ''))
+                .filter(Boolean);
+              return `"capacity_created": [${values.join(', ')}]`;
+            }
+          );
+          JSON.parse(portfolio);
+          fs.writeFileSync(portfolioPath, portfolio);
+          NODE
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
+      - name: Remove one-shot workflow and commit normalization
+        run: |
+          rm .github/workflows/normalize-session-register-diff.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/knowledgeIndex.json src/data/possibilityPortfolio.json .github/workflows/normalize-session-register-diff.yml
+          git commit -m "Keep provenance register diff reviewable"
+          git push origin HEAD:research/epistemic-artefacts-constitutional-attention
