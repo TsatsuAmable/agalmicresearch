@@ -6,31 +6,36 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 const programmes = [
   {
     n: '01',
+    title: 'Epistemic stewardship',
+    copy: 'How should authority, accountability and authorship work when machine cognition can produce artefacts more sophisticated than their human curators can fully defend?',
+  },
+  {
+    n: '02',
     title: 'Agalmic economics',
     copy: 'What happens to value and allocation when useful knowledge, computation and other non-rival goods become dramatically cheaper to create?',
   },
   {
-    n: '02',
+    n: '03',
     title: 'Epistemic economics',
     copy: 'When candidate knowledge is abundant, attention, validation, trust, interpretation and institutional capacity become the binding constraints.',
   },
   {
-    n: '03',
+    n: '04',
     title: 'Innovation as search',
     copy: 'Innovation can be modelled as search across adjacent possibles, with machine cognition expanding exploration and humans choosing what to test, build and adopt.',
   },
   {
-    n: '04',
+    n: '05',
     title: 'Coordination after abundance',
     copy: 'More possibilities do not remove choice. They intensify the problem of deciding what deserves scarce time, capital, legitimacy and physical resources.',
   },
   {
-    n: '05',
+    n: '06',
     title: 'Representation as discovery',
     copy: 'How can systems compress, transform and embody information more cheaply while preserving the structure humans need to perceive what matters?',
   },
   {
-    n: '06',
+    n: '07',
     title: 'Knowledge, property and rents',
     copy: 'How should publication, defensive disclosure, patents and incentives change when the cost of generating potentially valuable ideas collapses?',
   },
@@ -47,6 +52,23 @@ const programmes = [
       <div class="actions">
         <a class="button" href={internal('research')}>Explore the programme</a>
         <a class="button secondary" href={internal('publications')}>Publication track</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Epistemic status</p>
+        <h2>The programme begins by stating its own constraint.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Machine cognition can increase the sophistication of an artefact faster than it increases the understanding of the human publishing it.</p>
+        <p>Agalmic Research is extensively machine-assisted. Its public work should therefore not be read as evidence that the human curator possesses expert mastery of every field or argument involved. Publication establishes provenance and invites criticism; it does not certify mastery.</p>
+        <div class="callout">
+          <p><strong>Epistemic authority should not exceed defensibility.</strong></p>
+        </div>
+        <p><a href={internal('publications/authorial-capacity-constraint')}>Read Working Paper 001: The Authorial Capacity Constraint →</a></p>
       </div>
     </div>
   </section>
@@ -69,7 +91,7 @@ const programmes = [
         <span class="section-number">Research programme</span>
         <div class="section-copy">
           <h2>A field, not a single paper.</h2>
-          <p>Agalmic Economics is the umbrella. Epistemic Economics studies the new allocation problem created when producing possibilities is cheap but deciding among them is not.</p>
+          <p>The programme begins with the epistemic conditions of machine-amplified research itself, then asks where scarcity, value and institutional pressure move as cognitive production becomes abundant.</p>
         </div>
       </div>
       <div class="grid">
@@ -93,7 +115,7 @@ const programmes = [
       <div class="prose">
         <p class="large">Agalmic abundance is not a wager on a single future intelligence event.</p>
         <p class="muted">
-          Cheap machine cognition already changes the economics of search, drafting, modelling and software creation. The research question is what happens when generation accelerates faster than our ability to evaluate, coordinate and realise the resulting possibilities.
+          Cheap machine cognition already changes the economics of search, drafting, modelling and software creation. The research question is what happens when generation accelerates faster than our ability to evaluate, understand, coordinate and realise the resulting possibilities.
         </p>
       </div>
     </div>
@@ -119,14 +141,14 @@ const programmes = [
     <div class="shell split">
       <div>
         <p class="eyebrow">Operating model</p>
-        <h2>Publish early. Version openly. Argue in public.</h2>
+        <h2>Publish early. State epistemic status. Argue in public.</h2>
       </div>
       <div class="prose">
         <p>
           Research begins as a canonical, versioned object. From that source it can become a working paper, journal article, public essay, policy brief, talk, model or piece of software without pretending that one format is the research itself.
         </p>
         <div class="callout">
-          <p>Publication is part of the research method: establish provenance, expose ideas to criticism, make reuse cheap and let better arguments compound.</p>
+          <p>Publication is part of the research method: establish provenance, expose ideas to criticism, make reuse cheap and let better arguments compound. Openness does not remove the obligation to state what is understood, what is verified and what remains conjectural.</p>
         </div>
         <div class="actions">
           <a class="button" href={internal('principles')}>Read the principles</a>

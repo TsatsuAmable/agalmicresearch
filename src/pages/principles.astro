@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 
 const principles = [
+  ['Keep epistemic authority within defensibility', 'Machine cognition may expand what can be produced faster than it expands what the human curator can understand. Publish the work, but do not imply more mastery, certainty or authority than can be defended.'],
   ['Open by default', 'Knowledge compounds when others can inspect, reuse and challenge it. Closed work should require a reason, not openness.'],
-  ['Publish to establish provenance', 'Early public disclosure creates a timestamped intellectual record and makes ideas available for criticism and reuse.'],
-  ['Version instead of waiting for finality', 'Research is allowed to improve in public. Every release should state what is claim, evidence, conjecture and revision.'],
+  ['Publish to establish provenance', 'Early public disclosure creates a timestamped intellectual record and makes ideas available for criticism and reuse. Publication records a claim; it does not certify it.'],
+  ['Version instead of waiting for finality', 'Research is allowed to improve in public. Every release should state what is claim, evidence, conjecture, epistemic status and revision.'],
   ['Treat attention as a scarce resource', 'Abundant output can still impoverish a system if it consumes more human attention than the value it creates.'],
   ['Prefer selection quality over generation volume', 'The objective is not to maximise the number of ideas. It is to improve the rate at which valuable possibilities are recognised and realised.'],
   ['Build demonstrations, not only arguments', 'Software, models and reproducible analyses are part of the research programme because they force conceptual claims into contact with constraints.'],
@@ -12,14 +13,22 @@ const principles = [
   ['Keep institutions provisional', 'Agalmic Research should be judged by the quality, openness and durability of its work, not by whether it prematurely imitates the bureaucracy of an established institute.'],
 ];
 ---
-<Layout title="Principles" description="Operating principles for Agalmic Research: open publication, provenance, versioning, attention discipline and selective use of intellectual property.">
+<Layout title="Principles" description="Operating principles for Agalmic Research: defensible stewardship, open publication, provenance, versioning, attention discipline and selective use of intellectual property.">
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Principles</p>
       <h1>The institution should embody the thesis.</h1>
-      <p class="lede">If the research argues that knowledge can become abundant, the research practice itself should make knowledge cheap to access, inspect, reproduce and extend.</p>
+      <p class="lede">If the research argues that cognition and knowledge production can become abundant, the research practice itself must make both its work and the limits of its understanding visible.</p>
     </div>
   </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Principle of Defensible Stewardship</p>
+      <blockquote>Epistemic authority should not exceed defensibility.</blockquote>
+      <p>Cognition may be delegated. Responsibility cannot be. Where human comprehension is limited, claims should carry proportionately stronger provenance, verification, reproducibility, adversarial scrutiny and disclosure.</p>
+    </div>
+  </section>
 
   <section class="section">
     <div class="shell">
@@ -39,11 +48,11 @@ const principles = [
     <div class="shell split">
       <div>
         <p class="eyebrow">A useful default</p>
-        <h2>Publish first. Publish clearly. Keep improving.</h2>
+        <h2>Publish early. Claim carefully. Keep improving.</h2>
       </div>
       <div class="prose">
-        <p class="large">“Publish immediately” is a strong default, not a commandment.</p>
-        <p class="muted">The exception is when disclosure would destroy the ability to realise an invention whose implementation genuinely requires protected capital, coordination or regulatory investment. The burden of proof sits with secrecy, not with publication.</p>
+        <p class="large">Open publication is a research method, not a declaration of authority.</p>
+        <p class="muted">The default is to expose ideas to criticism and establish provenance while stating their epistemic status honestly. Technical machinery receives an additional publication review where disclosure could destroy a legitimate path to difficult real-world implementation or intellectual-property protection.</p>
       </div>
     </div>
   </section>
