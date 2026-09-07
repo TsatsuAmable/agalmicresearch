@@ -1,25 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import index from '../data/knowledgeIndex.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+const internalHref = (href) => `${base}/${href.replace(/^\/+/, '')}`;
 
-const notes = [
-  {
-    n: 'N01',
-    title: 'The Goal Is Not More Ideas',
-    subtitle: 'Cognitive tools and the expansion of the effective adjacent possible',
-    status: 'Synthesis note · lineage grounded',
-    href: internal('notes/the-goal-is-not-more-ideas'),
-  },
-  {
-    n: 'N02',
-    title: 'Ideas Are Options, Not Obligations',
-    subtitle: 'A personal operating rule for cognitive abundance',
-    status: 'Operating note · synthesis',
-    href: internal('notes/ideas-are-options-not-obligations'),
-  },
-];
+const notes = index.objects
+  .filter((item) => item.kind === 'research-note' && item.href.startsWith('/') && !item.href.startsWith('//'))
+  .sort((a, b) => a.status.localeCompare(b.status))
+  .map((item, position) => {
+    const number = item.status.match(/\d+/)?.[0] ?? String(position + 1);
+    return {
+      n: `N${number.padStart(2, '0')}`,
+      title: item.title,
+      subtitle: item.summary,
+      status: item.status,
+      href: internalHref(item.href),
+    };
+  });
 ---
 <Layout title="Research Notes" description="Short, lineage-aware Agalmic Research notes that create useful research capacity without pretending every idea needs to become a paper.">
   <header class="page-head">
