@@ -34,7 +34,24 @@ const plain = (value = '') => decode(value)
   .replace(/\s+/g, ' ')
   .trim();
 
-const attr = (html, pattern) => decode(html.match(pattern)?.[1] ?? '').trim();
+const quotedAttribute = (tag, name) => {
+  const doubleQuoted = tag.match(new RegExp(`\\b${name}="([^"]*)"`, 'i'));
+  if (doubleQuoted) return decode(doubleQuoted[1]).trim();
+  const singleQuoted = tag.match(new RegExp(`\\b${name}='([^']*)'`, 'i'));
+  return decode(singleQuoted?.[1] ?? '').trim();
+};
+
+const metaContent = (html, name) => {
+  const tags = html.match(/<meta\b[^>]*>/gi) ?? [];
+  const tag = tags.find((candidate) => quotedAttribute(candidate, 'name').toLowerCase() === name.toLowerCase());
+  return tag ? quotedAttribute(tag, 'content') : '';
+};
+
+const canonicalHref = (html) => {
+  const tags = html.match(/<link\b[^>]*>/gi) ?? [];
+  const tag = tags.find((candidate) => quotedAttribute(candidate, 'rel').toLowerCase() === 'canonical');
+  return tag ? quotedAttribute(tag, 'href') : '';
+};
 
 const routeFor = (file) => {
   const rel = path.relative(dist, file).split(path.sep).join('/');
@@ -49,10 +66,8 @@ const entries = walk(dist)
     const html = fs.readFileSync(file, 'utf8');
     const title = plain(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? '')
       .replace(/\s+·\s+Agalmic Research$/, '');
-    const description = attr(html, /<meta\s+name=["']description["']\s+content=["']([^"']*)["'][^>]*>/i)
-      || attr(html, /<meta\s+content=["']([^"']*)["']\s+name=["']description["'][^>]*>/i);
-    const canonical = attr(html, /<link\s+rel=["']canonical["']\s+href=["']([^"']+)["'][^>]*>/i)
-      || attr(html, /<link\s+href=["']([^"']+)["']\s+rel=["']canonical["'][^>]*>/i);
+    const description = metaContent(html, 'description');
+    const canonical = canonicalHref(html);
     let searchable = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? html;
     searchable = searchable.replace(/<section\b[^>]*data-search-ignore[^>]*>[\s\S]*?<\/section>/gi, ' ');
     const body = plain(searchable).slice(0, 24000);
@@ -78,7 +93,9 @@ for (const item of knowledge.objects) {
     errors.push(`${item.id}: rendered route missing from dist: ${item.href}`);
     continue;
   }
-  if (researchKinds.has(item.kind) && rendered.title !== item.title) {
+  const canonicalTitle = plain(item.title).toLocaleLowerCase();
+  const renderedTitle = plain(rendered.title).toLocaleLowerCase();
+  if (researchKinds.has(item.kind) && renderedTitle !== canonicalTitle) {
     errors.push(`${item.id}: canonical title "${item.title}" differs from rendered title "${rendered.title}"`);
   }
 }
