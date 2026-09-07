@@ -299,6 +299,20 @@
       "related": ["method:memory-palace", "direction:distributed-discovery"]
     },
     {
+      "id": "method:astro-agalmic",
+      "title": "astro-agalmic",
+      "kind": "tool",
+      "layer": "method",
+      "commitment": "supporting",
+      "meaningful": false,
+      "topics": ["knowledge-architecture", "astro", "open-source", "search", "knowledge-management"],
+      "status": "Open-source Astro integration · v0.1",
+      "summary": "A freely reusable extraction of the site's semantic registry, build validation, static full-text search, knowledge-history and generated-context machinery.",
+      "direction": "Give the discovery architecture away, dogfood it here, and improve the reusable layer from external use.",
+      "href": "/tools/astro-agalmic/",
+      "related": ["method:memory-palace", "method:possibility-portfolio", "method:provenance"]
+    },
+    {
       "id": "handoff:terminus",
       "title": "Knowledge Handoff Terminus",
       "kind": "handoff-index",
