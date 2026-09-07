@@ -1,245 +1,229 @@
 # Intellectual Lineage and Novelty Register
 
-Version: 0.1  
+Version: 0.2  
 Status: living prior-art register  
 Date: 7 September 2026
 
 ## Purpose
 
-Agalmic Research should not confuse independent rediscovery, a useful synthesis, a new label, a new application, or a new implementation with a genuinely novel intellectual result.
-
-This register records known antecedents to the programme and states the strongest novelty claim that the current evidence warrants. It is deliberately conservative.
+Agalmic Research should not confuse independent rediscovery, useful synthesis, new terminology, a new application or a new implementation with a genuinely novel intellectual result.
 
 > **Novelty is a conclusion of search, not a tone of voice.**
 
-A phrase being new to the curator, a model, or the project does not make the underlying idea new. Before a public claim is described as novel, the project should search for conceptual, empirical, mathematical, institutional, software and patent antecedents appropriate to the domain.
+Prior art is infrastructure. If a mature concept already solves part of the problem, the project should use it rather than rename it. If a close antecedent narrows a claim, the claim should be narrowed visibly.
 
-This document is a literature/prior-art screen, not a patent-law opinion and not proof that the listed sources exhaust the relevant literature.
+This register is a literature/prior-art screen, not a patent-law opinion and not proof that the sources below exhaust the relevant literature.
 
 ## Novelty vocabulary
 
-Use these labels rather than a binary novel/not-novel distinction:
-
 - **established antecedent** — the core proposition or mechanism clearly predates this project;
-- **independent rediscovery** — the project reached a materially similar idea without initially knowing the antecedent;
+- **independent rediscovery** — the project reached a materially similar idea before locating the antecedent;
 - **synthesis** — the contribution is primarily in connecting established ideas;
-- **extension** — an established construct is generalized or moved into a materially different setting;
+- **extension** — an established construct is moved into a materially different setting;
 - **application** — an established idea is applied to a new technology, domain or institution;
-- **operationalization** — the contribution is a measurable protocol, formalism, implementation or experiment built around an established idea;
-- **terminology candidate** — the label may be new, while the underlying idea is not established as new;
+- **operationalization** — a measurable protocol, formalism, implementation or experiment built around established ideas;
+- **terminology candidate** — a label may be locally useful while the underlying idea is not established as new;
 - **novelty unassessed** — no adequate prior-art review has yet been completed;
-- **candidate novelty** — a substantial search has not found a close antecedent, but absence of discovery is not proof of absence;
+- **candidate novelty** — substantial review has not found a close antecedent, while absence of discovery remains non-proof;
 - **superseded novelty claim** — an earlier implication of novelty is no longer supported.
+
+Nothing in this register should be represented as novel unless it is explicitly classified as candidate novelty after a documented search.
+
+## Deep reviews
+
+Three questions have now received dedicated deeper reviews:
+
+- [Discovery Attribution in Human–AI Science](LITERATURE_REVIEW_DISCOVERY_ATTRIBUTION.md)
+- [Epistemic Handoff, Knowledge Brokering and Uptake](LITERATURE_REVIEW_EPISTEMIC_HANDOFF.md)
+- [Displaced Scarcity and Shifting Bottlenecks](LITERATURE_REVIEW_DISPLACED_SCARCITY.md)
+
+These reviews supersede the shallower novelty implications in v0.1 where they conflict.
 
 ## Register
 
 ### 1. Agalmics / Agalmic Economics
 
-**Known lineage.** Robert Levin's late-1990s essay *Agalmics: The Marginalization of Scarcity* explicitly develops "agalmics" as the study/practice of production and allocation around non-scarce goods and emphasizes that non-scarce goods may still depend on scarce inputs.
+Robert Levin's late-1990s *Agalmics: The Marginalization of Scarcity* explicitly develops agalmics around production and allocation of non-scarce goods and their dependence on scarce inputs.
 
-Source: Robert Levin, [*Agalmics: The Marginalization of Scarcity*](https://rednsx.org/~dtinker/agalmics.html).
+**Current position.** Agalmic Research does not claim to originate the term, the non-scarcity programme or the observation that non-rival goods remain embedded in systems containing scarce complements. “Agalmic Economics” is an umbrella for a contemporary programme about machine cognition, knowledge production and the institutions surrounding abundance.
 
-**Current position.** Agalmic Research does not claim to originate the word, the non-scarcity programme, or the observation that non-rival goods remain embedded in systems containing scarce complements. "Agalmic Economics" is used as an umbrella for a contemporary research programme about machine cognition, knowledge production and displaced bottlenecks. Any later foundational paper must treat Levin as an explicit antecedent.
+**Status:** established antecedent + contemporary synthesis/extension.
 
-**Status:** established antecedent + possible contemporary synthesis/extension.
+Source: Robert Levin, https://rednsx.org/~dtinker/agalmics.html
 
-### 2. Displaced Scarcity
+### 2. Displaced Scarcity Hypothesis
 
-**Known lineage.** The proposed relationship sits near several mature literatures:
+The deeper review substantially narrows the claim. The general idea that relieving one constraint exposes another is present in fixed-proportions/Leontief production, limiting-factor reasoning and the Theory of Constraints. Simon gives a direct abundance-to-scarcity example: information abundance creates attention scarcity. Teece shows innovation rents moving toward complementary assets. Weitzman anticipates a world where possible idea combinations are abundant relative to the capacity to process them. Kremer and Jones formalize strong complementarities and weak-link effects. Baumol shows differential productivity growth changing relative economic cost, while induced-innovation theory explains how rising relative scarcity can itself redirect innovation.
 
-- Herbert Simon's information-rich world produces a scarcity of attention;
-- David Teece shows that value from innovation can accrue to scarce complementary assets rather than the innovator;
-- bottleneck, limiting-factor and constraint theories study how system performance becomes governed by whichever constraint binds;
-- Martin Weitzman's *Recombinant Growth* argues that limits may lie less in generating possible ideas than in processing an abundance of them into usable form.
+Recent AI-era work is closer still. Shi (2026) describes an “Abundance Shock” in cognitive/informational domains; Wu (2026) explicitly models AI abundance recreating scarcity in expert judgment; Kolb and Caron (2026) argue that cheap cognition shifts scarce human capital toward question selection, framing, interpretation and responsibility.
 
-Sources:
+**Current position.** Retain **Displaced Scarcity Hypothesis** only as an organizing synthesis. Do not call it a law. The formal research task is to derive conditions under which an abundance shock changes shadow prices, binding constraints, rents and market power, distinguishing complementarity, substitutability and induced-demand cases.
 
-- Herbert A. Simon (1971), *Designing Organizations for an Information-Rich World*.
-- David J. Teece (1986), [*Profiting from technological innovation*](https://doi.org/10.1016/0048-7333(86)90027-2).
-- Martin L. Weitzman (1998), [*Recombinant Growth*](https://doi.org/10.1162/003355398555595).
+**Status:** established antecedents + synthesis/generalization; formal novelty unassessed.
 
-**Current position.** The project should use **Displaced Scarcity Hypothesis**, not "law", until it identifies conditions under which the generalization is non-trivial, derives consequences that are not already contained in bottleneck/complementarity theory, and tests them.
-
-Working formulation:
-
-> When a previously binding constraint becomes sufficiently abundant, system performance and value become increasingly determined by complementary constraints that remain scarce.
-
-**Status:** synthesis/generalization hypothesis; novelty unassessed as a formal result.
+Key sources:
+- Simon (1971), *Designing Organizations for an Information-Rich World*.
+- Teece (1986), https://doi.org/10.1016/0048-7333(86)90027-2
+- Weitzman (1998), https://doi.org/10.1162/003355398555595
+- Kremer (1993), https://doi.org/10.2307/2118400
+- Jones (2008), https://doi.org/10.3386/w13834
+- Falkinger (2008), https://doi.org/10.1111/j.1468-0297.2008.02182.x
+- Shi (2026), https://doi.org/10.1177/02761467261453815
+- Wu (2026), https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7183798
 
 ### 3. Economics of Epistemic Abundance
 
-**Known lineage.** "Epistemic Economics" is already the title and territory of Anna Grandori's 2013 *Epistemic Economics and Organization*, which joins economics, organization and the philosophy of knowledge. Classical economics of knowledge also includes Arrow's treatment of invention/information and later endogenous-growth and knowledge-economics traditions.
+“Epistemic Economics” is already the title and territory of Anna Grandori's 2013 *Epistemic Economics and Organization*. Arrow and later knowledge-economics traditions address invention, information, non-rivalry and appropriability.
 
-Sources:
-
-- Anna Grandori (2013), [*Epistemic Economics and Organization*](https://www.routledge.com/Epistemic-Economics-and-Organization-Forms-of-Rationality-and-Governance/Grandori/p/book/9781138906112).
-- Kenneth J. Arrow (1962), [*Economic Welfare and the Allocation of Resources for Invention*](https://www.nber.org/books-and-chapters/rate-and-direction-inventive-activity-economic-and-social-factors/economic-welfare-and-allocation-resources-invention).
-
-**Current position.** Prefer **Economics of Epistemic Abundance** for the Agalmic Research branch concerned specifically with allocation when candidate knowledge becomes cheap while attention, verification, trust, realization and institutional capacity remain scarce. Explicitly distinguish this from Grandori's use.
+**Current position.** Prefer **Economics of Epistemic Abundance** for the narrower branch concerned with allocation when candidate knowledge becomes cheap while attention, verification, judgment, trust, integration, realization and institutional capacity remain scarce.
 
 **Status:** renamed application/synthesis; no claim to originate epistemic economics.
 
-### 4. Innovation as Search / adjacent possibles
-
-**Known lineage.** Innovation as search is deeply established in evolutionary economics and innovation studies. Nelson and Winter describe firms as engaging in search; Weitzman models recombinant idea production; Kauffman's adjacent possible has been widely used to discuss novelty; recent work explicitly formalizes innovation as search over the adjacent possible.
-
 Sources:
+- Grandori (2013), *Epistemic Economics and Organization*.
+- Arrow (1962), *Economic Welfare and the Allocation of Resources for Invention*.
 
-- Richard R. Nelson & Sidney G. Winter (1982), *An Evolutionary Theory of Economic Change*.
-- Martin L. Weitzman (1998), [*Recombinant Growth*](https://doi.org/10.1162/003355398555595).
-- Stuart Kauffman, work on the adjacent possible.
-- Isak Taalbi (2025/2026), [*Long-run patterns in the discovery of the adjacent possible*](https://doi.org/10.1093/icc/dtaf028).
+### 4. Innovation Search Under AI
 
-**Current position.** Agalmic Research must not present "innovation is search" or "innovation explores adjacent possibles" as new. The possible contribution is an AI-era extension: what changes when machine systems drastically alter search cost, branching factor, recombination rate, selection burden and realization bottlenecks?
+Innovation as search is established in evolutionary economics. Recombinant growth and adjacent-possible frameworks are likewise established.
+
+**Current position.** The prospective contribution is not “innovation is search.” It is the effect of machine cognition on search cost, branching factor, recombination rate, search direction, selection burden and realization. Hao et al. (2026) is particularly relevant because AI-augmented science appears individually more productive while collectively narrowing its topic space.
 
 **Status:** established antecedent + AI-era extension.
 
+Sources:
+- Nelson & Winter (1982), *An Evolutionary Theory of Economic Change*.
+- Weitzman (1998), https://doi.org/10.1162/003355398555595
+- Taalbi, https://doi.org/10.1093/icc/dtaf028
+- Hao et al. (2026), https://doi.org/10.1038/s41586-025-09922-y
+
 ### 5. Attention after abundance
 
-**Known lineage.** Simon's classic observation that an abundance of information creates a scarcity of attention is a direct antecedent. Attention economics and attention allocation are mature areas.
+Simon is a direct foundational antecedent, and attention economics is mature. Falkinger supplies a formal equilibrium treatment of limited attention in information-rich economies.
 
-**Current position.** The research question is not whether abundance can make attention scarce. It is how machine-generated candidate knowledge changes the production function for attention, verification and selection, and which institutions allocate those complements.
+**Current position.** Research should ask how machine-generated candidate knowledge changes the demand for attention, selection and verification, not whether information abundance can make attention scarce.
 
 **Status:** established antecedent + application/extension.
 
 ### 6. Authorial Capacity Constraint
 
-**Close prior art.** Several 2025–2026 sources directly anticipate the central decoupling between artefact performance and human understanding or defensibility:
+Close 2025–2026 prior work already describes the central performance/comprehension or verification gap. Fernandes et al. find AI-assisted performance can improve without comparable metacognitive accuracy; Maier separates assisted performance from self-evaluation and understanding; O'Keefe explicitly describes a “Verification Gap”; van Zoonen et al. propose claim accountability; Nascimento and da Silva separate correctness from epistemic responsibility. Hardwig and Humphreys provide older foundations in epistemic dependence and computational opacity.
 
-- Daniela Fernandes et al. find that LLM assistance improved reasoning performance without comparably improving metacognitive accuracy: [*AI makes you smarter but none the wiser*](https://doi.org/10.1016/j.chb.2025.108779).
-- Monica Maier develops a framework separating AI-assisted task performance from self-evaluation, understanding and independent competence: [*Self-Evaluation in AI-Assisted Cognition*](https://doi.org/10.3390/jintelligence14070112).
-- Greg O'Keefe's 2026 preprint explicitly describes a widening gap between artefact quality and demonstrated understanding: [*The Verification Gap*](https://doi.org/10.2139/ssrn.7155879).
-- Ward van Zoonen, Anna Morgan-Thomas and Aizhan Tursunbayeva argue that AI can produce scholarly content nobody is positioned to defend and propose claim-level accountability: [*Beyond AI disclosure*](https://doi.org/10.1016/j.emj.2026.06.001).
-- Dimas Cassimiro Nascimento and Daliton da Silva distinguish correctness from epistemic diligence and responsibility in AI-assisted writing: [*Identical errors, different responsibilities*](https://doi.org/10.1007/s43681-026-01330-w).
+**Current position.** “Authorial Capacity Constraint” is a project label for a synthesis. The underlying phenomenon is not claimed as a first discovery. The possible contribution is an operational architecture linking claim-level authority, provenance, handoff, uptake and empirical tests of defensibility.
 
-Longer-standing philosophical antecedents include John Hardwig's work on epistemic dependence and Paul Humphreys' work on computational opacity.
+**Status:** close prior art; synthesis/terminology only.
 
-Sources:
+### 7. Defensible stewardship / claim accountability
 
-- John Hardwig (1985), [*Epistemic Dependence*](https://doi.org/10.2307/2026523).
-- Paul Humphreys (2004), [*Extending Ourselves*](https://doi.org/10.1093/0195158709.001.0001).
+Van Zoonen et al.'s claim-accountability framework is exceptionally close to the proposition that scholarly claims require a human positioned to reconstruct and defend them. BMJ contributorship/guarantorship predates the AI debate.
 
-**Current position.** "Authorial Capacity Constraint" is a project label for a configuration of established and recent problems. Version 0.3 of Working Paper 001 should explicitly withdraw any implication that Agalmic Research first identified the underlying phenomenon. Its potential contribution is integration with contribution provenance, epistemic handoff, uptake scarcity and an operational research protocol.
+**Current position.** “Epistemic authority should not exceed defensibility” is an Agalmic Research operating maxim, not a claim of first discovery. The open question is how to make authority evidence claim-sensitive, interoperable and empirically useful without creating assessment theatre.
 
-**Status:** close prior art; terminology/synthesis candidate only.
+**Status:** close antecedent + local synthesis/operationalization.
 
-### 7. Defensible Stewardship / claim-level accountability
+### 8. Contribution roles and epistemic authority
 
-**Close prior art.** Van Zoonen, Morgan-Thomas and Tursunbayeva's claim-accountability framework is exceptionally close to the proposition that scholarly authority should depend on a human's capacity to reconstruct and defend claims. BMJ's guarantor/contributorship model also predates the current AI debate and explicitly separates contribution from responsibility for the finished work.
+Scientific contributorship has been separated from the author byline for decades and CRediT now standardizes fourteen contributor roles.
 
-Sources:
+**Current position.** Use CRediT wherever it fits. Local role labels are permitted only when they preserve material research-process information the standard does not encode. The experimental extension is a distinct **claim-level epistemic-authority record** stating who or what can warrant a claim and on what basis.
 
-- van Zoonen et al. (2026), [*Beyond AI disclosure*](https://doi.org/10.1016/j.emj.2026.06.001).
-- Richard Smith (1997), [*Authorship is dying: long live contributorship*](https://doi.org/10.1136/bmj.315.7110.696).
-- [BMJ authorship and contributorship guidance](https://www.bmj.com/about-bmj/resources-authors/article-submission/authorship-contributorship).
-
-**Current position.** Treat **Principle of Defensible Stewardship** as Agalmic Research's operating shorthand and extension, not as a claim of first discovery. The open research question is how to make defensibility evidence machine-readable, measurable, claim-sensitive and interoperable.
-
-**Status:** close antecedent; local synthesis/operationalization.
-
-### 8. Separable contribution and epistemic authority
-
-**Known lineage.** Scientific publishing has been separating authorship from contributorship for decades. CRediT now standardizes 14 contributor roles. BMJ also uses a guarantor concept for overall responsibility.
+**Status:** established contributorship + proposed authority-layer extension.
 
 Sources:
-
-- [ANSI/NISO CRediT Contributor Role Taxonomy](https://credit.niso.org/).
-- [ANSI/NISO Z39.104-2022](https://www.niso.org/publications/z39104-2022-credit).
-- Richard Smith (1997), [*Authorship is dying: long live contributorship*](https://doi.org/10.1136/bmj.315.7110.696).
-
-**Current position.** Do not reinvent contributor taxonomies. Use CRediT whenever possible. The potentially useful extension is to keep **claim-level epistemic authority** distinct from contribution roles and to record the basis on which that authority is warranted.
-
-**Status:** established contributorship antecedent + proposed authority-layer extension.
+- CRediT, https://credit.niso.org/
+- Smith (1997), https://doi.org/10.1136/bmj.315.7110.696
 
 ### 9. Epistemic handoff and uptake
 
-**Known lineage.** Knowledge brokering, diffusion, distributed expertise and absorptive capacity already address movement and uptake of knowledge across actors. Cohen and Levinthal's absorptive capacity is particularly close: recognizing the value of external information, assimilating it and applying it.
+The deeper review found extensive antecedents. Cohen and Levinthal's absorptive capacity concerns recognition, assimilation and application of external knowledge; Zahra and George separate potential and realized absorptive capacity; Szulanski studies transfer “stickiness”; Ward, Meyer and others study knowledge brokers; Howells and later reviews analyze innovation intermediaries and boundary spanners; recent work describes intermediaries orchestrating curated solver networks and absorptive capacity. Transactive-memory systems model group meta-knowledge of “who knows what.” Gimpel et al. explicitly identify scarce expert juries as a bottleneck in evaluating specialist ideas and test crowds/LLMs as alternatives.
 
-Source: Wesley M. Cohen & Daniel A. Levinthal (1990), [*Absorptive Capacity: A New Perspective on Learning and Innovation*](https://doi.org/10.2307/2393553).
+**Current position.** Generic routing or brokerage is established. Retain **epistemic handoff** only as local terminology for a narrower, claim-sensitive protocol: a candidate research object is transferred toward a specified missing epistemic capability while origin, contribution, current claim status and the authority gap remain explicit. “Epistemic uptake” is an AI-era absorptive/evaluative-capacity question, not a new capacity theory.
 
-**Current position.** "Epistemic handoff" is useful project terminology for a narrower problem: preserving originator contribution while routing a candidate claim toward missing epistemic capabilities. "Epistemic Uptake Constraint" should be presented as an AI-era extension of absorptive-capacity and idea-processing constraints, not as a new discovery from first principles.
+**Status:** established antecedents + narrow operationalization/extension.
 
-**Status:** terminology/synthesis + extension.
+Key sources:
+- Cohen & Levinthal (1990), https://doi.org/10.2307/2393553
+- Zahra & George (2002), https://doi.org/10.5465/amr.2002.6587995
+- Szulanski (1996), https://doi.org/10.1002/smj.4250171105
+- Howells (2006), https://doi.org/10.1016/j.respol.2006.03.005
+- Meyer (2010), https://doi.org/10.1177/1075547009359797
+- Ward et al. (2009), https://doi.org/10.1332/174426409X463811
+- Gimpel et al. (2025), https://doi.org/10.1007/s10726-025-09935-y
+- Pinarello et al. (2026), https://doi.org/10.1016/j.techsoc.2026.103339
 
 ### 10. Human-Scale Epistemic Horizon
 
-**Known lineage.** The epistemology of computational science and computer-assisted mathematics already studies epistemic opacity, unsurveyable computation and proofs that may be checked without being humanly illuminating. Recent work explicitly asks whether AI-produced mathematical results can outrun prior human intuition and whether proof and human digestion can decouple.
+Computational opacity and computer-assisted mathematics already study reliable results supported by processes no individual human can survey end to end.
 
-Sources:
+**Current position.** The label may remain as speculative project terminology. The useful research question is institutional: what becomes of authority, verification and economic allocation if opacity becomes normal at a knowledge frontier?
 
-- Paul Humphreys (2004), [*Extending Ourselves*](https://doi.org/10.1093/0195158709.001.0001).
-- [*A Priori Knowledge in an Era of Computational Opacity: The Role of Artificial Intelligence in Mathematical Discovery*](https://doi.org/10.1017/psa.2025.10160).
-- [*Rethinking Mathematical Intuition in the Age of AI*](https://link.springer.com/article/10.1007/s00283-026-10561-y).
-
-**Current position.** The label may be useful, but the underlying problem is established. The project should investigate the institutional and economic implications of opacity rather than claim discovery of opacity.
-
-**Status:** terminology/synthesis candidate; underlying phenomenon established.
+**Status:** underlying problem established; terminology/synthesis candidate.
 
 ### 11. Research provenance / Memory Palace
 
-**Known lineage.** Provenance, research-object packaging, contributor roles and graph-based scientific communication all have substantial prior art:
+W3C PROV, RO-Crate, CRediT, MIRA and decision-provenance work cover substantial parts of provenance, research-object packaging, contribution, claim/evidence graphs and decision history.
 
-- W3C PROV models entities, activities, agents, derivation, attribution and responsibility;
-- RO-Crate packages research objects and contextual/provenance metadata using JSON-LD;
-- CRediT standardizes research contribution roles;
-- MIRA represents research as a graph of questions, claims and evidence with granular attribution;
-- decision-provenance work emphasizes contemporaneous preservation of decision context rather than retrospective reconstruction.
+**Current position.** The Memory Palace is an experimental **application profile/integration**, not a new provenance standard. Use W3C PROV, RO-Crate and CRediT first. Restrict local extensions to information not adequately represented, currently including claim-level authority, search/branch state, roads not taken, reversal conditions and explicit epistemic handoff.
 
-Sources:
-
-- [W3C PROV-DM](https://www.w3.org/TR/prov-dm/).
-- [RO-Crate 1.3](https://www.researchobject.org/ro-crate/specification/1.3/).
-- [CRediT](https://credit.niso.org/).
-- [MIRA](https://www.mira.science/).
-- [Decision Provenance](https://decisionprovenance.org/).
-
-**Current position.** The Agalmic Research Memory Palace Protocol is an **application profile and experimental integration**, not a replacement for those standards. Use W3C PROV, RO-Crate and CRediT directly where they fit. Local extensions should be limited to research-process concepts not adequately represented, presently including claim-level epistemic authority, branch state, search boundaries, reversal conditions and epistemic handoffs.
-
-**Status:** integration/extension, not foundational novelty.
+**Status:** integration/extension.
 
 ### 12. Representation as Discovery
 
-**Known lineage.** Exploratory data analysis, scientific visualization, visual analytics, information bottleneck/rate-distortion ideas and representation learning all study how transformations or representations expose useful structure while managing cognitive or computational cost.
+Exploratory data analysis, scientific visualization, visual analytics, information bottleneck/rate-distortion and representation learning all establish that representation can reveal useful structure.
 
-**Current position.** The phrase is a programme label. The novelty question belongs at the level of a concrete Moneta/Nemosyne formalism or implementation, not the broad assertion that representation can enable discovery.
+**Current position.** “Representation as Discovery” is a programme label. Novelty must be established at the level of a concrete Moneta/Nemosyne formalism or implementation.
 
 **Status:** established broad antecedent; technical novelty unassessed.
 
 ### 13. IP, defensive publication and knowledge rents
 
-**Known lineage.** The economics of information and invention, non-rivalry, appropriability, complementary assets, open innovation and defensive publication are established literatures.
+The economics of invention, non-rivalry, appropriability, complementary assets, open innovation and defensive publication are established.
 
-Sources include Arrow (1962) and Teece (1986).
-
-**Current position.** The research contribution, if any, must concern how machine-speed idea generation changes disclosure timing, search costs, prior-art density, patent strategy or realization incentives. Do not claim defensive publication itself as a new strategy.
+**Current position.** Any contribution must concern machine-speed idea generation's effects on prior-art density, search costs, disclosure timing, patent strategy, realization incentives or rent migration.
 
 **Status:** established antecedent + possible AI-era extension.
 
-## Discovery Attribution Problem
+## Discovery Attribution Programme
 
-A further problem arises from machine-assisted research itself: **does machine cognition produce new knowledge, or does it primarily facilitate human discovery by searching, recombining and surfacing candidate structures?**
+Version 0.1 called this the **Discovery Attribution Problem**. The deeper review found that even this framing has strong antecedents.
 
-This question matters both for attribution and for novelty.
+Bradshaw, Langley and Simon's BACON work modeled machine scientific discovery in the early 1980s. Langley (2000) explicitly analyzed human intervention at multiple stages of computer-aided discovery and recommended human–computer cooperation. Clark and Khosrowi (2022) is closer still: they argue that AI cases undermine agent-centred discovery accounts and propose a **collective-centred view**, explicitly considering the intuition that humans remain discoverers because they recognize significance.
 
-The project should distinguish at least five different events:
+Science-priority scholarship further separates discovery from simple timestamping. Gross treats discovery partly as retrospective social judgment; Vale and Hyman separate disclosure and validation; Rubin and Schneider analyze the distributive effects of priority rules.
 
-1. **candidate generation** — a system produces a proposition, proof, mechanism, design or connection;
-2. **recognition** — an actor notices that the candidate is meaningful, surprising or worth pursuing;
-3. **validation** — evidence, proof, replication or expert scrutiny warrants the candidate;
-4. **integration** — the result is situated in the existing body of knowledge, including prior art;
-5. **realization** — the result is turned into a usable scientific, technical, institutional or economic object.
+Machine systems can nevertheless make causally substantial novelty contributions. AlphaDev discovered previously unknown sorting algorithms later integrated into LLVM, while 2026 systems such as Robin automate increasingly large portions of hypothesis generation, analysis and iteration. The UK DABUS judgment separately shows that legal inventor status can remain human-only even where an AI contribution is asserted.
 
-A human may direct the search and make the significance-recognition leap even when a machine generated the candidate. Conversely, a machine may generate and validate a result with very little human contribution. The project should not presuppose that either configuration answers the philosophical question of who or what "discovered" the knowledge.
+### Revised position
 
-Most importantly:
+The project does **not** claim to originate the generation/recognition distinction or the question of whether machines discover.
 
-> **Novelty belongs to the result relative to prior knowledge, not to the subjective experience of the human or machine that encountered it.**
+The prospective contribution is **Distributed Discovery Provenance**: operationally representing a discovery episode so that novelty, priority, contribution and epistemic authority remain separate records.
 
-If an AI system surfaces an old idea unknown to the curator, it is an independent rediscovery at best, not a novel result. If a genuinely unprecedented result emerges from a machine-directed search and a human recognizes its significance, the result may still be novel while discovery credit and epistemic authority remain distributed questions.
+A useful local decomposition remains:
 
-This is now an explicit future research direction: **machine cognition, discovery agency and the attribution of novel knowledge**.
+1. problem framing / search direction;
+2. candidate generation;
+3. candidate selection or significance recognition;
+4. validation;
+5. integration with prior knowledge;
+6. realization.
 
-Relevant contemporary debate includes Nature Methods' 2026 editorial [*What's your hypothesis?*](https://doi.org/10.1038/s41592-026-03104-y), work on AI co-scientists and autonomous hypothesis generation, and philosophical work on computational opacity and machine-assisted mathematical knowledge.
+This decomposition must be compared with existing discovery scholarship rather than advertised as new.
+
+> **Novelty is a relation between a result and prior knowledge. Discovery attribution is a relation between a discovery episode and its contributors.**
+
+If a model surfaces an old idea unknown to us, the result is not novel. If a genuinely unprecedented result emerges through distributed human–machine activity, novelty can coexist with distributed contribution and authority.
+
+**Status:** established philosophical/computational problem + possible operationalization/empirical extension.
+
+Key sources:
+- Bradshaw, Langley & Simon (1983), https://doi.org/10.1126/science.222.4627.971
+- Langley (2000), https://doi.org/10.1006/ijhc.2000.0396
+- Clark & Khosrowi (2022), https://doi.org/10.1007/s11229-022-03902-9
+- Gross (1998), https://doi.org/10.1017/S0269889700002970
+- Vale & Hyman (2016), https://doi.org/10.7554/eLife.16931
+- Rubin & Schneider (2021), https://doi.org/10.1016/j.shpsa.2021.08.005
+- Mankowitz et al. / AlphaDev (2023), https://doi.org/10.1038/s41586-023-06004-9
 
 ## Operating rule for future papers
 
@@ -248,16 +232,17 @@ Before promoting a concept into the numbered publication sequence:
 1. state the strongest proposed contribution in one sentence;
 2. search exact terms and conceptual synonyms;
 3. search the nearest mature literatures, not only AI-era terminology;
-4. identify close historical mechanisms, standards and institutional practices;
+4. identify historical mechanisms, standards and institutional practices;
 5. classify the contribution using the novelty vocabulary above;
 6. modify terminology where it collides with established usage;
-7. cite antecedents generously and explain what is actually being added;
-8. preserve the search boundary and databases/tools not examined;
-9. downgrade any novelty claim when a close antecedent is found;
-10. never use "law", "principle", "new field" or "first" as a substitute for demonstrating the relevant difference.
+7. cite antecedents generously and state the delta precisely;
+8. preserve databases, tools, search terms and known gaps;
+9. downgrade novelty immediately when a close antecedent is found;
+10. prefer standardised machinery over a local reinvention;
+11. never use “law”, “principle”, “new field” or “first” as a substitute for demonstrating difference.
 
 ## Search boundary
 
-This register currently reflects a broad web-based prior-art and literature review, not an exhaustive systematic review of Scopus, Web of Science, EconLit, PhilPapers, ProQuest dissertations, patent databases or non-English scholarship. Technical Moneta/Nemosyne algorithms are outside the present scope.
+Version 0.2 incorporates deeper web-based reviews of discovery attribution, epistemic handoff/uptake and displaced scarcity. It remains non-exhaustive. Scopus, Web of Science, EconLit, PhilPapers, ProQuest, patent databases, archival books and non-English scholarship have not been systematically exhausted. Technical Moneta/Nemosyne algorithms remain outside this register.
 
-Accordingly, entries marked candidate novelty or novelty unassessed must not be represented as proven novelty.
+Accordingly, “not found” means **novelty remains unassessed**, never “proven novel.”
