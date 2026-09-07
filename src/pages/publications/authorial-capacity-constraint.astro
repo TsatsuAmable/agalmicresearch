@@ -6,11 +6,11 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 ---
 <Layout
   title="The Authorial Capacity Constraint"
-  description="Working Paper 001: epistemic stewardship, defensibility and human responsibility under machine-amplified cognitive abundance."
+  description="Working Paper 001: epistemic stewardship, defensibility, separable contribution and human responsibility under machine-amplified cognitive abundance."
 >
   <header class="page-head paper-head">
     <div class="shell">
-      <p class="eyebrow">Working Paper 001 · v0.1 · 7 September 2026</p>
+      <p class="eyebrow">Working Paper 001 · v0.2 · 7 September 2026</p>
       <h1>The Authorial Capacity Constraint</h1>
       <p class="lede">Epistemic stewardship under cognitive abundance.</p>
       <div class="paper-meta" aria-label="Publication status">
@@ -43,7 +43,7 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
     <section class="section">
       <div class="shell paper-section">
         <p class="eyebrow">Abstract</p>
-        <p class="paper-abstract">Machine cognition can now produce arguments, code, analyses and other intellectual artefacts whose sophistication exceeds the unaided competence of the human who prompted, selected or published them. This decouples artefact quality from authorial comprehension, weakening an assumption embedded in traditional authorship: that the person presenting a claim can also explain, interrogate and defend it. This paper names that problem the <strong>Authorial Capacity Constraint</strong>. It proposes the <strong>Principle of Defensible Stewardship</strong>: where cognitive production is delegated, epistemic authority should remain proportional to demonstrated defensibility, while gaps in human comprehension should be compensated by transparent provenance, independent verification, reproducibility, adversarial scrutiny and explicit qualification. The argument is situated within the broader economics of cognitive abundance: as generation becomes cheap, scarcity migrates toward judgement, comprehension, verification and responsible stewardship. The paper is deliberately reflexive. Agalmic Research uses machine cognition extensively, and this first working paper establishes the standard by which its subsequent claims should be judged.</p>
+        <p class="paper-abstract">Machine cognition can now produce arguments, code, analyses and other intellectual artefacts whose sophistication exceeds the unaided competence of the human who prompted, selected or published them. This decouples artefact quality from authorial comprehension, weakening an assumption embedded in traditional authorship: that the person presenting a claim can also explain, interrogate and defend it. This paper names that problem the <strong>Authorial Capacity Constraint</strong>. It proposes the <strong>Principle of Defensible Stewardship</strong>: where cognitive production is delegated, epistemic authority should remain proportional to demonstrated defensibility, while gaps in human comprehension should be compensated by transparent provenance, independent verification, reproducibility, adversarial scrutiny and explicit qualification. Version 0.2 adds a constructive corollary: epistemic contribution and epistemic authority should be separable. A person may originate a valuable idea without being qualified to validate it; validation by others should add warrant without erasing the originator's contribution. This motivates <strong>epistemic handoff</strong>, the structured transfer of candidate knowledge toward appropriate expertise while preserving contribution provenance. The broader economic implication is that as generation becomes cheap, scarcity migrates toward judgement, comprehension, verification, expert attention, uptake and responsible stewardship.</p>
       </div>
     </section>
 
@@ -102,13 +102,16 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
         <h2>“Author” is becoming an overloaded word.</h2>
         <p>Machine-assisted knowledge production can involve several distinct contributions that traditional authorship compresses into one label. A more transparent system should be able to distinguish them:</p>
         <ul>
-          <li><strong>Problem framer:</strong> identifies the question and determines why it matters.</li>
+          <li><strong>Initiator:</strong> first introduces the idea, anomaly, question or direction.</li>
+          <li><strong>Problem framer:</strong> turns the initial disturbance into a tractable question.</li>
           <li><strong>Search director:</strong> chooses prompts, branches, constraints and stopping conditions.</li>
           <li><strong>Generator:</strong> produces candidate arguments, code, models or representations.</li>
           <li><strong>Selector:</strong> decides which candidates merit further attention.</li>
+          <li><strong>Developer:</strong> formalises, extends or strengthens a promising candidate.</li>
+          <li><strong>Domain steward:</strong> brings relevant expertise and accepts responsibility for the interpretation of claims in that domain.</li>
           <li><strong>Verifier:</strong> tests correctness, robustness, provenance and reproducibility.</li>
           <li><strong>Interpreter:</strong> connects the result to context, consequences and limitations.</li>
-          <li><strong>Steward:</strong> accepts responsibility for how the artefact is represented and used.</li>
+          <li><strong>Realizer:</strong> turns sufficiently warranted knowledge into an intervention, system, institution or product.</li>
         </ul>
         <p>A single person may occupy several roles. A machine may contribute substantially to generation, search and criticism. External experts or automated systems may contribute to verification. What matters is that the public record does not quietly convert contribution in one role into an unsupported claim of competence in all the others.</p>
       </div>
@@ -116,7 +119,26 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">6 · An epistemic-status protocol</p>
+        <p class="eyebrow">6 · Corollary of Separable Epistemic Roles</p>
+        <h2>Contribution should survive the handoff to authority.</h2>
+        <div class="thesis paper-thesis">
+          <p class="eyebrow">Proposed corollary</p>
+          <blockquote>Origin deserves credit. Authority requires warrant.</blockquote>
+          <p>The ability to originate a valuable idea does not imply the authority to validate it, and the authority to validate an idea does not erase the contribution of its originator.</p>
+        </div>
+        <p>This matters because machine cognition can help a non-expert notice, articulate or search toward something valuable before they possess the expertise required to know whether it is valuable. A system that demands expert authority at the moment of initiation will throw away some of the gains of cognitive abundance. A system that grants authority merely because someone initiated an idea will manufacture false expertise.</p>
+        <p>The constructive response is <strong>epistemic handoff</strong>: preserve the contribution and its provenance, state the authority gap explicitly, then route the candidate object toward the missing epistemic functions.</p>
+        <p>Such a system requires at least two distinct records: <strong>contribution provenance</strong>, describing who initiated, framed, developed, selected or realised the work; and <strong>epistemic authority</strong>, describing who can defend which claims and on what evidence, expertise, replication or formal verification that authority rests.</p>
+        <div class="callout">
+          <p><strong>Low authority should trigger handoff, not erasure.</strong></p>
+        </div>
+        <p>This principle also protects the initiator from appropriation. Expert validation can strengthen an idea without rewriting who contributed it.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">7 · An epistemic-status protocol</p>
         <h2>Lower barriers to production. Raise transparency of status.</h2>
         <p>Agalmic Research will experiment with explicit epistemic-status labels rather than treating publication as a binary transition from "unpublished" to "authoritative". The labels are not a ladder and do not substitute for evidence; they disclose different forms of support.</p>
         <div class="status-grid">
@@ -126,42 +148,48 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
           <div><strong>Empirically supported</strong><span>Important claims have survived specified observations or experiments.</span></div>
           <div><strong>Reproduced</strong><span>Independent reproduction or replay has confirmed a material result.</span></div>
         </div>
-        <p>Machine assistance should also be disclosed where it materially shapes reasoning, structure, analysis or prose. Current publisher policies increasingly require such disclosure and retain accountability with human authors. The protocol proposed here goes further by asking not merely <em>whether AI was used</em>, but <em>what epistemic work the human is actually able to stand behind</em>.</p>
+        <p>Machine assistance should also be disclosed where it materially shapes reasoning, structure, analysis or prose. The protocol proposed here asks not merely <em>whether AI was used</em>, but <em>what epistemic work the human is actually able to stand behind</em>, and now also <em>which contributions should remain credited even when authority is supplied elsewhere</em>.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">7 · Economics of the constraint</p>
-        <h2>Cognitive abundance displaces scarcity into stewardship.</h2>
+        <p class="eyebrow">8 · Economics of the constraint</p>
+        <h2>Cognitive abundance displaces scarcity into stewardship and uptake.</h2>
         <p>The Authorial Capacity Constraint is an instance of the broader Agalmic Research thesis that abundance in one productive factor does not abolish scarcity. It changes where scarcity binds.</p>
         <p>When candidate prose, hypotheses, code and analysis become inexpensive to generate, the scarce complements increasingly include attention, judgement, domain understanding, verification, trust, institutional legitimacy and the capacity to realise good ideas in the world.</p>
-        <p>Expertise therefore does not become worthless under cognitive abundance. Some forms may become more valuable because the volume and sophistication of candidate output increase faster than society's ability to validate it. The economic object shifts from scarce <em>generation</em> toward scarce <em>epistemic stewardship</em>.</p>
-        <p>This creates a possible market failure. Machine assistance can cheaply manufacture the signals traditionally associated with expertise: fluent argument, citations, notation, confident technical prose and rapid response to criticism. If those signals cease to discriminate reliably between understanding and simulation of understanding, institutions need new verification mechanisms.</p>
+        <p>A further scarcity follows from separable epistemic roles. If many more people can originate plausible candidate knowledge, society requires enough capacity to <strong>notice, route, evaluate, validate, integrate and develop</strong> those contributions. Agalmic Research calls this the <strong>Epistemic Uptake Constraint</strong>.</p>
+        <div class="callout">
+          <p><strong>As candidate knowledge becomes abundant, the capacity to absorb and steward it becomes scarce.</strong></p>
+        </div>
+        <p>Expertise therefore does not become worthless under cognitive abundance. Some forms may become more valuable because the volume and sophistication of candidate output increase faster than society's ability to validate it. Expert attention itself becomes an allocative resource.</p>
+        <p>This creates possible market failures. Machine assistance can cheaply manufacture the signals traditionally associated with expertise, while scarce evaluative attention can be captured by credentials, wealth, prestige or proprietary ranking systems. The challenge is not merely producing more knowledge. It is building institutions capable of receiving it without allowing the filters to become the new monopolies.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">8 · Research programme</p>
-        <h2>The principle should become testable.</h2>
-        <p>This first version deliberately stops short of claiming a validated metric for defensibility. Several research questions follow:</p>
+        <p class="eyebrow">9 · Research programme</p>
+        <h2>The principles should become testable.</h2>
+        <p>This version deliberately stops short of claiming validated metrics for defensibility, contribution or uptake. Several research questions follow:</p>
         <ol>
           <li>How should comprehension and defensibility be operationalised without reducing expertise to trivia recall?</li>
           <li>Does machine assistance systematically increase the gap between perceived and demonstrated understanding?</li>
           <li>Which forms of adversarial questioning best distinguish recognition, memorisation and genuine transfer?</li>
           <li>When can independent verification compensate for limited curator comprehension, and when is direct expertise indispensable?</li>
           <li>Can provenance systems record the division of epistemic labour without becoming bureaucratic theatre?</li>
-          <li>How do audiences update trust when epistemic-status disclosures are explicit?</li>
+          <li>How should initiation, development, validation and realization credit be represented when those roles belong to different people?</li>
+          <li>How can promising low-authority ideas be routed toward expert attention without credential capture, idea appropriation or flooding?</li>
+          <li>How do audiences update trust when epistemic-status and contribution disclosures are explicit?</li>
           <li>Which disciplines require different thresholds because errors carry different costs?</li>
         </ol>
-        <p>A useful empirical programme would compare unaided authors, machine-assisted authors and domain experts on artefact quality, self-assessed understanding and performance under novel adversarial questions. The hypothesis of interest is not simply that low-skill participants overestimate themselves. It is that machine amplification can increase artefact quality faster than transferable human understanding, producing a measurable <strong>authorial capacity gap</strong>.</p>
+        <p>A useful empirical programme would compare unaided authors, machine-assisted authors and domain experts on artefact quality, self-assessed understanding and performance under novel adversarial questions. A complementary institutional programme would test whether explicit handoff and provenance mechanisms improve the rate at which promising contributions from non-experts are identified, fairly credited and successfully validated.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">9 · Deep future</p>
+        <p class="eyebrow">10 · Deep future</p>
         <h2>When epistemic authority leaves the human scale.</h2>
         <p>The Authorial Capacity Constraint may describe a transitional problem rather than a permanent equilibrium. Today it is unusual, and often uncomfortable, for a human curator to publish work they cannot fully defend. If machine cognition becomes substantially more capable, that condition could become ordinary at the frontier of knowledge.</p>
         <p>Ray Kurzweil's account of the technological singularity imagines intelligence increasingly escaping ordinary biological limits and becoming predominantly non-biological. The present paper does not depend on Kurzweil's forecasts. It extracts a narrower epistemic question from that possibility: <strong>what happens to the authority of human understanding if the production of reliable knowledge itself advances beyond human-scale comprehension?</strong></p>
@@ -179,22 +207,23 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">10 · Reflexive application</p>
+        <p class="eyebrow">11 · Reflexive application</p>
         <h2>Agalmic Research is part of the experiment.</h2>
         <p>This programme is being developed through extensive interaction with large language models. Machine cognition contributes to exploration, synthesis, drafting, criticism, code and the discovery of adjacent arguments. The human curator chooses directions, accepts or rejects outputs, asks for criticism and decides what is published.</p>
         <p>Those activities constitute genuine intellectual labour, but they do not establish expert mastery of economics, epistemology, psychology, statistics, information theory or every other field the programme may touch.</p>
-        <p>Future Agalmic Research publications should therefore state their epistemic status explicitly. Where central claims outrun the curator's present ability to defend them, the appropriate response is not concealment and not silence. It is disclosure, criticism, study, verification and revision.</p>
+        <p>They also illustrate why contribution and authority must be separated. The human curator may deserve provenance credit for originating a question, directing the search or recognizing a promising branch even when subsequent validation requires other people with stronger domain authority. Those validators should receive credit for the warrant they add without absorbing the originator's role.</p>
+        <p>Future Agalmic Research publications should therefore state both their epistemic status and, where useful, their contribution roles. Where central claims outrun the curator's present ability to defend them, the appropriate response is not concealment and not silence. It is disclosure, handoff, criticism, study, verification and revision.</p>
         <div class="callout">
-          <p><strong>Open production should make epistemic limits more visible, not easier to hide.</strong></p>
+          <p><strong>Open production should make both epistemic limits and contribution provenance more visible, not easier to hide.</strong></p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">11 · Limitations</p>
+        <p class="eyebrow">12 · Limitations</p>
         <h2>What this version does not establish.</h2>
-        <p>The Authorial Capacity Constraint is presently a conceptual proposal, not an empirically validated law. No quantitative measure of artefact sophistication, comprehension, defensibility or epistemic authority is established here. The boundary between legitimate distributed cognition and irresponsible delegation is likely domain-dependent. Verification mechanisms can themselves fail, and expert consensus is neither infallible nor immune to institutional incentives.</p>
+        <p>The Authorial Capacity Constraint, Principle of Separable Epistemic Roles and Epistemic Uptake Constraint are presently conceptual proposals, not empirically validated laws. No quantitative measure of artefact sophistication, comprehension, defensibility, contribution, uptake or epistemic authority is established here. The boundary between legitimate distributed cognition and irresponsible delegation is likely domain-dependent. Verification mechanisms can themselves fail, and expert consensus is neither infallible nor immune to institutional incentives.</p>
         <p>The paper also does not establish that generative AI uniquely causes overconfidence. Its stronger claim is structural: AI makes it possible to produce increasingly sophisticated artefacts without requiring a matching increase in the human curator's domain competence. The epistemic and institutional consequences of that possibility require investigation.</p>
         <p>The Human-Scale Epistemic Horizon is more speculative still. Current progress in machine reasoning does not demonstrate that knowledge will become inaccessible to human understanding, nor that mathematics must be the first domain in which this occurs.</p>
       </div>
@@ -204,8 +233,8 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
       <div class="shell paper-section">
         <p class="eyebrow">AI-assistance declaration</p>
         <h2>How this paper was produced.</h2>
-        <p>This working paper was developed through substantive interaction with OpenAI's ChatGPT. The system contributed to conceptual exploration, terminology, structure, drafting, counterargument generation and literature discovery. The human curator initiated the underlying concern, selected the research direction, challenged and revised the framing, introduced the deep-future question of diminished human epistemic authority, chose to place the paper first in the Agalmic Research sequence, and authorised publication.</p>
-        <p>References and factual claims should be independently checked before any peer-reviewed submission. The human curator accepts responsibility for publication while explicitly declining to imply expert-level mastery of every argument in this v0.1 release.</p>
+        <p>This working paper was developed through substantive interaction with OpenAI's ChatGPT. The system contributed to conceptual exploration, terminology, structure, drafting, counterargument generation and literature discovery. The human curator initiated the underlying concern, selected the research direction, challenged and revised the framing, introduced the deep-future question of diminished human epistemic authority, and subsequently introduced the distinction between idea initiation and epistemic authority together with the need for systems that can hand promising ideas to people better able to evaluate them.</p>
+        <p>Version 0.2 incorporates that latter contribution as the Principle of Separable Epistemic Roles, epistemic handoff and the Epistemic Uptake Constraint. References and factual claims should be independently checked before any peer-reviewed submission. The human curator accepts responsibility for publication while explicitly declining to imply expert-level mastery of every argument in this release.</p>
       </div>
     </section>
 
@@ -221,10 +250,10 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
           <li>Elsevier. (2026). <em>Generative AI policies for journals.</em> Policy guidance on AI-assisted manuscript preparation, disclosure and human accountability.</li>
           <li>Lendvai, G. F. et al. (2026). <em>Artificial intelligence in academic practices and policy discourses across ‘Big 5’ publishers.</em> Research Evaluation. <a href="https://doi.org/10.1093/reseval/rvag004">doi:10.1093/reseval/rvag004</a></li>
         </ol>
-        <p class="muted">Reference set intentionally small in v0.1. Literature review and empirical grounding are priorities for the next revision.</p>
+        <p class="muted">Reference set intentionally small in v0.2. Literature review and empirical grounding are priorities for the next revision.</p>
         <div class="actions">
           <a class="button" href={internal('publications')}>Back to publications</a>
-          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/src/pages/publications/authorial-capacity-constraint.astro">View source ↗</a>
+          <a class="button secondary" href={internal('drafts/epistemic-handoff')}>Read the Epistemic Handoff draft</a>
         </div>
       </div>
     </section>
