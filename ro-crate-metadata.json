@@ -11,14 +11,19 @@
       "@id": "./",
       "@type": "Dataset",
       "name": "Agalmic Research open research object",
-      "description": "Versioned research sources, working papers, provenance records, novelty/lineage review and research-process protocols for Agalmic Research.",
+      "description": "Versioned research sources, working papers, provenance records, intellectual-lineage reviews and research-process protocols for Agalmic Research.",
+      "datePublished": "2026-09-07",
       "dateModified": "2026-09-07",
+      "license": "No explicit reuse license has yet been declared for this research object; reuse terms remain pending an explicit curator licensing decision.",
       "url": "https://agalmicresearch.org/",
       "sameAs": "https://github.com/TsatsuAmable/agalmicresearch",
       "hasPart": [
         { "@id": "src/pages/publications/authorial-capacity-constraint.astro" },
         { "@id": "src/pages/drafts/epistemic-handoff.astro" },
         { "@id": "docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md" },
+        { "@id": "docs/LITERATURE_REVIEW_DISCOVERY_ATTRIBUTION.md" },
+        { "@id": "docs/LITERATURE_REVIEW_EPISTEMIC_HANDOFF.md" },
+        { "@id": "docs/LITERATURE_REVIEW_DISPLACED_SCARCITY.md" },
         { "@id": "docs/RESEARCH_PROVENANCE_PROTOCOL.md" },
         { "@id": "docs/STANDARDS_PROVENANCE_PROFILE.md" },
         { "@id": "docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md" },
@@ -54,6 +59,9 @@
       "instrument": { "@id": "#chatgpt" },
       "result": [
         { "@id": "docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md" },
+        { "@id": "docs/LITERATURE_REVIEW_DISCOVERY_ATTRIBUTION.md" },
+        { "@id": "docs/LITERATURE_REVIEW_EPISTEMIC_HANDOFF.md" },
+        { "@id": "docs/LITERATURE_REVIEW_DISPLACED_SCARCITY.md" },
         { "@id": "docs/STANDARDS_PROVENANCE_PROFILE.md" },
         { "@id": "src/data/researchProvenance.jsonld" }
       ]
@@ -74,6 +82,24 @@
       "@id": "docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md",
       "@type": "File",
       "name": "Intellectual Lineage and Novelty Register",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "docs/LITERATURE_REVIEW_DISCOVERY_ATTRIBUTION.md",
+      "@type": "File",
+      "name": "Literature Review: Discovery Attribution in Human–AI Science",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "docs/LITERATURE_REVIEW_EPISTEMIC_HANDOFF.md",
+      "@type": "File",
+      "name": "Literature Review: Epistemic Handoff, Knowledge Brokering and Uptake",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "docs/LITERATURE_REVIEW_DISPLACED_SCARCITY.md",
+      "@type": "File",
+      "name": "Literature Review: Displaced Scarcity and Shifting Bottlenecks",
       "encodingFormat": "text/markdown"
     },
     {
