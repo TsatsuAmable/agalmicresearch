@@ -67,6 +67,7 @@ export interface AstroAgalmicOptions {
   handoffs?: string | null;
   researchKinds?: string[];
   requiredFields?: string[];
+  knownOrigins?: string[] | null;
   validate?: boolean;
   search?: false | SearchOptions;
 }
@@ -84,6 +85,7 @@ export function validateKnowledge(options: {
   history?: { events: HistoryEvent[] } | HistoryEvent[] | null;
   requiredFields?: string[];
   researchKinds?: string[];
+  knownOrigins?: string[] | null;
 }): ValidationResult;
 export function buildSearchIndex(options: Record<string, unknown>): { schema_version: string; generated_at: string; count: number; entries: unknown[] };
 export function normalizePathname(href?: string): string;
