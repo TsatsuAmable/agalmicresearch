@@ -8,12 +8,12 @@ const nodeById = new Map(graph.nodes.map((node) => [node.id, node]));
 const chain = graph.canonical_chain.map((id) => nodeById.get(id)).filter(Boolean);
 const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institutional_proposal'].includes(node.type));
 ---
-<Layout title="Provenance" description="Standards-first research provenance for Agalmic Research using W3C PROV, RO-Crate and CRediT with a narrow experimental epistemic extension layer.">
+<Layout title="Provenance" description="Standards-first research provenance for Agalmic Research using W3C PROV, RO-Crate and CRediT with a narrow experimental epistemic and possibility-portfolio extension layer.">
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Research provenance</p>
       <h1>Preserve the path without inventing another provenance island.</h1>
-      <p class="lede">Agalmic Research originally built a local discovery graph before adequately surveying mature provenance standards. That graph remains as historical evidence. New work is migrating ordinary provenance toward W3C PROV, research-object packaging toward RO-Crate and contribution roles toward CRediT.</p>
+      <p class="lede">Agalmic Research originally built a local discovery graph before adequately surveying mature provenance standards. That graph remains as historical evidence. New work uses W3C PROV concepts, RO-Crate packaging and CRediT wherever they already solve the problem.</p>
     </div>
   </header>
 
@@ -25,7 +25,7 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
       </div>
       <div class="prose">
         <p class="large">Provenance, contributorship and graph-based scholarly communication already have substantial prior art.</p>
-        <p><a href="https://www.w3.org/TR/prov-dm/">W3C PROV</a> already models entities, activities, agents, attribution, derivation and responsibility. <a href="https://www.researchobject.org/ro-crate/specification/1.3/">RO-Crate</a> packages research objects in machine-readable JSON-LD. <a href="https://credit.niso.org/">CRediT</a> standardizes scholarly contribution roles. <a href="https://www.mira.science/">MIRA</a> demonstrates graph-based questions, claims and evidence with granular attribution.</p>
+        <p><a href="https://www.w3.org/TR/prov-dm/">W3C PROV</a> models entities, activities, agents, attribution, derivation and responsibility. <a href="https://www.researchobject.org/ro-crate/specification/1.3/">RO-Crate</a> packages research objects in machine-readable JSON-LD. <a href="https://credit.niso.org/">CRediT</a> standardizes scholarly contribution roles. <a href="https://www.mira.science/">MIRA</a> demonstrates graph-based questions, claims and evidence with granular attribution.</p>
         <div class="callout"><p><strong>Use established provenance vocabulary wherever it fits. Extend only where the research problem genuinely requires information it cannot express.</strong></p></div>
         <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/STANDARDS_PROVENANCE_PROFILE.md">Read the standards-first provenance profile ↗</a></p>
       </div>
@@ -43,9 +43,9 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
       </div>
       <div class="status-grid">
         <div><strong>W3C PROV</strong><span>Who or what generated, used, influenced, derived or was associated with a research entity or activity?</span></div>
-        <div><strong>CRediT</strong><span>Which standardized scholarly contribution roles did a contributor perform?</span></div>
+        <div><strong>CRediT</strong><span>Which standardized scholarly contribution roles did a human contributor perform?</span></div>
         <div><strong>RO-Crate</strong><span>How is the research object, its files and contextual metadata packaged for exchange and preservation?</span></div>
-        <div><strong>Agalmic extension</strong><span>What is the claim-level epistemic status, branch state, handoff need, search boundary or reversal condition?</span></div>
+        <div><strong>Agalmic extension</strong><span>What is the claim-level authority state, branch state, handoff need, search boundary, reversal condition or possibility-portfolio status?</span></div>
       </div>
       <p class="muted">W3C PROV's term <code>SoftwareAgent</code> is a provenance category. Using it for an AI system does not imply that the system is a moral person, legal author, epistemic knower or scientific discoverer.</p>
     </div>
@@ -55,15 +55,15 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
     <div class="shell split">
       <div>
         <p class="eyebrow">Machine-readable artefacts</p>
-        <h2>The migration has begun in the repository.</h2>
+        <h2>The migration is now being exercised session by session.</h2>
       </div>
       <div class="prose">
-        <p>The repository now contains an experimental <strong>RO-Crate 1.3 metadata document</strong> and a <strong>W3C PROV-compatible JSON-LD projection</strong> for the lineage-review session and Paper 001 correction.</p>
+        <p>The repository contains an experimental <strong>RO-Crate 1.3 metadata document</strong>, a <strong>PROV-O-aligned JSON-LD projection</strong> for the earlier lineage review, and a separate PROV-O-aligned session bundle for the possibility-portfolio / Active Frontier work.</p>
         <div class="actions">
           <a class="button" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/ro-crate-metadata.json">RO-Crate metadata ↗</a>
-          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/src/data/researchProvenance.jsonld">PROV JSON-LD ↗</a>
+          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/src/data/provenance/2026-09-07-frontier-system.jsonld">Frontier-session provenance ↗</a>
         </div>
-        <p class="muted">These are experimental profiles, not a claim that an external standards body has certified conformance.</p>
+        <p class="muted">“PROV-O-aligned JSON-LD” means the documents use PROV ontology terms in JSON-LD. It does not claim conformance to every serialization profile or certification by W3C.</p>
       </div>
     </div>
   </section>
@@ -80,6 +80,20 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
   <section class="section">
     <div class="shell split">
       <div>
+        <p class="eyebrow">Possibility layer</p>
+        <h2>Provenance should preserve branches without turning them into obligations.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The Memory Palace records the topology of the search. The Possibility Portfolio records what deserves another move.</p>
+        <p>Public-safe possibilities now have explicit states such as seed, option, active, handoff, realized, parked and retired. The state is an operating decision, not an epistemic truth. A parked or retired branch keeps its provenance, rationale and potential reversal condition.</p>
+        <p><a href={internal('frontier')}>Inspect the public possibility portfolio →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
         <p class="eyebrow">Two records</p>
         <h2>Contribution provenance is not epistemic authority.</h2>
       </div>
@@ -87,7 +101,7 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
         <p class="large">Standards can tell us a great deal about contribution and derivation without proving a claim true.</p>
         <p>CRediT and PROV should record contribution and process. A separate experimental authority layer records which claims, if any, a person or institution can presently defend and the evidence supporting that status.</p>
         <div class="status-grid">
-          <div><strong>Contribution</strong><span>Use CRediT roles such as Conceptualization, Investigation, Formal analysis, Validation, Software and Writing where they fit; preserve finer local descriptors only when materially useful.</span></div>
+          <div><strong>Contribution</strong><span>Use CRediT for human scholarly roles where it fits and preserve finer process descriptors only when materially useful.</span></div>
           <div><strong>Authority</strong><span>Record claim-sensitive support such as expert review, empirical evidence, formal verification, reproduction or demonstrated defence. Do not infer it from contribution.</span></div>
         </div>
         <div class="callout"><p><strong>Origin deserves credit. Authority requires warrant.</strong></p></div>
@@ -103,10 +117,10 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
       </div>
       <div class="prose">
         <p class="large">The Memory Palace Protocol records the shape of a research search, not hidden model reasoning.</p>
-        <p>It preserves visible prompts and outputs, sources, artefacts, decisions, branch states, roads not taken, search boundaries, contribution roles and authority changes. Version 0.3 adds a standards-first requirement so ordinary provenance is emitted in interoperable form rather than only as local graph JSON.</p>
+        <p>It preserves visible prompts and outputs, sources, artefacts, decisions, branch states, roads not taken, search boundaries, contribution roles and authority changes. The companion Possibility Portfolio prompt captures materially new ideas as options and constrains the Active Frontier.</p>
         <div class="actions">
-          <a class="button" href={internal('memory-palace-protocol')}>Read the protocol</a>
-          <a class="button secondary" href={internal('lineage')}>Read the lineage register</a>
+          <a class="button" href={internal('memory-palace-protocol')}>Read the combined protocol page</a>
+          <a class="button secondary" href={internal('frontier')}>Active Frontier</a>
         </div>
       </div>
     </div>
@@ -146,10 +160,10 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
         <h2>Record events without prematurely settling agency.</h2>
       </div>
       <div class="prose">
-        <p>The new Discovery Attribution Problem makes a flat "human author + AI assistance" statement insufficient. A session may distribute candidate generation, significance recognition, validation, integration and realization across different actors.</p>
-        <p><strong>Human curator:</strong> has repeatedly initiated core questions, directed search, selected or rejected branches, recognized promising connections and made publication decisions.</p>
-        <p><strong>OpenAI ChatGPT:</strong> has materially contributed literature search, candidate generation, terminology, synthesis, criticism, drafting and code/repository transformations.</p>
-        <p>PROV can record those activities and associations. It should not be used to smuggle in the philosophical conclusion that either participant alone "discovered" the resulting knowledge.</p>
+        <p>Distributed-discovery scholarship makes a flat “human author + AI assistance” statement insufficient. A session may distribute problem framing, candidate generation, significance recognition, validation, integration and realization across different actors.</p>
+        <p><strong>Human curator:</strong> has initiated core questions, directed search, selected or rejected branches, recognized promising connections and made publication decisions.</p>
+        <p><strong>OpenAI ChatGPT:</strong> has materially contributed literature search, candidate generation, terminology, synthesis, criticism, drafting and repository transformations.</p>
+        <p>PROV can record those activities and associations. It should not be used to smuggle in the philosophical conclusion that either participant alone “discovered” the resulting knowledge.</p>
       </div>
     </div>
   </section>
@@ -160,7 +174,7 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
         <span class="section-number">Research objects</span>
         <div class="section-copy">
           <h2>Papers and proposals retain their genealogy.</h2>
-          <p>The local graph still records early contribution reconstruction. New research objects should additionally carry standards-compatible provenance and explicit lineage status.</p>
+          <p>The local graph still records early contribution reconstruction. New research objects additionally carry standards-oriented provenance, lineage status and, where relevant, possibility-portfolio state.</p>
         </div>
       </div>
       <div class="index-list">
@@ -183,11 +197,11 @@ const researchObjects = graph.nodes.filter((node) => ['paper', 'draft', 'institu
     <div class="shell split">
       <div>
         <p class="eyebrow">Memory-palace direction</p>
-        <h2>Eventually, navigate the discovery process.</h2>
+        <h2>Eventually, navigate both discovery and choice.</h2>
       </div>
       <div class="prose">
         <p class="large">The long-term interface remains a navigable research memory palace.</p>
-        <p>A reader should be able to enter at a claim and travel backward through sources and activities, sideways into competing branches and objections, and forward into validation, handoff, implementation and correction. The underlying data should remain interoperable even if the visualization is distinctive.</p>
+        <p>A reader should be able to enter at a claim and travel backward through sources and activities, sideways into competing branches and objections, and forward into validation, handoff, implementation and correction. A researcher should also be able to see which branches are active, preserved as options, parked or retired, without confusing portfolio status with truth.</p>
       </div>
     </div>
   </section>
