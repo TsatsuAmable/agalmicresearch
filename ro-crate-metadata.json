@@ -11,7 +11,7 @@
       "@id": "./",
       "@type": "Dataset",
       "name": "Agalmic Research open research object",
-      "description": "Versioned research sources, working papers, provenance records, intellectual-lineage reviews and research-process protocols for Agalmic Research.",
+      "description": "Versioned research sources, working papers, research notes, provenance records, intellectual-lineage reviews and research-process protocols for Agalmic Research.",
       "datePublished": "2026-09-07",
       "dateModified": "2026-09-07",
       "license": "No explicit reuse license has yet been declared for this research object; reuse terms remain pending an explicit curator licensing decision.",
@@ -20,6 +20,14 @@
       "hasPart": [
         { "@id": "src/pages/publications/authorial-capacity-constraint.astro" },
         { "@id": "src/pages/drafts/epistemic-handoff.astro" },
+        { "@id": "src/pages/notes/the-goal-is-not-more-ideas.astro" },
+        { "@id": "src/pages/notes/ideas-are-options-not-obligations.astro" },
+        { "@id": "src/pages/frontier.astro" },
+        { "@id": "src/data/possibilityPortfolio.json" },
+        { "@id": "src/data/provenance/2026-09-07-frontier-system.jsonld" },
+        { "@id": "docs/POSSIBILITY_PORTFOLIO_AND_ACTIVE_FRONTIER.md" },
+        { "@id": "docs/POSSIBILITY_CAPTURE_AND_FRONTIER_PROMPT.md" },
+        { "@id": "docs/LITERATURE_REVIEW_IDEA_PORTFOLIOS_AND_SELECTION.md" },
         { "@id": "docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md" },
         { "@id": "docs/LITERATURE_REVIEW_DISCOVERY_ATTRIBUTION.md" },
         { "@id": "docs/LITERATURE_REVIEW_EPISTEMIC_HANDOFF.md" },
@@ -67,6 +75,23 @@
       ]
     },
     {
+      "@id": "#frontier-system-2026-09-07",
+      "@type": "CreateAction",
+      "name": "Possibility portfolio, Active Frontier and capacity-oriented research notes",
+      "agent": { "@id": "#tsatsu-amable" },
+      "instrument": { "@id": "#chatgpt" },
+      "result": [
+        { "@id": "docs/POSSIBILITY_PORTFOLIO_AND_ACTIVE_FRONTIER.md" },
+        { "@id": "docs/POSSIBILITY_CAPTURE_AND_FRONTIER_PROMPT.md" },
+        { "@id": "docs/LITERATURE_REVIEW_IDEA_PORTFOLIOS_AND_SELECTION.md" },
+        { "@id": "src/data/possibilityPortfolio.json" },
+        { "@id": "src/data/provenance/2026-09-07-frontier-system.jsonld" },
+        { "@id": "src/pages/notes/the-goal-is-not-more-ideas.astro" },
+        { "@id": "src/pages/notes/ideas-are-options-not-obligations.astro" },
+        { "@id": "src/pages/frontier.astro" }
+      ]
+    },
+    {
       "@id": "src/pages/publications/authorial-capacity-constraint.astro",
       "@type": "File",
       "name": "Working Paper 001: The Authorial Capacity Constraint",
@@ -77,6 +102,54 @@
       "@type": "File",
       "name": "Draft: Epistemic Handoff",
       "encodingFormat": "text/plain"
+    },
+    {
+      "@id": "src/pages/notes/the-goal-is-not-more-ideas.astro",
+      "@type": "File",
+      "name": "Research Note 001: The Goal Is Not More Ideas",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@id": "src/pages/notes/ideas-are-options-not-obligations.astro",
+      "@type": "File",
+      "name": "Research Note 002: Ideas Are Options, Not Obligations",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@id": "src/pages/frontier.astro",
+      "@type": "File",
+      "name": "Active Frontier website projection",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@id": "src/data/possibilityPortfolio.json",
+      "@type": "File",
+      "name": "Agalmic Research public possibility portfolio",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@id": "src/data/provenance/2026-09-07-frontier-system.jsonld",
+      "@type": "File",
+      "name": "PROV-O-aligned JSON-LD provenance bundle for the frontier-system session",
+      "encodingFormat": "application/ld+json"
+    },
+    {
+      "@id": "docs/POSSIBILITY_PORTFOLIO_AND_ACTIVE_FRONTIER.md",
+      "@type": "File",
+      "name": "Possibility Portfolio and Active Frontier operating method",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "docs/POSSIBILITY_CAPTURE_AND_FRONTIER_PROMPT.md",
+      "@type": "File",
+      "name": "Possibility Capture & Active Frontier Prompt",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "docs/LITERATURE_REVIEW_IDEA_PORTFOLIOS_AND_SELECTION.md",
+      "@type": "File",
+      "name": "Literature Review: Idea Portfolios, Selection and the Active Frontier",
+      "encodingFormat": "text/markdown"
     },
     {
       "@id": "docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md",
@@ -129,7 +202,7 @@
     {
       "@id": "src/data/researchProvenance.jsonld",
       "@type": "File",
-      "name": "W3C PROV-compatible research provenance projection",
+      "name": "PROV-O-aligned JSON-LD research provenance projection",
       "encodingFormat": "application/ld+json"
     },
     {
