@@ -1,0 +1,125 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.3/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": { "@id": "./" },
+      "conformsTo": { "@id": "https://w3id.org/ro/crate/1.3" }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Agalmic Research open research object",
+      "description": "Versioned research sources, working papers, provenance records, novelty/lineage review and research-process protocols for Agalmic Research.",
+      "dateModified": "2026-09-07",
+      "url": "https://agalmicresearch.org/",
+      "sameAs": "https://github.com/TsatsuAmable/agalmicresearch",
+      "hasPart": [
+        { "@id": "src/pages/publications/authorial-capacity-constraint.astro" },
+        { "@id": "src/pages/drafts/epistemic-handoff.astro" },
+        { "@id": "docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md" },
+        { "@id": "docs/RESEARCH_PROVENANCE_PROTOCOL.md" },
+        { "@id": "docs/STANDARDS_PROVENANCE_PROFILE.md" },
+        { "@id": "docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md" },
+        { "@id": "src/data/researchGraph.json" },
+        { "@id": "src/data/researchProvenance.jsonld" }
+      ],
+      "creator": { "@id": "#tsatsu-amable" },
+      "mentions": [
+        { "@id": "#chatgpt" },
+        { "@id": "https://www.w3.org/TR/prov-dm/" },
+        { "@id": "https://credit.niso.org/" },
+        { "@id": "https://www.researchobject.org/ro-crate/specification/1.3/" }
+      ]
+    },
+    {
+      "@id": "#tsatsu-amable",
+      "@type": "Person",
+      "name": "Tsatsu Amable",
+      "url": "https://github.com/TsatsuAmable"
+    },
+    {
+      "@id": "#chatgpt",
+      "@type": "SoftwareApplication",
+      "name": "OpenAI ChatGPT",
+      "softwareVersion": "GPT-5.6 Sol (where session metadata records this model)",
+      "applicationCategory": "AI-assisted research"
+    },
+    {
+      "@id": "#lineage-review-2026-09-07",
+      "@type": "CreateAction",
+      "name": "Intellectual lineage and novelty review",
+      "agent": { "@id": "#tsatsu-amable" },
+      "instrument": { "@id": "#chatgpt" },
+      "result": [
+        { "@id": "docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md" },
+        { "@id": "docs/STANDARDS_PROVENANCE_PROFILE.md" },
+        { "@id": "src/data/researchProvenance.jsonld" }
+      ]
+    },
+    {
+      "@id": "src/pages/publications/authorial-capacity-constraint.astro",
+      "@type": "File",
+      "name": "Working Paper 001: The Authorial Capacity Constraint",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@id": "src/pages/drafts/epistemic-handoff.astro",
+      "@type": "File",
+      "name": "Draft: Epistemic Handoff",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@id": "docs/INTELLECTUAL_LINEAGE_AND_NOVELTY_REGISTER.md",
+      "@type": "File",
+      "name": "Intellectual Lineage and Novelty Register",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "docs/RESEARCH_PROVENANCE_PROTOCOL.md",
+      "@type": "File",
+      "name": "Research Provenance Protocol",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "docs/STANDARDS_PROVENANCE_PROFILE.md",
+      "@type": "File",
+      "name": "Standards-First Provenance Profile",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md",
+      "@type": "File",
+      "name": "Agalmic Research Memory Palace Session Prompt",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "src/data/researchGraph.json",
+      "@type": "File",
+      "name": "Experimental Agalmic Research discovery graph",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@id": "src/data/researchProvenance.jsonld",
+      "@type": "File",
+      "name": "W3C PROV-compatible research provenance projection",
+      "encodingFormat": "application/ld+json"
+    },
+    {
+      "@id": "https://www.w3.org/TR/prov-dm/",
+      "@type": "CreativeWork",
+      "name": "W3C PROV-DM"
+    },
+    {
+      "@id": "https://credit.niso.org/",
+      "@type": "CreativeWork",
+      "name": "CRediT Contributor Role Taxonomy"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/specification/1.3/",
+      "@type": "CreativeWork",
+      "name": "RO-Crate Metadata Specification 1.3"
+    }
+  ]
+}
