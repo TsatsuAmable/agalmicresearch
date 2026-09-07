@@ -5,14 +5,14 @@ import prompt from '../../docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md?raw';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 ---
-<Layout title="Memory Palace Protocol" description="The Agalmic Research Memory Palace Protocol v0.2 for provenance, epistemic authority, search-space mapping and decision replay across research sessions.">
+<Layout title="Memory Palace Protocol" description="The Agalmic Research Memory Palace Protocol v0.3 for standards-first provenance, intellectual-lineage review, epistemic authority, search-space mapping and decision replay.">
   <header class="page-head">
     <div class="shell">
-      <p class="eyebrow">Research operating protocol · v0.2</p>
-      <h1>A memory palace for the research process.</h1>
-      <p class="lede">A platform-agnostic session prompt for preserving how knowledge emerged: contribution, authority, evidence, alternatives, roads not taken, decisions, gaps and the graph transitions that connect them.</p>
+      <p class="eyebrow">Research operating protocol · v0.3</p>
+      <h1>A memory palace for the research process, built on existing standards.</h1>
+      <p class="lede">A platform-agnostic session prompt for preserving how research emerged while using W3C PROV, RO-Crate and CRediT wherever they already solve the problem. The local extension focuses narrowly on epistemic authority, lineage, handoff, search boundaries and roads not taken.</p>
       <div class="actions">
-        <a class="button" href={internal('downloads/Agalmic_Research_Memory_Palace_Protocol_v0.2.md')} download>Download Markdown</a>
+        <a class="button" href={internal('downloads/Agalmic_Research_Memory_Palace_Protocol_v0.3.md')} download>Download v0.3 Markdown</a>
         <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md">View canonical source ↗</a>
       </div>
     </div>
@@ -21,13 +21,41 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Governing distinction</p>
-        <h2>Do not confuse contribution with authority.</h2>
+        <p class="eyebrow">v0.3 correction</p>
+        <h2>Provenance was already a field before we drew our graph.</h2>
       </div>
       <div class="prose">
-        <p class="large">The protocol treats each research session as a directed, versioned graph of discovery rather than a flat transcript.</p>
-        <div class="callout"><p><strong>Origin deserves credit. Authority requires warrant.</strong></p></div>
-        <p>It records what was explored, selected, rejected, deferred, surfaced but unexamined and excluded by scope, while explicitly refusing to pretend that unknown alternatives were considered.</p>
+        <p class="large">The protocol now explicitly treats the Memory Palace as an application profile and experimental extension.</p>
+        <p>Use <a href="https://www.w3.org/TR/prov-dm/">W3C PROV</a> for ordinary provenance, <a href="https://credit.niso.org/">CRediT</a> for standardized scholarly contribution roles and <a href="https://www.researchobject.org/ro-crate/specification/1.3/">RO-Crate</a> for packaging research objects. Local fields are justified only where those systems do not adequately express the research question.</p>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/STANDARDS_PROVENANCE_PROFILE.md">Read the standards-first profile ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Novelty discipline</p>
+        <h2>The protocol now searches the ancestors of an idea before celebrating its birth.</h2>
+      </div>
+      <div class="prose">
+        <div class="callout"><p><strong>Novelty is a conclusion of search, not a tone of voice.</strong></p></div>
+        <p>Every potentially publishable contribution must be classified against prior knowledge: established antecedent, independent rediscovery, synthesis, extension, application, operationalization, terminology candidate, novelty unassessed or candidate novelty. Exact-phrase novelty is not enough.</p>
+        <p><a href={internal('lineage')}>Inspect the living lineage register →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Discovery attribution</p>
+        <h2>Record the acts before deciding who discovered.</h2>
+      </div>
+      <div class="prose">
+        <p>The protocol distinguishes <strong>candidate generation, significance recognition, validation, integration with prior knowledge and realization</strong>. Those events can belong to different humans, models, experts or institutions.</p>
+        <p>W3C PROV can record the process without deciding the philosophical question of whether a current AI system is itself a knower or discoverer.</p>
+        <div class="callout"><p><strong>Novelty belongs to the result relative to prior knowledge, not to the surprise of the actor who encountered it.</strong></p></div>
       </div>
     </div>
   </section>
@@ -39,7 +67,7 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
         <h2>Use this when the full protocol is already available to the researcher or agent.</h2>
       </div>
       <div class="prose">
-        <blockquote class="activation">Activate the Agalmic Research Memory Palace Protocol v0.2. Treat this session as a versioned graph of discovery. Track contribution provenance separately from epistemic authority; capture material questions, concepts, claims, evidence, objections, decisions and artefacts; preserve explored, rejected, deferred, surfaced-but-unexamined and scope-excluded branches; record reversal conditions and search boundaries; flag epistemic handoffs and publication/IP boundaries; and at closeout produce the complete Research Memory Palace Packet plus machine-readable graph patch. Do not infer expertise or attribution without evidence, do not treat absent alternatives as rejected, and do not request or fabricate hidden chain-of-thought.</blockquote>
+        <blockquote class="activation">Activate the Agalmic Research Memory Palace Protocol v0.3. Treat this session as a versioned graph of discovery. Use W3C PROV, RO-Crate and CRediT where applicable, extending them only for genuinely missing epistemic fields. Track contribution provenance separately from epistemic authority; search intellectual lineage before claiming novelty; distinguish machine candidate generation from human or machine recognition, validation, integration and realization; preserve explored, rejected, deferred, surfaced-but-unexamined and scope-excluded branches; record reversal conditions, search boundaries, handoffs and publication/IP boundaries; and at closeout produce the complete Research Memory Palace Packet plus standards-compatible provenance outputs. Do not infer expertise, novelty or attribution without evidence, do not treat absent alternatives as rejected, and do not request or fabricate hidden chain-of-thought.</blockquote>
       </div>
     </div>
   </section>
@@ -50,7 +78,7 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
         <span class="section-number">Canonical prompt</span>
         <div class="section-copy">
           <h2>The complete operating protocol.</h2>
-          <p>This page renders the repository source directly. The displayed protocol and canonical Markdown therefore share the same source object.</p>
+          <p>This page renders the repository source directly so the web view and canonical prompt cannot silently drift apart.</p>
         </div>
       </div>
       <pre class="protocol-text">{prompt}</pre>
@@ -61,13 +89,13 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
     <div class="shell split">
       <div>
         <p class="eyebrow">Related infrastructure</p>
-        <h2>The prompt feeds the research graph.</h2>
+        <h2>The prompt feeds interoperable research objects.</h2>
       </div>
       <div class="prose">
-        <p>Each provenance-complete session should end with a Research Memory Palace Packet and a machine-readable graph patch that can extend the project-wide discovery graph.</p>
+        <p>Each provenance-complete session should now aim to emit a human-readable Memory Palace Packet, W3C PROV-compatible JSON-LD, CRediT role mappings, RO-Crate-compatible metadata and only then a small Agalmic extension patch for epistemic fields the standards cannot express.</p>
         <div class="actions">
           <a class="button" href={internal('provenance')}>Explore provenance</a>
-          <a class="button secondary" href={internal('research-graph.json')}>Research graph JSON</a>
+          <a class="button secondary" href={internal('lineage')}>Inspect lineage</a>
         </div>
       </div>
     </div>
