@@ -29,13 +29,7 @@
         "James March 1991 / exploration and exploitation"
       ],
       "worthwhile_future": "A research programme and personal operating criterion oriented toward increasing reachable worthwhile futures rather than maximizing idea output.",
-      "capacity_created": [
-        "direction-setting",
-        "selection criterion",
-        "search capacity",
-        "assimilation capacity",
-        "future option value"
-      ],
+      "capacity_created": ["direction-setting", "selection criterion", "search capacity", "assimilation capacity", "future option value"],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "clear",
@@ -58,12 +52,7 @@
         "RO-Crate"
       ],
       "worthwhile_future": "Research objects whose discovery process can be inspected without collapsing human and machine contributions into a single author/discoverer label.",
-      "capacity_created": [
-        "provenance capacity",
-        "validation routing",
-        "credit legibility",
-        "research reproducibility"
-      ],
+      "capacity_created": ["provenance capacity", "validation routing", "credit legibility", "research reproducibility"],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "plausible",
@@ -86,12 +75,7 @@
         "recent AI-abundance economics"
       ],
       "worthwhile_future": "A falsifiable economics framework for understanding which scarce complements become valuable as machine cognition makes candidate production cheaper.",
-      "capacity_created": [
-        "formal reasoning",
-        "empirical test design",
-        "policy analysis",
-        "research prioritization"
-      ],
+      "capacity_created": ["formal reasoning", "empirical test design", "policy analysis", "research prioritization"],
       "frontier_leverage": "strong",
       "information_gain": "moderate",
       "realization_path": "plausible",
@@ -107,11 +91,7 @@
       "summary": "Test whether claim-sensitive, provenance-preserving routing to missing expertise improves evaluation of low-authority contributions without erasing originators or overwhelming expert attention.",
       "lineage_status": "knowledge brokerage/absorptive-capacity antecedents + narrow operational extension",
       "worthwhile_future": "A practical route from promising outsider or machine-assisted candidates to competent validation.",
-      "capacity_created": [
-        "handoff capacity",
-        "validation capacity",
-        "outsider access"
-      ],
+      "capacity_created": ["handoff capacity", "validation capacity", "outsider access"],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "plausible",
@@ -127,11 +107,7 @@
       "summary": "A research note connecting established innovation-as-search work to the machine-cognition regime, where larger search breadth can worsen the selection, testing and realization bottlenecks.",
       "lineage_status": "established search literature + explanatory synthesis",
       "worthwhile_future": "A clearer bridge between innovation search and the economics of epistemic abundance.",
-      "capacity_created": [
-        "conceptual bridge",
-        "public explanation",
-        "selection discipline"
-      ],
+      "capacity_created": ["conceptual bridge", "public explanation", "selection discipline"],
       "frontier_leverage": "moderate",
       "information_gain": "moderate",
       "realization_path": "clear",
@@ -147,11 +123,7 @@
       "summary": "Examine which upstream forms of abundance, such as knowledge, algorithms, energy, compute, standards or access, most strongly expand feasible future capability sets.",
       "lineage_status": "novelty unassessed; requires growth/capability/technology lineage review",
       "worthwhile_future": "A way to prioritize investments in abundance-producing infrastructure by downstream frontier leverage.",
-      "capacity_created": [
-        "policy prioritization",
-        "capability analysis",
-        "frontier leverage"
-      ],
+      "capacity_created": ["policy prioritization", "capability analysis", "frontier leverage"],
       "frontier_leverage": "strong",
       "information_gain": "moderate",
       "realization_path": "plausible",
@@ -167,11 +139,7 @@
       "summary": "Study mechanisms for allocating scarce specialist evaluation when candidate production outgrows expert review capacity, while avoiding credential capture, pay-to-be-heard dynamics and filter monopoly.",
       "lineage_status": "existing expert-evaluation/attention/intermediary antecedents; narrower delta unassessed",
       "worthwhile_future": "Higher-throughput evaluation without simply centralizing epistemic gatekeeping.",
-      "capacity_created": [
-        "evaluation capacity",
-        "institutional design",
-        "routing"
-      ],
+      "capacity_created": ["evaluation capacity", "institutional design", "routing"],
       "frontier_leverage": "strong",
       "information_gain": "moderate",
       "realization_path": "absent",
@@ -187,10 +155,7 @@
       "summary": "Explore institutional consequences if reliable frontier knowledge increasingly exceeds what any individual human can personally survey or defend.",
       "lineage_status": "computational-opacity antecedents + terminology/synthesis candidate",
       "worthwhile_future": "Governance and verification architectures for knowledge beyond individual comprehension.",
-      "capacity_created": [
-        "long-horizon governance",
-        "verification architecture"
-      ],
+      "capacity_created": ["long-horizon governance", "verification architecture"],
       "frontier_leverage": "moderate",
       "information_gain": "weak",
       "realization_path": "absent",
@@ -206,11 +171,7 @@
       "summary": "Use Nemosyne/Moneta as an applied testbed for whether alternative representations can increase what analysts can notice and act upon while controlling cognitive and computational cost.",
       "lineage_status": "broad representation/visual analytics antecedents; concrete technical novelty unassessed",
       "worthwhile_future": "Tools that enlarge practical discovery capacity by making meaningful structure more perceptible.",
-      "capacity_created": [
-        "representation capacity",
-        "recognition capacity",
-        "software tooling"
-      ],
+      "capacity_created": ["representation capacity", "recognition capacity", "software tooling"],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "clear",
@@ -231,13 +192,7 @@
         "knowledge-artifact literature"
       ],
       "worthwhile_future": "Machine-generated discoveries can be preserved, validated, routed and used without pretending that every human participant understands or can defend them.",
-      "capacity_created": [
-        "epistemic-state representation",
-        "validation routing",
-        "safer authority assignment",
-        "discovery provenance",
-        "assimilation research"
-      ],
+      "capacity_created": ["epistemic-state representation", "validation routing", "safer authority assignment", "discovery provenance", "assimilation research"],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "plausible",
@@ -259,13 +214,7 @@
         "safe and multi-objective optimization not yet deeply reviewed"
       ],
       "worthwhile_future": "Much larger safe search and realization capacity without requiring item-level human attention, subject mastery or review capacity to scale linearly with machine cognition.",
-      "capacity_created": [
-        "search leverage",
-        "selective oversight",
-        "governance capacity",
-        "continuous scarcity-displacement search",
-        "human intervention leverage"
-      ],
+      "capacity_created": ["search leverage", "selective oversight", "governance capacity", "continuous scarcity-displacement search", "human intervention leverage"],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "plausible",

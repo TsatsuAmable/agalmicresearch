@@ -2,13 +2,7 @@
   "schema_version": "0.1",
   "updated": "2026-09-07",
   "purpose": "A public semantic index for navigating Agalmic Research at multiple levels of abstraction without equating visibility with commitment.",
-  "layers": [
-    "orientation",
-    "direction",
-    "research-object",
-    "evidence",
-    "method"
-  ],
+  "layers": ["orientation", "direction", "research-object", "evidence", "method"],
   "objects": [
     {
       "id": "orientation:meta-aim",
@@ -17,21 +11,12 @@
       "layer": "orientation",
       "commitment": "active",
       "meaningful": true,
-      "topics": [
-        "adjacent-possible",
-        "cognitive-tools",
-        "selection",
-        "realization"
-      ],
+      "topics": ["adjacent-possible", "cognitive-tools", "selection", "realization"],
       "status": "Research Note 001",
       "summary": "The programme-level aim: improve the distributed capacity to make worthwhile possibilities reachable, recognizable, testable and realizable.",
       "direction": "Use cognitive abundance to expand reachable worthwhile futures rather than maximizing idea output.",
       "href": "/notes/the-goal-is-not-more-ideas/",
-      "related": [
-        "direction:effective-adjacent-possible",
-        "method:possibility-portfolio",
-        "direction:economics-epistemic-abundance"
-      ]
+      "related": ["direction:effective-adjacent-possible", "method:possibility-portfolio", "direction:economics-epistemic-abundance"]
     },
     {
       "id": "orientation:programme",
@@ -40,20 +25,12 @@
       "layer": "orientation",
       "commitment": "none",
       "meaningful": false,
-      "topics": [
-        "agalmic-economics",
-        "epistemic-abundance",
-        "distributed-discovery",
-        "representation"
-      ],
+      "topics": ["agalmic-economics", "epistemic-abundance", "distributed-discovery", "representation"],
       "status": "Living overview",
       "summary": "The current research map, with antecedents and remaining questions kept visible.",
       "direction": "Orient before descending into papers, notes, methods and evidence.",
       "href": "/research/",
-      "related": [
-        "orientation:meta-aim",
-        "method:lineage-register"
-      ]
+      "related": ["orientation:meta-aim", "method:lineage-register"]
     },
     {
       "id": "direction:effective-adjacent-possible",
@@ -62,23 +39,12 @@
       "layer": "direction",
       "commitment": "active",
       "meaningful": true,
-      "topics": [
-        "adjacent-possible",
-        "innovation-search",
-        "cognitive-tools",
-        "frontier-expansion"
-      ],
+      "topics": ["adjacent-possible", "innovation-search", "cognitive-tools", "frontier-expansion"],
       "status": "Active Frontier",
       "summary": "Develop the meta aim as a lineage-grounded synthesis connecting search, epistemic artefact production, recognition, validation, assimilation and realization to expansion of reachable worthwhile possibilities.",
       "direction": "Test whether cognitive and autonomous search machinery can safely displace the constraints that currently limit worthwhile frontier expansion.",
       "href": "/frontier/",
-      "related": [
-        "orientation:meta-aim",
-        "object:ideas-options",
-        "direction:representation-nemosyne",
-        "direction:epistemic-artefacts-assimilation",
-        "direction:constitutional-attention-search"
-      ]
+      "related": ["orientation:meta-aim", "object:ideas-options", "direction:representation-nemosyne", "direction:epistemic-artefacts-assimilation", "direction:constitutional-attention-search"]
     },
     {
       "id": "direction:distributed-discovery",
@@ -87,23 +53,12 @@
       "layer": "direction",
       "commitment": "active",
       "meaningful": true,
-      "topics": [
-        "human-ai",
-        "provenance",
-        "discovery",
-        "credit",
-        "epistemic-authority"
-      ],
+      "topics": ["human-ai", "provenance", "discovery", "credit", "epistemic-authority"],
       "status": "Active Frontier",
       "summary": "Represent problem framing, generation, recognition, validation, integration and realization without collapsing novelty, priority, contribution or authority.",
       "direction": "Use the 7 September 2026 epistemic-artefacts/constitutional-attention session as the first end-to-end standards-first discovery episode, then identify genuine provenance gaps.",
       "href": "/frontier/",
-      "related": [
-        "evidence:discovery-attribution-review",
-        "method:provenance",
-        "handoff:distributed-discovery-provenance",
-        "direction:epistemic-artefacts-assimilation"
-      ]
+      "related": ["evidence:discovery-attribution-review", "method:provenance", "handoff:distributed-discovery-provenance", "direction:epistemic-artefacts-assimilation"]
     },
     {
       "id": "direction:economics-epistemic-abundance",
@@ -112,21 +67,12 @@
       "layer": "direction",
       "commitment": "active",
       "meaningful": true,
-      "topics": [
-        "economics",
-        "epistemic-abundance",
-        "scarcity",
-        "bottlenecks",
-        "ai"
-      ],
+      "topics": ["economics", "epistemic-abundance", "scarcity", "bottlenecks", "ai"],
       "status": "Active Frontier",
       "summary": "Test whether abundance shocks produce useful comparative statics beyond familiar complementarity, bottleneck and attention results.",
       "direction": "Construct the smallest formal model that can falsify or sharply narrow the Displaced Scarcity Hypothesis.",
       "href": "/frontier/",
-      "related": [
-        "evidence:displaced-scarcity-review",
-        "handoff:displaced-scarcity-formalization"
-      ]
+      "related": ["evidence:displaced-scarcity-review", "handoff:displaced-scarcity-formalization"]
     },
     {
       "id": "direction:epistemic-handoff-pilot",
@@ -135,20 +81,12 @@
       "layer": "direction",
       "commitment": "option",
       "meaningful": false,
-      "topics": [
-        "epistemic-handoff",
-        "knowledge-brokering",
-        "expertise",
-        "validation"
-      ],
+      "topics": ["epistemic-handoff", "knowledge-brokering", "expertise", "validation"],
       "status": "Preserved option",
       "summary": "Test whether claim-sensitive, provenance-preserving routing improves evaluation of low-authority contributions.",
       "direction": "Design a tiny reviewer pilot before building platform machinery.",
       "href": "/frontier/",
-      "related": [
-        "object:epistemic-handoff",
-        "handoff:epistemic-handoff-pilot"
-      ]
+      "related": ["object:epistemic-handoff", "handoff:epistemic-handoff-pilot"]
     },
     {
       "id": "direction:expert-attention",
@@ -157,21 +95,12 @@
       "layer": "direction",
       "commitment": "option",
       "meaningful": false,
-      "topics": [
-        "attention",
-        "expertise",
-        "markets",
-        "selection",
-        "institutions"
-      ],
+      "topics": ["attention", "expertise", "markets", "selection", "institutions"],
       "status": "Preserved option",
       "summary": "Study how specialist evaluation can scale when candidate production outgrows expert review capacity without creating new filter monopolies.",
       "direction": "Map existing mechanisms before proposing a new market or ranking system.",
       "href": "/frontier/",
-      "related": [
-        "direction:epistemic-handoff-pilot",
-        "evidence:idea-portfolio-review"
-      ]
+      "related": ["direction:epistemic-handoff-pilot", "evidence:idea-portfolio-review"]
     },
     {
       "id": "direction:what-abundant-next",
@@ -180,21 +109,12 @@
       "layer": "direction",
       "commitment": "option",
       "meaningful": false,
-      "topics": [
-        "economics",
-        "energy",
-        "compute",
-        "knowledge",
-        "capabilities"
-      ],
+      "topics": ["economics", "energy", "compute", "knowledge", "capabilities"],
       "status": "Preserved option",
       "summary": "Ask which upstream forms of abundance most strongly expand downstream feasible capability sets.",
       "direction": "Complete lineage review across growth, general-purpose technologies, capability theory and energy economics before drafting claims.",
       "href": "/frontier/",
-      "related": [
-        "direction:economics-epistemic-abundance",
-        "orientation:meta-aim"
-      ]
+      "related": ["direction:economics-epistemic-abundance", "orientation:meta-aim"]
     },
     {
       "id": "direction:representation-nemosyne",
@@ -203,20 +123,12 @@
       "layer": "direction",
       "commitment": "option",
       "meaningful": false,
-      "topics": [
-        "representation",
-        "nemosyne",
-        "moneta",
-        "recognition",
-        "visual-analytics"
-      ],
+      "topics": ["representation", "nemosyne", "moneta", "recognition", "visual-analytics"],
       "status": "Preserved option",
       "summary": "Use representation changes as an empirical test of whether tools can enlarge what analysts can notice and act upon.",
       "direction": "Connect the adjacent-possible framing only after representation improvements are empirically demonstrated.",
       "href": "/frontier/",
-      "related": [
-        "direction:effective-adjacent-possible"
-      ]
+      "related": ["direction:effective-adjacent-possible"]
     },
     {
       "id": "direction:epistemic-artefacts-assimilation",
@@ -225,22 +137,12 @@
       "layer": "direction",
       "commitment": "option",
       "meaningful": false,
-      "topics": [
-        "epistemic-artifacts",
-        "epistemic-opacity",
-        "assimilation",
-        "human-ai",
-        "knowledge"
-      ],
+      "topics": ["epistemic-artifacts", "epistemic-opacity", "assimilation", "human-ai", "knowledge"],
       "status": "Preserved option",
       "summary": "Separate discovery outputs, warrant, agent-relative understanding, assimilation, capability and frontier effects so uncomprehended machine outputs are not silently promoted to human knowledge.",
       "direction": "Deepen lineage and test the state model against real human-machine discovery episodes.",
       "href": "/frontier/",
-      "related": [
-        "direction:distributed-discovery",
-        "object:authorial-capacity",
-        "direction:human-scale-horizon"
-      ]
+      "related": ["direction:distributed-discovery", "object:authorial-capacity", "direction:human-scale-horizon"]
     },
     {
       "id": "direction:constitutional-attention-search",
@@ -249,22 +151,12 @@
       "layer": "direction",
       "commitment": "option",
       "meaningful": false,
-      "topics": [
-        "attention",
-        "oversight",
-        "evolutionary-search",
-        "frontier-expansion",
-        "externalities"
-      ],
+      "topics": ["attention", "oversight", "evolutionary-search", "frontier-expansion", "externalities"],
       "status": "Preserved option",
       "summary": "Move scarce human intervention from reviewing every candidate toward shaping worthwhile-future objectives, harm/externality constraints, escalation rules and constitutional updates for autonomous frontier search.",
       "direction": "Formalize and compare against established interactive evolutionary computation, selective oversight, safe exploration and multi-objective optimization.",
       "href": "/frontier/",
-      "related": [
-        "direction:effective-adjacent-possible",
-        "direction:expert-attention",
-        "direction:economics-epistemic-abundance"
-      ]
+      "related": ["direction:effective-adjacent-possible", "direction:expert-attention", "direction:economics-epistemic-abundance"]
     },
     {
       "id": "direction:human-scale-horizon",
@@ -273,20 +165,12 @@
       "layer": "direction",
       "commitment": "parked",
       "meaningful": false,
-      "topics": [
-        "epistemic-opacity",
-        "verification",
-        "future",
-        "ai"
-      ],
+      "topics": ["epistemic-opacity", "verification", "future", "ai"],
       "status": "Parked",
       "summary": "Explore institutions for reliable knowledge whose justification no individual human can survey end-to-end.",
       "direction": "Keep parked until nearer-term verification work produces concrete mechanisms or evidence.",
       "href": "/frontier/",
-      "related": [
-        "object:authorial-capacity",
-        "direction:distributed-discovery"
-      ]
+      "related": ["object:authorial-capacity", "direction:distributed-discovery"]
     },
     {
       "id": "object:authorial-capacity",
@@ -295,21 +179,12 @@
       "layer": "research-object",
       "commitment": "supporting",
       "meaningful": true,
-      "topics": [
-        "epistemic-stewardship",
-        "metacognition",
-        "defensibility",
-        "human-ai"
-      ],
+      "topics": ["epistemic-stewardship", "metacognition", "defensibility", "human-ai"],
       "status": "Working Paper 001 · v0.4",
       "summary": "A lineage-corrected synthesis of the gap between machine-assisted artefact performance and human comprehension, defence and accountability.",
       "direction": "Use as a constraint on how the rest of the programme presents machine-assisted claims.",
       "href": "/publications/authorial-capacity-constraint/",
-      "related": [
-        "object:epistemic-handoff",
-        "handoff:authorial-capacity-measurement",
-        "method:provenance"
-      ]
+      "related": ["object:epistemic-handoff", "handoff:authorial-capacity-measurement", "method:provenance"]
     },
     {
       "id": "object:epistemic-handoff",
@@ -318,20 +193,12 @@
       "layer": "research-object",
       "commitment": "option",
       "meaningful": false,
-      "topics": [
-        "epistemic-handoff",
-        "knowledge-brokering",
-        "absorptive-capacity",
-        "authority"
-      ],
+      "topics": ["epistemic-handoff", "knowledge-brokering", "absorptive-capacity", "authority"],
       "status": "Draft · v0.3",
       "summary": "A narrow proposal for routing a candidate toward missing epistemic capability while preserving contribution provenance and claim status.",
       "direction": "Test the handoff as an operational protocol rather than another vocabulary for knowledge brokerage.",
       "href": "/drafts/epistemic-handoff/",
-      "related": [
-        "direction:epistemic-handoff-pilot",
-        "evidence:epistemic-handoff-review"
-      ]
+      "related": ["direction:epistemic-handoff-pilot", "evidence:epistemic-handoff-review"]
     },
     {
       "id": "object:ideas-options",
@@ -340,20 +207,12 @@
       "layer": "research-object",
       "commitment": "supporting",
       "meaningful": false,
-      "topics": [
-        "selection",
-        "portfolio",
-        "attention",
-        "personal-practice"
-      ],
+      "topics": ["selection", "portfolio", "attention", "personal-practice"],
       "status": "Research Note 002",
       "summary": "A personal operating rule for preserving idea abundance while protecting scarce commitment capacity.",
       "direction": "Use as the behavioural bridge between the Memory Palace and the Active Frontier.",
       "href": "/notes/ideas-are-options-not-obligations/",
-      "related": [
-        "method:possibility-portfolio",
-        "orientation:meta-aim"
-      ]
+      "related": ["method:possibility-portfolio", "orientation:meta-aim"]
     },
     {
       "id": "evidence:discovery-attribution-review",
@@ -362,19 +221,12 @@
       "layer": "evidence",
       "commitment": "supporting",
       "meaningful": false,
-      "topics": [
-        "human-ai",
-        "discovery",
-        "priority",
-        "provenance"
-      ],
+      "topics": ["human-ai", "discovery", "priority", "provenance"],
       "status": "Deep prior-art review",
       "summary": "Maps computational discovery, collective discovery, priority, validation and machine novelty antecedents.",
       "direction": "Constrains novelty claims around distributed discovery.",
       "href": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/LITERATURE_REVIEW_DISCOVERY_ATTRIBUTION.md",
-      "related": [
-        "direction:distributed-discovery"
-      ]
+      "related": ["direction:distributed-discovery"]
     },
     {
       "id": "evidence:epistemic-handoff-review",
@@ -383,20 +235,12 @@
       "layer": "evidence",
       "commitment": "supporting",
       "meaningful": false,
-      "topics": [
-        "knowledge-brokering",
-        "absorptive-capacity",
-        "intermediaries",
-        "expertise"
-      ],
+      "topics": ["knowledge-brokering", "absorptive-capacity", "intermediaries", "expertise"],
       "status": "Deep prior-art review",
       "summary": "Maps absorptive capacity, transfer stickiness, brokers, intermediaries, transactive memory and expert-evaluation bottlenecks.",
       "direction": "Keeps handoff work anchored to mature knowledge-transfer traditions.",
       "href": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/LITERATURE_REVIEW_EPISTEMIC_HANDOFF.md",
-      "related": [
-        "object:epistemic-handoff",
-        "direction:epistemic-handoff-pilot"
-      ]
+      "related": ["object:epistemic-handoff", "direction:epistemic-handoff-pilot"]
     },
     {
       "id": "evidence:displaced-scarcity-review",
@@ -405,19 +249,12 @@
       "layer": "evidence",
       "commitment": "supporting",
       "meaningful": false,
-      "topics": [
-        "economics",
-        "scarcity",
-        "bottlenecks",
-        "complements"
-      ],
+      "topics": ["economics", "scarcity", "bottlenecks", "complements"],
       "status": "Deep prior-art review",
       "summary": "Maps limiting factors, complements, attention, value capture, idea processing, induced innovation and recent AI-abundance economics.",
       "direction": "Forces the Displaced Scarcity Hypothesis toward formal conditions or retirement.",
       "href": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/LITERATURE_REVIEW_DISPLACED_SCARCITY.md",
-      "related": [
-        "direction:economics-epistemic-abundance"
-      ]
+      "related": ["direction:economics-epistemic-abundance"]
     },
     {
       "id": "evidence:idea-portfolio-review",
@@ -426,19 +263,12 @@
       "layer": "evidence",
       "commitment": "supporting",
       "meaningful": false,
-      "topics": [
-        "selection",
-        "portfolio",
-        "real-options",
-        "exploration-exploitation"
-      ],
+      "topics": ["selection", "portfolio", "real-options", "exploration-exploitation"],
       "status": "Prior-art review",
       "summary": "Grounds the Possibility Portfolio in established exploration/exploitation, portfolio, real-options and idea-management research.",
       "direction": "Prevents the selection machinery from masquerading as a newly invented management theory.",
       "href": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/LITERATURE_REVIEW_IDEA_PORTFOLIOS_AND_SELECTION.md",
-      "related": [
-        "method:possibility-portfolio"
-      ]
+      "related": ["method:possibility-portfolio"]
     },
     {
       "id": "method:possibility-portfolio",
@@ -447,20 +277,12 @@
       "layer": "method",
       "commitment": "active",
       "meaningful": false,
-      "topics": [
-        "selection",
-        "portfolio",
-        "attention",
-        "frontier"
-      ],
+      "topics": ["selection", "portfolio", "attention", "frontier"],
       "status": "Experimental operating method · v0.1",
       "summary": "Preserve ideas cheaply as options while limiting substantial commitments to a small Active Frontier.",
       "direction": "Use every session to update the portfolio without silently expanding active work.",
       "href": "/frontier/",
-      "related": [
-        "object:ideas-options",
-        "method:memory-palace"
-      ]
+      "related": ["object:ideas-options", "method:memory-palace"]
     },
     {
       "id": "method:memory-palace",
@@ -469,21 +291,12 @@
       "layer": "method",
       "commitment": "supporting",
       "meaningful": false,
-      "topics": [
-        "provenance",
-        "memory-palace",
-        "research-process",
-        "roads-not-taken"
-      ],
+      "topics": ["provenance", "memory-palace", "research-process", "roads-not-taken"],
       "status": "Operating protocol · v0.3",
       "summary": "Capture the topology of discovery, including branches, evidence, decisions, attribution, search boundaries and roads not taken.",
       "direction": "Preserve abundance without requiring every preserved branch to remain cognitively active.",
       "href": "/memory-palace-protocol/",
-      "related": [
-        "method:possibility-portfolio",
-        "method:provenance",
-        "handoff:terminus"
-      ]
+      "related": ["method:possibility-portfolio", "method:provenance", "handoff:terminus"]
     },
     {
       "id": "method:lineage-register",
@@ -492,20 +305,12 @@
       "layer": "method",
       "commitment": "supporting",
       "meaningful": false,
-      "topics": [
-        "prior-art",
-        "novelty",
-        "lineage",
-        "research-integrity"
-      ],
+      "topics": ["prior-art", "novelty", "lineage", "research-integrity"],
       "status": "Living register · v0.3",
       "summary": "Separates established antecedents, rediscovery, synthesis, extension and unassessed novelty.",
       "direction": "Treat prior art as infrastructure and move the research boundary instead of defending local terminology.",
       "href": "/lineage/",
-      "related": [
-        "method:memory-palace",
-        "orientation:programme"
-      ]
+      "related": ["method:memory-palace", "orientation:programme"]
     },
     {
       "id": "method:provenance",
@@ -514,20 +319,12 @@
       "layer": "method",
       "commitment": "supporting",
       "meaningful": false,
-      "topics": [
-        "provenance",
-        "w3c-prov",
-        "credit",
-        "ro-crate"
-      ],
+      "topics": ["provenance", "w3c-prov", "credit", "ro-crate"],
       "status": "Experimental application profile",
       "summary": "Use W3C PROV, CRediT and RO-Crate before adding narrow local metadata for authority, branch state and handoff.",
       "direction": "Keep the research process inspectable and interoperable.",
       "href": "/provenance/",
-      "related": [
-        "method:memory-palace",
-        "direction:distributed-discovery"
-      ]
+      "related": ["method:memory-palace", "direction:distributed-discovery"]
     },
     {
       "id": "method:astro-agalmic",
@@ -536,22 +333,12 @@
       "layer": "method",
       "commitment": "supporting",
       "meaningful": false,
-      "topics": [
-        "knowledge-architecture",
-        "astro",
-        "open-source",
-        "search",
-        "knowledge-management"
-      ],
+      "topics": ["knowledge-architecture", "astro", "open-source", "search", "knowledge-management"],
       "status": "Open-source Astro integration · v0.1",
       "summary": "A freely reusable extraction of the site's semantic registry, build validation, static full-text search, knowledge-history and generated-context machinery.",
       "direction": "Give the discovery architecture away, dogfood it here, and improve the reusable layer from external use.",
       "href": "/tools/astro-agalmic/",
-      "related": [
-        "method:memory-palace",
-        "method:possibility-portfolio",
-        "method:provenance"
-      ]
+      "related": ["method:memory-palace", "method:possibility-portfolio", "method:provenance"]
     },
     {
       "id": "handoff:terminus",
@@ -560,21 +347,12 @@
       "layer": "method",
       "commitment": "active",
       "meaningful": true,
-      "topics": [
-        "epistemic-handoff",
-        "expertise",
-        "validation",
-        "collaboration"
-      ],
+      "topics": ["epistemic-handoff", "expertise", "validation", "collaboration"],
       "status": "Open handoffs",
       "summary": "The boundary of the current project's authority: questions and artefacts that are ready to move toward missing expertise rather than accumulate more local elaboration.",
       "direction": "Make missing authority and next required expertise visible as a first-class research state.",
       "href": "/handoff/",
-      "related": [
-        "method:memory-palace",
-        "direction:economics-epistemic-abundance",
-        "direction:distributed-discovery"
-      ]
+      "related": ["method:memory-palace", "direction:economics-epistemic-abundance", "direction:distributed-discovery"]
     }
   ]
 }
