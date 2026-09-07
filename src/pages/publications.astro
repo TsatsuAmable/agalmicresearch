@@ -5,7 +5,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 
 const sequence = [
-  ['01', 'The Authorial Capacity Constraint', 'Exploratory working paper', 'v0.1 · published', internal('publications/authorial-capacity-constraint')],
+  ['01', 'The Authorial Capacity Constraint', 'Exploratory working paper', 'v0.2 · published', internal('publications/authorial-capacity-constraint')],
   ['02', 'Agalmic Economics: The Law of Displaced Scarcity', 'Foundational paper', 'Next', null],
   ['03', 'Innovation as Search', 'Exploratory paper', 'First sequence', null],
   ['04', 'Attention After Abundance', 'Working paper', 'Research track', null],
@@ -13,8 +13,16 @@ const sequence = [
   ['06', 'Representation as Discovery', 'Research paper + software', 'Nemosyne track', null],
   ['07', 'Intellectual Property After Epistemic Abundance', 'Policy / economics paper', 'Research track', null],
 ];
+
+const drafts = [
+  ['Epistemic Handoff: Contribution, Authority and Uptake Under Cognitive Abundance', 'Substantial exploratory draft', internal('drafts/epistemic-handoff')],
+  ['Credit Without Authority', 'Paper idea', null],
+  ['Epistemic Uptake: The New Bottleneck in an Economy of Abundant Ideas', 'Paper idea', null],
+  ['Markets for Expert Attention', 'Paper idea', null],
+  ['The Human-Scale Epistemic Horizon', 'Deep-future paper idea', null],
+];
 ---
-<Layout title="Publications" description="The publication strategy and paper sequence for Agalmic Research.">
+<Layout title="Publications" description="The publication strategy, working papers and draft sequence for Agalmic Research.">
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Publications</p>
@@ -43,6 +51,20 @@ const sequence = [
   <section class="section">
     <div class="shell split">
       <div>
+        <p class="eyebrow">Contribution & authority</p>
+        <h2>Preserve the idea. Recruit the missing expertise.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Origin deserves credit. Authority requires warrant.</p>
+        <p>A promising contribution should not be discarded merely because its initiator lacks domain authority. Nor should initiation be mistaken for validation. The publication architecture is evolving toward separate records of contribution provenance and epistemic authority, with explicit handoffs between initiators, developers, domain stewards, verifiers and realizers.</p>
+        <p><a href={internal('drafts/epistemic-handoff')}>Read the Epistemic Handoff draft →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
         <p class="eyebrow">Publication architecture</p>
         <h2>Record first. Refine continuously.</h2>
       </div>
@@ -59,7 +81,7 @@ const sequence = [
         <span class="section-number">Initial sequence</span>
         <div class="section-copy">
           <h2>The first paper family.</h2>
-          <p>The sequence now begins with the epistemic conditions under which the programme itself is being produced. Agalmic Economics follows once the standard of stewardship has been made explicit.</p>
+          <p>The numbered sequence begins with the epistemic conditions under which the programme itself is being produced. Agalmic Economics follows once the standard of stewardship has been made explicit.</p>
         </div>
       </div>
       <div class="index-list">
@@ -78,6 +100,33 @@ const sequence = [
   </section>
 
   <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Draft notebook</span>
+        <div class="section-copy">
+          <h2>Research directions before sequence.</h2>
+          <p>Drafts preserve promising ideas without prematurely promoting them into the numbered publication sequence. Their status is deliberately visible.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {drafts.map(([title, status, href], i) => (
+          <article class="index-item">
+            <span class="index-meta">D{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{href ? <a href={href}>{title}</a> : title}</h3>
+              <p class="muted">Conceptual development / future research</p>
+            </div>
+            <span class="index-status">{status}</span>
+          </article>
+        ))}
+      </div>
+      <div class="actions">
+        <a class="button secondary" href={internal('drafts')}>Browse all drafts & ideas</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="shell split">
       <div>
         <p class="eyebrow">Distribution</p>
@@ -85,7 +134,7 @@ const sequence = [
       </div>
       <div class="prose">
         <ul>
-          <li><strong>Website:</strong> canonical index, summaries, revisions, epistemic status and links between research threads.</li>
+          <li><strong>Website:</strong> canonical index, summaries, revisions, epistemic status, contribution provenance and links between research threads.</li>
           <li><strong>GitHub:</strong> source, models, data, code, version history and public critique.</li>
           <li><strong>Research archives:</strong> stable snapshots through services such as Zenodo, OSF or SSRN where suitable.</li>
           <li><strong>Peer review:</strong> journal submission selected paper by paper, not as the only route to legitimacy.</li>
