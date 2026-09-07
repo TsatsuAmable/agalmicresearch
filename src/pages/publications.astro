@@ -1,11 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import index from '../data/knowledgeIndex.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+const requireObject = (id) => {
+  const item = index.objects.find((candidate) => candidate.id === id);
+  if (!item) throw new Error(`Publications projection is missing canonical object ${id}`);
+  return item;
+};
+
+const authorialCapacity = requireObject('object:authorial-capacity');
+const epistemicHandoff = requireObject('object:epistemic-handoff');
 
 const sequence = [
-  ['01', 'The Authorial Capacity Constraint', 'Exploratory synthesis / working paper', 'v0.4 · deep lineage reviewed', internal('publications/authorial-capacity-constraint')],
+  ['01', authorialCapacity.title, 'Exploratory synthesis / working paper', authorialCapacity.status, internal(authorialCapacity.href)],
   ['02', 'Agalmic Economics: The Displaced Scarcity Hypothesis', 'Foundational synthesis / hypothesis', 'Hold for formalization', null],
   ['03', 'Innovation Search Under AI', 'Literature-grounded extension', 'Hold for deeper lineage', null],
   ['04', 'Attention After Candidate Abundance', 'Economics of epistemic abundance', 'Research track', null],
@@ -15,7 +24,7 @@ const sequence = [
 ];
 
 const drafts = [
-  ['Epistemic Handoff: Contribution, Authority and Uptake Under Cognitive Abundance', 'v0.3 · deep lineage reviewed', internal('drafts/epistemic-handoff')],
+  [epistemicHandoff.title, epistemicHandoff.status, internal(epistemicHandoff.href)],
   ['From Machine Discovery to Distributed Discovery: Provenance, Priority and Epistemic Authority in Human–AI Research', 'Paper idea · established problem, operational extension', null],
   ['Credit Without Authority', 'Paper idea · CRediT/guarantorship lineage', null],
   ['Epistemic Uptake Under Cognitive Abundance', 'Paper idea · absorptive-capacity extension', null],
@@ -56,7 +65,7 @@ const drafts = [
       <div class="prose">
         <p class="large">A public artefact can be valuable before its curator can defend every part of it.</p>
         <p>Working Paper 001 now cites close prior work on verification gaps, metacognition and claim accountability, and v0.4 further grounds its machine-discovery discussion in decades of computational-discovery, collective-discovery and scientific-priority scholarship.</p>
-        <p><a href={internal('publications/authorial-capacity-constraint')}>Read Working Paper 001 v0.4 →</a></p>
+        <p><a href={internal(authorialCapacity.href)}>Read {authorialCapacity.status} →</a></p>
       </div>
     </div>
   </section>
@@ -94,7 +103,7 @@ const drafts = [
         <span class="section-number">Initial sequence</span>
         <div class="section-copy">
           <h2>The first paper family.</h2>
-          <p>Paper 002 remains deliberately held. The deep scarcity review found not only Simon, Teece and Weitzman, but fixed-proportions bottlenecks, strong-complementarity models, unbalanced growth, induced innovation and current AI-era papers that already describe abundance shifting pressure toward expert judgment.</p>
+          <p>Current published objects draw identity and status from the semantic registry. Unpublished rows below remain a roadmap rather than being promoted into canonical research objects before they exist.</p>
         </div>
       </div>
       <div class="index-list">
@@ -118,7 +127,7 @@ const drafts = [
         <span class="section-number">Draft notebook</span>
         <div class="section-copy">
           <h2>Research directions before sequence.</h2>
-          <p>The machine-discovery question remains important, but it is no longer presented as a problem discovered by this project. The prospective work is to operationalize distributed discovery using existing scholarship as the foundation.</p>
+          <p>Only actual draft objects are linked from the semantic registry. The remaining rows are deliberately kept as future research directions rather than pretending every possibility has already become a document.</p>
         </div>
       </div>
       <div class="index-list">
