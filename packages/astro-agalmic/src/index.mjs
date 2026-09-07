@@ -9,6 +9,7 @@ const defaults = {
   history: null,
   handoffs: null,
   researchKinds: ['research-note', 'working-paper', 'draft'],
+  knownOrigins: null,
   validate: true,
   search: {},
 };
@@ -55,6 +56,7 @@ export default function astroAgalmic(userOptions = {}) {
           handoffs,
           researchKinds: options.researchKinds,
           requiredFields: options.requiredFields,
+          knownOrigins: options.knownOrigins,
         });
         for (const warning of result.warnings) logger.warn(warning);
         if (result.errors.length > 0) {
