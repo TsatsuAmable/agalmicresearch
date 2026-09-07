@@ -143,7 +143,7 @@ This is a **preliminary** lineage pass, sufficient to constrain terminology and 
 
 Closest identified antecedent:
 
-- Tarja Knuuttila and Atro Voutilainen, "A Parser as an Epistemic Artifact: A Material View on Models," *Philosophy of Science* 89(5), published online 2022. DOI: `10.1017/psa.2021.34`.
+- Tarja Knuuttila and Atro Voutilainen, "A Parser as an Epistemic Artifact: A Material View on Models," *Philosophy of Science* 70(5), 2003, 1484-1495. DOI: `10.1086/377424`.
 
 Related knowledge-artefact literature:
 

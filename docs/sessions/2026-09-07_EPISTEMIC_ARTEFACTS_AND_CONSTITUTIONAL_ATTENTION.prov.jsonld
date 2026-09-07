@@ -274,8 +274,8 @@
       "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
       "schema:name": "A Parser as an Epistemic Artifact: A Material View on Models",
       "schema:author": ["Tarja Knuuttila", "Atro Voutilainen"],
-      "schema:datePublished": "2022",
-      "schema:identifier": "doi:10.1017/psa.2021.34",
+      "schema:datePublished": "2003",
+      "schema:identifier": "doi:10.1086/377424",
       "ar:influence": "Establishes direct prior use of epistemic artifact terminology in philosophy of science."
     },
     {
