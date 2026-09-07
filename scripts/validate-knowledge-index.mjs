@@ -23,10 +23,12 @@ const unique = (values, label) => {
   return seen;
 };
 
+const handoffIds = unique(handoffs.handoffs.map((item) => item.id), 'handoff register');
 const requiredKnowledgeFields = ['id', 'title', 'kind', 'layer', 'commitment', 'status', 'summary', 'direction', 'href'];
 const allowedLayers = new Set(['orientation', 'direction', 'research-object', 'evidence', 'method']);
 
 const knowledgeIds = unique(knowledge.objects.map((item) => item.id), 'knowledge index');
+const relatedIds = new Set([...knowledgeIds, ...handoffIds]);
 for (const item of knowledge.objects) {
   for (const field of requiredKnowledgeFields) {
     if (item[field] === undefined || item[field] === null || item[field] === '') fail(`${item.id}: missing ${field}`);
@@ -35,7 +37,7 @@ for (const item of knowledge.objects) {
   if (!Array.isArray(item.topics)) fail(`${item.id}: topics must be an array`);
   if (!Array.isArray(item.related)) fail(`${item.id}: related must be an array`);
   for (const related of item.related ?? []) {
-    if (!knowledgeIds.has(related)) fail(`${item.id}: related object ${related} does not exist`);
+    if (!relatedIds.has(related)) fail(`${item.id}: related object or handoff ${related} does not exist`);
   }
 }
 
@@ -60,7 +62,6 @@ if (activeKnowledgeDirections.length !== portfolio.active_frontier.length) {
   warn(`knowledge index has ${activeKnowledgeDirections.length} active directions while portfolio has ${portfolio.active_frontier.length}; check projection drift`);
 }
 
-unique(handoffs.handoffs.map((item) => item.id), 'handoff register');
 const knownOrigins = new Set([...knowledgeIds, ...possibilityIds]);
 for (const handoff of handoffs.handoffs) {
   for (const field of ['id', 'title', 'state', 'origin', 'question', 'what_exists', 'requested_contribution', 'completion_condition']) {

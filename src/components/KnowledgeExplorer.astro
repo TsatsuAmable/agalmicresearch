@@ -6,6 +6,10 @@ const kinds = [...new Set(items.map((item) => item.kind))].sort();
 const topics = [...new Set(items.flatMap((item) => item.topics ?? []))].sort();
 const commitments = [...new Set(items.map((item) => item.commitment))].sort();
 const byId = new Map(items.map((item) => [item.id, item]));
+const handoffTitle = (id) => id.split(':')[1].split('-').map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
+const relatedItemFor = (id) => byId.get(id) ?? (id.startsWith('handoff:')
+  ? { title: `Open handoff: ${handoffTitle(id)}`, href: `/handoff/#${id.replace(':', '-')}` }
+  : null);
 const layerFilters = [
   ['meaningful', 'Meaningful directions'],
   ['orientation', 'Orientation'],
@@ -27,12 +31,7 @@ const layerFilters = [
 
   <div class="lens-bar" role="group" aria-label="Knowledge abstraction level">
     {layerFilters.map(([value, label], index) => (
-      <button
-        type="button"
-        class="lens-button"
-        data-layer-filter={value}
-        aria-pressed={index === 0 ? 'true' : 'false'}
-      >{label}</button>
+      <button type="button" class="lens-button" data-layer-filter={value} aria-pressed={index === 0 ? 'true' : 'false'}>{label}</button>
     ))}
   </div>
 
@@ -74,7 +73,7 @@ const layerFilters = [
     {items.map((item) => {
       const search = [item.title, item.summary, item.direction, item.kind, item.status, ...(item.topics ?? [])].join(' ').toLowerCase();
       const external = item.href.startsWith('http://') || item.href.startsWith('https://');
-      const related = (item.related ?? []).map((id) => byId.get(id)).filter(Boolean);
+      const related = (item.related ?? []).map(relatedItemFor).filter(Boolean);
       return (
         <article
           class="knowledge-card"
