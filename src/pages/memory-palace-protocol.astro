@@ -5,15 +5,15 @@ import prompt from '../../docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md?raw';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 ---
-<Layout title="Memory Palace Protocol" description="The Agalmic Research Memory Palace Protocol v0.3 for standards-first provenance, intellectual-lineage review, epistemic authority, search-space mapping and decision replay.">
+<Layout title="Memory Palace Protocol" description="The Agalmic Research Memory Palace Protocol v0.3 plus the companion Possibility Portfolio protocol for standards-first provenance, lineage, epistemic authority, search-space mapping and active-frontier discipline.">
   <header class="page-head">
     <div class="shell">
-      <p class="eyebrow">Research operating protocol · v0.3</p>
-      <h1>A memory palace for the research process, built on existing standards.</h1>
-      <p class="lede">A platform-agnostic session prompt for preserving how research emerged while using W3C PROV, RO-Crate and CRediT wherever they already solve the problem. The local extension focuses narrowly on epistemic authority, lineage, handoff, search boundaries and roads not taken.</p>
+      <p class="eyebrow">Research operating protocol · Memory Palace v0.3 + Frontier companion v0.1</p>
+      <h1>A memory palace for the research process, with an exit from the palace.</h1>
+      <p class="lede">The Memory Palace preserves how research emerged. The companion Possibility Portfolio prevents preservation from turning every branch into an obligation by separating the abundant option set from a deliberately small Active Frontier.</p>
       <div class="actions">
-        <a class="button" href={internal('downloads/Agalmic_Research_Memory_Palace_Protocol_v0.3.md')} download>Download v0.3 Markdown</a>
-        <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md">View canonical source ↗</a>
+        <a class="button" href={internal('downloads/Agalmic_Research_Memory_Palace_Protocol_v0.3.md')} download>Download Memory Palace v0.3</a>
+        <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/POSSIBILITY_CAPTURE_AND_FRONTIER_PROMPT.md">Frontier companion prompt ↗</a>
       </div>
     </div>
   </header>
@@ -21,11 +21,11 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">v0.3 correction</p>
+        <p class="eyebrow">Standards correction</p>
         <h2>Provenance was already a field before we drew our graph.</h2>
       </div>
       <div class="prose">
-        <p class="large">The protocol now explicitly treats the Memory Palace as an application profile and experimental extension.</p>
+        <p class="large">The protocol treats the Memory Palace as an application profile and experimental extension.</p>
         <p>Use <a href="https://www.w3.org/TR/prov-dm/">W3C PROV</a> for ordinary provenance, <a href="https://credit.niso.org/">CRediT</a> for standardized scholarly contribution roles and <a href="https://www.researchobject.org/ro-crate/specification/1.3/">RO-Crate</a> for packaging research objects. Local fields are justified only where those systems do not adequately express the research question.</p>
         <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/STANDARDS_PROVENANCE_PROFILE.md">Read the standards-first profile ↗</a></p>
       </div>
@@ -35,12 +35,32 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
   <section class="section">
     <div class="shell split">
       <div>
+        <p class="eyebrow">Possibility preservation</p>
+        <h2>The graph may be abundant. Commitment should not be.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">A research branch can remain valuable without becoming an active project.</p>
+        <p>The companion protocol records a new idea as a possibility option with provenance, publication sensitivity, lineage status, the worthwhile future it could make more reachable, the capacity it could create and the cheapest discriminating next action.</p>
+        <div class="callout"><p><strong>Capture promiscuously. Commit selectively. Realize deliberately.</strong></p></div>
+        <p>The Active Frontier defaults to no more than three substantial bets. A new candidate must take an available slot or explicitly displace an incumbent rather than silently adding another obligation.</p>
+        <div class="actions">
+          <a class="button" href={internal('frontier')}>Inspect the Active Frontier</a>
+          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/POSSIBILITY_PORTFOLIO_AND_ACTIVE_FRONTIER.md">Operating method ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
         <p class="eyebrow">Novelty discipline</p>
-        <h2>The protocol now searches the ancestors of an idea before celebrating its birth.</h2>
+        <h2>The protocol searches the ancestors of an idea before celebrating its birth.</h2>
       </div>
       <div class="prose">
         <div class="callout"><p><strong>Novelty is a conclusion of search, not a tone of voice.</strong></p></div>
         <p>Every potentially publishable contribution must be classified against prior knowledge: established antecedent, independent rediscovery, synthesis, extension, application, operationalization, terminology candidate, novelty unassessed or candidate novelty. Exact-phrase novelty is not enough.</p>
+        <p>The portfolio review also found that <strong>effective adjacent possible</strong> is already an explicit construct in Taalbi's innovation research, and that idea capture, portfolio selection and staged commitment all have mature antecedents.</p>
         <p><a href={internal('lineage')}>Inspect the living lineage register →</a></p>
       </div>
     </div>
@@ -53,9 +73,9 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
         <h2>Record the acts before deciding who discovered.</h2>
       </div>
       <div class="prose">
-        <p>The protocol distinguishes <strong>candidate generation, significance recognition, validation, integration with prior knowledge and realization</strong>. Those events can belong to different humans, models, experts or institutions.</p>
+        <p>The protocol distinguishes <strong>problem framing, candidate generation, significance recognition, validation, integration with prior knowledge and realization</strong>. Those events can belong to different humans, models, experts or institutions.</p>
         <p>W3C PROV can record the process without deciding the philosophical question of whether a current AI system is itself a knower or discoverer.</p>
-        <div class="callout"><p><strong>Novelty belongs to the result relative to prior knowledge, not to the surprise of the actor who encountered it.</strong></p></div>
+        <div class="callout"><p><strong>Novelty is a relation between a result and prior knowledge. Discovery attribution is a relation between a discovery episode and its contributors.</strong></p></div>
       </div>
     </div>
   </section>
@@ -63,11 +83,11 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Short activation</p>
-        <h2>Use this when the full protocol is already available to the researcher or agent.</h2>
+        <p class="eyebrow">Combined short activation</p>
+        <h2>Use this for ordinary Agalmic Research sessions.</h2>
       </div>
       <div class="prose">
-        <blockquote class="activation">Activate the Agalmic Research Memory Palace Protocol v0.3. Treat this session as a versioned graph of discovery. Use W3C PROV, RO-Crate and CRediT where applicable, extending them only for genuinely missing epistemic fields. Track contribution provenance separately from epistemic authority; search intellectual lineage before claiming novelty; distinguish machine candidate generation from human or machine recognition, validation, integration and realization; preserve explored, rejected, deferred, surfaced-but-unexamined and scope-excluded branches; record reversal conditions, search boundaries, handoffs and publication/IP boundaries; and at closeout produce the complete Research Memory Palace Packet plus standards-compatible provenance outputs. Do not infer expertise, novelty or attribution without evidence, do not treat absent alternatives as rejected, and do not request or fabricate hidden chain-of-thought.</blockquote>
+        <blockquote class="activation">Activate the Agalmic Research Memory Palace Protocol v0.3 and the Possibility Portfolio protocol v0.1. Treat this session as a versioned graph of discovery. Use W3C PROV, RO-Crate and CRediT where applicable, extending them only for genuinely missing epistemic fields. Track contribution provenance separately from epistemic authority; search intellectual lineage before claiming novelty; preserve explored, rejected, deferred and surfaced-but-unexamined branches; and capture materially new ideas as options rather than obligations. For each serious possibility, record what worthwhile future it could make more reachable, what capacity it creates and the cheapest discriminating next action. Keep no more than three substantial Active Frontier commitments unless an explicit exception is justified. At closeout produce the Memory Palace Packet, standards-compatible provenance outputs and a Possibility Portfolio Patch. Do not infer expertise, novelty or attribution without evidence, and do not request or fabricate hidden chain-of-thought.</blockquote>
       </div>
     </div>
   </section>
@@ -75,10 +95,10 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
   <section class="section">
     <div class="shell">
       <div class="section-head">
-        <span class="section-number">Canonical prompt</span>
+        <span class="section-number">Canonical Memory Palace prompt</span>
         <div class="section-copy">
-          <h2>The complete operating protocol.</h2>
-          <p>This page renders the repository source directly so the web view and canonical prompt cannot silently drift apart.</p>
+          <h2>The complete v0.3 base protocol.</h2>
+          <p>This page renders the repository source directly. The possibility/frontier method is maintained as a separate companion so it can evolve without silently rewriting the provenance protocol.</p>
         </div>
       </div>
       <pre class="protocol-text">{prompt}</pre>
@@ -89,13 +109,13 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
     <div class="shell split">
       <div>
         <p class="eyebrow">Related infrastructure</p>
-        <h2>The prompt feeds interoperable research objects.</h2>
+        <h2>Preserve the process, then choose what deserves another move.</h2>
       </div>
       <div class="prose">
-        <p>Each provenance-complete session should now aim to emit a human-readable Memory Palace Packet, W3C PROV-compatible JSON-LD, CRediT role mappings, RO-Crate-compatible metadata and only then a small Agalmic extension patch for epistemic fields the standards cannot express.</p>
+        <p>A provenance-complete session should aim to emit a human-readable Memory Palace Packet, PROV-O-aligned JSON-LD, contribution mappings, RO-Crate-compatible metadata and the small local extension needed for epistemic fields. The companion portfolio then decides which resulting branches stay as options, enter handoff, become active, are realized, parked or retired.</p>
         <div class="actions">
           <a class="button" href={internal('provenance')}>Explore provenance</a>
-          <a class="button secondary" href={internal('lineage')}>Inspect lineage</a>
+          <a class="button secondary" href={internal('frontier')}>Active Frontier</a>
         </div>
       </div>
     </div>
