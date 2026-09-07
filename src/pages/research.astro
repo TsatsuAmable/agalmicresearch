@@ -1,26 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+
 const tracks = [
+  ['Frontier Expansion with Cognitive Tools', 'The meta-level question: how can human-machine systems improve the capacity to reach, recognize, validate and realize worthwhile possibilities?', 'Kauffman’s adjacent possible and Taalbi’s effective adjacent possible are direct antecedents. The remaining work is to understand which cognitive, epistemic and institutional capabilities actually enlarge the effective frontier and how to measure that without pretending to enumerate unknown possibilities.'],
   ['Epistemic Stewardship & Handoff', 'The governance of claims and contributions when machine-assisted artefacts can outrun the initiator’s present capacity to defend them.', 'Builds on epistemic dependence, contributorship/guarantorship, metacognition, claim-accountability, knowledge-brokerage and absorptive-capacity traditions. The open question is how to operationalize claim-sensitive authority and handoff without creating new gatekeeping rituals.'],
   ['Epistemic Uptake', 'The capacity of institutions to notice, route, evaluate, validate, integrate and realise candidate knowledge when idea generation becomes cheap.', 'Extends absorptive-capacity, transfer, brokerage, intermediary and expert-evaluation literatures into a regime of machine-generated candidate abundance. How should scarce expert attention be allocated?'],
   ['Agalmic Economics', 'A contemporary programme about allocation and value around non-scarce or very low-marginal-cost goods and the scarce complements on which they still depend.', 'Robert Levin’s earlier agalmics is a direct antecedent. What does machine cognition change relative to that prior framing?'],
   ['Economics of Epistemic Abundance', 'The allocation of scarce attention, validation, trust, institutional bandwidth and physical capability when candidate knowledge is unusually cheap to generate.', 'The name deliberately avoids claiming Grandori’s established “epistemic economics” territory. How do Simon’s attention scarcity, Weitzman’s processing constraint, absorptive capacity and modern AI-abundance economics interact?'],
   ['Distributed Discovery & Provenance', 'The division of intellectual labour when humans and machines split problem framing, generation, significance recognition, validation, integration and realization.', 'Computational discovery and collective-centred AI discovery are established literatures. The remaining task is operational: represent novelty, priority, contribution and epistemic authority separately, then test whether the representation is useful.'],
   ['Innovation Search Under AI', 'An AI-era extension of established evolutionary-economics, recombinant-search and adjacent-possible literatures.', 'How do lower search costs and larger branching factors change exploration, selection, testing, realization and the diversity of the search frontier? Which human capabilities remain complementary?'],
-  ['Attention & Selection', 'The economics and information theory of choosing among an expanding set of plausible ideas, models, artefacts and interventions.', 'Simon’s attention scarcity is foundational, and recent idea-evaluation work already identifies expert-review bottlenecks. The new task is to model allocation under machine-amplified candidate production.'],
+  ['Attention & Selection', 'The economics and information theory of choosing among an expanding set of plausible ideas, models, artefacts and interventions.', 'Simon’s attention scarcity is foundational, and recent idea-evaluation work already identifies selection and expert-review bottlenecks. The new task is to model allocation under machine-amplified candidate production.'],
   ['Representation as Discovery', 'Methods for finding representations that preserve useful structure while reducing cognitive, computational or physical cost.', 'EDA, visual analytics, information bottleneck and representation learning are antecedents. Novelty must be established at the level of concrete formalisms and evidence, including Moneta/Nemosyne.'],
   ['Institutions, IP & Rents', 'Property, incentives and institutional design when invention, search and disclosure can happen at machine speed.', 'Builds on Arrow, appropriability/complementary-assets theory, open innovation and defensive-publication practice. What changes when search and candidate generation become dramatically cheaper?'],
 ];
 ---
-<Layout title="Research" description="The Agalmic Research programme: economics of epistemic abundance, stewardship, handoff, uptake, distributed discovery, innovation search, representation and governance.">
+<Layout title="Research" description="The Agalmic Research programme: frontier expansion through cognitive tools, economics of epistemic abundance, stewardship, handoff, distributed discovery, innovation search, representation and governance.">
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Research</p>
       <h1>A map of questions, with the ancestors left visible.</h1>
-      <p class="lede">The programme starts from a technological change, not from the assumption that prior disciplines failed to notice scarcity, search, attention, knowledge uptake, distributed discovery or epistemic dependence. Existing theory is part of the machinery.</p>
+      <p class="lede">The programme asks how cognitive tools can enlarge the set of worthwhile futures that humans and institutions can actually reach. It starts from established work on search, adjacent possibilities, attention, knowledge uptake and distributed discovery rather than pretending those ideas appeared here first.</p>
     </div>
   </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Meta aim</p>
+      <blockquote>The goal is not more ideas. It is greater capacity to reach worthwhile futures.</blockquote>
+      <p>The adjacent possible is an established idea, and Taalbi already uses the term effective adjacent possible for the subset constrained by search and absorptive capacity. Agalmic Research asks what machine cognition, representation, validation, provenance and realization infrastructure do to that effective frontier.</p>
+    </div>
+  </section>
 
   <section class="section">
     <div class="shell split">
@@ -30,8 +42,21 @@ const tracks = [
       </div>
       <div class="prose">
         <p class="large">Agalmic Research distinguishes established antecedents, independent rediscovery, synthesis, extension, application, operationalization and genuinely unassessed novelty.</p>
-        <p>The reviews have already changed terminology and claims. “Epistemic Economics” became <strong>Economics of Epistemic Abundance</strong>; the “Law of Displaced Scarcity” became the <strong>Displaced Scarcity Hypothesis</strong>; and the machine-discovery question is now explicitly grounded in decades of computational and philosophical work.</p>
-        <p><a href="/lineage">Inspect the living intellectual lineage →</a></p>
+        <p>The reviews have already changed terminology and claims. “Epistemic Economics” became <strong>Economics of Epistemic Abundance</strong>; the “Law of Displaced Scarcity” became the <strong>Displaced Scarcity Hypothesis</strong>; the machine-discovery question is grounded in decades of computational and philosophical work; and the “effective adjacent possible” is explicitly attributed to existing innovation research.</p>
+        <p><a href={internal('lineage')}>Inspect the living intellectual lineage →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Portfolio discipline</p>
+        <h2>Ideas can be abundant without active work becoming unbounded.</h2>
+      </div>
+      <div class="prose">
+        <p>The programme uses a public Possibility Portfolio and a deliberately small Active Frontier. This is a local operating synthesis built from exploration/exploitation, innovation portfolio, real-options and idea-management literatures rather than a claim to new management theory.</p>
+        <p><a href={internal('frontier')}>Inspect the Active Frontier →</a></p>
       </div>
     </div>
   </section>
@@ -70,7 +95,7 @@ const tracks = [
       </div>
       <div class="prose">
         <p>Each track should begin with an intellectual-lineage review, then state exactly what changes under the proposed machine-cognition regime. Formalism, experiments or software demonstrations follow only after the surviving contribution has been identified.</p>
-        <p class="muted">A literature result that collapses a supposed novelty claim is progress. The project should modify or abandon the claim rather than defend it for brand continuity.</p>
+        <p class="muted">A literature result that collapses a supposed novelty claim is progress. A parked idea is not a failed idea. A published object should create useful capacity, not merely another unit of output.</p>
       </div>
     </div>
   </section>
