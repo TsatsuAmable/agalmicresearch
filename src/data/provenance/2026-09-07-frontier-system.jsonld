@@ -1,0 +1,130 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "ar": "https://agalmicresearch.org/ns/"
+  },
+  "@graph": [
+    {
+      "@id": "ar:agent/tsatsu-amable",
+      "@type": ["prov:Agent", "prov:Person"],
+      "schema:name": "Tsatsu Amable"
+    },
+    {
+      "@id": "ar:agent/chatgpt-5-6-sol",
+      "@type": ["prov:Agent", "prov:SoftwareAgent"],
+      "schema:name": "OpenAI ChatGPT",
+      "schema:softwareVersion": "GPT-5.6 Sol"
+    },
+    {
+      "@id": "ar:activity/2026-09-07-frontier-system",
+      "@type": "prov:Activity",
+      "schema:name": "Develop possibility-preservation and active-frontier operating system",
+      "ar:epistemicStatus": "exploratory-operating-method",
+      "ar:publicationSensitivity": "public",
+      "ar:searchBoundary": "Targeted review of exploration/exploitation, innovation portfolio management, real options, idea management, idea evaluation and adjacent-possible research; not a systematic review of all innovation-management or personal knowledge-management literature.",
+      "prov:wasAssociatedWith": [
+        { "@id": "ar:agent/tsatsu-amable" },
+        { "@id": "ar:agent/chatgpt-5-6-sol" }
+      ],
+      "prov:qualifiedAssociation": [
+        {
+          "@type": "prov:Association",
+          "prov:agent": { "@id": "ar:agent/tsatsu-amable" },
+          "ar:fineRole": ["initiator", "framer", "search_director", "selector", "publication_decision_maker"],
+          "ar:contributionNote": "Initiated the goal of improving personal preservation, filtering and utilization of ideas; supplied the meta aim that the goal is greater capacity to reach worthwhile futures rather than more ideas; authorized implementation and publication."
+        },
+        {
+          "@type": "prov:Association",
+          "prov:agent": { "@id": "ar:agent/chatgpt-5-6-sol" },
+          "ar:fineRole": ["literature_search", "synthesizer", "critic", "system_designer", "drafter", "repository_implementer"],
+          "ar:contributionNote": "Mapped prior art, identified the existing effective-adjacent-possible terminology in Taalbi, synthesized the operating method, drafted notes and implemented public repository/site artefacts."
+        }
+      ],
+      "prov:used": [
+        { "@id": "ar:source/march-1991" },
+        { "@id": "ar:source/cooper-2001" },
+        { "@id": "ar:source/lint-pennings-2001" },
+        { "@id": "ar:source/rietzschel-2019" },
+        { "@id": "ar:source/baraboshkin-2026" },
+        { "@id": "ar:source/taalbi-2026" }
+      ]
+    },
+    {
+      "@id": "ar:entity/frontier-operating-method-v0.1",
+      "@type": ["prov:Entity", "schema:DigitalDocument"],
+      "schema:name": "Possibility Portfolio and Active Frontier v0.1",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/POSSIBILITY_PORTFOLIO_AND_ACTIVE_FRONTIER.md",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/2026-09-07-frontier-system" },
+      "ar:noveltyPosition": "Pragmatic synthesis of established exploration/exploitation, portfolio, real-options, idea-management and idea-evaluation traditions; local terminology is not claimed as theory novelty."
+    },
+    {
+      "@id": "ar:entity/frontier-prompt-v0.1",
+      "@type": ["prov:Entity", "schema:DigitalDocument"],
+      "schema:name": "Possibility Capture & Active Frontier Prompt v0.1",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/POSSIBILITY_CAPTURE_AND_FRONTIER_PROMPT.md",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/2026-09-07-frontier-system" }
+    },
+    {
+      "@id": "ar:entity/possibility-portfolio-v0.1",
+      "@type": ["prov:Entity", "schema:Dataset"],
+      "schema:name": "Agalmic Research public possibility portfolio v0.1",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/src/data/possibilityPortfolio.json",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/2026-09-07-frontier-system" },
+      "ar:epistemicStatus": "experimental-public-projection"
+    },
+    {
+      "@id": "ar:entity/research-note-001-v0.1",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "Research Note 001: The Goal Is Not More Ideas",
+      "schema:url": "https://agalmicresearch.org/notes/the-goal-is-not-more-ideas/",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/2026-09-07-frontier-system" },
+      "prov:wasDerivedFrom": { "@id": "ar:source/taalbi-2026" },
+      "ar:epistemicStatus": "synthesis-note-lineage-grounded"
+    },
+    {
+      "@id": "ar:entity/research-note-002-v0.1",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "Research Note 002: Ideas Are Options, Not Obligations",
+      "schema:url": "https://agalmicresearch.org/notes/ideas-are-options-not-obligations/",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/2026-09-07-frontier-system" },
+      "ar:epistemicStatus": "operating-note-synthesis"
+    },
+    {
+      "@id": "ar:source/march-1991",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "Exploration and Exploitation in Organizational Learning",
+      "schema:identifier": "https://doi.org/10.1287/orsc.2.1.71"
+    },
+    {
+      "@id": "ar:source/cooper-2001",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "Portfolio management for new product development",
+      "schema:identifier": "https://doi.org/10.1111/1467-9310.00225"
+    },
+    {
+      "@id": "ar:source/lint-pennings-2001",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "An option approach to the new product development process",
+      "schema:identifier": "https://doi.org/10.1111/1467-9310.00206"
+    },
+    {
+      "@id": "ar:source/rietzschel-2019",
+      "@type": ["prov:Entity", "schema:Chapter"],
+      "schema:name": "Why Great Ideas Are Often Overlooked",
+      "schema:identifier": "https://doi.org/10.1093/oxfordhb/9780190648077.013.11"
+    },
+    {
+      "@id": "ar:source/baraboshkin-2026",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "Unpacking idea evaluation process: Key insights and future directions",
+      "schema:identifier": "https://doi.org/10.1016/j.technovation.2026.103563"
+    },
+    {
+      "@id": "ar:source/taalbi-2026",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle"],
+      "schema:name": "Long-run patterns in the discovery of the adjacent possible",
+      "schema:identifier": "https://doi.org/10.1093/icc/dtaf028"
+    }
+  ]
+}
