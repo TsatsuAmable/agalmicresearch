@@ -5,6 +5,7 @@ const internalHref = (href) => href.startsWith('http://') || href.startsWith('ht
 const kinds = [...new Set(items.map((item) => item.kind))].sort();
 const topics = [...new Set(items.flatMap((item) => item.topics ?? []))].sort();
 const commitments = [...new Set(items.map((item) => item.commitment))].sort();
+const byId = new Map(items.map((item) => [item.id, item]));
 const layerFilters = [
   ['meaningful', 'Meaningful directions'],
   ['orientation', 'Orientation'],
@@ -73,6 +74,7 @@ const layerFilters = [
     {items.map((item) => {
       const search = [item.title, item.summary, item.direction, item.kind, item.status, ...(item.topics ?? [])].join(' ').toLowerCase();
       const external = item.href.startsWith('http://') || item.href.startsWith('https://');
+      const related = (item.related ?? []).map((id) => byId.get(id)).filter(Boolean);
       return (
         <article
           class="knowledge-card"
@@ -96,6 +98,14 @@ const layerFilters = [
           <div class="topic-row" aria-label="Topics">
             {(item.topics ?? []).map((topic) => <span>{topic.replaceAll('-', ' ')}</span>)}
           </div>
+          {related.length > 0 && (
+            <div class="related-row">
+              <strong>Related</strong>
+              {related.map((relatedItem, index) => (
+                <><a href={internalHref(relatedItem.href)}>{relatedItem.title}</a>{index < related.length - 1 ? <span aria-hidden="true">·</span> : null}</>
+              ))}
+            </div>
+          )}
           <p class="knowledge-card__status">{item.status}</p>
         </article>
       );

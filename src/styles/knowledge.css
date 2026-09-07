@@ -117,7 +117,8 @@
   grid-template-areas:
     "meta title status"
     "meta summary direction"
-    "meta topics direction";
+    "meta topics direction"
+    "meta related direction";
   gap: 10px 30px;
   padding: 28px 0;
   border-bottom: 1px solid var(--line);
@@ -179,6 +180,31 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+}
+
+.related-row {
+  grid-area: related;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 8px;
+  align-items: baseline;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.related-row strong {
+  color: var(--ink);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.related-row a {
+  color: var(--muted);
+}
+
+.related-row a:hover {
+  color: var(--accent);
 }
 
 .topic-row span,
@@ -387,7 +413,8 @@
       "title title"
       "summary summary"
       "direction direction"
-      "topics topics";
+      "topics topics"
+      "related related";
   }
 
   .knowledge-card__status {
@@ -445,7 +472,8 @@
   .knowledge-card > p:not(.knowledge-card__direction):not(.knowledge-card__status),
   .knowledge-card__direction,
   .knowledge-card__status,
-  .topic-row {
+  .topic-row,
+  .related-row {
     grid-area: auto;
   }
 
