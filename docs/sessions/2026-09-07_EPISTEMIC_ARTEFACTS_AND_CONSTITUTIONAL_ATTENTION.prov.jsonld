@@ -1,0 +1,415 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "credit": "https://credit.niso.org/contributor-roles/",
+    "ar": "https://agalmicresearch.org/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "ar:session/ar-session-2026-09-07-epistemic-artefacts-constitutional-attention",
+      "@type": ["prov:Activity", "ar:ResearchSession"],
+      "schema:name": "Epistemic Artefacts and Constitutional Attention",
+      "prov:endedAtTime": {
+        "@value": "2026-09-07T21:44:00+01:00",
+        "@type": "xsd:dateTime"
+      },
+      "prov:wasAssociatedWith": [
+        {"@id": "ar:agent/human-curator"},
+        {"@id": "ar:agent/gpt-5.6-sol"}
+      ],
+      "ar:protocolVersion": "Memory Palace v0.3 + Possibility Portfolio v0.1",
+      "ar:publicationSensitivity": "public exploratory research record",
+      "ar:epistemicStatus": "exploratory",
+      "ar:transcriptReference": "unavailable",
+      "ar:searchBoundary": "Preliminary lineage pass only; no complete novelty, patent, formal or empirical review was performed."
+    },
+    {
+      "@id": "ar:agent/human-curator",
+      "@type": ["prov:Person", "schema:Person"],
+      "schema:name": "Human curator"
+    },
+    {
+      "@id": "ar:agent/gpt-5.6-sol",
+      "@type": ["prov:SoftwareAgent", "schema:SoftwareApplication"],
+      "schema:name": "GPT-5.6 Sol",
+      "ar:agentClassificationNote": "Software-agent classification is used for provenance only and does not settle authorship, personhood, knowledge or discovery credit."
+    },
+    {
+      "@id": "ar:entity/session-packet-2026-09-07",
+      "@type": ["prov:Entity", "schema:CreativeWork", "ar:MemoryPalacePacket"],
+      "schema:name": "Research Memory Palace Packet: Epistemic Artefacts and Constitutional Attention",
+      "schema:encodingFormat": "text/markdown",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/provenance-capture"},
+      "prov:wasDerivedFrom": {"@id": "ar:session/ar-session-2026-09-07-epistemic-artefacts-constitutional-attention"},
+      "ar:epistemicStatus": "exploratory",
+      "ar:conformanceStatus": "experimental standards-first mapping; not formally profile-validated"
+    },
+    {
+      "@id": "ar:entity/epistemic-artefact-state-model",
+      "@type": ["prov:Entity", "ar:Concept"],
+      "schema:name": "Epistemic artefact to frontier state model",
+      "schema:description": "A provisional discovery chain that separates possibility, directed search, epistemic artefact, warrant, assimilation, capability and reachable frontier.",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/artefact-state-synthesis"},
+      "prov:wasDerivedFrom": [
+        {"@id": "ar:entity/knowledge-category-question"},
+        {"@id": "ar:source/knuuttila-voutilainen-2022"},
+        {"@id": "ar:source/epistemic-opacity-lineage"}
+      ],
+      "ar:epistemicStatus": "exploratory",
+      "ar:noveltyStatus": "established terminology plus synthesis/application; novelty unassessed",
+      "ar:authorityBasis": "session reasoning plus preliminary lineage search",
+      "ar:handoffNeeded": ["philosophy of science", "social epistemology"]
+    },
+    {
+      "@id": "ar:entity/constitutional-attention",
+      "@type": ["prov:Entity", "ar:Concept"],
+      "schema:name": "Constitutional attention",
+      "schema:description": "A provisional governance/search synthesis in which scarce human intervention shapes worthwhile-future objectives, constraints, escalation and constitutional updates while autonomous systems search for scarcity-displacing strategies.",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/constitutional-attention-framing"},
+      "prov:wasDerivedFrom": [
+        {"@id": "ar:entity/attention-sidestep-question"},
+        {"@id": "ar:source/interactive-evolutionary-computation"},
+        {"@id": "ar:source/selective-human-oversight"}
+      ],
+      "ar:epistemicStatus": "exploratory",
+      "ar:noveltyStatus": "terminology candidate plus synthesis; novelty unassessed",
+      "ar:authorityBasis": "human-originated session synthesis narrowed by preliminary lineage search",
+      "ar:handoffNeeded": ["evolutionary computation", "AI safety and governance", "multi-objective optimization"]
+    },
+    {
+      "@id": "ar:entity/knowledge-category-question",
+      "@type": ["prov:Entity", "ar:Question"],
+      "schema:name": "Is an unassimilated machine result the human curator's knowledge?",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/knowledge-problem-framing"}
+    },
+    {
+      "@id": "ar:entity/attention-sidestep-question",
+      "@type": ["prov:Entity", "ar:Question"],
+      "schema:name": "Can item-level human attention be partly removed by a mechanism that maximizes meaningful outcomes while bounding harms and externalities?",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/attention-reframing"}
+    },
+    {
+      "@id": "ar:entity/moving-human-bottleneck",
+      "@type": ["prov:Entity", "ar:Conjecture"],
+      "schema:name": "Moving bottleneck of human contribution",
+      "schema:description": "Attention, subject mastery, cognitive capacity, judgment and other currently scarce human contributions should be treated as potentially displaced constraints rather than permanent human-exclusive bottlenecks.",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/human-scarcity-broadening"},
+      "ar:epistemicStatus": "exploratory"
+    },
+    {
+      "@id": "ar:entity/possibility-epistemic-artefacts-assimilation",
+      "@type": ["prov:Entity", "ar:Possibility"],
+      "schema:name": "Epistemic artefacts, assimilation and frontier formation",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/portfolio-patch"},
+      "prov:wasDerivedFrom": {"@id": "ar:entity/epistemic-artefact-state-model"},
+      "ar:branchState": "option",
+      "ar:epistemicStatus": "exploratory",
+      "ar:nextDiscriminatingAction": "Run deeper philosophy-of-science and social-epistemology lineage review, then test the state model against three real discovery episodes."
+    },
+    {
+      "@id": "ar:entity/possibility-constitutional-attention-search",
+      "@type": ["prov:Entity", "ar:Possibility"],
+      "schema:name": "Constitutional attention for continuous scarcity-displacement search",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/portfolio-patch"},
+      "prov:wasDerivedFrom": {"@id": "ar:entity/constitutional-attention"},
+      "ar:branchState": "option",
+      "ar:epistemicStatus": "exploratory",
+      "ar:nextDiscriminatingAction": "Formalize a constrained multi-objective search model and compare it with interactive evolutionary computation, scalable oversight, safe exploration and AI-governance antecedents."
+    },
+    {
+      "@id": "ar:activity/attention-reframing",
+      "@type": ["prov:Activity", "ar:ConceptualizationEvent"],
+      "schema:name": "Reframe attention as partly sidestep-able",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "ar:role/reframer"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/attention-sidestep-question"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:activity/human-scarcity-broadening",
+      "@type": ["prov:Activity", "ar:ConceptualizationEvent"],
+      "schema:name": "Broaden scarce human contribution beyond attention",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": {"@id": "credit:conceptualization"}
+      },
+      "prov:generated": {"@id": "ar:entity/moving-human-bottleneck"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:activity/knowledge-problem-framing",
+      "@type": ["prov:Activity", "ar:ConceptualizationEvent"],
+      "schema:name": "Frame the knowledge-category problem",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "ar:role/problem-framing"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/knowledge-category-question"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:activity/artefact-state-synthesis",
+      "@type": ["prov:Activity", "ar:SynthesisEvent"],
+      "schema:name": "Synthesize epistemic artefact, warrant, assimilation, capability and frontier states",
+      "prov:used": {"@id": "ar:entity/knowledge-category-question"},
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "credit:writing-original-draft"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/epistemic-artefact-state-model"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:activity/significance-recognition",
+      "@type": ["prov:Activity", "ar:DiscoveryEvent"],
+      "schema:name": "Recognize the epistemic artefact distinction as a direction worth preserving",
+      "prov:used": {"@id": "ar:entity/epistemic-artefact-state-model"},
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "ar:role/significance-recognition"},
+          {"@id": "ar:role/selector"}
+        ]
+      },
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:activity/constitutional-attention-framing",
+      "@type": ["prov:Activity", "ar:ConceptualizationEvent"],
+      "schema:name": "Frame constitutional attention as evolutionary search",
+      "prov:used": [
+        {"@id": "ar:entity/attention-sidestep-question"},
+        {"@id": "ar:entity/epistemic-artefact-state-model"}
+      ],
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "ar:role/originator"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/constitutional-attention"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:activity/preliminary-lineage-search",
+      "@type": ["prov:Activity", "ar:LiteratureSearch"],
+      "schema:name": "Preliminary lineage search for epistemic artefacts and constitutional attention",
+      "prov:used": [
+        {"@id": "ar:entity/epistemic-artefact-state-model"},
+        {"@id": "ar:entity/constitutional-attention"}
+      ],
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": {"@id": "credit:investigation"}
+      },
+      "prov:generated": [
+        {"@id": "ar:source/knuuttila-voutilainen-2022"},
+        {"@id": "ar:source/epistemic-opacity-lineage"},
+        {"@id": "ar:source/interactive-evolutionary-computation"},
+        {"@id": "ar:source/selective-human-oversight"},
+        {"@id": "ar:source/automated-science"}
+      ],
+      "ar:searchMode": "human-directed web literature search",
+      "ar:searchBoundary": "Not exhaustive; sufficient only to identify obvious antecedents and narrow immediate novelty claims."
+    },
+    {
+      "@id": "ar:activity/portfolio-patch",
+      "@type": ["prov:Activity", "ar:PortfolioUpdate"],
+      "schema:name": "Preserve new directions without exceeding Active Frontier WIP limit",
+      "prov:used": [
+        {"@id": "ar:entity/epistemic-artefact-state-model"},
+        {"@id": "ar:entity/constitutional-attention"}
+      ],
+      "prov:wasAssociatedWith": {"@id": "ar:agent/gpt-5.6-sol"},
+      "prov:generated": [
+        {"@id": "ar:entity/possibility-epistemic-artefacts-assimilation"},
+        {"@id": "ar:entity/possibility-constitutional-attention-search"}
+      ],
+      "ar:decisionRationale": "Preserve both as options and sharpen existing active work rather than silently adding a fourth substantial commitment.",
+      "ar:reversalCondition": "Promote only if lineage and a discriminating formal or empirical test justify displacement of an incumbent Active Frontier item."
+    },
+    {
+      "@id": "ar:activity/provenance-capture",
+      "@type": ["prov:Activity", "ar:ProvenanceCapture"],
+      "schema:name": "Capture discovery episode under Memory Palace v0.3",
+      "prov:used": [
+        {"@id": "ar:session/ar-session-2026-09-07-epistemic-artefacts-constitutional-attention"},
+        {"@id": "ar:entity/epistemic-artefact-state-model"},
+        {"@id": "ar:entity/constitutional-attention"}
+      ],
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": [
+          {"@id": "credit:data-curation"},
+          {"@id": "credit:methodology"},
+          {"@id": "credit:writing-original-draft"}
+        ]
+      },
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:source/knuuttila-voutilainen-2022",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "A Parser as an Epistemic Artifact: A Material View on Models",
+      "schema:author": ["Tarja Knuuttila", "Atro Voutilainen"],
+      "schema:datePublished": "2022",
+      "schema:identifier": "doi:10.1017/psa.2021.34",
+      "ar:influence": "Establishes direct prior use of epistemic artifact terminology in philosophy of science."
+    },
+    {
+      "@id": "ar:source/epistemic-opacity-lineage",
+      "@type": ["prov:Entity", "ar:PriorArtCluster"],
+      "schema:name": "Computational epistemic opacity literature",
+      "schema:url": "https://plato.stanford.edu/entries/simulations-science/",
+      "ar:influence": "Constrains claims about warrant, surveyability and understanding in machine-mediated scientific processes."
+    },
+    {
+      "@id": "ar:source/interactive-evolutionary-computation",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Interactive evolutionary computation with minimum fitness evaluation requirement and offline algorithm design",
+      "schema:author": ["Hisao Ishibuchi", "Takahiko Sudo", "Yusuke Nojima"],
+      "schema:datePublished": "2016",
+      "schema:identifier": "doi:10.1186/s40064-016-1789-1",
+      "ar:influence": "Anticipates human-guided evolutionary fitness and treats human evaluation burden as a design problem."
+    },
+    {
+      "@id": "ar:source/selective-human-oversight",
+      "@type": ["prov:Entity", "ar:PriorArtCluster"],
+      "schema:name": "Selective and risk-tiered human oversight architectures",
+      "schema:url": "https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentsec04-bp02.html",
+      "ar:influence": "Anticipates moving human review away from every action toward consequential, uncertain and high-risk decisions."
+    },
+    {
+      "@id": "ar:source/automated-science",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+      "schema:identifier": "arXiv:2408.06292",
+      "ar:influence": "Supports the premise that increasingly large portions of scientific search and evaluation can be automated, while leaving reliability and epistemic status open."
+    },
+    {
+      "@id": "ar:decision/no-fourth-active-item",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Preserve new ideas as options rather than add a fourth Active Frontier item",
+      "ar:decisionRationale": "Current WIP limit is three and the new directions have not yet earned displacement of an incumbent.",
+      "ar:confidence": "high",
+      "ar:reversible": true,
+      "ar:reversalCondition": "A discriminating test shows that one new direction should displace the weakest active item."
+    }
+  ],
+  "ar:extensionPatch": {
+    "schema_version": "0.3",
+    "session_id": "ar-session-2026-09-07-epistemic-artefacts-constitutional-attention",
+    "authority_updates": [
+      {
+        "object": "ar:entity/epistemic-artefact-state-model",
+        "status": "exploratory",
+        "authority_basis": "session reasoning plus preliminary lineage search"
+      },
+      {
+        "object": "ar:entity/constitutional-attention",
+        "status": "exploratory",
+        "authority_basis": "human-originated synthesis plus preliminary lineage search"
+      }
+    ],
+    "roads_not_taken": {
+      "rejected": [
+        "Claiming epistemic artefact as a new Agalmic term",
+        "Treating attention as the sole or permanent human bottleneck"
+      ],
+      "deferred": [
+        "Scalar fitness function for worthwhile futures",
+        "Immediate Active Frontier promotion",
+        "Publication-level novelty claim for constitutional attention"
+      ],
+      "surfaced_unexplored": [
+        "Constrained multi-objective alternatives to scalar fitness",
+        "Safe constitutional mutation and update",
+        "Capability from validated but human-opaque artefacts",
+        "Collective or socio-technical knowledge as an alternative framing",
+        "Responsibility and legitimacy after machine competence exceeds human subject mastery"
+      ],
+      "excluded_by_scope": [
+        "General theory of consciousness",
+        "AGI timelines",
+        "Detailed AI-control engineering",
+        "Patentability analysis",
+        "Complete theory of value"
+      ]
+    },
+    "decisions": [
+      "ar:decision/no-fourth-active-item",
+      "reuse established epistemic artefact terminology",
+      "treat constitutional attention as terminology candidate and synthesis",
+      "use this session as the first concrete distributed-discovery provenance episode"
+    ],
+    "novelty_updates": [
+      {
+        "object": "epistemic artefact",
+        "before": "unassessed",
+        "after": "established antecedent plus application/synthesis"
+      },
+      {
+        "object": "constitutional attention",
+        "before": "unassessed",
+        "after": "terminology candidate plus synthesis; novelty unassessed"
+      }
+    ],
+    "search_boundary": {
+      "known_gaps": [
+        "formal epistemology of knowledge versus understanding",
+        "collective and social epistemology",
+        "absorptive capacity and organizational assimilation",
+        "preference learning and scalable oversight",
+        "safe multi-objective evolutionary search",
+        "economics of externalities and directed innovation"
+      ],
+      "missing_expertise": [
+        "philosophy of science",
+        "evolutionary computation",
+        "AI safety and governance",
+        "multi-objective optimization",
+        "economics of innovation and externalities"
+      ],
+      "unsearched_databases": [
+        "specialist bibliographic databases not available in-session",
+        "patent databases"
+      ],
+      "constraints": [
+        "raw transcript export unavailable",
+        "no formal model run",
+        "no empirical experiment run",
+        "no external expert review"
+      ]
+    },
+    "integrity": {
+      "transcript_reference": "unavailable",
+      "repository_commit": "available after repository commit",
+      "artefact_hashes": []
+    },
+    "corrections": [
+      "The initial local usefulness of the term epistemic artefact was narrowed by prior-art search: the term is established and should not be claimed as an Agalmic coinage."
+    ]
+  }
+}
