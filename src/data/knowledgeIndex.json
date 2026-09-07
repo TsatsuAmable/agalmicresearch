@@ -41,10 +41,10 @@
       "meaningful": true,
       "topics": ["adjacent-possible", "innovation-search", "cognitive-tools", "frontier-expansion"],
       "status": "Active Frontier",
-      "summary": "Develop the meta aim as a lineage-grounded synthesis connecting search, recognition, validation and realization to expansion of reachable possibilities.",
-      "direction": "Turn the meta aim into discriminating questions and usable selection criteria.",
+      "summary": "Develop the meta aim as a lineage-grounded synthesis connecting search, epistemic artefact production, recognition, validation, assimilation and realization to expansion of reachable worthwhile possibilities.",
+      "direction": "Test whether cognitive and autonomous search machinery can safely displace the constraints that currently limit worthwhile frontier expansion.",
       "href": "/frontier/",
-      "related": ["orientation:meta-aim", "object:ideas-options", "direction:representation-nemosyne"]
+      "related": ["orientation:meta-aim", "object:ideas-options", "direction:representation-nemosyne", "direction:epistemic-artefacts-assimilation", "direction:constitutional-attention-search"]
     },
     {
       "id": "direction:distributed-discovery",
@@ -56,9 +56,9 @@
       "topics": ["human-ai", "provenance", "discovery", "credit", "epistemic-authority"],
       "status": "Active Frontier",
       "summary": "Represent problem framing, generation, recognition, validation, integration and realization without collapsing novelty, priority, contribution or authority.",
-      "direction": "Model one real discovery episode end-to-end using standards-first provenance and identify the genuine gaps.",
+      "direction": "Use the 7 September 2026 epistemic-artefacts/constitutional-attention session as the first end-to-end standards-first discovery episode, then identify genuine provenance gaps.",
       "href": "/frontier/",
-      "related": ["evidence:discovery-attribution-review", "method:provenance", "handoff:distributed-discovery-provenance"]
+      "related": ["evidence:discovery-attribution-review", "method:provenance", "handoff:distributed-discovery-provenance", "direction:epistemic-artefacts-assimilation"]
     },
     {
       "id": "direction:economics-epistemic-abundance",
@@ -129,6 +129,34 @@
       "direction": "Connect the adjacent-possible framing only after representation improvements are empirically demonstrated.",
       "href": "/frontier/",
       "related": ["direction:effective-adjacent-possible"]
+    },
+    {
+      "id": "direction:epistemic-artefacts-assimilation",
+      "title": "Epistemic artefacts, assimilation and frontier formation",
+      "kind": "possibility",
+      "layer": "direction",
+      "commitment": "option",
+      "meaningful": false,
+      "topics": ["epistemic-artifacts", "epistemic-opacity", "assimilation", "human-ai", "knowledge"],
+      "status": "Preserved option",
+      "summary": "Separate discovery outputs, warrant, agent-relative understanding, assimilation, capability and frontier effects so uncomprehended machine outputs are not silently promoted to human knowledge.",
+      "direction": "Deepen lineage and test the state model against real human-machine discovery episodes.",
+      "href": "/frontier/",
+      "related": ["direction:distributed-discovery", "object:authorial-capacity", "direction:human-scale-horizon"]
+    },
+    {
+      "id": "direction:constitutional-attention-search",
+      "title": "Constitutional attention for continuous scarcity-displacement search",
+      "kind": "possibility",
+      "layer": "direction",
+      "commitment": "option",
+      "meaningful": false,
+      "topics": ["attention", "oversight", "evolutionary-search", "frontier-expansion", "externalities"],
+      "status": "Preserved option",
+      "summary": "Move scarce human intervention from reviewing every candidate toward shaping worthwhile-future objectives, harm/externality constraints, escalation rules and constitutional updates for autonomous frontier search.",
+      "direction": "Formalize and compare against established interactive evolutionary computation, selective oversight, safe exploration and multi-objective optimization.",
+      "href": "/frontier/",
+      "related": ["direction:effective-adjacent-possible", "direction:expert-attention", "direction:economics-epistemic-abundance"]
     },
     {
       "id": "direction:human-scale-horizon",

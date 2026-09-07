@@ -1,0 +1,193 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "credit": "https://credit.niso.org/contributor-roles/",
+    "ar": "https://agalmicresearch.org/ns#"
+  },
+  "@graph": [
+    {
+      "@id": "ar:activity/constitutional-attention-adversarial-continuation",
+      "@type": ["prov:Activity", "ar:DiscoveryEvent"],
+      "schema:name": "Adversarial constitutional attention continuation",
+      "prov:wasInfluencedBy": {"@id": "ar:session/ar-session-2026-09-07-epistemic-artefacts-constitutional-attention"},
+      "prov:wasAssociatedWith": [
+        {"@id": "ar:agent/human-curator"},
+        {"@id": "ar:agent/gpt-5.6-sol"}
+      ],
+      "ar:epistemicStatus": "exploratory",
+      "ar:publicationSensitivity": "public exploratory research record"
+    },
+    {
+      "@id": "ar:agent/human-curator",
+      "@type": "prov:Person",
+      "schema:name": "Human curator"
+    },
+    {
+      "@id": "ar:agent/gpt-5.6-sol",
+      "@type": "prov:SoftwareAgent",
+      "schema:name": "GPT-5.6 Sol"
+    },
+    {
+      "@id": "ar:activity/adversarial-reframing",
+      "@type": ["prov:Activity", "ar:ConceptualizationEvent"],
+      "schema:name": "Reframe constitutional attention as an adversarial evolutionary system",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "ar:role/reframer"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/adversarial-constitutional-search"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:entity/adversarial-constitutional-search",
+      "@type": ["prov:Entity", "ar:MechanismConjecture"],
+      "schema:name": "Constitutional attention as adversarial co-evolutionary search",
+      "schema:description": "Candidate scarcity-displacing strategies co-evolve against adversarial tests, counterexamples and failure scenarios under a human-governed constitution of plural worthwhile-future objectives, hard constraints, escalation rules and historical failure memory.",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/adversarial-reframing"},
+      "prov:wasDerivedFrom": [
+        {"@id": "ar:source/competitive-coevolution"},
+        {"@id": "ar:source/interactive-evolutionary-computation"},
+        {"@id": "ar:source/constitutional-ai"},
+        {"@id": "ar:source/selective-human-oversight"}
+      ],
+      "ar:epistemicStatus": "exploratory",
+      "ar:noveltyStatus": "mature antecedent families plus synthesis; novelty unassessed",
+      "ar:branchState": "option",
+      "ar:reversalCondition": "Narrow or retire if formal and empirical comparison shows no advantage over established robust optimization, competitive co-evolution or scalable oversight methods."
+    },
+    {
+      "@id": "ar:activity/intake-request",
+      "@type": ["prov:Activity", "ar:ConceptualizationEvent"],
+      "schema:name": "Request immediate recording of epistemic artefacts",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "ar:role/initiator"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/epistemic-intake-room"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:entity/epistemic-intake-room",
+      "@type": ["prov:Entity", "ar:ResearchMethod"],
+      "schema:name": "Epistemic Artefact Intake Room",
+      "schema:description": "Low-friction capture of material epistemic artefacts before warrant, understanding, novelty or commitment has been resolved.",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/intake-request"},
+      "ar:epistemicStatus": "experimental operating method",
+      "ar:branchState": "supporting-method",
+      "ar:reversalCondition": "Redesign or retire if capture and triage overhead exceeds the epistemic loss prevented by the mechanism."
+    },
+    {
+      "@id": "ar:activity/mechanism-synthesis",
+      "@type": ["prov:Activity", "ar:SynthesisEvent"],
+      "schema:name": "Synthesize strategy population, adversary population, constitution and historical challenge archive",
+      "prov:used": {"@id": "ar:entity/adversarial-constitutional-search"},
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "credit:writing-original-draft"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/four-part-adversarial-architecture"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:entity/four-part-adversarial-architecture",
+      "@type": ["prov:Entity", "ar:ConceptualModel"],
+      "schema:name": "Four-part adversarial constitutional-search architecture",
+      "schema:description": "A constitution, strategy population, adversary/test population and historical challenge archive jointly govern search for scarcity-displacing strategies.",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/mechanism-synthesis"},
+      "ar:epistemicStatus": "exploratory"
+    },
+    {
+      "@id": "ar:source/competitive-coevolution",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "New Methods for Competitive Coevolution",
+      "schema:author": ["Christopher D. Rosin", "Richard K. Belew"],
+      "schema:datePublished": "1997",
+      "schema:identifier": "doi:10.1162/evco.1997.5.1.1",
+      "ar:influence": "Provides antecedents for competitive co-evolution, adversarial test populations and hall-of-fame memory across generations."
+    },
+    {
+      "@id": "ar:source/interactive-evolutionary-computation",
+      "@type": ["prov:Entity", "ar:PriorArtCluster"],
+      "schema:name": "Interactive evolutionary computation",
+      "ar:influence": "Provides antecedents for human evaluation shaping evolutionary search and documents the burden of repeated human fitness evaluation."
+    },
+    {
+      "@id": "ar:source/constitutional-ai",
+      "@type": ["prov:Entity", "ar:PriorArt"],
+      "schema:name": "Constitutional AI: Harmlessness from AI Feedback",
+      "schema:datePublished": "2022",
+      "schema:url": "https://www.anthropic.com/news/constitutional-ai-harmlessness-from-ai-feedback",
+      "ar:influence": "Provides an antecedent for explicit principles guiding machine critique and evaluation with fewer direct human labels."
+    },
+    {
+      "@id": "ar:source/selective-human-oversight",
+      "@type": ["prov:Entity", "ar:PriorArtCluster"],
+      "schema:name": "Selective and meaningful human oversight",
+      "ar:influence": "Provides antecedents for escalating consequential, uncertain or irreversible decisions rather than requiring human review of every action."
+    },
+    {
+      "@id": "ar:decision/non-scalar-worthwhile-future",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Do not collapse humanity's worthwhile futures into one scalar fitness score",
+      "ar:decisionRationale": "A single scalar hides plural values, hard constraints, disagreement, distributional effects and legitimacy questions.",
+      "ar:reversible": true,
+      "ar:reversalCondition": "A domain-limited application demonstrates that scalarization preserves all decision-relevant constraints for that application."
+    },
+    {
+      "@id": "ar:decision/immediate-intake-no-promotion",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Capture material epistemic artefacts immediately without automatic promotion",
+      "ar:decisionRationale": "Preservation cost can be made much lower than evaluation and commitment cost.",
+      "ar:reversible": true,
+      "ar:reversalCondition": "Redesign if intake becomes an unbounded junk drawer or creates more triage debt than prevented epistemic loss."
+    }
+  ],
+  "ar:extensionPatch": {
+    "parent_session": "ar-session-2026-09-07-epistemic-artefacts-constitutional-attention",
+    "authority_updates": [
+      {
+        "object": "ar:entity/adversarial-constitutional-search",
+        "status": "exploratory",
+        "authority_basis": "human-originated reframing plus preliminary lineage constraints"
+      }
+    ],
+    "roads_not_taken": {
+      "rejected": [
+        "one globally valid scalar humanity fitness function",
+        "requiring human review before artefact preservation"
+      ],
+      "deferred": [
+        "complete constitutional governance mechanism",
+        "formal multi-objective equations",
+        "autonomous constitutional mutation",
+        "real-world resource allocation"
+      ],
+      "surfaced_unexplored": [
+        "Pareto, lexicographic, satisficing and viability-based fitness structures",
+        "deliberative construction of worthwhile-future sets",
+        "specialized adversary populations for safety, epistemic validity, distributional harm and environmental externalities",
+        "Nemosyne visualization of strategy/adversary landscapes"
+      ]
+    },
+    "missing_expertise": [
+      "evolutionary computation",
+      "robust and multi-objective optimization",
+      "AI safety and scalable oversight",
+      "governance and value aggregation",
+      "economics of externalities and induced innovation"
+    ]
+  }
+}
