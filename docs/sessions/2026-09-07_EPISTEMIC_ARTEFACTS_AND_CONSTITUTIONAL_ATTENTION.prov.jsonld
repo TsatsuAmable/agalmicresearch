@@ -54,7 +54,7 @@
       "prov:wasGeneratedBy": {"@id": "ar:activity/artefact-state-synthesis"},
       "prov:wasDerivedFrom": [
         {"@id": "ar:entity/knowledge-category-question"},
-        {"@id": "ar:source/knuuttila-voutilainen-2022"},
+        {"@id": "ar:source/knuuttila-voutilainen-2003"},
         {"@id": "ar:source/epistemic-opacity-lineage"}
       ],
       "ar:epistemicStatus": "exploratory",
@@ -224,7 +224,7 @@
         "prov:hadRole": {"@id": "credit:investigation"}
       },
       "prov:generated": [
-        {"@id": "ar:source/knuuttila-voutilainen-2022"},
+        {"@id": "ar:source/knuuttila-voutilainen-2003"},
         {"@id": "ar:source/epistemic-opacity-lineage"},
         {"@id": "ar:source/interactive-evolutionary-computation"},
         {"@id": "ar:source/selective-human-oversight"},
@@ -270,7 +270,7 @@
       "ar:attributionMode": "contemporaneous"
     },
     {
-      "@id": "ar:source/knuuttila-voutilainen-2022",
+      "@id": "ar:source/knuuttila-voutilainen-2003",
       "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
       "schema:name": "A Parser as an Epistemic Artifact: A Material View on Models",
       "schema:author": ["Tarja Knuuttila", "Atro Voutilainen"],
