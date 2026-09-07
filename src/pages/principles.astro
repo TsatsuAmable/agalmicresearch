@@ -3,22 +3,24 @@ import Layout from '../layouts/Layout.astro';
 
 const principles = [
   ['Keep epistemic authority within defensibility', 'Machine cognition may expand what can be produced faster than it expands what the human curator can understand. Publish the work, but do not imply more mastery, certainty or authority than can be defended.'],
+  ['Separate contribution from authority', 'Originating, framing or developing an idea is a real contribution, but it does not automatically confer authority over whether the idea is true, important or correctly interpreted. Validation adds warrant without erasing provenance.'],
+  ['Design for epistemic handoff', 'When an initiator cannot evaluate a promising idea, the system should preserve origin and route the work toward capable framers, domain stewards, verifiers and realizers rather than forcing a choice between false authority and dismissal.'],
   ['Open by default', 'Knowledge compounds when others can inspect, reuse and challenge it. Closed work should require a reason, not openness.'],
   ['Publish to establish provenance', 'Early public disclosure creates a timestamped intellectual record and makes ideas available for criticism and reuse. Publication records a claim; it does not certify it.'],
   ['Version instead of waiting for finality', 'Research is allowed to improve in public. Every release should state what is claim, evidence, conjecture, epistemic status and revision.'],
   ['Treat attention as a scarce resource', 'Abundant output can still impoverish a system if it consumes more human attention than the value it creates.'],
-  ['Prefer selection quality over generation volume', 'The objective is not to maximise the number of ideas. It is to improve the rate at which valuable possibilities are recognised and realised.'],
+  ['Prefer selection quality over generation volume', 'The objective is not to maximise the number of ideas. It is to improve the rate at which valuable possibilities are recognised, routed, validated and realised.'],
   ['Build demonstrations, not only arguments', 'Software, models and reproducible analyses are part of the research programme because they force conceptual claims into contact with constraints.'],
   ['Use exclusivity only when it enables realisation', 'Patenting is an instrument, not a default. It is justified only when temporary exclusivity is plausibly necessary to finance, coordinate or protect the difficult work of turning an idea into a socially useful reality.'],
   ['Keep institutions provisional', 'Agalmic Research should be judged by the quality, openness and durability of its work, not by whether it prematurely imitates the bureaucracy of an established institute.'],
 ];
 ---
-<Layout title="Principles" description="Operating principles for Agalmic Research: defensible stewardship, open publication, provenance, versioning, attention discipline and selective use of intellectual property.">
+<Layout title="Principles" description="Operating principles for Agalmic Research: defensible stewardship, separable epistemic roles, handoff, open publication, provenance and attention discipline.">
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Principles</p>
       <h1>The institution should embody the thesis.</h1>
-      <p class="lede">If the research argues that cognition and knowledge production can become abundant, the research practice itself must make both its work and the limits of its understanding visible.</p>
+      <p class="lede">If cognition and knowledge production can become abundant, the research practice itself must make contribution, authority and the limits of understanding visible.</p>
     </div>
   </header>
 
@@ -27,6 +29,14 @@ const principles = [
       <p class="eyebrow">Principle of Defensible Stewardship</p>
       <blockquote>Epistemic authority should not exceed defensibility.</blockquote>
       <p>Cognition may be delegated. Responsibility cannot be. Where human comprehension is limited, claims should carry proportionately stronger provenance, verification, reproducibility, adversarial scrutiny and disclosure.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Principle of Separable Epistemic Roles</p>
+      <blockquote>Origin deserves credit. Authority requires warrant.</blockquote>
+      <p>The ability to originate a valuable idea does not imply the authority to validate it, and the authority to validate it does not erase the contribution of its originator. Low authority should trigger handoff, not erasure.</p>
     </div>
   </section>
 
@@ -48,11 +58,11 @@ const principles = [
     <div class="shell split">
       <div>
         <p class="eyebrow">A useful default</p>
-        <h2>Publish early. Claim carefully. Keep improving.</h2>
+        <h2>Publish early. Claim carefully. Hand off intelligently.</h2>
       </div>
       <div class="prose">
         <p class="large">Open publication is a research method, not a declaration of authority.</p>
-        <p class="muted">The default is to expose ideas to criticism and establish provenance while stating their epistemic status honestly. Technical machinery receives an additional publication review where disclosure could destroy a legitimate path to difficult real-world implementation or intellectual-property protection.</p>
+        <p class="muted">The default is to expose ideas to criticism and establish provenance while stating their epistemic status honestly. When a contribution outruns its initiator's competence, the next step is to recruit missing expertise rather than suppress the idea or inflate the initiator's authority. Technical machinery still receives a separate publication review where disclosure could destroy a legitimate path to difficult real-world implementation or intellectual-property protection.</p>
       </div>
     </div>
   </section>
