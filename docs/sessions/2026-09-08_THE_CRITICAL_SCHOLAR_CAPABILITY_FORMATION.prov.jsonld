@@ -1,0 +1,141 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "credit": "https://credit.niso.org/contributor-roles/",
+    "ar": "https://agalmicresearch.org/ns#"
+  },
+  "@graph": [
+    {
+      "@id": "ar:activity/critical-scholar-2026-09-08",
+      "@type": ["prov:Activity", "ar:DiscoveryEvent"],
+      "schema:name": "The Critical Scholar capability-forming academic-method continuation",
+      "prov:wasAssociatedWith": [
+        {"@id": "ar:agent/human-curator"},
+        {"@id": "ar:agent/gpt-5.6-sol"}
+      ],
+      "ar:epistemicStatus": "exploratory",
+      "ar:publicationSensitivity": "open"
+    },
+    {
+      "@id": "ar:agent/human-curator",
+      "@type": "prov:Person",
+      "schema:name": "Human curator"
+    },
+    {
+      "@id": "ar:agent/gpt-5.6-sol",
+      "@type": "prov:SoftwareAgent",
+      "schema:name": "GPT-5.6 Sol"
+    },
+    {
+      "@id": "ar:activity/programme-contribution",
+      "@type": ["prov:Activity", "ar:ConceptualizationEvent"],
+      "schema:name": "Supply The Critical Scholar MPhil programme concept",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "credit:methodology"},
+          {"@id": "ar:role/initiator"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/the-critical-scholar"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:entity/the-critical-scholar",
+      "@type": ["prov:Entity", "ar:ProgrammeConcept", "ar:EpistemicArtefact"],
+      "schema:name": "The Critical Scholar",
+      "schema:description": "An MPhil programme treating LLM use as advanced academic method aimed at improving the scholar's reasoning, judgement, synthesis, self-assessment and responsible research practice rather than primarily outsourcing intellectual production.",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/programme-contribution"},
+      "ar:epistemicStatus": "conceptually-developed-untested",
+      "ar:noveltyStatus": "novelty unassessed; close AI-literacy, metacognition, tutoring and learning-science antecedents expected",
+      "ar:branchState": "option"
+    },
+    {
+      "@id": "ar:activity/capability-synthesis",
+      "@type": ["prov:Activity", "ar:SynthesisEvent"],
+      "schema:name": "Distinguish capability substitution, augmentation and formation",
+      "prov:used": {"@id": "ar:entity/the-critical-scholar"},
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": [
+          {"@id": "credit:formal-analysis"},
+          {"@id": "credit:writing-original-draft"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/capability-formation-transfer-criterion"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:entity/capability-formation-transfer-criterion",
+      "@type": ["prov:Entity", "ar:ConceptualModel"],
+      "schema:name": "Capability formation evidenced by unaided transfer",
+      "schema:description": "Distinguish improved joint human-AI performance from durable human capability by testing performance after scaffold removal and on delayed novel transfer tasks.",
+      "ar:epistemicStatus": "established learning principle applied to programme design",
+      "ar:noveltyStatus": "application/synthesis; novelty not claimed"
+    },
+    {
+      "@id": "ar:decision/critical-scholar-testable-programme",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Preserve The Critical Scholar as a testable programme artefact",
+      "ar:decisionRationale": "The supplied framework contains a coherent curriculum, assessment architecture and explicit transfer criterion rather than only prompting advice.",
+      "ar:reversible": true,
+      "ar:reversalCondition": "Narrow to ordinary AI-literacy pedagogy if lineage review shows no distinct contribution and empirical testing shows no durable transfer benefit."
+    },
+    {
+      "@id": "ar:decision/human-successor-scarcity-endogenous",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Treat at least some human judgment and verification capacity as endogenous",
+      "ar:decisionRationale": "Education, deliberate practice and AI-mediated training can change effective evaluator capacity, so it should not automatically be modeled as a fixed successor bottleneck.",
+      "ar:reversible": true,
+      "ar:reversalCondition": "Revise if domain-specific evidence shows the relevant capacity is effectively fixed over the decision horizon."
+    }
+  ],
+  "ar:extensionPatch": {
+    "authority_updates": [
+      {
+        "object": "ar:entity/the-critical-scholar",
+        "status": "conceptually-developed-untested",
+        "authority_basis": "human-supplied programme design plus lineage-constrained synthesis"
+      },
+      {
+        "object": "ar:entity/capability-formation-transfer-criterion",
+        "status": "exploratory application",
+        "authority_basis": "programme's explicit unaided-assessment principle aligned with established transfer and metacognitive concerns"
+      }
+    ],
+    "roads_not_taken": {
+      "rejected": [
+        "classify programme primarily as prompt engineering",
+        "treat polished AI-assisted output as evidence of learning",
+        "assume model criticism should be accepted",
+        "use self-report as the primary capability endpoint"
+      ],
+      "deferred": [
+        "dedicated systematic lineage review",
+        "full facilitator curriculum",
+        "ethics and empirical trial protocol",
+        "psychometric instrument development",
+        "public-site promotion"
+      ],
+      "surfaced_unexplored": [
+        "adaptive Intellectual Gymnasium difficulty",
+        "spaced evaluation exercises from Memory Palace artefacts",
+        "scaffold fading schedules",
+        "longitudinal epistemic-capability profile",
+        "Nemosyne visualization of evaluative growth"
+      ]
+    },
+    "missing_expertise": [
+      "learning sciences",
+      "psychometrics and metacognition",
+      "human-computer interaction",
+      "AI literacy education",
+      "academic integrity",
+      "experimental design"
+    ]
+  }
+}

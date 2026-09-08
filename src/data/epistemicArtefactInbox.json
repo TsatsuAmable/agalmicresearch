@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "updated": "2026-09-07",
+  "updated": "2026-09-08",
   "status": "experimental-public-projection",
   "purpose": "Capture potentially valuable epistemic artefacts immediately, before warrant, understanding, novelty or commitment has been resolved.",
   "principles": [
@@ -42,6 +42,22 @@
       "commitment": "option",
       "next_route": "formalize-and-adversarially-compare",
       "related_possibility": "possibility:constitutional-attention-search"
+    },
+    {
+      "id": "artefact:the-critical-scholar-2026-09-08",
+      "captured": "2026-09-08",
+      "title": "The Critical Scholar: AI as Academic Method",
+      "kind": "programme-concept-and-empirical-research-candidate",
+      "origin_session": "ar-session-2026-09-08-human-epistemic-capacity-ai-engagement",
+      "summary": "MPhil programme that uses LLMs as examiner, adversary, conceptual microscope and metacognitive instrument to improve scholarly reasoning while testing durable human capability through unaided transfer after AI scaffolding is removed.",
+      "provenance_pointer": "/docs/sessions/2026-09-08_THE_CRITICAL_SCHOLAR_CAPABILITY_FORMATION.prov.jsonld",
+      "warrant_status": "conceptually-developed-untested",
+      "understanding_status": "programme-architecture-articulated",
+      "novelty_status": "AI-literacy, metacognition, tutoring and learning-science antecedents expected; programme-level novelty unassessed",
+      "publication_sensitivity": "public",
+      "commitment": "option-high-value-candidate",
+      "next_route": "dedicated-lineage-review-then-minimal-transfer-pilot",
+      "related_possibility": "possibility:epistemic-artefacts-assimilation"
     }
   ]
 }
