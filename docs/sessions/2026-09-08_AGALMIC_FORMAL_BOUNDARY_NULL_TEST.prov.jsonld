@@ -1,0 +1,282 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "credit": "https://credit.niso.org/contributor-roles/",
+    "ar": "https://agalmicresearch.org/ns#"
+  },
+  "@graph": [
+    {
+      "@id": "ar:session/ar-session-2026-09-08-agalmic-formal-null-test",
+      "@type": ["prov:Activity", "ar:ResearchSession"],
+      "schema:name": "Formal boundary / null-hypothesis test for Agalmic Research",
+      "schema:dateCreated": "2026-09-08",
+      "prov:wasAssociatedWith": [
+        {"@id": "ar:agent/human-curator"},
+        {"@id": "ar:agent/gpt-5.6-sol"}
+      ],
+      "prov:wasInfluencedBy": {"@id": "ar:session/ar-session-2026-09-08-agalmic-boundary-review"},
+      "ar:epistemicStatus": "exploratory",
+      "ar:publicationSensitivity": "open",
+      "ar:protocol": [
+        "Agalmic Research Memory Palace Protocol v0.3",
+        "Research Provenance Protocol v0.1"
+      ]
+    },
+    {
+      "@id": "ar:agent/human-curator",
+      "@type": "prov:Person",
+      "schema:name": "Human curator"
+    },
+    {
+      "@id": "ar:agent/gpt-5.6-sol",
+      "@type": "prov:SoftwareAgent",
+      "schema:name": "GPT-5.6 Sol"
+    },
+    {
+      "@id": "ar:entity/null-hypothesis-agalmic-boundary",
+      "@type": ["prov:Entity", "ar:Hypothesis"],
+      "schema:name": "Agalmic boundary null hypothesis",
+      "schema:description": "Agalmic transition adds no explanatory, predictive or measurement value beyond existing production economics, growth and innovation theory, operations/constraint research, resource economics, public-goods economics, industrial organization and socio-technical transition studies.",
+      "ar:epistemicStatus": "tested in targeted adversarial review",
+      "ar:result": "not rejected for explanatory theory or prediction; remains open for measurement/comparative research utility"
+    },
+    {
+      "@id": "ar:activity/formal-representability-test",
+      "@type": ["prov:Activity", "ar:FormalAnalysis"],
+      "schema:name": "Represent scarcity displacement with standard constrained optimization",
+      "prov:used": {"@id": "ar:entity/null-hypothesis-agalmic-boundary"},
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": [
+          {"@id": "credit:formal-analysis"},
+          {"@id": "credit:methodology"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:claim/no-new-formal-primitive"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:claim/no-new-formal-primitive",
+      "@type": ["prov:Entity", "ar:Claim"],
+      "schema:name": "Scarcity displacement requires no new formal primitive",
+      "schema:description": "Standard constrained optimization, shadow values, complementarity/substitutability, supply response and induced demand can represent the broad proposed mechanism.",
+      "prov:wasGeneratedBy": {"@id": "ar:activity/formal-representability-test"},
+      "ar:epistemicStatus": "curator-defended exploratory synthesis",
+      "ar:noveltyStatus": "established antecedents",
+      "prov:wasDerivedFrom": [
+        {"@id": "ar:source/romer-1990"},
+        {"@id": "ar:source/acemoglu-2002"},
+        {"@id": "ar:source/jones-2011"},
+        {"@id": "ar:source/acemoglu-autor-patterson-2024"}
+      ]
+    },
+    {
+      "@id": "ar:activity/measurement-adversarial-test",
+      "@type": ["prov:Activity", "ar:LiteratureReview"],
+      "schema:name": "Adversarial test of a cross-domain abundance metric",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": [
+          {"@id": "credit:investigation"},
+          {"@id": "credit:conceptualization"}
+        ]
+      },
+      "prov:generated": [
+        {"@id": "ar:decision/reject-scalar-abundance-index"},
+        {"@id": "ar:entity/scarcity-transition-profile"}
+      ],
+      "prov:used": [
+        {"@id": "ar:source/stern-1996"},
+        {"@id": "ar:source/stern-1999"},
+        {"@id": "ar:source/brown-field-1978"},
+        {"@id": "ar:source/buchanan-1965"}
+      ]
+    },
+    {
+      "@id": "ar:decision/reject-scalar-abundance-index",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Reject a scalar Agalmic Abundance Index at current evidence level",
+      "ar:decisionRationale": "Scarcity dimensions such as marginal cost, supply elasticity, rivalry, excludability, congestion, complement dependence, attention burden, externalities and concentration are heterogeneous and cannot be defensibly collapsed with arbitrary weights.",
+      "ar:reversible": true,
+      "ar:reversalCondition": "A specific empirical application supplies validated commensuration and demonstrates predictive or diagnostic value."
+    },
+    {
+      "@id": "ar:entity/scarcity-transition-profile",
+      "@type": ["prov:Entity", "ar:ResearchInstrumentCandidate"],
+      "schema:name": "Non-scalar scarcity transition profile",
+      "schema:description": "Candidate comparative record of marginal cost, scalable supply, rivalry, excludability/access friction, congestion, scarce-complement dependence, attention/verification burden, externalized burden and concentration/control for a capability over time.",
+      "ar:epistemicStatus": "exploratory",
+      "ar:noveltyStatus": "candidate synthesis / measurement operationalization; novelty unassessed",
+      "ar:branchState": "explored-active",
+      "ar:reversalCondition": "Retire if mature existing frameworks already perform the same cross-domain function or empirical pilots add no analytical value."
+    },
+    {
+      "@id": "ar:decision/null-test-verdict",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Do not claim new Agalmic theory or predictive law",
+      "ar:decisionRationale": "Targeted formalization and lineage comparison found standard representations and close antecedents for constraint displacement, network propagation, non-rivality, scarce complements and rebound effects.",
+      "ar:reversible": true,
+      "ar:reversalCondition": "A lineage-positioned formal result or empirical regularity demonstrates explanatory or predictive content unavailable from the compared antecedent frameworks."
+    },
+    {
+      "@id": "ar:decision/defer-definition-promotion",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Keep canonical definition unchanged during null-test tranche",
+      "ar:decisionRationale": "Separate evidence generation from promotion; current v0.2 is contested, but definition revision should be a distinct decision event after the null-test record exists.",
+      "ar:reversible": true,
+      "ar:reversalCondition": "Review and promote a v0.3 field definition in a subsequent explicit decision."
+    },
+    {
+      "@id": "ar:source/romer-1990",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Endogenous Technological Change",
+      "schema:author": "Paul M. Romer",
+      "schema:datePublished": "1990",
+      "schema:identifier": "doi:10.1086/261725",
+      "ar:influence": "Shows that modern economics explicitly models intentional technological change and non-rival, partially excludable knowledge."
+    },
+    {
+      "@id": "ar:source/acemoglu-2002",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Directed Technical Change",
+      "schema:author": "Daron Acemoglu",
+      "schema:datePublished": "2002",
+      "schema:identifier": "doi:10.1111/1467-937X.00226",
+      "ar:influence": "Shows innovation direction responding to relative scarcity, prices, market size and substitution."
+    },
+    {
+      "@id": "ar:source/jones-2011",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Intermediate Goods and Weak Links in the Theory of Economic Development",
+      "schema:author": "Charles I. Jones",
+      "schema:datePublished": "2011",
+      "schema:identifier": "doi:10.1257/mac.3.2.1",
+      "ar:influence": "Provides antecedents for complementarity, production linkages and weak-link bottlenecks."
+    },
+    {
+      "@id": "ar:source/acemoglu-autor-patterson-2024",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Bottlenecks: Sectoral Imbalances and the US Productivity Slowdown",
+      "schema:author": ["Daron Acemoglu", "David Autor", "Christina Patterson"],
+      "schema:datePublished": "2024",
+      "schema:identifier": "doi:10.1086/729196",
+      "ar:influence": "Shows that uneven progress among complementary input and idea suppliers creates endogenous innovation bottlenecks."
+    },
+    {
+      "@id": "ar:source/buchanan-1965",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "An Economic Theory of Clubs",
+      "schema:author": "James M. Buchanan",
+      "schema:datePublished": "1965",
+      "schema:identifier": "doi:10.2307/2552442",
+      "ar:influence": "Antecedent for excludable, partly non-rival and congestion-sensitive goods."
+    },
+    {
+      "@id": "ar:source/brown-field-1978",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Implications of Alternative Measures of Natural Resource Scarcity",
+      "schema:author": ["Gardner M. Brown Jr.", "Barry C. Field"],
+      "schema:datePublished": "1978",
+      "schema:identifier": "doi:10.1086/260664",
+      "ar:influence": "Antecedent for competing scarcity measures and their limitations."
+    },
+    {
+      "@id": "ar:source/stern-1996",
+      "@type": ["prov:Entity", "ar:PriorArt"],
+      "schema:name": "The Theory of Natural Resource Scarcity Indicators: Towards a Synthesis",
+      "schema:author": "David I. Stern",
+      "schema:datePublished": "1996",
+      "ar:influence": "Reviews prices, rents, unit costs and other scarcity indicators and cautions against a perfect single indicator."
+    },
+    {
+      "@id": "ar:source/stern-1999",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Use value, exchange value, and resource scarcity",
+      "schema:author": "David I. Stern",
+      "schema:datePublished": "1999",
+      "schema:identifier": "doi:10.1016/S0301-4215(99)00043-9",
+      "ar:influence": "Distinguishes exchange-scarcity and use-scarcity indicators and demonstrates mature scarcity-measurement debate."
+    },
+    {
+      "@id": "ar:source/rebound-review",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "The Rebound Effect and Energy Efficiency Policy",
+      "schema:author": ["Kenneth Gillingham", "David Rapson", "Gernot Wagner"],
+      "schema:datePublished": "2016",
+      "schema:identifier": "doi:10.1093/reep/rev017",
+      "ar:influence": "Antecedent for induced demand offsetting efficiency-driven scarcity relief."
+    },
+    {
+      "@id": "ar:source/original-agalmics",
+      "@type": ["prov:Entity", "ar:PriorArt"],
+      "schema:name": "The Marginalization of Scarcity",
+      "schema:author": "Robert Levin",
+      "schema:datePublished": "1999-04-04",
+      "ar:influence": "Defines agalmics as the study and practice of production and allocation of non-scarce goods and notes that such goods may be produced from scarce inputs."
+    }
+  ],
+  "ar:extensionPatch": {
+    "parent_session": "ar-session-2026-09-08-agalmic-boundary-review",
+    "authority_updates": [
+      {
+        "object": "Agalmic Research as new economic theory",
+        "status": "rejected on current evidence",
+        "authority_basis": "targeted formal representability and prior-art comparison"
+      },
+      {
+        "object": "non-scalar scarcity transition profile",
+        "status": "exploratory",
+        "authority_basis": "cross-literature synthesis; no external expert review or empirical validation"
+      },
+      {
+        "object": "Agalmic Research as comparative interdisciplinary programme",
+        "status": "candidate",
+        "authority_basis": "survives conceptual null test only conditionally on future empirical utility"
+      }
+    ],
+    "roads_not_taken": {
+      "rejected": [
+        "economics allocates scarcity while Agalmics transforms constraints",
+        "recursive constraint removal as novel core mechanism",
+        "successor scarcity propagation as uniquely Agalmic",
+        "non-rivality as outside economics",
+        "scalar Agalmic Abundance Index",
+        "worthwhile futures as the field analytical objective"
+      ],
+      "deferred": [
+        "full general-equilibrium formalization",
+        "cross-domain empirical pilot",
+        "definition v0.3 promotion",
+        "public historical abundance-transition dataset",
+        "econometric identification of successor-scarcity effects"
+      ],
+      "surfaced_unexplored": [
+        "transaction-cost economics and allocation-regime change",
+        "mechanism design for abundance and access",
+        "complexity-economics measures of regime transitions",
+        "index-number theory for non-scalar comparability",
+        "economic history of radical price decline and dematerialization",
+        "commons governance as bridge between non-rivality and access"
+      ],
+      "excluded_by_scope": [
+        "patent prior-art search",
+        "normative theory of desirable abundance",
+        "Constitutional Attention as societal governance",
+        "Nemosyne or Moneta implementation"
+      ]
+    },
+    "missing_expertise": [
+      "microeconomic and production theory",
+      "public and information economics",
+      "natural-resource and environmental economics",
+      "industrial organization",
+      "innovation economics and production networks",
+      "measurement and index-number theory",
+      "economic history",
+      "socio-technical transition studies"
+    ],
+    "next_test": "Run a small cross-domain empirical pilot of the non-scalar scarcity-transition profile and seek external expert review."
+  }
+}
