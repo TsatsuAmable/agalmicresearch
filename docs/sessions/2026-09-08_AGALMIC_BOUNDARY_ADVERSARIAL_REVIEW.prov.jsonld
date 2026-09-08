@@ -1,0 +1,337 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "credit": "https://credit.niso.org/contributor-roles/",
+    "ar": "https://agalmicresearch.org/ns#"
+  },
+  "@graph": [
+    {
+      "@id": "ar:session/ar-session-2026-09-08-agalmic-boundary-review",
+      "@type": ["prov:Activity", "ar:ResearchSession"],
+      "schema:name": "Adversarial review of the Agalmic Research boundary",
+      "schema:startDate": "2026-09-08",
+      "prov:wasAssociatedWith": [
+        {"@id": "ar:agent/human-curator"},
+        {"@id": "ar:agent/gpt-5.6-sol"}
+      ],
+      "prov:used": [
+        {"@id": "ar:entity/canonical-definition-v0.2"},
+        {"@id": "ar:entity/displaced-scarcity-review-v0.1"},
+        {"@id": "ar:entity/session-protocol-v0.3"},
+        {"@id": "ar:entity/research-provenance-protocol-v0.1"}
+      ],
+      "ar:epistemicStatus": "exploratory",
+      "ar:publicationSensitivity": "open",
+      "ar:searchBoundary": "economics, growth and innovation, constraint management, GPTs, AI bottlenecks, industrial policy, original agalmics, socio-technical transitions; non-exhaustive across specialist databases and adjacent disciplines"
+    },
+    {
+      "@id": "ar:agent/human-curator",
+      "@type": "prov:Person",
+      "schema:name": "Human curator"
+    },
+    {
+      "@id": "ar:agent/gpt-5.6-sol",
+      "@type": "prov:SoftwareAgent",
+      "schema:name": "GPT-5.6 Sol"
+    },
+    {
+      "@id": "ar:entity/canonical-definition-v0.2",
+      "@type": ["prov:Entity", "ar:ResearchObject"],
+      "schema:name": "Canonical Definition of Agalmic Research v0.2",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/AGALMIC_RESEARCH_DEFINITION.md"
+    },
+    {
+      "@id": "ar:entity/displaced-scarcity-review-v0.1",
+      "@type": ["prov:Entity", "ar:ResearchObject"],
+      "schema:name": "Literature Review: Displaced Scarcity and Shifting Bottlenecks v0.1",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/LITERATURE_REVIEW_DISPLACED_SCARCITY.md"
+    },
+    {
+      "@id": "ar:entity/session-protocol-v0.3",
+      "@type": ["prov:Entity", "ar:ResearchProtocol"],
+      "schema:name": "Agalmic Research Memory Palace Session Prompt v0.3",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/RESEARCH_SESSION_PROTOCOL_PROMPT.md"
+    },
+    {
+      "@id": "ar:entity/research-provenance-protocol-v0.1",
+      "@type": ["prov:Entity", "ar:ResearchProtocol"],
+      "schema:name": "Research Provenance Protocol v0.1",
+      "schema:url": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/RESEARCH_PROVENANCE_PROTOCOL.md"
+    },
+    {
+      "@id": "ar:activity/boundary-objection",
+      "@type": ["prov:Activity", "ar:CriticismEvent"],
+      "schema:name": "Challenge worthwhile futures as a field-defining objective",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "ar:role/critic"},
+          {"@id": "ar:role/initiator"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/planner-boundary-objection"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:entity/planner-boundary-objection",
+      "@type": ["prov:Entity", "ar:Objection"],
+      "schema:name": "Worthwhile futures risks importing a planner's vantage point",
+      "ar:epistemicStatus": "reasoned objection"
+    },
+    {
+      "@id": "ar:activity/recursive-constraint-reframe",
+      "@type": ["prov:Activity", "ar:ConceptualizationEvent"],
+      "schema:name": "Reframe Agalmic Research around recursive scarcity transformation",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "credit:writing-original-draft"}
+        ]
+      },
+      "prov:wasInfluencedBy": {"@id": "ar:entity/planner-boundary-objection"},
+      "prov:generated": {"@id": "ar:entity/recursive-constraint-candidate"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:entity/recursive-constraint-candidate",
+      "@type": ["prov:Entity", "ar:ConceptualModel"],
+      "schema:name": "Recursive constraint displacement as candidate field centre",
+      "ar:epistemicStatus": "superseded as a novelty candidate",
+      "ar:noveltyStatus": "established antecedents plus synthesis"
+    },
+    {
+      "@id": "ar:activity/lineage-search",
+      "@type": ["prov:Activity", "ar:LiteratureSearch"],
+      "schema:name": "Adversarial lineage search across economics, constraint theory and transition studies",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": [
+          {"@id": "credit:investigation"},
+          {"@id": "credit:writing-review-editing"},
+          {"@id": "ar:role/critic"},
+          {"@id": "ar:role/synthesizer"}
+        ]
+      },
+      "prov:used": [
+        {"@id": "ar:source/romer-1990"},
+        {"@id": "ar:source/acemoglu-2002"},
+        {"@id": "ar:source/rodrik-2010"},
+        {"@id": "ar:source/toc"},
+        {"@id": "ar:source/bresnahan-trajtenberg-1995"},
+        {"@id": "ar:source/bresnahan-yin-2010"},
+        {"@id": "ar:source/acemoglu-autor-patterson"},
+        {"@id": "ar:source/de-freitas-et-al-2026"},
+        {"@id": "ar:source/wu-2026"},
+        {"@id": "ar:source/geels-2002"},
+        {"@id": "ar:source/markard-raven-truffer-2012"},
+        {"@id": "ar:source/levin-1999"},
+        {"@id": "ar:source/imf-industrial-policy-2024"}
+      ],
+      "prov:generated": {"@id": "ar:entity/boundary-review-verdict"}
+    },
+    {
+      "@id": "ar:entity/boundary-review-verdict",
+      "@type": ["prov:Entity", "ar:ResearchFinding"],
+      "schema:name": "Agalmic Research is not presently supported as a new economic theory",
+      "schema:description": "The strongest surviving status is a problem-oriented interdisciplinary programme focused on transitions in the economic character of scarcity and on successor scarcity across connected systems.",
+      "ar:epistemicStatus": "exploratory but lineage-constrained",
+      "ar:noveltyStatus": "synthesis / operationalization candidate; novelty unassessed",
+      "ar:handoffNeeded": true
+    },
+    {
+      "@id": "ar:entity/candidate-programme-boundary",
+      "@type": ["prov:Entity", "ar:ConceptualModel"],
+      "schema:name": "Scarcity-character transition as candidate Agalmic unit of inquiry",
+      "schema:description": "Study transitions in which a good, input or capability moves from allocation-dominated scarcity toward highly scalable, low-marginal-cost, low-rivalry or otherwise functionally abundant availability, while tracing successor constraints, rents, risks, externalities and access problems.",
+      "prov:wasDerivedFrom": {"@id": "ar:entity/boundary-review-verdict"},
+      "ar:epistemicStatus": "exploratory synthesis",
+      "ar:noveltyStatus": "unassessed",
+      "ar:branchState": "explored-selected",
+      "ar:reversalCondition": "Retire or fold into an established field if formal and empirical work yields no distinct explanatory, predictive or measurement value beyond antecedent literatures."
+    },
+    {
+      "@id": "ar:decision/remove-worthwhile-futures-field-core",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Recommend removing worthwhile futures from the analytical field definition",
+      "ar:decisionRationale": "The phrase embeds normative social direction into the field definition and weakens the boundary from mission-oriented and industrial policy. It may remain as an institutional ethical criterion.",
+      "ar:reversible": true,
+      "ar:reversalCondition": "A rigorous non-planner interpretation proves necessary and survives political-economy review."
+    },
+    {
+      "@id": "ar:decision/reject-fixed-scarcity-economics-contrast",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Reject fixed-scarcity economics versus constraint-transforming Agalmics contrast",
+      "ar:decisionRationale": "Endogenous growth, directed technical change and GPT/bottleneck research already model changing productive constraints and non-rival knowledge.",
+      "ar:reversible": false
+    },
+    {
+      "@id": "ar:decision/programme-not-theory",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Provisionally classify Agalmic Research as an interdisciplinary research programme rather than a new economic theory",
+      "ar:decisionRationale": "Strong prior art covers the component mechanisms while a narrower cross-domain research object may still provide useful synthesis and measurement.",
+      "ar:reversible": true,
+      "ar:reversalCondition": "Distinct formal theory, measurements and empirical predictions are independently validated."
+    },
+    {
+      "@id": "ar:source/romer-1990",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Endogenous Technological Change",
+      "schema:author": "Paul M. Romer",
+      "schema:datePublished": "1990",
+      "schema:identifier": "doi:10.1086/261725"
+    },
+    {
+      "@id": "ar:source/acemoglu-2002",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Directed Technical Change",
+      "schema:author": "Daron Acemoglu",
+      "schema:datePublished": "2002",
+      "schema:identifier": "doi:10.1111/1467-937X.00226"
+    },
+    {
+      "@id": "ar:source/rodrik-2010",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Diagnostics before Prescription",
+      "schema:author": "Dani Rodrik",
+      "schema:datePublished": "2010",
+      "schema:url": "https://growthlab.hks.harvard.edu/publication/diagnostics-before-prescription/"
+    },
+    {
+      "@id": "ar:source/toc",
+      "@type": ["prov:Entity", "ar:PriorArtCluster"],
+      "schema:name": "Theory of Constraints focusing steps",
+      "schema:url": "https://www.tocinstitute.org/five-focusing-steps.html"
+    },
+    {
+      "@id": "ar:source/bresnahan-trajtenberg-1995",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "General Purpose Technologies: Engines of Growth?",
+      "schema:author": ["Timothy Bresnahan", "Manuel Trajtenberg"],
+      "schema:datePublished": "1995",
+      "schema:identifier": "doi:10.1016/0304-4076(94)01598-T"
+    },
+    {
+      "@id": "ar:source/bresnahan-yin-2010",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Reallocating Innovative Resources Around Growth Bottlenecks",
+      "schema:author": ["Timothy Bresnahan", "Pai-Ling Yin"],
+      "schema:datePublished": "2010",
+      "schema:identifier": "doi:10.1093/icc/dtq048"
+    },
+    {
+      "@id": "ar:source/acemoglu-autor-patterson",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Bottlenecks: Sectoral Imbalances and the US Productivity Slowdown",
+      "schema:author": ["Daron Acemoglu", "David Autor", "Christina Patterson"],
+      "schema:datePublished": "2023",
+      "schema:identifier": "NBER Working Paper 31427"
+    },
+    {
+      "@id": "ar:source/de-freitas-et-al-2026",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Innovating with Generative AI: A Human Bottleneck Framework",
+      "schema:author": ["Julian De Freitas", "Ayelet Israeli", "Gideon Nave", "Artem Timoshenko", "Olivier Toubia"],
+      "schema:datePublished": "2026",
+      "schema:identifier": ["SSRN:6983818", "arXiv:2608.07504"]
+    },
+    {
+      "@id": "ar:source/wu-2026",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "When AI Abundance Recreates Scarcity: Expert Judgment, Induced Demand, and Composite Ecosystems",
+      "schema:author": "Chenxuan Wu",
+      "schema:datePublished": "2026",
+      "schema:identifier": "SSRN:7183798"
+    },
+    {
+      "@id": "ar:source/geels-2002",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Technological transitions as evolutionary reconfiguration processes: a multi-level perspective and a case-study",
+      "schema:author": "Frank W. Geels",
+      "schema:datePublished": "2002",
+      "schema:identifier": "doi:10.1016/S0048-7333(02)00062-8"
+    },
+    {
+      "@id": "ar:source/markard-raven-truffer-2012",
+      "@type": ["prov:Entity", "schema:ScholarlyArticle", "ar:PriorArt"],
+      "schema:name": "Sustainability transitions: An emerging field of research and its prospects",
+      "schema:author": ["Jochen Markard", "Rob Raven", "Bernhard Truffer"],
+      "schema:datePublished": "2012",
+      "schema:identifier": "doi:10.1016/j.respol.2012.02.013"
+    },
+    {
+      "@id": "ar:source/levin-1999",
+      "@type": ["prov:Entity", "ar:PriorArt"],
+      "schema:name": "Agalmics: The Marginalization of Scarcity",
+      "schema:author": "Robert Levin",
+      "schema:datePublished": "1999",
+      "schema:url": "https://rednsx.org/~dtinker/agalmics.html"
+    },
+    {
+      "@id": "ar:source/imf-industrial-policy-2024",
+      "@type": ["prov:Entity", "ar:PriorArt"],
+      "schema:name": "Industrial Policy Coverage in IMF Surveillance: Broad Considerations",
+      "schema:author": "International Monetary Fund",
+      "schema:datePublished": "2024",
+      "schema:url": "https://www.elibrary.imf.org/view/journals/007/2024/008/article-A001-en.xml"
+    }
+  ],
+  "ar:extensionPatch": {
+    "authority_updates": [
+      {
+        "object": "ar:entity/recursive-constraint-candidate",
+        "status": "superseded as novelty candidate",
+        "authority_basis": "adversarial lineage review found close established antecedents"
+      },
+      {
+        "object": "ar:entity/candidate-programme-boundary",
+        "status": "exploratory synthesis",
+        "authority_basis": "cross-literature comparison only; no formal result or expert review"
+      }
+    ],
+    "roads_not_taken": {
+      "rejected": [
+        "economics allocates fixed scarcity while Agalmics transforms constraints",
+        "recursive constraint displacement as a novel general mechanism",
+        "broad socio-technical regime transition as the unique Agalmic object",
+        "AI generation abundance to human judgment scarcity as a novel mechanism",
+        "worthwhile futures as the analytical objective function of the field"
+      ],
+      "deferred": [
+        "formal mathematical definition of functional abundance",
+        "scarcity-state vector or index",
+        "historical cross-domain transition dataset",
+        "formal null test against standard production and growth theory",
+        "canonical definition revision"
+      ],
+      "surfaced_unexplored": [
+        "ecological and resource economics",
+        "complexity economics and network bottleneck propagation",
+        "cybernetics and control theory",
+        "broader evolutionary economics",
+        "economic history of dematerialization and cost collapse",
+        "mature alternatives to the phrase functional abundance"
+      ],
+      "excluded_by_scope": [
+        "normative theory of which capabilities society should make abundant",
+        "centralized planning and national priority selection",
+        "industrial-policy implementation",
+        "patentability and defensive publication strategy"
+      ]
+    },
+    "missing_expertise": [
+      "microeconomic and production theory",
+      "innovation and growth economics",
+      "operations research",
+      "evolutionary and transition studies",
+      "economic history",
+      "ecological and resource economics",
+      "empirical productivity and access measurement"
+    ],
+    "unknown_alternatives_note": "Unknown or never-surfaced alternatives are not represented and must not be interpreted as rejected."
+  }
+}
