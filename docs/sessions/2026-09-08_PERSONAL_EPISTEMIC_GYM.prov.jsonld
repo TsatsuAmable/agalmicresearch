@@ -1,0 +1,149 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "credit": "https://credit.niso.org/contributor-roles/",
+    "ar": "https://agalmicresearch.org/ns#"
+  },
+  "@graph": [
+    {
+      "@id": "ar:activity/personal-epistemic-gym-session-2026-09-08",
+      "@type": ["prov:Activity", "ar:DiscoveryEvent"],
+      "schema:name": "Formulation of the Personal Epistemic Gym",
+      "prov:wasAssociatedWith": [
+        {"@id": "ar:agent/human-curator"},
+        {"@id": "ar:agent/gpt-5.6-sol"}
+      ],
+      "prov:used": [
+        {"@id": "ar:entity/the-critical-scholar"},
+        {"@id": "ar:entity/epistemic-artefact-intake"},
+        {"@id": "ar:entity/authorial-capacity-constraint"}
+      ],
+      "prov:generated": {"@id": "ar:entity/personal-epistemic-gym"},
+      "ar:epistemicStatus": "exploratory",
+      "ar:publicationSensitivity": "open"
+    },
+    {
+      "@id": "ar:agent/human-curator",
+      "@type": "prov:Person",
+      "schema:name": "Human curator"
+    },
+    {
+      "@id": "ar:agent/gpt-5.6-sol",
+      "@type": "prov:SoftwareAgent",
+      "schema:name": "GPT-5.6 Sol"
+    },
+    {
+      "@id": "ar:activity/scholarly-frontier-reframing",
+      "@type": ["prov:Activity", "ar:ConceptualizationEvent"],
+      "schema:name": "Reframe human scholarliness as an expandable frontier",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/human-curator",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "ar:role/initiator"}
+        ]
+      },
+      "prov:generated": {"@id": "ar:entity/scholarly-capacity-frontier"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:entity/scholarly-capacity-frontier",
+      "@type": ["prov:Entity", "ar:Concept"],
+      "schema:name": "Human scholarly capacity as an expandable frontier",
+      "schema:description": "Use abundant machine cognition not only to compensate for human limits but to deliberately expand durable human scholarly capabilities such as retrieval, conceptual precision, source judgment, argument analysis, calibration, transfer and defensibility.",
+      "ar:epistemicStatus": "exploratory synthesis",
+      "ar:noveltyStatus": "established learning and human-capital antecedents plus Agalmic application; novelty unassessed"
+    },
+    {
+      "@id": "ar:activity/gym-architecture-synthesis",
+      "@type": ["prov:Activity", "ar:SynthesisEvent"],
+      "schema:name": "Synthesize non-scalar Personal Epistemic Gym architecture",
+      "prov:wasAssociatedWith": {
+        "@id": "ar:agent/gpt-5.6-sol",
+        "prov:hadRole": [
+          {"@id": "credit:conceptualization"},
+          {"@id": "credit:methodology"},
+          {"@id": "credit:writing-original-draft"}
+        ]
+      },
+      "prov:wasInfluencedBy": {"@id": "ar:entity/scholarly-capacity-frontier"},
+      "prov:generated": {"@id": "ar:entity/personal-epistemic-gym"},
+      "ar:attributionConfidence": "high",
+      "ar:attributionMode": "contemporaneous"
+    },
+    {
+      "@id": "ar:entity/personal-epistemic-gym",
+      "@type": ["prov:Entity", "ar:ResearchMethod", "ar:CapabilityTrainingProtocol"],
+      "schema:name": "Personal Epistemic Gym",
+      "schema:description": "A capability-forming human-AI scholarly practice using live epistemic artefacts, pre-commitment, retrieval, adversarial interrogation, source verification, viva-style defence, scaffold fading and delayed transfer to expand durable human scholarly capability.",
+      "prov:wasDerivedFrom": [
+        {"@id": "ar:entity/the-critical-scholar"},
+        {"@id": "ar:entity/epistemic-artefact-intake"},
+        {"@id": "ar:entity/authorial-capacity-constraint"}
+      ],
+      "ar:epistemicStatus": "exploratory operating concept",
+      "ar:noveltyStatus": "synthesis/application; novelty unassessed",
+      "ar:branchState": "option-high-value-candidate",
+      "ar:reversalCondition": "Narrow, redesign or retire if delayed unaided transfer, calibration or defensibility do not improve relative to ordinary research practice plus unrestricted AI use."
+    },
+    {
+      "@id": "ar:decision/profile-not-score",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Use a non-scalar scholarly capability profile",
+      "ar:decisionRationale": "A single scholar score would hide distinct capabilities and could be mistaken for global authority.",
+      "ar:reversible": true
+    },
+    {
+      "@id": "ar:decision/separate-scholarliness-authority",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Keep scholarliness separate from epistemic authority",
+      "ar:decisionRationale": "Training can increase the capacity needed to earn authority, but authority remains claim-sensitive and warrant-dependent.",
+      "ar:reversible": false
+    },
+    {
+      "@id": "ar:decision/real-artefacts",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Use real research artefacts as primary training material",
+      "ar:decisionRationale": "Capability formation should compound with live scholarship rather than become a separate attention-consuming ritual.",
+      "ar:reversible": true
+    },
+    {
+      "@id": "ar:decision/delayed-transfer",
+      "@type": ["prov:Entity", "ar:Decision"],
+      "schema:name": "Require delayed or novel transfer evidence for durable capability claims",
+      "ar:decisionRationale": "AI-assisted performance may improve without durable human learning or accurate metacognition.",
+      "ar:reversible": true
+    }
+  ],
+  "ar:extensionPatch": {
+    "authority_updates": [
+      {
+        "object": "ar:entity/personal-epistemic-gym",
+        "status": "exploratory",
+        "authority_basis": "human-originated framing plus literature-constrained synthesis; no empirical validation yet"
+      }
+    ],
+    "roads_not_taken": {
+      "rejected": [
+        "global scholar score",
+        "AI-assisted output quality as evidence of human authority",
+        "always-on maximally helpful AI",
+        "generic puzzle training detached from live scholarship"
+      ],
+      "deferred": [
+        "validated capability measurement battery",
+        "adaptive difficulty controller",
+        "Memory Palace capability-ledger implementation",
+        "N-of-1 causal evaluation"
+      ],
+      "surfaced_unexplored": [
+        "Constitutional Attention using capability growth as a selection objective",
+        "spaced retrieval generated from Epistemic Artefact Intake",
+        "Nemosyne visualization of capability and authority boundaries",
+        "minimum domain expertise needed before adversarial AI training is beneficial"
+      ]
+    }
+  }
+}
