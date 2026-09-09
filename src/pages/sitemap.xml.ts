@@ -6,7 +6,7 @@ export const prerender = true;
 const site = 'https://agalmicresearch.org';
 const staticRoutes = [
   '/', '/explore/', '/search/', '/publications/', '/frontier/', '/handoff/', '/results/', '/about/',
-  '/research/', '/notes/', '/drafts/', '/drafts/handoff-triage-formalism/', '/lineage/', '/provenance/', '/principles/',
+  '/research/', '/method/', '/notes/', '/drafts/', '/drafts/handoff-triage-formalism/', '/lineage/', '/provenance/', '/principles/',
   '/manifesto/', '/memory-palace-protocol/', '/history/', '/tools/astro-agalmic/'
 ];
 const escapeXml = (value: string) => value.replace(/[<>&'\"]/g, (char) => ({
