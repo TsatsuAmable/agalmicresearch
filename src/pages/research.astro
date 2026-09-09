@@ -6,7 +6,7 @@ const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 
 const tracks = [
   ['Frontier Expansion with Cognitive Tools', 'The meta-level question: how can human-machine systems improve the capacity to reach, recognize, validate and realize worthwhile possibilities?', 'Kauffman’s adjacent possible and Taalbi’s effective adjacent possible are direct antecedents. The remaining work is to understand which cognitive, epistemic and institutional capabilities actually enlarge the effective frontier and how to measure that without pretending to enumerate unknown possibilities.'],
-  ['Epistemic Stewardship & Handoff', 'The governance of claims and contributions when machine-assisted artefacts can outrun the initiator’s present capacity to defend them.', 'Builds on epistemic dependence, contributorship/guarantorship, metacognition, claim-accountability, knowledge-brokerage and absorptive-capacity traditions. The open question is how to operationalize claim-sensitive authority and handoff without creating new gatekeeping rituals.'],
+  ['Epistemic Stewardship & Handoff', 'The governance of claims and contributions when machine-assisted artefacts can outrun the initiator’s present capacity to defend them.', 'Builds on epistemic dependence, contributorship/guarantorship, metacognition, claim-accountability, knowledge-brokerage and absorptive-capacity traditions. The first empirical route is now retrospective: spend historical expert judgments before recruiting new experts.'],
   ['Epistemic Uptake', 'The capacity of institutions to notice, route, evaluate, validate, integrate and realise candidate knowledge when idea generation becomes cheap.', 'Extends absorptive-capacity, transfer, brokerage, intermediary and expert-evaluation literatures into a regime of machine-generated candidate abundance. How should scarce expert attention be allocated?'],
   ['Agalmic Economics', 'A contemporary programme about allocation and value around non-scarce or very low-marginal-cost goods and the scarce complements on which they still depend.', 'Robert Levin’s earlier agalmics is a direct antecedent. What does machine cognition change relative to that prior framing?'],
   ['Economics of Epistemic Abundance', 'The allocation of scarce attention, validation, trust, institutional bandwidth and physical capability when candidate knowledge is unusually cheap to generate.', 'The name deliberately avoids claiming Grandori’s established “epistemic economics” territory. How do Simon’s attention scarcity, Weitzman’s processing constraint, absorptive capacity and modern AI-abundance economics interact?'],
@@ -31,6 +31,36 @@ const tracks = [
       <p class="eyebrow">Meta aim</p>
       <blockquote>The goal is not more ideas. It is greater capacity to reach worthwhile futures.</blockquote>
       <p>The adjacent possible is an established idea, and Taalbi already uses the term effective adjacent possible for the subset constrained by search and absorptive capacity. Agalmic Research asks what machine cognition, representation, validation, provenance and realization infrastructure do to that effective frontier.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Research method · 1 + machine</p>
+        <h2>Exploit the structure we actually have.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Agalmic Research has one primary human investigator and machine collaborators. Its default research method is therefore secondary, computational and inheritance-heavy before it is participant-heavy.</p>
+        <p>Prefer systematic/scoping review, meta-analysis, open-data reanalysis, bibliometrics, replication, robustness testing, retrospective experiments, benchmark construction, simulation and formal analysis where those methods can answer the question.</p>
+        <p>New participant or expert recruitment should target residual questions that inherited evidence cannot adjudicate.</p>
+        <div class="callout"><p><strong>Inherit evidence before creating it. Reanalyse before recollecting. Simulate before constructing. Replicate before extending.</strong></p></div>
+        <p><a href={internal('method')}>Read the 1 + Machine Method →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Scarcity as a research diagnostic</p>
+        <h2>Ask what scarce input is preventing the next useful inference.</h2>
+      </div>
+      <div class="prose">
+        <p>Cognitive machines are used not only to execute research tasks but to inspect the research system itself: identify binding constraints, search for inherited abundance that can relax them, test the proposed displacement and then identify the next bottleneck.</p>
+        <p>Candidate scarcities include time, attention, expertise, authority, participants, expert review, data, mathematical depth, software implementation, compute, coordination, validation and human comprehension.</p>
+        <p class="large">This is operational first. A repeated scarcity transition becomes a research claim only after it can be measured and compared against established theory.</p>
+      </div>
     </div>
   </section>
 
@@ -72,7 +102,7 @@ const tracks = [
               <p>{copy}</p>
               <p class="muted"><strong>Lineage / remaining question:</strong> {lineage}</p>
             </div>
-            <span class="index-status">active programme</span>
+            <span class="index-status">programme question</span>
           </article>
         ))}
       </div>
