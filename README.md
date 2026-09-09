@@ -1,107 +1,114 @@
 # Agalmic Research
 
-**Agalmic Research** is an open research programme studying how knowledge, computation, energy, institutions, and human judgment can expand the set of worthwhile futures people can actually reach.
+**Agalmic Research** is an open practice of disciplined inquiry and building that asks how available abundance can be converted into durable capability by identifying and relaxing real constraints.
 
-The programme starts from a simple direction:
+Current compact form:
 
-> **The goal is not more ideas. It is greater capacity to reach worthwhile futures.**
+> **Use abundance to expand capability. Begin with the constraint in front of you.**
 
-Agalmic Research is interested in what happens when some historically scarce inputs become dramatically cheaper to create, copy, or access. Rather than assuming abundance removes scarcity, the research asks which constraints become decisive next: attention, judgment, verification, expertise, coordination, energy, capital, trust, realization, or something else.
+And a second operating maxim:
+
+> **Seek contribution before novelty. Seek novelty only where contribution requires discovery.**
+
+The programme now begins inwardly. It uses the practitioner's real work as the first testbed: identify what is actually limiting useful action, inherit the best existing knowledge and tools, apply abundant resources such as machine cognition against that constraint, and test whether understanding, judgment, skill or practical capacity increased durably.
 
 Live site: **https://agalmicresearch.org**
 
+## Current applications
+
+The first capability domains are deliberately attached to real needs:
+
+- **Scholarliness and epistemic judgment** — source evaluation, conceptual precision, calibration, synthesis, viva-style defence, authority boundaries and delayed unaided transfer.
+- **Software development** — architecture, code reading, debugging, testing, performance, reliability, security and deeper systems understanding alongside AI-assisted delivery.
+- **Engineering leadership** — technical strategy, prioritization, delegation, coaching, stakeholder alignment, risk leadership and judgment under uncertainty.
+- **Nemosyne** — rapid AI-assisted discovery first, followed by epistemic reconstruction and selective rebuilding of the durable core.
+
+The capability map is intentionally non-scalar. Different capabilities require different evidence and have different legitimate handoff boundaries.
+
+## Discovery, assimilation and ownership
+
+A recurring distinction is:
+
+1. **Discovery** — use AI aggressively to search, prototype, compare and expose adjacent possibilities. Outputs are provisional candidates.
+2. **Assimilation** — reconstruct surviving ideas, inspect lineage and evidence, surface assumptions, test understanding and identify missing expertise.
+3. **Ownership** — make durable decisions and critical internals explainable, testable and maintainable by those accountable for them, with appropriate handoff where necessary.
+
+> **Prototype to discover. Reconstruct to understand. Operate only what can be responsibly defended or appropriately handed off.**
+
+This distinction is especially important for Nemosyne. Getting trapped in implementation detail too early can reduce discovery breadth; accepting machine-generated internals indefinitely can create an understanding gap. The project therefore permits those two concerns to be handled at different times.
+
+## Research as method, not required product
+
+Research remains important because it constrains self-deception:
+
+**question → lineage → explicit claim → method → evidence or argument → criticism → epistemic status → revision or handoff**
+
+But a paper is only one possible result.
+
+Useful outcomes also include:
+
+- stronger personal capability;
+- reuse of an existing theory, tool or curriculum;
+- a working implementation;
+- an open protocol or teaching method;
+- a negative result that closes an unproductive branch;
+- a clearer authority boundary or expert handoff;
+- a contribution back to infrastructure inherited from others;
+- a public research artefact where publication genuinely adds value.
+
+Prior art is infrastructure. Finding that someone has already solved part of the problem is a gain, not a defeat.
+
+## Scholarliness and authority
+
+The programme is interested in increasing the frontier of human scholarliness even as AI capability rises.
+
+That can include subject mastery, conceptual precision, source and lineage judgment, methodological competence, argument analysis, calibration, synthesis, transfer and defensibility.
+
+These are trainable capabilities. **Epistemic authority is not a score awarded by the training system.** It remains claim-sensitive and must not exceed the warrant supplied by evidence, methods, relevant expertise, criticism and appropriate verification or handoff.
+
 ## What this repository contains
 
-This repository is both the source of the public website and part of the research record.
+This repository is both the source of the public website and part of the evolving record. It contains:
 
-It contains:
-
-- research papers, notes, drafts, and literature reviews;
-- the intellectual-lineage and novelty machinery used to constrain claims;
-- provenance and handoff records;
-- the Possibility Portfolio and Active Frontier used to separate preserved possibilities from active commitments;
-- the semantic knowledge index that powers Explore and generated research context;
+- the current Personal Capability Practice;
+- earlier and current research papers, notes, drafts and literature reviews;
+- intellectual-lineage and prior-art records;
+- provenance and epistemic-handoff machinery;
+- the Possibility Portfolio and Active Frontier;
+- the semantic knowledge index used by Explore;
 - the source for agalmicresearch.org;
-- open tools extracted from the research process, including `astro-agalmic`.
+- open tools extracted from the work, including `astro-agalmic`.
 
-The public repository is intentionally inspectable. Corrections, superseded ideas, and changes of framing should remain visible where practical rather than being silently rewritten out of history.
-
-## Research orientation
-
-Agalmic Research studies several connected questions:
-
-- **Economics of epistemic abundance:** when knowledge generation becomes cheaper, which complementary scarcities become binding?
-- **Innovation as search:** how can human-machine systems expand the effective adjacent possible without collapsing into idea overload?
-- **Selection under abundance:** how should scarce attention, expertise, and resources be directed among an expanding set of candidates?
-- **Distributed discovery:** how should framing, generation, recognition, validation, contribution, authority, and realization be represented when discovery crosses people and machines?
-- **Epistemic handoff:** how should work move toward missing expertise without losing provenance or contribution history?
-- **Representation and discovery:** can better representations increase what people are able to notice, understand, test, and act upon?
-
-The programme treats these as research questions, not settled doctrines.
-
-## Manifesto, philosophy, and research
-
-The **Manifesto** states the direction of travel. It argues that abundance is worth pursuing as a research and institutional direction, while explicitly distinguishing orientation from research evidence.
-
-The repository also contains working philosophical material that explores the deeper implications of abundance, stewardship, capability multiplication, openness, selection, and handoff. These documents may remain repository-only while they are being studied and revised.
-
-Research has a different standard. The intended path is:
-
-**idea → question → lineage → explicit claim → method → evidence or argument → criticism → epistemic status**
-
-Prior art is infrastructure. Novelty is a conclusion of search, not a tone of voice.
+Earlier definitions and discarded framings are intentionally preserved where practical. The repository should show how the programme changed rather than presenting its latest wording as if it had always existed.
 
 ## Knowledge architecture
 
-The site is designed to preserve a growing knowledge space without making every preserved object compete for active attention.
+The public site separates:
 
-The main distinction is:
-
-- **Explore** shows the wider knowledge space at several levels of abstraction.
-- **Frontier** shows the small number of directions receiving substantial commitment now.
-- **Handoff** exposes work that has reached the boundary of current authority and needs different expertise.
-- **History, lineage, and provenance** preserve where ideas came from, how they changed, and what supports them.
-
-A semantic registry gives research objects stable identities, relationships, commitment states, canonical URLs, and machine-readable projections. Full-text search complements this model by answering lexical retrieval questions across rendered pages.
-
-The repository deliberately keeps the deeper machinery behind the reader-facing map rather than letting the navigation mirror the implementation history.
+- **Practice** — the current inward capability-building programme;
+- **Explore** — the wider knowledge and research record;
+- **Publications** — durable outward outputs;
+- **Frontier** — possibilities receiving active commitment;
+- **Lineage, provenance and handoff** — the machinery that records inheritance, warrant, contribution history and authority boundaries.
 
 ## Open tools
 
 ### `astro-agalmic`
 
-`packages/astro-agalmic` is a reusable Astro integration extracted from the knowledge-discovery architecture developed for this site.
+`packages/astro-agalmic` is a reusable Astro integration extracted from the site's knowledge-discovery architecture.
 
-It provides:
+It provides semantic registry validation, relationship and canonical-identity checks, build-time full-text search, reusable search/context components, history and handoff conventions, and optional Astro content-collection helpers.
 
-- semantic knowledge-registry validation;
-- relationship and canonical-identity checks;
-- build-time full-text search generation from rendered HTML;
-- reusable `Search.astro` and `KnowledgeContext.astro` components;
-- history and handoff conventions;
-- optional Astro content-collection schema helpers.
-
-The package is licensed under **0BSD**. Use it, fork it, rename it, improve it, or absorb the useful parts into something better. Attribution is not required.
-
-The source package is public and npm-ready. It should not be assumed to be published or reserved on npm until an actual npm release has occurred.
-
-Package source: `packages/astro-agalmic/`
-
-## Agalmic practice
-
-A recurring operating principle is:
-
-> **When we create a generally useful capability to advance our own work, extraction into a reusable public good should be a standard exit path.**
-
-Papers can give away conclusions. Datasets can give away evidence. Tools can give away capability.
-
-Openness is a strong presumption rather than a purity test. Security, privacy, safety, or consciously chosen temporary intellectual-property protection can still justify keeping some material outside the public projection.
+The package is licensed under **0BSD**. Use it, rename it, improve it or absorb the useful parts into something better. Attribution is not required.
 
 ## Nemosyne
 
-[Nemosyne](https://nemosyne.world) is a related applied research and engineering project exploring spatial data navigation, representation intelligence, provenance, and human-machine discovery.
+[Nemosyne](https://nemosyne.world) is a related AI-assisted discovery and engineering project exploring spatial data navigation, representation intelligence, provenance and human-machine discovery.
 
-Within Agalmic Research it acts as a testbed for questions about representation, recognition, and whether tools can enlarge the set of meaningful structures analysts are able to notice and investigate.
+Its present relationship to Agalmic practice is explicitly two-phase:
+
+- use AI capability first to explore the product and representation space without requiring every exploratory implementation to be cognitively assimilated immediately;
+- once promising directions survive, use reconstruction, testing, selective rebuilding and adversarial review to increase the human curator's understanding of the durable internals.
 
 Nemosyne source: https://github.com/TsatsuAmable/nemosyne
 
@@ -112,20 +119,16 @@ Requirements:
 - Node.js 22.12 or newer
 - npm
 
-Install and start the development server:
-
 ```sh
 npm install
 npm run dev
 ```
 
-Run the complete production validation and build:
+Run the production validation and build:
 
 ```sh
 npm run build
 ```
-
-The build currently runs the site-specific knowledge validation, `astro-agalmic` tests, a package tarball smoke check, and the Astro production build. The integration then generates the static full-text search index as part of Astro's build lifecycle.
 
 Preview the generated site:
 
@@ -146,29 +149,15 @@ src/
 packages/
   astro-agalmic/    reusable 0BSD Astro knowledge-discovery integration
 
-docs/               research documents, literature reviews, architecture and working material
+docs/               definitions, research documents, session records and working material
 scripts/             repository-specific validation
 public/              static public assets
 ```
 
-## Publishing and provenance
+## Publishing, provenance and reuse
 
-The website is a canonical public index, not the only possible publication surface. Research objects may also be projected into working papers, journal articles, essays, datasets, software, talks, archives, or peer-review submissions.
+The website is a canonical public index, not the only publication surface. Outputs may also become papers, essays, datasets, software, talks, archives, curricula or upstream contributions to other projects.
 
-Where mature standards already solve a problem, the project prefers to reuse them. Provenance work is standards-first, including W3C PROV, CRediT, and RO-Crate where appropriate, with local extensions only where the research process needs concepts those standards do not directly represent.
-
-Stable releases can later be archived with persistent identifiers while the living source and revision history remain inspectable here.
-
-## Contributing
-
-Useful contributions include criticism, prior art, corrections, replication, implementation improvements, specialist review, and completion of open epistemic handoffs.
-
-A contribution does not need to agree with the programme's current framing to be valuable. Strong counterexamples and evidence that narrow or retire a claim are successful research outcomes.
-
-If you find a problem in the site or `astro-agalmic`, open an issue or pull request. If you have relevant expertise for an open handoff, the public Handoff register on the site identifies the requested contribution and completion condition.
-
-## Licence and reuse
-
-Individual research artefacts may carry their own publication or archive terms as the programme develops. The `astro-agalmic` software package is explicitly licensed under **0BSD**.
+Where mature standards already solve a problem, the project prefers to reuse them. Provenance work is standards-first, including W3C PROV, CRediT and RO-Crate where appropriate.
 
 The broader preference is simple: preserve credit and provenance, avoid unnecessary enclosure, and make useful capabilities easier for the next person to possess.

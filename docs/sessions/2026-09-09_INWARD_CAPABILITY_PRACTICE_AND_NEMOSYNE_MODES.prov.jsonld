@@ -1,0 +1,72 @@
+{
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "credit": "https://credit.niso.org/contributor-roles/",
+    "ar": "https://agalmicresearch.org/ns/"
+  },
+  "@graph": [
+    {
+      "@id": "ar:activity/session-2026-09-09-inward-capability-practice",
+      "@type": "prov:Activity",
+      "schema:name": "Inward capability practice and Nemosyne modes session",
+      "prov:startedAtTime": "2026-09-09",
+      "prov:used": [
+        { "@id": "ar:entity/personal-epistemic-gym" },
+        { "@id": "ar:entity/agalmic-definition-v0.2" },
+        { "@id": "ar:entity/nemosyne-project" }
+      ],
+      "prov:wasAssociatedWith": [
+        { "@id": "ar:agent/human-curator" },
+        { "@id": "ar:agent/ai-collaborator" }
+      ],
+      "prov:generated": [
+        { "@id": "ar:entity/agalmic-definition-v0.3" },
+        { "@id": "ar:entity/personal-capability-practice" },
+        { "@id": "ar:entity/nemosyne-discovery-reconstruction-method" },
+        { "@id": "ar:entity/software-engineering-leadership-capability-track" }
+      ]
+    },
+    {
+      "@id": "ar:agent/human-curator",
+      "@type": "prov:Person",
+      "schema:description": "Human curator who identified the need to redirect Agalmic Research inwardly, named professional software development and engineering leadership as growth needs, and clarified the discovery-first objective for Nemosyne.",
+      "ar:contributionRole": ["initiator", "conceptualization", "decision-maker"]
+    },
+    {
+      "@id": "ar:agent/ai-collaborator",
+      "@type": "prov:SoftwareAgent",
+      "schema:description": "AI collaborator that synthesized the capability-practice model, separated discovery/assimilation/ownership modes, and implemented the programme/site update under the human curator's direction.",
+      "ar:contributionRole": ["conceptual-synthesis", "documentation", "implementation"]
+    },
+    {
+      "@id": "ar:entity/agalmic-definition-v0.3",
+      "@type": ["prov:Entity", "schema:DigitalDocument"],
+      "schema:name": "Canonical Definition of Agalmic Research v0.3",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/session-2026-09-09-inward-capability-practice" },
+      "prov:wasRevisionOf": { "@id": "ar:entity/agalmic-definition-v0.2" },
+      "schema:description": "Reorients the programme from field-building and worthwhile-futures framing toward inward capability practice, inheritance, contribution-before-novelty and research as method rather than required product."
+    },
+    {
+      "@id": "ar:entity/personal-capability-practice",
+      "@type": ["prov:Entity", "schema:CreativeWork"],
+      "schema:name": "Personal Capability Practice",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/session-2026-09-09-inward-capability-practice" },
+      "schema:description": "Capability-building practice applied first to scholarliness, software engineering, engineering leadership and Nemosyne, with non-scalar capability evidence and transfer testing."
+    },
+    {
+      "@id": "ar:entity/nemosyne-discovery-reconstruction-method",
+      "@type": ["prov:Entity", "schema:CreativeWork"],
+      "schema:name": "Nemosyne discovery-first / epistemic-reconstruction operating method",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/session-2026-09-09-inward-capability-practice" },
+      "schema:description": "Project decision permitting AI-assisted exploratory implementations to outrun immediate human understanding during discovery while requiring later reconstruction, testing, selective rebuilding or handoff before durable ownership."
+    },
+    {
+      "@id": "ar:entity/software-engineering-leadership-capability-track",
+      "@type": ["prov:Entity", "schema:CreativeWork"],
+      "schema:name": "Software engineering and engineering leadership capability track",
+      "prov:wasGeneratedBy": { "@id": "ar:activity/session-2026-09-09-inward-capability-practice" },
+      "schema:description": "Uses live professional engineering and leadership work as the real-world capability-formation testbed."
+    }
+  ]
+}
