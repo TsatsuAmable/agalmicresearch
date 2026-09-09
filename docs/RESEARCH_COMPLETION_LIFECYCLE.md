@@ -1,6 +1,6 @@
 # Agalmic Research Completion Lifecycle
 
-Version: 0.1  
+Version: 0.2  
 Status: default operating rule  
 Date: 9 September 2026
 
@@ -8,9 +8,9 @@ Date: 9 September 2026
 
 Agalmic Research should not accumulate a large queue of attractive paper ideas that have never been subjected to lineage, evidence or execution. When a conversation produces a serious candidate paper, or asks whether an idea is worth researching, the default response is to begin the research process immediately.
 
-The lifecycle is designed for **one human curator + cognitive-machine collaborators**. It uses machine cognition and inherited evidence aggressively while preserving explicit human authority boundaries.
+The lifecycle is designed for **one human curator + cognitive-machine collaborators**. It uses machine cognition and inherited evidence aggressively while preserving explicit human authority boundaries. It also recruits independent cognitive reviewers throughout development so abundant machine cognition is spent on criticism as well as production.
 
-> **Do not queue a research idea merely because it sounds promising. Test it, narrow it, execute it, publish the defensible result, or retire it.**
+> **Do not queue a research idea merely because it sounds promising. Test it, narrow it, execute it, attack it, publish the defensible result, or retire it.**
 
 ## Trigger
 
@@ -64,6 +64,16 @@ Possible novelty classifications include:
 - novelty unresolved.
 
 Finding decisive prior art is a successful result.
+
+### Cognitive review checkpoint A — novelty and construct attack
+
+Before substantial analysis cost accumulates, recruit independent cognitive reviewers with distinct mandates. At minimum use:
+
+- a prior-art hunter instructed to find work that makes the paper unnecessary;
+- a theory/construct critic instructed to find renaming, circularity or invalid operationalization;
+- an adversarial domain referee instructed to identify the strongest rejection case.
+
+Capture these reviews independently before synthesis. Do not vote. One well-supported fatal objection can kill or radically narrow the study.
 
 ## Stage 3 — Adversarial null test
 
@@ -136,6 +146,17 @@ Before substantive analysis, record:
 
 Exploratory analyses are allowed, but they must be labelled exploratory rather than back-filled as confirmatory hypotheses.
 
+### Cognitive review checkpoint B — design red team
+
+Before looking at substantive outcomes, recruit independent reviewers such as:
+
+- methods/statistics reviewer;
+- data auditor;
+- causal skeptic / alternative-explanation reviewer;
+- baseline-and-simplicity critic.
+
+Their job is to break the design while repair is still cheap. Freeze the resulting issue ledger and dispositions before the main analysis.
+
 ## Stage 6 — Acquire and audit inherited evidence
 
 Before modelling:
@@ -169,6 +190,17 @@ At minimum report:
 
 Do not hide the analysis path that makes the preferred interpretation weaker.
 
+### Cognitive review checkpoint C — result attack
+
+After a first complete analysis but before the narrative is fixed, recruit independent reviewers such as:
+
+- methods/statistics reviewer;
+- baseline-and-simplicity critic;
+- causal skeptic;
+- reproducibility/computational reviewer.
+
+Where feasible, have the reproducibility reviewer regenerate key results from a clean environment or independent implementation. Require reviewers to state what evidence would make them withdraw each criticism.
+
 ## Stage 8 — Adversarial result review
 
 Before writing the paper as a success story, attack the result again.
@@ -186,7 +218,50 @@ Ask:
 
 The final claim should follow the evidence, even when that means changing the paper’s title or retiring the original thesis.
 
-## Stage 9 — Cost and scarcity account
+## Stage 9 — Draft the terminal research object
+
+Write the paper, preprint, research note, replication report, benchmark note, null result or retirement record that the evidence actually supports.
+
+The draft must distinguish:
+
+- findings from interpretation;
+- confirmatory from exploratory analyses;
+- evidence from proxy assumptions;
+- machine contribution from epistemic authority;
+- limitations that bound the result from defects that invalidate it.
+
+## Stage 10 — Mandatory complete-paper cognitive swarm review
+
+Every paper or preprint receives an adversarial review of the **finished manuscript** before publication.
+
+Recruit a broad independent swarm. For a substantive paper, normally include at least:
+
+- refreshed prior-art hunter;
+- methods/statistics reviewer;
+- theory/construct critic where relevant;
+- adversarial domain referee;
+- claim-to-evidence reviewer;
+- reproducibility reviewer;
+- hostile final referee instructed to find a publish-blocking flaw.
+
+Reviewers should not see one another's outputs until independent reviews are captured. Where practical, vary model families, prompt framing, source subsets and analytic routes to reduce correlated errors.
+
+Every reviewer returns a structured verdict: `no-blocker`, `minor`, `major`, or `fatal`, together with evidence, affected claim/analysis, a discriminating test or repair, confidence, and conditions under which the reviewer would withdraw the objection.
+
+Do **not** majority-vote. A single well-supported fatal issue must receive an explicit disposition:
+
+- fix and rerun;
+- run a discriminating test;
+- narrow the claim;
+- add a limitation when the issue does not destroy the inference;
+- obtain human domain authority;
+- or retire the paper.
+
+A paper is not `publishable` while an unresolved fatal issue remains.
+
+The detailed orchestration protocol is defined in `docs/COGNITIVE_REVIEW_SWARM_PROTOCOL.md`.
+
+## Stage 11 — Cost and scarcity account
 
 Each completed investigation should report its research cost where measurable.
 
@@ -194,6 +269,7 @@ Track separately:
 
 - human-curator time;
 - machine/API/compute cost;
+- cognitive-review swarm cost or usage band;
 - paid data or software cost;
 - storage/infrastructure cost;
 - external expert or collaborator time;
@@ -207,9 +283,12 @@ Also record:
 - which initial scarcity was displaced;
 - what abundant resource displaced it;
 - what bottleneck appeared next;
-- the irreducible residual human role.
+- the irreducible residual human role;
+- whether additional machine reviewers were still finding new material defects near the end of the process.
 
-## Stage 10 — Terminal publication decision
+This last quantity is a practical saturation signal: parallel cognitive review should expand while marginal defect discovery remains useful, then stop when extra reviewers mostly repeat already-known concerns.
+
+## Stage 12 — Terminal publication decision
 
 Every serious investigation should terminate in a durable research-corpus object rather than disappearing into chat history.
 
@@ -255,9 +334,15 @@ Every screened research candidate that reaches substantive prior-art or empirica
 - source data / evidence;
 - result or current finding;
 - cost status;
+- scarcity transition;
+- cognitive-review checkpoints completed;
+- reviewer roles / independent runs;
+- fatal and major issues discovered and their dispositions;
+- reproduction status;
+- final prepublication review status;
 - disposition;
 - next action if non-terminal;
-- links to paper, note, protocol, code, data, provenance or retirement record.
+- links to paper, note, protocol, code, data, provenance, review summary or retirement record.
 
 The public corpus should make negative and narrowed work visible alongside successful papers.
 
@@ -265,6 +350,6 @@ The public corpus should make negative and narrowed work visible alongside succe
 
 For Agalmic Research discussions, the default machine-collaborator behaviour is therefore:
 
-> **When a paper idea or potentially research-worthy claim appears, begin the lifecycle automatically: search prior art, run the adversarial null test, refine the contribution, find the strongest credible 1 + machine design, identify and audit source data, conduct feasible analysis, account for cost and scarcity displacement, and produce the appropriate publication or retirement object. Do not ask for another `proceed` merely to advance between these ordinary stages.**
+> **When a paper idea or potentially research-worthy claim appears, begin the lifecycle automatically: search prior art, recruit independent cognitive critics, run the adversarial null test, refine the contribution, find the strongest credible 1 + machine design, red-team that design, identify and audit source data, conduct feasible analysis, independently attack and reproduce the result, draft the terminal research object, run a mandatory complete-paper adversarial swarm, account for cost and scarcity displacement, and publish or retire the appropriate object. Do not ask for another `proceed` merely to advance between these ordinary stages.**
 
 Pause only for a genuinely irreducible decision, permission boundary, safety issue, unavailable external resource, or human judgment whose substitution would change the meaning of the research.
