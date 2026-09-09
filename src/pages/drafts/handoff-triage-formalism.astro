@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Expert-Attention Handoff Triage"
+  description="Exploratory formalism and test for allocating scarce expert review to machine-assisted candidate knowledge without allowing triage to manufacture epistemic authority."
+>
+  <header class="page-head paper-head">
+    <div class="shell">
+      <p class="eyebrow">Research product · v0.1 · 9 September 2026</p>
+      <h1>Expert-Attention Handoff Triage</h1>
+      <p class="lede">A prior-art-grounded formalism for deciding which candidate knowledge should consume scarce expert review.</p>
+      <div class="paper-meta" aria-label="Draft status">
+        <span>Exploratory</span>
+        <span>Prior art reviewed</span>
+        <span>Test specification</span>
+        <span>Not validated</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Novelty boundary</p>
+      <blockquote>Triage is old. The research question is whether claim-sensitive triage can buy more useful epistemic change from each scarce unit of expert attention without hiding valuable misses.</blockquote>
+      <p>AI-assisted idea screening, editorial triage, selective prediction, learning to defer, active learning and value-of-information already cover much of the generic mechanism. The prospective contribution is therefore deliberately narrower.</p>
+      <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/PRIOR_ART_HANDOFF_TRIAGE_FORMALISM.md">Read the prior-art review ↗</a></p>
+    </div>
+  </section>
+
+  <article class="paper-body">
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">1 · Problem</p>
+        <h2>Candidate production can outrun authoritative evaluation.</h2>
+        <p>Machine cognition can help people produce sophisticated candidate claims outside their own defensible authority. That does not make the candidates worthless, but it does create a routing problem. Domain experts may be the actors able to supply missing warrant, while expert attention remains scarce.</p>
+        <p>The handoff system therefore needs a pre-filter. Its job is not to declare which ideas are true or important. Its job is to decide which epistemic action should happen next and where scarce expert review is most likely to be useful.</p>
+        <div class="callout"><p><strong>Triage may route authority. It must not manufacture authority.</strong></p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">2 · Closest prior art</p>
+        <h2>The pieces already exist.</h2>
+        <p><strong>Idea screening.</strong> Bell, Kavadias and Sommer show that machine learning can screen crowdsourced ideas when expert attention is limited, especially by eliminating candidates experts also consider poor.</p>
+        <p><strong>Specialist idea evaluation.</strong> Gimpel and colleagues explicitly describe expert juries as scarce and expensive and test crowds and LLMs as substitutes or preselectors.</p>
+        <p><strong>Selective prediction and learning to defer.</strong> These literatures formalize abstention, risk/coverage trade-offs and routing uncertain cases to humans.</p>
+        <p><strong>Active learning.</strong> Budgeted query selection already asks where expensive human labels or expert judgments are most worth buying.</p>
+        <p><strong>Editorial triage.</strong> Journals and conferences already protect reviewer capacity with desk screening, and AI-assisted peer-review research increasingly studies automated triage.</p>
+        <p><strong>Value of information.</strong> Decision theory already provides a normative language for asking whether further information is worth its acquisition cost.</p>
+        <div class="callout"><p><strong>The project should claim none of these mechanisms as new.</strong></p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">3 · Candidate state</p>
+        <h2>Route a claim state, not a prestige score.</h2>
+        <p>Each candidate should carry a minimal handoff state:</p>
+        <ul>
+          <li>the claim or research-object identifier;</li>
+          <li>current epistemic status;</li>
+          <li>origin and contribution provenance;</li>
+          <li>lineage-search state;</li>
+          <li>evidence already supplied;</li>
+          <li>the explicit authority deficit;</li>
+          <li>the epistemic function requested next;</li>
+          <li>uncertainty and known failure modes;</li>
+          <li>the recipient expertise class, if known.</li>
+        </ul>
+        <p>Originator identity may be retained for provenance while hidden from the triage decision where possible. Institutional prestige should not silently become a proxy for epistemic value.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">4 · Routing policy</p>
+        <h2>The output is a next action.</h2>
+        <p>For a candidate <code>c</code>, the routing policy should choose among actions such as:</p>
+        <ul>
+          <li><strong>escalate</strong> to a named expert or expertise class;</li>
+          <li><strong>request clarification</strong> or a more testable claim;</li>
+          <li><strong>run a cheaper check</strong>, such as lineage search, computation or formal verification;</li>
+          <li><strong>defer</strong> until prerequisite evidence exists;</li>
+          <li><strong>park</strong> while preserving the candidate and auditability.</li>
+        </ul>
+        <p>The system does not have an action named <em>validated</em>. Only evidence, successful formal checks, replication or suitably authoritative review may change the claim into a stronger epistemic state.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">5 · Objective</p>
+        <h2>Optimize expert attention against epistemic state change.</h2>
+        <div class="thesis paper-thesis">
+          <p class="eyebrow">First formal target</p>
+          <blockquote>Maximize useful epistemic state change per unit of expert attention, subject to explicit constraints on false negatives, calibration, auditability, status bias and authority preservation.</blockquote>
+        </div>
+        <p>This is intentionally not a scalar claim that an algorithm can measure “idea quality.” The first experiments should use a dashboard of constrained quantities rather than compress everything into one score.</p>
+        <div class="status-grid">
+          <div><strong>Expert-review yield</strong><span>Decisive claim-state transitions per expert-hour.</span></div>
+          <div><strong>High-value recall</strong><span>Fraction of adjudicated high-value candidates that survive triage.</span></div>
+          <div><strong>False-negative rate</strong><span>Estimated from randomized audits of screened-out candidates.</span></div>
+          <div><strong>Attention saved</strong><span>Expert minutes avoided at equivalent or acceptably bounded recall.</span></div>
+          <div><strong>Routing accuracy</strong><span>Whether the candidate reaches the expertise actually needed.</span></div>
+          <div><strong>Calibration</strong><span>Whether escalation probabilities correspond to observed review yield.</span></div>
+          <div><strong>Status sensitivity</strong><span>Change in routing when originator credentials are varied or hidden.</span></div>
+          <div><strong>Presentation sensitivity</strong><span>Change in routing under semantically equivalent rewrites.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">6 · Mandatory reject audit</p>
+        <h2>A filter that never inspects its rejects cannot know what it destroys.</h2>
+        <p>Every experimental triage policy should randomly escalate a sample of candidates it would otherwise reject or park. Those audited rejects receive ordinary expert adjudication.</p>
+        <p>This provides an empirical estimate of the false-negative region and creates a continuous route for surprising candidates to re-enter the system. The audit rate can later become adaptive, but it should not disappear.</p>
+        <div class="callout"><p><strong>“We saved expert time” is not a result unless the missed-candidate cost is also measured.</strong></p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">7 · Test design</p>
+        <h2>Compare the mechanism against simpler baselines.</h2>
+        <p>Use the same blinded candidate corpus across at least four routing arms:</p>
+        <ol>
+          <li><strong>Direct expert review:</strong> no pre-filter.</li>
+          <li><strong>Rule-based triage:</strong> claim clarity, evidence and lineage-completeness checks only.</li>
+          <li><strong>Model triage:</strong> model-assisted ranking or escalation.</li>
+          <li><strong>Claim-sensitive handoff triage:</strong> model/rule assistance plus explicit authority deficit, provenance, uncertainty and mandatory reject auditing.</li>
+        </ol>
+        <p>On a benchmark subset, use multiple independent experts and adjudication rather than treating one reviewer as truth. Randomize or blind originator credentials. Include semantically equivalent rewrites to test robustness against presentation gaming.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">8 · Success and retirement</p>
+        <h2>The special mechanism has to earn its complexity.</h2>
+        <p>Continue development only if the claim-sensitive protocol reproducibly improves a constrained outcome such as equal or better high-value recall at materially lower expert time, or more decisive epistemic state transitions per expert-hour without unacceptable false-negative inflation.</p>
+        <p>It should also avoid a large credential effect and remain reasonably stable under superficial rewriting.</p>
+        <div class="callout"><p><strong>If ordinary editorial triage, a simple ranking model or a cheap rule set performs equivalently, adopt the simpler method and retire the special terminology.</strong></p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">9 · Product boundary</p>
+        <h2>Build the test before the marketplace.</h2>
+        <p>The first product is not a global expert-routing platform. It is a reproducible protocol, benchmark and small experimental harness that can answer whether structured triage is worth using at all.</p>
+        <p>A later tool might accept candidate objects, run cheap checks, produce a routing recommendation, preserve an audit trail and package the handoff for an expert. A market, reputation system or global expertise directory should wait until the basic allocation mechanism survives empirical testing.</p>
+      </div>
+    </section>
+  </article>
+</Layout>
