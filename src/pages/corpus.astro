@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import corpus from '../data/researchCorpus.json';
+
+const terminal = corpus.records.filter((record) => record.terminal);
+const active = corpus.records.filter((record) => !record.terminal);
+---
+<Layout
+  title="Research Corpus"
+  description="The Agalmic Research corpus: screened investigations carried through prior art, adversarial review, feasible design, analysis, publication, narrowing or retirement."
+>
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Research corpus · completed and executing inquiry</p>
+      <h1>Ideas should leave evidence, not just a queue.</h1>
+      <p class="lede">This registry records research candidates that have received substantive prior-art, adversarial or empirical work. The terminal product may be a paper, research note, benchmark, replication, negative result or retirement record.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Corpus rule</p>
+      <blockquote>Test it, narrow it, execute it, publish the defensible result, or retire it.</blockquote>
+      <p>The corpus is not a publication-count scoreboard. It exists so machine-assisted abundance does not create a warehouse of half-researched claims. Negative and narrowed results belong here beside successful papers.</p>
+      <p><a href="/method/">Read the 1 + Machine Method and completion lifecycle →</a></p>
+    </div>
+  </section>
+
+  {active.length > 0 && (
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <span class="section-number">Executing</span>
+          <div class="section-copy">
+            <h2>Research with a concrete next action.</h2>
+            <p>Non-terminal work remains here only when its next executable step and stopping condition are explicit.</p>
+          </div>
+        </div>
+        <div class="index-list">
+          {active.map((record) => (
+            <article class="index-item">
+              <span class="index-meta">{record.id}</span>
+              <div>
+                <h3>{record.title}</h3>
+                <p><strong>Question:</strong> {record.question}</p>
+                <p><strong>Prior-art result:</strong> {record.prior_art_outcome}</p>
+                <p><strong>Current finding:</strong> {record.result_summary}</p>
+                <p><strong>Next:</strong> {record.next_action}</p>
+                <p class="muted"><strong>Current scarcity:</strong> {record.scarcity_transition.next_scarcity}</p>
+                <div class="actions">
+                  {record.links.slice(0, 2).map((href, index) => (
+                    <a class="button secondary" href={href}>{index === 0 ? 'Research object' : 'Protocol / source'}{href.startsWith('http') ? ' ↗' : ''}</a>
+                  ))}
+                </div>
+              </div>
+              <span class="index-status">{record.status}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Terminal record</span>
+        <div class="section-copy">
+          <h2>Inquiry that changed the claim.</h2>
+          <p>Terminal does not mean “proved true.” It means the present research episode reached a durable disposition rather than remaining an unattended idea.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {terminal.map((record) => (
+          <article class="index-item">
+            <span class="index-meta">{record.id}</span>
+            <div>
+              <h3>{record.title}</h3>
+              <p><strong>Question:</strong> {record.question}</p>
+              <p><strong>Prior-art result:</strong> {record.prior_art_outcome}</p>
+              <p><strong>Adversarial result:</strong> {record.adversarial_outcome}</p>
+              <p><strong>Disposition:</strong> {record.disposition}</p>
+              <p><strong>Research cost:</strong> {record.cost.cost_status}</p>
+              <div class="actions">
+                {record.links.slice(0, 2).map((href, index) => (
+                  <a class="button secondary" href={href}>{index === 0 ? 'Result' : 'Evidence / record'}{href.startsWith('http') ? ' ↗' : ''}</a>
+                ))}
+              </div>
+            </div>
+            <span class="index-status">{record.status}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Cost & scarcity</p>
+        <h2>Research should expose what it consumed.</h2>
+      </div>
+      <div class="prose">
+        <p>New investigations should prospectively record curator time, machine/compute cost, paid data/software, external expert time and important unpriced constraints where practical.</p>
+        <p>Each record also states which scarcity the work attempted to displace, which inherited abundance was used, and which bottleneck appeared next. Historical records may honestly say that costs were not measured rather than invent retrospective precision.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Machine-readable registry</p>
+        <h2>The corpus is data as well as navigation.</h2>
+      </div>
+      <div class="prose">
+        <p>The structured registry can be reused by future agents, dashboards and Memory Palace views to identify what has been tested, what survived and what remains blocked.</p>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/src/data/researchCorpus.json">Research corpus JSON ↗</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>

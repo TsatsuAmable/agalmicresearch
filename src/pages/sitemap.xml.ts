@@ -6,8 +6,10 @@ export const prerender = true;
 const site = 'https://agalmicresearch.org';
 const staticRoutes = [
   '/', '/explore/', '/search/', '/publications/', '/frontier/', '/handoff/', '/results/', '/about/',
-  '/research/', '/method/', '/notes/', '/drafts/', '/drafts/handoff-triage-formalism/', '/lineage/', '/provenance/', '/principles/',
-  '/manifesto/', '/memory-palace-protocol/', '/history/', '/tools/astro-agalmic/'
+  '/research/', '/method/', '/ai/', '/corpus/', '/notes/', '/drafts/', '/drafts/handoff-triage-formalism/', '/lineage/', '/provenance/', '/principles/',
+  '/manifesto/', '/memory-palace-protocol/', '/history/', '/tools/astro-agalmic/',
+  '/llms.txt', '/llms-full.txt', '/ai/research-operating-pack.md', '/ai/research-completion-agent-prompt.md',
+  '/ai/cognitive-review-swarm.md', '/ai/scarcity-displacement-agent-prompt.md', '/ai/external-reviewer-policy.md', '/ai/protocol-index.json'
 ];
 const escapeXml = (value: string) => value.replace(/[<>&'\"]/g, (char) => ({
   '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;'

@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="AI Research Operating Pack"
+  description="Machine-facing entry points for loading the Agalmic Research completion lifecycle, scarcity-displacement method, cognitive review swarm and external reviewer policy."
+>
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Machine-facing research context</p>
+      <h1>Load the method, not a memory of the method.</h1>
+      <p class="lede">Agalmic Research publishes its active research protocols as stable, low-noise resources that can be loaded into an LLM or agent before it starts work.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Shortest instruction</p>
+      <blockquote>Go to agalmicresearch.org/llms.txt, load the Agalmic Research Operating Pack, and use the current research completion lifecycle for this task.</blockquote>
+      <p>The deployed website is the current protocol source unless the human curator explicitly overrides it in the active conversation.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Entry points</span>
+        <div class="section-copy">
+          <h2>Choose the smallest context that can do the job.</h2>
+          <p>The compact index is suitable for discovery. The full bundle is intended for agents with large context windows.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <span class="card-kicker">01</span>
+          <h3>llms.txt</h3>
+          <p>Compact machine-facing index with loading instructions and links to the current protocols.</p>
+          <p><a href="/llms.txt">Open /llms.txt →</a></p>
+        </article>
+        <article class="card">
+          <span class="card-kicker">02</span>
+          <h3>Operating Pack</h3>
+          <p>The default one-human-curator + cognitive-machine research context. Load this for ordinary Agalmic research work.</p>
+          <p><a href="/ai/research-operating-pack.md">Open operating pack →</a></p>
+        </article>
+        <article class="card">
+          <span class="card-kicker">03</span>
+          <h3>Full context</h3>
+          <p>Combined operating pack, research completion prompt, review swarm, scarcity-displacement prompt and external reviewer policy.</p>
+          <p><a href="/llms-full.txt">Open /llms-full.txt →</a></p>
+        </article>
+        <article class="card">
+          <span class="card-kicker">04</span>
+          <h3>Protocol manifest</h3>
+          <p>JSON index for agents and orchestration software that need explicit identifiers, purposes and URLs.</p>
+          <p><a href="/ai/protocol-index.json">Open protocol index →</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Core modes</p>
+        <h2>Load stage-specific protocols when they become relevant.</h2>
+      </div>
+      <div class="prose">
+        <p><strong>Research completion:</strong> prior art, adversarial null test, credible 1 + machine design, evidence audit, analysis, review, cost accounting, publication or retirement. <a href="/ai/research-completion-agent-prompt.md">Load prompt →</a></p>
+        <p><strong>Cognitive review swarm:</strong> independent role-diverse review at several checkpoints, including a mandatory finished-paper adversarial panel. <a href="/ai/cognitive-review-swarm.md">Load protocol →</a></p>
+        <p><strong>Scarcity displacement:</strong> identify the binding human/material scarcity, search inherited abundance, test the intervention and identify the next bottleneck. <a href="/ai/scarcity-displacement-agent-prompt.md">Load prompt →</a></p>
+        <p><strong>External cognitive reviewers:</strong> recruit model-family diversity while controlling correlated failure, confidentiality, provider data use and free-tier drift. <a href="/ai/external-reviewer-policy.md">Load policy →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Cross-model review</p>
+        <h2>Parallel cognition is useful only when the errors are not all the same.</h2>
+      </div>
+      <div class="prose">
+        <p>For substantive work, the review process seeks diversity across model families, providers, reviewer roles, context packets, source subsets, analytical methods and reproduction implementations.</p>
+        <p>A swarm does not vote a claim into truth. One well-supported fatal objection can block publication even when every other reviewer approves.</p>
+        <div class="callout"><p><strong>Before unpublished or sensitive material is sent to an external free-tier provider, apply the data-governance gate in the external reviewer policy.</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Authority boundary</p>
+      <blockquote>Machine abundance can make criticism cheap. It cannot manufacture epistemic authority.</blockquote>
+      <p>The human curator remains responsible for deciding which claims Agalmic Research will stand behind, when a genuine domain expert is required, and whether publication is warranted.</p>
+    </div>
+  </section>
+</Layout>

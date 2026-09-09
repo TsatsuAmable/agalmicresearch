@@ -1,0 +1,121 @@
+{
+  "schema_version": "0.1",
+  "updated": "2026-09-09",
+  "purpose": "Track Agalmic Research investigations from prior-art screening through analysis to publication, narrowing, handoff or retirement so serious research does not disappear into an idle queue.",
+  "status_vocabulary": [
+    "screening",
+    "designing",
+    "executing",
+    "blocked-external",
+    "publishable",
+    "published",
+    "narrowed",
+    "null-result",
+    "retired",
+    "handed-off"
+  ],
+  "records": [
+    {
+      "id": "AR-2026-001",
+      "title": "Epistemic Handoff: prior-art boundary and narrowed protocol",
+      "question": "Is epistemic handoff a distinct institution, and if not, what narrower contribution survives established knowledge-transfer and expert-routing literatures?",
+      "status": "narrowed",
+      "terminal": true,
+      "prior_art_outcome": "Generic knowledge handoff, brokerage, absorptive capacity, innovation intermediation and expertise routing are established antecedents.",
+      "adversarial_outcome": "The broad novelty claim failed. A narrower claim-sensitive, provenance-preserving protocol may remain useful if it explicitly represents the authority deficit and requested epistemic function.",
+      "design": "Deep prior-art review and adversarial novelty narrowing.",
+      "source_data": [
+        "Published literature on absorptive capacity, knowledge transfer, knowledge brokerage, innovation intermediaries, transactive memory and expert evaluation"
+      ],
+      "result_summary": "Generic epistemic handoff is not claimed as novel. The surviving research object is a narrower operational protocol and its empirical test.",
+      "cost": {
+        "human_curator_time": "not retrospectively measured",
+        "machine_compute_or_api": "not retrospectively measured",
+        "paid_data_or_software": "none identified",
+        "external_expert_time": "none",
+        "cost_status": "legacy costs incomplete"
+      },
+      "scarcity_transition": {
+        "initial_scarcity": "domain breadth and prior-art coverage",
+        "abundance_used": "machine-assisted literature search and open scholarly sources",
+        "next_scarcity": "empirical validation of the narrowed mechanism",
+        "residual_human_role": "interpret contribution boundaries and accept responsibility for claims"
+      },
+      "disposition": "research note + narrowed draft; broad novelty retired",
+      "next_action": null,
+      "links": [
+        "/drafts/epistemic-handoff/",
+        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/LITERATURE_REVIEW_EPISTEMIC_HANDOFF.md"
+      ]
+    },
+    {
+      "id": "AR-2026-002",
+      "title": "Economics of epistemic abundance: formal-boundary null test",
+      "question": "Does the proposed economics of epistemic abundance currently require a distinct Agalmic economic primitive beyond established complementarity, bottleneck, production and innovation theory?",
+      "status": "null-result",
+      "terminal": true,
+      "prior_art_outcome": "Mature economic antecedents already explain the generic movement of binding constraints when one input becomes cheaper.",
+      "adversarial_outcome": "The proposed distinct law/primitive did not survive the formal-boundary null test in its current form.",
+      "design": "Formal and conceptual null test against established economic explanations.",
+      "source_data": [
+        "Production economics, complementarity, bottleneck, innovation, production-network and rebound-effect literatures"
+      ],
+      "result_summary": "No distinct economic primitive is presently claimed. A narrower empirical programme remains: measure how constraints, shadow values and rents move after large capability-cost shocks.",
+      "cost": {
+        "human_curator_time": "not retrospectively measured",
+        "machine_compute_or_api": "not retrospectively measured",
+        "paid_data_or_software": "none identified",
+        "external_expert_time": "none",
+        "cost_status": "legacy costs incomplete"
+      },
+      "scarcity_transition": {
+        "initial_scarcity": "formal economic expertise and prior-art comparison",
+        "abundance_used": "machine-assisted formal comparison and literature synthesis",
+        "next_scarcity": "credible empirical identification across real scarcity-transition cases",
+        "residual_human_role": "judge economic interpretation and limits of the null test"
+      },
+      "disposition": "null result; empirical measurement question preserved as an option",
+      "next_action": null,
+      "links": [
+        "/results/",
+        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/sessions/2026-09-08_AGALMIC_FORMAL_BOUNDARY_NULL_TEST.md"
+      ]
+    },
+    {
+      "id": "AR-2026-003",
+      "title": "Expert-Attention Handoff Triage: retrospective scarcity benchmark",
+      "question": "Can pre-expert triage increase useful evaluation yield under constrained review capacity without unacceptable false negatives, status bias or presentation sensitivity?",
+      "status": "executing",
+      "terminal": false,
+      "prior_art_outcome": "Generic pre-filtering, AI idea screening, editorial triage, selective prediction, learning to defer, active learning and value-of-information are established. The possible contribution is a claim-sensitive allocation benchmark and test.",
+      "adversarial_outcome": "The special mechanism should be retired if simple rules or conventional model triage achieve equivalent recall/yield at lower complexity.",
+      "design": "Retrospective computational experiment over historical peer-review data with simulated review budgets, blinded pre-review features, multiple imperfect outcomes and reject auditing.",
+      "source_data": [
+        "PeerRead feasibility corpus",
+        "Public OpenReview records for replication where visibility permits",
+        "OpenAlex downstream scholarly metadata only if justified after feasibility"
+      ],
+      "result_summary": "Phase 0 has begun. PeerRead contains usable pre-review text, decisions and reviewer fields, but duplicate review entries have already been observed and must be audited before modelling.",
+      "cost": {
+        "human_curator_time": "measure prospectively from Phase 0 onward",
+        "machine_compute_or_api": "measure prospectively",
+        "paid_data_or_software": "planned open-data first; no paid source currently required",
+        "external_expert_time": "zero in retrospective phase; prospective experts only if residual validation becomes high-value",
+        "cost_status": "prospective cost capture required"
+      },
+      "scarcity_transition": {
+        "initial_scarcity": "scarce expert evaluation",
+        "abundance_used": "historical expert judgments, open peer-review data and machine computation",
+        "next_scarcity": "data quality and validity of retrospective proxies",
+        "residual_human_role": "define valid constructs, inspect failure modes and decide whether prospective expert validation is warranted"
+      },
+      "disposition": "continue only if retrospective evidence shows a credible delta over simpler baselines",
+      "next_action": "Complete and freeze the PeerRead feasibility audit, data dictionary and leakage-safe analysis corpus before fitting any triage model.",
+      "links": [
+        "/drafts/handoff-triage-formalism/",
+        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/HANDOFF_RETROSPECTIVE_STUDY_PROTOCOL.md",
+        "https://github.com/TsatsuAmable/agalmicresearch/tree/main/studies/handoff-retrospective"
+      ]
+    }
+  ]
+}
