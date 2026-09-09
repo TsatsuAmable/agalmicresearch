@@ -1,57 +1,110 @@
 # Canonical Definition of Agalmic Research
 
 **Status:** Canonical programme definition  
-**Version:** 0.2  
-**Date:** 7 September 2026  
-**Supersedes as the primary definition:** the earlier constraint-relaxation formulation, which remains valid as a supporting description
+**Version:** 0.3  
+**Date:** 9 September 2026  
+**Supersedes as the primary definition:** v0.2, which remains part of the repository and session history
 
 ## Definition
 
-**Agalmic Research studies how knowledge, technology and institutions can expand the set of worthwhile futures people can actually reach.**
+**Agalmic Research is an open practice of disciplined inquiry and building that asks how available abundance can be converted into durable capability by identifying and relaxing real constraints.**
 
-It asks which constraints on worthwhile human capability can be made less binding, which new bottlenecks emerge when they are relaxed, and how those bottlenecks can themselves be understood and displaced.
+It begins inwardly with real work and the capabilities of the practitioner. It asks:
 
-It treats progress as a continuing process of search, selection and realization rather than as an automatic consequence of technological advance, artificial intelligence or economic growth. Abundance in one dimension may create scarcity in another, including attention, judgment, verification, coordination, resources or the capacity to act.
+- what is actually limiting useful action now;
+- what knowledge, tools, computation, institutions or other resources are already abundant enough to help;
+- which parts of the constraint should be learned, tooled, delegated, handed off or accepted;
+- whether the intervention produces a durable increase in understanding, judgment, skill or practical capacity;
+- what new bottleneck becomes visible after the intervention.
 
-Its aim is not abundance for its own sake, nor the production of ever more knowledge or capability, but increasing the capacity to discover, choose and realize worthwhile futures while minimizing harm and avoidable externalities.
+The programme prefers inheritance to reinvention. Existing scholarship, standards, curricula, open-source software, datasets and prior art are treated as infrastructure to understand and reuse. Novelty is welcome when contribution requires discovery, but novelty is not the programme's primary currency.
 
-## Supporting formulation
+When the inward practice produces something genuinely reusable, a tool, protocol, implementation, curriculum, dataset, research result, negative result, correction or clearer route through existing knowledge, outward contribution is encouraged. Contribution is an exit path from useful work, not an obligation to turn every exploration into a public claim.
 
-The earlier formulation remains accurate:
+## Research as method
 
-> Agalmic Research asks which constraints can be made less binding, which new bottlenecks appear when they are, and how knowledge, technology and institutions can increase broadly useful human capability. It does not assume that technological progress, artificial intelligence or economic growth automatically produce abundance.
+Research remains central as a discipline of inquiry:
 
-This is now treated as a description of one of the programme's central mechanisms rather than the complete definition of its purpose.
+**question → lineage → explicit claim → method → evidence or argument → criticism → epistemic status → revision or handoff**
 
-Constraint relaxation matters because it can enlarge the feasible set. Displaced scarcity matters because every successful relaxation can reveal a new bottleneck. But neither tells us which directions deserve pursuit, how abundant candidates should be selected, whether realized capabilities are broadly useful, or what harms and externalities accompany them.
+But research is no longer assumed to be the primary product of the programme.
 
-The canonical definition therefore adds four elements that have become central to the programme:
+A successful outcome may instead be:
 
-1. **Direction:** the target is greater capacity to reach worthwhile futures, not abundance as an undirected quantity.
-2. **Search and selection:** producing more possibilities is useful only when systems can discover, evaluate and choose among them.
-3. **Realization:** knowledge and ideas matter partly through the capabilities they enable in the world.
-4. **Constraint on progress:** capability expansion is not automatically beneficial; harms, externalities, concentration and new scarcities must remain visible.
+- stronger personal capability;
+- reuse of an existing tool or theory;
+- a working implementation;
+- a protocol or curriculum;
+- a negative result that closes an unproductive branch;
+- a clearer authority boundary or expert handoff;
+- a contribution upstream to infrastructure inherited from others;
+- a public research artefact when publication genuinely adds value.
 
-## Relationship to current research
+The change is therefore not a retreat from scholarliness. It is a refusal to make novelty or publication the unit of value.
 
-This definition is an orientation for the research programme, not an empirical law or a claim of novelty.
+## Scholarliness and epistemic authority
 
-Individual research claims remain answerable to lineage, explicit assumptions, methods, evidence, criticism and epistemic status. Terms such as *worthwhile*, *broadly useful*, *harm* and *avoidable externality* contain normative questions that the programme cannot settle by technical optimization alone.
+Agalmic practice may deliberately cultivate:
 
-The definition is intentionally broad enough to contain current work on:
+- subject mastery;
+- conceptual precision;
+- source and lineage judgment;
+- methodological competence;
+- argument analysis;
+- calibration;
+- synthesis;
+- transfer;
+- defensibility;
+- recognition of one's authority boundary.
 
-- displaced scarcity and agalmic economics;
-- epistemic abundance and attention;
-- innovation as search;
-- possibility capture and selective commitment;
-- provenance and epistemic artefacts;
-- epistemic handoff and distributed discovery;
-- representation as discovery;
-- Constitutional Attention and other candidate selection mechanisms;
-- institutions, openness, intellectual property and realization.
+These capabilities can increase the frontier from which epistemic authority may be earned.
+
+They do **not** confer authority by themselves. Authority remains claim-sensitive and must not exceed the warrant supplied by evidence, methods, relevant expertise, criticism and appropriate verification or handoff.
+
+> **Expand the capacity from which authority can be earned; never substitute training history for warrant.**
+
+## Personal capability practice
+
+The first live applications are deliberately attached to needs that already matter:
+
+1. **Scholarliness and epistemic judgment** — use abundant machine cognition as examiner, critic and practice partner while testing delayed unaided transfer.
+2. **Software development** — use live engineering work to improve architecture, debugging, testing, performance, reliability, security and systems understanding alongside AI-assisted delivery.
+3. **Engineering leadership** — use simulation, pre-commitment, adversarial review and real outcomes to improve technical strategy, prioritization, delegation, coaching, stakeholder alignment and judgment under uncertainty.
+4. **Nemosyne** — separate rapid AI-assisted discovery from later epistemic reconstruction and durable ownership.
+
+The capability map is intentionally non-scalar. Different capabilities require different evidence and have different legitimate handoff boundaries.
+
+## Discovery, assimilation and ownership
+
+A useful working distinction is:
+
+### Discovery
+
+Use AI and other abundant resources aggressively to search, prototype, generate alternatives and expose adjacent possibilities. Outputs may outrun the practitioner's current understanding, but they remain provisional candidates rather than warranted knowledge.
+
+### Assimilation
+
+After a direction survives selection, reconstruct the argument or system, inspect lineage and evidence, surface assumptions, test understanding and identify what needs deeper learning or expert handoff.
+
+### Ownership
+
+Durable responsibility requires stronger standards. Critical decisions and internals should become explainable, testable and maintainable by the people accountable for them, even when AI remains part of the toolchain.
+
+> **Prototype to discover. Reconstruct to understand. Operate only what can be responsibly defended or appropriately handed off.**
+
+## Relationship to v0.2
+
+Version 0.2 emphasized increasing the capacity to reach "worthwhile futures." Subsequent adversarial review identified two problems with using that phrase as the analytical definition:
+
+1. it risks importing an underspecified normative social objective into what should be an inquiry method;
+2. many proposed scarcity-displacement mechanisms already have mature antecedents in economics and adjacent fields.
+
+The underlying intuitions remain useful as historical and philosophical context, especially the concern with shifting bottlenecks and the difference between candidate abundance and effective capability. Version 0.3 narrows the programme's present commitment: apply the ideas first as a disciplined practice, learn from existing fields, and allow broader claims to emerge only when evidence warrants them.
 
 ## Compact form
 
-> **The goal is not more ideas. It is greater capacity to reach worthwhile futures.**
+> **Use abundance to expand capability. Begin with the constraint in front of you.**
 
-The compact form states the direction. The canonical definition explains the machinery and constraints beneath it.
+A second operating maxim is:
+
+> **Seek contribution before novelty. Seek novelty only where contribution requires discovery.**
