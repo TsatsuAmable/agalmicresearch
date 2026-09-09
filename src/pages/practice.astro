@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const domains = [
+  {
+    n: '01',
+    title: 'Scholarliness & epistemic judgment',
+    constraint: 'Depth, calibration, source judgment, disciplinary mastery and the ability to defend claims without borrowing the model\'s fluency.',
+    practice: 'Use real papers, arguments and epistemic artefacts for cold interpretation, CLAIM interrogation, source audits, adversarial review, viva defence and delayed unaided transfer.',
+    evidence: 'Better reconstruction, source discrimination, calibration, authority-boundary recognition and transfer after the AI scaffold is reduced.',
+  },
+  {
+    n: '02',
+    title: 'Software development',
+    constraint: 'Systems reasoning, architecture, debugging, testing, performance, reliability, security and depth in languages and runtimes can lag behind the speed at which AI can produce code.',
+    practice: 'Use live engineering work twice: first as productive work, then selectively as training. Predict designs before critique, explain unfamiliar diffs, diagnose failures, derive tests, reimplement small critical pieces and review AI code adversarially.',
+    evidence: 'Stronger unaided code review, faster diagnosis, better architecture decisions, more accurate risk prediction and increasing ability to explain why the system works rather than only that it works.',
+  },
+  {
+    n: '03',
+    title: 'Engineering leadership',
+    constraint: 'Judgment under uncertainty, technical strategy, prioritization, delegation, coaching, stakeholder alignment and risk leadership are difficult to improve through output automation alone.',
+    practice: 'Use AI as a simulation environment: pre-commit to decisions, rehearse design reviews and difficult conversations, attack strategy from competing stakeholder positions, run incident/tabletop scenarios and compare predicted outcomes with what actually happened.',
+    evidence: 'Clearer decision records, fewer avoidable reversals, better delegation, stronger coaching, more explicit trade-offs and improved outcomes on real teams and projects.',
+  },
+  {
+    n: '04',
+    title: 'Nemosyne',
+    constraint: 'Implementation detail can consume the attention needed to explore the representation and discovery space, while machine-generated systems can eventually outrun the curator\'s understanding.',
+    practice: 'Separate discovery from ownership. In discovery mode, use AI aggressively to search, prototype and expose adjacent possibilities. Preserve provenance, assumptions and roads not taken. When a direction survives, enter epistemic reconstruction: derive the architecture, inspect evidence, rebuild or refactor critical internals and demonstrate understanding through tests and unaided defence.',
+    evidence: 'The project explores widely without mistaking prototypes for warranted knowledge, while the durable core increasingly becomes understandable, testable and defensible by its human curator.',
+  },
+];
+
+const cycle = [
+  ['Find the constraint', 'Ask what capability is actually limiting the next meaningful piece of work. Do not optimize the already-abundant part merely because AI makes it easy.'],
+  ['Search the inheritance', 'Look first for existing knowledge, tools, curricula, software and people who have already paid part of the discovery cost. Prior art is usable infrastructure.'],
+  ['Choose the mode', 'Decide whether the present task is discovery, augmentation, capability formation, handoff or durable production. Different modes justify different levels of AI assistance.'],
+  ['Do the work', 'Attach learning to live projects wherever possible. The work product and the capability-building episode should usually be the same event.'],
+  ['Test transfer', 'Check what remains when the scaffold is reduced: explanation, reconstruction, judgment, diagnosis, creation or defence on a new problem.'],
+  ['Move the frontier', 'Record what became easier, what is still scarce and whether the next constraint should be learned, tooled, delegated, handed off or simply accepted.'],
+];
+---
+<Layout title="Practice" description="The inward practice of Agalmic Research: use existing abundance to identify and relax constraints on personal capability, then contribute outward when something genuinely useful emerges.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Practice before proclamation</p>
+      <h1>Use abundance to expand capability, beginning with the practitioner.</h1>
+      <p class="lede">Agalmic Research is currently being used first as a personal capability laboratory. The aim is not to manufacture novelty. It is to identify real constraints in life and work, inherit what already exists, and test whether abundant knowledge and machine cognition can be converted into durable human capability.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Operating proposition</p>
+      <blockquote>Apply abundant capability against the current binding constraint, not merely against whatever it can most easily accelerate.</blockquote>
+      <p>A faster artefact is not always evidence of increased capability. Where the objective is learning, judgment or authority, the relevant test is what the person can later understand, reconstruct, decide, create or defend with less assistance.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Current domains</span>
+        <div class="section-copy">
+          <h2>Real needs, not a generic self-improvement programme.</h2>
+          <p>The capability map is deliberately non-scalar. Different domains have different evidence, failure modes and legitimate handoff boundaries.</p>
+        </div>
+      </div>
+      <div class="grid">
+        {domains.map((item) => (
+          <article class="card">
+            <span class="card-kicker">{item.n}</span>
+            <h3>{item.title}</h3>
+            <p><strong>Current constraint:</strong> {item.constraint}</p>
+            <p><strong>Practice:</strong> {item.practice}</p>
+            <p><strong>Evidence of growth:</strong> {item.evidence}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Three AI modes</p>
+        <h2>Discover. Assimilate. Own.</h2>
+      </div>
+      <div class="prose">
+        <p class="large"><strong>Discovery</strong> permits high AI leverage and low commitment. Generate, prototype, compare and preserve possibilities quickly. Outputs are candidates, not knowledge.</p>
+        <p><strong>Assimilation</strong> begins after selection. Reconstruct the argument or system, inspect lineage and evidence, surface assumptions, test understanding and decide what requires deeper learning or expert handoff.</p>
+        <p><strong>Ownership</strong> is required for durable responsibility. Critical decisions and internals should become explainable, testable and maintainable by the people accountable for them, even when AI remains part of the toolchain.</p>
+        <div class="callout"><p><strong>Prototype to discover. Reconstruct to understand. Operate only what can be responsibly defended or appropriately handed off.</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Capability cycle</span>
+        <div class="section-copy">
+          <h2>A repeatable inward Agalmic loop.</h2>
+          <p>The cycle is a working practice, not a validated general theory.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {cycle.map(([title, copy], i) => (
+          <article class="index-item">
+            <span class="index-meta">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Contribution outward</p>
+        <h2>Contribution is an exit path, not an obligation.</h2>
+      </div>
+      <div class="prose">
+        <p>When the inward practice produces something reusable, a tool, protocol, curriculum, implementation, negative result, research note or clearer route through existing work, it can be released for others. If nothing distinctively useful emerges, the personal capability gain is still a successful outcome.</p>
+        <p class="large">Seek contribution before novelty. Seek novelty only where contribution requires discovery.</p>
+        <p>Research remains important as disciplined inquiry: lineage, testing, criticism, provenance and correction. It need not be the primary product.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
