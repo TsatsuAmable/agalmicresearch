@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
+
+const methods = [
+  ['Review & synthesize', 'Systematic/scoping reviews, evidence maps and meta-analysis can answer questions before new data are collected.'],
+  ['Reanalyse inherited data', 'Open datasets and public research records turn prior human effort into reusable experimental substrate.'],
+  ['Replicate & stress-test', 'Reproduce published results, vary assumptions and prefer robustness evidence over new terminology.'],
+  ['Run retrospective experiments', 'Use historical decisions and outcomes to simulate policies before consuming new expert or participant attention.'],
+  ['Simulate & formalize', 'Use computational models where the system cannot yet be observed directly, while keeping assumptions explicit.'],
+  ['Collect only the residual', 'Seek scarce new human evidence only when inherited evidence cannot adjudicate an important remaining question.'],
+];
+
+const directions = [
+  ['Expert-Attention Handoff Triage', 'Retrospective peer-review benchmark under simulated expert scarcity. This is the first implementation priority.'],
+  ['Epistemic abundance scientometrics', 'Use scholarly graphs to study output growth, recognition, concentration, collaboration and uptake without treating publication count as knowledge.'],
+  ['Reviewer disagreement', 'Ask whether filters erase controversial candidates and whether disagreement carries useful downstream information.'],
+  ['Distributed discovery', 'Study precursor recognition, recombination and delayed credit using citation/textual lineage graphs.'],
+  ['Historical scarcity displacement', 'Compare cases where an input became dramatically cheaper and test which complementary constraints became more binding.'],
+  ['Authorial capacity', 'Reanalyse human-AI studies for divergence between assisted output, calibration, explanation, retention and unaided transfer.'],
+  ['Nemosyne / Moneta benchmarks', 'Use public datasets with known structure before expensive VR studies.'],
+  ['Research-system self-study', 'Instrument Agalmic Research itself to identify recurring bottlenecks while avoiding claims of population-level generality.'],
+];
+---
+<Layout title="1 + Machine Method" description="Agalmic Research's default method for a one-human research programme: inherit evidence, use cognitive machines to identify and displace binding scarcities, and spend scarce human expertise only where it changes the answer.">
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Operating research method · 1 + machine</p>
+      <h1>Do not imitate a laboratory we do not have.</h1>
+      <p class="lede">Agalmic Research has one primary human investigator and machine collaborators. Its comparative advantage is therefore not large bespoke experiments. It is aggressive reuse of open evidence, reproducible computation, retrospective analysis, replication, simulation and selective escalation to scarce humans.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Default</p>
+      <blockquote>Inherit evidence before creating it. Reanalyse before recollecting. Simulate before constructing. Replicate before extending. Spend scarce human expertise only where it can change the answer.</blockquote>
+      <p>Original research can reside in the question, identification strategy, synthesis, benchmark, reanalysis, robustness test, formalism, simulation, software or negative result. New participant recruitment is one method, not the definition of research.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Method hierarchy</span>
+        <div class="section-copy">
+          <h2>Extract information from inherited evidence first.</h2>
+          <p>This is a preference ordering, not a rigid ladder. A question may still require primary data when no valid inherited route exists.</p>
+        </div>
+      </div>
+      <div class="grid">
+        {methods.map(([title, copy], i) => (
+          <article class="card">
+            <span class="card-kicker">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{title}</h3>
+            <p>{copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Scarcity-displacement loop</p>
+        <h2>Let machines inspect the work system as well as the work.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">A cognitive machine should not merely execute assignments. It can help identify the scarce complements that limit useful human-machine work and search for defensible ways to make them less binding.</p>
+        <p><strong>1. Identify:</strong> what is actually scarce now: time, attention, expertise, authority, data, participants, review, mathematical skill, implementation, compute, coordination, validation or something else?</p>
+        <p><strong>2. Measure:</strong> what evidence shows that this is the binding constraint?</p>
+        <p><strong>3. Inherit:</strong> what open knowledge, data, code, standards, historical decisions or already-spent expert effort can be reused?</p>
+        <p><strong>4. Displace:</strong> can the scarcity be removed, substituted, augmented, deferred, compressed, routed, reused or reduced through learning?</p>
+        <p><strong>5. Test:</strong> did the intervention actually increase useful capability against a simpler baseline?</p>
+        <p><strong>6. Repeat:</strong> what bottleneck became binding next?</p>
+        <div class="callout"><p><strong>Automation is not automatically abundance. A speedup that creates hidden false negatives, fake authority or downstream rework merely moves the cost out of sight.</strong></p></div>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/SCARCITY_DISPLACEMENT_AGENT_PROMPT.md">Reusable scarcity-displacement agent prompt ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Human boundary</p>
+        <h2>Target scarce humans. Do not pretend they are unnecessary.</h2>
+      </div>
+      <div class="prose">
+        <p>Normative judgment, lived experience, institutional authority, genuinely new measurement, real-world consequence, independent adversarial validation and some kinds of domain warrant cannot simply be conjured from an inherited dataset.</p>
+        <p>The objective is to make those residual human requirements <strong>smaller, clearer and higher-yield</strong>, not to make a ritual claim that humans have been removed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Research option inventory</span>
+        <div class="section-copy">
+          <h2>Several studies become feasible without several laboratories.</h2>
+          <p>These are preserved directions. Only the first is presently the immediate object-level research implementation of this method.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {directions.map(([title, copy], i) => (
+          <article class="index-item">
+            <span class="index-meta">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </div>
+            <span class="index-status">{i === 0 ? 'next study' : 'option'}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">First study</p>
+        <h2>Spend old expert attention before asking for new expert attention.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The Handoff project now begins as a retrospective computational study over historical peer-review data.</p>
+        <p>PeerRead provides a compact feasibility corpus. Public OpenReview records can support a more contemporary replication where venue visibility permits. OpenAlex can later supply carefully matched downstream scholarly metadata.</p>
+        <p>The first analysis imposes simulated review budgets and compares random allocation, simple rules, conventional prediction and claim-sensitive handoff triage. Only if the special mechanism earns a measurable delta should the programme spend new expert attention on prospective validation.</p>
+        <div class="actions">
+          <a class="button" href={internal('drafts/handoff-triage-formalism')}>Handoff formalism</a>
+          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/HANDOFF_RETROSPECTIVE_STUDY_PROTOCOL.md">Study protocol ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Research rule</p>
+      <blockquote>Every project should ask twice: what are we trying to learn, and what scarce input is preventing us from learning it more cheaply?</blockquote>
+      <p>The second question is itself a source of research. Repeated scarcity transitions may reveal general mechanisms worth formalizing, but operational improvement comes first and novelty remains a conclusion of evidence.</p>
+    </div>
+  </section>
+</Layout>

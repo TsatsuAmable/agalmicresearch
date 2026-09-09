@@ -7,13 +7,13 @@ import Layout from '../../layouts/Layout.astro';
 >
   <header class="page-head paper-head">
     <div class="shell">
-      <p class="eyebrow">Research product · v0.1 · 9 September 2026</p>
+      <p class="eyebrow">Research product · v0.2 · 9 September 2026</p>
       <h1>Expert-Attention Handoff Triage</h1>
       <p class="lede">A prior-art-grounded formalism for deciding which candidate knowledge should consume scarce expert review.</p>
       <div class="paper-meta" aria-label="Draft status">
         <span>Exploratory</span>
         <span>Prior art reviewed</span>
-        <span>Test specification</span>
+        <span>Retrospective study specified</span>
         <span>Not validated</span>
       </div>
     </div>
@@ -148,7 +148,19 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section">
       <div class="shell paper-section">
-        <p class="eyebrow">9 · Product boundary</p>
+        <p class="eyebrow">9 · Retrospective-first study</p>
+        <h2>Reuse expert attention that has already been spent.</h2>
+        <p>Agalmic Research does not have the collaborator base to begin with a large prospective expert experiment, and doing so would contradict the scarcity thesis. The first empirical study therefore uses historical peer-review records as inherited experimental infrastructure.</p>
+        <p>Begin with <strong>PeerRead</strong> as a compact feasibility corpus, then replicate on suitable public <strong>OpenReview</strong> venues if the first study is informative. Later, carefully matched <strong>OpenAlex</strong> metadata may provide downstream citation/topic outcomes without treating citations as truth.</p>
+        <p>Impose simulated expert-review budgets across the historical candidate pool and compare allocation policies. Report an attention-efficiency frontier rather than one arbitrary threshold. Historical accept/reject decisions, reviewer ratings, confidence and disagreement should be treated as separate imperfect outcomes rather than collapsed into “quality.”</p>
+        <div class="callout"><p><strong>Only if retrospective evidence shows a credible delta should the programme consume new expert attention on prospective validation.</strong></p></div>
+        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/HANDOFF_RETROSPECTIVE_STUDY_PROTOCOL.md">Read the executable study protocol ↗</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell paper-section">
+        <p class="eyebrow">10 · Product boundary</p>
         <h2>Build the test before the marketplace.</h2>
         <p>The first product is not a global expert-routing platform. It is a reproducible protocol, benchmark and small experimental harness that can answer whether structured triage is worth using at all.</p>
         <p>A later tool might accept candidate objects, run cheap checks, produce a routing recommendation, preserve an audit trail and package the handoff for an expert. A market, reputation system or global expertise directory should wait until the basic allocation mechanism survives empirical testing.</p>
