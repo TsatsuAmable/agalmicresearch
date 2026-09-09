@@ -3,176 +3,79 @@ import Layout from '../layouts/Layout.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
-const programmes = [
+
+const applications = [
   {
     n: '01',
-    title: 'Epistemic stewardship',
-    copy: 'How should authority, accountability and authorship work when machine cognition can produce artefacts more sophisticated than their human curators can fully defend?',
+    title: 'Scholarliness',
+    copy: 'Use abundant machine cognition as examiner, critic and practice partner to strengthen source judgment, conceptual precision, calibration, synthesis and defensible authority.',
   },
   {
     n: '02',
-    title: 'Epistemic handoff & uptake',
-    copy: 'Building on brokerage and absorptive-capacity research, how can low-authority contributions be routed toward missing expertise without confusing originator credit with epistemic authority?',
+    title: 'Software engineering',
+    copy: 'Attach learning to live engineering work: architecture, debugging, testing, performance, security and systems understanding should grow alongside AI-assisted delivery.',
   },
   {
     n: '03',
-    title: 'Agalmic economics',
-    copy: 'A contemporary extension of earlier agalmics: what happens to value and allocation when useful knowledge, computation and other non-rival goods become dramatically cheaper to create?',
+    title: 'Engineering leadership',
+    copy: 'Use simulation, pre-commitment, adversarial review and real outcomes to improve technical strategy, delegation, coaching, stakeholder alignment and judgment under uncertainty.',
   },
   {
     n: '04',
-    title: 'Economics of epistemic abundance',
-    copy: 'When candidate knowledge becomes cheap, how should scarce attention, validation, trust, interpretation, institutional capacity and realization be allocated?',
-  },
-  {
-    n: '05',
-    title: 'Distributed discovery',
-    copy: 'Building on computational and collective-discovery scholarship, how should novelty, priority, contribution and authority be represented when humans and machines split the work of discovery?',
-  },
-  {
-    n: '06',
-    title: 'Innovation search under AI',
-    copy: 'Building on established search and adjacent-possible literatures, how does machine cognition alter search cost, branching, recombination, selection, diversity and realization?',
-  },
-  {
-    n: '07',
-    title: 'Representation as discovery',
-    copy: 'How can systems compress, transform and embody information more cheaply while preserving the structure humans need to perceive what matters?',
-  },
-  {
-    n: '08',
-    title: 'Knowledge, property and rents',
-    copy: 'How should publication, defensive disclosure, patents and incentives change when the cost of generating potentially valuable ideas collapses?',
+    title: 'Nemosyne',
+    copy: 'Use AI aggressively for discovery first, then reconstruct and selectively rebuild surviving ideas until the durable system becomes understandable, testable and responsibly ownable.',
   },
 ];
 ---
 <Layout>
   <section class="hero">
     <div class="shell">
-      <p class="eyebrow">Open research toward abundance</p>
-      <h1>The goal is not more ideas. It is greater capacity to reach worthwhile futures.</h1>
+      <p class="eyebrow">An open practice of capability expansion</p>
+      <h1>Use abundance to attack real constraints, beginning with your own.</h1>
       <p class="lede">
-        Agalmic Research studies how knowledge, technology and institutions can expand the set of worthwhile futures people can actually reach. Candidate abundance is an input. Frontier-expanding capacity is the aim.
+        Agalmic Research is becoming a personal capability laboratory before it is a claim about the world. The practice is simple: identify what is actually limiting useful action, inherit the best existing knowledge and tools, use available abundance against that constraint, and test whether durable capability increased.
       </p>
       <div class="actions">
-        <a class="button" href={internal('definition')}>Read the canonical definition</a>
-        <a class="button secondary" href={internal('research')}>Explore the research</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Why this exists</p>
-        <h2>Constraint relaxation is the mechanism. Worthwhile futures are the direction.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">Agalmic Research studies how knowledge, technology and institutions can expand the set of worthwhile futures people can actually reach.</p>
-        <p>It asks which constraints on worthwhile human capability can be made less binding, which new bottlenecks emerge when they are relaxed, and how those bottlenecks can themselves be understood and displaced. It does not assume that technological progress, artificial intelligence or economic growth automatically produce abundance or worthwhile outcomes.</p>
-        <div class="callout"><p><strong>Progress is treated as a continuing process of search, selection and realization. Abundance in one dimension can expose scarcity in another, so direction, harm and externalities remain part of the problem.</strong></p></div>
-        <p><a href={internal('definition')}>Read the canonical definition →</a></p>
-        <p><a href={internal('manifesto')}>Read the founding orientation →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Meta aim & lineage</p>
-        <h2>Expand the effective adjacent possible, without claiming the phrase.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">The adjacent possible and the effective adjacent possible are established research ideas.</p>
-        <p>Stuart Kauffman's adjacent possible describes possibilities reachable from a present state. Josef Taalbi's recent innovation research explicitly distinguishes an <strong>effective adjacent possible</strong> constrained by search complexity, absorptive/search capacity and resources. Agalmic Research uses that lineage rather than reinventing it.</p>
-        <div class="callout"><p><strong>The project asks what cognitive tools, provenance, validation and realization infrastructure do to the set of possibilities a human-machine system can actually reach.</strong></p></div>
-        <p><a href={internal('notes/the-goal-is-not-more-ideas')}>Research Note 001: The Goal Is Not More Ideas →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Personal and programme discipline</p>
-        <h2>Let the possibility space be abundant. Keep commitment scarce.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">Ideas are options, not obligations.</p>
-        <p>The public Possibility Portfolio preserves worthwhile branches without silently converting them into projects. The Active Frontier is capped at three substantial bets by default, each with a discriminating next action.</p>
-        <div class="callout"><p><strong>Capture promiscuously. Commit selectively. Realize deliberately.</strong></p></div>
-        <p><a href={internal('frontier')}>See what is active, optional and parked →</a></p>
-        <p><a href={internal('notes/ideas-are-options-not-obligations')}>Research Note 002: Ideas Are Options, Not Obligations →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Prior art first</p>
-        <h2>This programme is not starting on empty intellectual ground.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">Many of the intuitions explored here have important antecedents, some very close.</p>
-        <p>Robert Levin used <em>agalmics</em> for the study of non-scarce goods decades ago. Herbert Simon tied information abundance to attention scarcity. Nelson and Winter, Weitzman, Kauffman and later innovation scholars treat innovation as search and recombination. Cohen and Levinthal formalized absorptive capacity. Grandori already used the term <em>epistemic economics</em>. Computational discovery, idea-management, innovation-portfolio and knowledge-brokerage literatures also substantially predate present generative AI.</p>
-        <div class="callout"><p><strong>Novelty is a conclusion of search, not a tone of voice.</strong></p></div>
-        <p>The project maintains a living lineage and novelty register. Where prior art exists, we intend to use it rather than rename it; where a narrower extension remains, we will say exactly what that extension is.</p>
-        <p><a href={internal('lineage')}>Read the Intellectual Lineage & Novelty Register →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Epistemic status</p>
-        <h2>The programme begins by stating its own constraint.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">Machine-assisted performance can outrun the human curator’s understanding, but that underlying problem is not ours alone.</p>
-        <p>Empirical and conceptual work on metacognitive calibration, verification gaps and claim accountability already develops closely related concerns. Agalmic Research uses <strong>Authorial Capacity Constraint</strong> as a local organizing label and asks how the problem connects to contribution provenance, handoff, uptake and the economics of abundant candidate knowledge.</p>
-        <div class="callout"><p><strong>Epistemic authority should not exceed defensibility.</strong></p></div>
-        <p><a href={internal('publications/authorial-capacity-constraint')}>Read Working Paper 001 v0.4 →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Epistemic handoff</p>
-        <h2>A good idea can outrun the expertise of the person who found it.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">The right response is neither false authority nor dismissal.</p>
-        <p>The contribution/authority distinction builds on mature contributorship, epistemic-dependence, absorptive-capacity, knowledge-brokerage and intermediary traditions. The narrower research question is whether a claim-sensitive, provenance-preserving handoff can improve routing to missing expertise under machine-generated candidate abundance.</p>
-        <div class="callout"><p><strong>Origin deserves credit. Authority requires warrant.</strong></p></div>
-        <p><a href={internal('drafts/epistemic-handoff')}>Read the Epistemic Handoff draft v0.3 →</a></p>
+        <a class="button" href={internal('practice')}>See the current practice</a>
+        <a class="button secondary" href={internal('definition')}>Read the programme definition</a>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="shell thesis">
-      <p class="eyebrow">Working thesis · Displaced Scarcity Hypothesis</p>
-      <blockquote>When a previously binding constraint becomes sufficiently abundant, system performance and value become increasingly determined by complementary constraints that remain scarce.</blockquote>
-      <p>This is an organizing synthesis, not a demonstrated law. Fixed-proportions bottlenecks, Simon's attention scarcity, Teece's complementary assets, Weitzman's idea-processing constraint, strong-complementarity models and recent AI-abundance economics all supply antecedents. The research task is to derive conditions and predictions that are not merely standard production theory in new clothing.</p>
+      <p class="eyebrow">Current orientation</p>
+      <blockquote>Seek contribution before novelty. Seek novelty only where contribution requires discovery.</blockquote>
+      <p>Research remains valuable as disciplined inquiry: lineage, testing, criticism, provenance, correction and handoff. It does not have to be the primary product. A useful tool, stronger human capability, a reusable implementation, a better route through existing knowledge or a well-supported negative result can all be worthwhile outcomes.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Distributed discovery</p>
-        <h2>Machine generation and discovery credit are not the same question.</h2>
+        <p class="eyebrow">Inward first</p>
+        <h2>Turn the practitioner into the first testbed.</h2>
       </div>
       <div class="prose">
-        <p class="large">Computational scientific discovery and collective-centred accounts of AI-assisted discovery already exist.</p>
-        <p>Agalmic Research therefore does not claim to have discovered the distinction between machine generation and human significance recognition. The prospective contribution is operational: preserve problem framing, candidate generation, selection/recognition, validation, integration and realization as provenance events, while keeping novelty, priority, contribution and epistemic authority separate.</p>
-        <div class="callout"><p><strong>Novelty is a relation between a result and prior knowledge. Discovery attribution is a relation between a discovery episode and its contributors.</strong></p></div>
-        <p><a href={internal('lineage')}>Explore the distributed-discovery lineage →</a></p>
+        <p class="large">The immediate question is not whether Agalmic Research constitutes a new academic field. It is whether its operating principles improve real capability in real work.</p>
+        <p>When AI makes one activity cheap, the response should not automatically be to produce more of it. The useful question is which complementary constraint now matters most: understanding, judgment, subject mastery, implementation, leadership, verification, attention, coordination or something else.</p>
+        <div class="callout"><p><strong>Apply abundant capability against the current binding constraint, not merely against whatever it can most easily accelerate.</strong></p></div>
+        <p><a href={internal('practice')}>Open the Personal Capability Practice →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Inheritance</p>
+        <h2>Start from what humanity already knows.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Finding prior art is a gain in available capability, not a loss of intellectual territory.</p>
+        <p>The programme increasingly treats existing theory, open-source software, standards, curricula, datasets and documented practice as inherited infrastructure. Where someone else has already paid part of the discovery cost, the default move is to understand, reuse and contribute back rather than rename or rebuild unnecessarily.</p>
+        <div class="callout"><p><strong>We do not need to own an idea to advance it.</strong></p></div>
+        <p><a href={internal('lineage')}>Explore the intellectual lineage →</a></p>
       </div>
     </div>
   </section>
@@ -180,14 +83,14 @@ const programmes = [
   <section class="section">
     <div class="shell">
       <div class="section-head">
-        <span class="section-number">Research programme</span>
+        <span class="section-number">Current applications</span>
         <div class="section-copy">
-          <h2>A programme built from antecedents, extensions and open questions.</h2>
-          <p>Existing theory is an input, not an obstacle. The goal is to reuse mature ideas, identify what machine cognition actually changes, and turn the remaining questions into testable work.</p>
+          <h2>Attach the practice to needs that already matter.</h2>
+          <p>The current domains are deliberately practical. Capability formation should happen inside real work wherever possible.</p>
         </div>
       </div>
       <div class="grid">
-        {programmes.map((item) => (
+        {applications.map((item) => (
           <article class="card">
             <span class="card-kicker">{item.n}</span>
             <h3>{item.title}</h3>
@@ -201,12 +104,15 @@ const programmes = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Standards-first provenance</p>
-        <h2>Reuse mature provenance machinery.</h2>
+        <p class="eyebrow">Nemosyne</p>
+        <h2>Discovery first. Epistemic reconstruction second.</h2>
       </div>
       <div class="prose">
-        <p>The research Memory Palace is being migrated toward <a href="https://www.w3.org/TR/prov-dm/">W3C PROV</a> for provenance, <a href="https://www.researchobject.org/ro-crate/specification/1.3/">RO-Crate</a> for research-object packaging and <a href="https://credit.niso.org/">CRediT</a> for contributor roles. Local extensions are reserved for information those standards do not adequately capture.</p>
-        <p><a href={internal('provenance')}>Inspect the provenance architecture →</a></p>
+        <p class="large">Nemosyne does not need to become a coding curriculum while its conceptual search space is still moving.</p>
+        <p>In the discovery phase, AI can generate prototypes, explore architectures and expose adjacent possibilities faster than a human could responsibly learn every implementation detail. Those outputs should remain explicitly provisional, with assumptions, provenance and roads not taken preserved.</p>
+        <p>When a direction survives, the mode changes. Critical internals can then be derived, interrogated, refactored or rebuilt until the human curator can explain the architecture, inspect the evidence, understand the failure modes and defend the durable decisions.</p>
+        <div class="callout"><p><strong>Prototype to discover. Reconstruct to understand. Operate only what can be responsibly defended or appropriately handed off.</strong></p></div>
+        <p><a href="https://nemosyne.world">Visit nemosyne.world ↗</a></p>
       </div>
     </div>
   </section>
@@ -214,13 +120,14 @@ const programmes = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Applied research</p>
-        <h2>Nemosyne as a testbed.</h2>
+        <p class="eyebrow">Research still matters</p>
+        <h2>Keep the discipline. Drop the need to claim territory.</h2>
       </div>
       <div class="prose">
-        <p class="large">The arguments should survive contact with software.</p>
-        <p class="muted"><a href="https://nemosyne.world">nemosyne.world</a> explores how representations can make meaningful structure perceptible without spending more computation, complexity or human attention than necessary. Broad claims about representation and discovery have substantial prior art; any defensible novelty must live in concrete Moneta/Nemosyne mechanisms and evidence.</p>
-        <p><a href="https://github.com/TsatsuAmable/nemosyne">Explore Nemosyne on GitHub ↗</a></p>
+        <p>Claims still need lineage, explicit assumptions, evidence or argument, criticism and honest epistemic status. Provenance still matters. External expertise still matters. Negative results still matter.</p>
+        <p class="large">The change is in what those practices serve.</p>
+        <p>They serve better understanding, safer reuse, stronger capability and useful contribution. Papers are one possible output among software, protocols, curricula, datasets, demonstrations, corrections, handoffs and personal learning.</p>
+        <p><a href={internal('explore')}>Explore the accumulated research record →</a></p>
       </div>
     </div>
   </section>
@@ -228,15 +135,15 @@ const programmes = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Operating model</p>
-        <h2>Search lineage. Preserve possibilities. Limit commitments. Build capacity.</h2>
+        <p class="eyebrow">Contribution outward</p>
+        <h2>Let useful things escape.</h2>
       </div>
       <div class="prose">
-        <p>Research begins as a canonical, versioned object. Ideas can be preserved without promotion. Before a claim is presented as a contribution, the project searches its intellectual lineage. Before an idea becomes an active commitment or publication, the project asks what new capacity it creates and what worthwhile future becomes more reachable.</p>
-        <div class="callout"><p>Finding prior art, parking an idea, handing it off or closing a branch can all be successful research outcomes.</p></div>
+        <p>When inward practice creates something genuinely reusable, the programme can publish it, release it, document it or contribute it upstream. Outward contribution is an exit path from successful work, not a requirement that every exploration become a public claim.</p>
+        <div class="callout"><p><strong>A defensible increase in available capability matters more than a claim of originality.</strong></p></div>
         <div class="actions">
-          <a class="button" href={internal('frontier')}>Active Frontier</a>
-          <a class="button secondary" href={internal('notes')}>Research notes</a>
+          <a class="button" href={internal('publications')}>Public outputs</a>
+          <a class="button secondary" href={internal('frontier')}>Current frontier</a>
         </div>
       </div>
     </div>
