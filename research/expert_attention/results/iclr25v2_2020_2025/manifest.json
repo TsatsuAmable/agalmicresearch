@@ -1,0 +1,22 @@
+{
+  "dataset": "25v2",
+  "source_url": "https://raw.githubusercontent.com/berenslab/iclr-dataset/main/data/iclr25v2.parquet",
+  "sha256": "48215679d54ea788b8dfc1177850845f047c5810554708273b617b67ce321859",
+  "parameters": {
+    "dataset": "25v2",
+    "cache_dir": ".cache/agalmic-research",
+    "out": "research/expert_attention/results/iclr25v2_2020_2025",
+    "min_year": 2020,
+    "max_year": 2025,
+    "random_repeats": 250,
+    "seed": 20260910,
+    "min_topic_cell": 30
+  },
+  "resolved_columns": {
+    "year": "year",
+    "decision": "decision",
+    "scores": "scores",
+    "topic": "labels",
+    "paper_id": "id"
+  }
+}
