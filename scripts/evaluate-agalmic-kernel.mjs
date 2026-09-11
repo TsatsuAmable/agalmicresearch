@@ -4,6 +4,7 @@ import crypto from 'node:crypto';
 const baseUrl = process.env.OLLAMA_URL ?? 'http://127.0.0.1:11434';
 const models = (process.env.AGALMIC_EVAL_MODELS ?? 'qwen3.5:4b').split(',').map((x) => x.trim()).filter(Boolean);
 const runs = Number(process.env.AGALMIC_EVAL_RUNS ?? 1);
+const maxTokens = Number(process.env.AGALMIC_EVAL_MAX_TOKENS ?? 220);
 const kernelPath = new URL('../docs/AGALMIC_COGNITIVE_KERNEL.md', import.meta.url);
 const kernel = await fs.readFile(kernelPath, 'utf8');
 const kernelHash = crypto.createHash('sha256').update(kernel).digest('hex');
@@ -28,7 +29,7 @@ async function chat(model, task, condition) {
   const response = await fetch(`${baseUrl}/api/chat`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ model, messages, stream: false, think: false, options: { temperature: 0 } }),
+    body: JSON.stringify({ model, messages, stream: false, think: false, options: { temperature: 0, num_predict: maxTokens } }),
   });
   if (!response.ok) throw new Error(`${model}: ${response.status} ${await response.text()}`);
   const data = await response.json();
@@ -42,7 +43,7 @@ for (const model of models) {
       for (const condition of run % 2 ? ['control', 'kernel'] : ['kernel', 'control']) {
         const started = Date.now();
         const response = await chat(model, prompt, condition);
-        const row = { kernelVersion: '0.1.0-rc.1', kernelHash, model, run, taskId, condition, elapsedMs: Date.now() - started, response };
+        const row = { kernelVersion: '0.1.0-rc.1', kernelHash, model, run, taskId, condition, maxTokens, elapsedMs: Date.now() - started, response };
         out.push(row);
         process.stdout.write(`${model} run=${run} ${taskId} ${condition} ${row.elapsedMs}ms\n`);
       }
