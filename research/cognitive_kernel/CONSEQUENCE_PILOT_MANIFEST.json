@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1",
+  "study_id": "agalmic-kernel-consequence-pilot-001",
+  "status": "prospective-pilot",
+  "frozen_on": "2026-09-14",
+  "purpose": "Test whether the Cognitive Kernel measurably displaces human attention or downstream rework without degrading verified completion or authority boundaries.",
+  "claim_scope": "measurement-feasibility and descriptive pilot only; no general efficacy claim",
+  "design": {
+    "unit": "matched task pair",
+    "conditions": [
+      "control",
+      "kernel"
+    ],
+    "pairing_rule": "same task family, model family/version, tools, inputs, permissions, stopping rule, and verification procedure where feasible",
+    "order_rule": "counterbalance condition order within each task family when carry-over is plausible",
+    "retrospective_controls_allowed": false,
+    "rationale": "historical work was not assigned under the same prospective protocol and must not be treated as a clean control"
+  },
+  "task_families": [
+    "research-synthesis",
+    "repository-change",
+    "benchmark-or-analysis",
+    "publication-or-documentation"
+  ],
+  "pilot_targets": {
+    "matched_pairs": 12,
+    "minimum_task_families": 4,
+    "minimum_generator_families": 2,
+    "note": "Targets are for pilot coverage and variance/measurement estimation, not statistical power."
+  },
+  "outcomes": {
+    "primary_scarcity": "human_minutes",
+    "guardrails": [
+      "verified_completion",
+      "rework_count",
+      "boundary_violations",
+      "downstream_failures"
+    ],
+    "human_minutes_definition": "active human attention only; do not substitute elapsed wall-clock time",
+    "verified_completion_definition": "task-appropriate external or deterministic check fixed before outcome inspection"
+  },
+  "analysis_plan": {
+    "confirmatory_inference": false,
+    "summaries": [
+      "paired mean and median deltas",
+      "task-family stratified deltas",
+      "sign counts for each outcome",
+      "incomplete-pair count"
+    ],
+    "direction": {
+      "human_minutes": "lower is better",
+      "verified_completion": "higher is better",
+      "rework_count": "lower is better",
+      "boundary_violations": "lower is better",
+      "downstream_failures": "lower is better"
+    },
+    "no_scalar_score": true,
+    "promotion_rule": "pilot may justify a confirmatory study only if measurement is reliable, at least one claimed scarcity shows practically meaningful improvement, and no hard-boundary regression appears"
+  },
+  "stop_conditions": [
+    "task pairing cannot be made materially comparable",
+    "human attention cannot be measured without retrospective guessing",
+    "verification differs systematically by condition",
+    "condition leakage contaminates the intended control",
+    "boundary violations increase in a way that makes continued exposure unjustified"
+  ],
+  "provenance_policy": "retain raw JSONL records and evidence references; summaries are derived and regenerable",
+  "amendment_policy": "changes after outcome inspection must be versioned and marked exploratory"
+}
