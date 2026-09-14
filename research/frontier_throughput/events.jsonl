@@ -1,0 +1,6 @@
+{"event_id":"arc-20260914-001","candidate_id":"frontier-throughput-instrumentation","timestamp":"2026-09-14T05:00:00Z","stage":"generate","event_type":"entered","actor":"machine","evidence":["agalmic-production-cycle-2026-09-14"]}
+{"event_id":"arc-20260914-002","candidate_id":"frontier-throughput-instrumentation","timestamp":"2026-09-14T05:01:00Z","stage":"generate","event_type":"completed","actor":"machine"}
+{"event_id":"arc-20260914-003","candidate_id":"frontier-throughput-instrumentation","timestamp":"2026-09-14T05:01:00Z","stage":"select","event_type":"entered","actor":"machine"}
+{"event_id":"arc-20260914-004","candidate_id":"frontier-throughput-instrumentation","timestamp":"2026-09-14T05:02:00Z","stage":"select","event_type":"disposition","actor":"machine","disposition":"promoted","evidence":["frontier-throughput-audit-v0.1"]}
+{"event_id":"arc-20260914-005","candidate_id":"frontier-throughput-instrumentation","timestamp":"2026-09-14T05:02:00Z","stage":"select","event_type":"completed","actor":"machine"}
+{"event_id":"arc-20260914-006","candidate_id":"frontier-throughput-instrumentation","timestamp":"2026-09-14T05:02:00Z","stage":"realize","event_type":"entered","actor":"machine"}

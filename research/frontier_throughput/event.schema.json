@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agalmic Frontier Throughput Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "candidate_id",
+    "timestamp",
+    "stage",
+    "event_type",
+    "actor"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stage": {
+      "enum": [
+        "generate",
+        "select",
+        "validate",
+        "realize",
+        "assimilate"
+      ]
+    },
+    "event_type": {
+      "enum": [
+        "entered",
+        "completed",
+        "disposition",
+        "human_attention",
+        "machine_effort"
+      ]
+    },
+    "actor": {
+      "enum": [
+        "human",
+        "machine",
+        "hybrid"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "promoted",
+        "rejected",
+        "parked",
+        "blocked",
+        "handed_off",
+        "published"
+      ]
+    },
+    "minutes": {
+      "type": "number",
+      "minimum": 0
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
