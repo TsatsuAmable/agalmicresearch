@@ -15,7 +15,9 @@
     "build": "npm run check:knowledge && npm run test:astro-agalmic && npm run pack:astro-agalmic && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "audit:throughput": "node scripts/frontier-throughput.mjs"
+    "audit:throughput": "node scripts/frontier-throughput.mjs",
+    "prepare:kernel-eval": "node scripts/prepare-kernel-eval-pairs.mjs",
+    "summarize:kernel-consequences": "node scripts/summarize-kernel-consequences.mjs"
   },
   "dependencies": {
     "astro": "^7.3.1"

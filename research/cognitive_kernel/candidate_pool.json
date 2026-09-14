@@ -3,29 +3,35 @@
   "rule": "Discovery does not create commitment; evidence earns attention.",
   "candidates": [
     {
-      "id": "kernel-evaluation-validity",
+      "id": "kernel-consequence-evidence",
       "state": "promoted",
-      "reason": "Current release criteria depend on blinded behavioural evaluation, but the harness exposed condition labels and the literature documents order, framing, and evaluator-family bias.",
+      "reason": "Conformance evidence cannot establish real-work utility; current field and collaboration research measures task quality, time use, retained capability, or real occupational performance.",
       "evidence": [
-        "AGALMIC_COGNITIVE_KERNEL_BENCHMARK.md",
-        "scripts/evaluate-agalmic-kernel.mjs",
-        "Shi et al. 2024 position-bias study",
-        "Li et al. 2025 judge-guidance bias study",
-        "JudgeSense 2026 prompt-sensitivity benchmark"
+        "research/cognitive_kernel/CONSEQUENCE_PROTOCOL.md",
+        "Dillon et al. 2025 randomized field experiment",
+        "Dell'Acqua et al. 2026 field experiment",
+        "Cruces et al. 2026 randomized experiment",
+        "CollabSkill 2026"
       ],
-      "next_discriminating_action": "Run paired evaluations, prepare condition-hidden A/B packets, use multiple judge families, and separate conformance lift from real-work consequence tests."
+      "next_discriminating_action": "Collect matched control/kernel records across heterogeneous real work and summarize paired human-attention, completion, rework, boundary, and downstream-failure outcomes."
+    },
+    {
+      "id": "kernel-evaluation-validity",
+      "state": "implemented",
+      "reason": "Blinded/counterbalanced preparation and a published validity note now separate conformance evidence from consequence claims.",
+      "next_discriminating_action": "Use multiple judge families only for conformance; preserve disagreements."
     },
     {
       "id": "kernel-canonical-release",
       "state": "blocked-by-evidence",
-      "reason": "The release candidate has not yet shown robust cross-family conformance plus real-work consequence improvement.",
-      "next_discriminating_action": "Promote only after validity-hardened evaluation and consequence evidence."
+      "reason": "No longitudinal or sufficiently heterogeneous consequence dataset yet demonstrates net scarcity displacement without downstream regressions.",
+      "next_discriminating_action": "Promote only after consequence records show practical benefit with no hard-boundary regression and the result replicates across model/task families."
     },
     {
       "id": "new-kernel-principles",
       "state": "deferred",
-      "reason": "Adding principles before validating the existing kernel would increase construct drift and make attribution harder.",
-      "next_discriminating_action": "Reopen only when evaluation failures expose a specific missing behaviour."
+      "reason": "Additional principles would increase construct drift before the current intervention is causally interpretable.",
+      "next_discriminating_action": "Reopen only when measured failures identify a missing behaviour."
     }
   ]
 }
