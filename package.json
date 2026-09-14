@@ -13,7 +13,8 @@
     "pack:astro-agalmic": "npm pack ./packages/astro-agalmic --dry-run",
     "build": "npm run check:knowledge && npm run test:astro-agalmic && npm run pack:astro-agalmic && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "audit:throughput": "node scripts/frontier-throughput.mjs"
   },
   "dependencies": {
     "astro": "^7.3.1"
