@@ -4,3 +4,11 @@
 {"event_id":"arc-20260914-004","candidate_id":"frontier-throughput-instrumentation","timestamp":"2026-09-14T05:02:00Z","stage":"select","event_type":"disposition","actor":"machine","disposition":"promoted","evidence":["frontier-throughput-audit-v0.1"]}
 {"event_id":"arc-20260914-005","candidate_id":"frontier-throughput-instrumentation","timestamp":"2026-09-14T05:02:00Z","stage":"select","event_type":"completed","actor":"machine"}
 {"event_id":"arc-20260914-006","candidate_id":"frontier-throughput-instrumentation","timestamp":"2026-09-14T05:02:00Z","stage":"realize","event_type":"entered","actor":"machine"}
+{"event_id":"arc-20260914-007","candidate_id":"kernel-evaluation-validity","timestamp":"2026-09-14T07:34:54Z","stage":"generate","event_type":"entered","actor":"machine","evidence":["research/cognitive_kernel/EVALUATION_VALIDITY_NOTE.md"]}
+{"event_id":"arc-20260914-008","candidate_id":"kernel-evaluation-validity","timestamp":"2026-09-14T07:34:54Z","stage":"generate","event_type":"completed","actor":"machine"}
+{"event_id":"arc-20260914-009","candidate_id":"kernel-evaluation-validity","timestamp":"2026-09-14T07:34:54Z","stage":"select","event_type":"entered","actor":"machine"}
+{"event_id":"arc-20260914-010","candidate_id":"kernel-evaluation-validity","timestamp":"2026-09-14T07:35:39Z","stage":"select","event_type":"disposition","actor":"machine","disposition":"promoted","evidence":["research/cognitive_kernel/candidate_pool.json"]}
+{"event_id":"arc-20260914-011","candidate_id":"kernel-evaluation-validity","timestamp":"2026-09-14T07:35:39Z","stage":"select","event_type":"completed","actor":"machine"}
+{"event_id":"arc-20260914-012","candidate_id":"kernel-evaluation-validity","timestamp":"2026-09-14T07:35:39Z","stage":"validate","event_type":"entered","actor":"machine","evidence":["Shi et al. 2024","Li et al. 2025","JudgeSense 2026","Zhou et al. 2026"]}
+{"event_id":"arc-20260914-013","candidate_id":"kernel-evaluation-validity","timestamp":"2026-09-14T07:35:39Z","stage":"validate","event_type":"completed","actor":"machine"}
+{"event_id":"arc-20260914-014","candidate_id":"kernel-evaluation-validity","timestamp":"2026-09-14T07:35:39Z","stage":"realize","event_type":"entered","actor":"machine","evidence":["scripts/prepare-kernel-eval-pairs.mjs"]}
