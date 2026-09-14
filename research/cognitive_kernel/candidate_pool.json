@@ -1,0 +1,31 @@
+{
+  "updated": "2026-09-14",
+  "rule": "Discovery does not create commitment; evidence earns attention.",
+  "candidates": [
+    {
+      "id": "kernel-evaluation-validity",
+      "state": "promoted",
+      "reason": "Current release criteria depend on blinded behavioural evaluation, but the harness exposed condition labels and the literature documents order, framing, and evaluator-family bias.",
+      "evidence": [
+        "AGALMIC_COGNITIVE_KERNEL_BENCHMARK.md",
+        "scripts/evaluate-agalmic-kernel.mjs",
+        "Shi et al. 2024 position-bias study",
+        "Li et al. 2025 judge-guidance bias study",
+        "JudgeSense 2026 prompt-sensitivity benchmark"
+      ],
+      "next_discriminating_action": "Run paired evaluations, prepare condition-hidden A/B packets, use multiple judge families, and separate conformance lift from real-work consequence tests."
+    },
+    {
+      "id": "kernel-canonical-release",
+      "state": "blocked-by-evidence",
+      "reason": "The release candidate has not yet shown robust cross-family conformance plus real-work consequence improvement.",
+      "next_discriminating_action": "Promote only after validity-hardened evaluation and consequence evidence."
+    },
+    {
+      "id": "new-kernel-principles",
+      "state": "deferred",
+      "reason": "Adding principles before validating the existing kernel would increase construct drift and make attribution harder.",
+      "next_discriminating_action": "Reopen only when evaluation failures expose a specific missing behaviour."
+    }
+  ]
+}
