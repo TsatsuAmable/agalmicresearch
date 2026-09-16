@@ -25,6 +25,9 @@ const common = [
   '--boundary-violations','0',
   '--downstream-failures','0',
   '--verification-method','fixture-check',
+  '--independence-level','fresh-agent-context',
+  '--base-state','fixture-base-sha',
+  '--assignment-id','assignment-001',
   '--evidence','fixture://verified'
 ];
 
