@@ -4,14 +4,15 @@
   "candidates": [
     {
       "id": "kernel-condition-isolation",
-      "state": "implemented",
-      "reason": "Persistent cognitive interventions can contaminate sequential crossover controls; no outcome records existed, so pilot design was prospectively corrected before collection.",
+      "state": "partially-implemented",
+      "reason": "Pair assignment, pinned-state provenance, immutable spec hashes, and distinct context/workspace IDs are now machine-generated; execution adapters still must enforce fresh sessions/workspaces.",
       "evidence": [
         "research/cognitive_kernel/CONTAMINATION_CONTROL_NOTE.md",
         "CONSORT crossover extension",
-        "Brooks 2012 counterbalancing"
+        "Brooks 2012 counterbalancing",
+        "research/cognitive_kernel/PAIR_PLANNER_NOTE.md"
       ],
-      "next_discriminating_action": "Automate fresh-context/fresh-workspace spawning from pinned base state and begin admissible paired collection."
+      "next_discriminating_action": "Implement an execution adapter that consumes a pair plan, launches two genuinely independent contexts/workspaces, and seals outcomes until both conditions complete."
     },
     {
       "id": "kernel-consequence-evidence",
