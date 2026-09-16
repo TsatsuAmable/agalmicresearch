@@ -1,7 +1,18 @@
 {
-  "updated": "2026-09-14",
+  "updated": "2026-09-16",
   "rule": "Discovery does not create commitment; evidence earns attention.",
   "candidates": [
+    {
+      "id": "kernel-condition-isolation",
+      "state": "implemented",
+      "reason": "Persistent cognitive interventions can contaminate sequential crossover controls; no outcome records existed, so pilot design was prospectively corrected before collection.",
+      "evidence": [
+        "research/cognitive_kernel/CONTAMINATION_CONTROL_NOTE.md",
+        "CONSORT crossover extension",
+        "Brooks 2012 counterbalancing"
+      ],
+      "next_discriminating_action": "Automate fresh-context/fresh-workspace spawning from pinned base state and begin admissible paired collection."
+    },
     {
       "id": "kernel-consequence-evidence",
       "state": "promoted",
@@ -13,7 +24,7 @@
         "Cruces et al. 2026 randomized experiment",
         "CollabSkill 2026"
       ],
-      "next_discriminating_action": "Collect matched control/kernel records across heterogeneous real work and summarize paired human-attention, completion, rework, boundary, and downstream-failure outcomes."
+      "next_discriminating_action": "Collect independently isolated control/kernel records from pinned equivalent starting states; reject contaminated pairs before analysis."
     },
     {
       "id": "kernel-evaluation-validity",
