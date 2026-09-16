@@ -17,7 +17,10 @@
     "boundary_violations",
     "downstream_failures",
     "verification_method",
-    "evidence"
+    "evidence",
+    "independence_level",
+    "base_state",
+    "assignment_id"
   ],
   "properties": {
     "record_id": {
@@ -92,6 +95,27 @@
       }
     },
     "notes": {
+      "type": "string"
+    },
+    "independence_level": {
+      "enum": [
+        "fresh-agent-context",
+        "fresh-workspace",
+        "independent-human-session"
+      ]
+    },
+    "base_state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assignment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "excluded": {
+      "type": "boolean"
+    },
+    "exclusion_reason": {
       "type": "string"
     }
   },
