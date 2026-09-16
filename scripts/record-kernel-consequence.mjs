@@ -9,7 +9,7 @@ const get = name => {
 const has = name => args.includes(`--${name}`);
 
 const file = get('file') ?? 'research/cognitive_kernel/data/consequence-records.jsonl';
-const required = ['pair-id','task-id','task-family','generator-family','condition','started-at','completed-at','human-minutes','verified-completion','rework-count','boundary-violations','downstream-failures','verification-method'];
+const required = ['pair-id','task-id','task-family','generator-family','condition','started-at','completed-at','human-minutes','verified-completion','rework-count','boundary-violations','downstream-failures','verification-method','independence-level','base-state','assignment-id'];
 for (const key of required) {
   if (get(key) === undefined) {
     console.error(`missing --${key}`);
@@ -30,10 +30,12 @@ const parseNonNegative = (value, key, integer=false) => {
 
 const taskFamilies = new Set(['research-synthesis','repository-change','benchmark-or-analysis','publication-or-documentation']);
 const conditions = new Set(['control','kernel']);
+const independenceLevels = new Set(['fresh-agent-context','fresh-workspace','independent-human-session']);
 const taskFamily = get('task-family');
 const condition = get('condition');
 if (!taskFamilies.has(taskFamily)) throw new Error(`unknown task family: ${taskFamily}`);
 if (!conditions.has(condition)) throw new Error(`unknown condition: ${condition}`);
+if (!independenceLevels.has(get('independence-level'))) throw new Error(`unknown independence level: ${get('independence-level')}`);
 
 for (const [key,value] of [['started-at',get('started-at')],['completed-at',get('completed-at')]]) {
   if (Number.isNaN(Date.parse(value))) throw new Error(`--${key} must be an ISO date-time`);
@@ -59,6 +61,11 @@ const record = {
   boundary_violations: parseNonNegative(get('boundary-violations'),'boundary-violations',true),
   downstream_failures: parseNonNegative(get('downstream-failures'),'downstream-failures',true),
   verification_method: get('verification-method'),
+  independence_level: get('independence-level'),
+  base_state: get('base-state'),
+  assignment_id: get('assignment-id'),
+  excluded: has('excluded'),
+  exclusion_reason: get('exclusion-reason') ?? '',
   evidence,
   notes: get('notes') ?? ''
 };

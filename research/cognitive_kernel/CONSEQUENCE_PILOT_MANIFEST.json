@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "study_id": "agalmic-kernel-consequence-pilot-001",
   "status": "prospective-pilot",
   "frozen_on": "2026-09-14",
@@ -11,10 +11,11 @@
       "control",
       "kernel"
     ],
-    "pairing_rule": "same task family, model family/version, tools, inputs, permissions, stopping rule, and verification procedure where feasible",
-    "order_rule": "counterbalance condition order within each task family when carry-over is plausible",
+    "pairing_rule": "same task family, model family/version, tools, permissions, stopping rule, verification procedure, and pinned base state; control and kernel execute in independent fresh contexts",
+    "order_rule": "randomize condition assignment to isolated task instances; do not rely on sequential crossover or washout",
     "retrospective_controls_allowed": false,
-    "rationale": "historical work was not assigned under the same prospective protocol and must not be treated as a clean control"
+    "rationale": "historical work was not assigned under the same prospective protocol and must not be treated as a clean control",
+    "independence_required": true
   },
   "task_families": [
     "research-synthesis",
@@ -62,8 +63,11 @@
     "human attention cannot be measured without retrospective guessing",
     "verification differs systematically by condition",
     "condition leakage contaminates the intended control",
-    "boundary violations increase in a way that makes continued exposure unjustified"
+    "boundary violations increase in a way that makes continued exposure unjustified",
+    "control and kernel conditions are not demonstrably isolated from one another"
   ],
-  "provenance_policy": "retain raw JSONL records and evidence references; summaries are derived and regenerable",
-  "amendment_policy": "changes after outcome inspection must be versioned and marked exploratory"
+  "provenance_policy": "retain raw JSONL records and evidence references; summaries are derived and regenerable Record assignment_id, independence_level, and pinned base_state for every condition.",
+  "amendment_policy": "changes after outcome inspection must be versioned and marked exploratory",
+  "amended_on": "2026-09-16",
+  "amendment_reason": "No outcomes collected. Sequential crossover is inappropriate where a cognitive intervention may persist through context, learning, strategy transfer, or mutable state."
 }
