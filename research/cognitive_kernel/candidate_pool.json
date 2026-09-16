@@ -4,15 +4,18 @@
   "candidates": [
     {
       "id": "kernel-condition-isolation",
-      "state": "partially-implemented",
-      "reason": "Pair assignment, pinned-state provenance, immutable spec hashes, and distinct context/workspace IDs are now machine-generated; execution adapters still must enforce fresh sessions/workspaces.",
+      "state": "contract-specified",
+      "reason": "Pair planning exists and the minimum evidence required to call an execution isolated is now specified. A fresh workspace label alone is explicitly inadmissible evidence.",
       "evidence": [
         "research/cognitive_kernel/CONTAMINATION_CONTROL_NOTE.md",
-        "CONSORT crossover extension",
-        "Brooks 2012 counterbalancing",
-        "research/cognitive_kernel/PAIR_PLANNER_NOTE.md"
+        "research/cognitive_kernel/PAIR_PLANNER_NOTE.md",
+        "research/cognitive_kernel/SEALED_EXECUTION_CONTRACT.md",
+        "RewardHackingAgents 2026",
+        "AgentLeak 2026",
+        "AgentAbstain 2026",
+        "Multi-Docker-Eval 2025"
       ],
-      "next_discriminating_action": "Implement an execution adapter that consumes a pair plan, launches two genuinely independent contexts/workspaces, and seals outcomes until both conditions complete."
+      "next_discriminating_action": "Implement an executor that emits sealed receipts for filesystem, network, capability, trace, artefact and cross-condition isolation evidence; then run the first admissible pair."
     },
     {
       "id": "kernel-consequence-evidence",
