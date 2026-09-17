@@ -1,33 +1,30 @@
 {
-  "updated": "2026-09-16",
+  "updated": "2026-09-17",
   "rule": "Discovery does not create commitment; evidence earns attention.",
   "candidates": [
     {
       "id": "kernel-condition-isolation",
-      "state": "contract-specified",
-      "reason": "Pair planning exists and the minimum evidence required to call an execution isolated is now specified. A fresh workspace label alone is explicitly inadmissible evidence.",
+      "state": "receipt-schema-specified",
+      "reason": "Pair planning, sealed-execution requirements, and a machine-readable execution receipt schema now exist. The remaining validity gap is observational enforcement: receipts must be generated from runtime instrumentation rather than caller assertions.",
       "evidence": [
         "research/cognitive_kernel/CONTAMINATION_CONTROL_NOTE.md",
         "research/cognitive_kernel/PAIR_PLANNER_NOTE.md",
         "research/cognitive_kernel/SEALED_EXECUTION_CONTRACT.md",
-        "RewardHackingAgents 2026",
-        "AgentLeak 2026",
-        "AgentAbstain 2026",
-        "Multi-Docker-Eval 2025"
+        "research/cognitive_kernel/EXECUTION_RECEIPT_NOTE.md",
+        "research/cognitive_kernel/execution-receipt.schema.json",
+        "Thinkingbox 2026",
+        "ClawProBench 2026",
+        "Harness-Bench 2026",
+        "From Agent Traces to Trust 2026",
+        "From Runnable to Verifiable 2026"
       ],
-      "next_discriminating_action": "Implement an executor that emits sealed receipts for filesystem, network, capability, trace, artefact and cross-condition isolation evidence; then run the first admissible pair."
+      "next_discriminating_action": "Implement an execution adapter that derives receipts from observed runtime events, validates paired receipts against the frozen plan, and refuses analysis on fail or abstain; then run the first admissible pair."
     },
     {
       "id": "kernel-consequence-evidence",
       "state": "promoted",
       "reason": "Conformance evidence cannot establish real-work utility; current field and collaboration research measures task quality, time use, retained capability, or real occupational performance.",
-      "evidence": [
-        "research/cognitive_kernel/CONSEQUENCE_PROTOCOL.md",
-        "Dillon et al. 2025 randomized field experiment",
-        "Dell'Acqua et al. 2026 field experiment",
-        "Cruces et al. 2026 randomized experiment",
-        "CollabSkill 2026"
-      ],
+      "evidence": ["research/cognitive_kernel/CONSEQUENCE_PROTOCOL.md","Dillon et al. 2025 randomized field experiment","Dell'Acqua et al. 2026 field experiment","Cruces et al. 2026 randomized experiment","CollabSkill 2026"],
       "next_discriminating_action": "Collect independently isolated control/kernel records from pinned equivalent starting states; reject contaminated pairs before analysis."
     },
     {
