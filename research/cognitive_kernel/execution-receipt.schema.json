@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agalmic Cognitive Kernel Sealed Execution Receipt",
+  "type": "object",
+  "required": ["receipt_version","pair_id","assignment_id","condition","context_id","base_state","task_spec_hash","verification_spec_hash","runtime","isolation","trace","outcome_seal","receipt_hash"],
+  "properties": {
+    "receipt_version": {"const":"0.1"},
+    "pair_id": {"type":"string","minLength":1},
+    "assignment_id": {"type":"string","minLength":1},
+    "condition": {"enum":["control","kernel"]},
+    "context_id": {"type":"string","minLength":1},
+    "base_state": {"type":"string","minLength":1},
+    "task_spec_hash": {"type":"string","minLength":1},
+    "verification_spec_hash": {"type":"string","minLength":1},
+    "runtime": {
+      "type":"object",
+      "required":["harness","generator_family","generator_version","started_at","completed_at"],
+      "properties": {
+        "harness":{"type":"string","minLength":1},
+        "harness_version":{"type":"string"},
+        "generator_family":{"type":"string","minLength":1},
+        "generator_version":{"type":"string","minLength":1},
+        "started_at":{"type":"string","format":"date-time"},
+        "completed_at":{"type":"string","format":"date-time"}
+      }, "additionalProperties":false
+    },
+    "isolation": {
+      "type":"object",
+      "required":["workspace_identity","filesystem_boundary","network_policy","capability_manifest_hash","cross_condition_channel_count","shared_mutable_resources"],
+      "properties": {
+        "workspace_identity":{"type":"string","minLength":1},
+        "filesystem_boundary":{"enum":["isolated","read-only-shared-base","unknown"]},
+        "network_policy":{"enum":["disabled","allowlisted","unrestricted","unknown"]},
+        "network_allowlist_hash":{"type":"string"},
+        "capability_manifest_hash":{"type":"string","minLength":1},
+        "cross_condition_channel_count":{"type":"integer","minimum":0},
+        "shared_mutable_resources":{"type":"array","items":{"type":"string"}},
+        "environment_fingerprint":{"type":"string"}
+      }, "additionalProperties":false
+    },
+    "trace": {
+      "type":"object",
+      "required":["trace_hash","tool_call_count","artifact_manifest_hash","final_state_hash"],
+      "properties": {
+        "trace_hash":{"type":"string","minLength":1},
+        "tool_call_count":{"type":"integer","minimum":0},
+        "artifact_manifest_hash":{"type":"string","minLength":1},
+        "final_state_hash":{"type":"string","minLength":1},
+        "network_event_log_hash":{"type":"string"}
+      }, "additionalProperties":false
+    },
+    "outcome_seal": {
+      "type":"object",
+      "required":["sealed_before_peer_completion","outcome_hash"],
+      "properties": {
+        "sealed_before_peer_completion":{"type":"boolean"},
+        "outcome_hash":{"type":"string","minLength":1},
+        "revealed_at":{"type":"string","format":"date-time"}
+      }, "additionalProperties":false
+    },
+    "admissibility": {
+      "type":"object",
+      "properties": {
+        "machine_check":{"enum":["pass","fail","abstain"]},
+        "reasons":{"type":"array","items":{"type":"string"}}
+      }, "additionalProperties":false
+    },
+    "receipt_hash":{"type":"string","minLength":1}
+  },
+  "additionalProperties": false
+}
