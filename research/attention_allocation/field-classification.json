@@ -1,0 +1,16 @@
+{
+  "schema_version":"0.1",
+  "rule":"Allocation code may read AVAILABLE_AT_DECISION_TIME only. FUTURE_OUTCOME is evaluation-only.",
+  "AVAILABLE_AT_DECISION_TIME":[
+    "submission_id","submission_timestamp","title","abstract","authors","keywords",
+    "contemporaneous_reviews","review_scores","reviewer_confidence","discussion_available_before_decision"
+  ],
+  "FUTURE_OUTCOME":[
+    "conference_decision","post_decision_discussion","later_publication","later_citations",
+    "influential_citations","later_versions","later_venue","future_work_lineage"
+  ],
+  "QUARANTINE_UNTIL_TIMESTAMPED":[
+    "meta_review","discussion","review_revision","external_identifier_added_after_submission"
+  ],
+  "leakage_policy":"Unknown temporal provenance is not decision-time evidence. Quarantine or ABSTAIN."
+}
