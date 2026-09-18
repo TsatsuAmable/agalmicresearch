@@ -1,7 +1,22 @@
 {
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "rule": "Discovery does not create commitment; evidence earns attention.",
   "candidates": [
+    {
+      "id": "attention-allocation-cognitive-abundance",
+      "state": "feasibility-promoted",
+      "reason": "High-value empirical programme with explicit falsification and reusable infrastructure. Prior art defeats any broad novelty claim: active learning and exploration/exploitation already study scarce evaluation; selective labels directly threaten retrospective outcome inference; journal evidence does not support assuming novelty suppression.",
+      "evidence": [
+        "research/attention_allocation/PROGRAMME.md",
+        "research/attention_allocation/prior-art-ledger.json",
+        "research/attention_allocation/PRE_OUTCOME_FEASIBILITY_GATE.md",
+        "Lakkaraju et al. 2017",
+        "Settles 2009",
+        "Teplitskiy et al. 2022",
+        "Fontana et al. 2020"
+      ],
+      "next_discriminating_action": "Acquire and inventory ICLR 2017-2022 from OpenReview under immutable provenance; current autonomous runner observed HTTP 403/429 from the public API, so retry from an allowed/rate-limited acquisition environment before any policy analysis."
+    },
     {
       "id": "kernel-condition-isolation",
       "state": "receipt-schema-specified",
@@ -24,7 +39,13 @@
       "id": "kernel-consequence-evidence",
       "state": "promoted",
       "reason": "Conformance evidence cannot establish real-work utility; current field and collaboration research measures task quality, time use, retained capability, or real occupational performance.",
-      "evidence": ["research/cognitive_kernel/CONSEQUENCE_PROTOCOL.md","Dillon et al. 2025 randomized field experiment","Dell'Acqua et al. 2026 field experiment","Cruces et al. 2026 randomized experiment","CollabSkill 2026"],
+      "evidence": [
+        "research/cognitive_kernel/CONSEQUENCE_PROTOCOL.md",
+        "Dillon et al. 2025 randomized field experiment",
+        "Dell'Acqua et al. 2026 field experiment",
+        "Cruces et al. 2026 randomized experiment",
+        "CollabSkill 2026"
+      ],
       "next_discriminating_action": "Collect independently isolated control/kernel records from pinned equivalent starting states; reject contaminated pairs before analysis."
     },
     {
