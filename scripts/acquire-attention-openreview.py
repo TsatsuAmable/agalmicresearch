@@ -17,7 +17,8 @@ def sha256(b): return hashlib.sha256(b).hexdigest()
 
 def fetch(params, retries=7, min_interval=5.0):
     url=BASE+"?"+urllib.parse.urlencode(params)
-    time.sleep(min_interval)\n    for attempt in range(retries):
+    time.sleep(min_interval)
+    for attempt in range(retries):
         req=urllib.request.Request(url,headers={"User-Agent":"AgalmicResearch-AttentionAllocation/0.1"})
         try:
             with urllib.request.urlopen(req,timeout=60) as r:
@@ -54,13 +55,14 @@ def acquire_year(year,out,limit=250,min_interval=5.0):
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument("--out",default="research/attention_allocation/data")
-    p.add_argument("--years",nargs="+",type=int,default=list(range(2017,2023))); p.add_argument("--limit",type=int,default=250)\n    p.add_argument("--min-interval",type=float,default=5.0,help="minimum seconds before every API request")
+    p.add_argument("--years",nargs="+",type=int,default=list(range(2017,2023))); p.add_argument("--limit",type=int,default=250)
+    p.add_argument("--min-interval",type=float,default=5.0,help="minimum seconds before every API request")
     a=p.parse_args(); out=pathlib.Path(a.out); out.mkdir(parents=True,exist_ok=True)
     manifest={"schema_version":"0.1","source":"OpenReview API","acquired_at":datetime.now(timezone.utc).isoformat(),"years":[]}
     for y in a.years:
         if y not in INVITATIONS: raise SystemExit(f"unsupported year {y}")
         manifest["years"].append(acquire_year(y,out,a.limit,a.min_interval))
-    payload=json.dumps(manifest,indent=2,sort_keys=True)+"\n"
+    payload=json.dumps(manifest,indent=2,sort_keys=True)+chr(10)
     (out/"manifest.json").write_text(payload)
     print(payload)
 
