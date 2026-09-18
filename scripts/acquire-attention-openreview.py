@@ -62,8 +62,7 @@ def main():
     for y in a.years:
         if y not in INVITATIONS: raise SystemExit(f"unsupported year {y}")
         manifest["years"].append(acquire_year(y,out,a.limit,a.min_interval))
-    payload=json.dumps(manifest,indent=2,sort_keys=True)+"
-"
+    payload=json.dumps(manifest,indent=2,sort_keys=True)+chr(10)
     (out/"manifest.json").write_text(payload)
     print(payload)
 
