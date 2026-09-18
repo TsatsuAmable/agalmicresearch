@@ -7,8 +7,9 @@
     "PROGRAMME.md",
     "prior-art-ledger.json",
     "field-classification.json",
-    "scripts/acquire_openreview.py",
-    "PRE_OUTCOME_FEASIBILITY_GATE.md"
+    "scripts/acquire-attention-openreview.py",
+    "PRE_OUTCOME_FEASIBILITY_GATE.md",
+    "OPENREVIEW_ACQUISITION_POLICY_NOTE.md"
   ],
   "active_experiment": "ICLR 2017-2022 acquisition and feasibility audit; no policy hypothesis test is authorised yet",
   "evidence_collected": [
@@ -16,10 +17,13 @@
     "Active learning already studies label allocation under expensive human-oracle budgets.",
     "Published peer-review evidence does not support a blanket assumption that novelty is systematically suppressed.",
     "Common novelty indicators are construct-sensitive and can overlap with interdisciplinarity.",
-    "Live acquisition probe on 2026-09-18 returned HTTP 429 and then HTTP 403 from api.openreview.net; no corpus record was treated as acquired."
+    "Live acquisition probe on 2026-09-18 returned HTTP 429 and then HTTP 403 from api.openreview.net; no corpus record was treated as acquired.",
+    "OpenReview public venue pages still expose the target ICLR years; ICLR 2017 visibly exposes rejected submissions.",
+    "Fresh OpenReview venue pages on 2026-09-18 reported API unavailability, so request rate alone is no longer the leading explanation for the 403 failure."
   ],
   "unresolved_methodological_risks": [
-    "OpenReview API access/rate limiting: live runner observed HTTP 429 then HTTP 403; acquisition must retry without bypassing source controls.",
+    "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
+    "historical review/version timestamps may be incomplete or overwritten",
     "accepted/rejected differential longitudinal observability",
     "selective labels and post-decision visibility effects",
     "paper-lineage ambiguity and resubmissions",
@@ -29,8 +33,9 @@
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
     "Citation-based outcomes are treatment-affected proxies, not counterfactual intrinsic value.",
-    "Novelty suppression is an empirical question and existing journal evidence sometimes points in the opposite direction."
+    "Novelty suppression is an empirical question and existing journal evidence sometimes points in the opposite direction.",
+    "A public venue page does not prove that the full historical decision-time record needed by the experiment remains obtainable."
   ],
-  "next_autonomous_action": "publish foundation and acquisition tooling; retry OpenReview acquisition from a permitted/rate-limited environment, then inventory raw corpus before any policy analysis",
+  "next_autonomous_action": "retry the documented OpenReview API after service recovery while identifying an official authenticated or bulk historical acquisition route; then inventory field-level temporal provenance before canonicalisation",
   "decisions_requiring_human_attention": []
 }
