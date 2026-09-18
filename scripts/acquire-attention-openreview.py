@@ -15,24 +15,24 @@ BASE="https://api.openreview.net/notes"
 
 def sha256(b): return hashlib.sha256(b).hexdigest()
 
-def fetch(params, retries=7):
+def fetch(params, retries=7, min_interval=5.0):
     url=BASE+"?"+urllib.parse.urlencode(params)
-    for attempt in range(retries):
+    time.sleep(min_interval)\n    for attempt in range(retries):
         req=urllib.request.Request(url,headers={"User-Agent":"AgalmicResearch-AttentionAllocation/0.1"})
         try:
             with urllib.request.urlopen(req,timeout=60) as r:
                 return r.read(), dict(r.headers), url
         except urllib.error.HTTPError as e:
             if e.code not in (429,500,502,503,504): raise
-            wait=float(e.headers.get("Retry-After") or min(120,2**attempt))
+            wait=float(e.headers.get("Retry-After") or min(300, 15 * (2**attempt)))
             time.sleep(wait)
     raise RuntimeError(f"retry budget exhausted: {url}")
 
-def acquire_year(year,out,limit=1000):
+def acquire_year(year,out,limit=250,min_interval=5.0):
     errors=[]
     for invitation in INVITATIONS[year]:
         try:
-            first,headers,url=fetch({"invitation":invitation,"limit":1})
+            first,headers,url=fetch({"invitation":invitation,"limit":1}, min_interval=min_interval)
             probe=json.loads(first)
             if "notes" not in probe: raise RuntimeError("response has no notes")
             break
@@ -42,24 +42,24 @@ def acquire_year(year,out,limit=1000):
     rawdir=out/"raw"/str(year); rawdir.mkdir(parents=True,exist_ok=True)
     offset=0; count=0; pages=[]
     while True:
-        body,headers,url=fetch({"invitation":invitation,"limit":limit,"offset":offset})
+        body,headers,url=fetch({"invitation":invitation,"limit":limit,"offset":offset}, min_interval=min_interval)
         obj=json.loads(body); notes=obj.get("notes",[])
         page=rawdir/f"notes-{offset:06d}.json"
         page.write_bytes(body)
         pages.append({"path":str(page),"sha256":sha256(body),"url":url,"count":len(notes)})
         count += len(notes)
         if len(notes)<limit: break
-        offset += len(notes); time.sleep(1)
+        offset += len(notes)
     return {"year":year,"status":"acquired","invitation":invitation,"count":count,"pages":pages,"probe_errors":errors}
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument("--out",default="research/attention_allocation/data")
-    p.add_argument("--years",nargs="+",type=int,default=list(range(2017,2023))); p.add_argument("--limit",type=int,default=1000)
+    p.add_argument("--years",nargs="+",type=int,default=list(range(2017,2023))); p.add_argument("--limit",type=int,default=250)\n    p.add_argument("--min-interval",type=float,default=5.0,help="minimum seconds before every API request")
     a=p.parse_args(); out=pathlib.Path(a.out); out.mkdir(parents=True,exist_ok=True)
     manifest={"schema_version":"0.1","source":"OpenReview API","acquired_at":datetime.now(timezone.utc).isoformat(),"years":[]}
     for y in a.years:
         if y not in INVITATIONS: raise SystemExit(f"unsupported year {y}")
-        manifest["years"].append(acquire_year(y,out,a.limit))
+        manifest["years"].append(acquire_year(y,out,a.limit,a.min_interval))
     payload=json.dumps(manifest,indent=2,sort_keys=True)+"\n"
     (out/"manifest.json").write_text(payload)
     print(payload)
