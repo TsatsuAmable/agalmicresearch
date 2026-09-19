@@ -1,51 +1,34 @@
 {
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "rule": "Discovery does not create commitment; evidence earns attention.",
   "candidates": [
     {
       "id": "attention-allocation-cognitive-abundance",
-      "state": "feasibility-promoted",
-      "reason": "High-value empirical programme with explicit falsification and reusable infrastructure. Prior art defeats any broad novelty claim: active learning and exploration/exploitation already study scarce evaluation; selective labels directly threaten retrospective outcome inference; journal evidence does not support assuming novelty suppression.",
+      "state": "temporal-observability-audit",
+      "reason": "Highest-value active empirical programme. The immediate discriminating issue is no longer request throughput but whether decision-time feature values can be reconstructed. Current records and post-decision dumps can otherwise create silent temporal leakage.",
       "evidence": [
         "research/attention_allocation/PROGRAMME.md",
-        "research/attention_allocation/prior-art-ledger.json",
         "research/attention_allocation/PRE_OUTCOME_FEASIBILITY_GATE.md",
-        "Lakkaraju et al. 2017",
-        "Settles 2009",
-        "Teplitskiy et al. 2022",
-        "Fontana et al. 2020"
+        "research/attention_allocation/OPENREVIEW_ACQUISITION_POLICY_NOTE.md",
+        "research/attention_allocation/TEMPORAL_OBSERVABILITY_AUDIT.md",
+        "OpenReview data-retrieval documentation",
+        "Paper Copilot 2026 timestamped ICLR archive",
+        "public OpenReview-derived ICLR dumps"
       ],
-      "next_discriminating_action": "Acquire and inventory ICLR 2017-2022 from OpenReview under immutable provenance; current autonomous runner observed HTTP 403/429 from the public API, so retry from an allowed/rate-limited acquisition environment before any policy analysis."
+      "next_discriminating_action": "Construct a year-by-field temporal-observability matrix for ICLR 2017-2022. Permit policy inputs only when decision-time state is observed or deterministically derivable; otherwise narrow to submission-time features or ABSTAIN."
     },
     {
       "id": "kernel-condition-isolation",
       "state": "receipt-schema-specified",
       "reason": "Pair planning, sealed-execution requirements, and a machine-readable execution receipt schema now exist. The remaining validity gap is observational enforcement: receipts must be generated from runtime instrumentation rather than caller assertions.",
-      "evidence": [
-        "research/cognitive_kernel/CONTAMINATION_CONTROL_NOTE.md",
-        "research/cognitive_kernel/PAIR_PLANNER_NOTE.md",
-        "research/cognitive_kernel/SEALED_EXECUTION_CONTRACT.md",
-        "research/cognitive_kernel/EXECUTION_RECEIPT_NOTE.md",
-        "research/cognitive_kernel/execution-receipt.schema.json",
-        "Thinkingbox 2026",
-        "ClawProBench 2026",
-        "Harness-Bench 2026",
-        "From Agent Traces to Trust 2026",
-        "From Runnable to Verifiable 2026"
-      ],
+      "evidence": ["research/cognitive_kernel/CONTAMINATION_CONTROL_NOTE.md","research/cognitive_kernel/PAIR_PLANNER_NOTE.md","research/cognitive_kernel/SEALED_EXECUTION_CONTRACT.md","research/cognitive_kernel/EXECUTION_RECEIPT_NOTE.md","research/cognitive_kernel/execution-receipt.schema.json"],
       "next_discriminating_action": "Implement an execution adapter that derives receipts from observed runtime events, validates paired receipts against the frozen plan, and refuses analysis on fail or abstain; then run the first admissible pair."
     },
     {
       "id": "kernel-consequence-evidence",
       "state": "promoted",
       "reason": "Conformance evidence cannot establish real-work utility; current field and collaboration research measures task quality, time use, retained capability, or real occupational performance.",
-      "evidence": [
-        "research/cognitive_kernel/CONSEQUENCE_PROTOCOL.md",
-        "Dillon et al. 2025 randomized field experiment",
-        "Dell'Acqua et al. 2026 field experiment",
-        "Cruces et al. 2026 randomized experiment",
-        "CollabSkill 2026"
-      ],
+      "evidence": ["research/cognitive_kernel/CONSEQUENCE_PROTOCOL.md","Dillon et al. 2025 randomized field experiment","Dell'Acqua et al. 2026 field experiment","Cruces et al. 2026 randomized experiment","CollabSkill 2026"],
       "next_discriminating_action": "Collect independently isolated control/kernel records from pinned equivalent starting states; reject contaminated pairs before analysis."
     },
     {
