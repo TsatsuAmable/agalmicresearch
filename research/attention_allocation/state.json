@@ -1,7 +1,7 @@
 {
   "programme": "Attention Allocation Under Cognitive Abundance",
-  "updated": "2026-09-18",
-  "phase": "feasibility-corpus-construction",
+  "updated": "2026-09-19",
+  "phase": "feasibility-temporal-observability",
   "gate_status": "NOT_YET_EVALUATED",
   "completed_artefacts": [
     "PROGRAMME.md",
@@ -9,21 +9,23 @@
     "field-classification.json",
     "scripts/acquire-attention-openreview.py",
     "PRE_OUTCOME_FEASIBILITY_GATE.md",
-    "OPENREVIEW_ACQUISITION_POLICY_NOTE.md"
+    "OPENREVIEW_ACQUISITION_POLICY_NOTE.md",
+    "TEMPORAL_OBSERVABILITY_AUDIT.md"
   ],
-  "active_experiment": "ICLR 2017-2022 acquisition and feasibility audit; no policy hypothesis test is authorised yet",
+  "active_experiment": "ICLR 2017-2022 acquisition and temporal-observability feasibility audit; no policy hypothesis test is authorised yet",
   "evidence_collected": [
     "Selective-label problem is established prior art and directly threatens naive retrospective policy evaluation.",
     "Active learning already studies label allocation under expensive human-oracle budgets.",
     "Published peer-review evidence does not support a blanket assumption that novelty is systematically suppressed.",
     "Common novelty indicators are construct-sensitive and can overlap with interdisciplinarity.",
     "Live acquisition probe on 2026-09-18 returned HTTP 429 and then HTTP 403 from api.openreview.net; no corpus record was treated as acquired.",
-    "OpenReview public venue pages still expose the target ICLR years; ICLR 2017 visibly exposes rejected submissions.",
-    "Fresh OpenReview venue pages on 2026-09-18 reported API unavailability, so request rate alone is no longer the leading explanation for the 403 failure."
+    "OpenReview documents supported API2 and legacy API1 retrieval for submissions, reviews, rebuttals and decisions.",
+    "Recent Paper Copilot work reports that official historical review snapshots can be overwritten; its timestamped public archive covers ICLR 2024-2026, not the 2017-2022 development cohort.",
+    "Independent public OpenReview-derived dumps cover overlapping ICLR years and can serve as coverage witnesses, but cannot silently replace primary-source temporal provenance."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
-    "historical review/version timestamps may be incomplete or overwritten",
+    "decision-time review/version state may be irrecoverable for material portions of ICLR 2017-2022",
     "accepted/rejected differential longitudinal observability",
     "selective labels and post-decision visibility effects",
     "paper-lineage ambiguity and resubmissions",
@@ -34,8 +36,8 @@
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
     "Citation-based outcomes are treatment-affected proxies, not counterfactual intrinsic value.",
     "Novelty suppression is an empirical question and existing journal evidence sometimes points in the opposite direction.",
-    "A public venue page does not prove that the full historical decision-time record needed by the experiment remains obtainable."
+    "A current public record is not evidence that its decision-time value is reconstructable; a temporal firewall cannot recover overwritten history."
   ],
-  "next_autonomous_action": "retry the documented OpenReview API after service recovery while identifying an official authenticated or bulk historical acquisition route; then inventory field-level temporal provenance before canonicalisation",
+  "next_autonomous_action": "build the year-by-field temporal observability matrix; use documented OpenReview APIs as primary source and independently archived datasets only as provenance-labelled coverage witnesses; narrow to submission-time features if historical review state is unrecoverable",
   "decisions_requiring_human_attention": []
 }
