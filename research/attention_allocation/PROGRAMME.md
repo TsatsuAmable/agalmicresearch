@@ -2,7 +2,8 @@
 
 **Status:** empirical programme, feasibility phase  
 **Gate:** NOT YET EVALUATED  
-**Policy simulations:** prohibited until feasibility criteria are frozen and the gate passes.
+**Empirical policy simulations:** prohibited until feasibility criteria are frozen and the gate passes.  
+**Synthetic engineering fixtures:** permitted only to test harness mechanics; they are non-evidentiary.
 
 ## Research question
 
@@ -32,11 +33,26 @@ Development cohort: ICLR/OpenReview 2017–2022. Later years are held back for t
 
 Raw source records are immutable. Clean/canonical records are derived. Every field used by an allocation policy must be classified AVAILABLE_AT_DECISION_TIME. Future outcomes and fields with unresolved timestamps are blocked by architecture.
 
+## Stage A synthetic engineering harness
+
+A deterministic synthetic harness may be built and exercised before the empirical gate passes, but only to test software and protocol invariants. It must not be used to rank policies for the research programme or to support publication claims.
+
+The harness must:
+
+- expose identical candidate pools and budgets to every policy;
+- structurally redact evaluator-only latent value from policy inputs;
+- use multiple scenario families so one assumed world cannot masquerade as a general result;
+- preserve deterministic seeds and versioned configuration;
+- fail on budget overspend, duplicate selection or evaluator leakage;
+- label all outputs `ENGINEERING_FIXTURE_ONLY`.
+
+The authoritative specification is `research/attention_allocation/synthetic/STAGE_A_SPEC.md`.
+
 ## Feasibility before hypotheses
 
-Before any policy comparison, report completeness by year and decision; longitudinal match rates by decision/year/metadata; unresolved matches; lineage ambiguity; resubmissions; outcome-window completeness; missingness; and temporal leakage.
+Before any empirical policy comparison, report completeness by year and decision; longitudinal match rates by decision/year/metadata; unresolved matches; lineage ambiguity; resubmissions; outcome-window completeness; missingness; and temporal leakage.
 
-The gate criteria themselves must be frozen before substantive policy outcomes are inspected. We will not invent a threshold after seeing whether it permits the desired experiment.
+The gate criteria themselves must be frozen before substantive empirical policy outcomes are inspected. We will not invent a threshold after seeing whether it permits the desired experiment.
 
 ## Causal boundary
 
@@ -48,7 +64,7 @@ ABSTAIN or redesign if longitudinal coverage of non-selected work is inadequate,
 
 ## Public outputs
 
-Research-commons artefacts may be released throughout feasibility: acquisition tooling, provenance, corpus manifests, matching methodology, leakage tests, feasibility reports and negative results. A journal manuscript is downstream of evidence, not a production target.
+Research-commons artefacts may be released throughout feasibility: acquisition tooling, provenance, corpus manifests, matching methodology, leakage tests, feasibility reports, synthetic engineering fixtures and negative results. A journal manuscript is downstream of evidence, not a production target.
 
 ## References
 
