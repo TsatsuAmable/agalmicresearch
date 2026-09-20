@@ -41,7 +41,13 @@
     "t0/T0_TECHNICAL_AVAILABILITY_GATE.md",
     "scripts/freeze-attention-t0-cohort.py",
     "scripts/finalize-attention-t0-stage.py",
-    "scripts/audit-attention-track-a-design-precision.py"
+    "scripts/audit-attention-track-a-design-precision.py",
+    "t0/OPENALEX_IDENTITY_FEASIBILITY_AUDIT.md",
+    "scripts/batch-attention-openalex-linkage.py",
+    "scripts/acquire-attention-openalex-batch-metadata.py",
+    "scripts/resolve-attention-openalex-batched-identities.py",
+    "scripts/audit-attention-openalex-identity-support.py",
+    "scripts/reconcile-attention-openalex-batch-provenance.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -83,7 +89,12 @@
     "A 100-document complete fixture ran the entire post-gate chain end to end; the frozen cohort contained no tested decision/review/citation strings, the representation was marked FROZEN_T0_REPRESENTATION, and policy outputs were marked FROZEN_T0_POLICY_SELECTIONS.",
     "The finalizer explicitly leaves the downstream outcome gate closed even after technical PASS/CONDITIONAL; it does not acquire or evaluate real downstream outcomes.",
     "A pre-outcome design-precision audit is now wired into T0 finalization. It uses only frozen policy-set overlap, cohort size, the preregistered top-decile outcome fraction and the five-percentage-point smallest effect of interest; no realized citation values are required.",
-    "On the 100-document finalization fixture, all five structured-policy contrasts were prospectively precision-inadequate for a five-point recall effect, demonstrating that the audit can surface underpowered designs before outcome acquisition."
+    "On the 100-document finalization fixture, all five structured-policy contrasts were prospectively precision-inadequate for a five-point recall effect, demonstrating that the audit can surface underpowered designs before outcome acquisition.",
+    "OpenAlex identity feasibility was measured before citation outcomes: 1,693/1,816 (93.23%) T0 candidates matched the frozen exact-title+author identity rule.",
+    "Exact OpenAlex identity support is historically decision-differential in the ICLR 2020 T0 cohort: ACCEPT 528/549 (96.17%) versus REJECT 1,165/1,267 (91.95%); ACCEPT-minus-REJECT gap +4.23 pp with 95% Newcombe-Wilson interval [+1.84, +6.31] pp, so equivalence inside +/-5 pp is not established.",
+    "Identity batching reduced 1,816 exact-title lookups to 73 OpenAlex requests and recorded 0.073 USD-equivalent API usage units without acquiring citation outcomes.",
+    "An initial unquoted-filter client defect produced HTTP 400 responses for punctuation-bearing title batches; failed responses were excluded, the filter grammar was corrected, and raw provenance was reconciled across 34 valid v0 batches and 39 corrected v1 batches.",
+    "OpenAlex identity clustering found 283 candidates with two matched work manifestations and 5 with three, supporting the preregistered requirement to union manifestations rather than choose one arbitrary work record."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -112,7 +123,10 @@
     "technical T0-content availability must not be adjudicated before every reference candidate has terminal acquisition and required extraction state",
     "the +/-5 percentage-point technical equivalence margin is deliberately tied to the already-frozen 5-point downstream smallest effect of interest rather than chosen after observing final missingness",
     "technical availability completion alone is insufficient to unlock downstream outcomes; broader outcome-support, entity-resolution, lineage and precision criteria still require adjudication",
-    "the preregistered top-decile recall endpoint may be precision-limited at the available cohort size depending on the final policy-vs-random selection overlap; this must be checked before spending attention or provider budget on downstream outcomes"
+    "the preregistered top-decile recall endpoint may be precision-limited at the available cohort size depending on the final policy-vs-random selection overlap; this must be checked before spending attention or provider budget on downstream outcomes",
+    "primary OpenAlex identity observability is measurably higher for historical ACCEPT than REJECT candidates; exact-match downstream analysis must therefore be restricted to the observable matched cohort and cannot assume outcome observability is independent of selection",
+    "117 candidates have no primary exact OpenAlex identity and 6 have exact-title records without the required author overlap; these must not be imputed as zero-citation outcomes",
+    "fuzzy identity recovery remains sensitivity-only under the frozen protocol and cannot silently replace the exact-match primary cohort"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -137,6 +151,11 @@
       "candidate": "Prospective Track A design-precision audit",
       "status": "implemented-pre-outcome",
       "reason": "uses only final policy overlap and frozen design constants to detect obvious precision failure before any citation outcome is acquired"
+    },
+    {
+      "candidate": "OpenAlex exact identity feasibility",
+      "status": "completed-conditional-observability",
+      "reason": "93.23% overall exact identity support is substantial, but the ACCEPT-vs-REJECT linkage gap fails the frozen +/-5 pp equivalence criterion; downstream claims must remain matched-cohort conditional"
     },
     {
       "candidate": "ICLR 2020 T0 historical PDF acquisition",
@@ -189,6 +208,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "complete live T0 acquisition/extraction; finalizer will adjudicate technical availability, freeze the outcome-blind cohort, regenerate policies and run the prospective precision audit; use that evidence in the broader feasibility decision before any OpenAlex citation acquisition",
+  "next_autonomous_action": "finish live T0 acquisition/extraction and finalization; intersect the final outcome-blind cohort and preregistered policy selections with the already-frozen OpenAlex identity support, then use the design-precision and observability diagnostics to decide whether citation-outcome acquisition should proceed",
   "decisions_requiring_human_attention": []
 }
