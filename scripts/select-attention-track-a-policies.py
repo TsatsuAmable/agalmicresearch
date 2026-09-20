@@ -157,12 +157,12 @@ def main() -> None:
     parser.add_argument("--representation-manifest", type=Path, required=True)
     parser.add_argument("--out-dir", type=Path, required=True)
     parser.add_argument("--engineering-fixture", action="store_true")
+    parser.add_argument("--post-t0-gate", action="store_true")
     args = parser.parse_args()
 
-    if not args.engineering_fixture:
+    if args.engineering_fixture == args.post_t0_gate:
         raise SystemExit(
-            "Policy selection is gated. Use --engineering-fixture for "
-            "outcome-blind mechanics only until the feasibility gate passes."
+            "choose exactly one of --engineering-fixture or --post-t0-gate"
         )
 
     try:
@@ -174,10 +174,15 @@ def main() -> None:
         ) from exc
 
     rep_manifest = json.loads(args.representation_manifest.read_text())
-    if rep_manifest.get("status") != "ENGINEERING_FIXTURE_ONLY":
+    expected_rep_status = (
+        "FROZEN_T0_REPRESENTATION"
+        if args.post_t0_gate
+        else "ENGINEERING_FIXTURE_ONLY"
+    )
+    if rep_manifest.get("status") != expected_rep_status:
         raise RuntimeError(
-            "unexpected representation status; this selector currently "
-            "accepts engineering fixtures only"
+            f"unexpected representation status: {rep_manifest.get('status')}; "
+            f"expected {expected_rep_status}"
         )
 
     row_index = load_row_index(args.row_index)
@@ -218,9 +223,14 @@ def main() -> None:
     coverage_order = kcenter_order(dense, centroid_distance, max_k)
 
     selections: dict[str, dict[str, Any]] = {}
+    output_status = (
+        "FROZEN_T0_POLICY_SELECTIONS"
+        if args.post_t0_gate
+        else "ENGINEERING_FIXTURE_ONLY"
+    )
     diagnostics: dict[str, Any] = {
         "schema_version": PROTOCOL_VERSION,
-        "status": "ENGINEERING_FIXTURE_ONLY",
+        "status": output_status,
         "N": n,
         "budgets": budgets,
         "pairwise_jaccard": {},
@@ -296,7 +306,7 @@ def main() -> None:
 
     manifest = {
         "schema_version": PROTOCOL_VERSION,
-        "status": "ENGINEERING_FIXTURE_ONLY",
+        "status": output_status,
         "seed": SEED,
         "policies": list(POLICIES),
         "budget_fractions": list(BUDGET_FRACTIONS),
