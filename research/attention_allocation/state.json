@@ -1,7 +1,7 @@
 {
   "programme": "Attention Allocation Under Cognitive Abundance",
   "updated": "2026-09-20",
-  "phase": "feasibility-track-a-t0-pdf-acquisition-running",
+  "phase": "track-a-v0.1-abstain-pre-outcome-v0.2-redesign",
   "gate_status": "CONDITIONAL_T0_PDF_ACQUISITION_RUNNING_EXTRACTION_PROTOCOL_FROZEN",
   "completed_artefacts": [
     "PROGRAMME.md",
@@ -60,7 +60,9 @@
     "t0/POST_GATE_OUTCOME_EXECUTION.md",
     "scripts/acquire-attention-openalex-citations-batched.py",
     "scripts/prepare-attention-lineage-sensitivity-outcomes.py",
-    "scripts/run-attention-post-gate-outcomes.py"
+    "scripts/run-attention-post-gate-outcomes.py",
+    "t0/TRACK_A_V01_FEASIBILITY_RESULT.md",
+    "t0/TRACK_A_V02_MULTICOHORT_REDESIGN.md"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -126,7 +128,13 @@
     "A fail-closed post-gate outcome runner is now implemented: it refuses all citation-network activity unless the broader adjudication explicitly authorizes PASS/CONDITIONAL outcome acquisition.",
     "The preferred post-gate OpenAlex C5 acquirer batches up to 100 exact identity work IDs per cites-filter request and attributes citing works back to candidates using referenced_works, preserving the frozen candidate-level C5 definition while reducing request overhead.",
     "Post-gate outcome acquisition separately records network attempts, successful response pages and cost; a pre-request cost-cap fixture verifies that an authorized run can stop with zero network activity and zero observed outcomes.",
-    "Mandatory lineage sensitivities are implemented as immutable outcome views excluding any detected lineage and excluding later-ACCEPT lineage; the frozen evaluator is rerun unchanged on each view."
+    "Mandatory lineage sensitivities are implemented as immutable outcome views excluding any detected lineage and excluding later-ACCEPT lineage; the frozen evaluator is rerun unchanged on each view.",
+    "Track A v0.1 reached a terminal outcome-free verdict: ABSTAIN_PRE_OUTCOME. The fatal reason is prospective design precision: 0/5 primary policy contrasts can resolve the frozen five-percentage-point smallest effect at N=1,815.",
+    "Historical T0 technical availability passed decisively: 1,815/1,816 candidates are primary-usable, including 549/549 ACCEPT and 1,266/1,267 REJECT; the sole failure is a frozen historical PDF exceeding the prospectively enforced 100 MiB safety ceiling.",
+    "Final exact OpenAlex identity support is 1,692/1,815 (93.22%). Historical ACCEPT-vs-REJECT observability neutrality is not established, but actual primary policy-vs-random observability-only recall shifts are only -0.30 to -0.65 percentage points, all inside the frozen +/-5 point bound.",
+    "Final lineage balance passes: 10 exact-lineage candidates, 19 including conservative sensitivity lineage, and 3 later-ACCEPT descendants in the final 1,815-candidate cohort.",
+    "Prospective 95% half-widths for the five primary policy-vs-random recall contrasts are 7.71-7.93 percentage points, exceeding the frozen 5-point smallest effect. Approximate matched N required under the observed outcome-blind overlap geometry is 4,321-4,571.",
+    "The real post-gate runner was executed against the final ABSTAIN adjudication and confirmed network_activity_started=false; no Track A citation outcome request was made."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -170,7 +178,10 @@
     "conditional feasibility must restrict claims before outcomes are opened, especially to the exact matched cohort and any precision-adequate policy contrasts only",
     "real citation outcomes must still remain unopened until the live broader adjudication explicitly authorizes acquisition",
     "batched cites-filter attribution depends on OpenAlex referenced_works completeness; raw responses are therefore preserved and the simpler per-work acquirer remains a reference implementation for adversarial cross-checks",
-    "partial citation acquisition may exhaust the anonymous provider budget before completion; deterministic batch hashes and ledgers permit safe resumption without changing the frozen outcome definition"
+    "partial citation acquisition may exhaust the anonymous provider budget before completion; deterministic batch hashes and ledgers permit safe resumption without changing the frozen outcome definition",
+    "v0.1 cannot distinguish a five-percentage-point top-decile recall effect and must not be reinterpreted by opening outcomes anyway",
+    "v0.2 multi-cohort pooling must preserve within-year decision-time geometry and fixed five-year follow-up rather than creating one anachronistic cross-year representation",
+    "the 2017-2021 raw ACCEPT+REJECT frame of 7,496 is only an upper bound; revision availability and exact identity support must be audited before multi-year PDF acquisition"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -182,14 +193,19 @@
   ],
   "candidate_pool": [
     {
+      "candidate": "Track A v0.2 multi-cohort redesign",
+      "status": "prospective-design-draft-outcomes-still-sealed",
+      "reason": "target at least 4,600 exact-outcome-observable candidates, likely via year-stratified ICLR 2017-2021 cohorts, while retaining the v0.1 endpoint and five-point precision requirement"
+    },
+    {
       "candidate": "Fail-closed post-gate outcome runner",
       "status": "implemented-dormant-until-authorized",
       "reason": "can automatically execute efficient frozen C5 acquisition, primary evaluation and lineage sensitivities only after the broader outcome-free gate explicitly authorizes citation access"
     },
     {
       "candidate": "Broader pre-outcome feasibility adjudicator",
-      "status": "implemented-fail-closed",
-      "reason": "combines all frozen pre-outcome evidence and refuses citation acquisition on temporal, support, observability, lineage, construct, coverage or precision failure"
+      "status": "completed-real-verdict-abstain",
+      "reason": "real v0.1 adjudication returned ABSTAIN_PRE_OUTCOME because design precision was inadequate for all five frozen primary contrasts; citation outcomes remained sealed"
     },
     {
       "candidate": "Frozen T0 technical availability adjudicator",
@@ -277,6 +293,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "finish the final ~22 T0 acquisition records and extraction catch-up; let finalization, observability, lineage and broader adjudication complete; if and only if citation acquisition is authorized, invoke the fail-closed post-gate outcome runner, otherwise preserve ABSTAIN without opening outcomes",
+  "next_autonomous_action": "implement the v0.2 metadata-only feasibility stage: freeze conservative ICLR 2017-2019 deadline cutoffs, recover the 2017-2021 revision index, construct year-specific T0 candidate counts, and run the stratified prospective precision gate before any additional PDF or citation acquisition",
   "decisions_requiring_human_attention": []
 }

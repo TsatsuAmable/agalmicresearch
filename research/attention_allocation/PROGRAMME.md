@@ -194,3 +194,17 @@ When authorized, the preferred OpenAlex acquirer batches up to 100 exact identit
 After complete C5 acquisition, the unchanged frozen evaluator runs the primary comparison. Two mandatory lineage sensitivity views are then evaluated with identical machinery: one excludes every exact/near-lineage candidate and one excludes only candidates with a later ACCEPT descendant. The views hard-link or byte-copy frozen outcomes; they do not recalculate or transform outcome values.
 
 Pre-outcome validation confirms the firewall: an ABSTAIN fixture performs zero network activity; an authorized fixture with a sub-request cost cap also performs zero network activity and reports a partial state; synthetic page attribution correctly assigns and deduplicates citing works across target identities. Real Track A citation outcomes remain unopened pending the live broader gate.
+
+## Track A v0.1 terminal feasibility result — 20 September 2026
+
+Track A v0.1 has reached its frozen pre-outcome verdict: `ABSTAIN_PRE_OUTCOME`. The historical acquisition itself is excellent: 1,815/1,816 T0 candidates are primary-usable, with 549/549 historical ACCEPT and 1,266/1,267 historical REJECT candidates retained. Exact OpenAlex identity support on that final cohort is 1,692/1,815 (93.22%). Historical decision-linked identity neutrality is not established, but the actual frozen policies differ from seeded random by only -0.30 to -0.65 percentage points of expected recall due solely to identity availability. Final lineage balance also passes, with 10 exact lineage candidates, 19 under the conservative sensitivity rule and three later-ACCEPT descendants.
+
+The decisive failure is prospective precision. At N=1,815 and a 20% attention budget, the five structured policy-vs-random primary contrasts have 95% design half-widths between 7.71 and 7.93 percentage points, wider than the frozen five-point smallest effect of interest. Zero of five comparisons are precision-adequate. The broader adjudicator therefore prohibits citation acquisition. The real post-gate runner was executed against this verdict and recorded `network_activity_started=false`; the C5 outcome remains sealed.
+
+This is the programme's first substantive negative feasibility result. It does not imply that the policies have no effect. It establishes that the v0.1 ICLR 2020 design cannot resolve the effect size it promised to distinguish. The firewall therefore prevented a potentially interesting but underpowered outcome from being opened and retrospectively rationalized.
+
+## Track A v0.2 prospective redesign — 20 September 2026
+
+Using only the outcome-blind v0.1 policy-overlap geometry, an exact-observable matched N of roughly 4,321–4,571 would be required to bring the prospective 95% recall-difference half-width to five percentage points. v0.2 therefore targets at least 4,600 exact-outcome-observable candidates, with acquisition margin above that floor.
+
+The current design draft proposes year-stratified ICLR 2017–2021 cohorts. The frozen metadata contains 7,496 ACCEPT+REJECT records across those five years before T0-revision, technical and identity gates. Policies will be selected independently within each year at the same 20% budget, and high recognition will be defined within year over an equal five-year follow-up horizon. The next stage is metadata-only: establish conservative historical deadlines, recover the revision index, build candidate counts and rerun the prospective precision gate before downloading another multi-year PDF corpus. The v0.1 citation box remains unopened.
