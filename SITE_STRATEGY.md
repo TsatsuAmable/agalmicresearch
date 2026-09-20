@@ -2,11 +2,23 @@
 
 ## Positioning
 
-**Agalmic Research studies what happens when machine cognition lowers the cost of generating candidate knowledge, while attention, validation, trust, realization and other complements remain scarce.**
+**Agalmic Research is a small experimental laboratory for converting available abundance, especially machine cognition, into durable human or institutional capability under real constraints.**
 
 The site should feel like a research notebook that has acquired an address, not a startup landing page and not a simulated university institute. Its authority should come from clear claims, visible intellectual lineage, durable citations, open source, standards-compatible provenance, version history and the quality of the arguments.
 
 The project should not manufacture novelty through vocabulary. Existing theory is an input. Finding that an idea already exists is a successful research result because it moves the project to a higher starting point.
+
+## Execution direction · 20 September 2026
+
+The canonical v0.3 definition remains valid, but the public execution model is now narrower than the older research map suggests.
+
+1. **One flagship empirical programme:** Attention Allocation Under Cognitive Abundance. It currently carries the strongest falsifiable scientific work and has already produced a pre-outcome ABSTAIN result.
+2. **One owned capability practice:** Personal Capability Practice, with scholarliness, engineering and leadership as domains and the Cognitive Kernel as an intervention under test.
+3. **Bounded independent testbeds:** Nemosyne may host concrete representation or verification experiments without becoming Agalmic-owned.
+4. **Supporting machinery stays supporting:** provenance, Frontier Throughput, research agents and site infrastructure do not earn frontier status merely by becoming elaborate.
+5. **Results outrank vocabulary:** the public site should foreground what was tested, what stopped, what changed belief and what capability was created before adding new conceptual branches.
+
+The broad research architecture below remains a question map and intellectual lineage. It is not an organisation chart or list of concurrent programmes.
 
 ## Core working hypothesis
 
@@ -145,7 +157,8 @@ If a model surfaces an old idea unknown to the curator, record independent redis
 ## Information architecture
 
 - `/` — programme thesis and correction posture
-- `/research` — research tracks, antecedents and open questions
+- `/projects` — actual project ownership, status and next discriminating action
+- `/research` — flagship empirical programme plus preserved research tracks, antecedents and open questions
 - `/publications` — lineage-gated paper sequence
 - `/drafts` — exploratory work with maturity and lineage status
 - `/lineage` — living intellectual-lineage and novelty register

@@ -14,6 +14,18 @@ The programme now begins inwardly. It uses the practitioner's real work as the f
 
 Live site: **https://agalmicresearch.org**
 
+## Current direction
+
+The programme now runs a deliberately small project set:
+
+- **Attention Allocation Under Cognitive Abundance** is the flagship empirical programme. Track A v0.1 ended in a real `ABSTAIN_PRE_OUTCOME` result before citation outcomes were opened; v0.2 is currently gated on recovering selection-neutral historical state at sufficient scale.
+- **Personal Capability Practice** is the owned inward laboratory. Scholarliness, software engineering and engineering leadership are application domains inside it rather than separate projects. The Cognitive Kernel is an intervention under test, not a product category.
+- **Nemosyne / Moneta** is an independent related project and bounded experimental testbed. Agalmic Research may study or contribute methods around representation, verification attention and discovery workflow without owning Nemosyne's roadmap.
+
+Supporting infrastructure such as Frontier Throughput, provenance machinery and research-completion tooling should receive substantial work only when an active experiment demonstrates that the machinery is itself the binding constraint.
+
+See **[/projects](https://agalmicresearch.org/projects/)** for the live project map and `docs/AGALMIC_DIRECTION_REVIEW_2026-09-20.md` for the current direction review.
+
 ## Current applications
 
 The first capability domains are deliberately attached to real needs:
@@ -103,7 +115,7 @@ The package is licensed under **0BSD**. Use it, rename it, improve it or absorb 
 
 ## Nemosyne
 
-[Nemosyne](https://nemosyne.world) is a related AI-assisted discovery and engineering project exploring spatial data navigation, representation intelligence, provenance and human-machine discovery.
+[Nemosyne](https://nemosyne.world) is an independent related AI-assisted discovery and engineering project exploring spatial data navigation, representation intelligence, provenance and human-machine discovery. It is not owned by Agalmic Research.
 
 Its present relationship to Agalmic practice is explicitly two-phase:
 

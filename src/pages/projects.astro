@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+import projectsData from '../data/projects.json';
+
+const active = projectsData.projects.filter((project) => project.state === 'active');
+const related = projectsData.projects.filter((project) => project.state === 'related');
+const supporting = projectsData.projects.filter((project) => ['supporting', 'absorbed'].includes(project.state));
+---
+<Layout
+  title="Projects"
+  description="The current Agalmic Research project map: flagship empirical work, capability practice, supporting infrastructure and independent related testbeds."
+>
+  <header class="page-head">
+    <div class="shell">
+      <p class="eyebrow">Projects · ownership · current state</p>
+      <h1>Fewer projects. Clearer jobs.</h1>
+      <p class="lede">Agalmic Research now separates active research, applied practice, supporting machinery and independent testbeds. A useful idea does not become an active project merely because it has a name.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Direction</p>
+      <blockquote>One serious empirical programme. One capability practice. Bounded testbeds. Everything else stays cheap until evidence earns more attention.</blockquote>
+      <p>{projectsData.direction}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Active</span>
+        <div class="section-copy">
+          <h2>What Agalmic Research is actually working on.</h2>
+          <p>These are the owned workstreams currently entitled to substantial attention.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {active.map((project, index) => (
+          <article class="index-item">
+            <span class="index-meta">A{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{project.title}</h3>
+              <p class="muted"><strong>{project.kind}</strong> · {project.relationship}</p>
+              <p>{project.summary}</p>
+              <p><strong>Current result:</strong> {project.current_result}</p>
+              <p><strong>Next:</strong> {project.next}</p>
+              <p>
+                {project.links.map((link, linkIndex) => (
+                  <>
+                    {linkIndex > 0 && ' · '}
+                    <a href={link.href}>{link.label} ↗</a>
+                  </>
+                ))}
+              </p>
+            </div>
+            <span class="index-status">active</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Related</span>
+        <div class="section-copy">
+          <h2>Useful testbeds without ownership blur.</h2>
+          <p>Independent projects can inform Agalmic Research without becoming Agalmic-owned programmes.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {related.map((project, index) => (
+          <article class="index-item">
+            <span class="index-meta">R{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{project.title}</h3>
+              <p class="muted"><strong>{project.kind}</strong> · {project.relationship}</p>
+              <p>{project.summary}</p>
+              <p><strong>Boundary:</strong> {project.current_result}</p>
+              <p><strong>Next:</strong> {project.next}</p>
+              <p>
+                {project.links.map((link, linkIndex) => (
+                  <>
+                    {linkIndex > 0 && ' · '}
+                    <a href={link.href}>{link.label} ↗</a>
+                  </>
+                ))}
+              </p>
+            </div>
+            <span class="index-status">related</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Supporting</span>
+        <div class="section-copy">
+          <h2>Machinery and precursor work that should not multiply into programmes.</h2>
+          <p>These objects remain reusable, but they do not currently deserve separate frontier slots.</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {supporting.map((project, index) => (
+          <article class="index-item">
+            <span class="index-meta">S{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{project.title}</h3>
+              <p class="muted"><strong>{project.kind}</strong> · {project.relationship}</p>
+              <p>{project.summary}</p>
+              <p><strong>Current result:</strong> {project.current_result}</p>
+              <p><strong>Next:</strong> {project.next}</p>
+              <p>
+                {project.links.map((link, linkIndex) => (
+                  <>
+                    {linkIndex > 0 && ' · '}
+                    <a href={link.href}>{link.label} ↗</a>
+                  </>
+                ))}
+              </p>
+            </div>
+            <span class="index-status">{project.state}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Project boundary</p>
+        <h2>The repository is not the organisation chart.</h2>
+      </div>
+      <div class="prose">
+        <p>Agalmic Research may study, consume or contribute to independent systems without claiming ownership of them. Conversely, useful internal tooling does not become a research programme merely because it has code and documentation.</p>
+        <div class="callout"><p><strong>Ownership, testbed status, evidence provenance and intellectual lineage should remain separable.</strong></p></div>
+        <p><a href="/frontier/">See the commitment frontier →</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>

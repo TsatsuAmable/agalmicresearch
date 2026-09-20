@@ -22,7 +22,7 @@ const tracks = [
     <div class="shell">
       <p class="eyebrow">Research</p>
       <h1>A map of questions, with the ancestors left visible.</h1>
-      <p class="lede">The programme asks how cognitive tools can enlarge the set of worthwhile futures that humans and institutions can actually reach. It starts from established work on search, adjacent possibilities, attention, knowledge uptake and distributed discovery rather than pretending those ideas appeared here first.</p>
+      <p class="lede">The programme keeps a broad map of questions, but it no longer treats that map as a list of concurrent projects. One empirical programme currently carries most of the scientific burden; the rest remain lineage, options or applied testbeds until evidence earns more attention.</p>
     </div>
   </header>
 
@@ -31,6 +31,24 @@ const tracks = [
       <p class="eyebrow">Meta aim</p>
       <blockquote>The goal is not more ideas. It is greater capacity to reach worthwhile futures.</blockquote>
       <p>The adjacent possible is an established idea, and Taalbi already uses the term effective adjacent possible for the subset constrained by search and absorptive capacity. Agalmic Research asks what machine cognition, representation, validation, provenance and realization infrastructure do to that effective frontier.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Flagship empirical programme</p>
+        <h2>Attention Allocation Under Cognitive Abundance.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">The current research question is concrete: when plausible knowledge candidates outnumber available evaluation, which allocation policies preserve useful future outcomes without silently starving uncertain, dissenting or unconventional candidates?</p>
+        <p>The programme is deliberately built to stop before outcomes are opened. Track A v0.1 did exactly that: technical reconstruction succeeded, but prospective precision was inadequate for the frozen five-point effect, producing <code>ABSTAIN_PRE_OUTCOME</code>.</p>
+        <p>Track A v0.2 now tests whether a larger historical cohort can be reconstructed without importing selection-linked paper versions. Its present source gate is closed. This is an empirical bottleneck, not an implementation backlog.</p>
+        <div class="actions">
+          <a class="button" href={internal('projects')}>See current project state</a>
+          <a class="button secondary" href={internal('results')}>See the negative results</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -93,6 +111,13 @@ const tracks = [
 
   <section class="section">
     <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Question map</span>
+        <div class="section-copy">
+          <h2>Preserved questions, not ten active programmes.</h2>
+          <p>The broader map remains useful for lineage and future options. Commitment is governed separately by the Active Frontier.</p>
+        </div>
+      </div>
       <div class="index-list">
         {tracks.map(([title, copy, lineage], i) => (
           <article class="index-item">
