@@ -13,105 +13,60 @@ const requireObject = (id) => {
 const authorialCapacity = requireObject('object:authorial-capacity');
 const epistemicHandoff = requireObject('object:epistemic-handoff');
 
-const sequence = [
-  ['01', authorialCapacity.title, 'Exploratory synthesis / working paper', authorialCapacity.status, internal(authorialCapacity.href)],
-  ['02', 'Agalmic Economics: The Displaced Scarcity Hypothesis', 'Foundational synthesis / hypothesis', 'Hold for formalization', null],
-  ['03', 'Innovation Search Under AI', 'Literature-grounded extension', 'Hold for deeper lineage', null],
-  ['04', 'Attention Allocation Under Cognitive Abundance', 'Empirical allocation / validation programme', 'v0.1 ABSTAIN · v0.2 source recovery', internal('projects')],
-  ['05', 'Markets for Possibility', 'Working paper', 'Research track', null],
-  ['06', 'Representation as Discovery', 'Research paper + software', 'Novelty belongs in concrete formalism', null],
-  ['07', 'Intellectual Property After Epistemic Abundance', 'Policy / economics paper', 'Research track', null],
+const published = [
+  ['001', authorialCapacity.title, 'Exploratory synthesis / working paper', authorialCapacity.status, internal(authorialCapacity.href)],
 ];
 
-const drafts = [
-  [epistemicHandoff.title, epistemicHandoff.status, internal(epistemicHandoff.href)],
-  ['From Machine Discovery to Distributed Discovery: Provenance, Priority and Epistemic Authority in Human–AI Research', 'Paper idea · established problem, operational extension', null],
-  ['Credit Without Authority', 'Paper idea · CRediT/guarantorship lineage', null],
-  ['Epistemic Uptake Under Cognitive Abundance', 'Paper idea · absorptive-capacity extension', null],
-  ['Markets for Expert Attention', 'Paper idea · expert-evaluation lineage', null],
-  ['The Human-Scale Epistemic Horizon', 'Deep-future synthesis', null],
+const candidates = [
+  [
+    'Attention Allocation Under Cognitive Abundance',
+    'Empirical research object',
+    'Earn publication through a trustworthy outcome result or a durable methods / negative-result contribution. v0.1 is ABSTAIN_PRE_OUTCOME; v0.2 is source-gated.',
+    internal('projects'),
+  ],
+];
+
+const gates = [
+  ['Contribution', 'The claim or method has survived enough lineage search to state what is inherited and what is actually being added.'],
+  ['Evidence', 'There is evidence, a formal argument, implementation evidence or a useful negative result. A research direction alone does not qualify.'],
+  ['Status', 'Uncertainty, search boundaries, authority limits, contribution roles and reversal conditions are explicit.'],
+  ['Purpose', 'The release has a concrete reader-facing job: enable reuse, invite criticism, preserve a result, support replication or transfer a method.'],
+  ['Durability', 'The released version is frozen, citable and linked to source, data/code where appropriate, provenance and correction history.'],
+  ['Scrutiny', 'Where the curator lacks relevant authority, the object seeks appropriate expert review rather than using publication as a substitute for it.'],
 ];
 ---
-<Layout title="Publications" description="The publication strategy, working papers and lineage-aware draft sequence for Agalmic Research.">
+<Layout title="Publications" description="Released research objects and publication candidates for Agalmic Research, governed by lineage, evidence and durability gates rather than a speculative paper queue.">
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Publications</p>
-      <h1>One research object. Many useful forms. No novelty by typography.</h1>
-      <p class="lede">A durable research object can become a paper, essay, model or piece of software. Before any of those forms claim a contribution, the project should establish what the literature already knows and what, if anything, remains to add.</p>
+      <h1>Publish results that have earned a durable form.</h1>
+      <p class="lede">The publication surface is not a backlog of paper titles. It records released research objects and the small number of active objects that have enough evidence to plausibly become durable outward contributions.</p>
     </div>
   </header>
 
   <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Lineage gate</p>
-        <h2>No numbered paper without a prior-art position.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">Each paper must say what it inherits before saying what it contributes.</p>
-        <p>The living novelty register classifies candidate contributions as established antecedent, independent rediscovery, synthesis, extension, application, operationalization, terminology candidate, novelty unassessed or, only after substantial search, candidate novelty.</p>
-        <div class="callout"><p><strong>Finding a close antecedent is a reason to improve the paper, not to hide the citation.</strong></p></div>
-        <p><a href={internal('lineage')}>Inspect the Intellectual Lineage & Novelty Register →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Epistemic status</p>
-        <h2>Publication is not certification.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">A public artefact can be valuable before its curator can defend every part of it.</p>
-        <p>Working Paper 001 now cites close prior work on verification gaps, metacognition and claim accountability, and v0.4 further grounds its machine-discovery discussion in decades of computational-discovery, collective-discovery and scientific-priority scholarship.</p>
-        <p><a href={internal(authorialCapacity.href)}>Read {authorialCapacity.status} →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Contribution & authority</p>
-        <h2>Use standards before inventing roles.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">CRediT for contribution. W3C PROV for provenance. RO-Crate for packaging.</p>
-        <p>Agalmic-specific metadata is reserved for claim-level epistemic authority, handoff, branch state, search boundaries and reversal conditions where mature standards do not adequately capture the research question.</p>
-        <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/STANDARDS_PROVENANCE_PROFILE.md">Read the standards-first provenance profile ↗</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Publication architecture</p>
-        <h2>Record first. Search lineage. Refine continuously.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">Working paper → peer-reviewed article → public essay → policy brief → talk → model → code.</p>
-        <p class="muted">These are projections of the same evolving research object. Stable versions should retain provenance, contribution roles, lineage status and corrections rather than presenting each release as an immaculate new beginning.</p>
-      </div>
+    <div class="shell thesis">
+      <p class="eyebrow">Release rule</p>
+      <blockquote>Ideas live in Explore. Active commitments live in Projects and Frontier. Publications begin when an object has something durable to transfer.</blockquote>
+      <p>Publication is a projection of research, not a reward for generating a concept. Negative findings, methods, datasets, software and corrections can qualify just as readily as positive papers when they create reusable capability.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="shell">
       <div class="section-head">
-        <span class="section-number">Initial sequence</span>
+        <span class="section-number">Released</span>
         <div class="section-copy">
-          <h2>The first paper family.</h2>
-          <p>Current published objects draw identity and status from the semantic registry. Unpublished rows below remain a roadmap rather than being promoted into canonical research objects before they exist.</p>
+          <h2>Durable public research objects.</h2>
+          <p>Released objects keep their provenance, epistemic status and correction history visible.</p>
         </div>
       </div>
       <div class="index-list">
-        {sequence.map(([n, title, type, status, href]) => (
+        {published.map(([n, title, type, status, href]) => (
           <article class="index-item">
             <span class="index-meta">{n}</span>
             <div>
-              <h3>{href ? <a href={href}>{title}</a> : title}</h3>
+              <h3><a href={href}>{title}</a></h3>
               <p class="muted">{type}</p>
             </div>
             <span class="index-status">{status}</span>
@@ -124,26 +79,81 @@ const drafts = [
   <section class="section">
     <div class="shell">
       <div class="section-head">
-        <span class="section-number">Draft notebook</span>
+        <span class="section-number">Candidate</span>
         <div class="section-copy">
-          <h2>Research directions before sequence.</h2>
-          <p>Only actual draft objects are linked from the semantic registry. The remaining rows are deliberately kept as future research directions rather than pretending every possibility has already become a document.</p>
+          <h2>One active object is currently earning publication.</h2>
+          <p>A candidate is not a promised paper. It remains free to end as a negative result, methods note, dataset, software artefact, correction or no publication at all.</p>
         </div>
       </div>
       <div class="index-list">
-        {drafts.map(([title, status, href], i) => (
+        {candidates.map(([title, type, status, href]) => (
           <article class="index-item">
-            <span class="index-meta">D{String(i + 1).padStart(2, '0')}</span>
+            <span class="index-meta">C01</span>
             <div>
-              <h3>{href ? <a href={href}>{title}</a> : title}</h3>
-              <p class="muted">Conceptual development / future research</p>
+              <h3><a href={href}>{title}</a></h3>
+              <p class="muted">{type}</p>
+              <p>{status}</p>
             </div>
-            <span class="index-status">{status}</span>
+            <span class="index-status">active candidate</span>
           </article>
         ))}
       </div>
-      <div class="actions">
-        <a class="button secondary" href={internal('drafts')}>Browse all drafts & ideas</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="section-number">Gates</span>
+        <div class="section-copy">
+          <h2>What must be true before release.</h2>
+          <p>The gates are deliberately stricter than “a draft exists” and deliberately broader than “a journal accepted it.”</p>
+        </div>
+      </div>
+      <div class="index-list">
+        {gates.map(([title, copy], i) => (
+          <article class="index-item">
+            <span class="index-meta">G{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Lineage & authority</p>
+        <h2>No novelty by typography. No authority by upload.</h2>
+      </div>
+      <div class="prose">
+        <p class="large">Each released object should say what it inherits before saying what it contributes, and publication should not imply expertise that the evidence does not establish.</p>
+        <p>The living novelty register can classify candidate contributions as established antecedent, independent rediscovery, synthesis, extension, application, operationalization, terminology candidate, novelty unassessed or candidate novelty after substantial search.</p>
+        <div class="actions">
+          <a class="button" href={internal('lineage')}>Inspect lineage</a>
+          <a class="button secondary" href={internal('results')}>Inspect results</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Draft notebook</p>
+        <h2>Keep possibilities cheap until evidence promotes them.</h2>
+      </div>
+      <div class="prose">
+        <p><strong>{epistemicHandoff.title}</strong> remains an actual exploratory draft with status <em>{epistemicHandoff.status}</em>. Other conceptual directions belong in the draft notebook and knowledge map rather than a numbered publication queue.</p>
+        <div class="actions">
+          <a class="button secondary" href={internal(epistemicHandoff.href)}>Open the handoff draft</a>
+          <a class="button secondary" href={internal('drafts')}>Browse drafts & ideas</a>
+          <a class="button secondary" href={internal('explore')}>Explore the corpus</a>
+        </div>
       </div>
     </div>
   </section>
@@ -152,15 +162,15 @@ const drafts = [
     <div class="shell split">
       <div>
         <p class="eyebrow">Distribution</p>
-        <h2>Make the work easy to find, cite, contest and correct.</h2>
+        <h2>Make released work easy to find, cite, contest and correct.</h2>
       </div>
       <div class="prose">
         <ul>
           <li><strong>Website:</strong> canonical index, lineage, revisions, epistemic status and links between research threads.</li>
-          <li><strong>GitHub:</strong> source, models, data, standards-compatible provenance and version history.</li>
-          <li><strong>RO-Crate:</strong> package research objects with interoperable metadata where feasible.</li>
-          <li><strong>Research archives:</strong> stable snapshots through Zenodo, OSF or SSRN where suitable.</li>
-          <li><strong>Peer review:</strong> domain scrutiny selected paper by paper, especially where the curator lacks authority.</li>
+          <li><strong>GitHub:</strong> living source, models, data, code and version history.</li>
+          <li><strong>RO-Crate:</strong> package substantial research objects with interoperable metadata where useful.</li>
+          <li><strong>Stable archives:</strong> deposit release snapshots in Zenodo, OSF, SSRN or a domain repository when citation or preservation benefits justify it.</li>
+          <li><strong>Peer review:</strong> seek the scrutiny appropriate to the claim and audience; do not force every useful artefact through the same venue.</li>
         </ul>
       </div>
     </div>
