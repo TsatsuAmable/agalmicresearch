@@ -168,3 +168,11 @@ Primary exact lineage is rare: 0/549 historical ACCEPT candidates versus 10/1,26
 Three historical REJECT candidates have later ACCEPT descendants under the sensitivity rule: *Regularization Matters in Policy Optimization*, *Self-Supervised State-Control through Intrinsic Mutual Information Rewards*, and *Deep symbolic regression*. These concrete cases show why later citation visibility cannot automatically be attributed to the original 2020 manuscript state. They remain flagged for a downstream lineage sensitivity analysis rather than being post-hoc deleted.
 
 Seventeen of nineteen detected lineage edges occur in ICLR 2021, with only one each in 2022 and 2023. The audit is deterministic across reruns and reads no citation, OpenAlex or future-value outcome fields. The next lineage step is mechanical: intersect these frozen flags with the final technically usable cohort and final policy selections after T0 acquisition completes.
+
+## Final lineage substrate gate — 20 September 2026
+
+The manuscript-lineage audit now has a frozen final-substrate stage. After technical acquisition/extraction determines the actual usable T0 cohort and the preregistered policies are regenerated, the final lineage audit re-intersects the already-frozen exact and near-title lineage flags with that cohort and with every policy selection before any citation outcome is opened.
+
+The final gate reports exact lineage, exact-plus-sensitivity lineage and later-ACCEPT lineage overall, by historical decision, and by policy/budget. At the primary 20% attention budget, every structured policy is compared with seeded random using the existing ±5 percentage-point materiality margin. Historical ACCEPT/REJECT balance also requires the full Newcombe-Wilson interval to lie inside ±5 points for both exact and sensitivity lineage.
+
+A 100-document complete fixture exercised the gate without citation outcomes. It contained one exact-lineage and two sensitivity-lineage candidates. Policy-vs-random lineage differences were at most five percentage points, while historical-decision equivalence was intentionally not declared because the small fixture produced a wide confidence interval. This is the desired behavior: small samples do not earn false reassurance.
