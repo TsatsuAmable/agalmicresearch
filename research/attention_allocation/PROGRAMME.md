@@ -158,3 +158,13 @@ The downstream-observability check is now defined on the actual frozen T0 policy
 It reports exact-identity support overall and by historical decision, match support for every policy and budget, the expected primary policy-vs-random recall shift that could arise solely from unequal identity observability, prospective precision on the matched substrate, and identity support across centroid-distance and local-sparsity quintiles of the outcome-blind representation. Historical decision remains diagnostic only and never enters allocation.
 
 A 100-document complete fixture exercised the full audit without citation outcomes. Ninety-four identities were observable; expected primary policy-vs-random observability shifts were between -1.06 and +1.06 percentage points, while the small fixture remained precision-inadequate. The live result cannot be adjudicated until the T0 acquisition/extraction pipeline reaches terminal state and the final cohort and policy selections are frozen.
+
+## Resubmission / manuscript lineage audit — 20 September 2026
+
+The outcome-free lineage audit now compares all 1,816 ICLR 2020 T0 candidates against 30,568 later ICLR records from 2021–2026 using a frozen primary exact-title+author rule and a conservative near-title sensitivity rule. The method follows bibliographic record-linkage prior art but retains later records as manuscript lineage rather than collapsing them as duplicates.
+
+Primary exact lineage is rare: 0/549 historical ACCEPT candidates versus 10/1,267 historical REJECT candidates. The ACCEPT-minus-REJECT difference is -0.79 percentage points with a 95% Newcombe-Wilson interval of [-1.45, -0.01] points. Including the frozen near-title sensitivity rule yields 2/549 ACCEPT and 17/1,267 REJECT candidates with lineage, a difference of -0.98 points with interval [-1.82, +0.10]. Both magnitudes are far inside the existing ±5-point materiality margin.
+
+Three historical REJECT candidates have later ACCEPT descendants under the sensitivity rule: *Regularization Matters in Policy Optimization*, *Self-Supervised State-Control through Intrinsic Mutual Information Rewards*, and *Deep symbolic regression*. These concrete cases show why later citation visibility cannot automatically be attributed to the original 2020 manuscript state. They remain flagged for a downstream lineage sensitivity analysis rather than being post-hoc deleted.
+
+Seventeen of nineteen detected lineage edges occur in ICLR 2021, with only one each in 2022 and 2023. The audit is deterministic across reruns and reads no citation, OpenAlex or future-value outcome fields. The next lineage step is mechanical: intersect these frozen flags with the final technically usable cohort and final policy selections after T0 acquisition completes.
