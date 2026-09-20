@@ -11,9 +11,13 @@
     "PRE_OUTCOME_FEASIBILITY_GATE.md",
     "OPENREVIEW_ACQUISITION_POLICY_NOTE.md",
     "TEMPORAL_OBSERVABILITY_AUDIT.md",
-    "TEMPORAL_OBSERVABILITY_MATRIX_V1.md"
+    "TEMPORAL_OBSERVABILITY_MATRIX_V1.md",
+    "synthetic/STAGE_A_SPEC.md",
+    "synthetic/scenario.v0.1.json",
+    "scripts/attention-allocation-synthetic.mjs",
+    "scripts/test-attention-allocation-synthetic.mjs"
   ],
-  "active_experiment": "Build a provenance-bound submission-time cohort manifest for at least two ICLR 2017-2022 years; review-aware policy tests remain gated.",
+  "active_experiment": "Build a provenance-bound submission-time cohort manifest for at least two ICLR 2017-2022 years; review-aware empirical policy tests remain gated. Synthetic Stage A exists only as a non-evidentiary engineering fixture.",
   "evidence_collected": [
     "Selective-label problem is established prior art and directly threatens naive retrospective policy evaluation.",
     "Active learning already studies label allocation under expensive human-oracle budgets.",
@@ -24,7 +28,8 @@
     "Independent corpora demonstrate useful ICLR 2017-2022 coverage of submission metadata, decisions and reviews.",
     "OpenReview-derived raw-note datasets expose note creation timestamps, but timestamps on surviving notes do not prove preservation of earlier edited states.",
     "Historical crawler prior art explicitly models revisions of submissions and notes, providing a reconstruction lead that still requires provenance validation.",
-    "A field-by-year temporal observability matrix now separates coverage from decision-time admissibility and permits a narrower submission-time Track A without weakening review-aware Track B."
+    "A field-by-year temporal observability matrix now separates coverage from decision-time admissibility and permits a narrower submission-time Track A without weakening review-aware Track B.",
+    "A deterministic synthetic allocation harness now tests equal-budget, no-leakage, uniqueness and reproducibility invariants without licensing empirical policy claims."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -34,19 +39,38 @@
     "selective labels and post-decision visibility effects",
     "paper-lineage ambiguity and resubmissions",
     "construct validity of epistemic value and novelty",
-    "future-information leakage through pretrained representations or metadata"
+    "future-information leakage through pretrained representations or metadata",
+    "synthetic benchmark conclusions are assumption-bound and must never be promoted as empirical evidence"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
     "Citation-based outcomes are treatment-affected proxies, not counterfactual intrinsic value.",
     "Novelty suppression is an empirical question and existing journal evidence sometimes points in the opposite direction.",
     "A current public record is not evidence that its decision-time value is reconstructable; a temporal firewall cannot recover overwritten history.",
-    "Creation timestamps are insufficient if note contents were subsequently edited and earlier revisions are absent."
+    "Creation timestamps are insufficient if note contents were subsequently edited and earlier revisions are absent.",
+    "Synthetic policy results can be manufactured by scenario assumptions; Stage A is therefore an engineering test, not evidence."
   ],
   "candidate_pool": [
-    {"candidate":"Track A provenance-bound cohort manifest and leakage audit","status":"promoted","reason":"unblocks a falsifiable experiment without requiring review-history reconstruction"},
-    {"candidate":"Historical review revision reconstruction","status":"held","reason":"valuable for Track B but evidence has not yet earned priority over Track A"},
-    {"candidate":"Cross-dataset coverage reconciliation benchmark","status":"candidate","reason":"could quantify omissions and transformations after the first manifest exists"}
+    {
+      "candidate": "Track A provenance-bound cohort manifest and leakage audit",
+      "status": "promoted",
+      "reason": "unblocks a falsifiable experiment without requiring review-history reconstruction"
+    },
+    {
+      "candidate": "Stage A synthetic allocation harness",
+      "status": "implemented-engineering-fixture",
+      "reason": "tests invariants while preserving the empirical feasibility gate"
+    },
+    {
+      "candidate": "Historical review revision reconstruction",
+      "status": "held",
+      "reason": "valuable for Track B but evidence has not yet earned priority over Track A"
+    },
+    {
+      "candidate": "Cross-dataset coverage reconciliation benchmark",
+      "status": "candidate",
+      "reason": "could quantify omissions and transformations after the first manifest exists"
+    }
   ],
   "next_autonomous_action": "construct and hash a deterministic two-year Track A cohort manifest from independently checkable records; quantify exclusions and accepted/rejected coverage; audit every feature for post-decision leakage",
   "decisions_requiring_human_attention": []
