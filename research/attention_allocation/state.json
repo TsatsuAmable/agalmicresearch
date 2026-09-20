@@ -1,8 +1,8 @@
 {
   "programme": "Attention Allocation Under Cognitive Abundance",
   "updated": "2026-09-20",
-  "phase": "track-a-v0.1-abstain-pre-outcome-v0.2-redesign",
-  "gate_status": "CONDITIONAL_T0_PDF_ACQUISITION_RUNNING_EXTRACTION_PROTOCOL_FROZEN",
+  "phase": "track-a-v0.2-source-feasibility-neutral-historical-state",
+  "gate_status": "V02_SOURCE_FEASIBILITY_INADEQUATE_NEUTRAL_COHORT_REQUIRED",
   "completed_artefacts": [
     "PROGRAMME.md",
     "prior-art-ledger.json",
@@ -62,9 +62,14 @@
     "scripts/prepare-attention-lineage-sensitivity-outcomes.py",
     "scripts/run-attention-post-gate-outcomes.py",
     "t0/TRACK_A_V01_FEASIBILITY_RESULT.md",
-    "t0/TRACK_A_V02_MULTICOHORT_REDESIGN.md"
+    "t0/TRACK_A_V02_MULTICOHORT_REDESIGN.md",
+    "t0/TRACK_A_V02_SOURCE_FEASIBILITY_RESULT.md",
+    "scripts/prepare-attention-v02-multiyear-manifest.py",
+    "scripts/audit-attention-v02-historical-snapshot.py",
+    "scripts/audit-attention-v02-reviewed-version-availability.py",
+    "scripts/adjudicate-attention-v02-source-feasibility.py"
   ],
-  "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
+  "active_experiment": "Track A v0.2 is halted before bulk content acquisition: verified neutral/pre-review 2018-2020 sources plus an optimistic perfect 2017 upper bound reach only 4,502 candidates, below the 4,600 exact-observable precision target; a neutral additional historical cohort is required.",
   "evidence_collected": [
     "Selective-label problem is established prior art and directly threatens naive retrospective policy evaluation.",
     "Active learning already studies label allocation under expensive human-oracle budgets.",
@@ -134,7 +139,15 @@
     "Final exact OpenAlex identity support is 1,692/1,815 (93.22%). Historical ACCEPT-vs-REJECT observability neutrality is not established, but actual primary policy-vs-random observability-only recall shifts are only -0.30 to -0.65 percentage points, all inside the frozen +/-5 point bound.",
     "Final lineage balance passes: 10 exact-lineage candidates, 19 including conservative sensitivity lineage, and 3 later-ACCEPT descendants in the final 1,815-candidate cohort.",
     "Prospective 95% half-widths for the five primary policy-vs-random recall contrasts are 7.71-7.93 percentage points, exceeding the frozen 5-point smallest effect. Approximate matched N required under the observed outcome-blind overlap geometry is 4,321-4,571.",
-    "The real post-gate runner was executed against the final ABSTAIN adjudication and confirmed network_activity_started=false; no Track A citation outcome request was made."
+    "The real post-gate runner was executed against the final ABSTAIN adjudication and confirmed network_activity_started=false; no Track A citation outcome request was made.",
+    "The v0.2 metadata-only ACCEPT/REJECT frame contains 7,496 ICLR 2017-2021 records: 442 (2017), 828 (2018), 1,419 (2019), 2,213 (2020) and 2,594 (2021).",
+    "The first Smerity ICLR 2018 snapshot commit is pre-review clean but 103.1 hours after the conservative deadline; it covers 826/828 ACCEPT+REJECT candidates with extracted text, including 336/336 ACCEPT and 490/492 REJECT.",
+    "The first Smerity ICLR 2019 snapshot commit is pre-review clean but 91.9 hours after the deadline; it covers all 1,419 ACCEPT+REJECT candidates with anonymous extracted text and contains no official reviews, comments or decisions.",
+    "ResearchArcade revision references are a positive witness for explicit revisions rather than a complete historical-state denominator: naive pre-deadline filtering yields zero 2017-2019 candidates because legacy base states can be absent from the revision export.",
+    "The archived ICLR 2021 reviewed_version_(pdf) field is perfectly historical-decision-linked in the 2,594-candidate frame: 0/859 ACCEPT versus 1,735/1,735 REJECT have the field. The route is disqualified as a primary neutral historical source.",
+    "Verified/pre-review candidate upper bound is 4,060 from ICLR 2018 (826), ICLR 2019 (1,419) and the frozen ICLR 2020 v0.1 T0 cohort (1,815). Even granting all 442 ICLR 2017 candidates as an optimistic perfect source yields only 4,502, 98 below the 4,600 exact-observable target before identity attrition.",
+    "The v0.2 source-feasibility gate returns SOURCE_FEASIBILITY_INADEQUATE_NEUTRAL_COHORT_REQUIRED, with proceed_to_bulk_content_acquisition=false, citation_outcome_acquisition_authorized=false and outcomes_observed=false.",
+    "A research support request was sent to OpenReview asking for the immutable ICLR 2021 deadline-state revisions, a documented legacy revision-reference retrieval route, or a public pre-review archival dump."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -181,7 +194,11 @@
     "partial citation acquisition may exhaust the anonymous provider budget before completion; deterministic batch hashes and ledgers permit safe resumption without changing the frozen outcome definition",
     "v0.1 cannot distinguish a five-percentage-point top-decile recall effect and must not be reinterpreted by opening outcomes anyway",
     "v0.2 multi-cohort pooling must preserve within-year decision-time geometry and fixed five-year follow-up rather than creating one anachronistic cross-year representation",
-    "the 2017-2021 raw ACCEPT+REJECT frame of 7,496 is only an upper bound; revision availability and exact identity support must be audited before multi-year PDF acquisition"
+    "the 2017-2021 raw ACCEPT+REJECT frame of 7,496 is only an upper bound; revision availability and exact identity support must be audited before multi-year PDF acquisition",
+    "the 2018 and 2019 Smerity snapshots are clean of reviews/comments/decisions but were captured about four days after submission deadlines, so post-deadline author edits before the snapshot remain a temporal sensitivity risk",
+    "the ICLR 2021 reviewed-version field is unusable as a neutral source because availability is perfectly linked to historical rejection in the archived frame",
+    "even perfect reconstruction of all 442 ICLR 2017 candidates cannot by itself satisfy the v0.2 4,600 exact-observable precision target",
+    "adding another conference or venue would require a prospectively frozen source-comparability and year/venue-stratification amendment before content or outcomes are acquired"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -193,9 +210,14 @@
   ],
   "candidate_pool": [
     {
+      "candidate": "Neutral ICLR 2021 historical-state recovery",
+      "status": "external-source-recovery-active",
+      "reason": "the current v0.2 design needs a neutral additional cohort; OpenReview has been asked for deadline-state legacy revisions or a complete pre-review archive while public historical snapshots continue to be audited"
+    },
+    {
       "candidate": "Track A v0.2 multi-cohort redesign",
-      "status": "prospective-design-draft-outcomes-still-sealed",
-      "reason": "target at least 4,600 exact-outcome-observable candidates, likely via year-stratified ICLR 2017-2021 cohorts, while retaining the v0.1 endpoint and five-point precision requirement"
+      "status": "source-feasibility-blocked-neutral-cohort-required",
+      "reason": "verified 2018-2020 historical substrate plus an optimistic perfect 2017 upper bound reaches only 4,502 candidates, below the 4,600 exact-observable target; ICLR 2021 reviewed-version availability is selection-linked and inadmissible"
     },
     {
       "candidate": "Fail-closed post-gate outcome runner",
@@ -293,6 +315,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "implement the v0.2 metadata-only feasibility stage: freeze conservative ICLR 2017-2019 deadline cutoffs, recover the 2017-2021 revision index, construct year-specific T0 candidate counts, and run the stratified prospective precision gate before any additional PDF or citation acquisition",
+  "next_autonomous_action": "continue outcome-blind source recovery for a neutral ICLR 2021 pre-review/deadline-state snapshot or, if unavailable, draft a prospectively stratified additional-venue amendment; do not begin bulk PDF acquisition or citation acquisition while the v0.2 source gate remains closed",
   "decisions_requiring_human_attention": []
 }
