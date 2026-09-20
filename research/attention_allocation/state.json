@@ -33,7 +33,11 @@
     "t0/TRACK_A_POLICY_PREREGISTRATION.md",
     "scripts/select-attention-track-a-policies.py",
     "t0/TRACK_A_DOWNSTREAM_OUTCOME_PREREGISTRATION.md",
-    "scripts/prepare-attention-openalex-linkage.py"
+    "scripts/prepare-attention-openalex-linkage.py",
+    "scripts/acquire-attention-openalex-metadata.py",
+    "scripts/resolve-attention-openalex-identities.py",
+    "scripts/acquire-attention-openalex-citations.py",
+    "scripts/evaluate-attention-track-a-outcomes.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -65,7 +69,10 @@
     "The downstream outcome definition is now frozen before policy scoring: distinct citing works in a conservative five-year post-decision window (2019-09-26 through 2024-09-25), with high-recognition defined prospectively as the matched-cohort C5 top decile.",
     "The primary policy endpoint is frozen as high-recognition recall at the 20% attention budget, with a 5-percentage-point smallest effect of interest and a 10,000-replicate paired bootstrap precision procedure.",
     "A network-free OpenAlex linkage query manifest can be generated for all 1,816 ICLR 2020 T0 reference candidates; the dry run made zero network calls and observed no citation outcomes.",
-    "Metadata-only OpenAlex probes showed that identical candidate papers can be represented by multiple work IDs (for example preprint and conference manifestations), so the matching protocol now freezes an exact-title+author identity-cluster rule and unions/deduplicates citing work IDs across cluster members."
+    "Metadata-only OpenAlex probes showed that identical candidate papers can be represented by multiple work IDs (for example preprint and conference manifestations), so the matching protocol now freezes an exact-title+author identity-cluster rule and unions/deduplicates citing work IDs across cluster members.",
+    "The downstream evaluation engine is implemented but hard-gated: OpenAlex metadata and citation acquisition refuse to run without an explicit post-feasibility-gate flag, and both enforce provider/access controls and a configurable spend cap.",
+    "The identity resolver was validated on a synthetic fixture containing two exact-title manifestations and correctly retained both in one identity cluster without reading citation outcomes.",
+    "The frozen policy evaluator was validated only on 166 deterministic synthetic outcome fixtures; it reproduced the preregistered top-decile recall, 20% primary contrast, bootstrap precision and exchangeability-randomization machinery without touching real downstream outcomes."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -88,7 +95,9 @@
     "centroid distance and local sparsity are representation-space descriptors rather than validated scientific novelty constructs",
     "OpenAlex may split one candidate across multiple work records; primary outcome linkage therefore requires identity clustering and citing-work deduplication",
     "citation recognition is selection-affected and remains a downstream proxy rather than counterfactual intrinsic epistemic value",
-    "OpenAlex API outcome acquisition has not begun and should remain blocked until the T0 feasibility gate permits it"
+    "OpenAlex API outcome acquisition has not begun and should remain blocked until the T0 feasibility gate permits it",
+    "provider identity metadata and citation graph can change over time, so raw OpenAlex responses, provider timestamps and acquisition hashes must be frozen at execution",
+    "a free OpenAlex API key is not currently configured on the Mac; real outcome acquisition must not begin before the feasibility gate and should remain within the configured free/spend cap"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -143,8 +152,13 @@
       "candidate": "Preregistered OpenAlex downstream outcome linkage",
       "status": "frozen-not-run",
       "reason": "matching, identity clustering, five-year citation window, primary endpoint, smallest effect and uncertainty procedure are frozen before outcomes are acquired"
+    },
+    {
+      "candidate": "Frozen downstream outcome execution engine",
+      "status": "implemented-hard-gated",
+      "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "complete ICLR 2020 acquisition/extraction and missingness audit; freeze the eligible T0 cohort; regenerate representation and preregistered selections; only if the gate passes, execute the already-frozen OpenAlex linkage and C5 outcome acquisition",
+  "next_autonomous_action": "finish the running ICLR 2020 T0 acquisition/extraction, perform the frozen decision-stratified missingness audit, and adjudicate the feasibility gate; only a PASS/CONDITIONAL PASS can unlock the already-implemented outcome pipeline",
   "decisions_requiring_human_attention": []
 }
