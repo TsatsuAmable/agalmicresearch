@@ -37,7 +37,8 @@
     "scripts/acquire-attention-openalex-metadata.py",
     "scripts/resolve-attention-openalex-identities.py",
     "scripts/acquire-attention-openalex-citations.py",
-    "scripts/evaluate-attention-track-a-outcomes.py"
+    "scripts/evaluate-attention-track-a-outcomes.py",
+    "t0/T0_TECHNICAL_AVAILABILITY_GATE.md"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -72,7 +73,9 @@
     "Metadata-only OpenAlex probes showed that identical candidate papers can be represented by multiple work IDs (for example preprint and conference manifestations), so the matching protocol now freezes an exact-title+author identity-cluster rule and unions/deduplicates citing work IDs across cluster members.",
     "The downstream evaluation engine is implemented but hard-gated: OpenAlex metadata and citation acquisition refuse to run without an explicit post-feasibility-gate flag, and both enforce provider/access controls and a configurable spend cap.",
     "The identity resolver was validated on a synthetic fixture containing two exact-title manifestations and correctly retained both in one identity cluster without reading citation outcomes.",
-    "The frozen policy evaluator was validated only on 166 deterministic synthetic outcome fixtures; it reproduced the preregistered top-decile recall, 20% primary contrast, bootstrap precision and exchangeability-randomization machinery without touching real downstream outcomes."
+    "The frozen policy evaluator was validated only on 166 deterministic synthetic outcome fixtures; it reproduced the preregistered top-decile recall, 20% primary contrast, bootstrap precision and exchangeability-randomization machinery without touching real downstream outcomes.",
+    "The T0 technical-availability adjudication rule is now frozen before bulk acquisition completes: primary usability requires >=1000 extracted characters and zero page extraction errors; PASS requires >=95% usable retention overall and in both decision strata plus a 95% Newcombe-Wilson decision-gap interval wholly inside +/-5 percentage points.",
+    "Synthetic complete fixtures exercised all three adjudication states: PASS, CONDITIONAL and ABSTAIN. The live ICLR 2020 pipeline correctly reports INCOMPLETE_DO_NOT_ADJUDICATE while acquisition/extraction is still running."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -97,7 +100,9 @@
     "citation recognition is selection-affected and remains a downstream proxy rather than counterfactual intrinsic epistemic value",
     "OpenAlex API outcome acquisition has not begun and should remain blocked until the T0 feasibility gate permits it",
     "provider identity metadata and citation graph can change over time, so raw OpenAlex responses, provider timestamps and acquisition hashes must be frozen at execution",
-    "a free OpenAlex API key is not currently configured on the Mac; real outcome acquisition must not begin before the feasibility gate and should remain within the configured free/spend cap"
+    "a free OpenAlex API key is not currently configured on the Mac; real outcome acquisition must not begin before the feasibility gate and should remain within the configured free/spend cap",
+    "technical T0-content availability must not be adjudicated before every reference candidate has terminal acquisition and required extraction state",
+    "the +/-5 percentage-point technical equivalence margin is deliberately tied to the already-frozen 5-point downstream smallest effect of interest rather than chosen after observing final missingness"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -108,6 +113,11 @@
     "Synthetic policy results can be manufactured by scenario assumptions; Stage A is therefore an engineering test, not evidence."
   ],
   "candidate_pool": [
+    {
+      "candidate": "Frozen T0 technical availability adjudicator",
+      "status": "implemented-precompletion",
+      "reason": "PASS/CONDITIONAL/ABSTAIN decision rules are frozen and synthetic-tested before the live acquisition reaches terminal state"
+    },
     {
       "candidate": "ICLR 2020 T0 historical PDF acquisition",
       "status": "promoted",
@@ -159,6 +169,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "finish the running ICLR 2020 T0 acquisition/extraction, perform the frozen decision-stratified missingness audit, and adjudicate the feasibility gate; only a PASS/CONDITIONAL PASS can unlock the already-implemented outcome pipeline",
+  "next_autonomous_action": "allow the running ICLR 2020 acquisition/extraction to reach terminal state, then execute the frozen T0 technical-availability adjudicator; do not unlock downstream outcomes unless the broader feasibility gate remains satisfied",
   "decisions_requiring_human_attention": []
 }
