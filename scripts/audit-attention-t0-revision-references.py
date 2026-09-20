@@ -17,13 +17,39 @@ from pathlib import Path
 from typing import Any
 
 DEADLINES_UTC = {
+    2017: "2016-11-04 21:00:00",
+    # ICLR 2018 official pages disagree by one hour. The primary T0 rule
+    # deliberately uses the earlier documented time (14:00 PDT = 21:00 UTC)
+    # to avoid admitting a potentially post-deadline revision.
+    2018: "2017-10-27 21:00:00",
+    2019: "2018-09-27 22:00:00",
     2020: "2019-09-25 15:00:00",
     2021: "2020-10-02 15:00:00",
 }
 
 DEADLINE_SOURCES = {
+    2017: (
+        "https://iclr.cc/archive/www/doku.php%3Fid%3Diclr2017%3Acallforpapers.html"
+    ),
+    2018: "https://iclr.cc/Conferences/2018/Dates",
+    2019: "https://iclr.cc/Conferences/2019/Dates",
     2020: "https://iclr.cc/Conferences/2020/Dates",
     2021: "https://iclr.cc/Conferences/2021/Dates",
+}
+
+DEADLINE_NOTES = {
+    2017: "CFP: 4 Nov 2016 17:00 EDT = 21:00 UTC.",
+    2018: (
+        "Conservative primary cutoff uses the earlier official listing: "
+        "27 Oct 2017 14:00 PDT = 21:00 UTC. The CFP/archive also list "
+        "17:00 EST = 22:00 UTC; that later hour is sensitivity-only."
+    ),
+    2019: (
+        "Dates page 17:00 CDT and CFP 18:00 EDT both convert to "
+        "22:00 UTC on 27 Sep 2018."
+    ),
+    2020: "Existing frozen Track A v0.1 cutoff.",
+    2021: "Existing frozen Track A cutoff.",
 }
 
 OPENREVIEW_TMDate_SOURCE = (
@@ -73,7 +99,12 @@ def build_candidates(
     for revision in revisions:
         venue = str(revision.get("venue", ""))
         year = next(
-            (year for year in DEADLINES_UTC if venue == f"ICLR.cc/{year}/Conference"),
+            (
+                year
+                for year in DEADLINES_UTC
+                if venue.casefold()
+                == f"ICLR.cc/{year}/Conference".casefold()
+            ),
             None,
         )
         if year is not None:
@@ -186,6 +217,7 @@ def main() -> None:
         "research_arcade_source_code": RESEARCH_ARCADE_SOURCE,
         "openreview_tmdate_source": OPENREVIEW_TMDate_SOURCE,
         "deadline_sources": DEADLINE_SOURCES,
+        "deadline_notes": DEADLINE_NOTES,
         "candidate_file_sha256": sha256_file(candidates_path),
         **summary,
     }
