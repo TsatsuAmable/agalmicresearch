@@ -68,14 +68,19 @@ def main() -> None:
     parser.add_argument("--content-dir", type=Path, required=True)
     parser.add_argument("--out-dir", type=Path, required=True)
     parser.add_argument("--engineering-fixture", action="store_true")
+    parser.add_argument("--post-t0-gate", action="store_true")
+    parser.add_argument("--frozen-cohort", type=Path)
     parser.add_argument("--limit", type=int, default=0)
     args = parser.parse_args()
 
-    if not args.engineering_fixture:
+    if args.engineering_fixture == args.post_t0_gate:
         raise SystemExit(
-            "Representation generation is gated. Use --engineering-fixture "
-            "for protocol smoke tests only until the empirical gate is passed."
+            "choose exactly one of --engineering-fixture or --post-t0-gate"
         )
+    if args.post_t0_gate and not args.frozen_cohort:
+        raise SystemExit("--post-t0-gate requires --frozen-cohort")
+    if args.post_t0_gate and args.limit:
+        raise SystemExit("--limit is forbidden for the frozen post-gate cohort")
 
     try:
         import numpy as np
@@ -98,9 +103,36 @@ def main() -> None:
         for row in ledger.values()
         if row.get("status") == "ok"
     ]
-    rows.sort(key=lambda row: str(row["revision_openreview_id"]))
-    if args.limit > 0:
-        rows = rows[: args.limit]
+
+    frozen_cohort_sha256 = None
+    if args.post_t0_gate:
+        cohort_rows = [
+            json.loads(line)
+            for line in args.frozen_cohort.read_text().splitlines()
+            if line.strip()
+        ]
+        forbidden = {"decision", "review_score", "citations", "future_value"}
+        for cohort_row in cohort_rows:
+            leaked = forbidden.intersection(cohort_row)
+            if leaked:
+                raise RuntimeError(
+                    f"frozen cohort contains forbidden outcome keys: {sorted(leaked)}"
+                )
+        cohort_ids = [str(row["revision_openreview_id"]) for row in cohort_rows]
+        if len(set(cohort_ids)) != len(cohort_ids):
+            raise RuntimeError("frozen cohort contains duplicate revision IDs")
+        missing = [revision_id for revision_id in cohort_ids if revision_id not in ledger]
+        if missing:
+            raise RuntimeError(
+                f"frozen cohort references {len(missing)} missing extraction rows; "
+                f"first={missing[:5]}"
+            )
+        rows = [ledger[revision_id] for revision_id in cohort_ids]
+        frozen_cohort_sha256 = sha256_file(args.frozen_cohort)
+    else:
+        rows.sort(key=lambda row: str(row["revision_openreview_id"]))
+        if args.limit > 0:
+            rows = rows[: args.limit]
 
     documents: list[str] = []
     row_index: list[dict[str, Any]] = []
@@ -227,8 +259,12 @@ def main() -> None:
     np.save(idf_path, vectorizer.idf_.astype(np.float64))
 
     manifest = {
-        "schema_version": "0.1",
-        "status": "ENGINEERING_FIXTURE_ONLY",
+        "schema_version": "0.2",
+        "status": (
+            "FROZEN_T0_REPRESENTATION"
+            if args.post_t0_gate
+            else "ENGINEERING_FIXTURE_ONLY"
+        ),
         "random_seed": SEED,
         "corpus_size": len(documents),
         "tfidf_shape": list(tfidf.shape),
@@ -268,6 +304,7 @@ def main() -> None:
         },
         "inputs": {
             "extraction_ledger_sha256": sha256_file(args.extraction_ledger),
+            "frozen_cohort_sha256": frozen_cohort_sha256,
             "content_count": len(documents),
         },
         "outputs": {

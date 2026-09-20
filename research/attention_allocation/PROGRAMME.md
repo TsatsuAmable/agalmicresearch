@@ -128,3 +128,11 @@ The identity resolver was tested on synthetic duplicate manifestations, and the 
 The final acquisition/extraction missingness decision rule is now frozen before the live pipeline completes. A primary-usable historical PDF requires successful extraction, at least 1,000 extracted characters and zero page-level extraction errors. PASS requires at least 95% usable retention overall and separately among historical ACCEPT and REJECT strata, with the entire 95% Newcombe-Wilson confidence interval for the ACCEPT-minus-REJECT usable-fraction gap contained inside ±5 percentage points. CONDITIONAL requires at least 90% retention in each stratum with the observed gap inside ±5 points; otherwise the technical gate ABSTAINS.
 
 The ±5-point margin is tied prospectively to the programme's already-frozen five-percentage-point smallest downstream effect of interest. Synthetic complete fixtures exercise PASS, CONDITIONAL and ABSTAIN correctly. The live pipeline is explicitly non-adjudicable until every reference candidate has terminal acquisition and, where required, terminal extraction state.
+
+## Outcome-blind T0 finalization chain — 20 September 2026
+
+The post-acquisition transition is now executable without opening the downstream-outcome box. Once the T0 acquisition/extraction pipeline reaches terminal state, a single finalizer runs the frozen technical-availability adjudicator. PASS or CONDITIONAL permits a deterministic decision-free cohort freeze, regeneration of the historical TF-IDF/SVD representation, and reproduction of the preregistered allocation selections. ABSTAIN stops the chain.
+
+The cohort freezer deliberately strips historical decision labels. The final representation and selection artefacts therefore remain outcome-blind. A 100-document complete fixture exercised the full chain end to end and produced a frozen cohort with no tested decision/review/citation strings, a `FROZEN_T0_REPRESENTATION`, and `FROZEN_T0_POLICY_SELECTIONS`.
+
+Technical completion still does not unlock OpenAlex citation outcomes. The finalizer writes that boundary explicitly: broader outcome-support, entity-resolution, lineage and precision requirements remain to be adjudicated before downstream evaluation can run.
