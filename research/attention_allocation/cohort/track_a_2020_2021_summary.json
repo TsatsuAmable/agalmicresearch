@@ -1,0 +1,84 @@
+{
+  "provenance": {
+    "berenslab_commit": "9f09cbbfb8ff844b7267906c8b9d9419fdad9d6c",
+    "berenslab_parquet": "data/iclr26v1.parquet",
+    "berenslab_parquet_sha256": "47a04232b1c229d81109a498da32dfbe0157d35d19941561924398a9106932e2",
+    "manifest_sha256": "7a2f692468ef3e86ecebe71d6f5642d55588c7498e5dd016d7644f18199a195a",
+    "prrca_commit": "2c48f54980560b7f44f98719a8d7082f0a587ef6",
+    "prrca_selected_files_sha256": "bee8d8ad3a0b44d768d93a3684ffe13624408fa06c88baed3d6dc128fb49c78c",
+    "schema_version": "0.1",
+    "temporal_policy": "CURRENT_ONLY snapshots are forbidden allocator inputs",
+    "years": [
+      2020,
+      2021
+    ]
+  },
+  "years": {
+    "2020": {
+      "cohort_size": 2593,
+      "decision_counts": {
+        "ACCEPT": 687,
+        "DESK_REJECTED": 11,
+        "REJECT": 1526,
+        "WITHDRAWN": 369
+      },
+      "decision_mismatch_count": 0,
+      "decision_mismatches": [],
+      "missing_keywords": 279,
+      "normalized_title_mismatch_count": 0,
+      "normalized_title_mismatch_forum_ids": [],
+      "primary_comparison_size": 2213,
+      "prrca_coverage_by_decision": {
+        "ACCEPT": {
+          "fraction": 0.9170305676855895,
+          "observed": 630,
+          "total": 687
+        },
+        "REJECT": {
+          "fraction": 0.77129750982962,
+          "observed": 1177,
+          "total": 1526
+        }
+      },
+      "prrca_witness_count": 1807,
+      "prrca_witness_fraction_all": 0.6968762051677594
+    },
+    "2021": {
+      "cohort_size": 3009,
+      "decision_counts": {
+        "ACCEPT": 859,
+        "DESK_REJECTED": 17,
+        "REJECT": 1735,
+        "WITHDRAWN": 398
+      },
+      "decision_mismatch_count": 1,
+      "decision_mismatches": [
+        {
+          "canonical_decision": "WITHDRAWN",
+          "forum_id": "xGZG2kS5bFk",
+          "witness_decision": "ACCEPT"
+        }
+      ],
+      "missing_keywords": 324,
+      "normalized_title_mismatch_count": 1,
+      "normalized_title_mismatch_forum_ids": [
+        "lJuOUWlAC8i"
+      ],
+      "primary_comparison_size": 2594,
+      "prrca_coverage_by_decision": {
+        "ACCEPT": {
+          "fraction": 0.9173457508731082,
+          "observed": 788,
+          "total": 859
+        },
+        "REJECT": {
+          "fraction": 0.8178674351585015,
+          "observed": 1419,
+          "total": 1735
+        }
+      },
+      "prrca_witness_count": 2208,
+      "prrca_witness_fraction_all": 0.7337986041874377
+    }
+  }
+}
