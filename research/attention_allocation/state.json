@@ -1,8 +1,8 @@
 {
   "programme": "Attention Allocation Under Cognitive Abundance",
-  "updated": "2026-09-19",
-  "phase": "feasibility-temporal-observability",
-  "gate_status": "NOT_YET_EVALUATED",
+  "updated": "2026-09-20",
+  "phase": "feasibility-track-a-cohort-manifest",
+  "gate_status": "CONDITIONAL_TRACK_A",
   "completed_artefacts": [
     "PROGRAMME.md",
     "prior-art-ledger.json",
@@ -10,22 +10,26 @@
     "scripts/acquire-attention-openreview.py",
     "PRE_OUTCOME_FEASIBILITY_GATE.md",
     "OPENREVIEW_ACQUISITION_POLICY_NOTE.md",
-    "TEMPORAL_OBSERVABILITY_AUDIT.md"
+    "TEMPORAL_OBSERVABILITY_AUDIT.md",
+    "TEMPORAL_OBSERVABILITY_MATRIX_V1.md"
   ],
-  "active_experiment": "ICLR 2017-2022 acquisition and temporal-observability feasibility audit; no policy hypothesis test is authorised yet",
+  "active_experiment": "Build a provenance-bound submission-time cohort manifest for at least two ICLR 2017-2022 years; review-aware policy tests remain gated.",
   "evidence_collected": [
     "Selective-label problem is established prior art and directly threatens naive retrospective policy evaluation.",
     "Active learning already studies label allocation under expensive human-oracle budgets.",
     "Published peer-review evidence does not support a blanket assumption that novelty is systematically suppressed.",
     "Common novelty indicators are construct-sensitive and can overlap with interdisciplinarity.",
-    "Live acquisition probe on 2026-09-18 returned HTTP 429 and then HTTP 403 from api.openreview.net; no corpus record was treated as acquired.",
+    "Live acquisition probe returned HTTP 429 and then HTTP 403 from api.openreview.net; no corpus record was treated as acquired.",
     "OpenReview documents supported API2 and legacy API1 retrieval for submissions, reviews, rebuttals and decisions.",
-    "Recent Paper Copilot work reports that official historical review snapshots can be overwritten; its timestamped public archive covers ICLR 2024-2026, not the 2017-2022 development cohort.",
-    "Independent public OpenReview-derived dumps cover overlapping ICLR years and can serve as coverage witnesses, but cannot silently replace primary-source temporal provenance."
+    "Independent corpora demonstrate useful ICLR 2017-2022 coverage of submission metadata, decisions and reviews.",
+    "OpenReview-derived raw-note datasets expose note creation timestamps, but timestamps on surviving notes do not prove preservation of earlier edited states.",
+    "Historical crawler prior art explicitly models revisions of submissions and notes, providing a reconstruction lead that still requires provenance validation.",
+    "A field-by-year temporal observability matrix now separates coverage from decision-time admissibility and permits a narrower submission-time Track A without weakening review-aware Track B."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
     "decision-time review/version state may be irrecoverable for material portions of ICLR 2017-2022",
+    "submission title/abstract/keyword versions still require provenance binding before allocator use",
     "accepted/rejected differential longitudinal observability",
     "selective labels and post-decision visibility effects",
     "paper-lineage ambiguity and resubmissions",
@@ -36,8 +40,14 @@
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
     "Citation-based outcomes are treatment-affected proxies, not counterfactual intrinsic value.",
     "Novelty suppression is an empirical question and existing journal evidence sometimes points in the opposite direction.",
-    "A current public record is not evidence that its decision-time value is reconstructable; a temporal firewall cannot recover overwritten history."
+    "A current public record is not evidence that its decision-time value is reconstructable; a temporal firewall cannot recover overwritten history.",
+    "Creation timestamps are insufficient if note contents were subsequently edited and earlier revisions are absent."
   ],
-  "next_autonomous_action": "build the year-by-field temporal observability matrix; use documented OpenReview APIs as primary source and independently archived datasets only as provenance-labelled coverage witnesses; narrow to submission-time features if historical review state is unrecoverable",
+  "candidate_pool": [
+    {"candidate":"Track A provenance-bound cohort manifest and leakage audit","status":"promoted","reason":"unblocks a falsifiable experiment without requiring review-history reconstruction"},
+    {"candidate":"Historical review revision reconstruction","status":"held","reason":"valuable for Track B but evidence has not yet earned priority over Track A"},
+    {"candidate":"Cross-dataset coverage reconciliation benchmark","status":"candidate","reason":"could quantify omissions and transformations after the first manifest exists"}
+  ],
+  "next_autonomous_action": "construct and hash a deterministic two-year Track A cohort manifest from independently checkable records; quantify exclusions and accepted/rejected coverage; audit every feature for post-decision leakage",
   "decisions_requiring_human_attention": []
 }
