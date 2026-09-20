@@ -27,7 +27,9 @@
     "scripts/acquire-attention-t0-pdfs.py",
     "t0/T0_PDF_EXTRACTION_PROTOCOL.md",
     "scripts/extract-attention-t0-pdfs.py",
-    "scripts/audit-attention-t0-extraction.py"
+    "scripts/audit-attention-t0-extraction.py",
+    "t0/T0_CANDIDATE_REPRESENTATION_PROTOCOL.md",
+    "scripts/build-attention-t0-representation.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -51,7 +53,9 @@
     "A deterministic 40-record retrieval probe resolved 20/20 sampled ICLR 2020 and 20/20 sampled ICLR 2021 historical revision references as HTTP 200 application/pdf; first-three-page text extraction succeeded for all 20 ICLR 2020 sampled PDFs.",
     "OpenReview documents tmdate as a true modification date that users cannot set or modify; the T0 reference rule uses only revision tmdate values no later than the official paper submission deadline.",
     "The frozen extraction protocol is offline and verifies each acquired PDF SHA-256 before whole-document page-order text extraction; decision labels are withheld from extraction behavior.",
-    "A 10-PDF extraction smoke test completed 10/10 with no zero-text, low-text, or page-error flags; this validates tooling only and is not empirical evidence."
+    "A 10-PDF extraction smoke test completed 10/10 with no zero-text, low-text, or page-error flags; this validates tooling only and is not empirical evidence.",
+    "A frozen outcome-blind T0 candidate representation protocol now uses only historical extracted PDF text, corpus-internal TF-IDF, deterministic truncated SVD, and transparent cosine-geometry descriptors; it explicitly forbids pretrained-model embeddings and outcome-conditioned features.",
+    "A 166-document engineering fixture produced a deterministic 128-dimensional representation; all array outputs were exactly reproducible across reruns and the row index contained none of the tested decision/review/citation strings."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -67,7 +71,9 @@
     "independent PRRCA coverage is materially acceptance-correlated and must be used as a witness rather than the candidate frame",
     "reference identification is not full PDF acquisition; retrieval and text-extraction failures may still be decision-differential",
     "the unusually strong ICLR 2020 historical-revision window may not generalize to other venue-years",
-    "ResearchArcade revision lineage tables are not treated as sufficient to infer post-deadline base versions; only explicit pre-deadline revision references are admitted"
+    "ResearchArcade revision lineage tables are not treated as sufficient to infer post-deadline base versions; only explicit pre-deadline revision references are admitted",
+    "corpus-internal lexical/SVD geometry is an operational representation rather than validated scientific novelty or epistemic value",
+    "the representation protocol assumes batch allocation at a common deadline and must be redesigned for sequential-arrival estimands"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -82,6 +88,11 @@
       "candidate": "ICLR 2020 T0 historical PDF acquisition",
       "status": "promoted",
       "reason": "1,816 pre-deadline revision references have near-balanced ACCEPT/REJECT coverage and a successful 20-record PDF/text probe"
+    },
+    {
+      "candidate": "Outcome-blind T0 lexical representation",
+      "status": "frozen-engineering-protocol",
+      "reason": "TF-IDF plus deterministic SVD avoids post-2020 pretrained-model knowledge and can be regenerated after the extraction cohort is frozen"
     },
     {
       "candidate": "T0 submission snapshot recovery",
@@ -109,6 +120,6 @@
       "reason": "could quantify omissions and transformations after the first manifest exists"
     }
   ],
-  "next_autonomous_action": "allow the running ICLR 2020 acquisition to complete; then run the frozen offline extractor across all successfully acquired PDFs and execute the decision-stratified missingness audit before deciding whether T0_OBSERVED_PDF can be promoted",
+  "next_autonomous_action": "complete ICLR 2020 acquisition and extraction, run decision-stratified missingness audit, freeze the eligible T0 cohort, then regenerate the outcome-blind representation from that frozen cohort before any policy comparison",
   "decisions_requiring_human_attention": []
 }

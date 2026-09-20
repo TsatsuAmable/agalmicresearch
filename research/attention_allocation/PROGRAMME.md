@@ -96,3 +96,9 @@ These references are not yet allocator inputs. They remain `T0_OBSERVED_REVISION
 The historical-PDF extraction protocol is frozen before bulk acquisition completes. Extraction is offline, verifies each source PDF hash against the acquisition ledger, preserves whole-document page order, records page-level failures and text-quality warnings, and never uses historical decision labels to change extraction behavior. A separate diagnostic joins decision labels only after extraction to measure missingness.
 
 A ten-PDF smoke test completed 10/10 without extraction or integrity failures. This is an engineering validation only. The ICLR 2020 bulk acquisition is now running under the five-second minimum request interval; empirical policy evaluation remains gated until acquisition completes and decision-stratified retrieval/extraction missingness is audited.
+
+## Outcome-blind candidate representation gate — 20 September 2026
+
+The candidate representation protocol is now frozen before the empirical cohort is complete. To preserve the temporal firewall, the primary representation deliberately avoids pretrained language-model embeddings. It uses only T0 historical PDF text, cohort-internal TF-IDF, deterministic truncated SVD and transparent cosine-geometry descriptors. These geometry measures are operational descriptors, not ground-truth novelty.
+
+A 166-document engineering fixture produced a deterministic 128-dimensional representation with bitwise-identical array outputs across reruns. The fixture remains non-evidentiary. Representation generation is still gated behind the completed acquisition/extraction audit and final frozen eligible cohort; no policy ranking is licensed by this work.
