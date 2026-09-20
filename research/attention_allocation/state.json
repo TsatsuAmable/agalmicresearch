@@ -54,7 +54,9 @@
     "t0/TRACK_A_LINEAGE_AUDIT.md",
     "scripts/audit-attention-track-a-lineage.py",
     "t0/T0_FINAL_LINEAGE_GATE.md",
-    "scripts/audit-attention-track-a-final-lineage.py"
+    "scripts/audit-attention-track-a-final-lineage.py",
+    "t0/BROADER_PRE_OUTCOME_ADJUDICATOR.md",
+    "scripts/adjudicate-attention-pre-outcome-feasibility.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -113,7 +115,10 @@
     "The lineage audit is deterministic across reruns and reads no OpenAlex/citation/future-value fields.",
     "A final-substrate lineage gate is now frozen to re-intersect the precomputed manuscript-lineage flags with the actual technically usable T0 cohort and the final preregistered policy selections before citation outcomes are opened.",
     "The final-lineage audit reports primary exact lineage, conservative near-title sensitivity lineage, later-ACCEPT lineage, historical decision balance and policy-specific lineage fractions at every attention budget.",
-    "A 100-document complete fixture exercised the final-lineage gate without citation outcomes. It detected 1 exact-lineage and 2 sensitivity-lineage candidates; policy-vs-random lineage differences were at most 5 pp, while historical-decision equivalence was not established because the fixture was too small for a narrow interval."
+    "A 100-document complete fixture exercised the final-lineage gate without citation outcomes. It detected 1 exact-lineage and 2 sensitivity-lineage candidates; policy-vs-random lineage differences were at most 5 pp, while historical-decision equivalence was not established because the fixture was too small for a narrow interval.",
+    "A broader outcome-free feasibility adjudicator is now implemented to combine technical availability, exact identity support, differential observability, lineage, fixed-window support, construct non-circularity and prospective design precision into PASS/CONDITIONAL/ABSTAIN before citation acquisition.",
+    "The broader adjudicator fails closed: citation acquisition is authorized only when the frozen evidence supports PASS or a prospectively restricted CONDITIONAL PASS; ABSTAIN explicitly leaves real citation outcomes unopened.",
+    "A complete 100-document fixture produced ABSTAIN_PRE_OUTCOME because 0/5 preregistered primary policy contrasts were prospectively precise enough for the frozen five-percentage-point smallest effect, despite passing temporal integrity, nonzero identity support, entity resolution, fixed coverage and construct checks."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -152,7 +157,9 @@
     "detected later ACCEPT descendants show that later citation visibility can incorporate manuscript revision and later selection rather than value attributable solely to the 2020 submission state",
     "lineage must be re-intersected with the final technically usable cohort and frozen policy selections before downstream outcome interpretation",
     "lineage balance must be re-evaluated on the actual final technically usable cohort because technical losses can alter both historical-decision lineage incidence and policy-specific lineage exposure",
-    "later-ACCEPT descendants remain a mandatory sensitivity stratum even when aggregate final-lineage balance passes"
+    "later-ACCEPT descendants remain a mandatory sensitivity stratum even when aggregate final-lineage balance passes",
+    "the final ICLR 2020 design may still ABSTAIN solely on prospective precision even if acquisition, observability and lineage are otherwise acceptable; this is an intended negative result rather than an engineering failure",
+    "conditional feasibility must restrict claims before outcomes are opened, especially to the exact matched cohort and any precision-adequate policy contrasts only"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -163,6 +170,11 @@
     "Synthetic policy results can be manufactured by scenario assumptions; Stage A is therefore an engineering test, not evidence."
   ],
   "candidate_pool": [
+    {
+      "candidate": "Broader pre-outcome feasibility adjudicator",
+      "status": "implemented-fail-closed",
+      "reason": "combines all frozen pre-outcome evidence and refuses citation acquisition on temporal, support, observability, lineage, construct, coverage or precision failure"
+    },
     {
       "candidate": "Frozen T0 technical availability adjudicator",
       "status": "implemented-precompletion",
@@ -249,6 +261,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "finish live T0 acquisition/extraction and finalization; then execute final lineage and identity-observability audits on the actual frozen cohort and selections, combine them with technical availability and design precision, and adjudicate the broader pre-outcome feasibility gate before any citation acquisition",
+  "next_autonomous_action": "allow live T0 acquisition/extraction to complete; finalization, final identity-observability and final lineage watchers will produce the frozen inputs; then run the broader pre-outcome adjudicator and obey PASS/CONDITIONAL/ABSTAIN before any citation endpoint is touched",
   "decisions_requiring_human_attention": []
 }
