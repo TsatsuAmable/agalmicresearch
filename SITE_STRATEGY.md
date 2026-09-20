@@ -44,7 +44,7 @@ The paper programme must establish whether a non-trivial general result remains 
 
 ## Novelty gate
 
-Before a concept enters the numbered publication sequence:
+Before a concept enters the active publication queue:
 
 1. state the strongest proposed contribution in one sentence;
 2. search exact terminology and conceptual synonyms;
@@ -63,7 +63,11 @@ Governing rule:
 
 ## Publication model
 
-Treat each project as a canonical, versioned research object. Produce useful projections from it:
+The publication surface is a release surface, not a speculative paper roadmap. Concepts and future questions belong in Explore or Drafts; active work belongs in Projects and Frontier. An object enters Publications only when it has a concrete contribution, result, method, implementation or correction that is plausibly worth transferring durably.
+
+Use six release gates: contribution lineage, evidence, explicit epistemic status, reader-facing purpose, durable/citable packaging, and appropriate external scrutiny where authority is limited.
+
+Treat each qualifying project as a canonical, versioned research object. Produce useful projections from it:
 
 - working paper
 - peer-reviewed article
@@ -158,8 +162,8 @@ If a model surfaces an old idea unknown to the curator, record independent redis
 
 - `/` — programme thesis and correction posture
 - `/projects` — actual project ownership, status and next discriminating action
-- `/research` — flagship empirical programme plus preserved research tracks, antecedents and open questions
-- `/publications` — lineage-gated paper sequence
+- `/research` — flagship empirical programme plus preserved research tracks, antecedents and open questions\n- `/results` — negative, null, narrowed and positive findings that materially constrain belief
+- `/publications` — released research objects plus a very small lineage- and evidence-gated candidate queue
 - `/drafts` — exploratory work with maturity and lineage status
 - `/lineage` — living intellectual-lineage and novelty register
 - `/provenance` — standards-first provenance architecture and historical graph
