@@ -1,8 +1,8 @@
 {
   "programme": "Attention Allocation Under Cognitive Abundance",
   "updated": "2026-09-20",
-  "phase": "feasibility-track-a-cohort-manifest",
-  "gate_status": "CONDITIONAL_TRACK_A",
+  "phase": "feasibility-track-a-temporal-provenance",
+  "gate_status": "CONDITIONAL_TRACK_A_MANIFEST_COMPLETE_T0_BLOCKED",
   "completed_artefacts": [
     "PROGRAMME.md",
     "prior-art-ledger.json",
@@ -15,9 +15,13 @@
     "synthetic/STAGE_A_SPEC.md",
     "synthetic/scenario.v0.1.json",
     "scripts/attention-allocation-synthetic.mjs",
-    "scripts/test-attention-allocation-synthetic.mjs"
+    "scripts/test-attention-allocation-synthetic.mjs",
+    "cohort/TRACK_A_COHORT_MANIFEST_AUDIT.md",
+    "cohort/track_a_2020_2021_summary.json",
+    "cohort/track_a_2020_2021_manifest.jsonl",
+    "scripts/build-attention-track-a-manifest.py"
   ],
-  "active_experiment": "Build a provenance-bound submission-time cohort manifest for at least two ICLR 2017-2022 years; review-aware empirical policy tests remain gated. Synthetic Stage A exists only as a non-evidentiary engineering fixture.",
+  "active_experiment": "Upgrade at least one submission-time allocator field to T0_OBSERVED or T0_DERIVABLE for the ICLR 2020-2021 manifest; empirical policy tests remain gated.",
   "evidence_collected": [
     "Selective-label problem is established prior art and directly threatens naive retrospective policy evaluation.",
     "Active learning already studies label allocation under expensive human-oracle budgets.",
@@ -29,7 +33,11 @@
     "OpenReview-derived raw-note datasets expose note creation timestamps, but timestamps on surviving notes do not prove preservation of earlier edited states.",
     "Historical crawler prior art explicitly models revisions of submissions and notes, providing a reconstruction lead that still requires provenance validation.",
     "A field-by-year temporal observability matrix now separates coverage from decision-time admissibility and permits a narrower submission-time Track A without weakening review-aware Track B.",
-    "A deterministic synthetic allocation harness now tests equal-budget, no-leakage, uniqueness and reproducibility invariants without licensing empirical policy claims."
+    "A deterministic synthetic allocation harness now tests equal-budget, no-leakage, uniqueness and reproducibility invariants without licensing empirical policy claims.",
+    "A deterministic ICLR 2020-2021 cohort manifest now freezes 5,602 records from berenslab/iclr-dataset with source hashes and independent PRRCA identity/decision witnesses.",
+    "PRRCA witness coverage is outcome-differential: 2020 accept 91.7% versus reject 77.1%; 2021 accept 91.7% versus reject 81.8%, so PRRCA cannot define the canonical candidate pool.",
+    "Cross-source reconciliation found zero decision mismatches in 2020 and one 2021 mismatch where the later berenslab snapshot is Withdrawn while PRRCA records Accept (Poster); one additional 2021 normalized-title mismatch was detected.",
+    "The full-candidate berenslab snapshots remain CURRENT_ONLY because their later scrape does not establish decision-time title/abstract/keyword state; therefore no allocator-visible field is yet T0-admissible."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -40,7 +48,9 @@
     "paper-lineage ambiguity and resubmissions",
     "construct validity of epistemic value and novelty",
     "future-information leakage through pretrained representations or metadata",
-    "synthetic benchmark conclusions are assumption-bound and must never be promoted as empirical evidence"
+    "synthetic benchmark conclusions are assumption-bound and must never be promoted as empirical evidence",
+    "later-scraped submission text can freeze current state without proving the state available at the historical allocation decision",
+    "independent PRRCA coverage is materially acceptance-correlated and must be used as a witness rather than the candidate frame"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -52,9 +62,14 @@
   ],
   "candidate_pool": [
     {
-      "candidate": "Track A provenance-bound cohort manifest and leakage audit",
+      "candidate": "T0 submission snapshot recovery",
       "status": "promoted",
-      "reason": "unblocks a falsifiable experiment without requiring review-history reconstruction"
+      "reason": "the manifest is complete but no allocator-visible title/abstract/keyword field is yet decision-time admissible"
+    },
+    {
+      "candidate": "Track A provenance-bound cohort manifest and leakage audit",
+      "status": "completed-feasibility-manifest",
+      "reason": "two-year deterministic manifest, source hashes and outcome-differential coverage audit completed; T0 provenance remains blocked"
     },
     {
       "candidate": "Stage A synthetic allocation harness",
@@ -72,6 +87,6 @@
       "reason": "could quantify omissions and transformations after the first manifest exists"
     }
   ],
-  "next_autonomous_action": "construct and hash a deterministic two-year Track A cohort manifest from independently checkable records; quantify exclusions and accepted/rejected coverage; audit every feature for post-decision leakage",
+  "next_autonomous_action": "probe documented OpenReview revision/version surfaces and provenance-bearing archives for ICLR 2020-2021 title/abstract/keywords; validate whether an original pre-review snapshot is recoverable, and ABSTAIN from empirical allocation if it is not",
   "decisions_requiring_human_attention": []
 }

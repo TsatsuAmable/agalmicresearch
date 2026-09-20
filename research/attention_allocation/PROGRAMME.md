@@ -74,3 +74,11 @@ Research-commons artefacts may be released throughout feasibility: acquisition t
 - Fontana, M. et al. (2020). *New and atypical combinations: An assessment of novelty and interdisciplinarity*. Research Policy 49(7), 104063.
 - Teplitskiy, M. et al. (2022). *Is novel research worth doing? Evidence from peer review at 49 journals*. PNAS 119(47), e2118046119.
 - OpenReview. *Using the API*.
+
+## Track A manifest result — 20 September 2026
+
+A deterministic ICLR 2020–2021 cohort manifest now freezes 5,602 records from the broad berenslab ICLR corpus and reconciles identity/decision state against PRRCA. The full frame contains 2,593 records for 2020 and 3,009 for 2021. PRRCA is incomplete and outcome-differential: witness coverage is 91.7% of accepted versus 77.1% of rejected records in 2020, and 91.7% versus 81.8% in 2021. It therefore remains a witness, not the canonical candidate frame.
+
+This completes the two-year manifest, hashing, exclusion accounting, and accepted/rejected coverage requirements, but **does not pass the Track A gate**. The available title, abstract, and keyword values are later snapshots without sufficient evidence that they reproduce the state available at the simulated decision time. They remain `CURRENT_ONLY`. Empirical allocation-policy simulation is still prohibited until at least one usable feature family is `T0_OBSERVED` or `T0_DERIVABLE`.
+
+The next falsifiable step is historical submission-state recovery, not another allocation algorithm: test documented OpenReview revision/version surfaces and provenance-bearing archives for original 2020–2021 submission snapshots. If that recovery fails, narrow the estimand further or ABSTAIN.
