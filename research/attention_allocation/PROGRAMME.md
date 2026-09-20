@@ -102,3 +102,9 @@ A ten-PDF smoke test completed 10/10 without extraction or integrity failures. T
 The candidate representation protocol is now frozen before the empirical cohort is complete. To preserve the temporal firewall, the primary representation deliberately avoids pretrained language-model embeddings. It uses only T0 historical PDF text, cohort-internal TF-IDF, deterministic truncated SVD and transparent cosine-geometry descriptors. These geometry measures are operational descriptors, not ground-truth novelty.
 
 A 166-document engineering fixture produced a deterministic 128-dimensional representation with bitwise-identical array outputs across reruns. The fixture remains non-evidentiary. Representation generation is still gated behind the completed acquisition/extraction audit and final frozen eligible cohort; no policy ranking is licensed by this work.
+
+## Track A policy preregistration — 20 September 2026
+
+The first transparent allocation-policy family is frozen before downstream-value outcomes are joined. The primary experiment uses equal candidate-count budgets at 5%, 10%, 20%, 40%, and 80% of the eligible cohort, with six outcome-blind policies: seeded random, centrality, centroid-distance, local-sparsity, greedy k-center coverage, and a fixed 25% exploration-quota mixture. These rules consume only the frozen T0 representation and immutable row identity for tie-breaking.
+
+A 166-document engineering fixture produced exact-budget, duplicate-free, deterministic selections for every policy and budget, with byte-identical outputs across reruns. Pairwise selection overlap was inspected only as an engineering diagnostic. No historical decision or downstream-value outcome was joined. The empirical gate remains closed until bulk acquisition/extraction, decision-stratified missingness, eligible-cohort freeze, and representation regeneration are complete.
