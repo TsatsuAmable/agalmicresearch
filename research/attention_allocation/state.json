@@ -40,7 +40,8 @@
     "scripts/evaluate-attention-track-a-outcomes.py",
     "t0/T0_TECHNICAL_AVAILABILITY_GATE.md",
     "scripts/freeze-attention-t0-cohort.py",
-    "scripts/finalize-attention-t0-stage.py"
+    "scripts/finalize-attention-t0-stage.py",
+    "scripts/audit-attention-track-a-design-precision.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -80,7 +81,9 @@
     "Synthetic complete fixtures exercised all three adjudication states: PASS, CONDITIONAL and ABSTAIN. The live ICLR 2020 pipeline correctly reports INCOMPLETE_DO_NOT_ADJUDICATE while acquisition/extraction is still running.",
     "The post-acquisition T0 finalization chain is now implemented and outcome-blind: technical adjudication -> decision-free cohort freeze -> final historical representation -> preregistered policy selections.",
     "A 100-document complete fixture ran the entire post-gate chain end to end; the frozen cohort contained no tested decision/review/citation strings, the representation was marked FROZEN_T0_REPRESENTATION, and policy outputs were marked FROZEN_T0_POLICY_SELECTIONS.",
-    "The finalizer explicitly leaves the downstream outcome gate closed even after technical PASS/CONDITIONAL; it does not acquire or evaluate real downstream outcomes."
+    "The finalizer explicitly leaves the downstream outcome gate closed even after technical PASS/CONDITIONAL; it does not acquire or evaluate real downstream outcomes.",
+    "A pre-outcome design-precision audit is now wired into T0 finalization. It uses only frozen policy-set overlap, cohort size, the preregistered top-decile outcome fraction and the five-percentage-point smallest effect of interest; no realized citation values are required.",
+    "On the 100-document finalization fixture, all five structured-policy contrasts were prospectively precision-inadequate for a five-point recall effect, demonstrating that the audit can surface underpowered designs before outcome acquisition."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -108,7 +111,8 @@
     "a free OpenAlex API key is not currently configured on the Mac; real outcome acquisition must not begin before the feasibility gate and should remain within the configured free/spend cap",
     "technical T0-content availability must not be adjudicated before every reference candidate has terminal acquisition and required extraction state",
     "the +/-5 percentage-point technical equivalence margin is deliberately tied to the already-frozen 5-point downstream smallest effect of interest rather than chosen after observing final missingness",
-    "technical availability completion alone is insufficient to unlock downstream outcomes; broader outcome-support, entity-resolution, lineage and precision criteria still require adjudication"
+    "technical availability completion alone is insufficient to unlock downstream outcomes; broader outcome-support, entity-resolution, lineage and precision criteria still require adjudication",
+    "the preregistered top-decile recall endpoint may be precision-limited at the available cohort size depending on the final policy-vs-random selection overlap; this must be checked before spending attention or provider budget on downstream outcomes"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -128,6 +132,11 @@
       "candidate": "Outcome-blind T0 finalization chain",
       "status": "implemented-and-fixture-tested",
       "reason": "after terminal acquisition the chain can freeze the usable cohort and regenerate representation/policy selections without exposing downstream outcomes"
+    },
+    {
+      "candidate": "Prospective Track A design-precision audit",
+      "status": "implemented-pre-outcome",
+      "reason": "uses only final policy overlap and frozen design constants to detect obvious precision failure before any citation outcome is acquired"
     },
     {
       "candidate": "ICLR 2020 T0 historical PDF acquisition",
@@ -180,6 +189,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "allow the live acquisition/extraction to complete; execute the frozen finalizer; if technical PASS/CONDITIONAL, preserve the resulting decision-free cohort, representation and policy selections while keeping downstream outcomes closed for broader feasibility review",
+  "next_autonomous_action": "complete live T0 acquisition/extraction; finalizer will adjudicate technical availability, freeze the outcome-blind cohort, regenerate policies and run the prospective precision audit; use that evidence in the broader feasibility decision before any OpenAlex citation acquisition",
   "decisions_requiring_human_attention": []
 }
