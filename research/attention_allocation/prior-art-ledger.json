@@ -1,11 +1,68 @@
 {
- "updated":"2026-09-18",
- "entries":[
-  {"source":"Lakkaraju et al. 2017, The Selective Labels Problem, KDD, DOI 10.1145/3097983.3098066","concept_borrowed":"Observed outcomes can depend on historical human selection, making unselected cases systematically unlabeled or differently observed.","use":"Treat post-selection scholarly outcomes as selection-affected and prohibit causal interpretation as intrinsic value without additional identification.","difference":"Our setting is scientific-attention allocation, not judicial decisions; the identification problem is inherited, not novel.","supports":"Need for explicit selective-label analysis."},
-  {"source":"Settles 2009, Active Learning Literature Survey, UW-Madison TR1648","concept_borrowed":"Allocate scarce oracle labels among abundant unlabeled candidates; uncertainty and diversity are established query strategies.","use":"Baseline uncertainty/exploration policies and novelty challenge.","difference":"Our target is realised downstream epistemic value under scientific selection, not classifier label efficiency.","supports":"Human evaluation scarcity and uncertainty allocation are established prior art."},
-  {"source":"Uzzi et al. 2013, Atypical Combinations and Scientific Impact, Science, DOI 10.1126/science.1240474","concept_borrowed":"Atypical combinations as one operationalisation of scientific novelty.","use":"Candidate novelty measure only as a sensitivity analysis.","difference":"Not treated as ground truth novelty.","supports":"Atypical combinations can associate with impact."},
-  {"source":"Fontana et al. 2020, New and atypical combinations, Research Policy, DOI 10.1016/j.respol.2020.104063","concept_borrowed":"Novelty indicators are construct-sensitive and may overlap interdisciplinarity.","use":"Requires independent validation and multiple novelty measures.","difference":"Used primarily as a falsification constraint.","supports":"Do not collapse novelty to a single embedding/combinatorial score."},
-  {"source":"Teplitskiy et al. 2022, Is novel research worth doing?, PNAS, DOI 10.1073/pnas.2118046119","concept_borrowed":"Direct empirical test of novelty and peer-review acceptance across journals.","use":"Counterevidence to any prior assumption that peer review systematically suppresses novelty.","difference":"Our programme tests allocation policies under varying attention pressure rather than estimating existing peer-review novelty preference.","supports":"Novel manuscripts were not systematically disfavoured in their studied journal samples."},
-  {"source":"OpenReview documentation, Using the API","concept_borrowed":"API1/API2 coexist and older conferences can require legacy schemas.","use":"Acquisition must preserve raw responses and year-specific invitation provenance.","difference":"Engineering dependency, not a research contribution.","supports":"Need to version acquisition logic."}
+ "updated": "2026-09-20",
+ "entries": [
+  {
+   "source": "Lakkaraju et al. 2017, The Selective Labels Problem, KDD, DOI 10.1145/3097983.3098066",
+   "concept_borrowed": "Observed outcomes can depend on historical human selection, making unselected cases systematically unlabeled or differently observed.",
+   "use": "Treat post-selection scholarly outcomes as selection-affected and prohibit causal interpretation as intrinsic value without additional identification.",
+   "difference": "Our setting is scientific-attention allocation, not judicial decisions; the identification problem is inherited, not novel.",
+   "supports": "Need for explicit selective-label analysis."
+  },
+  {
+   "source": "Settles 2009, Active Learning Literature Survey, UW-Madison TR1648",
+   "concept_borrowed": "Allocate scarce oracle labels among abundant unlabeled candidates; uncertainty and diversity are established query strategies.",
+   "use": "Baseline uncertainty/exploration policies and novelty challenge.",
+   "difference": "Our target is realised downstream epistemic value under scientific selection, not classifier label efficiency.",
+   "supports": "Human evaluation scarcity and uncertainty allocation are established prior art."
+  },
+  {
+   "source": "Uzzi et al. 2013, Atypical Combinations and Scientific Impact, Science, DOI 10.1126/science.1240474",
+   "concept_borrowed": "Atypical combinations as one operationalisation of scientific novelty.",
+   "use": "Candidate novelty measure only as a sensitivity analysis.",
+   "difference": "Not treated as ground truth novelty.",
+   "supports": "Atypical combinations can associate with impact."
+  },
+  {
+   "source": "Fontana et al. 2020, New and atypical combinations, Research Policy, DOI 10.1016/j.respol.2020.104063",
+   "concept_borrowed": "Novelty indicators are construct-sensitive and may overlap interdisciplinarity.",
+   "use": "Requires independent validation and multiple novelty measures.",
+   "difference": "Used primarily as a falsification constraint.",
+   "supports": "Do not collapse novelty to a single embedding/combinatorial score."
+  },
+  {
+   "source": "Teplitskiy et al. 2022, Is novel research worth doing?, PNAS, DOI 10.1073/pnas.2118046119",
+   "concept_borrowed": "Direct empirical test of novelty and peer-review acceptance across journals.",
+   "use": "Counterevidence to any prior assumption that peer review systematically suppresses novelty.",
+   "difference": "Our programme tests allocation policies under varying attention pressure rather than estimating existing peer-review novelty preference.",
+   "supports": "Novel manuscripts were not systematically disfavoured in their studied journal samples."
+  },
+  {
+   "source": "OpenReview documentation, Using the API",
+   "concept_borrowed": "API1/API2 coexist and older conferences can require legacy schemas.",
+   "use": "Acquisition must preserve raw responses and year-specific invitation provenance.",
+   "difference": "Engineering dependency, not a research contribution.",
+   "supports": "Need to version acquisition logic."
+  },
+  {
+   "source": "Qi et al. 2013, Rule-based deduplication of article records from bibliographic databases, Database, DOI 10.1093/database/bat086",
+   "concept_borrowed": "Bibliographic entity resolution should combine title, author and identifier evidence and may use approximate string matching rather than a single field.",
+   "use": "Track A resubmission/lineage audit uses exact normalized title plus author overlap as the primary high-specificity rule and treats approximate title matching as sensitivity only.",
+   "difference": "We retain later manuscript records as lineage evidence rather than collapsing duplicate database records.",
+   "supports": "Conservative title+author lineage detection and explicit false-positive control."
+  },
+  {
+   "source": "Rathbone et al. 2015, Better duplicate detection for systematic reviewers, Systematic Reviews, DOI 10.1186/2046-4053-4-6",
+   "concept_borrowed": "Combining title and author evidence with fuzzy name/string handling can improve duplicate-record sensitivity while preserving specificity.",
+   "use": "Supports a separately reported near-title lineage sensitivity stratum rather than broad semantic matching.",
+   "difference": "Our target is manuscript evolution across conference years, not duplicate citations in one review corpus.",
+   "supports": "Sensitivity-only fuzzy lineage analysis."
+  },
+  {
+   "source": "ASySD 2023, Automated Systematic Search Deduplicator, PMCID PMC10483700",
+   "concept_borrowed": "Bibliographic deduplication can use staged blocking criteria followed by stronger field-similarity checks.",
+   "use": "Track A blocks on title similarity and then requires author-surname overlap before admitting sensitivity lineage edges.",
+   "difference": "No records are deleted or automatically merged; lineage flags narrow interpretation of later outcomes.",
+   "supports": "Staged blocking and conservative candidate linkage."
+  }
  ]
 }

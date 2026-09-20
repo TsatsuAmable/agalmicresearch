@@ -49,7 +49,10 @@
     "scripts/audit-attention-openalex-identity-support.py",
     "scripts/reconcile-attention-openalex-batch-provenance.py",
     "t0/T0_IDENTITY_OBSERVABILITY_GATE.md",
-    "scripts/audit-attention-track-a-observability.py"
+    "scripts/audit-attention-track-a-observability.py",
+    "t0/TRACK_A_LINEAGE_AUDIT_PROTOCOL.md",
+    "t0/TRACK_A_LINEAGE_AUDIT.md",
+    "scripts/audit-attention-track-a-lineage.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -99,7 +102,13 @@
     "OpenAlex identity clustering found 283 candidates with two matched work manifestations and 5 with three, supporting the preregistered requirement to union manifestations rather than choose one arbitrary work record.",
     "A frozen post-finalization identity-observability audit now measures exact OpenAlex support on the actual decision-free T0 cohort and preregistered policy selections before citation outcomes are opened.",
     "The observability audit reports historical ACCEPT/REJECT linkage balance, policy-specific matched fractions, expected null recall shifts caused solely by unequal identity observability, matched-substrate design precision, and identity support across representation-geometry quintiles.",
-    "A 100-document complete fixture exercised the observability audit without citation outcomes: 94/100 exact identities were observable, expected primary policy-vs-random observability shifts were between -1.06 and +1.06 percentage points, and the small fixture remained precision-inadequate."
+    "A 100-document complete fixture exercised the observability audit without citation outcomes: 94/100 exact identities were observable, expected primary policy-vs-random observability shifts were between -1.06 and +1.06 percentage points, and the small fixture remained precision-inadequate.",
+    "The outcome-free ICLR resubmission/lineage audit is complete across 1,816 ICLR 2020 T0 candidates and 30,568 later ICLR 2021-2026 records.",
+    "Primary exact-title+author lineage is rare but concentrated among historical REJECT candidates: 0/549 ACCEPT versus 10/1,267 REJECT; ACCEPT-minus-REJECT -0.79 pp with 95% Newcombe-Wilson interval [-1.45, -0.01] pp, still far inside the programme +/-5 pp materiality margin.",
+    "The frozen near-title sensitivity rule identifies 19 candidates with any lineage: 2/549 historical ACCEPT and 17/1,267 historical REJECT; difference -0.98 pp with 95% interval [-1.82, +0.10] pp.",
+    "Three historical REJECT candidates have later ACCEPT descendants under the frozen sensitivity rule, demonstrating concrete later-selection lineage without a material cohort-level imbalance: later-accept lineage difference -0.24 pp, 95% interval [-0.69, +0.48] pp.",
+    "Lineage edges are temporally concentrated immediately after the simulated decision: 17/19 detected edges are in ICLR 2021; 15 later records are REJECT, 3 ACCEPT and 1 WITHDRAWN.",
+    "The lineage audit is deterministic across reruns and reads no OpenAlex/citation/future-value fields."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -133,7 +142,10 @@
     "117 candidates have no primary exact OpenAlex identity and 6 have exact-title records without the required author overlap; these must not be imputed as zero-citation outcomes",
     "fuzzy identity recovery remains sensitivity-only under the frozen protocol and cannot silently replace the exact-match primary cohort",
     "identity observability must be re-audited on the final technically usable T0 cohort and actual frozen policy selections; the pre-finalization 1,816-candidate identity audit is informative but not sufficient for the final policy-outcome substrate",
-    "policy-specific outcome observability can bias a policy contrast even when aggregate ACCEPT/REJECT linkage rates look similar, so policy-selected match support must be checked directly before citation outcomes are opened"
+    "policy-specific outcome observability can bias a policy contrast even when aggregate ACCEPT/REJECT linkage rates look similar, so policy-selected match support must be checked directly before citation outcomes are opened",
+    "absence of detected lineage is not proof of no resubmission because the frozen audit prioritizes specificity over sensitivity",
+    "detected later ACCEPT descendants show that later citation visibility can incorporate manuscript revision and later selection rather than value attributable solely to the 2020 submission state",
+    "lineage must be re-intersected with the final technically usable cohort and frozen policy selections before downstream outcome interpretation"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -168,6 +180,11 @@
       "candidate": "Frozen T0 identity-observability gate",
       "status": "implemented-pre-outcome",
       "reason": "re-evaluates identity support on the final frozen cohort and policy selections, including policy-specific observability bias and representation-geometry diagnostics, before any citation outcome is acquired"
+    },
+    {
+      "candidate": "Track A resubmission lineage audit",
+      "status": "completed-outcome-free",
+      "reason": "exact and conservative near-title lineage are rare and materially balanced, but three rejected 2020 candidates later appear as accepted descendants and must remain flagged in downstream sensitivity analysis"
     },
     {
       "candidate": "ICLR 2020 T0 historical PDF acquisition",
@@ -220,6 +237,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "complete live T0 acquisition/extraction and outcome-blind finalization; then run the frozen identity-observability audit on the final cohort and policy selections and combine technical availability, observability and design precision into the broader pre-outcome feasibility decision before any OpenAlex citation acquisition",
+  "next_autonomous_action": "finish live T0 acquisition/extraction and finalization; intersect the final cohort and policy selections with exact/sensitivity lineage plus OpenAlex identity observability, then combine technical availability, lineage, observability and design precision into the broader pre-outcome feasibility verdict before any citation acquisition",
   "decisions_requiring_human_attention": []
 }
