@@ -47,7 +47,9 @@
     "scripts/acquire-attention-openalex-batch-metadata.py",
     "scripts/resolve-attention-openalex-batched-identities.py",
     "scripts/audit-attention-openalex-identity-support.py",
-    "scripts/reconcile-attention-openalex-batch-provenance.py"
+    "scripts/reconcile-attention-openalex-batch-provenance.py",
+    "t0/T0_IDENTITY_OBSERVABILITY_GATE.md",
+    "scripts/audit-attention-track-a-observability.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -94,7 +96,10 @@
     "Exact OpenAlex identity support is historically decision-differential in the ICLR 2020 T0 cohort: ACCEPT 528/549 (96.17%) versus REJECT 1,165/1,267 (91.95%); ACCEPT-minus-REJECT gap +4.23 pp with 95% Newcombe-Wilson interval [+1.84, +6.31] pp, so equivalence inside +/-5 pp is not established.",
     "Identity batching reduced 1,816 exact-title lookups to 73 OpenAlex requests and recorded 0.073 USD-equivalent API usage units without acquiring citation outcomes.",
     "An initial unquoted-filter client defect produced HTTP 400 responses for punctuation-bearing title batches; failed responses were excluded, the filter grammar was corrected, and raw provenance was reconciled across 34 valid v0 batches and 39 corrected v1 batches.",
-    "OpenAlex identity clustering found 283 candidates with two matched work manifestations and 5 with three, supporting the preregistered requirement to union manifestations rather than choose one arbitrary work record."
+    "OpenAlex identity clustering found 283 candidates with two matched work manifestations and 5 with three, supporting the preregistered requirement to union manifestations rather than choose one arbitrary work record.",
+    "A frozen post-finalization identity-observability audit now measures exact OpenAlex support on the actual decision-free T0 cohort and preregistered policy selections before citation outcomes are opened.",
+    "The observability audit reports historical ACCEPT/REJECT linkage balance, policy-specific matched fractions, expected null recall shifts caused solely by unequal identity observability, matched-substrate design precision, and identity support across representation-geometry quintiles.",
+    "A 100-document complete fixture exercised the observability audit without citation outcomes: 94/100 exact identities were observable, expected primary policy-vs-random observability shifts were between -1.06 and +1.06 percentage points, and the small fixture remained precision-inadequate."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -126,7 +131,9 @@
     "the preregistered top-decile recall endpoint may be precision-limited at the available cohort size depending on the final policy-vs-random selection overlap; this must be checked before spending attention or provider budget on downstream outcomes",
     "primary OpenAlex identity observability is measurably higher for historical ACCEPT than REJECT candidates; exact-match downstream analysis must therefore be restricted to the observable matched cohort and cannot assume outcome observability is independent of selection",
     "117 candidates have no primary exact OpenAlex identity and 6 have exact-title records without the required author overlap; these must not be imputed as zero-citation outcomes",
-    "fuzzy identity recovery remains sensitivity-only under the frozen protocol and cannot silently replace the exact-match primary cohort"
+    "fuzzy identity recovery remains sensitivity-only under the frozen protocol and cannot silently replace the exact-match primary cohort",
+    "identity observability must be re-audited on the final technically usable T0 cohort and actual frozen policy selections; the pre-finalization 1,816-candidate identity audit is informative but not sufficient for the final policy-outcome substrate",
+    "policy-specific outcome observability can bias a policy contrast even when aggregate ACCEPT/REJECT linkage rates look similar, so policy-selected match support must be checked directly before citation outcomes are opened"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -156,6 +163,11 @@
       "candidate": "OpenAlex exact identity feasibility",
       "status": "completed-conditional-observability",
       "reason": "93.23% overall exact identity support is substantial, but the ACCEPT-vs-REJECT linkage gap fails the frozen +/-5 pp equivalence criterion; downstream claims must remain matched-cohort conditional"
+    },
+    {
+      "candidate": "Frozen T0 identity-observability gate",
+      "status": "implemented-pre-outcome",
+      "reason": "re-evaluates identity support on the final frozen cohort and policy selections, including policy-specific observability bias and representation-geometry diagnostics, before any citation outcome is acquired"
     },
     {
       "candidate": "ICLR 2020 T0 historical PDF acquisition",
@@ -208,6 +220,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "finish live T0 acquisition/extraction and finalization; intersect the final outcome-blind cohort and preregistered policy selections with the already-frozen OpenAlex identity support, then use the design-precision and observability diagnostics to decide whether citation-outcome acquisition should proceed",
+  "next_autonomous_action": "complete live T0 acquisition/extraction and outcome-blind finalization; then run the frozen identity-observability audit on the final cohort and policy selections and combine technical availability, observability and design precision into the broader pre-outcome feasibility decision before any OpenAlex citation acquisition",
   "decisions_requiring_human_attention": []
 }

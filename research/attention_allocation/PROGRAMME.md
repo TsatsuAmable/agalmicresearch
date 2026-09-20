@@ -150,3 +150,11 @@ Downstream identity observability has now been measured without acquiring citati
 This is a feasibility finding, not an outcome result. No citation counts or citing-work sets were requested. The exact-match cohort is large enough to remain a candidate substrate, but it is not observability-neutral with respect to historical selection. Any later primary analysis must therefore be explicitly conditional on the matched cohort; unmatched candidates cannot be assigned zero downstream value.
 
 The batching run also exposed and repaired a client-side OpenAlex filter-grammar defect. Unquoted title values containing commas received HTTP 400 and were never admitted as data. Corrected quoted filters were used for retry, and raw provenance was reconciled across 34 valid v0 responses and 39 corrected v1 responses. Multiple OpenAlex manifestations were common enough to validate the preregistered identity-cluster design: 283 matched candidates have two work records and 5 have three.
+
+## Final identity-observability gate — 20 September 2026
+
+The downstream-observability check is now defined on the actual frozen T0 policy substrate rather than only on the pre-finalization candidate frame. After technical finalization, the audit intersects the final decision-free cohort and preregistered selections with the already-frozen exact OpenAlex identity clusters, without reading citation outcomes.
+
+It reports exact-identity support overall and by historical decision, match support for every policy and budget, the expected primary policy-vs-random recall shift that could arise solely from unequal identity observability, prospective precision on the matched substrate, and identity support across centroid-distance and local-sparsity quintiles of the outcome-blind representation. Historical decision remains diagnostic only and never enters allocation.
+
+A 100-document complete fixture exercised the full audit without citation outcomes. Ninety-four identities were observable; expected primary policy-vs-random observability shifts were between -1.06 and +1.06 percentage points, while the small fixture remained precision-inadequate. The live result cannot be adjudicated until the T0 acquisition/extraction pipeline reaches terminal state and the final cohort and policy selections are frozen.
