@@ -1,8 +1,8 @@
 {
   "programme": "Attention Allocation Under Cognitive Abundance",
   "updated": "2026-09-20",
-  "phase": "feasibility-track-a-t0-pdf-acquisition",
-  "gate_status": "CONDITIONAL_T0_REVISION_REFERENCES_IDENTIFIED_ACQUISITION_PENDING",
+  "phase": "feasibility-track-a-t0-pdf-acquisition-running",
+  "gate_status": "CONDITIONAL_T0_PDF_ACQUISITION_RUNNING_EXTRACTION_PROTOCOL_FROZEN",
   "completed_artefacts": [
     "PROGRAMME.md",
     "prior-art-ledger.json",
@@ -24,9 +24,12 @@
     "t0/t0_revision_reference_candidates.jsonl",
     "t0/t0_revision_reference_summary.json",
     "scripts/audit-attention-t0-revision-references.py",
-    "scripts/acquire-attention-t0-pdfs.py"
+    "scripts/acquire-attention-t0-pdfs.py",
+    "t0/T0_PDF_EXTRACTION_PROTOCOL.md",
+    "scripts/extract-attention-t0-pdfs.py",
+    "scripts/audit-attention-t0-extraction.py"
   ],
-  "active_experiment": "Acquire, hash, and audit the 1,816 ICLR 2020 pre-deadline historical revision PDFs conservatively; empirical allocation-policy tests remain gated.",
+  "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
     "Selective-label problem is established prior art and directly threatens naive retrospective policy evaluation.",
     "Active learning already studies label allocation under expensive human-oracle budgets.",
@@ -46,7 +49,9 @@
     "ResearchArcade revision references provide 1,816 conservative pre-deadline ICLR 2020 candidates (82.1% of the ACCEPT/REJECT frame): 79.9% accepted coverage and 83.0% rejected coverage.",
     "The same conservative pre-deadline rule yields only 195 ICLR 2021 candidates (7.5%): 6.1% accepted coverage and 8.2% rejected coverage, so 2021 is not currently suitable as a primary T0 cohort.",
     "A deterministic 40-record retrieval probe resolved 20/20 sampled ICLR 2020 and 20/20 sampled ICLR 2021 historical revision references as HTTP 200 application/pdf; first-three-page text extraction succeeded for all 20 ICLR 2020 sampled PDFs.",
-    "OpenReview documents tmdate as a true modification date that users cannot set or modify; the T0 reference rule uses only revision tmdate values no later than the official paper submission deadline."
+    "OpenReview documents tmdate as a true modification date that users cannot set or modify; the T0 reference rule uses only revision tmdate values no later than the official paper submission deadline.",
+    "The frozen extraction protocol is offline and verifies each acquired PDF SHA-256 before whole-document page-order text extraction; decision labels are withheld from extraction behavior.",
+    "A 10-PDF extraction smoke test completed 10/10 with no zero-text, low-text, or page-error flags; this validates tooling only and is not empirical evidence."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -104,6 +109,6 @@
       "reason": "could quantify omissions and transformations after the first manifest exists"
     }
   ],
-  "next_autonomous_action": "run the resumable 5-second-minimum-interval ICLR 2020 historical-PDF acquisition; hash every PDF; stop on source-control errors; then quantify retrieval/extraction missingness by decision before any policy simulation",
+  "next_autonomous_action": "allow the running ICLR 2020 acquisition to complete; then run the frozen offline extractor across all successfully acquired PDFs and execute the decision-stratified missingness audit before deciding whether T0_OBSERVED_PDF can be promoted",
   "decisions_requiring_human_attention": []
 }

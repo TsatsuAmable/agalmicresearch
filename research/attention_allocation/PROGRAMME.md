@@ -90,3 +90,9 @@ The temporal firewall now has a conservative content-recovery path. ResearchArca
 A deterministic retrieval probe resolved 40/40 sampled historical revision references as public PDFs, and text extraction succeeded on the 20 sampled ICLR 2020 PDFs. This moves the blocker from *whether any T0 content route exists* to *whether bulk acquisition and extraction preserve adequate, non-differential support*.
 
 These references are not yet allocator inputs. They remain `T0_OBSERVED_REVISION_REFERENCE` until the referenced PDF is acquired, hashed and successfully transformed under the frozen extraction protocol. Empirical policy simulation remains prohibited. The next gate is conservative, resumable acquisition of the ICLR 2020 revision PDFs followed by retrieval/extraction missingness analysis by historical decision. The 2020 window is an archival opportunity, not evidence that the same observability holds in other venue-years.
+
+## T0 extraction gate — 20 September 2026
+
+The historical-PDF extraction protocol is frozen before bulk acquisition completes. Extraction is offline, verifies each source PDF hash against the acquisition ledger, preserves whole-document page order, records page-level failures and text-quality warnings, and never uses historical decision labels to change extraction behavior. A separate diagnostic joins decision labels only after extraction to measure missingness.
+
+A ten-PDF smoke test completed 10/10 without extraction or integrity failures. This is an engineering validation only. The ICLR 2020 bulk acquisition is now running under the five-second minimum request interval; empirical policy evaluation remains gated until acquisition completes and decision-stratified retrieval/extraction missingness is audited.
