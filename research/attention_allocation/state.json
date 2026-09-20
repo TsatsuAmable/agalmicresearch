@@ -29,7 +29,9 @@
     "scripts/extract-attention-t0-pdfs.py",
     "scripts/audit-attention-t0-extraction.py",
     "t0/T0_CANDIDATE_REPRESENTATION_PROTOCOL.md",
-    "scripts/build-attention-t0-representation.py"
+    "scripts/build-attention-t0-representation.py",
+    "t0/TRACK_A_POLICY_PREREGISTRATION.md",
+    "scripts/select-attention-track-a-policies.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -55,7 +57,9 @@
     "The frozen extraction protocol is offline and verifies each acquired PDF SHA-256 before whole-document page-order text extraction; decision labels are withheld from extraction behavior.",
     "A 10-PDF extraction smoke test completed 10/10 with no zero-text, low-text, or page-error flags; this validates tooling only and is not empirical evidence.",
     "A frozen outcome-blind T0 candidate representation protocol now uses only historical extracted PDF text, corpus-internal TF-IDF, deterministic truncated SVD, and transparent cosine-geometry descriptors; it explicitly forbids pretrained-model embeddings and outcome-conditioned features.",
-    "A 166-document engineering fixture produced a deterministic 128-dimensional representation; all array outputs were exactly reproducible across reruns and the row index contained none of the tested decision/review/citation strings."
+    "A 166-document engineering fixture produced a deterministic 128-dimensional representation; all array outputs were exactly reproducible across reruns and the row index contained none of the tested decision/review/citation strings.",
+    "A pre-outcome Track A allocation-policy protocol is now frozen across five equal-count scarcity budgets (5%, 10%, 20%, 40%, 80%) and six transparent policies: seeded random, centrality, centroid-distance, local-sparsity, greedy k-center coverage, and a 25% exploration-quota mixture.",
+    "A 166-document engineering fixture generated exact-budget selections for all policies and budgets with byte-identical selection/diagnostic/manifest outputs across reruns; no historical decision or future-value outcome was joined."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -73,7 +77,9 @@
     "the unusually strong ICLR 2020 historical-revision window may not generalize to other venue-years",
     "ResearchArcade revision lineage tables are not treated as sufficient to infer post-deadline base versions; only explicit pre-deadline revision references are admitted",
     "corpus-internal lexical/SVD geometry is an operational representation rather than validated scientific novelty or epistemic value",
-    "the representation protocol assumes batch allocation at a common deadline and must be redesigned for sequential-arrival estimands"
+    "the representation protocol assumes batch allocation at a common deadline and must be redesigned for sequential-arrival estimands",
+    "equal candidate-count budgets are a coarse attention proxy and do not establish equal real evaluation cost",
+    "centroid distance and local sparsity are representation-space descriptors rather than validated scientific novelty constructs"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -93,6 +99,11 @@
       "candidate": "Outcome-blind T0 lexical representation",
       "status": "frozen-engineering-protocol",
       "reason": "TF-IDF plus deterministic SVD avoids post-2020 pretrained-model knowledge and can be regenerated after the extraction cohort is frozen"
+    },
+    {
+      "candidate": "Frozen transparent Track A allocation policies",
+      "status": "preregistered-engineering-protocol",
+      "reason": "policy rules and scarcity budgets are frozen before any downstream outcome is joined, reducing outcome-driven tuning risk"
     },
     {
       "candidate": "T0 submission snapshot recovery",
@@ -120,6 +131,6 @@
       "reason": "could quantify omissions and transformations after the first manifest exists"
     }
   ],
-  "next_autonomous_action": "complete ICLR 2020 acquisition and extraction, run decision-stratified missingness audit, freeze the eligible T0 cohort, then regenerate the outcome-blind representation from that frozen cohort before any policy comparison",
+  "next_autonomous_action": "complete ICLR 2020 acquisition/extraction and missingness audit; freeze the eligible cohort; regenerate the representation; reproduce the preregistered policy selections without outcomes; only then evaluate against a separately frozen downstream-value definition if the feasibility gate passes",
   "decisions_requiring_human_attention": []
 }
