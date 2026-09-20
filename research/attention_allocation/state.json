@@ -52,7 +52,9 @@
     "scripts/audit-attention-track-a-observability.py",
     "t0/TRACK_A_LINEAGE_AUDIT_PROTOCOL.md",
     "t0/TRACK_A_LINEAGE_AUDIT.md",
-    "scripts/audit-attention-track-a-lineage.py"
+    "scripts/audit-attention-track-a-lineage.py",
+    "t0/T0_FINAL_LINEAGE_GATE.md",
+    "scripts/audit-attention-track-a-final-lineage.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -108,7 +110,10 @@
     "The frozen near-title sensitivity rule identifies 19 candidates with any lineage: 2/549 historical ACCEPT and 17/1,267 historical REJECT; difference -0.98 pp with 95% interval [-1.82, +0.10] pp.",
     "Three historical REJECT candidates have later ACCEPT descendants under the frozen sensitivity rule, demonstrating concrete later-selection lineage without a material cohort-level imbalance: later-accept lineage difference -0.24 pp, 95% interval [-0.69, +0.48] pp.",
     "Lineage edges are temporally concentrated immediately after the simulated decision: 17/19 detected edges are in ICLR 2021; 15 later records are REJECT, 3 ACCEPT and 1 WITHDRAWN.",
-    "The lineage audit is deterministic across reruns and reads no OpenAlex/citation/future-value fields."
+    "The lineage audit is deterministic across reruns and reads no OpenAlex/citation/future-value fields.",
+    "A final-substrate lineage gate is now frozen to re-intersect the precomputed manuscript-lineage flags with the actual technically usable T0 cohort and the final preregistered policy selections before citation outcomes are opened.",
+    "The final-lineage audit reports primary exact lineage, conservative near-title sensitivity lineage, later-ACCEPT lineage, historical decision balance and policy-specific lineage fractions at every attention budget.",
+    "A 100-document complete fixture exercised the final-lineage gate without citation outcomes. It detected 1 exact-lineage and 2 sensitivity-lineage candidates; policy-vs-random lineage differences were at most 5 pp, while historical-decision equivalence was not established because the fixture was too small for a narrow interval."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -145,7 +150,9 @@
     "policy-specific outcome observability can bias a policy contrast even when aggregate ACCEPT/REJECT linkage rates look similar, so policy-selected match support must be checked directly before citation outcomes are opened",
     "absence of detected lineage is not proof of no resubmission because the frozen audit prioritizes specificity over sensitivity",
     "detected later ACCEPT descendants show that later citation visibility can incorporate manuscript revision and later selection rather than value attributable solely to the 2020 submission state",
-    "lineage must be re-intersected with the final technically usable cohort and frozen policy selections before downstream outcome interpretation"
+    "lineage must be re-intersected with the final technically usable cohort and frozen policy selections before downstream outcome interpretation",
+    "lineage balance must be re-evaluated on the actual final technically usable cohort because technical losses can alter both historical-decision lineage incidence and policy-specific lineage exposure",
+    "later-ACCEPT descendants remain a mandatory sensitivity stratum even when aggregate final-lineage balance passes"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -185,6 +192,11 @@
       "candidate": "Track A resubmission lineage audit",
       "status": "completed-outcome-free",
       "reason": "exact and conservative near-title lineage are rare and materially balanced, but three rejected 2020 candidates later appear as accepted descendants and must remain flagged in downstream sensitivity analysis"
+    },
+    {
+      "candidate": "Final T0 lineage substrate gate",
+      "status": "implemented-pre-outcome",
+      "reason": "re-intersects frozen lineage flags with the actual final cohort and policy selections so policy-specific lineage contamination is known before any citation outcome is acquired"
     },
     {
       "candidate": "ICLR 2020 T0 historical PDF acquisition",
@@ -237,6 +249,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "finish live T0 acquisition/extraction and finalization; intersect the final cohort and policy selections with exact/sensitivity lineage plus OpenAlex identity observability, then combine technical availability, lineage, observability and design precision into the broader pre-outcome feasibility verdict before any citation acquisition",
+  "next_autonomous_action": "finish live T0 acquisition/extraction and finalization; then execute final lineage and identity-observability audits on the actual frozen cohort and selections, combine them with technical availability and design precision, and adjudicate the broader pre-outcome feasibility gate before any citation acquisition",
   "decisions_requiring_human_attention": []
 }
