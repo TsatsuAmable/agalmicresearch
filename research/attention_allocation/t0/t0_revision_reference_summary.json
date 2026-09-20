@@ -1,0 +1,52 @@
+{
+  "candidate_file_sha256": "0f00c36bd57612e95ec67d02158a30964d7b180bd011a4e9c33edf9acd45add1",
+  "deadline_sources": {
+    "2020": "https://iclr.cc/Conferences/2020/Dates",
+    "2021": "https://iclr.cc/Conferences/2021/Dates"
+  },
+  "manifest_sha256": "7a2f692468ef3e86ecebe71d6f5642d55588c7498e5dd016d7644f18199a195a",
+  "openreview_tmdate_source": "https://docs.openreview.net/reference/api-v1/entities/note/fields",
+  "research_arcade_source_code": "https://github.com/ulab-uiuc/research-arcade/blob/ecf9c7c2490840b029bd2add4f02d04aca1d014e/research_arcade/openreview_utils/openreview_crawler.py",
+  "revision_index_sha256": "5e1e37616b44fe6435333c2cf5c4a80cee96fa03db64b539fbabda5aed2add58",
+  "revision_index_source": "ulab-ai/ResearchArcade-openreview-papers-revisions",
+  "schema_version": "0.1",
+  "status": "REFERENCE_IDENTIFICATION_ONLY",
+  "years": {
+    "2020": {
+      "by_decision": {
+        "ACCEPT": {
+          "candidate_count": 549,
+          "fraction": 0.7991266375545851,
+          "manifest_count": 687
+        },
+        "REJECT": {
+          "candidate_count": 1267,
+          "fraction": 0.8302752293577982,
+          "manifest_count": 1526
+        }
+      },
+      "candidate_count": 1816,
+      "candidate_fraction": 0.8206055128784455,
+      "primary_manifest_count": 2213,
+      "submission_deadline_utc": "2019-09-25 15:00:00"
+    },
+    "2021": {
+      "by_decision": {
+        "ACCEPT": {
+          "candidate_count": 52,
+          "fraction": 0.06053550640279395,
+          "manifest_count": 859
+        },
+        "REJECT": {
+          "candidate_count": 143,
+          "fraction": 0.08242074927953891,
+          "manifest_count": 1735
+        }
+      },
+      "candidate_count": 195,
+      "candidate_fraction": 0.07517347725520432,
+      "primary_manifest_count": 2594,
+      "submission_deadline_utc": "2020-10-02 15:00:00"
+    }
+  }
+}
