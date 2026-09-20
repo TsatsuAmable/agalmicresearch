@@ -56,6 +56,7 @@ def main() -> None:
     cohort = args.out_dir / "frozen_t0_cohort.jsonl"
     representation = args.out_dir / "representation"
     policies = args.out_dir / "policies"
+    precision_audit = args.out_dir / "design_precision_audit.json"
     status_path = args.out_dir / "finalization_status.json"
 
     run(
@@ -166,9 +167,23 @@ def main() -> None:
         ]
     )
 
+    run(
+        [
+            sys.executable,
+            str(scripts / "audit-attention-track-a-design-precision.py"),
+            "--policy-selections",
+            str(policies / "policy_selections.json"),
+            "--policy-manifest",
+            str(policies / "policy_manifest.json"),
+            "--out",
+            str(precision_audit),
+        ]
+    )
+
     cohort_manifest = cohort.with_suffix(cohort.suffix + ".manifest.json")
     rep_manifest = representation / "representation_manifest.json"
     policy_manifest = policies / "policy_manifest.json"
+    precision_doc = json.loads(precision_audit.read_text())
 
     payload = {
         "schema_version": "0.1",
@@ -176,12 +191,14 @@ def main() -> None:
         "technical_adjudication": adjudication,
         "outcomes_touched": False,
         "downstream_outcome_gate": "STILL_CLOSED_PENDING_BROADER_FEASIBILITY_REVIEW",
+        "design_precision_status": precision_doc.get("status"),
         "artefacts": {
             "technical_audit_sha256": sha256_file(audit),
             "frozen_cohort_sha256": sha256_file(cohort),
             "frozen_cohort_manifest_sha256": sha256_file(cohort_manifest),
             "representation_manifest_sha256": sha256_file(rep_manifest),
             "policy_manifest_sha256": sha256_file(policy_manifest),
+            "design_precision_audit_sha256": sha256_file(precision_audit),
         },
     }
     write_status(status_path, payload)

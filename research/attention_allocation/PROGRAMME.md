@@ -136,3 +136,9 @@ The post-acquisition transition is now executable without opening the downstream
 The cohort freezer deliberately strips historical decision labels. The final representation and selection artefacts therefore remain outcome-blind. A 100-document complete fixture exercised the full chain end to end and produced a frozen cohort with no tested decision/review/citation strings, a `FROZEN_T0_REPRESENTATION`, and `FROZEN_T0_POLICY_SELECTIONS`.
 
 Technical completion still does not unlock OpenAlex citation outcomes. The finalizer writes that boundary explicitly: broader outcome-support, entity-resolution, lineage and precision requirements remain to be adjudicated before downstream evaluation can run.
+
+## Prospective design-precision audit — 20 September 2026
+
+The outcome-blind finalizer now performs a precision diagnostic after final policy selections are frozen and before any downstream citation outcome is acquired. Under a design null with exactly the preregistered top-decile count of high-recognition candidates distributed uniformly over the frozen cohort, the variance of each fixed-policy recall difference versus seeded random is determined by cohort size and the symmetric difference between the two selected sets. This permits an outcome-free check against the already-frozen five-percentage-point smallest effect of interest.
+
+The audit is diagnostic rather than a realized power calculation: citation ties and the paired bootstrap can change final interval width. Nevertheless, an obvious failure here is directly relevant to the broader pre-outcome feasibility gate. A 100-document end-to-end fixture correctly flags all five structured-policy contrasts as precision-inadequate, demonstrating that the system can stop or reframe an underpowered claim before acquiring real outcomes.
