@@ -116,3 +116,9 @@ The first downstream-recognition proxy and its precision rules are frozen before
 Metadata-only probes revealed an important identity issue before outcome acquisition: one candidate can appear as multiple OpenAlex work IDs representing preprint, conference, repository or archival manifestations. The primary matching rule therefore forms an exact-normalized-title plus author-overlap identity cluster and unions citing work IDs across cluster members before counting. These probes did not request citation outcomes and were used only to validate matching mechanics.
 
 A network-free linkage-preparation script now builds the evaluation-only query manifest for the 1,816 ICLR 2020 T0 reference candidates. Actual OpenAlex outcome acquisition remains prohibited until the existing feasibility gate passes.
+
+## Frozen downstream execution engine — 20 September 2026
+
+The post-gate downstream engine is now implemented before real outcome inspection. Separate scripts acquire OpenAlex identity metadata, resolve exact-title+author identity clusters, acquire citing-work IDs only inside the frozen five-year window, and evaluate the preregistered policies. Metadata and citation acquisition are hard-gated behind an explicit post-feasibility-gate flag and enforce provider limits plus a configurable cost ceiling.
+
+The identity resolver was tested on synthetic duplicate manifestations, and the evaluator was tested against deterministic synthetic C5 outcomes for the 166-document engineering representation. These tests validated mechanics only. No real citation outcome has been acquired or joined to a policy selection. The entire outcome path therefore remains dormant until the T0 acquisition/extraction missingness gate is adjudicated.
