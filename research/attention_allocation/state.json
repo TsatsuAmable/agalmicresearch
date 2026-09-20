@@ -31,7 +31,9 @@
     "t0/T0_CANDIDATE_REPRESENTATION_PROTOCOL.md",
     "scripts/build-attention-t0-representation.py",
     "t0/TRACK_A_POLICY_PREREGISTRATION.md",
-    "scripts/select-attention-track-a-policies.py"
+    "scripts/select-attention-track-a-policies.py",
+    "t0/TRACK_A_DOWNSTREAM_OUTCOME_PREREGISTRATION.md",
+    "scripts/prepare-attention-openalex-linkage.py"
   ],
   "active_experiment": "ICLR 2020 T0 PDF acquisition is running under the 5-second source-respecting throttle; the offline extraction and decision-stratified missingness protocols are frozen and ready to consume completed downloads.",
   "evidence_collected": [
@@ -59,7 +61,11 @@
     "A frozen outcome-blind T0 candidate representation protocol now uses only historical extracted PDF text, corpus-internal TF-IDF, deterministic truncated SVD, and transparent cosine-geometry descriptors; it explicitly forbids pretrained-model embeddings and outcome-conditioned features.",
     "A 166-document engineering fixture produced a deterministic 128-dimensional representation; all array outputs were exactly reproducible across reruns and the row index contained none of the tested decision/review/citation strings.",
     "A pre-outcome Track A allocation-policy protocol is now frozen across five equal-count scarcity budgets (5%, 10%, 20%, 40%, 80%) and six transparent policies: seeded random, centrality, centroid-distance, local-sparsity, greedy k-center coverage, and a 25% exploration-quota mixture.",
-    "A 166-document engineering fixture generated exact-budget selections for all policies and budgets with byte-identical selection/diagnostic/manifest outputs across reruns; no historical decision or future-value outcome was joined."
+    "A 166-document engineering fixture generated exact-budget selections for all policies and budgets with byte-identical selection/diagnostic/manifest outputs across reruns; no historical decision or future-value outcome was joined.",
+    "The downstream outcome definition is now frozen before policy scoring: distinct citing works in a conservative five-year post-decision window (2019-09-26 through 2024-09-25), with high-recognition defined prospectively as the matched-cohort C5 top decile.",
+    "The primary policy endpoint is frozen as high-recognition recall at the 20% attention budget, with a 5-percentage-point smallest effect of interest and a 10,000-replicate paired bootstrap precision procedure.",
+    "A network-free OpenAlex linkage query manifest can be generated for all 1,816 ICLR 2020 T0 reference candidates; the dry run made zero network calls and observed no citation outcomes.",
+    "Metadata-only OpenAlex probes showed that identical candidate papers can be represented by multiple work IDs (for example preprint and conference manifestations), so the matching protocol now freezes an exact-title+author identity-cluster rule and unions/deduplicates citing work IDs across cluster members."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -79,7 +85,10 @@
     "corpus-internal lexical/SVD geometry is an operational representation rather than validated scientific novelty or epistemic value",
     "the representation protocol assumes batch allocation at a common deadline and must be redesigned for sequential-arrival estimands",
     "equal candidate-count budgets are a coarse attention proxy and do not establish equal real evaluation cost",
-    "centroid distance and local sparsity are representation-space descriptors rather than validated scientific novelty constructs"
+    "centroid distance and local sparsity are representation-space descriptors rather than validated scientific novelty constructs",
+    "OpenAlex may split one candidate across multiple work records; primary outcome linkage therefore requires identity clustering and citing-work deduplication",
+    "citation recognition is selection-affected and remains a downstream proxy rather than counterfactual intrinsic epistemic value",
+    "OpenAlex API outcome acquisition has not begun and should remain blocked until the T0 feasibility gate permits it"
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -129,8 +138,13 @@
       "candidate": "Cross-dataset coverage reconciliation benchmark",
       "status": "candidate",
       "reason": "could quantify omissions and transformations after the first manifest exists"
+    },
+    {
+      "candidate": "Preregistered OpenAlex downstream outcome linkage",
+      "status": "frozen-not-run",
+      "reason": "matching, identity clustering, five-year citation window, primary endpoint, smallest effect and uncertainty procedure are frozen before outcomes are acquired"
     }
   ],
-  "next_autonomous_action": "complete ICLR 2020 acquisition/extraction and missingness audit; freeze the eligible cohort; regenerate the representation; reproduce the preregistered policy selections without outcomes; only then evaluate against a separately frozen downstream-value definition if the feasibility gate passes",
+  "next_autonomous_action": "complete ICLR 2020 acquisition/extraction and missingness audit; freeze the eligible T0 cohort; regenerate representation and preregistered selections; only if the gate passes, execute the already-frozen OpenAlex linkage and C5 outcome acquisition",
   "decisions_requiring_human_attention": []
 }
