@@ -1,0 +1,68 @@
+{
+  "version": "0.1",
+  "seed": 20260920,
+  "candidate_count": 600,
+  "validation_budget": 220,
+  "exploration_fraction": 0.25,
+  "policy_set": [
+    "fifo",
+    "random",
+    "plausibility",
+    "efficiency",
+    "uncertainty",
+    "diversity",
+    "exploration_quota"
+  ],
+  "cost_weights": {
+    "human": 1,
+    "compute": 0.35,
+    "lab": 1.5,
+    "elapsed": 0.1
+  },
+  "scenarios": [
+    {
+      "id": "neutral",
+      "latent_weights": {
+        "quality": 0.15,
+        "novelty": 0,
+        "minority": 0
+      },
+      "latent_noise": 0.34,
+      "plausibility_noise": 0.22,
+      "novelty_cost_weight": 0
+    },
+    {
+      "id": "legibility-aligned",
+      "latent_weights": {
+        "quality": 0.72,
+        "novelty": 0,
+        "minority": 0
+      },
+      "latent_noise": 0.12,
+      "plausibility_noise": 0.12,
+      "novelty_cost_weight": 0
+    },
+    {
+      "id": "novelty-positive",
+      "latent_weights": {
+        "quality": 0.42,
+        "novelty": 0.38,
+        "minority": 0.03
+      },
+      "latent_noise": 0.12,
+      "plausibility_noise": 0.18,
+      "novelty_cost_weight": 0
+    },
+    {
+      "id": "costly-breakthrough",
+      "latent_weights": {
+        "quality": 0.36,
+        "novelty": 0.44,
+        "minority": 0.04
+      },
+      "latent_noise": 0.11,
+      "plausibility_noise": 0.2,
+      "novelty_cost_weight": 3
+    }
+  ]
+}

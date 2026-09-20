@@ -12,7 +12,7 @@
     "test:astro-agalmic": "node --test packages/astro-agalmic/test/*.test.mjs",
     "eval:agalmic-kernel": "node scripts/evaluate-agalmic-kernel.mjs",
     "pack:astro-agalmic": "npm pack ./packages/astro-agalmic --dry-run",
-    "build": "npm run check:knowledge && npm run test:astro-agalmic && npm run test:kernel-consequence && npm run test:kernel-pair-planner && npm run pack:astro-agalmic && astro build",
+    "build": "npm run check:knowledge && npm run test:astro-agalmic && npm run test:kernel-consequence && npm run test:kernel-pair-planner && npm run test:attention-synthetic && npm run pack:astro-agalmic && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "audit:throughput": "node scripts/frontier-throughput.mjs",
@@ -21,7 +21,9 @@
     "record:kernel-consequence": "node scripts/record-kernel-consequence.mjs",
     "test:kernel-consequence": "node scripts/test-kernel-consequence.mjs",
     "plan:kernel-pair": "node scripts/plan-kernel-pair.mjs",
-    "test:kernel-pair-planner": "node scripts/test-kernel-pair-planner.mjs"
+    "test:kernel-pair-planner": "node scripts/test-kernel-pair-planner.mjs",
+    "test:attention-synthetic": "node --test scripts/test-attention-allocation-synthetic.mjs",
+    "bench:attention-synthetic": "node scripts/attention-allocation-synthetic.mjs --engineering-fixture"
   },
   "dependencies": {
     "astro": "^7.3.1"
