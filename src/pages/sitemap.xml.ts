@@ -5,7 +5,7 @@ export const prerender = true;
 
 const site = 'https://agalmicresearch.org';
 const staticRoutes = [
-  '/', '/explore/', '/search/', '/publications/', '/frontier/', '/handoff/', '/results/', '/about/',
+  '/', '/explore/', '/search/', '/projects/', '/publications/', '/frontier/', '/handoff/', '/results/', '/about/',
   '/research/', '/method/', '/ai/', '/corpus/', '/notes/', '/drafts/', '/drafts/handoff-triage-formalism/', '/lineage/', '/provenance/', '/principles/',
   '/manifesto/', '/memory-palace-protocol/', '/history/', '/tools/astro-agalmic/',
   '/llms.txt', '/llms-full.txt', '/ai/research-operating-pack.md', '/ai/research-completion-agent-prompt.md',

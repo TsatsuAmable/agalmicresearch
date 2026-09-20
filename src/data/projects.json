@@ -1,0 +1,104 @@
+{
+  "schema_version": "0.1",
+  "updated": "2026-09-20",
+  "purpose": "A public project map that separates Agalmic-owned research, applied practice, supporting infrastructure and independent related testbeds.",
+  "direction": "Run one serious empirical research programme, one capability-building practice, and a small number of clearly bounded testbeds. Preserve the rest as options rather than pretending every idea is an active project.",
+  "projects": [
+    {
+      "id": "project:attention-allocation",
+      "title": "Attention Allocation Under Cognitive Abundance",
+      "relationship": "Agalmic-owned flagship empirical programme",
+      "state": "active",
+      "kind": "empirical research",
+      "summary": "Test how scarce evaluation should be allocated when candidate generation is cheap, while preserving a temporal firewall, selection-aware observability and explicit ABSTAIN conditions.",
+      "current_result": "Track A v0.1 reached ABSTAIN_PRE_OUTCOME before citations were opened because none of five primary contrasts could resolve the preregistered five-percentage-point effect. The v0.2 multi-cohort redesign is now blocked on selection-neutral historical text, not on code.",
+      "next": "Recover a neutral additional historical cohort, preferably ICLR 2021, then rerun the source and precision gates before any further bulk acquisition or citation query.",
+      "links": [
+        {
+          "label": "Programme source",
+          "href": "https://github.com/TsatsuAmable/agalmicresearch/tree/main/research/attention_allocation"
+        },
+        {
+          "label": "v0.1 feasibility result",
+          "href": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/research/attention_allocation/t0/TRACK_A_V01_FEASIBILITY_RESULT.md"
+        },
+        {
+          "label": "v0.2 source-feasibility result",
+          "href": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/research/attention_allocation/t0/TRACK_A_V02_SOURCE_FEASIBILITY_RESULT.md"
+        }
+      ]
+    },
+    {
+      "id": "project:personal-capability-practice",
+      "title": "Personal Capability Practice",
+      "relationship": "Agalmic-owned applied practice",
+      "state": "active",
+      "kind": "capability practice",
+      "summary": "Use abundant machine cognition against real constraints in scholarliness, software engineering and engineering leadership, while measuring what remains when scaffolding is reduced.",
+      "current_result": "The Cognitive Kernel has progressed from prompt conformance to a prospective consequence protocol with sealed execution receipts. The next useful evidence is consequence-bearing matched work, not more framework elaboration.",
+      "next": "Execute the frozen consequence pilot on real task pairs and test human attention, verified completion, rework and boundary outcomes before expanding the intervention.",
+      "links": [
+        {
+          "label": "Practice",
+          "href": "/practice/"
+        },
+        {
+          "label": "Cognitive Kernel protocol",
+          "href": "https://github.com/TsatsuAmable/agalmicresearch/tree/main/research/cognitive_kernel"
+        }
+      ]
+    },
+    {
+      "id": "project:nemosyne",
+      "title": "Nemosyne / Moneta",
+      "relationship": "Independent related project and experimental testbed",
+      "state": "related",
+      "kind": "external testbed",
+      "summary": "Nemosyne is not owned by Agalmic Research. Where useful, Agalmic methods can be tested against its representation, verification and discovery workflows, and findings can flow in either direction without collapsing project ownership.",
+      "current_result": "The strongest Agalmic relevance is bounded: Nemosyne can test claims about representation, verification attention, provenance and discovery workflow. It cannot validate the whole Agalmic programme.",
+      "next": "Use Nemosyne only for bounded experiments whose intervention and outcome are genuinely observable; keep its product roadmap and operational ownership outside Agalmic Research.",
+      "links": [
+        {
+          "label": "nemosyne.world",
+          "href": "https://nemosyne.world"
+        },
+        {
+          "label": "Nemosyne source",
+          "href": "https://github.com/TsatsuAmable/nemosyne"
+        }
+      ]
+    },
+    {
+      "id": "project:expert-attention",
+      "title": "Expert-Attention Preservation",
+      "relationship": "Agalmic-owned precursor / supporting evidence",
+      "state": "absorbed",
+      "kind": "supporting research",
+      "summary": "The Phase-1 ICLR preservation benchmark showed that optimizing historical acceptance can erase disagreement and topic coverage. Its core allocation question has been absorbed into the stronger Attention Allocation programme.",
+      "current_result": "At a 20% review budget, post-review score ranking preserved about 60.8% of accepted papers but only 10.0% of high-disagreement cases, compared with roughly 20% under random allocation.",
+      "next": "Preserve the result and reuse the diagnostics where helpful; do not run a parallel competing programme unless a distinct question re-emerges.",
+      "links": [
+        {
+          "label": "Phase-1 findings",
+          "href": "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/EXPERT_ATTENTION_PHASE1_FINDINGS.md"
+        }
+      ]
+    },
+    {
+      "id": "project:frontier-throughput",
+      "title": "Frontier Throughput Instrumentation",
+      "relationship": "Agalmic supporting infrastructure",
+      "state": "supporting",
+      "kind": "measurement infrastructure",
+      "summary": "An append-only event model for tracking generation, selection, validation, realization and assimilation without pretending the machinery itself is a research result.",
+      "current_result": "The instrument exists and can make scarcity transitions replayable, but it should earn further development only when it reduces uncertainty in an active project.",
+      "next": "Use it opportunistically inside active work; do not consume a frontier slot merely to elaborate the instrumentation.",
+      "links": [
+        {
+          "label": "Instrumentation source",
+          "href": "https://github.com/TsatsuAmable/agalmicresearch/tree/main/research/frontier_throughput"
+        }
+      ]
+    }
+  ]
+}

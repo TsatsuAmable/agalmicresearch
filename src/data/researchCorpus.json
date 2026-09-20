@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "updated": "2026-09-09",
+  "updated": "2026-09-20",
   "purpose": "Track Agalmic Research investigations from prior-art screening through analysis to publication, narrowing, handoff or retirement so serious research does not disappear into an idle queue.",
   "status_vocabulary": [
     "screening",
@@ -85,8 +85,8 @@
       "id": "AR-2026-003",
       "title": "Expert-Attention Handoff Triage: retrospective scarcity benchmark",
       "question": "Can pre-expert triage increase useful evaluation yield under constrained review capacity without unacceptable false negatives, status bias or presentation sensitivity?",
-      "status": "executing",
-      "terminal": false,
+      "status": "narrowed",
+      "terminal": true,
       "prior_art_outcome": "Generic pre-filtering, AI idea screening, editorial triage, selective prediction, learning to defer, active learning and value-of-information are established. The possible contribution is a claim-sensitive allocation benchmark and test.",
       "adversarial_outcome": "The special mechanism should be retired if simple rules or conventional model triage achieve equivalent recall/yield at lower complexity.",
       "design": "Retrospective computational experiment over historical peer-review data with simulated review budgets, blinded pre-review features, multiple imperfect outcomes and reject auditing.",
@@ -95,7 +95,7 @@
         "Public OpenReview records for replication where visibility permits",
         "OpenAlex downstream scholarly metadata only if justified after feasibility"
       ],
-      "result_summary": "Phase 0 has begun. PeerRead contains usable pre-review text, decisions and reviewer fields, but duplicate review entries have already been observed and must be audited before modelling.",
+      "result_summary": "Phase 1 showed that ranking by historical review score can preserve accepted papers while sharply reducing preservation of high-disagreement cases. The broader allocation problem is now carried by Attention Allocation Under Cognitive Abundance rather than a parallel triage programme.",
       "cost": {
         "human_curator_time": "measure prospectively from Phase 0 onward",
         "machine_compute_or_api": "measure prospectively",
@@ -109,12 +109,118 @@
         "next_scarcity": "data quality and validity of retrospective proxies",
         "residual_human_role": "define valid constructs, inspect failure modes and decide whether prospective expert validation is warranted"
       },
-      "disposition": "continue only if retrospective evidence shows a credible delta over simpler baselines",
-      "next_action": "Complete and freeze the PeerRead feasibility audit, data dictionary and leakage-safe analysis corpus before fitting any triage model.",
+      "disposition": "phase-1 result preserved; empirical lineage absorbed into Attention Allocation Under Cognitive Abundance",
+      "next_action": null,
       "links": [
-        "/drafts/handoff-triage-formalism/",
-        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/HANDOFF_RETROSPECTIVE_STUDY_PROTOCOL.md",
-        "https://github.com/TsatsuAmable/agalmicresearch/tree/main/studies/handoff-retrospective"
+        "/results/",
+        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/EXPERT_ATTENTION_PHASE1_FINDINGS.md",
+        "/projects/"
+      ]
+    },
+    {
+      "id": "AR-2026-004",
+      "title": "Attention Allocation Track A v0.1: pre-outcome feasibility test",
+      "question": "Can a transparent allocation-policy comparison over historical ICLR candidates reach the preregistered five-percentage-point precision target without temporal leakage, selection-observability failure or lineage contamination?",
+      "status": "null-result",
+      "terminal": true,
+      "prior_art_outcome": "The mechanism is grounded in active learning, selective labels, constrained ranking, exploration/exploitation and bibliographic record-linkage rather than treated as a novel allocation field.",
+      "adversarial_outcome": "The study passed technical availability and lineage gates, but 0/5 primary policy contrasts were prospectively precise enough for the frozen five-percentage-point smallest effect. Citation outcomes therefore remained sealed.",
+      "design": "Outcome-blind historical reconstruction, deterministic representation and policy selection, exact identity observability audit, lineage audit and a fail-closed pre-outcome precision adjudicator.",
+      "source_data": [
+        "ICLR 2020 historical OpenReview revision PDFs",
+        "Berenslab ICLR metadata",
+        "OpenAlex identity metadata without citation outcomes"
+      ],
+      "result_summary": "ABSTAIN_PRE_OUTCOME at N=1,815. The system refused to query the preregistered C5 citation outcome because prospective 95% half-widths were approximately 7.7–7.9 percentage points rather than <=5 points.",
+      "cost": {
+        "human_curator_time": "not fully measured",
+        "machine_compute_or_api": "bounded open-data and low-cost metadata acquisition",
+        "paid_data_or_software": "none",
+        "external_expert_time": "none",
+        "cost_status": "partial cost capture"
+      },
+      "scarcity_transition": {
+        "initial_scarcity": "trustworthy decision-time historical evidence",
+        "abundance_used": "public archival data, machine extraction and deterministic analysis",
+        "next_scarcity": "prospective sample size / neutral historical state",
+        "residual_human_role": "freeze constructs and accept an ABSTAIN result before outcomes are opened"
+      },
+      "disposition": "negative feasibility result; successor must be prospectively larger rather than weakening v0.1 gates",
+      "next_action": null,
+      "links": [
+        "/results/",
+        "/projects/",
+        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/research/attention_allocation/t0/TRACK_A_V01_FEASIBILITY_RESULT.md"
+      ]
+    },
+    {
+      "id": "AR-2026-005",
+      "title": "Attention Allocation Track A v0.2: multi-cohort source feasibility",
+      "question": "Can enough selection-neutral historical candidate state be reconstructed across ICLR cohorts to support at least 4,600 exact-outcome-observable candidates before downstream outcomes are opened?",
+      "status": "blocked-external",
+      "terminal": false,
+      "prior_art_outcome": "Historical-version reconstruction and bibliographic observability are treated as measurement problems rather than assumed properties of current public records.",
+      "adversarial_outcome": "Verified/pre-review 2018–2020 sources plus an optimistic perfect 2017 upper bound yield only 4,502 candidates before identity attrition. The convenient ICLR 2021 reviewed-version field is perfectly historical-decision-linked and is disqualified.",
+      "design": "Metadata-only multi-cohort source audit with pinned historical snapshots, temporal provenance checks and a source-feasibility stop before bulk content or citation acquisition.",
+      "source_data": [
+        "Pinned ICLR 2018 and 2019 pre-review Git snapshots",
+        "Frozen ICLR 2020 T0 cohort",
+        "ICLR 2017–2021 metadata frame"
+      ],
+      "result_summary": "SOURCE_FEASIBILITY_INADEQUATE_NEUTRAL_COHORT_REQUIRED. Bulk historical-text acquisition remains off until a neutral additional cohort is recovered.",
+      "cost": {
+        "human_curator_time": "not fully measured",
+        "machine_compute_or_api": "metadata-only audit",
+        "paid_data_or_software": "none",
+        "external_expert_time": "OpenReview support request pending",
+        "cost_status": "prospective low-cost source recovery"
+      },
+      "scarcity_transition": {
+        "initial_scarcity": "sample size",
+        "abundance_used": "multi-year public metadata and historical snapshots",
+        "next_scarcity": "selection-neutral historical state",
+        "residual_human_role": "decide source admissibility and preserve temporal/selection boundaries"
+      },
+      "disposition": "continue source recovery only; no bulk PDF or citation acquisition while gate is closed",
+      "next_action": "Recover a neutral ICLR 2021 deadline/pre-review state or preregister an additional comparable cohort, then rerun source and precision gates.",
+      "links": [
+        "/results/",
+        "/projects/",
+        "https://github.com/TsatsuAmable/agalmicresearch/blob/main/research/attention_allocation/t0/TRACK_A_V02_SOURCE_FEASIBILITY_RESULT.md"
+      ]
+    },
+    {
+      "id": "AR-2026-006",
+      "title": "Cognitive Kernel consequence pilot",
+      "question": "Does the Agalmic Cognitive Kernel reduce active human attention or downstream rework on real tasks without degrading verified completion or authority boundaries?",
+      "status": "executing",
+      "terminal": false,
+      "prior_art_outcome": "Matched experiments, counterbalancing, productivity measurement and human-AI collaboration evaluation are established. The local value is the outcome/attention instrumentation and explicit isolation contract.",
+      "adversarial_outcome": "Prompt-level conformance is not evidence of capability. The intervention should be weakened or retired if it merely shifts effort into validation, increases rework, or violates boundaries.",
+      "design": "Prospective 12-pair pilot across four task families and at least two generator families, with isolated control/kernel conditions and sealed execution receipts.",
+      "source_data": [
+        "Real research, repository, analysis and publication tasks with task-appropriate verification"
+      ],
+      "result_summary": "Protocol and execution evidence are frozen; no efficacy result has yet been earned.",
+      "cost": {
+        "human_curator_time": "primary outcome to be measured prospectively",
+        "machine_compute_or_api": "measure prospectively",
+        "paid_data_or_software": "none required",
+        "external_expert_time": "none planned for pilot",
+        "cost_status": "prospective capture required"
+      },
+      "scarcity_transition": {
+        "initial_scarcity": "human attention during machine-assisted work",
+        "abundance_used": "structured machine cognition and sealed experimental execution",
+        "next_scarcity": "consequence-bearing evidence",
+        "residual_human_role": "perform accountable work, verify outcomes and judge whether any attention saving is real"
+      },
+      "disposition": "run the consequence pilot before adding more Cognitive Kernel framework machinery",
+      "next_action": "Execute matched real-task pairs under the frozen consequence protocol and report descriptive downstream outcomes.",
+      "links": [
+        "/projects/",
+        "/practice/",
+        "https://github.com/TsatsuAmable/agalmicresearch/tree/main/research/cognitive_kernel"
       ]
     }
   ]

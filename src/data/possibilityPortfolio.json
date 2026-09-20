@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "updated": "2026-09-09",
+  "updated": "2026-09-20",
   "status": "experimental-public-projection",
   "purpose": "Preserve public-safe possibilities as options while limiting substantial active commitments to a small capability-focused Active Frontier.",
   "wip_limit": 3,
@@ -10,14 +10,43 @@
     "The 9 September 2026 frontier reorientation makes inward capability practice primary; earlier theory-building directions remain preserved as options.",
     "The effective adjacent possible is an established construct in recent innovation research, including Taalbi (2025/2026); Agalmic Research does not claim to originate it.",
     "Epistemic artefact is established terminology in philosophy of science; this portfolio does not claim to originate it.",
-    "Constitutional attention is provisional local terminology for a synthesis under lineage review, not a validated novelty claim."
+    "Constitutional attention is provisional local terminology for a synthesis under lineage review, not a validated novelty claim.",
+    "The 20 September 2026 direction review promotes the empirical Attention Allocation programme, collapses engineering/leadership into the broader Personal Capability Practice, and makes Nemosyne's independent-project boundary explicit."
   ],
   "active_frontier": [
+    "possibility:attention-allocation-under-abundance",
     "possibility:personal-capability-practice",
-    "possibility:software-engineering-leadership-capability",
     "possibility:nemosyne-discovery-reconstruction"
   ],
   "possibilities": [
+    {
+      "id": "possibility:attention-allocation-under-abundance",
+      "title": "Attention Allocation Under Cognitive Abundance",
+      "state": "active",
+      "summary": "Empirically test how scarce evaluation should be allocated when candidate generation is cheap, while preserving temporal integrity, selection-aware observability, lineage controls and the right to abstain before outcomes are opened.",
+      "lineage_status": "active learning, selective labels, constrained ranking, peer-review allocation and exploration/exploitation antecedents + outcome-blind empirical synthesis",
+      "lineage_sources": [
+        "active learning",
+        "selective labels",
+        "exploration/exploitation",
+        "peer-review allocation",
+        "bibliographic record linkage"
+      ],
+      "worthwhile_future": "A defensible empirical account of which allocation policies preserve valuable and unconventional candidates under scarce attention, or a defensible demonstration that the available evidence cannot answer the question.",
+      "capacity_created": [
+        "allocation evidence",
+        "temporal provenance",
+        "selection-aware evaluation",
+        "pre-outcome research firewalls"
+      ],
+      "frontier_leverage": "strong",
+      "information_gain": "strong",
+      "realization_path": "clear",
+      "attention_burden": "high",
+      "uncertainty": "high",
+      "next_discriminating_action": "Recover a selection-neutral additional historical cohort, preferably ICLR 2021, then rerun the v0.2 source and prospective-precision gates before any further bulk text or citation acquisition.",
+      "publication_sensitivity": "public"
+    },
     {
       "id": "possibility:personal-capability-practice",
       "title": "Personal capability practice and Epistemic Gym",
@@ -31,7 +60,13 @@
         "Tutor MCP / adaptive learner-state infrastructure"
       ],
       "worthwhile_future": "A practitioner who becomes progressively more capable of understanding, judging, creating and defending work even when AI scaffolding is reduced.",
-      "capacity_created": ["scholarliness", "calibration", "source judgment", "transfer", "authority-boundary recognition"],
+      "capacity_created": [
+        "scholarliness",
+        "calibration",
+        "source judgment",
+        "transfer",
+        "authority-boundary recognition"
+      ],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "clear",
@@ -43,8 +78,8 @@
     {
       "id": "possibility:software-engineering-leadership-capability",
       "title": "Software engineering and engineering leadership capability growth",
-      "state": "active",
-      "summary": "Attach capability formation to real professional engineering work so AI-assisted delivery also improves architecture, debugging, testing, systems judgment, technical strategy, delegation, coaching and leadership under uncertainty.",
+      "state": "option",
+      "summary": "Treat software engineering and engineering leadership as live domains inside the Personal Capability Practice rather than as a separate frontier project.",
       "lineage_status": "deliberate practice, expertise, software engineering education and leadership-development antecedents; application synthesis",
       "lineage_sources": [
         "deliberate practice and expertise research",
@@ -53,20 +88,28 @@
         "leadership coaching and decision-record practices"
       ],
       "worthwhile_future": "Real professional work becomes the training environment through which engineering and leadership capability grows rather than being silently substituted by AI output.",
-      "capacity_created": ["systems reasoning", "architecture judgment", "debugging", "verification", "technical strategy", "delegation", "coaching"],
+      "capacity_created": [
+        "systems reasoning",
+        "architecture judgment",
+        "debugging",
+        "verification",
+        "technical strategy",
+        "delegation",
+        "coaching"
+      ],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "clear",
       "attention_burden": "medium",
       "uncertainty": "medium",
-      "next_discriminating_action": "Create a baseline capability map from recent real engineering decisions and code reviews, select one engineering and one leadership bottleneck, and instrument future AI-assisted work with pre-commitment, review and transfer checks.",
+      "next_discriminating_action": "Instrument engineering and leadership tasks inside the Personal Capability Practice and promote a separate project only if a distinct intervention or research question emerges.",
       "publication_sensitivity": "public"
     },
     {
       "id": "possibility:nemosyne-discovery-reconstruction",
-      "title": "Nemosyne: discovery first, epistemic reconstruction second",
+      "title": "Nemosyne as an independent discovery and reconstruction testbed",
       "state": "active",
-      "summary": "Use AI aggressively to search Nemosyne's product, representation and architecture space without requiring immediate assimilation of every exploratory implementation, then reconstruct, test and selectively rebuild the surviving durable core until it is understood and defensible.",
+      "summary": "Use the independent Nemosyne project as a bounded testbed for representation, verification attention and discovery/reconstruction methods without treating its product roadmap as owned by Agalmic Research.",
       "lineage_status": "prototype/learning, exploratory programming, software comprehension and human-AI coding antecedents; local operating method",
       "lineage_sources": [
         "prototyping and exploratory software development",
@@ -74,14 +117,20 @@
         "human-AI coding workflows",
         "Nemosyne provenance and verification infrastructure"
       ],
-      "worthwhile_future": "Nemosyne retains broad discovery search while the human curator's understanding grows alongside the parts that become durable responsibilities.",
-      "capacity_created": ["discovery breadth", "representation insight", "systems understanding", "epistemic reconstruction", "responsible ownership"],
+      "worthwhile_future": "A real external testbed where bounded Agalmic methods can be challenged by difficult engineering and representation problems without blurring project ownership.",
+      "capacity_created": [
+        "discovery breadth",
+        "representation insight",
+        "systems understanding",
+        "epistemic reconstruction",
+        "responsible ownership"
+      ],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "clear",
       "attention_burden": "high",
       "uncertainty": "medium",
-      "next_discriminating_action": "Mark current Nemosyne work explicitly as discovery, assimilation or ownership; preserve exploratory provenance; choose one surviving critical subsystem for a later explain/rederive/rebuild exercise rather than slowing the discovery phase now.",
+      "next_discriminating_action": "Run only bounded Agalmic experiments whose intervention and outcome are observable; keep Nemosyne product implementation and operational ownership outside the Agalmic Research project map.",
       "publication_sensitivity": "public"
     },
     {
@@ -96,7 +145,12 @@
         "James March 1991 / exploration and exploitation"
       ],
       "worthwhile_future": "A better account of how cognitive tools change reachable possibilities without treating idea generation as the only scarce input.",
-      "capacity_created": ["direction-setting", "search capacity", "assimilation capacity", "future option value"],
+      "capacity_created": [
+        "direction-setting",
+        "search capacity",
+        "assimilation capacity",
+        "future option value"
+      ],
       "frontier_leverage": "moderate",
       "information_gain": "moderate",
       "realization_path": "plausible",
@@ -119,7 +173,12 @@
         "RO-Crate"
       ],
       "worthwhile_future": "Research objects whose discovery process can be inspected without collapsing human and machine contributions into a single author/discoverer label.",
-      "capacity_created": ["provenance capacity", "validation routing", "credit legibility", "research reproducibility"],
+      "capacity_created": [
+        "provenance capacity",
+        "validation routing",
+        "credit legibility",
+        "research reproducibility"
+      ],
       "frontier_leverage": "moderate",
       "information_gain": "moderate",
       "realization_path": "plausible",
@@ -142,7 +201,11 @@
         "rebound effects"
       ],
       "worthwhile_future": "A possible comparative measurement contribution if cross-domain scarcity-transition profiles prove empirically useful.",
-      "capacity_created": ["formal reasoning", "economic literacy", "empirical comparison"],
+      "capacity_created": [
+        "formal reasoning",
+        "economic literacy",
+        "empirical comparison"
+      ],
       "frontier_leverage": "moderate",
       "information_gain": "moderate",
       "realization_path": "plausible",
@@ -158,7 +221,11 @@
       "summary": "Test whether claim-sensitive, provenance-preserving routing to missing expertise improves evaluation of low-authority contributions without erasing originators or overwhelming expert attention.",
       "lineage_status": "knowledge brokerage/absorptive-capacity antecedents + narrow operational extension",
       "worthwhile_future": "A practical route from promising outsider or machine-assisted candidates to competent validation.",
-      "capacity_created": ["handoff capacity", "validation capacity", "outsider access"],
+      "capacity_created": [
+        "handoff capacity",
+        "validation capacity",
+        "outsider access"
+      ],
       "frontier_leverage": "moderate",
       "information_gain": "strong",
       "realization_path": "plausible",
@@ -174,7 +241,11 @@
       "summary": "A research note connecting established innovation-as-search work to the machine-cognition regime, where larger search breadth can worsen the selection, testing and realization bottlenecks.",
       "lineage_status": "established search literature + explanatory synthesis",
       "worthwhile_future": "A clearer bridge between innovation search and capability practice under machine cognition.",
-      "capacity_created": ["conceptual bridge", "public explanation", "selection discipline"],
+      "capacity_created": [
+        "conceptual bridge",
+        "public explanation",
+        "selection discipline"
+      ],
       "frontier_leverage": "moderate",
       "information_gain": "moderate",
       "realization_path": "clear",
@@ -190,7 +261,10 @@
       "summary": "Examine which upstream forms of abundance, such as knowledge, algorithms, energy, compute, standards or access, most strongly expand feasible capability sets.",
       "lineage_status": "novelty unassessed; requires growth/capability/technology lineage review",
       "worthwhile_future": "A possible way to prioritize abundance-producing infrastructure by downstream capability leverage.",
-      "capacity_created": ["capability analysis", "frontier leverage"],
+      "capacity_created": [
+        "capability analysis",
+        "frontier leverage"
+      ],
       "frontier_leverage": "moderate",
       "information_gain": "moderate",
       "realization_path": "plausible",
@@ -206,7 +280,11 @@
       "summary": "Study mechanisms for allocating scarce specialist evaluation when candidate production outgrows expert review capacity, while avoiding credential capture, pay-to-be-heard dynamics and filter monopoly.",
       "lineage_status": "existing expert-evaluation/attention/intermediary antecedents; narrower delta unassessed",
       "worthwhile_future": "Higher-throughput evaluation without simply centralizing epistemic gatekeeping.",
-      "capacity_created": ["evaluation capacity", "institutional design", "routing"],
+      "capacity_created": [
+        "evaluation capacity",
+        "institutional design",
+        "routing"
+      ],
       "frontier_leverage": "moderate",
       "information_gain": "moderate",
       "realization_path": "absent",
@@ -222,7 +300,10 @@
       "summary": "Explore institutional consequences if reliable frontier knowledge increasingly exceeds what any individual human can personally survey or defend.",
       "lineage_status": "computational-opacity antecedents + terminology/synthesis candidate",
       "worthwhile_future": "Governance and verification architectures for knowledge beyond individual comprehension.",
-      "capacity_created": ["long-horizon governance", "verification architecture"],
+      "capacity_created": [
+        "long-horizon governance",
+        "verification architecture"
+      ],
       "frontier_leverage": "moderate",
       "information_gain": "weak",
       "realization_path": "absent",
@@ -238,7 +319,11 @@
       "summary": "Use Nemosyne/Moneta as an applied testbed for whether alternative representations can increase what analysts can notice and act upon while controlling cognitive and computational cost.",
       "lineage_status": "broad representation/visual analytics antecedents; concrete technical novelty unassessed",
       "worthwhile_future": "Tools that enlarge practical discovery capacity by making meaningful structure more perceptible.",
-      "capacity_created": ["representation capacity", "recognition capacity", "software tooling"],
+      "capacity_created": [
+        "representation capacity",
+        "recognition capacity",
+        "software tooling"
+      ],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "clear",
@@ -259,7 +344,12 @@
         "knowledge-artifact literature"
       ],
       "worthwhile_future": "Machine-generated discoveries can be preserved, validated, routed and used without pretending that every human participant understands or can defend them.",
-      "capacity_created": ["epistemic-state representation", "validation routing", "safer authority assignment", "assimilation research"],
+      "capacity_created": [
+        "epistemic-state representation",
+        "validation routing",
+        "safer authority assignment",
+        "assimilation research"
+      ],
       "frontier_leverage": "strong",
       "information_gain": "strong",
       "realization_path": "plausible",
@@ -281,7 +371,11 @@
         "safe and multi-objective optimization"
       ],
       "worthwhile_future": "Larger safe search capacity without requiring item-level human attention to scale linearly with machine cognition.",
-      "capacity_created": ["search leverage", "selective oversight", "governance capacity"],
+      "capacity_created": [
+        "search leverage",
+        "selective oversight",
+        "governance capacity"
+      ],
       "frontier_leverage": "moderate",
       "information_gain": "strong",
       "realization_path": "plausible",

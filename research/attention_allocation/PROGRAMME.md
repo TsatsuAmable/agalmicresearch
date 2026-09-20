@@ -1,8 +1,11 @@
 # Attention Allocation Under Cognitive Abundance
 
-**Status:** empirical programme, feasibility phase  
-**Gate:** NOT YET EVALUATED  
-**Empirical policy simulations:** prohibited until feasibility criteria are frozen and the gate passes.  
+**Status:** flagship empirical programme; Track A v0.1 terminated with `ABSTAIN_PRE_OUTCOME`; v0.2 source recovery active
+
+**Current gate:** `V02_SOURCE_FEASIBILITY_INADEQUATE_NEUTRAL_COHORT_REQUIRED`
+
+**Citation outcomes:** unopened; acquisition remains prohibited while the v0.2 source/precision gate is closed
+
 **Synthetic engineering fixtures:** permitted only to test harness mechanics; they are non-evidentiary.
 
 ## Research question
