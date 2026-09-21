@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-20",
+ "updated": "2026-09-21",
  "entries": [
   {
    "source": "Lakkaraju et al. 2017, The Selective Labels Problem, KDD, DOI 10.1145/3097983.3098066",
@@ -63,6 +63,27 @@
    "use": "Track A blocks on title similarity and then requires author-surname overlap before admitting sensitivity lineage edges.",
    "difference": "No records are deleted or automatically merged; lineage flags narrow interpretation of later outcomes.",
    "supports": "Staged blocking and conservative candidate linkage."
+  },
+  {
+   "source": "Codreanu et al. 2026, AI in Science: Early Insights, Google / Google DeepMind / MIT FutureTech",
+   "concept_borrowed": "Early survey and usage evidence that AI-assisted science may shift bottlenecks downstream, increase untested-hypothesis backlogs, create verification demand, and tilt researchers toward safer incremental questions.",
+   "use": "Treat as external empirical motivation for scarcity-migration and validation-cost-distortion hypotheses; preserve the report's selection-bias, disciplinary-heterogeneity and non-causal limitations.",
+   "difference": "The report documents early associations and perceptions; the Agalmic programme would need to identify allocation effects under controlled or prospectively measured resource constraints.",
+   "supports": "The generic downstream-bottleneck claim is empirically plausible but not sufficient as an Agalmic novelty claim."
+  },
+  {
+   "source": "Hao et al. 2026, Artificial intelligence tools expand scientists’ impact but contract science’s focus, Nature, DOI 10.1038/s41586-025-09922-y",
+   "concept_borrowed": "AI-augmented research is associated with greater individual scientific output and impact while collective topic coverage contracts and activity moves toward data-rich areas.",
+   "use": "Use as triangulation for a possible tractability or validation-cost selection effect, without treating the observational association as causal proof.",
+   "difference": "The Agalmic target is the allocation mechanism linking resource pressure to candidate survival, not the descriptive topic-contraction result itself.",
+   "supports": "Potential collective selection effects can coexist with individual productivity gains."
+  },
+  {
+   "source": "Rana, Varshney & Varshney 2026, AI-driven Acceleration and the Evaluation Bottleneck in Science: A Conceptual Framework, DOI 10.2139/ssrn.7318643",
+   "concept_borrowed": "AI can expand scientific generative capacity faster than institutional capacity to evaluate, verify and contest claims, creating an evaluation bottleneck.",
+   "use": "Set the novelty boundary explicitly: Agalmic Research must not claim originality for the broad AI-evaluation-bottleneck thesis.",
+   "difference": "Agalmic Research focuses on whether heterogeneous downstream scarcity changes allocation and realised epistemic value, especially for expensive-to-validate candidates.",
+   "supports": "The evaluation-bottleneck concept is occupied prior art; contribution must be narrower and empirical."
   }
  ]
 }
