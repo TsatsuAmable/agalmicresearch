@@ -1,7 +1,7 @@
 {
   "programme": "Attention Allocation Under Cognitive Abundance",
-  "updated": "2026-09-20",
-  "phase": "track-a-v0.2-source-feasibility-neutral-historical-state",
+  "updated": "2026-09-23",
+  "phase": "track-a-v0.2-arxiv-route-conditional-neutral-archive-recovery",
   "gate_status": "V02_SOURCE_FEASIBILITY_INADEQUATE_NEUTRAL_COHORT_REQUIRED",
   "completed_artefacts": [
     "PROGRAMME.md",
@@ -67,9 +67,14 @@
     "scripts/prepare-attention-v02-multiyear-manifest.py",
     "scripts/audit-attention-v02-historical-snapshot.py",
     "scripts/audit-attention-v02-reviewed-version-availability.py",
-    "scripts/adjudicate-attention-v02-source-feasibility.py"
+    "scripts/adjudicate-attention-v02-source-feasibility.py",
+    "t0/ICLR2021_ARXIV_RECOVERY_PROTOCOL.md",
+    "t0/ICLR2021_ARXIV_RECOVERY_RESULT.md",
+    "t0/arxiv_audit/iclr2021_arxiv_recovery_summary.json",
+    "t0/arxiv_audit/iclr2021_arxiv_exact_pre_cutoff.jsonl",
+    "scripts/audit-iclr2021-arxiv-recovery.py"
   ],
-  "active_experiment": "Track A v0.2 is halted before bulk content acquisition: verified neutral/pre-review 2018-2020 sources plus an optimistic perfect 2017 upper bound reach only 4,502 candidates, below the 4,600 exact-observable precision target; a neutral additional historical cohort is required.",
+  "active_experiment": "Track A v0.2 remains halted before bulk content or citation acquisition. The frozen ICLR 2021 arXiv metadata audit found 497 exact pre-cutoff matches (487 after conservative cross-year deduplication), but observability is materially decision-linked: 26.54% ACCEPT versus 15.50% REJECT, a +11.04 pp gap with 95% Newcombe-Wilson CI [+7.68,+14.50] pp. The route is ARXIV_ROUTE_CONDITIONAL; neutral immutable historical-state recovery remains the critical path.",
   "evidence_collected": [
     "Selective-label problem is established prior art and directly threatens naive retrospective policy evaluation.",
     "Active learning already studies label allocation under expensive human-oracle budgets.",
@@ -147,7 +152,12 @@
     "The archived ICLR 2021 reviewed_version_(pdf) field is perfectly historical-decision-linked in the 2,594-candidate frame: 0/859 ACCEPT versus 1,735/1,735 REJECT have the field. The route is disqualified as a primary neutral historical source.",
     "Verified/pre-review candidate upper bound is 4,060 from ICLR 2018 (826), ICLR 2019 (1,419) and the frozen ICLR 2020 v0.1 T0 cohort (1,815). Even granting all 442 ICLR 2017 candidates as an optimistic perfect source yields only 4,502, 98 below the 4,600 exact-observable target before identity attrition.",
     "The v0.2 source-feasibility gate returns SOURCE_FEASIBILITY_INADEQUATE_NEUTRAL_COHORT_REQUIRED, with proceed_to_bulk_content_acquisition=false, citation_outcome_acquisition_authorized=false and outcomes_observed=false.",
-    "A research support request was sent to OpenReview asking for the immutable ICLR 2021 deadline-state revisions, a documented legacy revision-reference retrieval route, or a public pre-review archival dump."
+    "A research support request was sent to OpenReview asking for the immutable ICLR 2021 deadline-state revisions, a documented legacy revision-reference retrieval route, or a public pre-review archival dump.",
+    "The frozen ICLR 2021 arXiv metadata audit admits 497/2,594 exact-title pre-cutoff candidates under the 2020-10-02 15:00 UTC cutoff, with zero exact-rule ambiguities or arXiv-identity collisions.",
+    "Pre-cutoff arXiv observability is materially historical-decision-linked: ACCEPT 228/859 (26.54%) versus REJECT 269/1,735 (15.50%); ACCEPT-minus-REJECT +11.04 pp with 95% Newcombe-Wilson interval [+7.68,+14.50] pp, wholly beyond the frozen +/-5 pp materiality margin.",
+    "A conservative cross-year title/arXiv-identity deduplication leaves 487 additional ICLR 2021 arXiv candidates. Added to the verified 4,060 2018-2020 subtotal this reaches 4,547, still 53 below the frozen 4,600 target before technical and identity attrition.",
+    "The arXiv route is adjudicated ARXIV_ROUTE_CONDITIONAL. Bulk PDF retrieval and citation-outcome acquisition remain unauthorized; no downstream outcomes were opened.",
+    "The arXiv audit source snapshot is frozen by SHA-256 ceeaa4316f76f6a22a5856128f34e8c3f35693d145db756f9688eda42ee20ed2 and the canonical candidate manifest by SHA-256 7a2f692468ef3e86ecebe71d6f5642d55588c7498e5dd016d7644f18199a195a."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -198,7 +208,8 @@
     "the 2018 and 2019 Smerity snapshots are clean of reviews/comments/decisions but were captured about four days after submission deadlines, so post-deadline author edits before the snapshot remain a temporal sensitivity risk",
     "the ICLR 2021 reviewed-version field is unusable as a neutral source because availability is perfectly linked to historical rejection in the archived frame",
     "even perfect reconstruction of all 442 ICLR 2017 candidates cannot by itself satisfy the v0.2 4,600 exact-observable precision target",
-    "adding another conference or venue would require a prospectively frozen source-comparability and year/venue-stratification amendment before content or outcomes are acquired"
+    "adding another conference or venue would require a prospectively frozen source-comparability and year/venue-stratification amendment before content or outcomes are acquired",
+    "ICLR 2021 pre-cutoff arXiv observability is materially acceptance-linked (+11.04 pp, 95% CI +7.68 to +14.50 pp); the existing representative estimand cannot treat the arXiv-observable subset as selection-neutral, and any restricted arXiv-only estimand must be prospectively amended rather than introduced post hoc."
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -211,13 +222,13 @@
   "candidate_pool": [
     {
       "candidate": "Neutral ICLR 2021 historical-state recovery",
-      "status": "external-source-recovery-active",
-      "reason": "the current v0.2 design needs a neutral additional cohort; OpenReview has been asked for deadline-state legacy revisions or a complete pre-review archive while public historical snapshots continue to be audited"
+      "status": "immutable-archive-recovery-active-arxiv-conditional",
+      "reason": "the frozen arXiv audit found 487 conservatively deduplicated pre-cutoff exact matches but material ACCEPT/REJECT observability imbalance; continue searching for a selection-neutral immutable deadline/pre-review snapshot"
     },
     {
       "candidate": "Track A v0.2 multi-cohort redesign",
-      "status": "source-feasibility-blocked-neutral-cohort-required",
-      "reason": "verified 2018-2020 historical substrate plus an optimistic perfect 2017 upper bound reaches only 4,502 candidates, below the 4,600 exact-observable target; ICLR 2021 reviewed-version availability is selection-linked and inadmissible"
+      "status": "source-feasibility-blocked-neutral-source-required",
+      "reason": "arXiv contributes 487 conservative historical candidates but leaves the verified 2018-2020 base at 4,547, 53 below target before attrition, and the route is materially decision-linked; bulk content and outcomes remain sealed"
     },
     {
       "candidate": "Fail-closed post-gate outcome runner",
@@ -315,6 +326,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "continue outcome-blind source recovery for a neutral ICLR 2021 pre-review/deadline-state snapshot or, if unavailable, draft a prospectively stratified additional-venue amendment; do not begin bulk PDF acquisition or citation acquisition while the v0.2 source gate remains closed",
+  "next_autonomous_action": "continue outcome-blind immutable archive recovery for the ICLR 2021 pre-review/deadline-state candidate set and bounded ICLR 2017 reconstruction; if neutral recovery remains inadequate, draft a prospective restricted-estimand or additional-venue amendment before any bulk PDF or citation-outcome acquisition",
   "decisions_requiring_human_attention": []
 }

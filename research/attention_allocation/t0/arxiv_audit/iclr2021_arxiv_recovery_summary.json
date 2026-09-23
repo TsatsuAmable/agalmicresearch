@@ -1,0 +1,97 @@
+{
+  "adjudication": {
+    "bulk_pdf_retrieval_authorized": false,
+    "citation_outcome_acquisition_authorized": false,
+    "neutrality_condition_passes": false,
+    "outcome_leakage_detected": false,
+    "query_provenance": "snapshot-hash-bound; independent reconstruction of upstream arXiv candidate discovery remains outstanding",
+    "restricted_estimand_frozen": false
+  },
+  "cross_year_dedup_conservative": {
+    "remaining": 487,
+    "removed": 10,
+    "removed_forum_ids": [
+      "-_Zp7r2-cGK",
+      "4dXmpCDGNp7",
+      "AT7jak63NNK",
+      "CNA6ZrpNDar",
+      "Vd7lCMvtLqg",
+      "XbJiphOWXiU",
+      "dOiHyqVaFkg",
+      "gZ2qq0oPvJR",
+      "mLcmdlEUxy-",
+      "oh71uL93yay"
+    ],
+    "rule": "exclude exact normalized title or known arXiv ID appearing in any 2017-2020 ICLR submission in the same snapshot"
+  },
+  "cutoff_utc": "2020-10-02T15:00:00+00:00",
+  "decision_stratified": {
+    "ACCEPT": {
+      "fraction": 0.26542491268917345,
+      "matched": 228,
+      "total": 859
+    },
+    "REJECT": {
+      "fraction": 0.15504322766570605,
+      "matched": 269,
+      "total": 1735
+    },
+    "accept_minus_reject": 0.1103816850234674,
+    "material_selection_link": true,
+    "newcombe_wilson_95_ci": [
+      0.07683792007015984,
+      0.14497110707603206
+    ]
+  },
+  "feasibility": {
+    "optimistic_cushion": 389,
+    "optimistic_with_all_2017": 4989,
+    "shortfall_without_2017": 53,
+    "technical_retrieval_lower_bound": null,
+    "verified_2018_2020_plus_arxiv": 4547
+  },
+  "frame": {
+    "decision_counts": {
+      "ACCEPT": 859,
+      "REJECT": 1735
+    },
+    "known_title_mismatch_excluded": [
+      "lJuOUWlAC8i"
+    ],
+    "total": 2594
+  },
+  "matching": {
+    "admitted_exact_pre_cutoff": 497,
+    "ambiguous_submission_count": 0,
+    "collision_arxiv_id_count": 0,
+    "exact_any_time": 1232,
+    "exact_pre_cutoff": 497,
+    "fuzzy_only_pre_cutoff_sensitivity_count": 58
+  },
+  "materiality_margin": 0.05,
+  "schema_version": "1.0",
+  "source": {
+    "canonical_manifest_sha256": "7a2f692468ef3e86ecebe71d6f5642d55588c7498e5dd016d7644f18199a195a",
+    "database": ".cache/iclr_arxiv_audit/cs_conf_release.db",
+    "database_bytes": 1242087424,
+    "database_sha256": "ceeaa4316f76f6a22a5856128f34e8c3f35693d145db756f9688eda42ee20ed2",
+    "upstream": "https://www.dropbox.com/s/iaps6dityc18kif/cs_conf_release.db?dl=1"
+  },
+  "status": "METADATA_ONLY_AUDIT_COMPLETE",
+  "timestamps_days_relative_to_cutoff": {
+    "bins": {
+      "(-1000000000,-365]": 21,
+      "(-180,-90]": 217,
+      "(-30,-7]": 39,
+      "(-365,-180]": 81,
+      "(-7,0]": 29,
+      "(-90,-30]": 110
+    },
+    "max": -0.0007638888888888889,
+    "median": -103.49444444444444,
+    "min": -651.734224537037,
+    "q25": -128.61659722222223,
+    "q75": -64.90108796296296
+  },
+  "verdict": "ARXIV_ROUTE_CONDITIONAL"
+}
