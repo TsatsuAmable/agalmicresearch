@@ -4,126 +4,68 @@ import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 
-const applications = [
+const areas = [
   {
     n: '01',
-    title: 'Scholarliness',
-    copy: 'Use abundant machine cognition as examiner, critic and practice partner to strengthen source judgment, conceptual precision, calibration, synthesis and defensible authority.',
+    title: 'Attention in a world of abundant ideas',
+    copy: 'If machines can generate thousands of plausible ideas, which ones deserve scarce human attention? We study how to direct limited evaluation effort without simply favoring whatever an AI system happens to produce.',
   },
   {
     n: '02',
-    title: 'Software engineering',
-    copy: 'Attach learning to live engineering work: architecture, debugging, testing, performance, security and systems understanding should grow alongside AI-assisted delivery.',
+    title: 'Making knowledge useful',
+    copy: 'Having information is not the same as knowing how to use it. We study how knowledge moves from discovery to understanding, validation and action, and what keeps good ideas from becoming useful capabilities.',
   },
   {
     n: '03',
-    title: 'Engineering leadership',
-    copy: 'Use simulation, pre-commitment, adversarial review and real outcomes to improve technical strategy, delegation, coaching, stakeholder alignment and judgment under uncertainty.',
+    title: 'Representation and discovery',
+    copy: 'The way information is represented affects what people can see and understand. Nemosyne is an independent experimental system for exploring new ways to navigate and reason about complex datasets.',
   },
   {
     n: '04',
-    title: 'Nemosyne / Moneta',
-    copy: 'Treat the independent Nemosyne project as a bounded testbed for representation, verification attention and discovery workflows without absorbing its roadmap into Agalmic Research.',
+    title: 'Economics of abundance',
+    copy: 'What happens when things that were once expensive become extremely cheap? We study how abundance changes value, moves bottlenecks and creates new forms of scarcity.',
   },
 ];
 ---
-<Layout>
+<Layout
+  description="Agalmic Research studies how abundant knowledge and AI-generated capability can become practical progress, especially when attention, judgment, validation, trust and expertise remain scarce."
+>
   <section class="hero">
     <div class="shell">
-      <p class="eyebrow">An open practice of capability expansion</p>
-      <h1>Use abundance to attack real constraints, beginning with your own.</h1>
+      <p class="eyebrow">Agalmic Research</p>
+      <h1>Making abundance useful.</h1>
       <p class="lede">
-        Agalmic Research is a small experimental laboratory for converting available abundance into durable capability under real constraints. It begins with the practitioner's own work, then tests outward claims only where evidence can actually constrain them.
+        Agalmic Research turns abundant knowledge and AI-generated capabilities into practical progress.
+      </p>
+      <p class="lede">
+        We focus on the problems abundance does not solve: limited attention, judgment, validation, trust and expertise. Our work begins where ideas become cheap. We ask how to find the ideas worth pursuing, understand and test them, and turn them into tools and results people can use.
       </p>
       <div class="actions">
-        <a class="button" href={internal('projects')}>See the current projects</a>
-        <a class="button secondary" href={internal('results')}>What has survived inquiry?</a>
+        <a class="button" href={internal('research')}>Explore the research</a>
+        <a class="button secondary" href={internal('projects')}>See current projects</a>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="shell thesis">
-      <p class="eyebrow">Current orientation</p>
-      <blockquote>Seek contribution before novelty. Seek novelty only where contribution requires discovery.</blockquote>
-      <p>Research remains valuable as disciplined inquiry: lineage, testing, criticism, provenance, correction and handoff. It does not have to be the primary product. A useful tool, stronger human capability, a reusable implementation, a better route through existing knowledge or a well-supported negative result can all be worthwhile outcomes.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Current empirical frontier</p>
-        <h2>The strongest result so far is a stop.</h2>
-      </div>
-      <div class="prose">
-        <p class="large"><strong>Attention Allocation Under Cognitive Abundance</strong> is now the flagship empirical programme because it can fail before seeing the answer.</p>
-        <p>Track A v0.1 reconstructed 1,815 usable historical ICLR candidates, froze allocation policies and outcome definitions, and then returned <code>ABSTAIN_PRE_OUTCOME</code>: none of five primary contrasts could resolve the preregistered five-percentage-point effect. The citation outcome remained sealed.</p>
-        <p>The v0.2 redesign is also stopped for now. Verified neutral historical sources plus an optimistic perfect 2017 upper bound reach only 4,502 candidates, below the 4,600 exact-observable target before identity loss. The next bottleneck is selection-neutral historical state, not more code.</p>
-        <div class="actions">
-          <a class="button" href={internal('projects')}>Project state</a>
-          <a class="button secondary" href={internal('results')}>Results & reversals</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Inward first</p>
-        <h2>Turn the practitioner into the first testbed.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">The immediate question is not whether Agalmic Research constitutes a new academic field. It is whether its operating principles improve real capability in real work.</p>
-        <p>When AI makes one activity cheap, the response should not automatically be to produce more of it. The useful question is which complementary constraint now matters most: understanding, judgment, subject mastery, implementation, leadership, verification, attention, coordination or something else.</p>
-        <div class="callout"><p><strong>Apply abundant capability against the current binding constraint, not merely against whatever it can most easily accelerate.</strong></p></div>
-        <p><a href={internal('practice')}>Open the Personal Capability Practice →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Inheritance</p>
-        <h2>Start from what humanity already knows.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">Finding prior art is a gain in available capability, not a loss of intellectual territory.</p>
-        <p>The programme increasingly treats existing theory, open-source software, standards, curricula, datasets and documented practice as inherited infrastructure. Where someone else has already paid part of the discovery cost, the default move is to understand, reuse and contribute back rather than rename or rebuild unnecessarily.</p>
-        <div class="callout"><p><strong>We do not need to own an idea to advance it.</strong></p></div>
-        <p><a href={internal('lineage')}>Explore the intellectual lineage →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Correction record</p>
-        <h2>Make it obvious when the project changes its mind.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">A research programme should accumulate constraints, not only vocabulary.</p>
-        <p>The public results record now separates object-level findings and corrections from the machinery used to produce them. Generic epistemic handoff has been narrowed by prior art; the economics of epistemic abundance has not yet survived as a distinct economic primitive; and Nemosyne has an explicit boundary around the claims it can actually test.</p>
-        <div class="callout"><p><strong>If lineage, formalization or experiment kills one of our concepts, that is a successful use of the method.</strong></p></div>
-        <p><a href={internal('results')}>Open Results & Retired Claims →</a></p>
-      </div>
+      <p class="eyebrow">The problem</p>
+      <blockquote>Abundance does not remove scarcity. It moves it.</blockquote>
+      <p>AI can now generate ideas, information and analysis at unprecedented scale. Agalmic Research studies the new bottlenecks created by that abundance and develops ways to overcome them, helping people evaluate ideas more effectively, learn faster and build what matters.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="shell">
       <div class="section-head">
-        <span class="section-number">Current applications</span>
+        <span class="section-number">Current questions</span>
         <div class="section-copy">
-          <h2>Attach the practice to needs that already matter.</h2>
-          <p>The current domains are deliberately practical. Capability formation should happen inside real work wherever possible.</p>
+          <h2>What we are working on.</h2>
+          <p>Four connected questions sit at the centre of the research.</p>
         </div>
       </div>
       <div class="grid">
-        {applications.map((item) => (
+        {areas.map((item) => (
           <article class="card">
             <span class="card-kicker">{item.n}</span>
             <h3>{item.title}</h3>
@@ -137,15 +79,13 @@ const applications = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Independent testbed · Nemosyne</p>
-        <h2>Use real systems without blurring ownership.</h2>
+        <p class="eyebrow">The underlying idea</p>
+        <h2>Make valuable things more abundant.</h2>
       </div>
       <div class="prose">
-        <p class="large">Nemosyne is an independent related project, not an Agalmic-owned workstream. It is useful here only where a bounded representation, verification or discovery claim can be tested against real engineering work.</p>
-        <p>In the discovery phase, AI can generate prototypes, explore architectures and expose adjacent possibilities faster than a human could responsibly learn every implementation detail. Those outputs should remain explicitly provisional, with assumptions, provenance and roads not taken preserved.</p>
-        <p>When a direction survives, the mode changes. Critical internals can then be derived, interrogated, refactored or rebuilt until the human curator can explain the architecture, inspect the evidence, understand the failure modes and defend the durable decisions.</p>
-        <div class="callout"><p><strong>Prototype to discover. Reconstruct to understand. Operate only what can be responsibly defended or appropriately handed off.</strong></p></div>
-        <p><a href="https://nemosyne.world">Visit nemosyne.world ↗</a></p>
+        <p class="large">Agalmics is the study and practice of making valuable things more abundant.</p>
+        <p>That does not mean pretending limits disappear. It means asking a practical question:</p>
+        <div class="callout"><p><strong>Which constraint can we remove next, and what becomes possible when we do?</strong></p></div>
       </div>
     </div>
   </section>
@@ -153,32 +93,25 @@ const applications = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Research still matters</p>
-        <h2>Keep the discipline. Drop the need to claim territory.</h2>
+        <p class="eyebrow">Research and publications</p>
+        <h2>Ideas should leave evidence behind.</h2>
       </div>
       <div class="prose">
-        <p>Claims still need lineage, explicit assumptions, evidence or argument, criticism and honest epistemic status. Provenance still matters. External expertise still matters. Negative results still matter.</p>
-        <p class="large">The change is in what those practices serve.</p>
-        <p>They serve better understanding, safer reuse, stronger capability and useful contribution. Papers are one possible output among software, protocols, curricula, datasets, demonstrations, corrections, handoffs and personal learning.</p>
-        <p><a href={internal('explore')}>Explore the accumulated research record →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Contribution outward</p>
-        <h2>Let useful things escape.</h2>
-      </div>
-      <div class="prose">
-        <p>When inward practice creates something genuinely reusable, the programme can publish it, release it, document it or contribute it upstream. Outward contribution is an exit path from successful work, not a requirement that every exploration become a public claim.</p>
-        <div class="callout"><p><strong>A defensible increase in available capability matters more than a claim of originality.</strong></p></div>
+        <p>Some ideas become papers. Others become software, experiments, datasets or tools. Some turn out to be wrong.</p>
+        <p class="large">Each outcome can expand what we know.</p>
         <div class="actions">
-          <a class="button" href={internal('publications')}>Public outputs</a>
-          <a class="button secondary" href={internal('frontier')}>Current frontier</a>
+          <a class="button" href={internal('research')}>Explore the research</a>
+          <a class="button secondary" href={internal('projects')}>See current projects</a>
+          <a class="button secondary" href={internal('publications')}>Read publications</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell thesis">
+      <p class="eyebrow">Why this exists</p>
+      <blockquote>The goal is not to produce more ideas. It is to increase our ability to reach worthwhile futures.</blockquote>
     </div>
   </section>
 </Layout>

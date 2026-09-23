@@ -4,130 +4,52 @@ import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const internal = (segment) => `${base}/${segment.replace(/^\//, '')}`;
 
-const tracks = [
-  ['Frontier Expansion with Cognitive Tools', 'The meta-level question: how can human-machine systems improve the capacity to reach, recognize, validate and realize worthwhile possibilities?', 'Kauffman’s adjacent possible and Taalbi’s effective adjacent possible are direct antecedents. The remaining work is to understand which cognitive, epistemic and institutional capabilities actually enlarge the effective frontier and how to measure that without pretending to enumerate unknown possibilities.'],
-  ['Epistemic Stewardship & Handoff', 'The governance of claims and contributions when machine-assisted artefacts can outrun the initiator’s present capacity to defend them.', 'Builds on epistemic dependence, contributorship/guarantorship, metacognition, claim-accountability, knowledge-brokerage and absorptive-capacity traditions. The first empirical route is now retrospective: spend historical expert judgments before recruiting new experts.'],
-  ['Epistemic Uptake', 'The capacity of institutions to notice, route, evaluate, validate, integrate and realise candidate knowledge when idea generation becomes cheap.', 'Extends absorptive-capacity, transfer, brokerage, intermediary and expert-evaluation literatures into a regime of machine-generated candidate abundance. How should scarce expert attention be allocated?'],
-  ['Agalmic Economics', 'A contemporary programme about allocation and value around non-scarce or very low-marginal-cost goods and the scarce complements on which they still depend.', 'Robert Levin’s earlier agalmics is a direct antecedent. What does machine cognition change relative to that prior framing?'],
-  ['Economics of Epistemic Abundance', 'The allocation of scarce attention, validation, trust, institutional bandwidth and physical capability when candidate knowledge is unusually cheap to generate.', 'The name deliberately avoids claiming Grandori’s established “epistemic economics” territory. How do Simon’s attention scarcity, Weitzman’s processing constraint, absorptive capacity and modern AI-abundance economics interact?'],
-  ['Distributed Discovery & Provenance', 'The division of intellectual labour when humans and machines split problem framing, generation, significance recognition, validation, integration and realization.', 'Computational discovery and collective-centred AI discovery are established literatures. The remaining task is operational: represent novelty, priority, contribution and epistemic authority separately, then test whether the representation is useful.'],
-  ['Innovation Search Under AI', 'An AI-era extension of established evolutionary-economics, recombinant-search and adjacent-possible literatures.', 'How do lower search costs and larger branching factors change exploration, selection, testing, realization and the diversity of the search frontier? Which human capabilities remain complementary?'],
-  ['Attention & Selection', 'The economics and information theory of choosing among an expanding set of plausible ideas, models, artefacts and interventions.', 'Simon’s attention scarcity is foundational, and recent idea-evaluation work already identifies selection and expert-review bottlenecks. The new task is to model allocation under machine-amplified candidate production.'],
-  ['Representation as Discovery', 'Methods for finding representations that preserve useful structure while reducing cognitive, computational or physical cost.', 'EDA, visual analytics, information bottleneck and representation learning are antecedents. Novelty must be established at the level of concrete formalisms and evidence, including Moneta/Nemosyne.'],
-  ['Institutions, IP & Rents', 'Property, incentives and institutional design when invention, search and disclosure can happen at machine speed.', 'Builds on Arrow, appropriability/complementary-assets theory, open innovation and defensive-publication practice. What changes when search and candidate generation become dramatically cheaper?'],
+const areas = [
+  [
+    'Attention and selection',
+    'When AI can produce more ideas than people can examine, how should scarce human attention be used? We study ways to choose what deserves deeper evaluation without quietly excluding unusual or uncertain possibilities.',
+  ],
+  [
+    'Making knowledge useful',
+    'Why do good ideas fail to become useful knowledge or practical capability? We study the gaps between finding information, understanding it, testing it and being able to act on it.',
+  ],
+  [
+    'Representation and discovery',
+    'How does the form in which information is presented change what people can notice, understand and discover? This includes experiments with visual and computational representations of complex data.',
+  ],
+  [
+    'Economics of abundance',
+    'What changes when information, software, analysis or other valuable goods become much cheaper to produce? We study the new bottlenecks, scarce complements and shifts in value that follow.',
+  ],
 ];
 ---
-<Layout title="Research" description="The Agalmic Research programme: frontier expansion through cognitive tools, economics of epistemic abundance, stewardship, handoff, distributed discovery, innovation search, representation and governance.">
+<Layout
+  title="Research"
+  description="Research on attention, useful knowledge, representation and the economics of abundance in a world of increasingly capable AI."
+>
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Research</p>
-      <h1>A map of questions, with the ancestors left visible.</h1>
-      <p class="lede">The programme keeps a broad map of questions, but it no longer treats that map as a list of concurrent projects. One empirical programme currently carries most of the scientific burden; the rest remain lineage, options or applied testbeds until evidence earns more attention.</p>
+      <h1>What becomes scarce when knowledge becomes abundant?</h1>
+      <p class="lede">Agalmic Research studies the gap between having more ideas and being able to do something worthwhile with them. The central questions concern attention, judgment, understanding, validation, representation and the practical use of knowledge.</p>
     </div>
   </header>
 
   <section class="section">
-    <div class="shell thesis">
-      <p class="eyebrow">Meta aim</p>
-      <blockquote>The goal is not more ideas. It is greater capacity to reach worthwhile futures.</blockquote>
-      <p>The adjacent possible is an established idea, and Taalbi already uses the term effective adjacent possible for the subset constrained by search and absorptive capacity. Agalmic Research asks what machine cognition, representation, validation, provenance and realization infrastructure do to that effective frontier.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Flagship empirical programme</p>
-        <h2>Attention Allocation Under Cognitive Abundance.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">The current research question is concrete: when plausible knowledge candidates outnumber available evaluation, which allocation policies preserve useful future outcomes without silently starving uncertain, dissenting or unconventional candidates?</p>
-        <p>The programme is deliberately built to stop before outcomes are opened. Track A v0.1 did exactly that: technical reconstruction succeeded, but prospective precision was inadequate for the frozen five-point effect, producing <code>ABSTAIN_PRE_OUTCOME</code>.</p>
-        <p>Track A v0.2 now tests whether a larger historical cohort can be reconstructed without importing selection-linked paper versions. Its present source gate is closed. This is an empirical bottleneck, not an implementation backlog.</p>
-        <div class="actions">
-          <a class="button" href={internal('projects')}>See current project state</a>
-          <a class="button secondary" href={internal('results')}>See the negative results</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Research method · 1 + machine</p>
-        <h2>Exploit the structure we actually have.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">Agalmic Research has one primary human investigator and machine collaborators. Its default research method is therefore secondary, computational and inheritance-heavy before it is participant-heavy.</p>
-        <p>Prefer systematic/scoping review, meta-analysis, open-data reanalysis, bibliometrics, replication, robustness testing, retrospective experiments, benchmark construction, simulation and formal analysis where those methods can answer the question.</p>
-        <p>New participant or expert recruitment should target residual questions that inherited evidence cannot adjudicate.</p>
-        <div class="callout"><p><strong>Inherit evidence before creating it. Reanalyse before recollecting. Simulate before constructing. Replicate before extending.</strong></p></div>
-        <p><a href={internal('method')}>Read the 1 + Machine Method →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Scarcity as a research diagnostic</p>
-        <h2>Ask what scarce input is preventing the next useful inference.</h2>
-      </div>
-      <div class="prose">
-        <p>Cognitive machines are used not only to execute research tasks but to inspect the research system itself: identify binding constraints, search for inherited abundance that can relax them, test the proposed displacement and then identify the next bottleneck.</p>
-        <p>Candidate scarcities include time, attention, expertise, authority, participants, expert review, data, mathematical depth, software implementation, compute, coordination, validation and human comprehension.</p>
-        <p class="large">This is operational first. A repeated scarcity transition becomes a research claim only after it can be measured and compared against established theory.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Novelty posture</p>
-        <h2>Search before naming a field.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">Agalmic Research distinguishes established antecedents, independent rediscovery, synthesis, extension, application, operationalization and genuinely unassessed novelty.</p>
-        <p>The reviews have already changed terminology and claims. “Epistemic Economics” became <strong>Economics of Epistemic Abundance</strong>; the “Law of Displaced Scarcity” became the <strong>Displaced Scarcity Hypothesis</strong>; the machine-discovery question is grounded in decades of computational and philosophical work; and the “effective adjacent possible” is explicitly attributed to existing innovation research.</p>
-        <p><a href={internal('lineage')}>Inspect the living intellectual lineage →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Portfolio discipline</p>
-        <h2>Ideas can be abundant without active work becoming unbounded.</h2>
-      </div>
-      <div class="prose">
-        <p>The programme uses a public Possibility Portfolio and a deliberately small Active Frontier. This is a local operating synthesis built from exploration/exploitation, innovation portfolio, real-options and idea-management literatures rather than a claim to new management theory.</p>
-        <p><a href={internal('frontier')}>Inspect the Active Frontier →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="shell">
       <div class="section-head">
-        <span class="section-number">Question map</span>
+        <span class="section-number">Questions</span>
         <div class="section-copy">
-          <h2>Preserved questions, not ten active programmes.</h2>
-          <p>The broader map remains useful for lineage and future options. Commitment is governed separately by the Active Frontier.</p>
+          <h2>Four connected areas.</h2>
+          <p>These are research questions, not separate departments or claims that a new field has already been established.</p>
         </div>
       </div>
-      <div class="index-list">
-        {tracks.map(([title, copy, lineage], i) => (
-          <article class="index-item">
-            <span class="index-meta">{String(i + 1).padStart(2, '0')}</span>
-            <div>
-              <h3>{title}</h3>
-              <p>{copy}</p>
-              <p class="muted"><strong>Lineage / remaining question:</strong> {lineage}</p>
-            </div>
-            <span class="index-status">programme question</span>
+      <div class="grid">
+        {areas.map(([title, copy], index) => (
+          <article class="card">
+            <span class="card-kicker">{String(index + 1).padStart(2, '0')}</span>
+            <h3>{title}</h3>
+            <p>{copy}</p>
           </article>
         ))}
       </div>
@@ -135,22 +57,52 @@ const tracks = [
   </section>
 
   <section class="section">
-    <div class="shell thesis">
-      <p class="eyebrow">Displaced Scarcity Hypothesis</p>
-      <blockquote>When a previously binding constraint becomes sufficiently abundant, system performance and value become increasingly determined by complementary constraints that remain scarce.</blockquote>
-      <p>The general intuition has strong antecedents in fixed-proportions bottlenecks, attention scarcity, complementary assets, weak-link/complementarity models and current AI-abundance economics. The hypothesis must earn usefulness through formal conditions, distinctive predictions and evidence.</p>
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">Current study</p>
+        <h2>How should scarce attention be allocated among too many plausible ideas?</h2>
+      </div>
+      <div class="prose">
+        <p class="large"><strong>Attention Allocation Under Cognitive Abundance</strong> is the main empirical study currently underway.</p>
+        <p>The first historical study successfully reconstructed 1,815 usable ICLR paper candidates, but that sample was not large enough to answer the planned question with the required precision. The study stopped before looking at the outcome data.</p>
+        <p>A larger follow-up is currently limited by the availability of historical data that can be collected without introducing selection bias. That is a useful result in itself: the present obstacle is trustworthy data, not more analysis code.</p>
+        <div class="actions">
+          <a class="button" href={internal('projects')}>See the project</a>
+          <a class="button secondary" href={internal('results')}>See results and corrections</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Method</p>
-        <h2>Reuse first. Differentiate second. Test third.</h2>
+        <p class="eyebrow">A real-world testbed</p>
+        <h2>Representation can change what people notice.</h2>
       </div>
       <div class="prose">
-        <p>Each track should begin with an intellectual-lineage review, then state exactly what changes under the proposed machine-cognition regime. Formalism, experiments or software demonstrations follow only after the surviving contribution has been identified.</p>
-        <p class="muted">A literature result that collapses a supposed novelty claim is progress. A parked idea is not a failed idea. A published object should create useful capacity, not merely another unit of output.</p>
+        <p><a href="https://nemosyne.world">Nemosyne</a> is an independent project that can be used to test specific questions about representation and discovery.</p>
+        <p>For example, different ways of arranging the same dataset may make patterns easier or harder to see. Those effects can be measured rather than assumed.</p>
+        <p>Nemosyne does not belong to Agalmic Research, and software experiments cannot answer every economic or institutional question raised here.</p>
+        <p><a href="https://nemosyne.world">Visit nemosyne.world ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div>
+        <p class="eyebrow">For readers who want the machinery</p>
+        <h2>Methods and research records remain open.</h2>
+      </div>
+      <div class="prose">
+        <p>The site also keeps the detailed methods, prior-art work, negative results and provenance records behind the research. They are useful for scrutiny and reuse, but they do not need to be the first thing every visitor sees.</p>
+        <div class="actions">
+          <a class="button secondary" href={internal('method')}>Methods</a>
+          <a class="button secondary" href={internal('lineage')}>Prior work and lineage</a>
+          <a class="button secondary" href={internal('provenance')}>Provenance</a>
+          <a class="button secondary" href={internal('explore')}>Explore everything</a>
+        </div>
       </div>
     </div>
   </section>

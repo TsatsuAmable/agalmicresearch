@@ -16,49 +16,26 @@ const epistemicHandoff = requireObject('object:epistemic-handoff');
 const published = [
   ['001', authorialCapacity.title, 'Exploratory synthesis / working paper', authorialCapacity.status, internal(authorialCapacity.href)],
 ];
-
-const candidates = [
-  [
-    'Attention Allocation Under Cognitive Abundance',
-    'Empirical research object',
-    'Earn publication through a trustworthy outcome result or a durable methods / negative-result contribution. v0.1 is ABSTAIN_PRE_OUTCOME; v0.2 is source-gated.',
-    internal('projects'),
-  ],
-];
-
-const gates = [
-  ['Contribution', 'The claim or method has survived enough lineage search to state what is inherited and what is actually being added.'],
-  ['Evidence', 'There is evidence, a formal argument, implementation evidence or a useful negative result. A research direction alone does not qualify.'],
-  ['Status', 'Uncertainty, search boundaries, authority limits, contribution roles and reversal conditions are explicit.'],
-  ['Purpose', 'The release has a concrete reader-facing job: enable reuse, invite criticism, preserve a result, support replication or transfer a method.'],
-  ['Durability', 'The released version is frozen, citable and linked to source, data/code where appropriate, provenance and correction history.'],
-  ['Scrutiny', 'Where the curator lacks relevant authority, the object seeks appropriate expert review rather than using publication as a substitute for it.'],
-];
 ---
-<Layout title="Publications" description="Released research objects and publication candidates for Agalmic Research, governed by lineage, evidence and durability gates rather than a speculative paper queue.">
+<Layout
+  title="Publications"
+  description="Papers, working research objects, negative results and other durable outputs from Agalmic Research."
+>
   <header class="page-head">
     <div class="shell">
       <p class="eyebrow">Publications</p>
-      <h1>Publish results that have earned a durable form.</h1>
-      <p class="lede">The publication surface is not a backlog of paper titles. It records released research objects and the small number of active objects that have enough evidence to plausibly become durable outward contributions.</p>
+      <h1>Work that is ready to be read, used or challenged.</h1>
+      <p class="lede">Not every useful result needs to become a conventional paper. This page collects research that has reached a durable public form, including papers, methods, datasets, software and negative results.</p>
     </div>
   </header>
-
-  <section class="section">
-    <div class="shell thesis">
-      <p class="eyebrow">Release rule</p>
-      <blockquote>Ideas live in Explore. Active commitments live in Projects and Frontier. Publications begin when an object has something durable to transfer.</blockquote>
-      <p>Publication is a projection of research, not a reward for generating a concept. Negative findings, methods, datasets, software and corrections can qualify just as readily as positive papers when they create reusable capability.</p>
-    </div>
-  </section>
 
   <section class="section">
     <div class="shell">
       <div class="section-head">
         <span class="section-number">Released</span>
         <div class="section-copy">
-          <h2>Durable public research objects.</h2>
-          <p>Released objects keep their provenance, epistemic status and correction history visible.</p>
+          <h2>Current public research.</h2>
+          <p>Each item keeps its status visible so exploratory work is not mistaken for a settled conclusion.</p>
         </div>
       </div>
       <div class="index-list">
@@ -77,65 +54,17 @@ const gates = [
   </section>
 
   <section class="section">
-    <div class="shell">
-      <div class="section-head">
-        <span class="section-number">Candidate</span>
-        <div class="section-copy">
-          <h2>One active object is currently earning publication.</h2>
-          <p>A candidate is not a promised paper. It remains free to end as a negative result, methods note, dataset, software artefact, correction or no publication at all.</p>
-        </div>
-      </div>
-      <div class="index-list">
-        {candidates.map(([title, type, status, href]) => (
-          <article class="index-item">
-            <span class="index-meta">C01</span>
-            <div>
-              <h3><a href={href}>{title}</a></h3>
-              <p class="muted">{type}</p>
-              <p>{status}</p>
-            </div>
-            <span class="index-status">active candidate</span>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell">
-      <div class="section-head">
-        <span class="section-number">Gates</span>
-        <div class="section-copy">
-          <h2>What must be true before release.</h2>
-          <p>The gates are deliberately stricter than “a draft exists” and deliberately broader than “a journal accepted it.”</p>
-        </div>
-      </div>
-      <div class="index-list">
-        {gates.map(([title, copy], i) => (
-          <article class="index-item">
-            <span class="index-meta">G{String(i + 1).padStart(2, '0')}</span>
-            <div>
-              <h3>{title}</h3>
-              <p>{copy}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Lineage & authority</p>
-        <h2>No novelty by typography. No authority by upload.</h2>
+        <p class="eyebrow">Current empirical work</p>
+        <h2>Attention Allocation Under Cognitive Abundance.</h2>
       </div>
       <div class="prose">
-        <p class="large">Each released object should say what it inherits before saying what it contributes, and publication should not imply expertise that the evidence does not establish.</p>
-        <p>The living novelty register can classify candidate contributions as established antecedent, independent rediscovery, synthesis, extension, application, operationalization, terminology candidate, novelty unassessed or candidate novelty after substantial search.</p>
+        <p class="large">The first version produced a useful negative result before the outcome data were opened: the available sample was too small to answer the planned question with enough precision.</p>
+        <p>A larger follow-up is currently limited by trustworthy historical data. A future publication may therefore take the form of a result, a methods contribution, a dataset, or a documented limit rather than a positive finding.</p>
         <div class="actions">
-          <a class="button" href={internal('lineage')}>Inspect lineage</a>
-          <a class="button secondary" href={internal('results')}>Inspect results</a>
+          <a class="button" href={internal('projects')}>See the project</a>
+          <a class="button secondary" href={internal('results')}>See results and corrections</a>
         </div>
       </div>
     </div>
@@ -144,15 +73,15 @@ const gates = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Draft notebook</p>
-        <h2>Keep possibilities cheap until evidence promotes them.</h2>
+        <p class="eyebrow">Work in progress</p>
+        <h2>Exploratory drafts stay visibly exploratory.</h2>
       </div>
       <div class="prose">
-        <p><strong>{epistemicHandoff.title}</strong> remains an actual exploratory draft with status <em>{epistemicHandoff.status}</em>. Other conceptual directions belong in the draft notebook and knowledge map rather than a numbered publication queue.</p>
+        <p><strong>{epistemicHandoff.title}</strong> is an exploratory draft with status <em>{epistemicHandoff.status}</em>.</p>
+        <p>Other early ideas remain in the wider research record until there is enough evidence or argument to justify a more durable release.</p>
         <div class="actions">
-          <a class="button secondary" href={internal(epistemicHandoff.href)}>Open the handoff draft</a>
-          <a class="button secondary" href={internal('drafts')}>Browse drafts & ideas</a>
-          <a class="button secondary" href={internal('explore')}>Explore the corpus</a>
+          <a class="button secondary" href={internal(epistemicHandoff.href)}>Open the draft</a>
+          <a class="button secondary" href={internal('explore')}>Explore the research record</a>
         </div>
       </div>
     </div>
@@ -161,17 +90,16 @@ const gates = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Distribution</p>
-        <h2>Make released work easy to find, cite, contest and correct.</h2>
+        <p class="eyebrow">Supporting detail</p>
+        <h2>Evidence and history remain available.</h2>
       </div>
       <div class="prose">
-        <ul>
-          <li><strong>Website:</strong> canonical index, lineage, revisions, epistemic status and links between research threads.</li>
-          <li><strong>GitHub:</strong> living source, models, data, code and version history.</li>
-          <li><strong>RO-Crate:</strong> package substantial research objects with interoperable metadata where useful.</li>
-          <li><strong>Stable archives:</strong> deposit release snapshots in Zenodo, OSF, SSRN or a domain repository when citation or preservation benefits justify it.</li>
-          <li><strong>Peer review:</strong> seek the scrutiny appropriate to the claim and audience; do not force every useful artefact through the same venue.</li>
-        </ul>
+        <p>Readers who want to inspect prior work, corrections, contribution history or research methods can follow the deeper records without requiring every visitor to learn the internal vocabulary first.</p>
+        <div class="actions">
+          <a class="button secondary" href={internal('lineage')}>Prior work and lineage</a>
+          <a class="button secondary" href={internal('provenance')}>Provenance</a>
+          <a class="button secondary" href={internal('method')}>Methods</a>
+        </div>
       </div>
     </div>
   </section>
