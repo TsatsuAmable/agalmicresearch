@@ -72,7 +72,8 @@
     "t0/ICLR2021_ARXIV_RECOVERY_RESULT.md",
     "t0/arxiv_audit/iclr2021_arxiv_recovery_summary.json",
     "t0/arxiv_audit/iclr2021_arxiv_exact_pre_cutoff.jsonl",
-    "scripts/audit-iclr2021-arxiv-recovery.py"
+    "scripts/audit-iclr2021-arxiv-recovery.py",
+    "t0/ICLR2021_IMMUTABLE_ARCHIVE_RECOVERY_LOG.md"
   ],
   "active_experiment": "Track A v0.2 remains halted before bulk content or citation acquisition. The frozen ICLR 2021 arXiv metadata audit found 497 exact pre-cutoff matches (487 after conservative cross-year deduplication), but observability is materially decision-linked: 26.54% ACCEPT versus 15.50% REJECT, a +11.04 pp gap with 95% Newcombe-Wilson CI [+7.68,+14.50] pp. The route is ARXIV_ROUTE_CONDITIONAL; neutral immutable historical-state recovery remains the critical path.",
   "evidence_collected": [
@@ -157,7 +158,11 @@
     "Pre-cutoff arXiv observability is materially historical-decision-linked: ACCEPT 228/859 (26.54%) versus REJECT 269/1,735 (15.50%); ACCEPT-minus-REJECT +11.04 pp with 95% Newcombe-Wilson interval [+7.68,+14.50] pp, wholly beyond the frozen +/-5 pp materiality margin.",
     "A conservative cross-year title/arXiv-identity deduplication leaves 487 additional ICLR 2021 arXiv candidates. Added to the verified 4,060 2018-2020 subtotal this reaches 4,547, still 53 below the frozen 4,600 target before technical and identity attrition.",
     "The arXiv route is adjudicated ARXIV_ROUTE_CONDITIONAL. Bulk PDF retrieval and citation-outcome acquisition remain unauthorized; no downstream outcomes were opened.",
-    "The arXiv audit source snapshot is frozen by SHA-256 ceeaa4316f76f6a22a5856128f34e8c3f35693d145db756f9688eda42ee20ed2 and the canonical candidate manifest by SHA-256 7a2f692468ef3e86ecebe71d6f5642d55588c7498e5dd016d7644f18199a195a."
+    "The arXiv audit source snapshot is frozen by SHA-256 ceeaa4316f76f6a22a5856128f34e8c3f35693d145db756f9688eda42ee20ed2 and the canonical candidate manifest by SHA-256 7a2f692468ef3e86ecebe71d6f5642d55588c7498e5dd016d7644f18199a195a.",
+    "A contemporaneous RchalYang/RLPaperList commit from 2020-10-06T05:28:09Z (about 86.5 hours after the ICLR 2021 paper deadline and before reviews) preserves 338 reinforcement-learning-keyword submissions with title/authors/keywords/abstract, but not PDFs or whole-document text; it is a T0 metadata witness only.",
+    "A bounded Wayback CDX probe found zero pre-2020-11-10 captures among seven successfully resolved canonical ICLR 2021 forum queries and zero among seven successfully resolved content-hash PDF queries; three of ten queries failed in each probe, so this is a scale-feasibility result rather than proof of total absence.",
+    "Common Crawl CC-MAIN-2020-45 spans 2020-10-19 to 2020-11-01, wholly inside the ICLR 2021 locked-review interval, but its historical index was returning 504 even for control queries during the sweep; one later bounded retry remains warranted.",
+    "OpenReview legacy original-reference resolution is currently blocked by ChallengeRequiredError; the 2026-09-20 support request has only an automated acknowledgement so far."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -209,7 +214,8 @@
     "the ICLR 2021 reviewed-version field is unusable as a neutral source because availability is perfectly linked to historical rejection in the archived frame",
     "even perfect reconstruction of all 442 ICLR 2017 candidates cannot by itself satisfy the v0.2 4,600 exact-observable precision target",
     "adding another conference or venue would require a prospectively frozen source-comparability and year/venue-stratification amendment before content or outcomes are acquired",
-    "ICLR 2021 pre-cutoff arXiv observability is materially acceptance-linked (+11.04 pp, 95% CI +7.68 to +14.50 pp); the existing representative estimand cannot treat the arXiv-observable subset as selection-neutral, and any restricted arXiv-only estimand must be prospectively amended rather than introduced post hoc."
+    "ICLR 2021 pre-cutoff arXiv observability is materially acceptance-linked (+11.04 pp, 95% CI +7.68 to +14.50 pp); the existing representative estimand cannot treat the arXiv-observable subset as selection-neutral, and any restricted arXiv-only estimand must be prospectively amended rather than introduced post hoc.",
+    "Unbounded historical archive hunting is now itself an attention-cost risk. ICLR 2021 recovery is limited to the pending substantive OpenReview support response and one successful Common Crawl 2020-45 retry before pivoting to a prospectively frozen additional-cohort/source-comparability amendment."
   ],
   "adversarial_objections": [
     "The programme's headline mechanism substantially overlaps active learning, constrained ranking and exploration/exploitation.",
@@ -326,6 +332,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "continue outcome-blind immutable archive recovery for the ICLR 2021 pre-review/deadline-state candidate set and bounded ICLR 2017 reconstruction; if neutral recovery remains inadequate, draft a prospective restricted-estimand or additional-venue amendment before any bulk PDF or citation-outcome acquisition",
+  "next_autonomous_action": "adjudicate the first substantive OpenReview support response and retry Common Crawl CC-MAIN-2020-45 once when its historical index is queryable; if neither yields a complete selection-neutral ICLR 2021 historical-text route, stop archive recovery and draft a prospective additional-cohort/source-comparability amendment before any new bulk content or citation-outcome acquisition",
   "decisions_requiring_human_attention": []
 }
