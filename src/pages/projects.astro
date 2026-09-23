@@ -8,31 +8,23 @@ const supporting = projectsData.projects.filter((project) => ['supporting', 'abs
 ---
 <Layout
   title="Projects"
-  description="The current Agalmic Research project map: flagship empirical work, capability practice, supporting infrastructure and independent related testbeds."
+  description="Current Agalmic Research projects, related experiments and supporting tools."
 >
   <header class="page-head">
     <div class="shell">
-      <p class="eyebrow">Projects · ownership · current state</p>
-      <h1>Fewer projects. Clearer jobs.</h1>
-      <p class="lede">Agalmic Research now separates active research, applied practice, supporting machinery and independent testbeds. A useful idea does not become an active project merely because it has a name.</p>
+      <p class="eyebrow">Projects</p>
+      <h1>What is being worked on now.</h1>
+      <p class="lede">This page separates the research we are actively pursuing from related experiments and the tools that support the work.</p>
     </div>
   </header>
-
-  <section class="section">
-    <div class="shell thesis">
-      <p class="eyebrow">Direction</p>
-      <blockquote>One serious empirical programme. One capability practice. Bounded testbeds. Everything else stays cheap until evidence earns more attention.</blockquote>
-      <p>{projectsData.direction}</p>
-    </div>
-  </section>
 
   <section class="section">
     <div class="shell">
       <div class="section-head">
         <span class="section-number">Active</span>
         <div class="section-copy">
-          <h2>What Agalmic Research is actually working on.</h2>
-          <p>These are the owned workstreams currently entitled to substantial attention.</p>
+          <h2>Current Agalmic Research projects.</h2>
+          <p>These are the projects receiving substantial attention now.</p>
         </div>
       </div>
       <div class="index-list">
@@ -41,10 +33,9 @@ const supporting = projectsData.projects.filter((project) => ['supporting', 'abs
             <span class="index-meta">A{String(index + 1).padStart(2, '0')}</span>
             <div>
               <h3>{project.title}</h3>
-              <p class="muted"><strong>{project.kind}</strong> · {project.relationship}</p>
               <p>{project.summary}</p>
-              <p><strong>Current result:</strong> {project.current_result}</p>
-              <p><strong>Next:</strong> {project.next}</p>
+              <p><strong>Where it stands:</strong> {project.current_result}</p>
+              <p><strong>Next question:</strong> {project.next}</p>
               <p>
                 {project.links.map((link, linkIndex) => (
                   <>
@@ -66,8 +57,8 @@ const supporting = projectsData.projects.filter((project) => ['supporting', 'abs
       <div class="section-head">
         <span class="section-number">Related</span>
         <div class="section-copy">
-          <h2>Useful testbeds without ownership blur.</h2>
-          <p>Independent projects can inform Agalmic Research without becoming Agalmic-owned programmes.</p>
+          <h2>Independent projects that help answer specific questions.</h2>
+          <p>These projects can provide experiments or evidence without becoming part of Agalmic Research itself.</p>
         </div>
       </div>
       <div class="index-list">
@@ -76,9 +67,8 @@ const supporting = projectsData.projects.filter((project) => ['supporting', 'abs
             <span class="index-meta">R{String(index + 1).padStart(2, '0')}</span>
             <div>
               <h3>{project.title}</h3>
-              <p class="muted"><strong>{project.kind}</strong> · {project.relationship}</p>
               <p>{project.summary}</p>
-              <p><strong>Boundary:</strong> {project.current_result}</p>
+              <p><strong>How it relates:</strong> {project.current_result}</p>
               <p><strong>Next:</strong> {project.next}</p>
               <p>
                 {project.links.map((link, linkIndex) => (
@@ -101,8 +91,8 @@ const supporting = projectsData.projects.filter((project) => ['supporting', 'abs
       <div class="section-head">
         <span class="section-number">Supporting</span>
         <div class="section-copy">
-          <h2>Machinery and precursor work that should not multiply into programmes.</h2>
-          <p>These objects remain reusable, but they do not currently deserve separate frontier slots.</p>
+          <h2>Tools and earlier work.</h2>
+          <p>These remain useful, but they are not presented as research programmes in their own right.</p>
         </div>
       </div>
       <div class="index-list">
@@ -111,9 +101,8 @@ const supporting = projectsData.projects.filter((project) => ['supporting', 'abs
             <span class="index-meta">S{String(index + 1).padStart(2, '0')}</span>
             <div>
               <h3>{project.title}</h3>
-              <p class="muted"><strong>{project.kind}</strong> · {project.relationship}</p>
               <p>{project.summary}</p>
-              <p><strong>Current result:</strong> {project.current_result}</p>
+              <p><strong>Current state:</strong> {project.current_result}</p>
               <p><strong>Next:</strong> {project.next}</p>
               <p>
                 {project.links.map((link, linkIndex) => (
@@ -127,20 +116,6 @@ const supporting = projectsData.projects.filter((project) => ['supporting', 'abs
             <span class="index-status">{project.state}</span>
           </article>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Project boundary</p>
-        <h2>The repository is not the organisation chart.</h2>
-      </div>
-      <div class="prose">
-        <p>Agalmic Research may study, consume or contribute to independent systems without claiming ownership of them. Conversely, useful internal tooling does not become a research programme merely because it has code and documentation.</p>
-        <div class="callout"><p><strong>Ownership, testbed status, evidence provenance and intellectual lineage should remain separable.</strong></p></div>
-        <p><a href="/frontier/">See the commitment frontier →</a></p>
       </div>
     </div>
   </section>
