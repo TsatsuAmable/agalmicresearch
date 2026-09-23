@@ -3,14 +3,11 @@ const path = Astro.url.pathname.replace(/\/$/, '');
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const route = (segment = '') => segment ? `${base}/${segment.replace(/^\//, '')}` : `${base}/`;
 const links = [
-  { href: route('explore'), label: 'Explore' },
-  { href: route('practice'), label: 'Practice' },
+  { href: route('research'), label: 'Research' },
   { href: route('projects'), label: 'Projects' },
-  { href: route('results'), label: 'Results' },
   { href: route('publications'), label: 'Publications' },
-  { href: route('frontier'), label: 'Frontier' },
+  { href: route('explore'), label: 'Explore' },
   { href: route('about'), label: 'About' },
-  { href: route('search'), label: 'Search' },
 ];
 const isCurrent = (href) => {
   const normalized = href.replace(/\/$/, '');
