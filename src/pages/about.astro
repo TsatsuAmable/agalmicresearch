@@ -1,80 +1,55 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const sections = [
+const deeper = [
   {
-    title: 'Practice',
-    copy: 'The current inward capability laboratory across scholarliness, software engineering and engineering leadership.',
-    href: '/practice/',
-    label: 'Practice',
-  },
-  {
-    title: 'Projects',
-    copy: 'The live map of Agalmic-owned programmes, supporting infrastructure and independent related testbeds, with ownership and next action kept explicit.',
-    href: '/projects/',
-    label: 'Projects',
-  },
-  {
-    title: 'Explore',
-    copy: 'The wider knowledge space, including earlier research directions, notes, methods and evidence that remain part of the lineage.',
+    title: 'Explore the research record',
+    copy: 'Browse notes, drafts, results and earlier research directions.',
     href: '/explore/',
     label: 'Explore',
   },
   {
-    title: 'Principles',
-    copy: 'Operating commitments for defensibility, openness, contribution, publication and correction.',
-    href: '/principles/',
-    label: 'Principles',
+    title: 'Methods',
+    copy: 'See how studies are designed and how evidence is checked.',
+    href: '/method/',
+    label: 'Methods',
   },
   {
-    title: 'Intellectual lineage',
-    copy: 'The living prior-art and novelty register, including ideas that were narrowed or renamed after review.',
+    title: 'Prior work and lineage',
+    copy: 'See the ideas and research this work builds on, including concepts that were narrowed or renamed.',
     href: '/lineage/',
     label: 'Lineage',
   },
   {
-    title: 'Research provenance',
-    copy: 'Standards-first contribution and process records using W3C PROV, CRediT and RO-Crate where possible.',
+    title: 'Provenance',
+    copy: 'Inspect contribution history and machine-readable research records.',
     href: '/provenance/',
     label: 'Provenance',
   },
-  {
-    title: 'Memory Palace Protocol',
-    copy: 'The session protocol for preserving questions, branches, decisions, roads not taken, evidence and contribution history.',
-    href: '/memory-palace-protocol/',
-    label: 'Memory Palace',
-  },
-  {
-    title: 'astro-agalmic',
-    copy: 'A freely reusable Astro integration extracted from the site: semantic registry, validation, static search, history and generated context.',
-    href: '/tools/astro-agalmic/',
-    label: 'Take the integration',
-  },
 ];
 ---
-<Layout title="About" description="About Agalmic Research: an open capability practice that begins inwardly, inherits existing knowledge and contributes useful outputs without making novelty the primary goal.">
+<Layout
+  title="About"
+  description="About Agalmic Research, an open research effort studying how abundant knowledge and AI capability can become useful human capability."
+>
   <header class="page-head">
     <div class="shell">
-      <p class="eyebrow">About the programme</p>
-      <h1>A laboratory for turning available abundance into durable capability.</h1>
-      <p class="lede">Agalmic Research began as an attempt to understand abundance, shifting scarcity and machine-assisted discovery. It is now deliberately more modest: apply those ideas first to real constraints in the practitioner's own work, learn from what already exists, and let outward contributions emerge where they genuinely add capability.</p>
+      <p class="eyebrow">About</p>
+      <h1>Research into what abundance makes possible, and what it makes scarce.</h1>
+      <p class="lede">Agalmic Research is an independent, open research effort focused on a simple problem: producing more information and more ideas is becoming easier, but turning them into understanding, good decisions and useful capability is still hard.</p>
     </div>
   </header>
 
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Current orientation</p>
-        <h2>Practice before proclamation.</h2>
+        <p class="eyebrow">The idea</p>
+        <h2>Abundance changes the bottleneck.</h2>
       </div>
       <div class="prose">
-        <p class="large">The programme does not need to establish a new academic field in order to be useful.</p>
-        <p>Its present role is to identify real constraints, search the inherited stock of knowledge and tools, use abundant resources such as machine cognition against those constraints, and test whether capability actually increased.</p>
-        <p>Research methods remain important because they keep the practice answerable to lineage, evidence, criticism, provenance and correction. They serve capability rather than intellectual territoriality.</p>
-        <div class="actions">
-          <a class="button" href="/practice/">See the current practice</a>
-          <a class="button secondary" href="/definition/">Read definition v0.3</a>
-        </div>
+        <p class="large">When one thing becomes cheap, something else often becomes the limiting factor.</p>
+        <p>AI can make writing, searching, coding and idea generation dramatically cheaper. That can make attention, judgment, validation, expertise, trust, energy or implementation more important than before.</p>
+        <p>Agalmic Research studies those shifts and looks for ways to turn new abundance into practical gains rather than simply producing more output.</p>
       </div>
     </div>
   </section>
@@ -82,14 +57,17 @@ const sections = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Contribution</p>
-        <h2>We do not need to own an idea to advance it.</h2>
+        <p class="eyebrow">What counts as progress</p>
+        <h2>Useful understanding matters more than owning an idea.</h2>
       </div>
       <div class="prose">
-        <p>Prior art, mature scholarship, standards and open-source software reduce the amount of discovery that still needs to be paid for. Finding them is therefore a gain in available capability.</p>
-        <p>When this project improves something inherited, the preferred response is to preserve lineage and, where practical, contribute the improvement back. Novelty may emerge, but it is not a prerequisite for useful work.</p>
-        <p>The current execution model is deliberately small: one flagship empirical programme, one owned capability practice, and bounded independent testbeds. The <a href="/projects/">Projects page</a> records ownership and current state so integration does not silently become organisational sprawl.</p>
-        <div class="callout"><p><strong>Seek contribution before novelty. Seek novelty only where contribution requires discovery.</strong></p></div>
+        <p>Much of the best work starts with knowledge that already exists. Finding a mature theory, a useful dataset, a reliable method or good open-source software can save more effort than inventing a new name for the same problem.</p>
+        <p>Progress can take many forms: a clearer explanation, a negative result, a useful experiment, better software, a reusable dataset, a stronger method or a question that has finally become answerable.</p>
+        <div class="actions">
+          <a class="button" href="/research/">Research</a>
+          <a class="button secondary" href="/projects/">Projects</a>
+          <a class="button secondary" href="/publications/">Publications</a>
+        </div>
       </div>
     </div>
   </section>
@@ -99,12 +77,12 @@ const sections = [
       <div class="section-head">
         <span class="section-number">Under the hood</span>
         <div class="section-copy">
-          <h2>Practice, research machinery and history.</h2>
-          <p>The site preserves earlier framings rather than silently erasing them. They remain useful evidence of how the programme changed.</p>
+          <h2>For readers who want more detail.</h2>
+          <p>The deeper research machinery is still public, but it is secondary to the ideas and results.</p>
         </div>
       </div>
       <div class="about-grid">
-        {sections.map((item) => (
+        {deeper.map((item) => (
           <article class="about-card">
             <h3>{item.title}</h3>
             <p>{item.copy}</p>
@@ -119,11 +97,11 @@ const sections = [
     <div class="shell split">
       <div>
         <p class="eyebrow">Open source</p>
-        <h2>The website is part of the working record.</h2>
+        <h2>The work is inspectable.</h2>
       </div>
       <div class="prose">
-        <p>The site source, provenance records, literature reviews, portfolio data and machine-readable indexes live in the public repository. Public source does not mean every future artefact must be public: confidential, personally sensitive, security-sensitive or consciously protected material can remain outside the public projection.</p>
-        <p>Reusable infrastructure should travel farther than the site that produced it. The <strong>astro-agalmic</strong> integration is published under 0BSD so others can take useful machinery without inheriting this project's vocabulary.</p>
+        <p>The website source, research records, literature reviews and supporting code are public where privacy, security or other legitimate constraints do not require otherwise.</p>
+        <p>Reusable tools should be easy for others to take and adapt. The site's <strong>astro-agalmic</strong> integration is published under the 0BSD licence.</p>
         <div class="actions">
           <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch">GitHub source ↗</a>
           <a class="button secondary" href="/tools/astro-agalmic/">astro-agalmic</a>
