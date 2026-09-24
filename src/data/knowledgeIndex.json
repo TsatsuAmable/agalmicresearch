@@ -70,9 +70,9 @@
         "cognitive-abundance",
         "observability"
       ],
-      "status": "Flagship empirical programme · v0.2 source gate",
-      "summary": "Test how scarce evaluation should be allocated when candidate generation becomes cheap, while preserving temporal integrity, selection-aware observability, lineage controls and explicit ABSTAIN conditions.",
-      "direction": "Recover a neutral additional historical cohort, rerun the prospective source/precision gate, and keep citation outcomes sealed until the design earns permission to open them.",
+      "status": "Main empirical study",
+      "summary": "Study how limited human evaluation should be used when AI can generate more candidates than people can review.",
+      "direction": "Find an additional unbiased historical cohort, then rerun the feasibility checks before opening outcome data.",
       "href": "/projects/",
       "related": [
         "evidence:attention-v01-abstain",
@@ -96,8 +96,8 @@
         "transfer"
       ],
       "status": "Active practice",
-      "summary": "Use abundant machine cognition against real constraints in scholarliness, engineering and leadership, then test what understanding, judgment and skill remain when scaffolding is reduced.",
-      "direction": "Run the frozen Cognitive Kernel consequence pilot on real task pairs before adding more intervention machinery.",
+      "summary": "Test whether AI assistance can improve learning and performance in real work while leaving the human able to understand and defend the result.",
+      "direction": "Run the frozen Cognitive Kernel pilot on matched real-world tasks before adding more intervention machinery.",
       "href": "/practice/",
       "related": [
         "orientation:meta-aim",
@@ -248,7 +248,7 @@
     },
     {
       "id": "direction:representation-nemosyne",
-      "title": "Nemosyne as an independent Agalmic testbed",
+      "title": "Nemosyne / Moneta testbed",
       "kind": "possibility",
       "layer": "direction",
       "commitment": "active",
@@ -260,9 +260,9 @@
         "recognition",
         "visual-analytics"
       ],
-      "status": "Active related testbed",
-      "summary": "Use the independent Nemosyne/Moneta project as a bounded testbed for representation, verification attention and discovery/reconstruction methods without absorbing its product roadmap into Agalmic Research.",
-      "direction": "Run only experiments with observable interventions and outcomes, and keep project ownership explicit.",
+      "status": "Related experiment",
+      "summary": "Use the independent Nemosyne project for measurable experiments on representation, verification and discovery without absorbing its product roadmap into Agalmic Research.",
+      "direction": "Run only experiments where the intervention and outcome can be observed and measured, while keeping ownership separate.",
       "href": "/projects/",
       "related": [
         "direction:attention-allocation",
