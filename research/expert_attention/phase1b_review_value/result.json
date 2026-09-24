@@ -1,0 +1,276 @@
+{
+  "design": {
+    "budgets": [
+      0.05,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "chronological_claim": false,
+    "citation_outcomes_used": false,
+    "decision_labels_used": false,
+    "policies": [
+      "random",
+      "disagreement",
+      "boundary_uncertainty",
+      "hybrid"
+    ],
+    "primary_seed": 20260924,
+    "sensitivity_seeds": [
+      20260924,
+      20260925,
+      20260926,
+      20260927,
+      20260928,
+      20260929,
+      20260930,
+      20260931,
+      20260932,
+      20260933,
+      20260934,
+      20260935,
+      20260936,
+      20260937,
+      20260938,
+      20260939,
+      20260940,
+      20260941,
+      20260942,
+      20260943
+    ],
+    "years": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "eligible_papers_by_year": {
+    "2017": 483,
+    "2018": 910,
+    "2019": 1413,
+    "2020": 2130,
+    "2021": 2595
+  },
+  "eligible_total": 7531,
+  "hypotheses": {
+    "H1": {
+      "median_sensitivity_advantage": 0.02278853827681801,
+      "positive_sensitivity_splits": 20,
+      "primary_update_mass_advantage": 0.028978113361563168,
+      "supported": false,
+      "total_sensitivity_splits": 20
+    },
+    "H2": {
+      "primary_large_update_recall_advantage": 0.032329988851728,
+      "supported": false
+    }
+  },
+  "input": {
+    "db": ".cache/iclr_arxiv_audit/cs_conf_release.db",
+    "sha256": "ceeaa4316f76f6a22a5856128f34e8c3f35693d145db756f9688eda42ee20ed2"
+  },
+  "primary_results": [
+    {
+      "budget": 0.05,
+      "eligible": 7531,
+      "large_update_recall": 0.054626532887402456,
+      "midpoint_crossing_recall": 0.055609756097560976,
+      "midpoint_crossings": 1025,
+      "policy": "random",
+      "seed": 20260924,
+      "selected": 377,
+      "update_mass_capture": 0.049640324473241154
+    },
+    {
+      "budget": 0.1,
+      "eligible": 7531,
+      "large_update_recall": 0.10367892976588629,
+      "midpoint_crossing_recall": 0.10829268292682927,
+      "midpoint_crossings": 1025,
+      "policy": "random",
+      "seed": 20260924,
+      "selected": 753,
+      "update_mass_capture": 0.0968828121014234
+    },
+    {
+      "budget": 0.2,
+      "eligible": 7531,
+      "large_update_recall": 0.19620958751393533,
+      "midpoint_crossing_recall": 0.19317073170731708,
+      "midpoint_crossings": 1025,
+      "policy": "random",
+      "seed": 20260924,
+      "selected": 1507,
+      "update_mass_capture": 0.1950410693331973
+    },
+    {
+      "budget": 0.4,
+      "eligible": 7531,
+      "large_update_recall": 0.3890746934225195,
+      "midpoint_crossing_recall": 0.39414634146341465,
+      "midpoint_crossings": 1025,
+      "policy": "random",
+      "seed": 20260924,
+      "selected": 3012,
+      "update_mass_capture": 0.3900821386663946
+    },
+    {
+      "budget": 0.05,
+      "eligible": 7531,
+      "large_update_recall": 0.07915273132664437,
+      "midpoint_crossing_recall": 0.08195121951219513,
+      "midpoint_crossings": 1025,
+      "policy": "disagreement",
+      "seed": 20260924,
+      "selected": 377,
+      "update_mass_capture": 0.06270088260803021
+    },
+    {
+      "budget": 0.1,
+      "eligible": 7531,
+      "large_update_recall": 0.12263099219620958,
+      "midpoint_crossing_recall": 0.15414634146341463,
+      "midpoint_crossings": 1025,
+      "policy": "disagreement",
+      "seed": 20260924,
+      "selected": 753,
+      "update_mass_capture": 0.11601448905668077
+    },
+    {
+      "budget": 0.2,
+      "eligible": 7531,
+      "large_update_recall": 0.22853957636566333,
+      "midpoint_crossing_recall": 0.24097560975609755,
+      "midpoint_crossings": 1025,
+      "policy": "disagreement",
+      "seed": 20260924,
+      "selected": 1507,
+      "update_mass_capture": 0.22401918269476045
+    },
+    {
+      "budget": 0.4,
+      "eligible": 7531,
+      "large_update_recall": 0.45819397993311034,
+      "midpoint_crossing_recall": 0.6029268292682927,
+      "midpoint_crossings": 1025,
+      "policy": "disagreement",
+      "seed": 20260924,
+      "selected": 3012,
+      "update_mass_capture": 0.4369675016580787
+    },
+    {
+      "budget": 0.05,
+      "eligible": 7531,
+      "large_update_recall": 0.04013377926421405,
+      "midpoint_crossing_recall": 0.21170731707317073,
+      "midpoint_crossings": 1025,
+      "policy": "boundary_uncertainty",
+      "seed": 20260924,
+      "selected": 377,
+      "update_mass_capture": 0.04913014642110095
+    },
+    {
+      "budget": 0.1,
+      "eligible": 7531,
+      "large_update_recall": 0.09810479375696766,
+      "midpoint_crossing_recall": 0.40195121951219515,
+      "midpoint_crossings": 1025,
+      "policy": "boundary_uncertainty",
+      "seed": 20260924,
+      "selected": 753,
+      "update_mass_capture": 0.1013723789602571
+    },
+    {
+      "budget": 0.2,
+      "eligible": 7531,
+      "large_update_recall": 0.19843924191750278,
+      "midpoint_crossing_recall": 0.6526829268292683,
+      "midpoint_crossings": 1025,
+      "policy": "boundary_uncertainty",
+      "seed": 20260924,
+      "selected": 1507,
+      "update_mass_capture": 0.20157134840059174
+    },
+    {
+      "budget": 0.4,
+      "eligible": 7531,
+      "large_update_recall": 0.326644370122631,
+      "midpoint_crossing_recall": 0.8965853658536586,
+      "midpoint_crossings": 1025,
+      "policy": "boundary_uncertainty",
+      "seed": 20260924,
+      "selected": 3012,
+      "update_mass_capture": 0.3907453701341768
+    },
+    {
+      "budget": 0.05,
+      "eligible": 7531,
+      "large_update_recall": 0.06354515050167224,
+      "midpoint_crossing_recall": 0.13365853658536586,
+      "midpoint_crossings": 1025,
+      "policy": "hybrid",
+      "seed": 20260924,
+      "selected": 377,
+      "update_mass_capture": 0.059588796489975
+    },
+    {
+      "budget": 0.1,
+      "eligible": 7531,
+      "large_update_recall": 0.10479375696767002,
+      "midpoint_crossing_recall": 0.2370731707317073,
+      "midpoint_crossings": 1025,
+      "policy": "hybrid",
+      "seed": 20260924,
+      "selected": 753,
+      "update_mass_capture": 0.11111677975613488
+    },
+    {
+      "budget": 0.2,
+      "eligible": 7531,
+      "large_update_recall": 0.2028985507246377,
+      "midpoint_crossing_recall": 0.48878048780487804,
+      "midpoint_crossings": 1025,
+      "policy": "hybrid",
+      "seed": 20260924,
+      "selected": 1507,
+      "update_mass_capture": 0.21514208458752102
+    },
+    {
+      "budget": 0.4,
+      "eligible": 7531,
+      "large_update_recall": 0.4057971014492754,
+      "midpoint_crossing_recall": 0.8478048780487805,
+      "midpoint_crossings": 1025,
+      "policy": "hybrid",
+      "seed": 20260924,
+      "selected": 3012,
+      "update_mass_capture": 0.41865210958624555
+    }
+  ],
+  "schema_version": "1.0",
+  "sensitivity_disagreement_minus_random_20pct": [
+    0.028978113361563168,
+    0.02214245993630254,
+    0.02581799591002043,
+    0.023129462899720565,
+    0.025698897153116185,
+    0.03331112591605592,
+    0.02410436732405849,
+    0.022447613653915455,
+    0.01810956285527443,
+    0.033350202429149794,
+    0.013569831266517562,
+    0.020012037315678605,
+    0.013543902688336912,
+    0.02648332060096767,
+    0.01920056740463047,
+    0.02088614011963902,
+    0.01452155304188324,
+    0.023861171366594353,
+    0.008171026260342246,
+    0.028121371232392584
+  ],
+  "status": "PHASE_1B_COMPLETE"
+}

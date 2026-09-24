@@ -51,3 +51,7 @@ The first deployable baseline must use only information available before review,
 - Public OpenReview dump for later raw-note validation: https://github.com/qhjqhj00/iclr-openreview-reviews
 
 Do not commit redistributed OpenReview paper/review content to this repository. Keep only analysis code, derived aggregates, manifests, and small non-identifying outputs needed for reproducibility.
+
+## Phase 1B: marginal review value
+
+`review_value_holdout.py` runs the frozen synthetic held-out-review benchmark over ICLR 2017-2021. It tests whether disagreement or boundary uncertainty identifies papers for which another reviewer changes the aggregate rating most. The primary preregistered disagreement hypotheses were not supported at the materiality threshold; see `../../docs/EXPERT_ATTENTION_PHASE1B_FINDINGS.md`.
