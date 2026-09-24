@@ -55,3 +55,7 @@ Do not commit redistributed OpenReview paper/review content to this repository. 
 ## Phase 1B: marginal review value
 
 `review_value_holdout.py` runs the frozen synthetic held-out-review benchmark over ICLR 2017-2021. It tests whether disagreement or boundary uncertainty identifies papers for which another reviewer changes the aggregate rating most. The primary preregistered disagreement hypotheses were not supported at the materiality threshold; see `../../docs/EXPERT_ATTENTION_PHASE1B_FINDINGS.md`.
+
+## Phase 1C: boundary preservation
+
+`boundary_preservation.py` validates the simplest Phase 1B signal on 20 fresh deterministic hold-out splits. A near-boundary rule reaches 95% pooled recommendation-midpoint crossing recall while saving a median 45% of simulated third-review work. See `../../docs/EXPERT_ATTENTION_PHASE1C_FINDINGS.md`.

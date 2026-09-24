@@ -11,8 +11,8 @@
       "state": "active",
       "kind": "empirical research",
       "summary": "Study how limited human evaluation should be used when AI can produce more candidates than people can review.",
-      "current_result": "Track A v0.2 ended ABSTAIN_PRE_OUTCOME_SOURCE_INADEQUATE without opening citation outcomes. A separate held-out-review benchmark then found that disagreement gives only a small, stable advantage over random allocation for general review-update value, while a simple near-boundary rule captures many more recommendation-boundary crossings.",
-      "next": "Test the simplest boundary-targeting rule against a preregistered review-work-saved target before considering any learned or bespoke routing mechanism.",
+      "current_result": "Track A v0.2 ended outcome-blind because admissible historical sources could not meet its frozen precision floor. In a separate review-value benchmark, disagreement was only a weak general signal, while a fixed near-boundary rule preserved 95% of pooled recommendation-side changes across fresh hold-outs with a median 45% reduction in simulated third-review work.",
+      "next": "Do not build a learned allocator. Design a closer-to-operational validation of the fixed near-boundary rule using sequential review state and per-stratum preservation floors.",
       "links": [
         {
           "label": "Programme source",

@@ -70,9 +70,9 @@
         "cognitive-abundance",
         "observability"
       ],
-      "status": "Active empirical programme \u00b7 Track A closed; review-value benchmark active",
-      "summary": "Study how scarce expert review should be allocated without treating historical acceptance as ground truth. Track A stopped before citation outcomes; the current evidence shifts attention toward objective-specific mid-review allocation.",
-      "direction": "Quantify whether a simple boundary-targeting rule can preserve recommendation-changing reviews while saving substantial expert-review work.",
+      "status": "Active empirical programme \u00b7 simple boundary rule validated retrospectively",
+      "summary": "Study how scarce expert review should be allocated without treating acceptance as ground truth. Historical citation Track A stopped outcome-blind; review hold-outs now show that objective-specific simple rules can outperform more elaborate routing ideas.",
+      "direction": "Validate the fixed near-boundary rule under sequential review state and per-stratum preservation requirements before considering deployment or learned routing.",
       "href": "/projects/",
       "related": [
         "evidence:attention-v01-abstain",

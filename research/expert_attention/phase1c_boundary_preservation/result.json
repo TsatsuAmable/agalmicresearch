@@ -1,0 +1,625 @@
+{
+  "budgets": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "chronological_claim": false,
+  "citation_outcomes_used": false,
+  "decision_labels_used": false,
+  "fresh_seeds": [
+    20261001,
+    20261002,
+    20261003,
+    20261004,
+    20261005,
+    20261006,
+    20261007,
+    20261008,
+    20261009,
+    20261010,
+    20261011,
+    20261012,
+    20261013,
+    20261014,
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019,
+    20261020
+  ],
+  "input_db_sha256": "ceeaa4316f76f6a22a5856128f34e8c3f35693d145db756f9688eda42ee20ed2",
+  "mean_recall_curve": [
+    {
+      "budget": 0.05,
+      "mean_midpoint_crossing_recall": 0.05251627978633189,
+      "policy": "random"
+    },
+    {
+      "budget": 0.1,
+      "mean_midpoint_crossing_recall": 0.10187561317072613,
+      "policy": "random"
+    },
+    {
+      "budget": 0.15,
+      "mean_midpoint_crossing_recall": 0.15184878657764875,
+      "policy": "random"
+    },
+    {
+      "budget": 0.2,
+      "mean_midpoint_crossing_recall": 0.20371968456278894,
+      "policy": "random"
+    },
+    {
+      "budget": 0.25,
+      "mean_midpoint_crossing_recall": 0.2517356666631657,
+      "policy": "random"
+    },
+    {
+      "budget": 0.3,
+      "mean_midpoint_crossing_recall": 0.30336314505185397,
+      "policy": "random"
+    },
+    {
+      "budget": 0.35,
+      "mean_midpoint_crossing_recall": 0.35259075678339286,
+      "policy": "random"
+    },
+    {
+      "budget": 0.4,
+      "mean_midpoint_crossing_recall": 0.4030130333812289,
+      "policy": "random"
+    },
+    {
+      "budget": 0.45,
+      "mean_midpoint_crossing_recall": 0.45290502910690567,
+      "policy": "random"
+    },
+    {
+      "budget": 0.5,
+      "mean_midpoint_crossing_recall": 0.5018179656268675,
+      "policy": "random"
+    },
+    {
+      "budget": 0.55,
+      "mean_midpoint_crossing_recall": 0.5514116467309517,
+      "policy": "random"
+    },
+    {
+      "budget": 0.6,
+      "mean_midpoint_crossing_recall": 0.6018229082414028,
+      "policy": "random"
+    },
+    {
+      "budget": 0.65,
+      "mean_midpoint_crossing_recall": 0.6506997099456121,
+      "policy": "random"
+    },
+    {
+      "budget": 0.7,
+      "mean_midpoint_crossing_recall": 0.7013356107565163,
+      "policy": "random"
+    },
+    {
+      "budget": 0.75,
+      "mean_midpoint_crossing_recall": 0.7503494006289316,
+      "policy": "random"
+    },
+    {
+      "budget": 0.8,
+      "mean_midpoint_crossing_recall": 0.7997399732165272,
+      "policy": "random"
+    },
+    {
+      "budget": 0.85,
+      "mean_midpoint_crossing_recall": 0.8507039431408733,
+      "policy": "random"
+    },
+    {
+      "budget": 0.9,
+      "mean_midpoint_crossing_recall": 0.9000278326388574,
+      "policy": "random"
+    },
+    {
+      "budget": 0.95,
+      "mean_midpoint_crossing_recall": 0.9507780068681446,
+      "policy": "random"
+    },
+    {
+      "budget": 1.0,
+      "mean_midpoint_crossing_recall": 1.0,
+      "policy": "random"
+    },
+    {
+      "budget": 0.05,
+      "mean_midpoint_crossing_recall": 0.06857804831193587,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.1,
+      "mean_midpoint_crossing_recall": 0.14752350128076858,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.15,
+      "mean_midpoint_crossing_recall": 0.2062830316589824,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.2,
+      "mean_midpoint_crossing_recall": 0.24165474962872716,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.25,
+      "mean_midpoint_crossing_recall": 0.2841089823583635,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.3,
+      "mean_midpoint_crossing_recall": 0.3499854828370235,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.35,
+      "mean_midpoint_crossing_recall": 0.4696455284614537,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.4,
+      "mean_midpoint_crossing_recall": 0.6042098009422153,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.45,
+      "mean_midpoint_crossing_recall": 0.7227776300928814,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.5,
+      "mean_midpoint_crossing_recall": 0.7816717817482377,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.55,
+      "mean_midpoint_crossing_recall": 0.8273194341109946,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.6,
+      "mean_midpoint_crossing_recall": 0.8465544662527543,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.65,
+      "mean_midpoint_crossing_recall": 0.857280696649653,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.7,
+      "mean_midpoint_crossing_recall": 0.8697905014390706,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.75,
+      "mean_midpoint_crossing_recall": 0.8881132428730372,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.8,
+      "mean_midpoint_crossing_recall": 0.9089267918331282,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.85,
+      "mean_midpoint_crossing_recall": 0.9309659703243993,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.9,
+      "mean_midpoint_crossing_recall": 0.9532979799165322,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.95,
+      "mean_midpoint_crossing_recall": 0.9784603834647798,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 1.0,
+      "mean_midpoint_crossing_recall": 1.0,
+      "policy": "disagreement"
+    },
+    {
+      "budget": 0.05,
+      "mean_midpoint_crossing_recall": 0.20410211576312007,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.1,
+      "mean_midpoint_crossing_recall": 0.39139566905622974,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.15,
+      "mean_midpoint_crossing_recall": 0.5574836511858964,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.2,
+      "mean_midpoint_crossing_recall": 0.6611832114951831,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.25,
+      "mean_midpoint_crossing_recall": 0.7501215399200281,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.3,
+      "mean_midpoint_crossing_recall": 0.8010385929235662,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.35,
+      "mean_midpoint_crossing_recall": 0.8508209222851758,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.4,
+      "mean_midpoint_crossing_recall": 0.8952202171126614,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.45,
+      "mean_midpoint_crossing_recall": 0.9300259265056975,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.5,
+      "mean_midpoint_crossing_recall": 0.9460181979161277,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.55,
+      "mean_midpoint_crossing_recall": 0.9590065227294343,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.6,
+      "mean_midpoint_crossing_recall": 0.9701689180095296,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.65,
+      "mean_midpoint_crossing_recall": 0.9854807461386926,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.7,
+      "mean_midpoint_crossing_recall": 0.9972617208224099,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.75,
+      "mean_midpoint_crossing_recall": 0.9979926437502908,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.8,
+      "mean_midpoint_crossing_recall": 0.99882512699251,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.85,
+      "mean_midpoint_crossing_recall": 0.999609209788511,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.9,
+      "mean_midpoint_crossing_recall": 0.9999506903353057,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.95,
+      "mean_midpoint_crossing_recall": 1.0,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 1.0,
+      "mean_midpoint_crossing_recall": 1.0,
+      "policy": "boundary_uncertainty"
+    },
+    {
+      "budget": 0.05,
+      "mean_midpoint_crossing_recall": 0.12796423775826207,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.1,
+      "mean_midpoint_crossing_recall": 0.24527151301553263,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.15,
+      "mean_midpoint_crossing_recall": 0.3766830865162399,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.2,
+      "mean_midpoint_crossing_recall": 0.5019571416848925,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.25,
+      "mean_midpoint_crossing_recall": 0.6236262481068336,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.3,
+      "mean_midpoint_crossing_recall": 0.7395498763012764,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.35,
+      "mean_midpoint_crossing_recall": 0.8350612797314574,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.4,
+      "mean_midpoint_crossing_recall": 0.8549695589724898,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.45,
+      "mean_midpoint_crossing_recall": 0.8782672108749803,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.5,
+      "mean_midpoint_crossing_recall": 0.9023177013567186,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.55,
+      "mean_midpoint_crossing_recall": 0.9291199424644145,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.6,
+      "mean_midpoint_crossing_recall": 0.9492437181062203,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.65,
+      "mean_midpoint_crossing_recall": 0.9660882309819554,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.7,
+      "mean_midpoint_crossing_recall": 0.9769639171947306,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.75,
+      "mean_midpoint_crossing_recall": 0.9880163751494941,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.8,
+      "mean_midpoint_crossing_recall": 0.9985298544376923,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.85,
+      "mean_midpoint_crossing_recall": 0.9987711886432477,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.9,
+      "mean_midpoint_crossing_recall": 0.9989692787411752,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 0.95,
+      "mean_midpoint_crossing_recall": 0.9995600134303065,
+      "policy": "hybrid"
+    },
+    {
+      "budget": 1.0,
+      "mean_midpoint_crossing_recall": 1.0,
+      "policy": "hybrid"
+    }
+  ],
+  "median_boundary_minus_random_rws95": 0.44999999999999996,
+  "primary_hypothesis_supported": true,
+  "rws95_by_policy": {
+    "boundary_uncertainty": [
+      0.44999999999999996,
+      0.44999999999999996,
+      0.44999999999999996,
+      0.44999999999999996,
+      0.44999999999999996,
+      0.44999999999999996,
+      0.44999999999999996,
+      0.5,
+      0.5,
+      0.44999999999999996,
+      0.44999999999999996,
+      0.44999999999999996,
+      0.44999999999999996,
+      0.5,
+      0.5,
+      0.44999999999999996,
+      0.44999999999999996,
+      0.5,
+      0.44999999999999996,
+      0.44999999999999996
+    ],
+    "disagreement": [
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.050000000000000044,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.050000000000000044,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998
+    ],
+    "hybrid": [
+      0.4,
+      0.35,
+      0.35,
+      0.4,
+      0.4,
+      0.35,
+      0.4,
+      0.35,
+      0.4,
+      0.35,
+      0.35,
+      0.35,
+      0.35,
+      0.4,
+      0.4,
+      0.4,
+      0.35,
+      0.35,
+      0.35,
+      0.4
+    ],
+    "random": [
+      0.050000000000000044,
+      0.0,
+      0.050000000000000044,
+      0.0,
+      0.0,
+      0.050000000000000044,
+      0.0,
+      0.050000000000000044,
+      0.0,
+      0.0,
+      0.050000000000000044,
+      0.050000000000000044,
+      0.050000000000000044,
+      0.0,
+      0.050000000000000044,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.050000000000000044
+    ]
+  },
+  "schema_version": "1.0",
+  "status": "PHASE_1C_COMPLETE",
+  "summary": {
+    "boundary_uncertainty": {
+      "max_rws95": 0.5,
+      "median_rws95": 0.44999999999999996,
+      "min_rws95": 0.44999999999999996,
+      "splits_at_least_30pct_saved": 20
+    },
+    "disagreement": {
+      "max_rws95": 0.09999999999999998,
+      "median_rws95": 0.09999999999999998,
+      "min_rws95": 0.050000000000000044,
+      "splits_at_least_30pct_saved": 0
+    },
+    "hybrid": {
+      "max_rws95": 0.4,
+      "median_rws95": 0.35,
+      "min_rws95": 0.35,
+      "splits_at_least_30pct_saved": 20
+    },
+    "random": {
+      "max_rws95": 0.050000000000000044,
+      "median_rws95": 0.0,
+      "min_rws95": 0.0,
+      "splits_at_least_30pct_saved": 0
+    }
+  },
+  "target_recall": 0.95,
+  "year_diagnostic_at_median_boundary_budget": [
+    {
+      "budget": 0.55,
+      "eligible": 483,
+      "large_update_recall": 0.5652173913043478,
+      "midpoint_crossing_recall": 1.0,
+      "midpoint_crossings": 41,
+      "selected": 266,
+      "update_mass_capture": 0.5911062906724511,
+      "year": 2017
+    },
+    {
+      "budget": 0.55,
+      "eligible": 910,
+      "large_update_recall": 0.5,
+      "midpoint_crossing_recall": 0.9743589743589743,
+      "midpoint_crossings": 117,
+      "selected": 501,
+      "update_mass_capture": 0.5328282828282828,
+      "year": 2018
+    },
+    {
+      "budget": 0.55,
+      "eligible": 1413,
+      "large_update_recall": 0.4581005586592179,
+      "midpoint_crossing_recall": 0.9942857142857143,
+      "midpoint_crossings": 175,
+      "selected": 777,
+      "update_mass_capture": 0.5433664724031538,
+      "year": 2019
+    },
+    {
+      "budget": 0.55,
+      "eligible": 2130,
+      "large_update_recall": 0.43272727272727274,
+      "midpoint_crossing_recall": 0.9318181818181818,
+      "midpoint_crossings": 308,
+      "selected": 1172,
+      "update_mass_capture": 0.5188437614343213,
+      "year": 2020
+    },
+    {
+      "budget": 0.55,
+      "eligible": 2595,
+      "large_update_recall": 0.40217391304347827,
+      "midpoint_crossing_recall": 0.9458689458689459,
+      "midpoint_crossings": 351,
+      "selected": 1427,
+      "update_mass_capture": 0.5186170212765957,
+      "year": 2021
+    }
+  ]
+}
