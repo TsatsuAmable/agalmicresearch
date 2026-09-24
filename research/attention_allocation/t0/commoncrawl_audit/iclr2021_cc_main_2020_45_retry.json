@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-24",
+  "crawl": "CC-MAIN-2020-45",
+  "query_endpoint": "https://index.commoncrawl.org/CC-MAIN-2020-45-index",
+  "selection_rule": "First ten ICLR 2021 primary-comparison-eligible forum IDs in lexicographic order from frozen manifest SHA-256 7a2f692468ef3e86ecebe71d6f5642d55588c7498e5dd016d7644f18199a195a. Decision labels were not used to choose the sample.",
+  "control": {
+    "target": "example.com",
+    "status": "capture_found",
+    "first_observed_timestamp": "20201019153719"
+  },
+  "sample": [
+    {
+      "forum_id": "_0kaDkv3dVf",
+      "decision": "ACCEPT",
+      "forum_url": "https://openreview.net/forum?id=_0kaDkv3dVf",
+      "pdf_url": "https://openreview.net/pdf?id=_0kaDkv3dVf",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    },
+    {
+      "forum_id": "_77KiX2VIEg",
+      "decision": "REJECT",
+      "forum_url": "https://openreview.net/forum?id=_77KiX2VIEg",
+      "pdf_url": "https://openreview.net/pdf?id=_77KiX2VIEg",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    },
+    {
+      "forum_id": "_adSMszz_g9",
+      "decision": "REJECT",
+      "forum_url": "https://openreview.net/forum?id=_adSMszz_g9",
+      "pdf_url": "https://openreview.net/pdf?id=_adSMszz_g9",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    },
+    {
+      "forum_id": "_b8l7rVPe8z",
+      "decision": "REJECT",
+      "forum_url": "https://openreview.net/forum?id=_b8l7rVPe8z",
+      "pdf_url": "https://openreview.net/pdf?id=_b8l7rVPe8z",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    },
+    {
+      "forum_id": "_bF8aOMNIdu",
+      "decision": "REJECT",
+      "forum_url": "https://openreview.net/forum?id=_bF8aOMNIdu",
+      "pdf_url": "https://openreview.net/pdf?id=_bF8aOMNIdu",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    },
+    {
+      "forum_id": "_cadenVdKzF",
+      "decision": "REJECT",
+      "forum_url": "https://openreview.net/forum?id=_cadenVdKzF",
+      "pdf_url": "https://openreview.net/pdf?id=_cadenVdKzF",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    },
+    {
+      "forum_id": "_CrmWaJ2uvP",
+      "decision": "REJECT",
+      "forum_url": "https://openreview.net/forum?id=_CrmWaJ2uvP",
+      "pdf_url": "https://openreview.net/pdf?id=_CrmWaJ2uvP",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    },
+    {
+      "forum_id": "_Ea-ECV6Vkm",
+      "decision": "REJECT",
+      "forum_url": "https://openreview.net/forum?id=_Ea-ECV6Vkm",
+      "pdf_url": "https://openreview.net/pdf?id=_Ea-ECV6Vkm",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    },
+    {
+      "forum_id": "_HsKf3YaWpG",
+      "decision": "REJECT",
+      "forum_url": "https://openreview.net/forum?id=_HsKf3YaWpG",
+      "pdf_url": "https://openreview.net/pdf?id=_HsKf3YaWpG",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    },
+    {
+      "forum_id": "_i3ASPp12WS",
+      "decision": "ACCEPT",
+      "forum_url": "https://openreview.net/forum?id=_i3ASPp12WS",
+      "pdf_url": "https://openreview.net/pdf?id=_i3ASPp12WS",
+      "forum_index_result": "404_no_capture",
+      "pdf_index_result": "404_no_capture"
+    }
+  ],
+  "totals": {
+    "sampled_papers": 10,
+    "forum_captures": 0,
+    "pdf_captures": 0,
+    "exact_url_queries": 20
+  },
+  "adjudication": "COMMON_CRAWL_ROUTE_NOT_PROMISING_AT_SCALE",
+  "outcome_data_observed": false
+}
