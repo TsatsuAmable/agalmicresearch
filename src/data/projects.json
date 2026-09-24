@@ -11,8 +11,8 @@
       "state": "active",
       "kind": "empirical research",
       "summary": "Study how limited human evaluation should be used when AI can produce more candidates than people can review.",
-      "current_result": "The first study reconstructed 1,815 ICLR 2020 papers but the sample was too small to answer the planned question with enough precision, so citation outcomes were left unopened. The larger follow-up now needs additional historical data that is not biased by later decisions.",
-      "next": "Find an additional neutral historical cohort, then rerun the feasibility checks before opening any outcome data.",
+      "current_result": "Track A v0.2 ended ABSTAIN_PRE_OUTCOME_SOURCE_INADEQUATE without opening citation outcomes. A separate held-out-review benchmark then found that disagreement gives only a small, stable advantage over random allocation for general review-update value, while a simple near-boundary rule captures many more recommendation-boundary crossings.",
+      "next": "Test the simplest boundary-targeting rule against a preregistered review-work-saved target before considering any learned or bespoke routing mechanism.",
       "links": [
         {
           "label": "Programme source",
