@@ -1,8 +1,8 @@
 {
   "programme": "Attention Allocation Under Cognitive Abundance",
   "updated": "2026-09-24",
-  "phase": "track-a-v0.2-source-comparability-peeread-2017-audit",
-  "gate_status": "V02_SOURCE_COMPARABILITY_AMENDMENT_FROZEN_OUTCOMES_CLOSED",
+  "phase": "track-a-v0.2-terminal-source-inadequate",
+  "gate_status": "ABSTAIN_PRE_OUTCOME_SOURCE_INADEQUATE",
   "completed_artefacts": [
     "PROGRAMME.md",
     "prior-art-ledger.json",
@@ -76,9 +76,12 @@
     "t0/ICLR2021_IMMUTABLE_ARCHIVE_RECOVERY_LOG.md",
     "t0/ICLR2021_COMMON_CRAWL_RETRY_RESULT.md",
     "t0/commoncrawl_audit/iclr2021_cc_main_2020_45_retry.json",
-    "t0/TRACK_A_V02_SOURCE_COMPARABILITY_AMENDMENT.md"
+    "t0/TRACK_A_V02_SOURCE_COMPARABILITY_AMENDMENT.md",
+    "t0/peeread_audit/iclr2017_peeread_source_audit.json",
+    "t0/ICLR2017_PEERREAD_SOURCE_AUDIT.md",
+    "t0/TRACK_A_V02_TERMINAL_RESULT.md"
   ],
-  "active_experiment": "Track A v0.2 archive recovery is closed after OpenReview confirmed the requested ICLR 2021 historical PDF is not public and a healthy CC-MAIN-2020-45 bounded retry found 0/10 exact forum captures and 0/10 exact PDF captures. A prospective source-comparability amendment is now frozen. The next source audit is PeerRead ICLR 2017; the pre-cutoff ICLR 2021 arXiv set may only enter later as an explicitly restricted source-defined stratum. Bulk paper acquisition and all citation outcomes remain closed.",
+  "active_experiment": "Track A v0.2 is terminal: ABSTAIN_PRE_OUTCOME_SOURCE_INADEQUATE. PeerRead ICLR 2017 is rejected as T0 because a preserved accepted-paper PDF demonstrably includes material added after reviewer discussion. With PeerRead excluded, the only remaining amended source contribution is the restricted 2021 pre-cutoff arXiv set (maximum 487), giving an optimistic 4,547 candidates with the verified 4,060 baseline, below the frozen 4,600 floor before technical or identity loss. No citation outcomes were opened.",
   "evidence_collected": [
     "Selective-label problem is established prior art and directly threatens naive retrospective policy evaluation.",
     "Active learning already studies label allocation under expensive human-oracle budgets.",
@@ -168,7 +171,10 @@
     "OpenReview legacy original-reference resolution is currently blocked by ChallengeRequiredError; the 2026-09-20 support request has only an automated acknowledgement so far.",
     "On 2026-09-24 Common Crawl CC-MAIN-2020-45 was queryable again: an example.com control returned captures, while a decision-blind lexicographic sample of ten eligible ICLR 2021 forum IDs returned 0/10 exact forum captures and 0/10 exact PDF captures. The Common Crawl archive route is therefore not promising at scale under the frozen bounded retry.",
     "PeerRead's public ICLR 2017 repository contains 427 paper PDFs, 427 parsed-paper records and 427 review/decision records across train/dev/test. The source is now the first candidate for a same-venue historical-source audit under the frozen source-comparability amendment.",
-    "PeerRead's NIPS 2013-2017 review corpus is not suitable as a neutral full candidate frame because the source paper states that NIPS review data cover accepted papers only; arXiv 'probably rejected' labels are inferred rather than actual conference rejection decisions."
+    "PeerRead's NIPS 2013-2017 review corpus is not suitable as a neutral full candidate frame because the source paper states that NIPS review data cover accepted papers only; arXiv 'probably rejected' labels are inferred rather than actual conference rejection decisions.",
+    "PeerRead ICLR 2017 contains 427 genuine conference-submission records (172 accepted, 255 rejected). Exact normalized-title mapping to the current direct ACCEPT/REJECT frame yields 387 unique matches with 387/387 decision agreement, but temporal provenance fails: PeerRead paper 304 contains topological sort and quicksort, which its own meta-review says were added based on reviewer discussion.",
+    "The local ICLR 2017 conference database contains 443 direct ACCEPT/REJECT records (198 ACCEPT, 245 REJECT), correcting the earlier optimistic planning count of 442 by one record; this does not alter any source-feasibility verdict.",
+    "With PeerRead rejected, the frozen v0.2 amendment can contribute at most 487 restricted 2021 arXiv papers beyond the verified 4,060 baseline. The optimistic 4,547 total is 53 below the 4,600 exact-observable floor before any further loss, so v0.2 terminates ABSTAIN_PRE_OUTCOME_SOURCE_INADEQUATE."
   ],
   "unresolved_methodological_risks": [
     "OpenReview interface/service availability and possible endpoint permissions; do not bypass source controls",
@@ -338,6 +344,6 @@
       "reason": "identity acquisition, clustering, fixed-window citation acquisition and preregistered evaluation are implemented and synthetic-tested without real outcome inspection"
     }
   ],
-  "next_autonomous_action": "audit PeerRead ICLR 2017 against the frozen canonical 2017 ACCEPT/REJECT frame: map titles/identities, measure decision agreement, establish submission-draft provenance, and quantify technical coverage by decision before any new bulk acquisition or citation-outcome access",
+  "next_autonomous_action": "begin Track A v0.3 with a metadata/provenance-only screen for an additional source population, prioritizing same-venue ICLR 2016 before considering cross-venue cohorts; keep all Track A citation outcomes sealed",
   "decisions_requiring_human_attention": []
 }
