@@ -74,6 +74,14 @@ const findings = [
     survived: 'The objective matters. A simple near-boundary rule captured 65.3% of cases where the hidden review moved the aggregate across the recommendation midpoint, suggesting that decision-instability and general opinion change require different allocation policies.',
     href: 'https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/EXPERT_ATTENTION_PHASE1B_FINDINGS.md',
   },
+  {
+    n: '10',
+    title: 'A simple near-boundary rule preserved recommendation-changing reviews with substantially less simulated review work.',
+    status: 'fresh-split validation result',
+    copy: 'Across 20 new deterministic hold-out splits, prioritising papers whose two observed ratings averaged closest to the recommendation midpoint reached 95% pooled midpoint-crossing recall while saving a median 45% of simulated third-review work. Random routing saved essentially none at the same preservation target.',
+    survived: 'The simple rule, not a learned allocator. The result is retrospective and pooled across years, so any operational follow-up must use sequential review state and enforce preservation floors within each rating regime.',
+    href: 'https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/EXPERT_ATTENTION_PHASE1C_FINDINGS.md',
+  },
 ];
 ---
 <Layout
