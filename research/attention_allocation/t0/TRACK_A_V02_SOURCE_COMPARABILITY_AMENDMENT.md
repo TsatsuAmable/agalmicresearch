@@ -149,3 +149,21 @@ If the admitted source strata cannot produce a sufficiently precise design after
 Audit the PeerRead ICLR 2017 source first. It is the highest-value unresolved source because it may add a nearly complete historical same-venue cohort without changing the target population.
 
 Only after that audit should the programme decide whether the restricted 2021 arXiv stratum needs technical acquisition.
+
+## Amendment outcome
+
+The amendment has now been adjudicated.
+
+PeerRead ICLR 2017 fails the submission-time provenance gate because at least one preserved accepted-paper PDF demonstrably incorporates changes added after reviewer discussion. It is therefore not admitted.
+
+The only remaining permitted source stratum is the conservatively deduplicated ICLR 2021 pre-cutoff arXiv set, with an optimistic maximum of **487** records. Combined with the verified 2018-2020 subtotal:
+
+`4,060 + 487 = 4,547 < 4,600`
+
+The amended design cannot reach the frozen precision floor even before technical extraction or exact-identity loss.
+
+Final amendment verdict:
+
+`ABSTAIN_PRE_OUTCOME_SOURCE_INADEQUATE`
+
+No citation outcomes were opened. Any continuation is Track A v0.3 under a new prospectively frozen source-population design.
