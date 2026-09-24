@@ -1,24 +1,74 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const findings = [
+  {
+    n: '01',
+    title: 'The first attention-allocation study stopped before outcomes were opened.',
+    status: 'negative feasibility result',
+    copy: 'The study reconstructed 1,815 usable ICLR 2020 papers, but that sample was too small to distinguish the planned effects with enough precision. The citation outcomes stayed sealed rather than weakening the test after seeing the answer.',
+    survived: 'A clean negative result and a better estimate of how much data a useful successor study needs.',
+    href: 'https://github.com/TsatsuAmable/agalmicresearch/blob/main/research/attention_allocation/t0/TRACK_A_V01_FEASIBILITY_RESULT.md',
+  },
+  {
+    n: '02',
+    title: 'The larger follow-up is limited by trustworthy historical data.',
+    status: 'open constraint',
+    copy: 'The available unbiased historical sources still fall short of the planned sample. A convenient 2021 source was rejected because its availability depended on the historical decision, which would introduce selection bias.',
+    survived: 'The next problem is finding a neutral historical cohort, not writing more analysis code.',
+    href: 'https://github.com/TsatsuAmable/agalmicresearch/blob/main/research/attention_allocation/t0/TRACK_A_V02_SOURCE_FEASIBILITY_RESULT.md',
+  },
+  {
+    n: '03',
+    title: 'Optimising for accepted papers can discard disagreement.',
+    status: 'descriptive result',
+    copy: 'In an early expert-attention benchmark using a 20% review budget, ranking by post-review score preserved many historically accepted papers but preserved very few high-disagreement cases.',
+    survived: 'A useful allocation policy must preserve more than agreement with a past institutional decision.',
+    href: 'https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/EXPERT_ATTENTION_PHASE1_FINDINGS.md',
+  },
+  {
+    n: '04',
+    title: 'Generic “epistemic handoff” is not a new institution.',
+    status: 'claim narrowed',
+    copy: 'Existing work on knowledge transfer, brokerage, absorptive capacity and expert evaluation already covers much of the general problem of moving knowledge toward people able to assess or use it.',
+    survived: 'A narrower question: can a concrete handoff protocol make missing expertise and changes in confidence easier to track?',
+    href: '/drafts/epistemic-handoff/',
+  },
+  {
+    n: '05',
+    title: 'A distinct new economics of epistemic abundance has not yet been established.',
+    status: 'open question',
+    copy: 'Established economics already contains strong accounts of bottlenecks, complements, production constraints, innovation and rebound effects.',
+    survived: 'An empirical question about how bottlenecks, value and rents move when a previously expensive capability becomes cheap.',
+    href: '/research/',
+  },
+  {
+    n: '06',
+    title: 'Nemosyne is useful as a bounded testbed, not as proof of the whole programme.',
+    status: 'boundary established',
+    copy: 'Software experiments can test specific questions about representation, analyst performance and discovery workflows. They cannot by themselves establish broader economic or institutional claims.',
+    survived: 'Use Nemosyne where the intervention and outcome can actually be observed and measured.',
+    href: 'https://nemosyne.world',
+  },
+];
 ---
 <Layout
-  title="Results & Retired Claims"
-  description="Agalmic Research results, negative findings, narrowed claims and retired novelty claims, separated from research infrastructure and exploratory possibilities."
+  title="Results"
+  description="Findings, negative results and corrections from Agalmic Research, explained in plain language."
 >
   <header class="page-head">
     <div class="shell">
-      <p class="eyebrow">Results · corrections · retirements</p>
-      <h1>What has the inquiry actually changed?</h1>
-      <p class="lede">Methods, provenance, taxonomies and research interfaces are infrastructure. This page records the smaller set of outcomes where prior art, formalization, evidence, criticism or implementation has constrained a claim.</p>
+      <p class="eyebrow">Results</p>
+      <h1>What have we learned or changed our minds about?</h1>
+      <p class="lede">A useful result can be positive, negative or corrective. This page records what testing, prior work and implementation have forced us to believe more narrowly than before.</p>
     </div>
   </header>
 
   <section class="section">
     <div class="shell thesis">
-      <p class="eyebrow">Result rule</p>
-      <blockquote>A result is something the programme is less free to believe after the inquiry than before it.</blockquote>
-      <p>Positive findings count. So do failed novelty claims, null results, narrowed definitions, abandoned mechanisms and evidence that a simpler existing explanation is sufficient.</p>
-      <p>Items here may still be internal working results rather than peer-reviewed scientific findings. Their epistemic status is stated explicitly.</p>
+      <p class="eyebrow">A simple rule</p>
+      <blockquote>A result should change what we are willing to claim or what we do next.</blockquote>
+      <p>Some items here are working research results rather than peer-reviewed findings. Their status is shown so readers can distinguish evidence from interpretation and open questions.</p>
     </div>
   </section>
 
@@ -27,99 +77,23 @@ import Layout from '../layouts/Layout.astro';
       <div class="section-head">
         <span class="section-number">Current record</span>
         <div class="section-copy">
-          <h2>Claims that have already become narrower.</h2>
-          <p>The point is not to accumulate defeats. It is to make it visible when the machinery actually bites.</p>
+          <h2>Findings and corrections so far.</h2>
+          <p>The emphasis is on what changed, not on the machinery that produced it.</p>
         </div>
       </div>
       <div class="index-list">
-        <article class="index-item">
-          <span class="index-meta">R01</span>
-          <div>
-            <h3>Generic epistemic handoff is not a novel institution.</h3>
-            <p>Absorptive capacity, knowledge transfer, knowledge brokerage, innovation intermediaries, transactive memory and idea-evaluation research already cover the generic problem of moving knowledge toward actors able to use or evaluate it.</p>
-            <p><strong>What survived:</strong> a narrower claim-sensitive protocol that makes the authority deficit, requested epistemic function, contribution provenance and resulting warrant explicit.</p>
-            <p><a href="/drafts/epistemic-handoff/">Inspect the narrowed draft →</a></p>
-          </div>
-          <span class="index-status">narrowed</span>
-        </article>
-
-        <article class="index-item">
-          <span class="index-meta">R02</span>
-          <div>
-            <h3>Expert-attention triage is established; the allocation test remains open.</h3>
-            <p>AI-assisted idea screening, selective prediction, learning to defer, active learning, editorial triage and value-of-information already establish the generic mechanism of protecting expensive human evaluation with cheaper screening.</p>
-            <p><strong>What remains:</strong> test whether a provenance- and authority-aware routing policy can increase useful epistemic state change per expert-hour while controlling false negatives, status bias and presentation gaming.</p>
-            <p><a href="/drafts/handoff-triage-formalism/">Inspect the formalism and test →</a></p>
-          </div>
-          <span class="index-status">open test</span>
-        </article>
-
-        <article class="index-item">
-          <span class="index-meta">R03</span>
-          <div>
-            <h3>The economics of epistemic abundance has not yet produced a distinct economic primitive.</h3>
-            <p>The current formal-null review finds mature antecedents in production economics, complementarity, bottlenecks, innovation theory, production networks and rebound effects. The programme therefore does not presently claim a new law or primitive merely because AI makes candidate knowledge cheaper.</p>
-            <p><strong>What survived:</strong> an empirical question about how binding constraints, shadow values and rents move when a previously costly capability becomes cheap.</p>
-            <p><a href="/frontier/">See its current option status →</a></p>
-          </div>
-          <span class="index-status">null / option</span>
-        </article>
-
-        <article class="index-item">
-          <span class="index-meta">R04</span>
-          <div>
-            <h3>The effective adjacent possible is inherited vocabulary, not Agalmic terminology.</h3>
-            <p>The programme's innovation-search work now treats the adjacent possible and effective adjacent possible as established antecedents rather than territorial novelty claims.</p>
-            <p><strong>What survived:</strong> the practical question of how machine cognition changes search breadth, recognition, validation, assimilation and realization.</p>
-            <p><a href="/lineage/">Inspect the lineage register →</a></p>
-          </div>
-          <span class="index-status">novelty retired</span>
-        </article>
-
-        <article class="index-item">
-          <span class="index-meta">R05</span>
-          <div>
-            <h3>Nemosyne cannot validate the whole Agalmic programme.</h3>
-            <p>Software can test bounded claims about representation, analyst performance, provenance interfaces, cognitive burden and discovery workflows. It cannot by itself establish macroeconomic claims about displaced scarcity, institutional allocation or economy-wide abundance.</p>
-            <p><strong>What survived:</strong> Nemosyne as an experimental instrument for the claims its interventions can actually identify.</p>
-            <p><a href="/manifesto/">See the applied-research boundary →</a></p>
-          </div>
-          <span class="index-status">boundary set</span>
-        </article>
-
-        <article class="index-item">
-          <span class="index-meta">R06</span>
-          <div>
-            <h3>Track A v0.1 stopped before outcomes because the design was not precise enough.</h3>
-            <p>The ICLR 2020 reconstruction retained 1,815/1,816 decision-time candidates and passed the technical and lineage gates. But none of five preregistered policy-vs-random contrasts could resolve the frozen five-percentage-point smallest effect: prospective 95% half-widths were approximately 7.7–7.9 points.</p>
-            <p><strong>What survived:</strong> a real <code>ABSTAIN_PRE_OUTCOME</code> result. Citation outcomes were never queried, preserving the outcome box for a genuinely prospective successor design.</p>
-            <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/research/attention_allocation/t0/TRACK_A_V01_FEASIBILITY_RESULT.md">Inspect the frozen feasibility result ↗</a></p>
-          </div>
-          <span class="index-status">negative feasibility result</span>
-        </article>
-
-        <article class="index-item">
-          <span class="index-meta">R07</span>
-          <div>
-            <h3>Track A v0.2 is blocked by neutral historical state, not by implementation.</h3>
-            <p>Verified pre-review or decision-time sources from ICLR 2018–2020 provide an optimistic 4,060-candidate upper bound. Even granting all 442 ICLR 2017 ACCEPT/REJECT records as perfect gives only 4,502 candidates, below the 4,600 exact-observable target before identity attrition.</p>
-            <p>The tempting ICLR 2021 <code>reviewed_version_(pdf)</code> route was rejected because availability is perfectly linked to historical decision in the archived frame: 0/859 ACCEPT versus 1,735/1,735 REJECT.</p>
-            <p><strong>What survived:</strong> a source-recovery problem. No new bulk text acquisition and no citation acquisition proceed until a selection-neutral additional cohort is found.</p>
-            <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/research/attention_allocation/t0/TRACK_A_V02_SOURCE_FEASIBILITY_RESULT.md">Inspect the source-feasibility result ↗</a></p>
-          </div>
-          <span class="index-status">gate closed</span>
-        </article>
-
-        <article class="index-item">
-          <span class="index-meta">R08</span>
-          <div>
-            <h3>Acceptance-efficient triage can destroy disagreement preservation.</h3>
-            <p>In the Phase-1 expert-attention benchmark at a 20% review budget, post-review raw-score ranking preserved about 60.8% of historically accepted papers but only 10.0% of high-disagreement cases. Random allocation preserved roughly 20% of each by construction.</p>
-            <p><strong>What survived:</strong> a multidimensional preservation requirement. Efficient reproduction of an institutional decision is not enough evidence that scarce expert attention is being allocated well.</p>
-            <p><a href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/EXPERT_ATTENTION_PHASE1_FINDINGS.md">Inspect the Phase-1 findings ↗</a></p>
-          </div>
-          <span class="index-status">descriptive result</span>
-        </article>
+        {findings.map((item) => (
+          <article class="index-item">
+            <span class="index-meta">R{item.n}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+              <p><strong>What remains:</strong> {item.survived}</p>
+              <p><a href={item.href}>Read the supporting record →</a></p>
+            </div>
+            <span class="index-status">{item.status}</span>
+          </article>
+        ))}
       </div>
     </div>
   </section>
@@ -127,26 +101,17 @@ import Layout from '../layouts/Layout.astro';
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">What does not belong here</p>
-        <h2>Scaffolding is not a finding.</h2>
+        <p class="eyebrow">Why keep negative results?</p>
+        <h2>Stopping can be progress.</h2>
       </div>
       <div class="prose">
-        <p>A provenance schema, Memory Palace representation, handoff register, Active Frontier, possibility portfolio or website architecture can be useful infrastructure. Its existence is not evidence that the underlying research claims are true.</p>
-        <p>Those systems earn their keep by making inquiry cheaper, clearer or more falsifiable. If they consume more attention than they save, they should be simplified or removed.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Retirement discipline</p>
-        <h2>Lineage is allowed to kill our words.</h2>
-      </div>
-      <div class="prose">
-        <p>When a proposed Agalmic concept collapses cleanly into established theory, the default response is to use the established theory. The question may remain interesting even when the local label does not.</p>
-        <div class="callout"><p><strong>A failed novelty claim is evidence that prior-art search worked.</strong></p></div>
-        <p>Future retired claims and negative results should be added here rather than quietly disappearing from the public record.</p>
+        <p>If a study is too weak to answer its question, if prior work already explains a proposed idea, or if a convenient dataset would bias the result, recording that limit prevents wasted effort and overclaiming.</p>
+        <p class="large">The aim is not to make every idea survive. It is to make the surviving ideas better.</p>
+        <div class="actions">
+          <a class="button" href="/research/">Current research</a>
+          <a class="button secondary" href="/publications/">Publications</a>
+          <a class="button secondary" href="/lineage/">Prior work and lineage</a>
+        </div>
       </div>
     </div>
   </section>
