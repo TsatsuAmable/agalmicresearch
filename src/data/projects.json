@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1",
   "updated": "2026-09-20",
-  "purpose": "A public project map that separates Agalmic-owned research, applied practice, supporting infrastructure and independent related testbeds.",
-  "direction": "Run one serious empirical research programme, one capability-building practice, and a small number of clearly bounded testbeds. Preserve the rest as options rather than pretending every idea is an active project.",
+  "purpose": "A plain-language public map of current research, related experiments and supporting tools.",
+  "direction": "Focus on a small number of questions that can produce evidence or useful capability. Keep supporting tools and speculative ideas secondary.",
   "projects": [
     {
       "id": "project:attention-allocation",
@@ -10,9 +10,9 @@
       "relationship": "Agalmic-owned flagship empirical programme",
       "state": "active",
       "kind": "empirical research",
-      "summary": "Test how scarce evaluation should be allocated when candidate generation is cheap, while preserving a temporal firewall, selection-aware observability and explicit ABSTAIN conditions.",
-      "current_result": "Track A v0.1 reached ABSTAIN_PRE_OUTCOME before citations were opened because none of five primary contrasts could resolve the preregistered five-percentage-point effect. The v0.2 multi-cohort redesign is now blocked on selection-neutral historical text, not on code.",
-      "next": "Recover a neutral additional historical cohort, preferably ICLR 2021, then rerun the source and precision gates before any further bulk acquisition or citation query.",
+      "summary": "Study how limited human evaluation should be used when AI can produce more candidates than people can review.",
+      "current_result": "The first study reconstructed 1,815 ICLR 2020 papers but the sample was too small to answer the planned question with enough precision, so citation outcomes were left unopened. The larger follow-up now needs additional historical data that is not biased by later decisions.",
+      "next": "Find an additional neutral historical cohort, then rerun the feasibility checks before opening any outcome data.",
       "links": [
         {
           "label": "Programme source",
@@ -34,9 +34,9 @@
       "relationship": "Agalmic-owned applied practice",
       "state": "active",
       "kind": "capability practice",
-      "summary": "Use abundant machine cognition against real constraints in scholarliness, software engineering and engineering leadership, while measuring what remains when scaffolding is reduced.",
-      "current_result": "The Cognitive Kernel has progressed from prompt conformance to a prospective consequence protocol with sealed execution receipts. The next useful evidence is consequence-bearing matched work, not more framework elaboration.",
-      "next": "Execute the frozen consequence pilot on real task pairs and test human attention, verified completion, rework and boundary outcomes before expanding the intervention.",
+      "summary": "Test whether AI assistance can improve learning and performance in real work without leaving the human unable to understand or defend the result.",
+      "current_result": "The current Cognitive Kernel experiment is ready to move from prompt testing to matched real-world tasks. The useful evidence now is whether it improves outcomes while reducing rework and unnecessary human attention.",
+      "next": "Run the frozen pilot on real task pairs and compare completion, rework, human attention and understanding before adding more machinery.",
       "links": [
         {
           "label": "Practice",
@@ -54,9 +54,9 @@
       "relationship": "Independent related project and experimental testbed",
       "state": "related",
       "kind": "external testbed",
-      "summary": "Nemosyne is not owned by Agalmic Research. Where useful, Agalmic methods can be tested against its representation, verification and discovery workflows, and findings can flow in either direction without collapsing project ownership.",
-      "current_result": "The strongest Agalmic relevance is bounded: Nemosyne can test claims about representation, verification attention, provenance and discovery workflow. It cannot validate the whole Agalmic programme.",
-      "next": "Use Nemosyne only for bounded experiments whose intervention and outcome are genuinely observable; keep its product roadmap and operational ownership outside Agalmic Research.",
+      "summary": "Nemosyne is an independent project that can provide concrete experiments on representation, verification and discovery without becoming part of Agalmic Research.",
+      "current_result": "Its useful role is specific: test measurable questions about how representations and workflows affect people. It cannot establish the wider economic or institutional claims of Agalmic Research.",
+      "next": "Use Nemosyne only where the intervention and outcome can be observed and measured, while keeping project ownership separate.",
       "links": [
         {
           "label": "nemosyne.world",
@@ -74,9 +74,9 @@
       "relationship": "Agalmic-owned precursor / supporting evidence",
       "state": "absorbed",
       "kind": "supporting research",
-      "summary": "The Phase-1 ICLR preservation benchmark showed that optimizing historical acceptance can erase disagreement and topic coverage. Its core allocation question has been absorbed into the stronger Attention Allocation programme.",
-      "current_result": "At a 20% review budget, post-review score ranking preserved about 60.8% of accepted papers but only 10.0% of high-disagreement cases, compared with roughly 20% under random allocation.",
-      "next": "Preserve the result and reuse the diagnostics where helpful; do not run a parallel competing programme unless a distinct question re-emerges.",
+      "summary": "An earlier benchmark tested what gets lost when scarce review effort is allocated by simple ranking. Its main question now feeds the broader Attention Allocation study.",
+      "current_result": "At a 20% review budget, ranking by post-review score preserved about 60.8% of accepted papers but only 10.0% of high-disagreement cases, compared with roughly 20% under random allocation.",
+      "next": "Keep the result and reuse its diagnostics where useful rather than maintaining a separate research programme.",
       "links": [
         {
           "label": "Phase-1 findings",
@@ -86,13 +86,13 @@
     },
     {
       "id": "project:frontier-throughput",
-      "title": "Frontier Throughput Instrumentation",
+      "title": "Research Progress Instrumentation",
       "relationship": "Agalmic supporting infrastructure",
       "state": "supporting",
       "kind": "measurement infrastructure",
-      "summary": "An append-only event model for tracking generation, selection, validation, realization and assimilation without pretending the machinery itself is a research result.",
-      "current_result": "The instrument exists and can make scarcity transitions replayable, but it should earn further development only when it reduces uncertainty in an active project.",
-      "next": "Use it opportunistically inside active work; do not consume a frontier slot merely to elaborate the instrumentation.",
+      "summary": "A lightweight event log for recording how candidate ideas move through selection, testing and use.",
+      "current_result": "The instrument exists, but it should receive more development only when it helps an active project answer a real question.",
+      "next": "Use it only where it reduces uncertainty or manual work in active research.",
       "links": [
         {
           "label": "Instrumentation source",
