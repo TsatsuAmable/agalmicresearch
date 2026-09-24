@@ -4,85 +4,68 @@ import Layout from '../layouts/Layout.astro';
 const domains = [
   {
     n: '01',
-    title: 'Scholarliness & epistemic judgment',
-    constraint: 'Depth, calibration, source judgment, disciplinary mastery and the ability to defend claims without borrowing the model\'s fluency.',
-    practice: 'Use real papers, arguments and epistemic artefacts for cold interpretation, CLAIM interrogation, source audits, adversarial review, viva defence and delayed unaided transfer.',
-    evidence: 'Better reconstruction, source discrimination, calibration, authority-boundary recognition and transfer after the AI scaffold is reduced.',
+    title: 'Research and learning',
+    problem: 'AI can make reading, synthesis and explanation faster without necessarily improving judgment or understanding.',
+    test: 'Use real papers and arguments, then check what can still be explained, challenged and defended with less assistance.',
+    signal: 'Better source judgment, clearer reasoning and stronger unaided explanation.',
   },
   {
     n: '02',
-    title: 'Software development',
-    constraint: 'Systems reasoning, architecture, debugging, testing, performance, reliability, security and depth in languages and runtimes can lag behind the speed at which AI can produce code.',
-    practice: 'Use live engineering work twice: first as productive work, then selectively as training. Predict designs before critique, explain unfamiliar diffs, diagnose failures, derive tests, reimplement small critical pieces and review AI code adversarially.',
-    evidence: 'Stronger unaided code review, faster diagnosis, better architecture decisions, more accurate risk prediction and increasing ability to explain why the system works rather than only that it works.',
+    title: 'Software engineering',
+    problem: 'AI can produce code faster than a person can understand the architecture, risks and failure modes behind it.',
+    test: 'Use AI on real engineering work, then test whether design choices, failures and critical code can still be explained and reviewed independently.',
+    signal: 'Better debugging, stronger code review, clearer architecture decisions and less dependence on opaque generated code.',
   },
   {
     n: '03',
     title: 'Engineering leadership',
-    constraint: 'Judgment under uncertainty, technical strategy, prioritization, delegation, coaching, stakeholder alignment and risk leadership are difficult to improve through output automation alone.',
-    practice: 'Use AI as a simulation environment: pre-commit to decisions, rehearse design reviews and difficult conversations, attack strategy from competing stakeholder positions, run incident/tabletop scenarios and compare predicted outcomes with what actually happened.',
-    evidence: 'Clearer decision records, fewer avoidable reversals, better delegation, stronger coaching, more explicit trade-offs and improved outcomes on real teams and projects.',
+    problem: 'Faster output does not automatically improve prioritization, delegation, communication or judgment under uncertainty.',
+    test: 'Use AI to rehearse decisions, reviews and difficult scenarios, then compare predictions with what actually happens.',
+    signal: 'Clearer trade-offs, fewer avoidable reversals and better decisions in real work.',
   },
   {
     n: '04',
-    title: 'Nemosyne / Moneta · independent testbed',
-    constraint: 'Implementation detail can consume the attention needed to explore the representation and discovery space, while machine-generated systems can eventually outrun the curator\'s understanding.',
-    practice: 'Separate discovery from ownership. In discovery mode, use AI aggressively to search, prototype and expose adjacent possibilities. Preserve provenance, assumptions and roads not taken. When a direction survives, enter epistemic reconstruction: derive the architecture, inspect evidence, rebuild or refactor critical internals and demonstrate understanding through tests and unaided defence.',
-    evidence: 'The project explores widely without mistaking prototypes for warranted knowledge, while the durable core increasingly becomes understandable, testable and defensible by its human curator.',
+    title: 'Nemosyne / Moneta',
+    problem: 'AI can accelerate experimentation so quickly that implementation may outrun human understanding.',
+    test: 'Use AI freely to explore possibilities, then reconstruct and test the parts that become important enough to keep.',
+    signal: 'A system that remains understandable, testable and maintainable while still benefiting from fast exploration.',
   },
 ];
 
-const cycle = [
-  ['Find the constraint', 'Ask what capability is actually limiting the next meaningful piece of work. Do not optimize the already-abundant part merely because AI makes it easy.'],
-  ['Search the inheritance', 'Look first for existing knowledge, tools, curricula, software, datasets and people who have already paid part of the discovery cost. Prior art is usable infrastructure.'],
-  ['Choose the mode', 'Decide whether the present task is discovery, augmentation, capability formation, handoff, scarcity displacement or durable production. Different modes justify different levels of AI assistance.'],
-  ['Do the work', 'Attach learning to live projects wherever possible. The work product and the capability-building episode should usually be the same event.'],
-  ['Test transfer', 'Check what remains when the scaffold is reduced: explanation, reconstruction, judgment, diagnosis, creation or defence on a new problem.'],
-  ['Move the frontier', 'Record what became easier, what is still scarce and whether the next constraint should be learned, tooled, delegated, handed off, displaced with inherited abundance or simply accepted.'],
+const steps = [
+  ['Find the real bottleneck', 'Ask what is actually preventing better work or better understanding.'],
+  ['Use the abundance', 'Apply AI, existing knowledge, software, data or other available resources to that bottleneck.'],
+  ['Do real work', 'Test the idea inside work that already matters rather than creating artificial exercises where possible.'],
+  ['Check what remains', 'Reduce the assistance and see whether understanding, judgment or performance has actually improved.'],
 ];
 ---
-<Layout title="Practice" description="The inward practice of Agalmic Research: use existing abundance to identify and relax constraints on personal capability, then contribute outward when something genuinely useful emerges.">
+<Layout
+  title="Practice"
+  description="Agalmic Research experiments with whether AI can increase durable human capability, not just make output faster."
+>
   <header class="page-head">
     <div class="shell">
-      <p class="eyebrow">Practice before proclamation</p>
-      <h1>Use abundance to expand capability, beginning with the practitioner.</h1>
-      <p class="lede">Agalmic Research is currently being used first as a personal capability laboratory. The aim is not to manufacture novelty. It is to identify real constraints in life and work, inherit what already exists, and test whether abundant knowledge and machine cognition can be converted into durable human capability.</p>
+      <p class="eyebrow">Practice</p>
+      <h1>Can AI make people more capable, not just more productive?</h1>
+      <p class="lede">This part of Agalmic Research uses real work as a testbed. The question is simple: when AI makes a task easier, does the person become better able to understand, judge and perform that work, or merely better able to produce an answer with help?</p>
     </div>
   </header>
 
   <section class="section">
     <div class="shell thesis">
-      <p class="eyebrow">Operating proposition</p>
-      <blockquote>Apply abundant capability against the current binding constraint, not merely against whatever it can most easily accelerate.</blockquote>
-      <p>A faster artefact is not always evidence of increased capability. Where the objective is learning, judgment or authority, the relevant test is what the person can later understand, reconstruct, decide, create or defend with less assistance.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="shell split">
-      <div>
-        <p class="eyebrow">Machine as scarcity scout</p>
-        <h2>Ask the cognitive machine to inspect the work system too.</h2>
-      </div>
-      <div class="prose">
-        <p class="large">The machine collaborator should not merely wait for tasks. It can help identify which human or material input is limiting the next meaningful outcome and search for ways to make that input less binding.</p>
-        <p>That may mean reusing an open dataset instead of recruiting participants, extracting historical expert decisions instead of immediately asking experts again, automating repetitive evidence processing, using simulation before physical construction, or building enough human understanding to reduce future dependence on a specialist.</p>
-        <p>Every proposed displacement must preserve the outcome that made the scarce input valuable in the first place. An automated shortcut that destroys calibration, fairness, authority or downstream reliability is not an Agalmic gain.</p>
-        <div class="actions">
-          <a class="button" href="/method/">1 + Machine Method</a>
-          <a class="button secondary" href="https://github.com/TsatsuAmable/agalmicresearch/blob/main/docs/SCARCITY_DISPLACEMENT_AGENT_PROMPT.md">Reusable agent prompt ↗</a>
-        </div>
-      </div>
+      <p class="eyebrow">The distinction</p>
+      <blockquote>Faster output is not the same thing as stronger capability.</blockquote>
+      <p>If the goal is learning or judgment, the useful test is what remains after some of the assistance is removed. Can the person explain the result, spot errors, make a decision, solve a related problem or rebuild the important part?</p>
     </div>
   </section>
 
   <section class="section">
     <div class="shell">
       <div class="section-head">
-        <span class="section-number">Current domains</span>
+        <span class="section-number">Current areas</span>
         <div class="section-copy">
-          <h2>Real needs, not a generic self-improvement programme.</h2>
-          <p>The capability map is deliberately non-scalar. Different domains have different evidence, failure modes and legitimate handoff boundaries.</p>
+          <h2>Where we are testing this idea.</h2>
+          <p>The experiments are attached to work that already matters rather than treated as a generic self-improvement programme.</p>
         </div>
       </div>
       <div class="grid">
@@ -90,9 +73,9 @@ const cycle = [
           <article class="card">
             <span class="card-kicker">{item.n}</span>
             <h3>{item.title}</h3>
-            <p><strong>Current constraint:</strong> {item.constraint}</p>
-            <p><strong>Practice:</strong> {item.practice}</p>
-            <p><strong>Evidence of growth:</strong> {item.evidence}</p>
+            <p><strong>The problem:</strong> {item.problem}</p>
+            <p><strong>How we test it:</strong> {item.test}</p>
+            <p><strong>A useful sign:</strong> {item.signal}</p>
           </article>
         ))}
       </div>
@@ -102,14 +85,13 @@ const cycle = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Three AI modes</p>
-        <h2>Discover. Assimilate. Own.</h2>
+        <p class="eyebrow">Using AI well</p>
+        <h2>Explore quickly. Understand what you keep.</h2>
       </div>
       <div class="prose">
-        <p class="large"><strong>Discovery</strong> permits high AI leverage and low commitment. Generate, prototype, compare and preserve possibilities quickly. Outputs are candidates, not knowledge.</p>
-        <p><strong>Assimilation</strong> begins after selection. Reconstruct the argument or system, inspect lineage and evidence, surface assumptions, test understanding and decide what requires deeper learning or expert handoff.</p>
-        <p><strong>Ownership</strong> is required for durable responsibility. Critical decisions and internals should become explainable, testable and maintainable by the people accountable for them, even when AI remains part of the toolchain.</p>
-        <div class="callout"><p><strong>Prototype to discover. Reconstruct to understand. Operate only what can be responsibly defended or appropriately handed off.</strong></p></div>
+        <p class="large">AI is especially useful for widening the search space: generating alternatives, prototyping, comparing approaches and exposing unfamiliar possibilities.</p>
+        <p>But once something becomes important enough to rely on, the standard changes. Critical decisions and systems should become understandable, testable and maintainable by the people responsible for them.</p>
+        <div class="callout"><p><strong>Use AI to explore widely. Build understanding around what survives.</strong></p></div>
       </div>
     </div>
   </section>
@@ -117,14 +99,14 @@ const cycle = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Current evidence task</p>
-        <h2>Stop refining the scaffold. Test consequences.</h2>
+        <p class="eyebrow">Current experiment</p>
+        <h2>Does the Cognitive Kernel improve real work?</h2>
       </div>
       <div class="prose">
-        <p class="large">The Cognitive Kernel has enough protocol machinery for a pilot. The next question is whether it changes real work.</p>
-        <p>The frozen consequence design compares matched control and kernel task pairs on active human minutes, verified completion, downstream rework, boundary violations and later failures. Prompt-level conformance is not treated as capability evidence.</p>
-        <p>Software engineering, engineering leadership and scholarliness are application domains inside this practice. They do not each need their own research programme unless a distinct intervention and test emerge.</p>
-        <p><a href="/projects/">See project state and boundaries →</a></p>
+        <p>The next experiment compares matched real tasks with and without the current Cognitive Kernel guidance.</p>
+        <p>It looks at practical outcomes such as human time, whether the work is actually completed, later rework, mistakes and whether the person can still explain or defend the important decisions.</p>
+        <p class="large">The point is to measure consequences, not whether a prompt sounds sensible.</p>
+        <p><a href="/projects/">See the current project state →</a></p>
       </div>
     </div>
   </section>
@@ -132,14 +114,14 @@ const cycle = [
   <section class="section">
     <div class="shell">
       <div class="section-head">
-        <span class="section-number">Capability cycle</span>
+        <span class="section-number">A simple loop</span>
         <div class="section-copy">
-          <h2>A repeatable inward Agalmic loop.</h2>
-          <p>The cycle is a working practice, not a validated general theory.</p>
+          <h2>How the practice works.</h2>
+          <p>This is a working method, not a claim that the method has already been proven generally.</p>
         </div>
       </div>
       <div class="index-list">
-        {cycle.map(([title, copy], i) => (
+        {steps.map(([title, copy], i) => (
           <article class="index-item">
             <span class="index-meta">{String(i + 1).padStart(2, '0')}</span>
             <div>
@@ -155,13 +137,12 @@ const cycle = [
   <section class="section">
     <div class="shell split">
       <div>
-        <p class="eyebrow">Contribution outward</p>
-        <h2>Contribution is an exit path, not an obligation.</h2>
+        <p class="eyebrow">When something works</p>
+        <h2>Turn useful lessons into things others can use.</h2>
       </div>
       <div class="prose">
-        <p>When the inward practice produces something reusable, a tool, protocol, curriculum, implementation, negative result, research note or clearer route through existing work, it can be released for others. If nothing distinctively useful emerges, the personal capability gain is still a successful outcome.</p>
-        <p class="large">Seek contribution before novelty. Seek novelty only where contribution requires discovery.</p>
-        <p>Research remains important as disciplined inquiry: lineage, testing, criticism, provenance and correction. It need not be the primary product.</p>
+        <p>A successful experiment might produce a better way of working, a reusable tool, a research result, a teaching method or simply stronger human capability.</p>
+        <p>Not every useful outcome needs a new theory or publication. The important question is whether something worthwhile became easier to understand or do.</p>
       </div>
     </div>
   </section>
