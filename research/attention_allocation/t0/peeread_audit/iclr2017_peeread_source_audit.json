@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-24",
+  "source": {
+    "repository": "allenai/PeerRead",
+    "audited_head": "9bb37751781a900cee9e74ec3105997732c8e8e5",
+    "first_iclr_2017_data_commit": "89998022773306fdcad6a4097bf3a2dcd45807c6",
+    "first_iclr_2017_data_commit_date": "2018-02-14T20:08:40-05:00"
+  },
+  "peerread": {
+    "records": 427,
+    "pdfs": 427,
+    "parsed_pdfs": 427,
+    "review_records": 427,
+    "accepted": 172,
+    "rejected": 255,
+    "conference_label": "ICLR 2017 conference submission"
+  },
+  "canonical_2017_frame": {
+    "source": "local frozen conference database used by attention-allocation programme",
+    "submissions": 490,
+    "direct_accept_reject": 443,
+    "accept": 198,
+    "reject": 245,
+    "workshop_track_invites": 47,
+    "note": "This corrects the earlier optimistic planning count of 442 direct ACCEPT/REJECT records to 443 in the audited local database; the one-record difference does not affect any feasibility verdict."
+  },
+  "exact_title_mapping": {
+    "matched": 387,
+    "ambiguous": 0,
+    "peerread_unmatched": 40,
+    "canonical_eligible_unmatched": 56,
+    "mapped_accept": 172,
+    "mapped_reject": 215,
+    "decision_agreement": 387,
+    "decision_disagreement": 0
+  },
+  "temporal_provenance_counterexample": {
+    "peerread_id": "304",
+    "title": "Making Neural Programming Architectures Generalize via Recursion",
+    "accepted": true,
+    "review_blob_sha": "9ec939a789b2186b0344829d9956d87d6633904d",
+    "parsed_pdf_blob_sha": "eb10b8501d39ddcb3a2ab3dbc4a403daf88c178b",
+    "review_evidence": "The meta-review states that topological sort and quicksort were added based on reviewer discussion.",
+    "pdf_evidence": "The preserved PeerRead PDF explicitly presents four tasks: addition, bubble sort, topological sort, and quicksort.",
+    "implication": "At least one accepted PeerRead PDF is a post-review revised manuscript rather than the submission-time paper state."
+  },
+  "adjudication": "PEERREAD_ICLR2017_NOT_T0_ADMISSIBLE",
+  "reason": "The source contains real conference submissions and real decisions, but preserved PDFs are not uniformly submission-time. A post-review revised accepted PDF is directly demonstrated, so the corpus cannot serve as the neutral T0 substrate required by the frozen protocol.",
+  "outcome_data_observed": false
+}
