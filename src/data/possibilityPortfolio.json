@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "updated": "2026-09-20",
+  "updated": "2026-09-25",
   "status": "experimental-public-projection",
   "purpose": "Preserve public-safe possibilities as options while limiting substantial active commitments to a small capability-focused Active Frontier.",
   "wip_limit": 3,
@@ -11,12 +11,13 @@
     "The effective adjacent possible is an established construct in recent innovation research, including Taalbi (2025/2026); Agalmic Research does not claim to originate it.",
     "Epistemic artefact is established terminology in philosophy of science; this portfolio does not claim to originate it.",
     "Constitutional attention is provisional local terminology for a synthesis under lineage review, not a validated novelty claim.",
-    "The 20 September 2026 direction review promotes the empirical Attention Allocation programme, collapses engineering/leadership into the broader Personal Capability Practice, and makes Nemosyne's independent-project boundary explicit."
+    "The 20 September 2026 direction review promotes the empirical Attention Allocation programme, collapses engineering/leadership into the broader Personal Capability Practice, and makes Nemosyne's independent-project boundary explicit.",
+    "25 September 2026 reconciliation: Nemosyne remains an independently owned bounded testbed, not an Agalmic frontier commitment; Machine Discoverability enters the frontier only for adversarial Sprint 0 prior-art/conceptual falsification."
   ],
   "active_frontier": [
     "possibility:attention-allocation-under-abundance",
     "possibility:personal-capability-practice",
-    "possibility:nemosyne-discovery-reconstruction"
+    "possibility:machine-discoverability"
   ],
   "possibilities": [
     {
@@ -44,7 +45,7 @@
       "realization_path": "clear",
       "attention_burden": "high",
       "uncertainty": "high",
-      "next_discriminating_action": "Recover a selection-neutral additional historical cohort, preferably ICLR 2021, then rerun the v0.2 source and prospective-precision gates before any further bulk text or citation acquisition.",
+      "next_discriminating_action": "Freeze and run the next stratified boundary-preservation test: require explicit per-year/rating-regime recall floors before considering any closer-to-operational sequential-review study; do not add a learned allocator unless the fixed rule fails a pre-specified requirement.",
       "publication_sensitivity": "public"
     },
     {
@@ -73,6 +74,35 @@
       "attention_burden": "medium",
       "uncertainty": "medium",
       "next_discriminating_action": "Run the Personal Epistemic Gym on live research and professional artefacts, record assistance level and confidence before critique, then test delayed unaided transfer on unfamiliar material.",
+      "publication_sensitivity": "public"
+    },
+    {
+      "id": "possibility:machine-discoverability",
+      "title": "Machine Discoverability / What Can Machines Find Out?",
+      "state": "active",
+      "summary": "Adversarially test whether a useful problem-level account of machine discoverability exists beyond established learning theory, identifiability, causal discovery, active learning, optimal experimental design, automated scientific discovery, algorithmic information theory, bounded rationality and economics of information.",
+      "lineage_status": "Sprint 0 novelty and reducibility assessment pending; no distinct theory claimed",
+      "lineage_sources": [
+        "computational learning theory",
+        "identifiability and causal discovery",
+        "active learning and optimal experimental design",
+        "automated scientific discovery",
+        "algorithmic information theory",
+        "bounded rationality and economics of information"
+      ],
+      "worthwhile_future": "A falsifiable account of which problem properties make abundant machine cognition productive, and which leave verification, experiment, measurement, feedback or human attention as the binding constraint.",
+      "capacity_created": [
+        "research selection",
+        "problem triage",
+        "discovery-system comparison",
+        "negative-case preservation"
+      ],
+      "frontier_leverage": "strong",
+      "information_gain": "strong",
+      "realization_path": "plausible",
+      "attention_burden": "low",
+      "uncertainty": "high",
+      "next_discriminating_action": "Run adversarial Sprint 0 prior-art and conceptual falsification. Promote to a Discovery Systems Corpus only if the proposed variables or risky predictions survive reduction to adjacent fields.",
       "publication_sensitivity": "public"
     },
     {
@@ -108,7 +138,7 @@
     {
       "id": "possibility:nemosyne-discovery-reconstruction",
       "title": "Nemosyne as an independent discovery and reconstruction testbed",
-      "state": "active",
+      "state": "option",
       "summary": "Use the independent Nemosyne project as a bounded testbed for representation, verification attention and discovery/reconstruction methods without treating its product roadmap as owned by Agalmic Research.",
       "lineage_status": "prototype/learning, exploratory programming, software comprehension and human-AI coding antecedents; local operating method",
       "lineage_sources": [
@@ -130,7 +160,7 @@
       "realization_path": "clear",
       "attention_burden": "high",
       "uncertainty": "medium",
-      "next_discriminating_action": "Run only bounded Agalmic experiments whose intervention and outcome are observable; keep Nemosyne product implementation and operational ownership outside the Agalmic Research project map.",
+      "next_discriminating_action": "Use only when an active Agalmic claim needs a bounded independent testbed with observable intervention and outcome; do not allocate Agalmic frontier capacity to Nemosyne product work.",
       "publication_sensitivity": "public"
     },
     {
