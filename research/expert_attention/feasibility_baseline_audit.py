@@ -108,6 +108,18 @@ def main():
                 raise AssertionError("Crossing outside mathematically feasible band")
             if e["midpoint_crossing"] and not discrete_feasible(e["year"],e["mean2"]):
                 raise AssertionError("Crossing impossible on frozen year rating scale")
+        # Independent parity check against the frozen Phase 1C implementation.
+        # A mismatch is a methodological failure, not a new result.
+        for original_policy, local_policy in (("random","random"),("boundary_uncertainty","boundary")):
+            ranked_original=rank(eps,seed,local_policy)
+            for b in BUDGETS:
+                old_recall=m.evaluate(eps,original_policy,b)["midpoint_crossing_recall"]
+                new_recall=evaluate(ranked_original,b)
+                if old_recall is None or new_recall is None:
+                    if old_recall != new_recall:
+                        raise AssertionError(f"Recall parity failure: {seed} {original_policy} {b}")
+                elif abs(old_recall-new_recall)>1e-12:
+                    raise AssertionError(f"Recall parity failure: {seed} {original_policy} {b}: {old_recall} != {new_recall}")
         for policy in ("random","feasible_random","discrete_feasible_random","uniform_probability","boundary"):
             ranked=rank(eps,seed,policy)
             budget=min_budget(ranked)
