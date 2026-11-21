@@ -26,6 +26,33 @@ class CrossingFeasibilityTests(unittest.TestCase):
                         (year,r1,r2))
                     if possible:
                         self.assertTrue(audit.feasible(float(mean2)))
+    def test_uniform_probability_all_exact_frozen_scales(self):
+        for year,n in [(2017,10),(2018,10),(2019,10),(2020,4),(2021,10)]:
+            scores=[Fraction(i,n-1) for i in range(n)]
+            possible_pairs=0
+            for a in scores:
+                for b in scores:
+                    mean2=(a+b)/2
+                    count=sum(
+                        (mean2<Fraction(1,2)<=(a+b+c)/3)
+                        or ((a+b+c)/3<Fraction(1,2)<=mean2)
+                        for c in scores
+                    )
+                    observed=audit.uniform_crossing_probability(year,float(mean2))
+                    self.assertAlmostEqual(observed,count/n,places=12)
+                    possible_pairs+=count>0
+            self.assertEqual(possible_pairs,10 if year==2020 else 70)
+    def test_uniform_probability_does_not_use_heldout_event(self):
+        rows=[
+            {"year":2017,"paper_id":"a","mean2":.5,"midpoint_crossing":False},
+            {"year":2017,"paper_id":"b","mean2":.5,"midpoint_crossing":True},
+        ]
+        r1=audit.rank(rows,20261001,"uniform_probability")
+        rows[0]["midpoint_crossing"]=True
+        rows[1]["midpoint_crossing"]=False
+        r2=audit.rank(rows,20261001,"uniform_probability")
+        self.assertEqual([x["paper_id"] for x in r1[2017]],
+                         [x["paper_id"] for x in r2[2017]])
     def test_tie_direction(self):
         self.assertTrue(audit.discrete_feasible(2017,.25))
         self.assertFalse(audit.discrete_feasible(2017,.75))
