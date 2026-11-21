@@ -134,8 +134,7 @@ def main():
         "uniform_probability_assumption":"Counterfactual third score equally likely at each legal year-scale level; NOT an empirical posterior or observed distribution.",
         "no_decision_or_citation_labels":True}
     a.out.mkdir(parents=True,exist_ok=True)
-    (a.out/"result.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"
-")
+    (a.out/"result.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
     print(json.dumps(summary,indent=2,sort_keys=True))
 if __name__=="__main__":
     main()
