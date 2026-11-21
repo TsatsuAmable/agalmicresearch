@@ -34,6 +34,20 @@ def discrete_feasible(year, mean2):
             return True
     return False
 
+def uniform_crossing_probability(year, mean2):
+    """Exact crossing probability if the third score is uniform over legal levels.
+
+    This is a transparent MODEL baseline, not a fitted or empirically calibrated
+    probability. Uses only the two visible scores and frozen year scale.
+    """
+    n=4 if year==2020 else 10
+    hits=0
+    for i in range(n):
+        r3=i/(n-1)
+        mean3=(2*mean2+r3)/3
+        hits+=int((mean2 < .5 <= mean3) or (mean3 < .5 <= mean2))
+    return hits/n
+
 def tie(seed, paper_id):
     return int(hashlib.sha256(f"feasible|{seed}|{paper_id}".encode()).hexdigest(),16)
 
@@ -47,7 +61,7 @@ def rank(episodes, seed, policy):
             key=lambda e:(int(feasible(e["mean2"])),tie(seed,e["paper_id"]),e["paper_id"])
         elif policy=="discrete_feasible_random":
             key=lambda e:(int(discrete_feasible(e["year"],e["mean2"])),tie(seed,e["paper_id"]),e["paper_id"])
-        elif policy=="boundary":
+        elif policy=="uniform_probability":\n            key=lambda e:(uniform_crossing_probability(e["year"],e["mean2"]),tie(seed,e["paper_id"]),e["paper_id"])\n        elif policy=="boundary":
             key=lambda e:(e["boundary_uncertainty"],e["paper_id"])
         elif policy=="random":
             key=lambda e:(e["random_score"],e["paper_id"])
@@ -88,7 +102,7 @@ def main():
                 raise AssertionError("Crossing outside mathematically feasible band")
             if e["midpoint_crossing"] and not discrete_feasible(e["year"],e["mean2"]):
                 raise AssertionError("Crossing impossible on frozen year rating scale")
-        for policy in ("random","feasible_random","discrete_feasible_random","boundary"):
+        for policy in ("random","feasible_random","discrete_feasible_random","uniform_probability","boundary"):
             ranked=rank(eps,seed,policy)
             budget=min_budget(ranked)
             runs.append(dict(seed=seed,policy=policy,min_budget=budget,
@@ -110,7 +124,7 @@ def main():
         "seeds":list(SEEDS),"budget_grid":BUDGETS,"target_pooled_recall":TARGET,
         "summary":summary,"runs":runs,
         "interpretation":"Retrospective synthetic hold-out; not prospective review savings; split repeats are not independent cohorts.",
-        "falsifier":"If boundary does not beat feasibility-conditioned random (continuous or discrete-year-scale) materially, the advantage over unrestricted random is largely explained by mathematical event feasibility.",
+        "falsifier":"If boundary does not beat feasibility-conditioned random (continuous or discrete-year-scale) materially, the advantage over unrestricted random is largely explained by mathematical event feasibility.",\n        "uniform_probability_assumption":"Counterfactual third score equally likely at each legal year-scale level; NOT an empirical posterior or observed distribution.",
         "no_decision_or_citation_labels":True}
     a.out.mkdir(parents=True,exist_ok=True)
     (a.out/"result.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
