@@ -61,7 +61,9 @@ def rank(episodes, seed, policy):
             key=lambda e:(int(feasible(e["mean2"])),tie(seed,e["paper_id"]),e["paper_id"])
         elif policy=="discrete_feasible_random":
             key=lambda e:(int(discrete_feasible(e["year"],e["mean2"])),tie(seed,e["paper_id"]),e["paper_id"])
-        elif policy=="uniform_probability":\n            key=lambda e:(uniform_crossing_probability(e["year"],e["mean2"]),tie(seed,e["paper_id"]),e["paper_id"])\n        elif policy=="boundary":
+        elif policy=="uniform_probability":
+            key=lambda e:(uniform_crossing_probability(e["year"],e["mean2"]),tie(seed,e["paper_id"]),e["paper_id"])
+        elif policy=="boundary":
             key=lambda e:(e["boundary_uncertainty"],e["paper_id"])
         elif policy=="random":
             key=lambda e:(e["random_score"],e["paper_id"])
@@ -93,6 +95,10 @@ def main():
     p.add_argument("--out",type=Path,default=Path("research-output/expert-attention-feasibility-baselines"))
     a=p.parse_args()
     m=load(a.phase1b_script)
+    expected="ceeaa4316f76f6a22a5856128f34e8c3f35693d145db756f9688eda42ee20ed2"
+    actual=m.sha256_file(a.db)
+    if actual != expected:
+        raise SystemExit(f"Frozen input checksum mismatch: {actual} != {expected}")
     reviews=m.load_reviews(a.db)
     runs=[]
     for seed in SEEDS:
@@ -115,7 +121,7 @@ def main():
                 per_year_recall_at_55pct={
                     str(y):evaluate({y:rows},.55) for y,rows in ranked.items()}))
     summary={}
-    for policy in ("random","feasible_random","discrete_feasible_random","boundary"):
+    for policy in ("random","feasible_random","discrete_feasible_random","uniform_probability","boundary"):
         vals=[r["rws95"] for r in runs if r["policy"]==policy and r["rws95"] is not None]
         summary[policy]={"median_rws95":statistics.median(vals) if vals else None,
             "min_rws95":min(vals) if vals else None,"max_rws95":max(vals) if vals else None,
@@ -124,10 +130,12 @@ def main():
         "seeds":list(SEEDS),"budget_grid":BUDGETS,"target_pooled_recall":TARGET,
         "summary":summary,"runs":runs,
         "interpretation":"Retrospective synthetic hold-out; not prospective review savings; split repeats are not independent cohorts.",
-        "falsifier":"If boundary does not beat feasibility-conditioned random (continuous or discrete-year-scale) materially, the advantage over unrestricted random is largely explained by mathematical event feasibility.",\n        "uniform_probability_assumption":"Counterfactual third score equally likely at each legal year-scale level; NOT an empirical posterior or observed distribution.",
+        "falsifier":"If boundary does not beat feasibility-conditioned random (continuous or discrete-year-scale) materially, the advantage over unrestricted random is largely explained by mathematical event feasibility.",
+        "uniform_probability_assumption":"Counterfactual third score equally likely at each legal year-scale level; NOT an empirical posterior or observed distribution.",
         "no_decision_or_citation_labels":True}
     a.out.mkdir(parents=True,exist_ok=True)
-    (a.out/"result.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
+    (a.out/"result.json").write_text(json.dumps(result,indent=2,sort_keys=True)+"
+")
     print(json.dumps(summary,indent=2,sort_keys=True))
 if __name__=="__main__":
     main()
