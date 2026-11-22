@@ -22,16 +22,32 @@ def audit(data, floor=0.95):
     if len(rows) != 20 or {r['seed'] for r in rows} != EXPECTED_SEEDS:
         raise ValueError('Missing or duplicate boundary-policy runs')
     failures = []
+    if not 0 < floor <= 1:
+        raise ValueError('Invalid preservation floor')
     output = []
     for r in sorted(rows, key=lambda x: x['seed']):
         d = r.get('allocation_at_min_budget')
         if d is None or set(d.get('by_year', {})) != EXPECTED_YEARS:
             raise ValueError('Missing complete year diagnostics')
+        if r.get('min_budget') not in data.get('budget_grid', []):
+            raise ValueError('Qualifying budget absent from frozen grid')
+        if d.get('nominal_budget') != r['min_budget']:
+            raise ValueError('Allocation budget differs from qualifying budget')
         years = {}
+        total_events = total_captured = total_eligible = total_selected = 0
         for year, v in sorted(d['by_year'].items()):
             n, selected = v['crossings'], v['crossings_selected']
             if not isinstance(n, int) or not isinstance(selected, int) or n < 0 or not 0 <= selected <= n:
                 raise ValueError('Invalid crossing event counts')
+            eligible, allocated = v['eligible'], v['selected']
+            if not all(isinstance(x, int) and not isinstance(x, bool) for x in (n, selected, eligible, allocated)):
+                raise ValueError('Non-integer count')
+            if eligible <= 0 or not 0 <= allocated <= eligible or n > eligible or selected > allocated:
+                raise ValueError('Impossible allocation counts')
+            total_events += n
+            total_captured += selected
+            total_eligible += eligible
+            total_selected += allocated
             if n == 0:
                 years[year] = None
                 failures.append([r['seed'], year, 'undefined: zero crossing events'])
@@ -42,6 +58,16 @@ def audit(data, floor=0.95):
                 years[year] = recall
                 if recall < floor:
                     failures.append([r['seed'], year, f'{selected}/{n}'])
+        if total_events == 0:
+            raise ValueError('Undefined pooled crossing recall')
+        if d.get('eligible') != total_eligible or d.get('selected') != total_selected:
+            raise ValueError('Inconsistent pooled allocation counts')
+        if r.get('crossing_count') != total_events or r.get('eligible_count') != total_eligible:
+            raise ValueError('Inconsistent frozen cohort totals')
+        if abs(d.get('actual_fraction_saved', -1) - (1 - total_selected / total_eligible)) > 1e-12:
+            raise ValueError('Inconsistent actual review savings')
+        if total_captured / total_events < data.get('target_pooled_recall', 0.95) - 1e-12:
+            raise ValueError('Claimed qualifying budget does not preserve pooled target')
         output.append({'seed': r['seed'], 'nominal_budget': r['min_budget'],
                        'actual_fraction_saved': d['actual_fraction_saved'],
                        'recall_by_year': years})
