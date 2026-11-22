@@ -11,7 +11,7 @@ import math
 from statistics import NormalDist
 
 def wilson(k, n, confidence=0.95):
-    if not (isinstance(k, int) and isinstance(n, int) and 0 <= k <= n and n > 0):
+    if not (type(k) is int and type(n) is int and 0 <= k <= n and n > 0):
         raise ValueError("require integer 0 <= captured <= crossings, crossings > 0")
     if not (0 < confidence < 1):
         raise ValueError("confidence must be between 0 and 1")
@@ -23,6 +23,8 @@ def wilson(k, n, confidence=0.95):
     return [center-half, center+half]
 
 def audit(payload, floor=0.95):
+    if not isinstance(floor, (int, float)) or isinstance(floor, bool) or not math.isfinite(floor) or not 0 <= floor <= 1:
+        raise ValueError("floor must be finite and between 0 and 1")
     regimes = payload["regimes"]
     if not isinstance(regimes, list) or not regimes:
         raise ValueError("nonempty regimes required")
