@@ -62,7 +62,7 @@ class CrossingFeasibilityTests(unittest.TestCase):
         ranked={2017:rows}
         self.assertEqual(audit.evaluate(ranked,.1),.5)
         self.assertEqual(audit.evaluate(ranked,.2),1.0)
-        self.assertEqual(audit.min_budget(ranked),.2)
+        self.assertEqual(audit.min_budget(ranked),.15)  # Python round(10 * .15) selects two cases
     def test_pooled_recall_can_hide_total_regime_failure(self):
         # 19/20 crossing events preserved overall, but the second regime
         # loses its sole event. Pooled >=95% is NOT a per-regime guarantee.
