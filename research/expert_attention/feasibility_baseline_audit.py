@@ -81,6 +81,23 @@ def evaluate(ranked,budget):
     if not crossings: return None
     return sum((e["year"],e["paper_id"]) in chosen for e in crossings)/len(crossings)
 
+def allocation_diagnostics(ranked, budget):
+    """Report actual selected reviews and crossing events by year at nominal budget."""
+    by_year = {}
+    for year, rows in sorted(ranked.items()):
+        selected = max(1, round(len(rows) * budget))
+        events = sum(bool(e["midpoint_crossing"]) for e in rows)
+        captured = sum(bool(e["midpoint_crossing"]) for e in rows[:selected])
+        by_year[str(year)] = {"eligible": len(rows), "selected": selected,
+            "crossings": events, "crossings_selected": captured,
+            "recall": captured / events if events else None}
+    eligible = sum(v["eligible"] for v in by_year.values())
+    selected = sum(v["selected"] for v in by_year.values())
+    return {"nominal_budget": budget, "eligible": eligible, "selected": selected,
+        "actual_fraction_selected": selected / eligible if eligible else None,
+        "actual_fraction_saved": 1 - selected / eligible if eligible else None,
+        "by_year": by_year}
+
 def min_budget(ranked):
     for budget in BUDGETS:
         recall=evaluate(ranked,budget)
@@ -130,6 +147,7 @@ def main():
                 discrete_feasible_count=sum(discrete_feasible(e["year"],e["mean2"]) for e in eps),
                 eligible_count=len(eps),
                 recall_at_55pct=evaluate(ranked,.55),
+                allocation_at_min_budget=allocation_diagnostics(ranked,budget) if budget is not None else None,
                 per_year_recall_at_55pct={
                     str(y):evaluate({y:rows},.55) for y,rows in ranked.items()}))
     summary={}
