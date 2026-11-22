@@ -6,6 +6,7 @@ Does not re-estimate policies or claim prospective safety. No dependencies.
 """
 import argparse
 import json
+import math
 from pathlib import Path
 
 EXPECTED_SHA = 'ceeaa4316f76f6a22a5856128f34e8c3f35693d145db756f9688eda42ee20ed2'
@@ -53,7 +54,8 @@ def audit(data, floor=0.95):
                 failures.append([r['seed'], year, 'undefined: zero crossing events'])
             else:
                 recall = selected / n
-                if v.get('recall') is None or abs(v['recall'] - recall) > 1e-12:
+                if (not isinstance(v.get('recall'), (int, float)) or isinstance(v['recall'], bool)
+                        or not math.isfinite(v['recall']) or abs(v['recall'] - recall) > 1e-12):
                     raise ValueError('Inconsistent per-year recall')
                 years[year] = recall
                 if recall < floor:
@@ -64,7 +66,10 @@ def audit(data, floor=0.95):
             raise ValueError('Inconsistent pooled allocation counts')
         if r.get('crossing_count') != total_events or r.get('eligible_count') != total_eligible:
             raise ValueError('Inconsistent frozen cohort totals')
-        if abs(d.get('actual_fraction_saved', -1) - (1 - total_selected / total_eligible)) > 1e-12:
+        if (not isinstance(d.get('actual_fraction_saved'), (int, float))
+                or isinstance(d['actual_fraction_saved'], bool)
+                or not math.isfinite(d['actual_fraction_saved'])
+                or abs(d['actual_fraction_saved'] - (1 - total_selected / total_eligible)) > 1e-12):
             raise ValueError('Inconsistent actual review savings')
         if total_captured / total_events < data.get('target_pooled_recall', 0.95) - 1e-12:
             raise ValueError('Claimed qualifying budget does not preserve pooled target')
