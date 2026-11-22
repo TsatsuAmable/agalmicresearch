@@ -17,6 +17,15 @@ class PreservationAuditTests(unittest.TestCase):
         for k,n in [(1,0),(3,2),(-1,4),(1.2,2)]:
             with self.subTest(k=k,n=n), self.assertRaises(ValueError):
                 wilson(k,n)
+    def test_boolean_counts_rejected(self):
+        for k,n in [(True, 2), (1, True), (False, 3)]:
+            with self.subTest(k=k,n=n), self.assertRaises(ValueError):
+                wilson(k,n)
+    def test_invalid_floor_rejected_for_direct_callers(self):
+        payload = {"regimes":[{"name":"a","captured":1,"crossings":1}]}
+        for floor in [float("nan"), float("inf"), -0.1, 1.1, True]:
+            with self.subTest(floor=floor), self.assertRaises(ValueError):
+                audit(payload, floor)
     def test_identical_names_rejected(self):
         with self.assertRaises(ValueError):
             audit({"regimes":[{"name":"a","captured":1,"crossings":1},
