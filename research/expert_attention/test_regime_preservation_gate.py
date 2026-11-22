@@ -92,6 +92,26 @@ class RegimePreservationGateTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             gate.audit(data)
 
+    def test_nan_pooled_target_rejected(self):
+        data = fixture()
+        data['target_pooled_recall'] = float('nan')
+        with self.assertRaises(ValueError):
+            gate.audit(data)
+
+    def test_missing_pooled_target_rejected(self):
+        data = fixture()
+        del data['target_pooled_recall']
+        with self.assertRaises(ValueError):
+            gate.audit(data)
+
+    def test_nan_floor_rejected(self):
+        with self.assertRaises(ValueError):
+            gate.audit(fixture(), floor=float('nan'))
+
+    def test_infinite_floor_rejected(self):
+        with self.assertRaises(ValueError):
+            gate.audit(fixture(), floor=float('inf'))
+
 
 if __name__ == '__main__':
     unittest.main()
