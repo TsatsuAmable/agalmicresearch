@@ -1,0 +1,23 @@
+name: Expert-attention synthetic falsification tests
+
+on:
+  pull_request:
+    paths:
+      - 'research/expert_attention/**'
+      - '.github/workflows/expert-attention-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-falsifiers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run exact-geometry and regime-preservation tests
+        run: |
+          python -m unittest discover -s research/expert_attention -p 'test_*.py' -v
