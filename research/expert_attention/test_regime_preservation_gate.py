@@ -68,6 +68,30 @@ class RegimePreservationGateTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             gate.audit(data)
 
+    def test_nan_recall_rejected(self):
+        data = fixture()
+        data['runs'][0]['allocation_at_min_budget']['by_year']['2020']['recall'] = float('nan')
+        with self.assertRaises(ValueError):
+            gate.audit(data)
+
+    def test_infinite_recall_rejected(self):
+        data = fixture()
+        data['runs'][0]['allocation_at_min_budget']['by_year']['2020']['recall'] = float('inf')
+        with self.assertRaises(ValueError):
+            gate.audit(data)
+
+    def test_nan_savings_rejected(self):
+        data = fixture()
+        data['runs'][0]['allocation_at_min_budget']['actual_fraction_saved'] = float('nan')
+        with self.assertRaises(ValueError):
+            gate.audit(data)
+
+    def test_boolean_recall_rejected(self):
+        data = fixture()
+        data['runs'][0]['allocation_at_min_budget']['by_year']['2020']['recall'] = True
+        with self.assertRaises(ValueError):
+            gate.audit(data)
+
 
 if __name__ == '__main__':
     unittest.main()
