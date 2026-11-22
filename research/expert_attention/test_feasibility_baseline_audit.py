@@ -63,5 +63,24 @@ class CrossingFeasibilityTests(unittest.TestCase):
         self.assertEqual(audit.evaluate(ranked,.1),.5)
         self.assertEqual(audit.evaluate(ranked,.2),1.0)
         self.assertEqual(audit.min_budget(ranked),.2)
+    def test_pooled_recall_can_hide_total_regime_failure(self):
+        # 19/20 crossing events preserved overall, but the second regime
+        # loses its sole event. Pooled >=95% is NOT a per-regime guarantee.
+        a=[{"year":2017,"paper_id":f"a{i}","midpoint_crossing":True}
+           for i in range(19)]
+        b=[{"year":2020,"paper_id":"b0","midpoint_crossing":True},
+           {"year":2020,"paper_id":"b1","midpoint_crossing":False}]
+        # At a 100% budget every event is selected, so instead exercise the
+        # exact 50% selection rule with 38 cases in year 2017.
+        a += [{"year":2017,"paper_id":f"n{i}","midpoint_crossing":False}
+              for i in range(19)]
+        ranked={2017:a,2020:[b[1],b[0]]}
+        self.assertEqual(audit.evaluate(ranked,.5),19/20)
+        self.assertEqual(audit.evaluate({2020:ranked[2020]},.5),0)
+        self.assertEqual(audit.evaluate({2017:ranked[2017]},.5),1)
+    def test_no_event_is_not_perfect_recall(self):
+        ranked={2017:[{"year":2017,"paper_id":"x","midpoint_crossing":False}]}
+        self.assertIsNone(audit.evaluate(ranked,.5))
+        self.assertIsNone(audit.min_budget(ranked))
 if __name__=="__main__":
     unittest.main()
