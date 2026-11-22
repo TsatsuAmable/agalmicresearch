@@ -78,6 +78,40 @@ class CrossingFeasibilityTests(unittest.TestCase):
         self.assertEqual(audit.evaluate(ranked,.5),19/20)
         self.assertEqual(audit.evaluate({2020:ranked[2020]},.5),0)
         self.assertEqual(audit.evaluate({2017:ranked[2017]},.5),1)
+    def test_frozen_evaluator_parity_on_synthetic_years(self):
+        # Exercise the original Phase 1B evaluator without needing private data.
+        frozen=Path(__file__).with_name("review_value_holdout.py")
+        original=audit.load(frozen)
+        episodes=[]
+        for year in (2017,2020,2021):
+            for i in range(24):
+                a=original.norm_rating(year,original.SCALES[year][i % len(original.SCALES[year])])
+                b=original.norm_rating(year,original.SCALES[year][(i*3+1) % len(original.SCALES[year])])
+                c=original.norm_rating(year,original.SCALES[year][(i*7+2) % len(original.SCALES[year])])
+                m2=(a+b)/2
+                m3=(a+b+c)/3
+                episodes.append({"year":year,"paper_id":f"{year}-{i}",
+                    "mean2":m2,"boundary_uncertainty":max(0,1-2*abs(m2-.5)),
+                    "random_score":int(original.hash_key("route",20261001,f"{year}-{i}"),16),
+                    "midpoint_crossing":(m2<.5<=m3) or (m3<.5<=m2),
+                    "absolute_update":abs(m3-m2),"disagreement":abs(a-b),
+                    "hybrid":0})
+        self.assertGreater(sum(e["midpoint_crossing"] for e in episodes),0)
+        for original_policy, local_policy in (("random","random"),("boundary_uncertainty","boundary")):
+            ranked=audit.rank(episodes,20261001,local_policy)
+            for budget in audit.BUDGETS:
+                self.assertEqual(original.evaluate(episodes,original_policy,budget)["midpoint_crossing_recall"],
+                                 audit.evaluate(ranked,budget),(original_policy,budget))
+
+    def test_year_specific_rounding_is_not_exact_nominal_budget(self):
+        # Frozen selection uses max(1, round(N_year*b)), not floor(b*N_total).
+        ranked={2017:[{"year":2017,"paper_id":"a","midpoint_crossing":True}],
+                2020:[{"year":2020,"paper_id":"b","midpoint_crossing":True}]}
+        self.assertEqual(audit.evaluate(ranked,.05),1.0)
+        # Both of two simulated third reviews selected at a nominal 5% budget.
+        # RWS@95 is based on nominal grid, not exact fraction of reviews selected.
+        self.assertEqual(audit.min_budget(ranked),.05)
+
     def test_no_event_is_not_perfect_recall(self):
         ranked={2017:[{"year":2017,"paper_id":"x","midpoint_crossing":False}]}
         self.assertIsNone(audit.evaluate(ranked,.5))
