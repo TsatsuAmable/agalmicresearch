@@ -38,9 +38,9 @@ class RegimePreservationGateTests(unittest.TestCase):
             years = row['allocation_at_min_budget']['by_year']
             for year in years.values():
                 year.update(crossings=1, crossings_selected=1, recall=1.0)
-            years['2017'].update(crossings=96, crossings_selected=96)
+            years['2017'].update(crossings=91, crossings_selected=91)
             years['2020'].update(crossings_selected=0, recall=0.0)
-            row['crossing_count'] = 100
+            row['crossing_count'] = 95
         report = gate.audit(data)
         self.assertEqual(report['status'], 'FAIL')
         self.assertEqual(len(report['failures']), 20)
