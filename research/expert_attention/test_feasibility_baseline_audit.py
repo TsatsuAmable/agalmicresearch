@@ -112,6 +112,22 @@ class CrossingFeasibilityTests(unittest.TestCase):
         # RWS@95 is based on nominal grid, not exact fraction of reviews selected.
         self.assertEqual(audit.min_budget(ranked),.05)
 
+    def test_actual_selected_denominator_and_year_events(self):
+        ranked={
+            2017:[{"year":2017,"paper_id":"a","midpoint_crossing":True},
+                  {"year":2017,"paper_id":"b","midpoint_crossing":False},
+                  {"year":2017,"paper_id":"c","midpoint_crossing":True}],
+            2020:[{"year":2020,"paper_id":"d","midpoint_crossing":False}]}
+        d=audit.allocation_diagnostics(ranked,.05)
+        self.assertEqual(d["selected"],2)
+        self.assertEqual(d["eligible"],4)
+        self.assertEqual(d["actual_fraction_selected"],.5)
+        self.assertEqual(d["actual_fraction_saved"],.5)
+        self.assertEqual(d["by_year"]["2017"]["crossings"],2)
+        self.assertEqual(d["by_year"]["2017"]["crossings_selected"],1)
+        self.assertEqual(d["by_year"]["2017"]["recall"],.5)
+        self.assertIsNone(d["by_year"]["2020"]["recall"])
+
     def test_no_event_is_not_perfect_recall(self):
         ranked={2017:[{"year":2017,"paper_id":"x","midpoint_crossing":False}]}
         self.assertIsNone(audit.evaluate(ranked,.5))
