@@ -23,8 +23,13 @@ def audit(data, floor=0.95):
     if len(rows) != 20 or {r['seed'] for r in rows} != EXPECTED_SEEDS:
         raise ValueError('Missing or duplicate boundary-policy runs')
     failures = []
-    if not 0 < floor <= 1:
+    if (not isinstance(floor, (int, float)) or isinstance(floor, bool)
+            or not math.isfinite(floor) or not 0 < floor <= 1):
         raise ValueError('Invalid preservation floor')
+    target = data.get('target_pooled_recall')
+    if (not isinstance(target, (int, float)) or isinstance(target, bool)
+            or not math.isfinite(target) or not 0 < target <= 1):
+        raise ValueError('Invalid pooled preservation target')
     output = []
     for r in sorted(rows, key=lambda x: x['seed']):
         d = r.get('allocation_at_min_budget')
@@ -71,7 +76,7 @@ def audit(data, floor=0.95):
                 or not math.isfinite(d['actual_fraction_saved'])
                 or abs(d['actual_fraction_saved'] - (1 - total_selected / total_eligible)) > 1e-12):
             raise ValueError('Inconsistent actual review savings')
-        if total_captured / total_events < data.get('target_pooled_recall', 0.95) - 1e-12:
+        if total_captured / total_events < target - 1e-12:
             raise ValueError('Claimed qualifying budget does not preserve pooled target')
         output.append({'seed': r['seed'], 'nominal_budget': r['min_budget'],
                        'actual_fraction_saved': d['actual_fraction_saved'],
